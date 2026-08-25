@@ -109,6 +109,35 @@ class QuoteTests(unittest.TestCase):
         self.assertNotIn("sh512480", [row["symbol"] for row in snap["sectors"]])
         self.assertNotIn("sh603986", [row["symbol"] for row in snap["tickers"]])
 
+    def test_asia_benchmarks_kospi_and_nikkei(self) -> None:
+        from src.ingest.quotes import snapshot_from_rows
+        from src.models import QuoteRow
+        from src.planner import heuristic_plan
+
+        plan = heuristic_plan("医药相关", 36)
+        self.assertIn("^N225", plan.benchmarks)
+        self.assertIn("^KS11", plan.benchmarks)
+        snap = snapshot_from_rows(
+            [
+                QuoteRow(symbol="sh000001", name="上证指数", changePct=0.1, asOf="2026-08-25T05:31:57Z"),
+                QuoteRow(symbol="^N225", name="Nikkei 225", changePct=0.49, asOf="2026-08-25T06:00:00Z"),
+                QuoteRow(symbol="^KS11", name="KOSPI Composite Index", changePct=-0.42, asOf="2026-08-25T06:30:00Z"),
+                QuoteRow(symbol="sh600276", name="恒瑞医药", changePct=1.0, asOf="2026-08-25T05:31:57Z"),
+            ],
+            "test",
+            benchmark_ids=plan.benchmarks,
+            focus_ids=["sh600276"],
+        )
+        names = {row["symbol"]: row["name"] for row in snap["benchmarks"]}
+        self.assertEqual(names["^N225"], "日经225")
+        self.assertEqual(names["^KS11"], "KOSPI")
+        self.assertEqual(
+            [row["symbol"] for row in snap["benchmarks"]],
+            ["sh000001", "^N225", "^KS11"],
+        )
+        self.assertNotIn("^N225", [row["symbol"] for row in snap["tickers"]])
+        self.assertNotIn("^KS11", [row["symbol"] for row in snap["tickers"]])
+
 
 class DistillTests(unittest.TestCase):
     def test_keyword_and_dedup(self) -> None:

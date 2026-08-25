@@ -140,6 +140,22 @@ def _is_etf_symbol(symbol: str, name: str = "") -> bool:
     return False
 
 
+_FALLBACK_BENCHES = {
+    "sh000001",
+    "sh000300",
+    "sz399006",
+    "^HSI",
+    "^N225",
+    "^KS11",
+    "^GSPC",
+    "^IXIC",
+}
+
+
+def _configured_benchmarks() -> list[dict]:
+    return list(load_yaml("sources.yml").get("benchmarks") or [])
+
+
 def snapshot_from_rows(
     rows: list[QuoteRow],
     source: str,
@@ -148,25 +164,18 @@ def snapshot_from_rows(
     focus_ids: list[str] | None = None,
     etf_ids: list[str] | None = None,
 ) -> dict:
-    sources = load_yaml("sources.yml")
-    benches = {
-        *(row["symbol"] for row in sources.get("benchmarks") or []),
-        "sh000001",
-        "sh000300",
-        "sz399006",
-        "^GSPC",
-        "^IXIC",
-        "^HSI",
+    configured = _configured_benchmarks()
+    order = [normalize_symbol(row["symbol"]) for row in configured if row.get("symbol")]
+    names = {
+        normalize_symbol(row["symbol"]): str(row.get("name") or "").strip()
+        for row in configured
+        if row.get("symbol") and str(row.get("name") or "").strip()
     }
-    if benchmark_ids:
-        benches = {normalize_symbol(symbol) for symbol in benchmark_ids} | {
-            "sh000001",
-            "sh000300",
-            "sz399006",
-            "^GSPC",
-            "^IXIC",
-            "^HSI",
-        }
+    benches = {
+        *order,
+        *_FALLBACK_BENCHES,
+        *(normalize_symbol(symbol) for symbol in (benchmark_ids or []) if normalize_symbol(symbol)),
+    }
     focus = [normalize_symbol(symbol) for symbol in (focus_ids or []) if normalize_symbol(symbol)]
     focus_set = set(focus)
     etf_set = {normalize_symbol(symbol) for symbol in (etf_ids or []) if normalize_symbol(symbol)}
@@ -181,17 +190,26 @@ def snapshot_from_rows(
         related = [row for row in rows if row.symbol in focus_set]
     else:
         related = [row for row in rows if row.symbol not in benches]
+    order_index = {symbol: index for index, symbol in enumerate(order)}
+
+    def dump_row(row: QuoteRow) -> dict:
+        data = row.model_dump()
+        if names.get(row.symbol):
+            data["name"] = names[row.symbol]
+        return data
 
     def is_sector(row: QuoteRow) -> bool:
         if etf_set:
             return row.symbol in etf_set
         return _is_etf_symbol(row.symbol, row.name)
 
+    bench_rows = [row for row in rows if row.symbol in benches]
+    bench_rows.sort(key=lambda row: (order_index.get(row.symbol, 999), row.symbol))
     return {
         "asOf": as_of,
         "delayed": True,
         "source": source,
-        "benchmarks": [row.model_dump() for row in rows if row.symbol in benches],
-        "sectors": [row.model_dump() for row in related if is_sector(row)],
-        "tickers": [row.model_dump() for row in related if not is_sector(row)],
+        "benchmarks": [dump_row(row) for row in bench_rows],
+        "sectors": [dump_row(row) for row in related if is_sector(row)],
+        "tickers": [dump_row(row) for row in related if not is_sector(row)],
     }

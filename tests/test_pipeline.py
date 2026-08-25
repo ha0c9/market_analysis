@@ -59,6 +59,12 @@ class ModelResolveTests(unittest.TestCase):
         self.assertIn("flags=grok", model_debug("grok-4.6"))
         self.assertIn("spaced=true", model_debug("Grok 4.6"))
 
+    def test_content_ignores_reasoning_chain(self) -> None:
+        from src.llm import _content_from_message
+
+        self.assertEqual(_content_from_message({"content": "", "reasoning_content": "think then JSON"}), "")
+        self.assertEqual(_content_from_message({"content": '{"ok": true}'}), '{"ok": true}')
+
 
 
 TENCENT = (

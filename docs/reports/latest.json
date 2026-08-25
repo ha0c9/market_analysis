@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T10:13:34Z",
+  "generatedAt": "2026-08-25T10:47:16Z",
   "focus": "普冉股份",
   "timeWindow": {
-    "from": "2026-08-25T10:13:34Z",
-    "to": "2026-08-25T10:13:34Z"
+    "from": "2026-08-18T11:59:36Z",
+    "to": "2026-08-25T10:47:16Z"
   },
   "dataCoverage": {
-    "news": false,
+    "news": true,
     "quotes": true,
     "filings": false,
     "x": false,
@@ -43,15 +43,31 @@
       },
       {
         "symbol": "^HSI",
-        "name": "HANG SENG INDEX",
+        "name": "恒生指数",
         "price": 25511.1,
         "changePct": 2.1947079764918165,
         "changePct5d": 0.1568410461928016,
         "asOf": "2026-08-25T08:08:38Z"
       },
       {
+        "symbol": "^N225",
+        "name": "日经225",
+        "price": 65856.43,
+        "changePct": 1.9273453575737287,
+        "changePct5d": -2.3781197694538236,
+        "asOf": "2026-08-25T06:45:02Z"
+      },
+      {
+        "symbol": "^KS11",
+        "name": "KOSPI",
+        "price": 6742.74,
+        "changePct": 0.7790010492301214,
+        "changePct5d": -1.8499707024003609,
+        "asOf": "2026-08-25T09:05:40Z"
+      },
+      {
         "symbol": "^GSPC",
-        "name": "S&P 500",
+        "name": "标普500",
         "price": 7652.86,
         "changePct": 3.249873852870633,
         "changePct5d": -1.1904387392089544,
@@ -59,7 +75,7 @@
       },
       {
         "symbol": "^IXIC",
-        "name": "NASDAQ Composite",
+        "name": "纳斯达克",
         "price": 25980.191,
         "changePct": 4.021373472422529,
         "changePct5d": -2.4947380164803357,
@@ -84,61 +100,110 @@
       "heat": 1,
       "heatScore": 0.9,
       "priceAction": "mixed",
-      "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "半导体板块整体表现分化，存储芯片涨价预期与市场情绪波动并存。普冉股份股价微跌，但行业供需紧张可能带来支撑。",
-      "evidence": [],
-      "counterEvidence": [],
-      "confidence": 0.5,
-      "invalidatedIf": "存储芯片价格大幅下跌或行业需求明显减弱"
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "半导体板块受存储芯片业绩爆发和AI算力需求推动，市场情绪高涨。普冉股份和兆易创新净利暴增，存储芯片涨价预期强化，但板块内部分化，创业板指下跌，显示资金可能向龙头集中。",
+      "evidence": [
+        {
+          "claim": "存储芯片业绩爆发，兆易创新、普冉股份净利暴涨十倍，AI算力重塑半导体周期",
+          "sourceTitle": "存储芯片业绩爆发，兆易创新、普冉股份净利暴涨十倍，AI 算力重塑半导体周期 - 财富号",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1wanJGdU1IOTJ4ODYxVks1bVhNVDlCMnpTVDdnRFVwWFlPR3FLU21rZXlDcjBDdFpOZm9Vc2RSQUdUT0R2elNyMkxWR2N5Zy1fbUNGdTh4Ym0xN2h5eGphOWpyNmJZRTNnSHMw?oc=5",
+          "publishedAt": "2026-08-19T02:05:00Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
+          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
+          "publishedAt": "2026-08-23T00:49:31Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "创业板指下跌1.0%，显示半导体等成长板块可能承压",
+          "sourceTitle": "创业板指行情",
+          "url": "https://example.com/quote/sz399006",
+          "publishedAt": "2026-08-25T08:14:33Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.8,
+      "invalidatedIf": "存储芯片涨价预期落空或半导体板块资金大幅流出"
     },
     {
       "sector": "存储芯片",
       "heat": 2,
-      "heatScore": 0.8,
-      "priceAction": "mixed",
-      "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "存储芯片行业存在涨价与供需紧张的预期，但缺乏最新新闻验证。普冉股份作为NOR Flash和MCU供应商，可能受益于行业景气。",
-      "evidence": [],
-      "counterEvidence": [],
-      "confidence": 0.4,
-      "invalidatedIf": "存储芯片价格出现明显回落或供需转为宽松"
+      "heatScore": 0.85,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "存储芯片行业景气度高涨，普冉股份和兆易创新业绩暴增，存储芯片涨价趋势明确，英伟达服务器涨价进一步印证需求强劲。市场情绪积极，但需关注价格是否已充分反映。",
+      "evidence": [
+        {
+          "claim": "两大存储芯片龙头披露半年报：兆易创新净利暴增1091%，普冉股份飙涨1930%",
+          "sourceTitle": "两大存储芯片龙头披露半年报：兆易创新净利暴增1091%，普冉股份飙涨1930% - 福布斯中国",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EODQ1VmFVS1k2em03WFNZbTh5ZDRrOEpPNDJKTFJOVzhGZkk1UHo0TjlPZ1N3ZktSMlJhelFkQmhBMzBGMDlXaGc3RUlrLU9xUjBJNw?oc=5",
+          "publishedAt": "2026-08-19T06:54:59Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
+          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
+          "publishedAt": "2026-08-23T00:49:31Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "普冉股份股价逆势下跌，尽管业绩大增，可能已提前反应",
+          "sourceTitle": "上半年净赚8.27亿！600亿存储巨头普冉股份，逆势下跌 - 风闻",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBlV3RCTXRva3RLZ25IMllPTmlxWFNCd2x6RW10LXRVclliYlYxMjY2SlQ4alIxU0JXWDEycFFQcWU2R0M3T1NNODh1WElCdVZfbFVRRF81MnRzWE5qdW95dTV5Q19HYjZiWEE?oc=5",
+          "publishedAt": "2026-08-22T03:13:18Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.75,
+      "invalidatedIf": "存储芯片价格下跌或主要公司业绩不及预期"
     },
     {
-      "sector": "集成电路",
+      "sector": "消费电子",
       "heat": 3,
-      "heatScore": 0.7,
+      "heatScore": 0.6,
       "priceAction": "mixed",
       "calibration": "insufficientData",
       "direction": "mixed",
-      "narrative": "集成电路板块受半导体行业整体影响，市场情绪和资金流向存在不确定性。普冉股份作为集成电路设计公司，其股价表现与板块联动。",
-      "evidence": [],
+      "narrative": "消费电子板块受存储芯片成本上升影响，可能面临成本压力，但AI算力需求带动高端服务器涨价，间接利好消费电子中的AI相关产品。整体缺乏直接新闻，方向不明。",
+      "evidence": [
+        {
+          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
+          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
+          "publishedAt": "2026-08-23T00:49:31Z",
+          "weight": "supporting"
+        }
+      ],
       "counterEvidence": [],
       "confidence": 0.4,
-      "invalidatedIf": "集成电路行业政策或需求出现重大不利变化"
+      "invalidatedIf": "消费电子需求数据恶化或成本压力缓解"
     }
   ],
-  "crossSectorNotes": "当前新闻数据为空，无法提供具体证据。行情显示普冉股份微跌，大盘指数涨跌互现，海外市场表现强劲。建议关注后续存储芯片行业动态和资金流向。",
+  "crossSectorNotes": "普冉股份业绩暴增但股价逆势下跌，显示市场可能已提前反应利好，需警惕短期回调风险。存储芯片涨价趋势强化，但需关注是否已充分定价。全球市场表现分化，美股大涨但亚洲市场涨跌不一，需关注外部情绪传导。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
-    "部分源失败: 6"
+    "近期稿件不足，已补充稍早的相关报道"
   ],
   "stats": {
-    "fetched": 0,
-    "used": 0,
-    "quotes": 7,
+    "fetched": 8,
+    "used": 8,
+    "quotes": 9,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"
   },
   "errors": [
-    "gnews:zh:普冉股份 最新公告 业绩 股价: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E6%99%AE%E5%86%89%E8%82%A1%E4%BB%BD+%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A+%E4%B8%9A%E7%BB%A9+%E8%82%A1%E4%BB%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:普冉股份 最新公告 业绩 股价: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E6%99%AE%E5%86%89%E8%82%A1%E4%BB%BD+%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A+%E4%B8%9A%E7%BB%A9+%E8%82%A1%E4%BB%B7&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:存储芯片 行业动态 涨价 供需: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87+%E8%A1%8C%E4%B8%9A%E5%8A%A8%E6%80%81+%E6%B6%A8%E4%BB%B7+%E4%BE%9B%E9%9C%80&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:存储芯片 行业动态 涨价 供需: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87+%E8%A1%8C%E4%B8%9A%E5%8A%A8%E6%80%81+%E6%B6%A8%E4%BB%B7+%E4%BE%9B%E9%9C%80&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:半导体板块 北向资金 资金流向 市场情绪: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%9D%BF%E5%9D%97+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E8%B5%84%E9%87%91%E6%B5%81%E5%90%91+%E5%B8%82%E5%9C%BA%E6%83%85%E7%BB%AA&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:半导体板块 北向资金 资金流向 市场情绪: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%9D%BF%E5%9D%97+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E8%B5%84%E9%87%91%E6%B5%81%E5%90%91+%E5%B8%82%E5%9C%BA%E6%83%85%E7%BB%AA&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    "近期稿件不足，已补充稍早的相关报道"
   ]
 }

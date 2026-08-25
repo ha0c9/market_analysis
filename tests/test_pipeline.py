@@ -6,18 +6,47 @@ from src.distill import distill_news
 from src.ingest.quotes import normalize_symbol, parse_tencent_body
 from src.models import NewsItem
 from src.planner import heuristic_plan
+from src.llm import resolve_model
 from src.settings import ai_base_url
 
 
 class SettingsTests(unittest.TestCase):
-    def test_base_url_adds_v1(self) -> None:
+    def test_base_url_is_not_rewritten(self) -> None:
         import os
         from unittest.mock import patch
 
-        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaicode.com/api"}):
-            self.assertEqual(ai_base_url(), "https://node-hk.sssaicode.com/api/v1")
-        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaicode.com/api/v1"}):
-            self.assertEqual(ai_base_url(), "https://node-hk.sssaicode.com/api/v1")
+        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaiapi.com/api/v1"}):
+            self.assertEqual(ai_base_url(), "https://node-hk.sssaiapi.com/api/v1")
+        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaiapi.com/api"}):
+            self.assertEqual(ai_base_url(), "https://node-hk.sssaiapi.com/api")
+
+
+class ModelResolveTests(unittest.TestCase):
+    def test_uses_secret_as_is(self) -> None:
+        import os
+        from unittest.mock import patch
+
+        with patch.dict(
+            os.environ,
+            {"AI_MODEL_PLANNER": "deepseek-v4-flash", "AI_MODEL_SYNTHESIZER": "deepseek-v4-pro"},
+        ):
+            self.assertEqual(resolve_model("planner"), "deepseek-v4-flash")
+            self.assertEqual(resolve_model("synthesizer"), "deepseek-v4-pro")
+
+    def test_empty_secrets_default_to_deepseek_v4_flash(self) -> None:
+        import os
+        from unittest.mock import patch
+
+        with patch.dict(os.environ, {"AI_MODEL_PLANNER": "", "AI_MODEL_SYNTHESIZER": ""}):
+            self.assertEqual(resolve_model("planner"), "deepseek-v4-flash")
+            self.assertEqual(resolve_model("synthesizer"), "deepseek-v4-flash")
+
+    def test_synthesizer_reuses_planner_secret(self) -> None:
+        import os
+        from unittest.mock import patch
+
+        with patch.dict(os.environ, {"AI_MODEL_PLANNER": "deepseek-v4-flash", "AI_MODEL_SYNTHESIZER": ""}):
+            self.assertEqual(resolve_model("synthesizer"), "deepseek-v4-flash")
 
 
 

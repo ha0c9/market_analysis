@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from statistics import mean
 
-from src.llm import LLMError, chat, parse_json_object, pick_model
+from src.llm import LLMError, chat, parse_json_object, resolve_model
 from src.models import AnalysisPlan, Evidence, NewsItem, QuoteRow, Report, SectorOutlook
 from src.settings import env, load_yaml
 from src.timeutil import isoformat, now_utc, parse_datetime
@@ -187,7 +187,8 @@ def synthesize_report(
         ),
     }
     try:
-        model = pick_model("synthesizer", env("AI_MODEL_SYNTHESIZER"))
+        model = resolve_model("synthesizer")
+        print(f"calling synthesizer model={model}")
         raw = chat(
             [
                 {"role": "system", "content": "You are a financial research assistant. Return JSON only."},

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.llm import LLMError, chat, parse_json_object, pick_model
+from src.llm import LLMError, chat, parse_json_object, resolve_model
 from src.models import AnalysisPlan
 from src.settings import env, load_yaml
 
@@ -49,7 +49,8 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         f"用户侧重点: {focus or '泛市场扫描'}"
     )
     try:
-        model = pick_model("planner", env("AI_MODEL_PLANNER"))
+        model = resolve_model("planner")
+        print(f"calling planner model={model}")
         raw = chat(
             [
                 {"role": "system", "content": "Return JSON only."},

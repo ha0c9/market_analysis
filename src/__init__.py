@@ -8,4 +8,4 @@ REPORTS_DIR = ROOT / "docs" / "reports"
 WEB_DIR = ROOT / "web"
 
 USER_AGENT = "market-analysis/0.1 (+https://github.com/ha0c9/market_analysis)"
-DEFAULT_BASE_URL = "https://node-hk.sssaicode.com/api/v1"
+DEFAULT_BASE_URL = "https://node-hk.sssaiapi.com/api/v1"

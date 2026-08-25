@@ -9,9 +9,18 @@ import httpx
 from src import USER_AGENT
 from src.settings import ai_base_url, env
 
-PLANNER_HINTS = ("haiku", "mini", "flash", "lite", "small")
-SYNTH_HINTS = ("sonnet", "gpt-4.1", "gpt-5.4", "gpt-5.5", "gpt-4o")
-AVOID_HINTS = ("opus", "codex", "o1", "o3", "reasoner", "deep-research")
+DEFAULT_PLANNER_MODEL = "deepseek-v4-flash"
+DEFAULT_SYNTHESIZER_MODEL = "deepseek-v4-flash"
+
+
+def resolve_model(role: str) -> str:
+    """Use Secrets as-is. Do not auto-pick a different vendor model."""
+    configured = env("AI_MODEL_PLANNER") if role == "planner" else env("AI_MODEL_SYNTHESIZER")
+    if configured:
+        return configured
+    if role == "synthesizer":
+        return env("AI_MODEL_PLANNER") or DEFAULT_SYNTHESIZER_MODEL
+    return DEFAULT_PLANNER_MODEL
 
 
 class LLMError(RuntimeError):
@@ -32,53 +41,6 @@ def _client() -> httpx.Client:
         timeout=httpx.Timeout(90.0, connect=15.0),
         follow_redirects=True,
     )
-
-
-def list_model_ids() -> list[str]:
-    with _client() as client:
-        response = client.get("/models")
-        response.raise_for_status()
-        payload = response.json()
-    data = payload.get("data") if isinstance(payload, dict) else payload
-    ids: list[str] = []
-    if isinstance(data, list):
-        for row in data:
-            if isinstance(row, str):
-                ids.append(row)
-            elif isinstance(row, dict):
-                model_id = row.get("id") or row.get("name")
-                if model_id:
-                    ids.append(str(model_id))
-    return ids
-
-
-def _score_model(model_id: str, hints: tuple[str, ...]) -> int:
-    lower = model_id.lower()
-    if any(bad in lower for bad in AVOID_HINTS):
-        return -100
-    score = 0
-    for hint in hints:
-        if hint in lower:
-            score += 10
-    return score
-
-
-def pick_model(role: str, configured: str, available: list[str] | None = None) -> str:
-    if configured:
-        return configured
-    hints = PLANNER_HINTS if role == "planner" else SYNTH_HINTS
-    ids = available if available is not None else []
-    if not ids:
-        try:
-            ids = list_model_ids()
-        except Exception:
-            ids = []
-    ranked = sorted(ids, key=lambda mid: _score_model(mid, hints), reverse=True)
-    if ranked and _score_model(ranked[0], hints) > 0:
-        return ranked[0]
-    if ranked:
-        return ranked[0]
-    return "gpt-5.4-mini" if role == "planner" else "gpt-5.4"
 
 
 def chat(messages: list[dict[str, str]], *, model: str, max_tokens: int) -> str:

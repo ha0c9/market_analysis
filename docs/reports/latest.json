@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T08:25:30Z",
-  "focus": "医药相关",
+  "generatedAt": "2026-08-25T08:37:51Z",
+  "focus": "存储和光通信相关",
   "timeWindow": {
-    "from": "2025-07-03T07:00:00Z",
-    "to": "2026-08-25T08:25:30Z"
+    "from": "2026-08-17T23:19:00Z",
+    "to": "2026-08-25T08:37:51Z"
   },
   "dataCoverage": {
     "news": true,
@@ -102,179 +102,224 @@
         "asOf": "2026-08-25T16:14:52Z"
       },
       {
-        "symbol": "sz300760",
-        "name": "迈瑞医疗",
-        "price": 162.12,
-        "changePct": 2.17,
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 120.0,
+        "changePct": -0.48,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:24Z"
+        "asOf": "2026-08-25T16:14:51Z"
       },
       {
-        "symbol": "sh600276",
-        "name": "恒瑞医药",
-        "price": 46.49,
-        "changePct": -0.58,
+        "symbol": "sz002371",
+        "name": "北方华创",
+        "price": 700.4,
+        "changePct": -1.06,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:55Z"
+        "asOf": "2026-08-25T16:14:03Z"
       },
       {
-        "symbol": "sz002821",
-        "name": "凯莱英",
-        "price": 172.23,
-        "changePct": 10.0,
+        "symbol": "sh600498",
+        "name": "烽火通信",
+        "price": 40.66,
+        "changePct": 3.94,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:57Z"
+        "asOf": "2026-08-25T16:14:41Z"
       },
       {
-        "symbol": "PFE",
-        "name": "Pfizer, Inc.",
-        "price": 27.97,
-        "changePct": 13.97718011409943,
-        "changePct5d": 4.0937790836052645,
-        "asOf": "2026-08-24T20:02:08Z"
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "price": 846.0,
+        "changePct": -2.78,
+        "changePct5d": null,
+        "asOf": "2026-08-25T16:14:12Z"
       },
       {
-        "symbol": "MRK",
-        "name": "Merck & Company, Inc.",
-        "price": 150.66,
-        "changePct": 14.94621194781416,
-        "changePct5d": 10.803855489831026,
-        "asOf": "2026-08-24T20:03:58Z"
+        "symbol": "MU",
+        "name": "Micron Technology, Inc.",
+        "price": 910.43,
+        "changePct": -1.1422987132852058,
+        "changePct5d": -10.014332327572895,
+        "asOf": "2026-08-24T20:00:01Z"
       },
       {
-        "symbol": "LLY",
-        "name": "Eli Lilly and Company",
-        "price": 1246.93,
-        "changePct": 4.255746093325419,
-        "changePct5d": 5.389805071928699,
-        "asOf": "2026-08-24T20:04:22Z"
+        "symbol": "WDC",
+        "name": "Western Digital Corporation",
+        "price": 435.38,
+        "changePct": -16.240861869949974,
+        "changePct5d": -18.773904040861822,
+        "asOf": "2026-08-24T20:00:00Z"
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc.",
+        "price": 358.76,
+        "changePct": -6.0640971931294585,
+        "changePct5d": -8.57986992293267,
+        "asOf": "2026-08-24T20:00:01Z"
+      },
+      {
+        "symbol": "MRVL",
+        "name": "Marvell Technology, Inc.",
+        "price": 229.29,
+        "changePct": 18.0507645574834,
+        "changePct5d": -2.1508165858145523,
+        "asOf": "2026-08-24T20:00:00Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "创新药",
+      "sector": "存储芯片",
       "heat": 1,
-      "heatScore": 0.5,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "down",
-      "narrative": "创新药近期相关报道 7 条。相关标的均涨跌 -0.58%。此段为规则草稿，尚未经大模型综合。",
+      "heatScore": 0.9,
+      "priceAction": "down",
+      "calibration": "divergence",
+      "direction": "mixed",
+      "narrative": "存储芯片板块近期剧烈波动，尽管有报道称价格飙升但市场出现有价无市现象，同时美股存储芯片股（如闪迪、美光）大幅下跌，而A股兆易创新逆势上涨。价格走势与基本面信号出现背离，可能反映市场对涨价持续性的担忧。",
       "evidence": [
         {
-          "claim": "2026年第32周08.03-08.09全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第32周08.03-08.09全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBodm1Qc3E1TlFTN2QzbWFNa3FoWlNYOTV0UEJKMzFSZFB6d255aE42V1k2dW1lWG9hajU3aVlGQmdJRVhiRThoZGFYQVpGQTB0Rk55eENiTQ?oc=5",
-          "publishedAt": "2026-08-12T09:28:14Z",
+          "claim": "存储芯片价格狂飙但有价无市，买卖双方僵持",
+          "sourceTitle": "存储芯片进入怪圈：价格狂飙却有价无市 买卖双方彻底僵住了 - qq.com",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE54SDFvM3dJYVF6UFV3VGJXMTRPUXZPcjBCRjBMREJIdzAyc013U2dleDRWSUZzWU5rM1dwLW9YTWdYYVI4YlkyV1Z6UzZxenZ1SDRtd0hOVk9rSnYwQU96TzlR?oc=5",
+          "publishedAt": "2026-08-19T08:00:00Z",
           "weight": "primary"
         },
         {
-          "claim": "2026年第33周08.10-08.16全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第33周08.10-08.16全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBUbFhPelFzZUtwMTlEX0NWRTZDQWoxMVZQNUFpNnA2MzRKVV9QS3N5aWNCRjl3SDItR2JfdlAwRmVZaFVoSE93LUd6YVROQlI0TVNBQnJVOA?oc=5",
-          "publishedAt": "2026-08-10T07:00:00Z",
-          "weight": "supporting"
+          "claim": "美股存储芯片板块下挫，闪迪跌超5%",
+          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
+          "publishedAt": "2026-08-24T10:17:05Z",
+          "weight": "primary"
         },
         {
-          "claim": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 摩熵医药",
-          "sourceTitle": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE4xNEF4VUVINWpLZFY2X1VqZmIxdkpUdXoyRGx4dTQ1cS1WZHJJa3VZVmIyRlFaTVM3azVfblQ1ZmZtcmUxNTFsZGY2VUhXNWt3UkRRVUk3Zw?oc=5",
-          "publishedAt": "2025-12-11T08:00:00Z",
+          "claim": "存储芯片、光通信板块集体暴跌",
+          "sourceTitle": "今夜，AI硬件“全崩”！存储芯片、光通信，集体暴跌 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE93Mm9KVWV2WkpoeWMzU3RUdTFRa1B0ajN2RzI3M1lnYzkyc2NEWGxmQW9LV0hKakVpT29vcDU1dkJqMWdwdElZc28xWm14VGdXZV9PRDJGVHZZdndzcGZVeDI5Z1NmaGVoQ0RXVzh0bUVkbXpOWjVySUNvYU4?oc=5",
+          "publishedAt": "2026-08-24T15:53:00Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.45,
-      "invalidatedIf": "出现与当前报道方向相反的官方政策或财报，或相关标的大幅反向波动。"
+      "counterEvidence": [
+        {
+          "claim": "A股存储芯片股兆易创新上涨3.63%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T16:14:52Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.6,
+      "invalidatedIf": "若存储芯片价格持续上涨且成交量放大，或美股存储芯片股止跌回升，则当前看空逻辑可能失效。"
     },
     {
-      "sector": "医疗器械",
+      "sector": "光模块",
       "heat": 2,
-      "heatScore": 0.5,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "down",
-      "narrative": "医疗器械近期相关报道 7 条。相关标的均涨跌 -0.58%。此段为规则草稿，尚未经大模型综合。",
+      "heatScore": 0.8,
+      "priceAction": "down",
+      "calibration": "divergence",
+      "direction": "mixed",
+      "narrative": "光模块板块近期承压，美股光通信股（如Lumentum）下跌，A股中际旭创下跌，但烽火通信逆势上涨。市场对AI硬件需求预期仍高，但短期股价回调可能反映获利了结或对高估值的担忧。",
       "evidence": [
         {
-          "claim": "2026年第32周08.03-08.09全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第32周08.03-08.09全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBodm1Qc3E1TlFTN2QzbWFNa3FoWlNYOTV0UEJKMzFSZFB6d255aE42V1k2dW1lWG9hajU3aVlGQmdJRVhiRThoZGFYQVpGQTB0Rk55eENiTQ?oc=5",
-          "publishedAt": "2026-08-12T09:28:14Z",
+          "claim": "光通信板块下挫，Lumentum跌近5%",
+          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
+          "publishedAt": "2026-08-24T10:17:05Z",
           "weight": "primary"
         },
         {
-          "claim": "2026年第33周08.10-08.16全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第33周08.10-08.16全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBUbFhPelFzZUtwMTlEX0NWRTZDQWoxMVZQNUFpNnA2MzRKVV9QS3N5aWNCRjl3SDItR2JfdlAwRmVZaFVoSE93LUd6YVROQlI0TVNBQnJVOA?oc=5",
-          "publishedAt": "2026-08-10T07:00:00Z",
-          "weight": "supporting"
-        },
-        {
-          "claim": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 摩熵医药",
-          "sourceTitle": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE4xNEF4VUVINWpLZFY2X1VqZmIxdkpUdXoyRGx4dTQ1cS1WZHJJa3VZVmIyRlFaTVM3azVfblQ1ZmZtcmUxNTFsZGY2VUhXNWt3UkRRVUk3Zw?oc=5",
-          "publishedAt": "2025-12-11T08:00:00Z",
+          "claim": "存储芯片、光通信板块集体暴跌",
+          "sourceTitle": "今夜，AI硬件“全崩”！存储芯片、光通信，集体暴跌 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE93Mm9KVWV2WkpoeWMzU3RUdTFRa1B0ajN2RzI3M1lnYzkyc2NEWGxmQW9LV0hKakVpT29vcDU1dkJqMWdwdElZc28xWm14VGdXZV9PRDJGVHZZdndzcGZVeDI5Z1NmaGVoQ0RXVzh0bUVkbXpOWjVySUNvYU4?oc=5",
+          "publishedAt": "2026-08-24T15:53:00Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.45,
-      "invalidatedIf": "出现与当前报道方向相反的官方政策或财报，或相关标的大幅反向波动。"
+      "counterEvidence": [
+        {
+          "claim": "A股光通信股烽火通信上涨3.94%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T16:14:41Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.55,
+      "invalidatedIf": "若光模块龙头股如中际旭创止跌回升，或出现新的需求利好，则当前看空逻辑可能失效。"
     },
     {
-      "sector": "医药商业",
+      "sector": "数据中心",
       "heat": 3,
-      "heatScore": 0.5,
+      "heatScore": 0.7,
       "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "down",
-      "narrative": "医药商业近期相关报道 7 条。相关标的均涨跌 -0.58%。此段为规则草稿，尚未经大模型综合。",
+      "calibration": "insufficientData",
+      "direction": "unclear",
+      "narrative": "数据中心板块缺乏直接新闻，但AI硬件相关板块波动可能影响其表现。美股半导体设备支出预期上调，可能间接利好数据中心建设，但缺乏具体行情数据。",
       "evidence": [
         {
-          "claim": "2026年第32周08.03-08.09全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第32周08.03-08.09全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBodm1Qc3E1TlFTN2QzbWFNa3FoWlNYOTV0UEJKMzFSZFB6d255aE42V1k2dW1lWG9hajU3aVlGQmdJRVhiRThoZGFYQVpGQTB0Rk55eENiTQ?oc=5",
-          "publishedAt": "2026-08-12T09:28:14Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "2026年第33周08.10-08.16全球创新药研发概览 摩熵医药",
-          "sourceTitle": "2026年第33周08.10-08.16全球创新药研发概览 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBUbFhPelFzZUtwMTlEX0NWRTZDQWoxMVZQNUFpNnA2MzRKVV9QS3N5aWNCRjl3SDItR2JfdlAwRmVZaFVoSE93LUd6YVROQlI0TVNBQnJVOA?oc=5",
-          "publishedAt": "2026-08-10T07:00:00Z",
-          "weight": "supporting"
-        },
-        {
-          "claim": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 摩熵医药",
-          "sourceTitle": "九典制药斥资4亿引进镇痛新药YJ2301，加速创新药转型布局肿瘤疼痛双领域 - 摩熵医药",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE4xNEF4VUVINWpLZFY2X1VqZmIxdkpUdXoyRGx4dTQ1cS1WZHJJa3VZVmIyRlFaTVM3azVfblQ1ZmZtcmUxNTFsZGY2VUhXNWt3UkRRVUk3Zw?oc=5",
-          "publishedAt": "2025-12-11T08:00:00Z",
+          "claim": "高盛大幅上调全球半导体设备支出预期",
+          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
+          "publishedAt": "2026-08-24T10:17:05Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [],
-      "confidence": 0.45,
-      "invalidatedIf": "出现与当前报道方向相反的官方政策或财报，或相关标的大幅反向波动。"
+      "confidence": 0.3,
+      "invalidatedIf": "若出现数据中心资本开支或需求相关新闻，则当前判断可能失效。"
+    },
+    {
+      "sector": "半导体设备",
+      "heat": 4,
+      "heatScore": 0.6,
+      "priceAction": "down",
+      "calibration": "divergence",
+      "direction": "mixed",
+      "narrative": "半导体设备板块受高盛上调支出预期支撑，但美股SOXX指数大跌，A股北方华创下跌，显示市场情绪偏弱。基本面利好与股价表现背离，可能反映市场对短期估值或地缘风险的担忧。",
+      "evidence": [
+        {
+          "claim": "高盛大幅上调全球半导体设备支出预期",
+          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
+          "publishedAt": "2026-08-24T10:17:05Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "美股半导体板块集体下跌",
+          "sourceTitle": "美股收盘：三大指数集体下跌，光通信、存储芯片、半导体板块集体爆发 - 京报网",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBXR0NWOWlzUU9uR2lqaW5XM3lSVlVEbldELXc5UFM4X1RDYkRiblAzTkthMWtZbksxWUVDaWJIaFAtZ0lNWnBvVTMwbkNDWFZtVnEtR1ZEQ1p4Y0hfNXJva0N6cjc5R1p5RjdZbFhmT3FuZw?oc=5",
+          "publishedAt": "2026-08-17T23:19:00Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "A股半导体设备股北方华创下跌1.06%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T16:14:03Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.5,
+      "invalidatedIf": "若半导体设备股止跌回升，或高盛预期被证实，则当前看空逻辑可能失效。"
     }
   ],
-  "crossSectorNotes": "规则模式仅做分组摘要；配置 AI_API_KEY 后由模型对照价格写前瞻。",
+  "crossSectorNotes": "存储芯片和光通信板块近期同步下跌，但A股部分个股逆势上涨，显示市场分化。高盛上调半导体设备支出预期，但美股半导体板块仍大跌，可能反映市场对短期估值或宏观因素的担忧。整体来看，AI硬件相关板块波动剧烈，需关注后续价格走势与基本面信号的收敛。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
-    "大模型综合失败",
     "近期稿件不足，已补充稍早的相关报道"
   ],
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 16,
-    "model": "heuristic",
+    "quotes": 18,
+    "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"
   },
   "errors": [
-    "近期稿件不足，已补充稍早的相关报道",
-    "综合模型失败，保留规则草稿: 14 validation errors for Report\nsectorOutlook.0.heat\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='high', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing\nsectorOutlook.0.priceAction\n  Input should be 'up', 'down', 'mixed', 'flat' or 'unknown' [type=literal_error, input_value='恒瑞医药下跌0.58%...，礼来上涨4.26%。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/literal_error\nsectorOutlook.0.evidence.0\n  Input should be a valid dictionary or instance of Evidence [type=model_type, input_value='又一“全球首创”... (2025-07-03T07:00:00Z)', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/model_type\nsectorOutlook.0.evidence.1\n  Input should be a valid dictionary or instance of Evidence [type=model_type, input_value='2026年第32周08.03-08.... (2026-08-12T09:28:14Z)', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/model_type\nsectorOutlook.0.evidence.2\n  Input should be a valid dictionary or instance of Evidence [type=model_type, input_value='生物医药赛道迎来... (2026-08-11T23:55:00Z)', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/model_type\nsectorOutlook.0.counterEvidence\n  Input should be a valid list [type=list_type, input_value='恒瑞医药股价下跌...能力仍有疑虑。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/list_type\nsectorOutlook.1.heat\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing\nsectorOutlook.1.priceAction\n  Input should be 'up', 'down', 'mixed', 'flat' or 'unknown' [type=literal_error, input_value='迈瑞医疗上涨2.17%...板块表现分化。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/literal_error\nsectorOutlook.1.evidence.0\n  Input should be a valid dictionary or instance of Evidence [type=model_type, input_value='【街道动态】合规... (2026-07-03T07:00:00Z)', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/model_type\nsectorOutlook.1.counterEvidence\n  Input should be a valid list [type=list_type, input_value='无直接利空新闻，...判断整体趋势。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/list_type\nsectorOutlook.2.heat\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='low', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing\nsectorOutlook.2.priceAction\n  Input should be 'up', 'down', 'mixed', 'flat' or 'unknown' [type=literal_error, input_value='无直接相关个股行...缺乏新闻覆盖。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/literal_error\nsectorOutlook.2.direction\n  Input should be 'up', 'down', 'mixed' or 'unclear' [type=literal_error, input_value='neutral', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/literal_error\nsectorOutlook.2.counterEvidence\n  Input should be a valid list [type=list_type, input_value='无相关新闻，无法判断方向。', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/list_type"
+    "近期稿件不足，已补充稍早的相关报道"
   ]
 }

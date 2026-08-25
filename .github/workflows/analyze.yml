@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       focus:
-        description: 分析侧重点，如 存储相关
+        description: 分析侧重点，如 医药相关、恒瑞医药、sh600276
         required: false
         default: ""
       lookback_hours:

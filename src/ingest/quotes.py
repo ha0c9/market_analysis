@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from src.ingest.news import http_client, run_parallel
 from src.models import QuoteRow
 from src.settings import load_yaml
-from src.timeutil import isoformat, parse_datetime
+from src.timeutil import isoformat, parse_beijing_compact
 
 
 def normalize_symbol(raw: str) -> str:
@@ -48,7 +48,7 @@ def parse_tencent_body(body: str) -> list[QuoteRow]:
             change_pct = float(fields[32]) if fields[32] else None
         except ValueError:
             price, change_pct = None, None
-        as_of = isoformat(parse_datetime(fields[30] if len(fields) > 30 else ""))
+        as_of = isoformat(parse_beijing_compact(fields[30] if len(fields) > 30 else ""))
         prefix = "sh" if chunk.startswith("v_sh") else "sz" if chunk.startswith("v_sz") else ""
         symbol = f"{prefix}{code}" if prefix else code
         rows.append(
@@ -131,24 +131,67 @@ def fetch_quotes(symbols: list[str]) -> tuple[list[QuoteRow], list[str]]:
     return rows, errors
 
 
-def snapshot_from_rows(rows: list[QuoteRow], source: str) -> dict:
+def _is_etf_symbol(symbol: str, name: str = "") -> bool:
+    blob = f"{symbol} {name}".upper()
+    if "ETF" in blob:
+        return True
+    if symbol[:2] in {"sh", "sz"} and len(symbol) >= 8:
+        return symbol[2:4] in {"51", "15", "56", "58"}
+    return False
+
+
+def snapshot_from_rows(
+    rows: list[QuoteRow],
+    source: str,
+    *,
+    benchmark_ids: list[str] | None = None,
+    focus_ids: list[str] | None = None,
+    etf_ids: list[str] | None = None,
+) -> dict:
     sources = load_yaml("sources.yml")
-    benchmark_ids = {row["symbol"] for row in sources.get("benchmarks") or []}
-    sector_ids = {row["symbol"] for row in sources.get("sector_quotes") or []}
-    as_of = next((row.asOf for row in rows if row.asOf), "")
+    benches = {
+        *(row["symbol"] for row in sources.get("benchmarks") or []),
+        "sh000001",
+        "sh000300",
+        "sz399006",
+        "^GSPC",
+        "^IXIC",
+        "^HSI",
+    }
+    if benchmark_ids:
+        benches = {normalize_symbol(symbol) for symbol in benchmark_ids} | {
+            "sh000001",
+            "sh000300",
+            "sz399006",
+            "^GSPC",
+            "^IXIC",
+            "^HSI",
+        }
+    focus = [normalize_symbol(symbol) for symbol in (focus_ids or []) if normalize_symbol(symbol)]
+    focus_set = set(focus)
+    etf_set = {normalize_symbol(symbol) for symbol in (etf_ids or []) if normalize_symbol(symbol)}
+    as_of = ""
+    for preferred in ("sh000001", "sh000300", "sz399006"):
+        as_of = next((row.asOf for row in rows if row.symbol == preferred and row.asOf), "")
+        if as_of:
+            break
+    if not as_of:
+        as_of = next((row.asOf for row in rows if row.asOf), "")
+    if focus_set:
+        related = [row for row in rows if row.symbol in focus_set]
+    else:
+        related = [row for row in rows if row.symbol not in benches]
+
+    def is_sector(row: QuoteRow) -> bool:
+        if etf_set:
+            return row.symbol in etf_set
+        return _is_etf_symbol(row.symbol, row.name)
+
     return {
         "asOf": as_of,
         "delayed": True,
         "source": source,
-        "benchmarks": [
-            row.model_dump()
-            for row in rows
-            if row.symbol in benchmark_ids or row.symbol in {"sh000001", "sh000300", "sz399006", "^GSPC", "^IXIC", "^HSI"}
-        ],
-        "sectors": [row.model_dump() for row in rows if row.symbol in sector_ids],
-        "tickers": [
-            row.model_dump()
-            for row in rows
-            if row.symbol not in benchmark_ids and row.symbol not in sector_ids
-        ],
+        "benchmarks": [row.model_dump() for row in rows if row.symbol in benches],
+        "sectors": [row.model_dump() for row in related if is_sector(row)],
+        "tickers": [row.model_dump() for row in related if not is_sector(row)],
     }

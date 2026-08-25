@@ -18,7 +18,7 @@
     <section class="panel controls">
       <label>
         分析侧重点
-        <input id="focus" type="text" placeholder="例如：存储相关" />
+        <input id="focus" type="text" placeholder="例如：医药相关、恒瑞医药、sh600276" />
       </label>
       <label>
         回看小时
@@ -28,13 +28,25 @@
       <button id="reload" type="button" class="ghost">刷新报告</button>
     </section>
     <p class="hint" id="hint">
-      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。
+      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。板块 ETF 与个股随侧重点变化；大盘基准固定。
     </p>
 
     <section id="status" class="panel status" hidden></section>
-    <section id="snapshot" class="panel" hidden></section>
-    <section id="outlook" hidden></section>
-    <section id="notes" class="panel" hidden></section>
+    <section id="snapshot" class="panel snapshot" hidden></section>
+    <section id="ai-summary" class="ai-summary" hidden>
+      <header class="ai-summary-head">
+        <div>
+          <p class="kicker">AI 总结</p>
+          <h2>板块前瞻与交叉笔记</h2>
+        </div>
+        <span id="ai-badge" class="ai-badge">—</span>
+      </header>
+      <p class="hint ai-summary-note">
+        以下叙述由规划/综合模型（或规则草稿）根据公开新闻与行情写成，不是行情接口原文。
+      </p>
+      <div id="outlook"></div>
+      <section id="notes" class="panel notes-inside"></section>
+    </section>
     <section id="errors" class="panel errors" hidden></section>
 
     <script src="./config.js"></script>

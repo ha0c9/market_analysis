@@ -75,6 +75,13 @@ function renderEvidence(items) {
     .join("")}</ul>`;
 }
 
+function aiLabel(report) {
+  const synth = String(report.stats?.model || "heuristic");
+  if (synth === "sample") return { text: "示例文案", heuristic: true };
+  if (!synth || synth === "heuristic") return { text: "规则草稿", heuristic: true };
+  return { text: `模型综合 · ${synth}`, heuristic: false };
+}
+
 function renderReport(report) {
   const windowFrom = formatBeijing(report.timeWindow?.from);
   const windowTo = formatBeijing(report.timeWindow?.to);
@@ -90,12 +97,18 @@ function renderReport(report) {
   const snap = report.marketSnapshot || {};
   $("snapshot").hidden = false;
   $("snapshot").innerHTML =
+    `<p class="section-kicker">行情快照</p>` +
+    `<p class="hint">公开行情，不是 AI 生成。大盘基准固定；板块 ETF 与个股随本次侧重点变化。</p>` +
     `<p class="hint">行情时间：${formatBeijing(snap.asOf)}（可能延迟）</p>` +
-    renderQuotes("基准", snap.benchmarks) +
-    renderQuotes("板块 / ETF", snap.sectors) +
-    renderQuotes("相关标的", snap.tickers);
+    renderQuotes("基准（大盘）", snap.benchmarks) +
+    renderQuotes("板块 / ETF（随侧重点）", snap.sectors) +
+    renderQuotes("相关标的（随侧重点）", snap.tickers);
 
-  $("outlook").hidden = false;
+  const label = aiLabel(report);
+  $("ai-summary").hidden = false;
+  $("ai-badge").textContent = label.text;
+  $("ai-badge").className = "ai-badge" + (label.heuristic ? " heuristic" : "");
+
   $("outlook").innerHTML = (report.sectorOutlook || [])
     .map(
       (sector) => `
@@ -117,7 +130,6 @@ function renderReport(report) {
     )
     .join("");
 
-  $("notes").hidden = false;
   $("notes").innerHTML = `
     <p>${report.crossSectorNotes || ""}</p>
     <p class="hint">${(report.limitations || []).join(" · ")}</p>

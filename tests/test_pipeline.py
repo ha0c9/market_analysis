@@ -83,6 +83,31 @@ class QuoteTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].name, "上证指数")
         self.assertAlmostEqual(rows[0].changePct or 0, 0.20)
+        self.assertEqual(rows[0].asOf, "2026-08-25T05:31:57Z")
+
+    def test_snapshot_follows_focus_not_global_sectors(self) -> None:
+        from src.ingest.quotes import snapshot_from_rows
+        from src.models import QuoteRow
+
+        rows = [
+            QuoteRow(symbol="sh000001", name="上证指数", changePct=0.1, asOf="2026-08-25T05:31:57Z"),
+            QuoteRow(symbol="sh512480", name="半导体ETF", changePct=-0.2, asOf="2026-08-25T05:31:57Z"),
+            QuoteRow(symbol="sh512010", name="医药ETF", changePct=0.5, asOf="2026-08-25T05:31:57Z"),
+            QuoteRow(symbol="sh600276", name="恒瑞医药", changePct=1.0, asOf="2026-08-25T05:31:57Z"),
+            QuoteRow(symbol="sh603986", name="兆易创新", changePct=3.0, asOf="2026-08-25T05:31:57Z"),
+        ]
+        snap = snapshot_from_rows(
+            rows,
+            "test",
+            benchmark_ids=["sh000001"],
+            focus_ids=["sh512010", "sh600276"],
+            etf_ids=["sh512010"],
+        )
+        self.assertEqual(snap["asOf"], "2026-08-25T05:31:57Z")
+        self.assertEqual([row["symbol"] for row in snap["sectors"]], ["sh512010"])
+        self.assertEqual([row["symbol"] for row in snap["tickers"]], ["sh600276"])
+        self.assertNotIn("sh512480", [row["symbol"] for row in snap["sectors"]])
+        self.assertNotIn("sh603986", [row["symbol"] for row in snap["tickers"]])
 
 
 class DistillTests(unittest.TestCase):
@@ -142,6 +167,31 @@ class PlannerTests(unittest.TestCase):
         plan = heuristic_plan("存储相关", 36)
         self.assertTrue(any("存储" in sector for sector in plan.sectors))
         self.assertIn("sh603986", plan.tickers)
+        self.assertTrue(any("情绪" in query or "北向" in query for query in plan.newsQueries))
+
+    def test_pharma_preset_not_semiconductor(self) -> None:
+        from src.planner import is_stock_focus
+
+        self.assertFalse(is_stock_focus("医药"))
+        self.assertFalse(is_stock_focus("医药相关"))
+        plan = heuristic_plan("医药相关", 36)
+        self.assertIn("sh600276", plan.tickers)
+        self.assertNotIn("sh603986", plan.tickers)
+        self.assertIn("sh512010", plan.etfs)
+        self.assertNotIn("SOXX", plan.etfs)
+        self.assertTrue(any("情绪" in query or "北向" in query for query in plan.newsQueries))
+
+    def test_stock_name_focus(self) -> None:
+        from src.planner import is_stock_focus
+
+        self.assertTrue(is_stock_focus("恒瑞医药"))
+        self.assertTrue(is_stock_focus("sh600276"))
+        plan = heuristic_plan("恒瑞医药", 36)
+        self.assertEqual(plan.tickers[0], "sh600276")
+        self.assertTrue(any("恒瑞" in query for query in plan.newsQueries))
+        self.assertTrue(any("情绪" in query or "北向" in query for query in plan.newsQueries))
+        self.assertIn("sh512010", plan.etfs)
+        self.assertNotIn("sh603986", plan.tickers)
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
 
     quote_symbols = [
         *[row["symbol"] for row in sources.get("benchmarks") or []],
-        *[row["symbol"] for row in sources.get("sector_quotes") or []],
+        *[normalize_symbol(symbol) for symbol in plan.etfs],
         *[normalize_symbol(symbol) for symbol in plan.tickers],
     ]
     quotes, quote_errors = fetch_quotes(quote_symbols)
@@ -55,7 +55,13 @@ def build_report(focus: str, lookback_hours: int) -> Path:
             report.limitations.append(warning)
     report.stats["plannerModel"] = planner_model
     report.stats["model"] = model
-    report.marketSnapshot = snapshot_from_rows(quotes, report.marketSnapshot.get("source") or "tencent+yahoo")
+    report.marketSnapshot = snapshot_from_rows(
+        quotes,
+        report.marketSnapshot.get("source") or "tencent+yahoo",
+        benchmark_ids=plan.benchmarks,
+        focus_ids=[*plan.etfs, *plan.tickers],
+        etf_ids=plan.etfs,
+    )
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     public_reports = ROOT / "reports"
@@ -92,7 +98,7 @@ def _refresh_index(directory: Path, keep: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a market narrative analysis job")
-    parser.add_argument("--focus", default="", help="分析侧重点，如：存储相关")
+    parser.add_argument("--focus", default="", help="分析侧重点，如：医药相关、恒瑞医药、sh600276")
     parser.add_argument("--lookback-hours", type=int, default=36)
     args = parser.parse_args()
     from src.llm import log, probe_llm, public_url_parts, resolve_model

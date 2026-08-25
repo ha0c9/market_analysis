@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T15:55:15Z",
-  "focus": "医药相关",
+  "generatedAt": "2026-08-25T15:57:44Z",
+  "focus": "资金流入分析",
   "timeWindow": {
-    "from": "2026-08-19T04:02:00Z",
-    "to": "2026-08-25T15:55:15Z"
+    "from": "2026-07-30T07:00:00Z",
+    "to": "2026-08-25T15:57:44Z"
   },
   "dataCoverage": {
     "news": true,
@@ -68,254 +68,114 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7670.95,
-        "changePct": 0.23638400600469733,
-        "changePct5d": -0.27054368501600035,
-        "asOf": "2026-08-25T15:55:14Z"
+        "price": 7672.48,
+        "changePct": 0.25637653203200994,
+        "changePct5d": -0.2506550613087577,
+        "asOf": "2026-08-25T15:57:41Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26121.87,
-        "changePct": 0.5453406994226473,
-        "changePct5d": -0.638431503769743,
-        "asOf": "2026-08-25T15:55:10Z"
+        "price": 26123.822,
+        "changePct": 0.5528541165342515,
+        "changePct5d": -0.6310022665117043,
+        "asOf": "2026-08-25T15:57:42Z"
       }
     ],
-    "sectors": [
-      {
-        "symbol": "sh512010",
-        "name": "医药ETF易方达",
-        "price": 0.383,
-        "changePct": 1.86,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
-      },
-      {
-        "symbol": "sh512170",
-        "name": "医疗ETF华宝",
-        "price": 0.347,
-        "changePct": 2.36,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
-      },
-      {
-        "symbol": "sz159992",
-        "name": "创新药ETF银华",
-        "price": 0.868,
-        "changePct": 2.12,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:36Z"
-      },
-      {
-        "symbol": "sz159929",
-        "name": "医药ETF汇添富",
-        "price": 1.341,
-        "changePct": 1.9,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
-      },
-      {
-        "symbol": "sh513180",
-        "name": "恒生科技ETF华夏",
-        "price": 0.579,
-        "changePct": -0.17,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:50Z"
-      },
-      {
-        "symbol": "XBI",
-        "name": "State Street SPDR S&P Biotech E",
-        "price": 168.76,
-        "changePct": 2.795883463634552,
-        "changePct5d": 5.402531923995957,
-        "asOf": "2026-08-25T15:55:13Z"
-      }
-    ],
+    "sectors": [],
     "tickers": [
       {
-        "symbol": "sh600276",
-        "name": "恒瑞医药",
-        "price": 46.49,
-        "changePct": -0.58,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:55Z"
-      },
-      {
-        "symbol": "sh688180",
-        "name": "君实生物-U",
-        "price": 35.25,
-        "changePct": 1.15,
+        "symbol": "sh601398",
+        "name": "工商银行",
+        "price": 7.9,
+        "changePct": 0.13,
         "changePct5d": null,
         "asOf": "2026-08-25T08:14:31Z"
-      },
-      {
-        "symbol": "sz300760",
-        "name": "迈瑞医疗",
-        "price": 162.12,
-        "changePct": 2.17,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:24Z"
-      },
-      {
-        "symbol": "sz000538",
-        "name": "云南白药",
-        "price": 50.0,
-        "changePct": 1.01,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:39Z"
-      },
-      {
-        "symbol": "sh603259",
-        "name": "药明康德",
-        "price": 161.0,
-        "changePct": 3.31,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:49Z"
-      },
-      {
-        "symbol": "sz000661",
-        "name": "长春高新",
-        "price": 79.8,
-        "changePct": 4.85,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:30Z"
-      },
-      {
-        "symbol": "sh688271",
-        "name": "联影医疗",
-        "price": 106.77,
-        "changePct": 1.3,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:55Z"
-      },
-      {
-        "symbol": "LLY",
-        "name": "Eli Lilly and Company",
-        "price": 1256.101,
-        "changePct": 0.7354820153519626,
-        "changePct5d": 2.477806393272508,
-        "asOf": "2026-08-25T15:54:55Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "创新药",
+      "sector": "银行",
       "heat": 1,
-      "heatScore": 0.95,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "创新药板块受抗癌疫苗重大突破消息刺激，市场情绪高涨，相关个股和ETF表现强势，资金流入明显。",
-      "evidence": [
-        {
-          "claim": "抗癌疫苗重大突破消息传来，医药股彻底沸腾",
-          "sourceTitle": "沪指收复3900点！抗癌疫苗重大突破消息传来，医药股彻底沸腾！",
-          "url": "https://news.google.com/rss/articles/CBMisgpBVV95cUxNRnVXM2IxTW82Nl9qS0pSc1lHNXF3cGE0R0ZjVWl3TnBCczNnQ3JnZ1RXcFRqR0VnSGZtT05pY0o0d1JxS1RmRDFPemxOTi02MnduaElqeWt4QmFsQW1yd3hGeTNjVE9TVEROZi1JUExMN1hnYUNFZjh2eUhuamlFa1ZIVy1Td2U0STBKa1NTSkppMkY2VzkwaXJ2Sldsc3NLSUs5bWRkekZvRTF0Z3c4dV91SjBhT0dQRWdxNkJsemJrcEhlRHBIN2paalpxdEduWVZ1VVllR3FrZmNUQTVWMmhXYTZPV2ZXVFR5TXBqZWY4aFF1eUNDTk5yV2ZEV3l6amFVYlNyRXFlVjN1bmQ4LTR5ai1INXhucTRKc1ZUd1NUcWFvRGk4ZXFfTmZsdnVrelVjSVNZTUhUcTdQWWo1U2NUVUNVVEkxYWFxQkY4S2pkWFRObkQ1N2tuRjBNTW9KOHlUYVU1NUFJaGY4VFN6T3pUOGxwNUtUaGlwQVFfWjRFX29CZmhNWjY1REt3SldsRUZkUG9XNlRZZTJrYVE4Mm5nTzlOM3VTeXBNbnk4ZFhIZ0tiMEpqc0U1d2loWkhqc1JZM2lZWXVaWVZwSVNtemNIY3BMNEkwdkNYVlpjblVVZVRRN09QUnBGZXItQ2VGeFNtWFNHbG8wZUI2WThWamdPb2FIUkE5UndmdkMyeENuYVpuUFRWMjc0eHdSeGd2OXhmNTJySndrQXpwNTdpdXpob043eERCOXJtVEowcmNvdnBfSEFOa1EwRVlOdjJMUGRuMUtfME9XOEU3RVpSY0JTU3FzeGZBUUJaVERQVU45aU42REk4WXVNUWNVUVk2bmducURTUGhKSVJyQXlrWmhYSlI4VzFuRDhNWUNjTHpLQ0RjTTdlZTUxOFgySTlXd0lNbHJZNmJWQ2YtbGN6ZkFDVzNYTHVNUk9ad3BYcEtvQkprdHM4NVduX0UzZXdES1M5ZC1FRThjcXNvaTJfV204SldpeV9pYktFVHZwb1k4Qm4zYjE4ZEJUQlJ1amZpWUFwZTRRZm1BVVdSNUUxTzljZHdpal9LZTRzaWl3UkJzdURVS2pnVEpkU2YzMXpLdzNRdEpjTDNmLTJZaFZ6V2xmZ1VOX29EazZCeFd5T3AyTEJqWE5KU2tLVWJ1eEZNZUJqTmRoS0VwQzhLVlh3dzUxRlpSY01iMUpDaEJ3eEZCVXRGLXQxNHg3aV9MZ3N1R3dkcWhGLTlWMk1mOXF0cUpOLTdYd3RaOTZvOGNIWGsycEFyc09DRVhaVVVXWmdYMklVb04wT0daT2huVFZjVnQxRWRtTHJDbVo2ZGU3MmZOWW1QTzFVWWUydW9qSUJWcEQxRW5hTjQtU2tuX0V1cGRiTnU1cl9JVFZUZU5NX2Y0djREUUg1eWRsbjZscTh5WUFaenR2SWMwZkpEYVRwUm5HV1NJekEwVTBBOC1qdHQyQ2gzcUl0bEdWcGVwdGxRNG52UVA3WFRabl80SjlwZWEtTUpvYmtNbXlzMm9NamJUQjRuNHRtc1g3ZkZVWl9ERUdUeGxuNGlwNFo5QlR0OXpZdG1teFFoS0xHLVcwbXBWcEFPaUNiQzk5YmhZVElnSWhYZEFkMzlIaUpudHJJb1FtRGp4dy10LWhaRFdyb2E2bEF3cHE1eU43NmZGSkdYNU5KODFfNUx3YnBPb1FtbHY2U3pueU1ueHRBUnI0UTZIMElzR2E4QlZCWnIxaXdQM093YmdkdzEyeVRvTzBUM0dR?oc=5",
-          "publishedAt": "2026-08-21T00:02:28Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "创新药ETF银华上涨2.12%",
-          "sourceTitle": "创新药ETF银华",
-          "url": "https://example.com/quote/sz159992",
-          "publishedAt": "2026-08-25T08:14:36Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "恒瑞医药下跌0.58%",
-          "sourceTitle": "恒瑞医药",
-          "url": "https://example.com/quote/sh600276",
-          "publishedAt": "2026-08-25T08:14:55Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.85,
-      "invalidatedIf": "抗癌疫苗消息被证伪或市场情绪快速消退"
-    },
-    {
-      "sector": "医疗器械",
-      "heat": 2,
       "heatScore": 0.8,
       "priceAction": "up",
-      "calibration": "confirming",
+      "calibration": "insufficientData",
       "direction": "up",
-      "narrative": "医疗器械板块盘中走强，指数涨超5%，集采政策预期缓和，龙头个股表现积极。",
+      "narrative": "银行板块资金流入迹象不明显，但工商银行股价微涨，市场情绪整体回暖可能带来间接支撑。缺乏直接资金流入新闻，需进一步观察北向资金动向。",
       "evidence": [
         {
-          "claim": "医疗器械指数涨超5%",
-          "sourceTitle": "医疗器械ETF富国（159056） | 板块盘中走强，医疗器械指数涨超5%",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBzTS13dHBaTmVLRjhhWXNqNlNvR0lpZF9rS0g1dnZENXRwWVUtMk5mY01WUVpGaDY3ZXJxa1dTamxtZDIzSmxubTZCM3pmX0xTZ1l3Wk5zcnpRaGxJMUVGWVpn?oc=5",
-          "publishedAt": "2026-08-20T02:22:40Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "迈瑞医疗上涨2.17%",
-          "sourceTitle": "迈瑞医疗",
-          "url": "https://example.com/quote/sz300760",
-          "publishedAt": "2026-08-25T08:14:24Z",
+          "claim": "工商银行股价微涨0.13%，显示一定韧性",
+          "sourceTitle": "工商银行行情快照",
+          "url": "https://example.com/quote/sh601398",
+          "publishedAt": "2026-08-25T08:14:31Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "联影医疗仅上涨1.3%",
-          "sourceTitle": "联影医疗",
-          "url": "https://example.com/quote/sh688271",
-          "publishedAt": "2026-08-25T08:14:55Z",
+          "claim": "缺乏银行板块资金流入的直接新闻，资金流向不明确",
+          "sourceTitle": "新闻列表",
+          "url": "https://example.com/news",
+          "publishedAt": "2026-08-25T00:00:00Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.75,
-      "invalidatedIf": "集采政策超预期收紧或板块出现大幅回调"
+      "confidence": 0.3,
+      "invalidatedIf": "出现银行板块主力资金净流出的明确数据或北向资金大幅减持银行股"
     },
     {
-      "sector": "医药商业",
-      "heat": 3,
-      "heatScore": 0.6,
+      "sector": "非银金融",
+      "heat": 2,
+      "heatScore": 0.5,
       "priceAction": "mixed",
       "calibration": "insufficientData",
       "direction": "mixed",
-      "narrative": "医药商业板块缺乏直接新闻驱动，整体表现跟随大盘，个股分化。",
+      "narrative": "非银金融板块缺乏直接新闻，但市场风险偏好回升可能利好券商等非银金融。沪深300微跌，创业板指下跌，整体市场分化，非银金融方向不明。",
       "evidence": [
         {
-          "claim": "A股成交量跌破2万亿元，通信、有色走强",
-          "sourceTitle": "A股成交量跌破2万亿元，通信、有色走强，下周怎么走？",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiQnVJaTZOclFVclZrbEgzNHROQ0p2eXFtTFlkS3REOVVwY3hJdUR1N01HMUZvM3VxQ2I3VFA1SWZTNDFkaHhJMUpQVldCWkdFZHozN29Dall2WEZJ?oc=5",
-          "publishedAt": "2026-08-21T14:05:00Z",
+          "claim": "市场风险偏好回升，加密货币和美股资金流入，可能间接提振非银金融",
+          "sourceTitle": "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace",
+          "url": "https://www.cnbc.com/2026/08/25/bitcoin-price-near-80000-cryptocurrency-ether-us-treasuries.html",
+          "publishedAt": "2026-08-25T13:09:31Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.4,
-      "invalidatedIf": "出现医药商业板块的明确政策或业绩新闻"
+      "counterEvidence": [
+        {
+          "claim": "沪深300和创业板指下跌，市场情绪谨慎",
+          "sourceTitle": "沪深300行情快照",
+          "url": "https://example.com/quote/sh000300",
+          "publishedAt": "2026-08-25T08:14:14Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.25,
+      "invalidatedIf": "出现非银金融板块资金净流出的明确数据或北向资金大幅减持"
     },
     {
-      "sector": "中药",
+      "sector": "房地产",
       "heat": 3,
-      "heatScore": 0.5,
-      "priceAction": "up",
+      "heatScore": 0.2,
+      "priceAction": "unknown",
       "calibration": "insufficientData",
-      "direction": "up",
-      "narrative": "中药板块缺乏直接新闻，但云南白药等个股上涨，显示一定资金关注。",
-      "evidence": [
+      "direction": "unclear",
+      "narrative": "房地产板块无相关新闻和行情数据，资金流向无法判断。市场整体风险偏好回升可能带来间接影响，但缺乏直接证据。",
+      "evidence": [],
+      "counterEvidence": [
         {
-          "claim": "云南白药上涨1.01%",
-          "sourceTitle": "云南白药",
-          "url": "https://example.com/quote/sz000538",
-          "publishedAt": "2026-08-25T08:14:39Z",
+          "claim": "无房地产板块相关新闻或行情数据",
+          "sourceTitle": "新闻列表",
+          "url": "https://example.com/news",
+          "publishedAt": "2026-08-25T00:00:00Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.35,
-      "invalidatedIf": "中药板块出现重大负面政策或个股业绩暴雷"
+      "confidence": 0.1,
+      "invalidatedIf": "出现房地产板块资金流入或流出的明确数据"
     }
   ],
-  "crossSectorNotes": "医药板块整体受抗癌疫苗突破消息提振，创新药和医疗器械表现强势，但需警惕消息面驱动的持续性。北向资金流向和市场情绪仍需观察。",
+  "crossSectorNotes": "市场整体风险偏好回升，加密货币和美股资金流入明显，但A股主要指数涨跌不一，资金流向分化。银行、非银金融和房地产板块均缺乏直接资金流入新闻，需关注北向资金和主力资金动向。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -324,7 +184,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 22,
+    "quotes": 9,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

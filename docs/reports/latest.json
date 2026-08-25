@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T15:43:39Z",
-  "focus": "国瓷材料",
+  "generatedAt": "2026-08-25T15:55:15Z",
+  "focus": "医药相关",
   "timeWindow": {
-    "from": "2026-07-05T07:00:00Z",
-    "to": "2026-08-25T15:43:39Z"
+    "from": "2026-08-19T04:02:00Z",
+    "to": "2026-08-25T15:55:15Z"
   },
   "dataCoverage": {
     "news": true,
@@ -68,143 +68,254 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7668.8,
-        "changePct": 0.20828993348267488,
-        "changePct5d": -0.2985007545361684,
-        "asOf": "2026-08-25T15:43:37Z"
+        "price": 7670.95,
+        "changePct": 0.23638400600469733,
+        "changePct5d": -0.27054368501600035,
+        "asOf": "2026-08-25T15:55:14Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26124.877,
-        "changePct": 0.5569149029342357,
-        "changePct5d": -0.6269904783923641,
-        "asOf": "2026-08-25T15:43:36Z"
+        "price": 26121.87,
+        "changePct": 0.5453406994226473,
+        "changePct5d": -0.638431503769743,
+        "asOf": "2026-08-25T15:55:10Z"
       }
     ],
-    "sectors": [],
+    "sectors": [
+      {
+        "symbol": "sh512010",
+        "name": "医药ETF易方达",
+        "price": 0.383,
+        "changePct": 1.86,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:42Z"
+      },
+      {
+        "symbol": "sh512170",
+        "name": "医疗ETF华宝",
+        "price": 0.347,
+        "changePct": 2.36,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:42Z"
+      },
+      {
+        "symbol": "sz159992",
+        "name": "创新药ETF银华",
+        "price": 0.868,
+        "changePct": 2.12,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:36Z"
+      },
+      {
+        "symbol": "sz159929",
+        "name": "医药ETF汇添富",
+        "price": 1.341,
+        "changePct": 1.9,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:42Z"
+      },
+      {
+        "symbol": "sh513180",
+        "name": "恒生科技ETF华夏",
+        "price": 0.579,
+        "changePct": -0.17,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:50Z"
+      },
+      {
+        "symbol": "XBI",
+        "name": "State Street SPDR S&P Biotech E",
+        "price": 168.76,
+        "changePct": 2.795883463634552,
+        "changePct5d": 5.402531923995957,
+        "asOf": "2026-08-25T15:55:13Z"
+      }
+    ],
     "tickers": [
       {
-        "symbol": "sz300285",
-        "name": "国瓷材料",
-        "price": 63.24,
-        "changePct": -1.34,
+        "symbol": "sh600276",
+        "name": "恒瑞医药",
+        "price": 46.49,
+        "changePct": -0.58,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:15Z"
+        "asOf": "2026-08-25T08:14:55Z"
+      },
+      {
+        "symbol": "sh688180",
+        "name": "君实生物-U",
+        "price": 35.25,
+        "changePct": 1.15,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:31Z"
+      },
+      {
+        "symbol": "sz300760",
+        "name": "迈瑞医疗",
+        "price": 162.12,
+        "changePct": 2.17,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:24Z"
+      },
+      {
+        "symbol": "sz000538",
+        "name": "云南白药",
+        "price": 50.0,
+        "changePct": 1.01,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:39Z"
+      },
+      {
+        "symbol": "sh603259",
+        "name": "药明康德",
+        "price": 161.0,
+        "changePct": 3.31,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:49Z"
+      },
+      {
+        "symbol": "sz000661",
+        "name": "长春高新",
+        "price": 79.8,
+        "changePct": 4.85,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:30Z"
+      },
+      {
+        "symbol": "sh688271",
+        "name": "联影医疗",
+        "price": 106.77,
+        "changePct": 1.3,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:55Z"
+      },
+      {
+        "symbol": "LLY",
+        "name": "Eli Lilly and Company",
+        "price": 1256.101,
+        "changePct": 0.7354820153519626,
+        "changePct5d": 2.477806393272508,
+        "asOf": "2026-08-25T15:54:55Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "新材料",
+      "sector": "创新药",
       "heat": 1,
-      "heatScore": 0.9,
-      "priceAction": "down",
+      "heatScore": 0.95,
+      "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "国瓷材料作为新材料领域代表，近期氧化锆粉体提价（最高上涨40%）及半年报营收增长16.64%，新能源材料增速领跑，显示行业景气度向好。但股价当日下跌1.34%，可能反映短期获利回吐或市场对高估值的担忧，但基本面改善趋势未变。",
+      "narrative": "创新药板块受抗癌疫苗重大突破消息刺激，市场情绪高涨，相关个股和ETF表现强势，资金流入明显。",
       "evidence": [
         {
-          "claim": "国瓷材料氧化锆提价，多元化高端新材料景气向好",
-          "sourceTitle": "国瓷材料氧化锆提价，多元化高端新材料景气向好 - 搜狐网",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE02WjhhU1VZX2VlODl1eVR0RTVBM2prNUE2dUlUOVpoR2JGNEpNWTZYZC1rSVZYbG1JRXFWYU5sY0Y3bTJ2Q2hxRDhnMXYzcUhMV3c?oc=5",
-          "publishedAt": "2026-08-07T09:46:21Z",
+          "claim": "抗癌疫苗重大突破消息传来，医药股彻底沸腾",
+          "sourceTitle": "沪指收复3900点！抗癌疫苗重大突破消息传来，医药股彻底沸腾！",
+          "url": "https://news.google.com/rss/articles/CBMisgpBVV95cUxNRnVXM2IxTW82Nl9qS0pSc1lHNXF3cGE0R0ZjVWl3TnBCczNnQ3JnZ1RXcFRqR0VnSGZtT05pY0o0d1JxS1RmRDFPemxOTi02MnduaElqeWt4QmFsQW1yd3hGeTNjVE9TVEROZi1JUExMN1hnYUNFZjh2eUhuamlFa1ZIVy1Td2U0STBKa1NTSkppMkY2VzkwaXJ2Sldsc3NLSUs5bWRkekZvRTF0Z3c4dV91SjBhT0dQRWdxNkJsemJrcEhlRHBIN2paalpxdEduWVZ1VVllR3FrZmNUQTVWMmhXYTZPV2ZXVFR5TXBqZWY4aFF1eUNDTk5yV2ZEV3l6amFVYlNyRXFlVjN1bmQ4LTR5ai1INXhucTRKc1ZUd1NUcWFvRGk4ZXFfTmZsdnVrelVjSVNZTUhUcTdQWWo1U2NUVUNVVEkxYWFxQkY4S2pkWFRObkQ1N2tuRjBNTW9KOHlUYVU1NUFJaGY4VFN6T3pUOGxwNUtUaGlwQVFfWjRFX29CZmhNWjY1REt3SldsRUZkUG9XNlRZZTJrYVE4Mm5nTzlOM3VTeXBNbnk4ZFhIZ0tiMEpqc0U1d2loWkhqc1JZM2lZWXVaWVZwSVNtemNIY3BMNEkwdkNYVlpjblVVZVRRN09QUnBGZXItQ2VGeFNtWFNHbG8wZUI2WThWamdPb2FIUkE5UndmdkMyeENuYVpuUFRWMjc0eHdSeGd2OXhmNTJySndrQXpwNTdpdXpob043eERCOXJtVEowcmNvdnBfSEFOa1EwRVlOdjJMUGRuMUtfME9XOEU3RVpSY0JTU3FzeGZBUUJaVERQVU45aU42REk4WXVNUWNVUVk2bmducURTUGhKSVJyQXlrWmhYSlI4VzFuRDhNWUNjTHpLQ0RjTTdlZTUxOFgySTlXd0lNbHJZNmJWQ2YtbGN6ZkFDVzNYTHVNUk9ad3BYcEtvQkprdHM4NVduX0UzZXdES1M5ZC1FRThjcXNvaTJfV204SldpeV9pYktFVHZwb1k4Qm4zYjE4ZEJUQlJ1amZpWUFwZTRRZm1BVVdSNUUxTzljZHdpal9LZTRzaWl3UkJzdURVS2pnVEpkU2YzMXpLdzNRdEpjTDNmLTJZaFZ6V2xmZ1VOX29EazZCeFd5T3AyTEJqWE5KU2tLVWJ1eEZNZUJqTmRoS0VwQzhLVlh3dzUxRlpSY01iMUpDaEJ3eEZCVXRGLXQxNHg3aV9MZ3N1R3dkcWhGLTlWMk1mOXF0cUpOLTdYd3RaOTZvOGNIWGsycEFyc09DRVhaVVVXWmdYMklVb04wT0daT2huVFZjVnQxRWRtTHJDbVo2ZGU3MmZOWW1QTzFVWWUydW9qSUJWcEQxRW5hTjQtU2tuX0V1cGRiTnU1cl9JVFZUZU5NX2Y0djREUUg1eWRsbjZscTh5WUFaenR2SWMwZkpEYVRwUm5HV1NJekEwVTBBOC1qdHQyQ2gzcUl0bEdWcGVwdGxRNG52UVA3WFRabl80SjlwZWEtTUpvYmtNbXlzMm9NamJUQjRuNHRtc1g3ZkZVWl9ERUdUeGxuNGlwNFo5QlR0OXpZdG1teFFoS0xHLVcwbXBWcEFPaUNiQzk5YmhZVElnSWhYZEFkMzlIaUpudHJJb1FtRGp4dy10LWhaRFdyb2E2bEF3cHE1eU43NmZGSkdYNU5KODFfNUx3YnBPb1FtbHY2U3pueU1ueHRBUnI0UTZIMElzR2E4QlZCWnIxaXdQM093YmdkdzEyeVRvTzBUM0dR?oc=5",
+          "publishedAt": "2026-08-21T00:02:28Z",
           "weight": "primary"
         },
         {
-          "claim": "国瓷材料上半年营收增长16.64%，新能源材料增速领跑",
-          "sourceTitle": "鲁股观察 | 国瓷材料上半年营收增长16.64%，新能源材料增速领跑 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5fTmkxckM0YzVlSW1reDJ1aVZyN1FGZXowUlVGWGMwMTFHUlpjTk5QNjdueFpmc2hvcXpJME0tOWUxbDNlaWpxVUNjWFVvR09ZRmg5WWJB?oc=5",
-          "publishedAt": "2026-08-06T07:00:00Z",
-          "weight": "primary"
+          "claim": "创新药ETF银华上涨2.12%",
+          "sourceTitle": "创新药ETF银华",
+          "url": "https://example.com/quote/sz159992",
+          "publishedAt": "2026-08-25T08:14:36Z",
+          "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "股价当日下跌1.34%，可能反映市场对短期涨幅的消化",
-          "sourceTitle": "国瓷材料 300285 中报解读（大白话版） - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQdlFNdTBiNGtPMGhyNUJnZTBCSWdmZ296cEU2eXN2c1AyZHVfZ1ZtdEdZV2JVR0VsYVlEeFRwd1hmQU8zeXpTTUxlVG1xc2xINERZajFJWlZJWW1pWnFnd081eXZlMFo2c2NWSGFDTmNjaGNSVUd3Q2p0Qms0a2FXdmdxYlJCRWdnNGhoRTktOUtTa3FYS1ljSWRPTzhpeFEwTk0xa2VrTndoTUhqMml5Q0NDcFNUX1BBeUczVXNob1NHcFExWGNYN2Q5YXNGM2ZfU2otdFhWTTB2eFVDeFI5TEpEalJ5Y3hYMXlITlYzN0JSUWtVajhPWkZhOXVzbnM?oc=5",
-          "publishedAt": "2026-08-09T07:00:00Z",
+          "claim": "恒瑞医药下跌0.58%",
+          "sourceTitle": "恒瑞医药",
+          "url": "https://example.com/quote/sh600276",
+          "publishedAt": "2026-08-25T08:14:55Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.8,
-      "invalidatedIf": "氧化锆提价未能持续或下游需求不及预期，导致营收增速放缓。"
+      "confidence": 0.85,
+      "invalidatedIf": "抗癌疫苗消息被证伪或市场情绪快速消退"
     },
     {
-      "sector": "电子陶瓷",
+      "sector": "医疗器械",
       "heat": 2,
-      "heatScore": 0.75,
-      "priceAction": "down",
+      "heatScore": 0.8,
+      "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "电子陶瓷行业受MLCC需求增长驱动，国瓷材料MLCC介质粉体及电子浆料销量快速增长，行业景气度提升。但股价下跌可能反映市场对短期涨幅的消化，长期需求趋势仍向好。",
+      "narrative": "医疗器械板块盘中走强，指数涨超5%，集采政策预期缓和，龙头个股表现积极。",
       "evidence": [
         {
-          "claim": "MLCC介质粉体及电子浆料销量快速增长",
-          "sourceTitle": "国瓷材料披露2026年半年报：MLCC介质粉体及电子浆料销量快速增长，长期借款上升3倍 - 新浪财经",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBWWHlxQ0JVaV9oX0VlLUZObTNweGMteTJwRi10N2N1N3lhOUp6amNQQWh2N0lEV2xkYmNSZEU2V2ZXc19kQktjanVUdnpjRXFQSXdfY0IwMmJra3VmRmhRT0VxdjdNcmlvYkU0WEpKOUpQNkhOWVFQZQ?oc=5",
-          "publishedAt": "2026-08-05T07:00:00Z",
+          "claim": "医疗器械指数涨超5%",
+          "sourceTitle": "医疗器械ETF富国（159056） | 板块盘中走强，医疗器械指数涨超5%",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBzTS13dHBaTmVLRjhhWXNqNlNvR0lpZF9rS0g1dnZENXRwWVUtMk5mY01WUVpGaDY3ZXJxa1dTamxtZDIzSmxubTZCM3pmX0xTZ1l3Wk5zcnpRaGxJMUVGWVpn?oc=5",
+          "publishedAt": "2026-08-20T02:22:40Z",
           "weight": "primary"
         },
         {
-          "claim": "国瓷材料猛攻MLCC，显示行业需求旺盛",
-          "sourceTitle": "国瓷材料，猛攻MLCC！ - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBCMWFseWR2Vlc5eUZiVkltUzkxeDk4Z0ZZMi16MlBvM3FtNFlWbkNZcGtURGh0RzlaRUVfZGRxSGo0YjQyN1ozMU01X3U2WFNBdFpsa0REYm1WWm90dVVHYmpYV2xseTNTOE1B?oc=5",
-          "publishedAt": "2026-07-05T07:00:00Z",
+          "claim": "迈瑞医疗上涨2.17%",
+          "sourceTitle": "迈瑞医疗",
+          "url": "https://example.com/quote/sz300760",
+          "publishedAt": "2026-08-25T08:14:24Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "股价下跌可能反映市场对短期涨幅的担忧",
-          "sourceTitle": "国瓷材料 300285 中报解读（大白话版） - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQdlFNdTBiNGtPMGhyNUJnZTBCSWdmZ296cEU2eXN2c1AyZHVfZ1ZtdEdZV2JVR0VsYVlEeFRwd1hmQU8zeXpTTUxlVG1xc2xINERZajFJWlZJWW1pWnFnd081eXZlMFo2c2NWSGFDTmNjaGNSVUd3Q2p0Qms0a2FXdmdxYlJCRWdnNGhoRTktOUtTa3FYS1ljSWRPTzhpeFEwTk0xa2VrTndoTUhqMml5Q0NDcFNUX1BBeUczVXNob1NHcFExWGNYN2Q5YXNGM2ZfU2otdFhWTTB2eFVDeFI5TEpEalJ5Y3hYMXlITlYzN0JSUWtVajhPWkZhOXVzbnM?oc=5",
-          "publishedAt": "2026-08-09T07:00:00Z",
+          "claim": "联影医疗仅上涨1.3%",
+          "sourceTitle": "联影医疗",
+          "url": "https://example.com/quote/sh688271",
+          "publishedAt": "2026-08-25T08:14:55Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.75,
-      "invalidatedIf": "MLCC需求下滑或电子陶瓷行业景气度转弱。"
+      "invalidatedIf": "集采政策超预期收紧或板块出现大幅回调"
     },
     {
-      "sector": "被动元件",
+      "sector": "医药商业",
       "heat": 3,
       "heatScore": 0.6,
-      "priceAction": "down",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "被动元件行业受MLCC需求增长带动，国瓷材料作为上游材料供应商受益。但股价下跌可能反映市场对短期涨幅的消化，行业长期需求趋势向好。",
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "mixed",
+      "narrative": "医药商业板块缺乏直接新闻驱动，整体表现跟随大盘，个股分化。",
       "evidence": [
         {
-          "claim": "MLCC介质粉体及电子浆料销量快速增长",
-          "sourceTitle": "国瓷材料披露2026年半年报：MLCC介质粉体及电子浆料销量快速增长，长期借款上升3倍 - 新浪财经",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBWWHlxQ0JVaV9oX0VlLUZObTNweGMteTJwRi10N2N1N3lhOUp6amNQQWh2N0lEV2xkYmNSZEU2V2ZXc19kQktjanVUdnpjRXFQSXdfY0IwMmJra3VmRmhRT0VxdjdNcmlvYkU0WEpKOUpQNkhOWVFQZQ?oc=5",
-          "publishedAt": "2026-08-05T07:00:00Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "MLCC喧嚣 | 国瓷材料：一包介质粉体能带来什么？",
-          "sourceTitle": "MLCC喧嚣 | 国瓷材料：一包介质粉体能带来什么？ - 观点网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBIak9jNElWMlVKazJoUkhZR1kzTjVVR0plVFZ0S0E0bmFZekplVklqM0FteGFURUYyM2F6YkV3SmlOZlZyWTlPVEwxb0tPSzNtU0ozenZQcmItZllYTVRiaEh3?oc=5",
-          "publishedAt": "2026-07-20T07:00:00Z",
+          "claim": "A股成交量跌破2万亿元，通信、有色走强",
+          "sourceTitle": "A股成交量跌破2万亿元，通信、有色走强，下周怎么走？",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiQnVJaTZOclFVclZrbEgzNHROQ0p2eXFtTFlkS3REOVVwY3hJdUR1N01HMUZvM3VxQ2I3VFA1SWZTNDFkaHhJMUpQVldCWkdFZHozN29Dall2WEZJ?oc=5",
+          "publishedAt": "2026-08-21T14:05:00Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [
+      "counterEvidence": [],
+      "confidence": 0.4,
+      "invalidatedIf": "出现医药商业板块的明确政策或业绩新闻"
+    },
+    {
+      "sector": "中药",
+      "heat": 3,
+      "heatScore": 0.5,
+      "priceAction": "up",
+      "calibration": "insufficientData",
+      "direction": "up",
+      "narrative": "中药板块缺乏直接新闻，但云南白药等个股上涨，显示一定资金关注。",
+      "evidence": [
         {
-          "claim": "股价下跌可能反映市场对短期涨幅的担忧",
-          "sourceTitle": "国瓷材料 300285 中报解读（大白话版） - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQdlFNdTBiNGtPMGhyNUJnZTBCSWdmZ296cEU2eXN2c1AyZHVfZ1ZtdEdZV2JVR0VsYVlEeFRwd1hmQU8zeXpTTUxlVG1xc2xINERZajFJWlZJWW1pWnFnd081eXZlMFo2c2NWSGFDTmNjaGNSVUd3Q2p0Qms0a2FXdmdxYlJCRWdnNGhoRTktOUtTa3FYS1ljSWRPTzhpeFEwTk0xa2VrTndoTUhqMml5Q0NDcFNUX1BBeUczVXNob1NHcFExWGNYN2Q5YXNGM2ZfU2otdFhWTTB2eFVDeFI5TEpEalJ5Y3hYMXlITlYzN0JSUWtVajhPWkZhOXVzbnM?oc=5",
-          "publishedAt": "2026-08-09T07:00:00Z",
+          "claim": "云南白药上涨1.01%",
+          "sourceTitle": "云南白药",
+          "url": "https://example.com/quote/sz000538",
+          "publishedAt": "2026-08-25T08:14:39Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.7,
-      "invalidatedIf": "MLCC需求不及预期或被动元件行业景气度下滑。"
+      "counterEvidence": [],
+      "confidence": 0.35,
+      "invalidatedIf": "中药板块出现重大负面政策或个股业绩暴雷"
     }
   ],
-  "crossSectorNotes": "国瓷材料股价当日下跌1.34%，但近期新闻显示基本面改善（提价、营收增长），可能市场已部分消化利好消息。北向资金流向未提供，但行业景气度向好。需关注后续MLCC需求持续性和公司产能扩张情况。",
+  "crossSectorNotes": "医药板块整体受抗癌疫苗突破消息提振，创新药和医疗器械表现强势，但需警惕消息面驱动的持续性。北向资金流向和市场情绪仍需观察。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -213,7 +324,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 9,
+    "quotes": 22,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

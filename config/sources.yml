@@ -23,7 +23,7 @@ benchmarks:
   - { symbol: sz399006, name: 创业板指 }
   - { symbol: ^HSI, name: 恒生指数 }
   - { symbol: ^N225, name: 日经225 }
-  - { symbol: ^KS11, name: KOSPI }
+  - { symbol: ^KS11, name: 首尔综合指数 }
   - { symbol: ^GSPC, name: 标普500 }
   - { symbol: ^IXIC, name: 纳斯达克 }
 

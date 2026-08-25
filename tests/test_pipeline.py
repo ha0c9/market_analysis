@@ -130,13 +130,22 @@ class QuoteTests(unittest.TestCase):
         )
         names = {row["symbol"]: row["name"] for row in snap["benchmarks"]}
         self.assertEqual(names["^N225"], "日经225")
-        self.assertEqual(names["^KS11"], "KOSPI")
+        self.assertEqual(names["^KS11"], "首尔综合指数")
         self.assertEqual(
             [row["symbol"] for row in snap["benchmarks"]],
             ["sh000001", "^N225", "^KS11"],
         )
         self.assertNotIn("^N225", [row["symbol"] for row in snap["tickers"]])
         self.assertNotIn("^KS11", [row["symbol"] for row in snap["tickers"]])
+
+    def test_yahoo_kospi_change_uses_prior_daily_bar(self) -> None:
+        from src.ingest.quotes import previous_close_from_yahoo
+
+        closes = [6869.83, 6471.17, 6852.58, 6912.95, 6696.96, 6742.74]
+        prev = previous_close_from_yahoo({"chartPreviousClose": 6869.83}, closes, 6742.74)
+        self.assertAlmostEqual(prev or 0, 6696.96)
+        change = (6742.74 / prev - 1.0) * 100
+        self.assertAlmostEqual(change, 0.684, places=2)
 
 
 class DistillTests(unittest.TestCase):

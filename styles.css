@@ -25,6 +25,8 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
 .quotes { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
 .quote { background: #101821; border-radius: 10px; padding: 10px 12px; }
 .quote .name { color: var(--muted); font-size: 12px; }
+.quote .price { font-size: 18px; font-weight: 650; margin: 4px 0 2px; }
+.quote .chg { font-size: 13px; }
 .quote .chg.up { color: var(--up); }
 .quote .chg.down { color: var(--down); }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 12px 0; }

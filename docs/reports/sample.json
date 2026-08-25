@@ -17,20 +17,20 @@
       { "symbol": "sh000001", "name": "上证指数", "price": 3889.6, "changePct": 0.2, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
       { "symbol": "sh000300", "name": "沪深300", "price": 4012.1, "changePct": -0.24, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
       { "symbol": "sz399006", "name": "创业板指", "price": 2413.91, "changePct": -0.52, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
-      { "symbol": "^HSI", "name": "恒生指数", "price": 0, "changePct": 0.41, "changePct5d": null, "asOf": "2026-08-25T08:00:00Z" },
-      { "symbol": "^N225", "name": "日经225", "price": 0, "changePct": 0.49, "changePct5d": null, "asOf": "2026-08-25T06:00:00Z" },
-      { "symbol": "^KS11", "name": "KOSPI", "price": 0, "changePct": -0.42, "changePct5d": null, "asOf": "2026-08-25T06:30:00Z" },
-      { "symbol": "^GSPC", "name": "标普500", "price": 0, "changePct": 0.18, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" },
-      { "symbol": "^IXIC", "name": "纳斯达克", "price": 0, "changePct": 0.27, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" }
+      { "symbol": "^HSI", "name": "恒生指数", "price": 25511.1, "changePct": -0.02, "changePct5d": null, "asOf": "2026-08-25T08:00:00Z" },
+      { "symbol": "^N225", "name": "日经225", "price": 65856.43, "changePct": 0.50, "changePct5d": null, "asOf": "2026-08-25T06:00:00Z" },
+      { "symbol": "^KS11", "name": "首尔综合指数", "price": 6742.74, "changePct": 0.68, "changePct5d": null, "asOf": "2026-08-25T06:32:00Z" },
+      { "symbol": "^GSPC", "name": "标普500", "price": 7652.86, "changePct": -0.28, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" },
+      { "symbol": "^IXIC", "name": "纳斯达克", "price": 25980.19, "changePct": -0.31, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" }
     ],
     "sectors": [
-      { "symbol": "sh512010", "name": "医药ETF", "price": 0, "changePct": 0.42, "changePct5d": 1.1, "asOf": "2026-08-25T05:31:57Z" },
-      { "symbol": "sz159992", "name": "创新药ETF", "price": 0, "changePct": 0.88, "changePct5d": 2.0, "asOf": "2026-08-25T05:31:57Z" }
+      { "symbol": "sh512010", "name": "医药ETF", "price": 1.12, "changePct": 0.42, "changePct5d": 1.1, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sz159992", "name": "创新药ETF", "price": 0.95, "changePct": 0.88, "changePct5d": 2.0, "asOf": "2026-08-25T05:31:57Z" }
     ],
     "tickers": [
-      { "symbol": "sh600276", "name": "恒瑞医药", "price": 0, "changePct": 1.24, "changePct5d": 3.1, "asOf": "2026-08-25T05:31:57Z" },
-      { "symbol": "sz300760", "name": "迈瑞医疗", "price": 0, "changePct": -0.36, "changePct5d": 0.8, "asOf": "2026-08-25T05:31:57Z" },
-      { "symbol": "sh603259", "name": "药明康德", "price": 0, "changePct": 0.71, "changePct5d": 1.4, "asOf": "2026-08-25T05:31:57Z" }
+      { "symbol": "sh600276", "name": "恒瑞医药", "price": 48.26, "changePct": 1.24, "changePct5d": 3.1, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sz300760", "name": "迈瑞医疗", "price": 224.18, "changePct": -0.36, "changePct5d": 0.8, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sh603259", "name": "药明康德", "price": 91.40, "changePct": 0.71, "changePct5d": 1.4, "asOf": "2026-08-25T05:31:57Z" }
     ]
   },
   "sectorOutlook": [

@@ -45,6 +45,28 @@ function formatBeijing(value) {
   return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} 北京时间`;
 }
 
+function formatPrice(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "—";
+  const num = Number(value);
+  const digits = Math.abs(num) >= 100 ? 2 : Math.abs(num) >= 1 ? 2 : 3;
+  return num.toLocaleString("zh-CN", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+}
+
+function formatMove(price, changePct) {
+  const pctText = pct(changePct);
+  if (price === null || price === undefined || changePct === null || changePct === undefined) {
+    return pctText;
+  }
+  const prev = Number(price) / (1 + Number(changePct) / 100);
+  if (!Number.isFinite(prev) || prev === 0) return pctText;
+  const delta = Number(price) - prev;
+  const sign = delta > 0 ? "+" : "";
+  const absDelta = Math.abs(delta);
+  const digits = absDelta >= 1 ? 2 : 3;
+  const deltaText = `${sign}${delta.toLocaleString("zh-CN", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+  return `${deltaText}（${pctText}）`;
+}
+
 function renderQuotes(title, rows) {
   if (!rows || !rows.length) return "";
   return `
@@ -55,7 +77,8 @@ function renderQuotes(title, rows) {
           (row) => `
         <div class="quote">
           <div class="name">${row.name || row.symbol}</div>
-          <div class="${chgClass(row.changePct)}">${pct(row.changePct)}</div>
+          <div class="price">${formatPrice(row.price)}</div>
+          <div class="${chgClass(row.changePct)}">${formatMove(row.price, row.changePct)}</div>
         </div>`
         )
         .join("")}

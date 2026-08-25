@@ -69,6 +69,28 @@ def fetch_tencent(symbols: list[str]) -> list[QuoteRow]:
     return parse_tencent_body(text)
 
 
+def previous_close_from_yahoo(meta: dict, closes: list[float], price: float | None) -> float | None:
+    """Use the prior daily bar, not Yahoo's unstable chartPreviousClose.
+
+    For ^KS11, chartPreviousClose can be an old session close, so the % move
+    disagrees with Sina HQ.KOSPI even when the last price is the same.
+    """
+    if price is not None and len(closes) >= 2:
+        last = closes[-1]
+        if last and abs(float(price) - last) <= max(0.01, abs(last) * 1e-6):
+            return closes[-2]
+        return last
+    if len(closes) >= 2:
+        return closes[-2]
+    if len(closes) == 1 and price is not None and abs(float(price) - closes[0]) > max(0.01, abs(closes[0]) * 1e-6):
+        return closes[0]
+    prev = meta.get("previousClose") or meta.get("chartPreviousClose")
+    try:
+        return float(prev) if prev is not None else None
+    except (TypeError, ValueError):
+        return None
+
+
 def fetch_yahoo(symbol: str) -> QuoteRow:
     encoded = symbol.replace("^", "%5E")
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{encoded}?interval=1d&range=1mo"
@@ -83,10 +105,11 @@ def fetch_yahoo(symbol: str) -> QuoteRow:
     price = meta.get("regularMarketPrice")
     if price is None and valid:
         price = valid[-1]
-    prev = meta.get("chartPreviousClose") or meta.get("previousClose")
+    price_f = float(price) if price is not None else None
+    prev = previous_close_from_yahoo(meta, valid, price_f)
     change_pct = None
-    if price is not None and prev:
-        change_pct = (float(price) / float(prev) - 1.0) * 100
+    if price_f is not None and prev:
+        change_pct = (price_f / float(prev) - 1.0) * 100
     change_5d = None
     if len(valid) >= 6:
         change_5d = (valid[-1] / valid[-6] - 1.0) * 100
@@ -97,7 +120,7 @@ def fetch_yahoo(symbol: str) -> QuoteRow:
     return QuoteRow(
         symbol=symbol,
         name=str(meta.get("shortName") or meta.get("symbol") or symbol),
-        price=float(price) if price is not None else None,
+        price=price_f,
         changePct=change_pct,
         changePct5d=change_5d,
         asOf=as_of,

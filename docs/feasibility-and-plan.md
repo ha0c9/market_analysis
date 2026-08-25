@@ -1,7 +1,9 @@
 # 智能市场舆情分析系统：需求分析、可行性与实施计划
 
 > 仓库当前几乎为空（仅有 README）。本文是第一份产品与技术方案，用于对齐范围后再开工。  
-> 结论先说：**可以做成一个可用的「按需、低成本、有依据」的市场分析助手；不能做成免登录、全网微博/X 实时舆情平台。**
+> 结论先说：**可以做成一个可用的「按需、低成本、有依据」的市场分析助手；不能做成免登录、全网微博/X 实时舆情平台。**  
+> 行情（指数 / 板块 / 相关标的涨跌）应作为默认校准层接入；它在网页上公开可见，但程序化拉取仍有延迟、限速和接口变更风险。  
+> **AI API Key 绝不能放进 GitHub Pages 或前端代码。** 正确位置是本仓库的 GitHub Actions Secrets（加密、不进 git、访客不可见）。
 
 ---
 
@@ -19,9 +21,10 @@
 4. **后端用 AI 先规划再取数**：根据侧重点决定看哪些板块、哪些信源、哪些关键词、哪些博主，而不是固定爬全网。
 5. **信源**：
    - 微博、X 上有分量博主的前瞻，以及部分用户的指标性发言；
-   - 国内外对市场影响力较大的财经信息，强调**时效性**。
-6. **输出**：详细的**板块热度前瞻**、**分析依据**，以及原文在「以及」处中断、未写完的第三块。本文按完整产品补全为：来源与时间戳、置信度、反向证据、风险与失效条件。
-7. **密钥**：用户有 AI API Key，先配一个，后续可加多个；系统要**效用最大化 + 成本控制**。
+   - 国内外对市场影响力较大的财经信息，强调**时效性**；
+   - **当前市场行情**（指数、相关板块、规划出的标的），用来校准「舆情热」是否已被价格兑现。
+6. **输出**：详细的**板块热度前瞻**、**分析依据**，以及原文在「以及」处中断、未写完的第三块。本文按完整产品补全为：来源与时间戳、置信度、反向证据、风险与失效条件、**行情校准（涨跌、相对大盘、是否已计价）**。
+7. **密钥**：用户有 AI API Key，先配一个，后续可加多个；系统要**效用最大化 + 成本控制**。Key **不放在网站里**，只放 GitHub Actions Secrets（见 §12）。
 8. **鉴权**：默认只用公共信息；若某信源必须登录/付费，需明确「要什么、怎么拿」。
 
 ### 1.2 建议的产品边界（第一版就写死）
@@ -30,9 +33,10 @@
 | --- | --- |
 | 个人研究助手：一次点击 → 一份带出处的报告 | 券商级实时舆情监控台 |
 | 公开 RSS / 官方或半官方新闻 API / 用户自备的社交 API | 绕过登录、验证码、WAF 去爬微博/X |
-| 板块热度、叙事方向、证据链、时效窗口 | 荐股、目标价、买卖点 |
+| 公开行情快照（指数 / 板块 / 少量相关标的）校准舆情 | 逐笔成交、Level-2、自建行情源、荐股与目标价 |
+| 板块热度、叙事方向、证据链、时效窗口、价讯是否背离 | 买卖点 |
 | 主动触发、结果可回看 | 全网 7×24 流式采集 |
-| AI 规划取数范围，避免无脑全量灌模型 | 把原始 HTML/全量帖子直接丢给大模型 |
+| AI 规划取数范围，避免无脑全量灌模型 | 把原始 HTML/全量帖子/全市场行情直接丢给大模型 |
 
 免责声明应写在页面底部：本系统是信息聚合与研究辅助，不是投资建议。
 
@@ -40,7 +44,7 @@
 
 ## 2. 可行性结论
 
-**总体：有条件可行。** 核心链路（前端 → 规划 → 拉公开财经信息 → 压缩 → AI 综合 → 报告）可以在无自有服务器的前提下落地。社交舆情是最大的成本和合规瓶颈，必须做成**可选插件**，不能当默认路径。
+**总体：有条件可行。** 核心链路（前端 → 规划 → 拉公开财经信息与行情快照 → 压缩 → AI 对照价格综合 → 报告）可以在无自有服务器的前提下落地。社交舆情是最大的成本和合规瓶颈，必须做成**可选插件**。行情作为默认校准层，比社交更便宜、也更能压住「只根据标题喊涨」的幻觉。
 
 ### 2.1 按模块打分
 
@@ -50,11 +54,12 @@
 | 无自有服务器的后端 | 中高 | Pages **不能跑后端、不能藏 API Key**。必须另接免费/低成本计算（见 §3）。 |
 | AI 规划分析任务 | 高 | 用便宜模型根据侧重点产出「关键词 / 板块 / 信源 / 时间窗」即可。 |
 | 国内外财经资讯（公开） | 高 | RSS + 免费新闻 API 足够支撑第一期；中文快讯稳定性低于英文主流媒体。 |
+| 当前市场行情（校准用） | 高 | 网页报价公开可见。A 股常用新浪/腾讯/东财网页 JSON（无 key、限速、非官方契约）；美股/全球可用免费 API 或延迟行情。用于校准，不追求交易所官方实时。 |
 | 微博有分量博主 | 低（无账号） / 中（有官方授权） | 开放平台要应用审核 + OAuth；搜索/时间线能力受限；商业舆情接口面向企业。页面爬取会触发风控，且违反平台约定，**本项目不做**。 |
 | X 有分量博主 | 低（免费） / 中（付费按次） | 2026 年起新开发者默认 **pay-per-use**，无可用免费读额度。读一条帖约 **$0.005**（以 [X Developer Console](https://console.x.com) 当时标价为准）。200 条帖 ≈ $1，成本会很快超过 AI 本身。 |
 | 时效性（分钟级） | 低 | 无常驻进程、无付费火线。主动点击场景下，**小时级 / 当日**是合理目标。 |
 | 成本可控的 AI | 高 | 分层模型 + 先过滤再综合 + 缓存，可以把单次分析压到很小的 token 开销。 |
-| 结果质量（板块前瞻） | 中 | 有高质量新闻时可用；缺少社交信号时，前瞻会偏「新闻叙事」而不是「资金情绪」。页面必须展示证据，避免装成全知。 |
+| 结果质量（板块前瞻） | 中高 | 有新闻 + 行情校准时，能区分「在讲」和「已涨」。缺少社交信号时仍偏叙事，但价格是硬约束，幻觉空间更小。 |
 
 ### 2.2 必须接受的硬约束
 
@@ -64,10 +69,10 @@
 4. **Cloudflare 免费 Workers 的 CPU 限额很紧**（约 10ms CPU / 请求量级，I/O 等待不计入）。一次「多源拉取 + 两次 LLM」更适合：付费 Workers / Workflows，或 **GitHub Actions**（本仓库已有，零额外账号）。
 5. **公开仓库 + GitHub Actions**：Workflow secrets 不会进 Pages，但 fork PR 读不到 secrets。密钥只配在本仓库 Settings → Secrets。
 
-### 2.3 推荐策略：先做「新闻驱动的板块叙事」，社交作为插件
+### 2.3 推荐策略：先做「新闻 + 行情校准」，社交作为插件
 
-第一期用公开财经信息就能回答「存储相关最近在讲什么、哪些子板块被集中提到、依据是哪几篇、时效窗口是什么」。  
-微博/X 博主前瞻作为第二期，用户准备好凭证后再打开。这样第一期就能上线，且 AI 成本可控。
+第一期用公开财经信息 + 公开行情快照，回答「存储相关最近在讲什么、价格是否已经兑现、哪些子板块热而价弱/价强而讯少」。  
+微博/X 博主前瞻仍作后续插件。行情比社交更适合做默认层：公开、便宜、对校准最有效。
 
 ---
 
@@ -83,10 +88,10 @@
     │  轮询 GET /api/jobs/:id
     ▼
 GitHub Actions  (真正的分析进程)
-    │  1. 便宜模型：规划关键词 / 板块 / 信源
-    │  2. 并行拉取 RSS / 新闻 API /（可选）社交 API
-    │  3. 去重、时效过滤、相关度打分，只留 Top N
-    │  4. 中等模型：综合成结构化报告
+    │  1. 便宜模型：规划关键词 / 板块 / 标的代码 / 信源
+    │  2. 并行拉取 RSS / 新闻 API / 行情快照 /（可选）社交 API
+    │  3. 去重、时效过滤、相关度打分，只留 Top N 文本；行情压成一张小表
+    │  4. 中等模型：对照「舆情 vs 价格」综合成结构化报告
     │  5. 把 JSON 报告写到 docs/reports/ 或 gh-pages
     ▼
 Pages 展示最新报告（板块热度、依据、来源链接、时间）
@@ -112,9 +117,10 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 
 ### 3.3 明确不采用
 
-- 把 AI Key 写进前端 / `config.js` / GitHub Pages 仓库明文。
+- 把 AI Key 写进前端 / `config.js` / GitHub Pages 仓库明文 / 浏览器 localStorage。
 - 用浏览器直连 OpenAI / X / 微博（CORS 和密钥双杀）。
 - 自建常驻爬虫、代理池、账号农场。
+- 把全市场逐笔行情灌进大模型。
 
 ---
 
@@ -132,6 +138,7 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 | SEC EDGAR 近期 filings RSS / 美联储等官方 feed | 监管与宏观 | 小时–日 | 高质量、低噪声。 |
 | Reddit 公开 JSON（如 `r/stocks`、`r/wallstreetbets` 的 `.json`） | 英文零售情绪替代 | 小时 | 无 key 有较严限速；**不能替代微博/X**。仅作可选增强。 |
 | 巨潮资讯网公告检索（公开页面/接口，需限速） | A 股公司公告 | 小时–日 | 比社交媒体更「硬」。 |
+| **公开行情快照**（见 §4.4） | 校准舆情是否已被价格兑现 | 交易时段接近实时；休市为收盘价 | 网页可见 ≠ 官方实时 API。默认无 key；限速、可降级。 |
 
 中文「7×24 快讯」（财联社、东财、同花顺、金十、华尔街见闻）多数**没有稳定官方 RSS**。社区方案是打网页端公开 JSON 或自建 RSS 桥。这些接口会改、会限流、可能与站点条款冲突。第一期：
 
@@ -177,7 +184,41 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 
 社交源未配置时的产品文案：
 
-> 本次未接入微博/X。结论主要来自公开财经资讯与公告。若要纳入指定博主前瞻，请按文档配置 token 和 KOL 名单。
+> 本次未接入微博/X。结论主要来自公开财经资讯、公告与行情快照。若要纳入指定博主前瞻，请按文档配置 token 和 KOL 名单。
+
+### 4.4 市场行情（默认开启，用来校准）
+
+**「公开」分两层，不要混为一谈：**
+
+| 含义 | 是否成立 | 对本项目的影响 |
+| --- | --- | --- |
+| 任何人打开财经网站能看到报价 | **是** | 用报价校准舆情合理，也不依赖登录 |
+| 交易所官方、可转售、无延迟的程序化 API 免费开放 | **否** | 我们不承诺 Level-1 官方实时，只用延迟或网页公开接口做研究校准 |
+| 网页背后的 JSON（新浪 / 腾讯 / 东财等）无 key 可调 | **大体是**，但是未文档化契约 | 限速、失败换源、报告里标注数据源与时间戳；接口改版就降级 |
+
+校准要回答的问题（比「再爬一堆价格」更重要）：
+
+1. 舆情在热的板块，**今天/本周是不是已经涨了？**（热度已被计价 → 下调「前瞻」确定性）
+2. 舆情很热但价格跌或横盘？**价讯背离**，在报告里单独标出。
+3. 相对大盘：板块强于沪深300 / 标普，还是只是跟着 beta 走。
+4. 规划出的几只代表标的：涨跌幅、成交是否放大（只取 Planner 给出的少量代码，不扫全市场）。
+
+默认拉取的紧凑快照（一次任务大约几十个代码，成本可忽略）：
+
+- **基准：** 上证综指、沪深300、创业板指、恒生、纳斯达克100 或标普500、VIX（若可得）、美元指数、COMEX 金、WTI 或布油（宏观背景）。
+- **板块：** Planner 映射到的东财/申万行业或对应 ETF（例：存储 → 半导体/存储芯片板块指数或 SOXX/SMH）。
+- **代表标的：** Planner 输出的 `tickers[]`，建议硬顶 15–20 只。
+- **每个代码只留：** 现价、涨跌幅（日/5日/20日若一次请求拿得到）、成交额、相对基准超额、报价时间、是否延迟。
+
+数据源优先级（失败自动换下一个）：
+
+| 市场 | 默认（无 key） | 有免费 key 时更好 | 不做 |
+| --- | --- | --- | --- |
+| A 股 / 港股 | 腾讯 `qt.gtimg.cn`、新浪 `hq.sinajs.cn`、东财 push2/quote（网页公开 JSON） | 无必要 | 通达信 TCP 长连接、模拟交易终端登录 |
+| 美股 / 全球指数 | Stooq 日线、Yahoo 公开图表接口（非正式、易变） | Finnhub quote、Alpha Vantage（日限额很小） | 付费 Polygon 实时 |
+| 板块涨跌 | 东财行业/概念板块列表接口（限速） | — | 全市场选股器扫一遍 |
+
+接入原则与新闻源相同：限速、缓存到「同一交易日同一小时」、单源失败不致命、**只把一张小表而不是 K 线全文送给 Synthesizer**。
 
 ---
 
@@ -191,24 +232,25 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
     输出：JSON
       - sectors[]          关注板块
       - keywords[]         检索词（中英）
-      - tickers[]          可选代码
+      - tickers[]          相关代码（硬顶 15–20）
+      - benchmarks[]       对照指数
       - sources[]          启用哪些适配器
       - lookbackHours      默认 24–48
       - maxItemsPerSource  硬顶
 
 ② Fetchers（无模型）
-    并行、限时、限条；失败记 warning
+    并行：新闻 / 公告 / 行情快照 /（可选）社交
+    限时、限条；失败记 warning
 
 ③ Distiller（规则 + 可选便宜模型）
-    去重（标题相似度）
-    丢弃超出 lookback 的条目
-    用关键词/板块做相关度分
-    只保留 Top K（建议 40–80 条）
-    每条压成：{title, source, url, publishedAt, snippet≤300字, score}
+    文本：去重、时效、相关度，Top K（40–80）条短摘要
+    行情：压成一张表（现价、涨跌、相对基准、报价时间、是否延迟）
+    规则打标：pricedIn | divergence | confirming | insufficientData
 
 ④ Synthesizer（中等模型，一次调用）
-    只看 Distiller 输出 + 规划 JSON
+    只看 Distiller 文本 + 行情小表 + 规划 JSON
     产出结构化报告（见 §5.1）
+    热度前瞻必须对照价格，禁止只根据标题喊「要涨」
 ```
 
 模型分工建议（用户先配一个 key 时，用同一家的两个档；只有一个模型就把 Planner 提示压得很短）：
@@ -236,17 +278,28 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
   "timeWindow": { "from": "...", "to": "..." },
   "dataCoverage": {
     "news": true,
+    "quotes": true,
     "filings": true,
     "x": false,
     "weibo": false
+  },
+  "marketSnapshot": {
+    "asOf": "ISO-8601",
+    "delayed": true,
+    "source": "tencent|sina|eastmoney|finnhub",
+    "benchmarks": [{ "symbol": "000300.SH", "name": "沪深300", "changePct": 0.0 }],
+    "sectors": [{ "name": "半导体", "changePct": 0.0, "vsBenchmarkPct": 0.0 }],
+    "tickers": [{ "symbol": "603986.SH", "name": "兆易创新", "changePct": 0.0, "changePct5d": 0.0 }]
   },
   "sectorOutlook": [
     {
       "sector": "存储芯片 / NAND",
       "heat": 1,
       "heatScore": 0.86,
+      "priceAction": "up | down | mixed | flat | unknown",
+      "calibration": "confirming | pricedIn | divergence | insufficientData",
       "direction": "up | down | mixed | unclear",
-      "narrative": "一句话前瞻",
+      "narrative": "一句话前瞻（必须提到价格是否已反应）",
       "evidence": [
         {
           "claim": "要点",
@@ -267,7 +320,7 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 }
 ```
 
-页面展示优先级：板块热度表 → 每块的前瞻与依据（可点开原文） → 反向证据 → 覆盖缺口与时效。
+页面展示优先级：板块热度表（旁注行情校准标签）→ 大盘/板块快照 → 每块的前瞻与依据（可点开原文）→ 反向证据 → 覆盖缺口与时效。
 
 ---
 
@@ -280,7 +333,7 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 | Planner | 可忽略 | 几百 token 的便宜模型 |
 | Synthesizer | 视供应商，大约每次 $0.01–$0.08 | DeepSeek / Flash 会接近下限；Sonnet / GPT 中档会接近上限 |
 | GitHub Actions | 每次 2–5 分钟 | 公开仓库通常可忽略 |
-| RSS | $0 | |
+| RSS / 公开行情快照 | $0 | 每次几十个代码，可忽略 |
 | Finnhub / NewsAPI 免费档 | $0（有日限额） | 按需点击不易打满 |
 | X 读帖（若开启） | 100 条 ≈ $0.50 | **默认关闭**；打开必须有条数帽 |
 | 微博官方 API | 平台限流为主 | 个人应用通常不按条计费，但额度小 |
@@ -299,12 +352,12 @@ market_analysis/
   web/                         ← GitHub Pages 前端（Vite + 静态托管）
   src/
     planner/                   ← 侧重点 → 检索计划
-    ingest/                    ← 各信源适配器（rss, newsapi, finnhub, x, weibo, reddit）
+    ingest/                    ← 各信源适配器（rss, quotes, newsapi, finnhub, x, weibo, reddit）
     distill/                   ← 去重、时效、相关度、截断
     synthesize/                ← 报告生成
     schema/                    ← 规划与报告的 JSON Schema
   config/
-    sources.yml                ← 默认 RSS 列表、超时、条数帽
+    sources.yml                ← 默认 RSS 列表、行情代码帽、超时、条数帽
     x-kols.yml                 ← 可选
     weibo-kols.yml             ← 可选
     budgets.yml                ← token / 社交条数 / 并发
@@ -342,17 +395,17 @@ market_analysis/
 
 **验收**：打开 Pages，不配任何 key，能完整看完一份示例报告。
 
-### 第 2 期 — 真实分析管线（仅公开源 + 一个 AI Key）
+### 第 2 期 — 真实分析管线（公开源 + 行情校准 + 一个 AI Key）
 
-**目标**：`workflow_dispatch` 填 `focus=存储相关`，几分钟后 Pages 上出现新报告。
+**目标**：`workflow_dispatch` 填 `focus=存储相关`，几分钟后 Pages 上出现新报告，且热度带「确认 / 已计价 / 背离」标签。
 
-- 实现 Planner → RSS/Google News/Finnhub（若有 key）→ Distiller → Synthesizer。
-- Secret：至少一个 `AI_API_KEY`（加 `AI_BASE_URL` 以便兼容 OpenAI 接口的中转/DeepSeek）。
-- 预算与缓存。
+- 实现 Planner → RSS/Google News/Finnhub（若有 key）+ **行情快照** → Distiller → Synthesizer。
+- Secret：至少一个 `AI_API_KEY`（加 `AI_BASE_URL` 以便兼容 OpenAI 接口的中转/DeepSeek）。行情默认无 key。
+- 预算与缓存（文本按小时，行情按交易日+小时）。
 - 报告写入 `docs/reports/latest.json` 并带历史 `docs/reports/{timestamp}.json`。
-- 失败时写出 `errors` 而不是空页面。
+- 失败时写出 `errors` 而不是空页面。行情失败时仍出新闻报告，并标 `quotes: false`。
 
-**验收**：只配 AI Key，对「存储相关」跑一次，报告里每条热度都有可点击出处和时间戳。
+**验收**：只配 AI Key，对「存储相关」跑一次；每条板块既有新闻出处，也有对应指数/标的涨跌（或明确写「行情未取到」）。
 
 ### 第 3 期 — Pages 上一键触发
 
@@ -388,6 +441,8 @@ market_analysis/
 | 风险 | 对策 |
 | --- | --- |
 | 中文快讯接口改版/封 IP | 多源、限速、缓存；单源失败不致命 |
+| 公开行情接口改版或延迟 | 腾讯/新浪/东财互为备份；报告标注 `delayed` 与 `asOf`；失败则只出新闻 |
+| 把延迟行情当成交易所官方实时 | UI 写明「公开网页行情，可能延迟，仅供研究校准」 |
 | X 标价上调 | 社交默认关；硬条数帽；消费上限设在 X 控制台 |
 | 微博应用审核失败 | 长期以新闻+公告为主；不阻塞主路径 |
 | 模型幻觉板块热度 | 强制证据 URL；无证据的板块不得进入 Top 列表；展示反向证据 |
@@ -401,33 +456,81 @@ market_analysis/
 
 **现在就可以做（第 2 期）：**
 
-1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。在仓库 Settings → Secrets and variables → Actions 里添加，例如：
+1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。**不要提交到仓库，不要写进 Pages。** 放到 GitHub Actions Secrets（逐步说明见 §12）：
    - `AI_API_KEY`
    - `AI_BASE_URL`（可选，DeepSeek 填 `https://api.deepseek.com`）
    - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（可选）
 2. 打开 GitHub Pages（后续 workflow 会用 `docs/` 或 `gh-pages`）。
+3. 行情：**默认不用你再申请 key**。
 
-**强烈建议（提升新闻覆盖）：**
+**强烈建议（提升新闻覆盖与美股报价质量）：**
 
-3. `FINNHUB_API_KEY`  
-4. `NEWSAPI_KEY` 或 `MARKETAUX_API_KEY`
+4. `FINNHUB_API_KEY`（新闻 + 更稳的全球报价）
+5. `NEWSAPI_KEY` 或 `MARKETAUX_API_KEY`
 
 **社交（第 4 期，按需）：**
 
-5. X：Developer credits + `X_BEARER_TOKEN` + `config/x-kols.yml`  
-6. 微博：开放平台应用 + `WEIBO_ACCESS_TOKEN` + `config/weibo-kols.yml`
+6. X：Developer credits + `X_BEARER_TOKEN` + `config/x-kols.yml`  
+7. 微博：开放平台应用 + `WEIBO_ACCESS_TOKEN` + `config/weibo-kols.yml`
 
 **第 3 期一键触发（三选一）：**
 
-7. Cloudflare 免费账号（Worker 里放 `GITHUB_TRIGGER_TOKEN`，权限仅 `actions:write`），或  
-8. GitHub App，或  
-9. 继续用 Actions 页面手动 Run（零额外账号）
+8. Cloudflare 免费账号（Worker 里放 `GITHUB_TRIGGER_TOKEN`，权限仅 `actions:write`，**仍然不要放 AI Key**），或  
+9. GitHub App，或  
+10. 继续用 Actions 页面手动 Run（零额外账号）
 
-不需要：云服务器、域名（Pages 默认 `https://<user>.github.io/market_analysis/` 即可）、代理池、微博/X 爬虫账号。
+不需要：云服务器、域名（Pages 默认 `https://<user>.github.io/market_analysis/` 即可）、代理池、微博/X 爬虫账号、行情付费终端。
 
 ---
 
 ## 11. 建议的下一步
 
-若认可本文边界，下一份 PR 做 **第 1 期**：前端骨架 + 报告 schema + 示例 `sample.json` + Pages workflow。  
-第 2 期再接真实 AI 与 RSS。微博/X 等到密钥和 KOL 名单齐了再开适配器。
+若认可本文边界，下一份 PR 做 **第 1 期**：前端骨架 + 报告 schema（含行情校准字段）+ 示例 `sample.json` + Pages workflow。  
+第 2 期接真实 AI、RSS 与公开行情。微博/X 等到密钥和 KOL 名单齐了再开适配器。
+
+---
+
+## 12. AI API Key 放哪里？（不是网站里）
+
+**短答案：放在 GitHub 仓库的 Actions Secrets 里，加密存储。不放在 GitHub Pages 网站上，也不提交进 git。**
+
+访客打开你的 Pages 页面时，**看不到**这个 Key。仓库如果是公开的，别人也**看不到** Secrets 的值。分析任务跑起来时，GitHub 才把 Key 注入到 Actions 进程，用来调用 AI；调用结束即丢弃。
+
+```text
+你（仓库管理员）
+    │  在网页里粘贴一次 Key
+    ▼
+GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不到
+    │  仅在 Actions 运行时注入环境变量
+    ▼
+分析脚本调用 AI 厂商 API     ← Key 出现在服务器内存，不写进报告 JSON
+    ▼
+报告 JSON / 前端页面         ← 只有分析结果，没有 Key
+```
+
+### 12.1 正确做法
+
+1. 打开仓库：`https://github.com/ha0c9/market_analysis/settings/secrets/actions`  
+   （Settings → Secrets and variables → Actions）
+2. 点 **New repository secret**。
+3. Name 填 `AI_API_KEY`，Value 贴你的 key，保存。
+4. 需要时同样添加 `AI_BASE_URL`、`AI_MODEL_PLANNER` 等。
+5. 只有你（以及被授予 admin 的协作者）能**覆盖或删除** Secret；GitHub **不会再次显示**已保存的明文。
+
+本地开发另建一份 **未提交** 的 `.env`（`.gitignore` 已忽略），不要把 `.env` 推上去。
+
+### 12.2 绝对不要放的地方
+
+| 位置 | 为什么不行 |
+| --- | --- |
+| `web/` 前端代码、`config.js`、`.env` 提交进仓库 | 公开仓库人人能 clone；Pages 源码对访客可见 |
+| 浏览器 localStorage / 页面输入框长期保存 | 等于把扣款凭证交给每个打开网站的人（或 XSS） |
+| 报告 JSON、README、Issue、PR 评论 | 进 git 历史后很难彻底抹掉 |
+| Cloudflare Worker（若只做「触发分析」） | 触发器用 GitHub token 即可；AI Key 应留在 Actions |
+
+### 12.3 谁能用到这笔钱
+
+- **不能：** 打开 Pages 的路人、clone 公开仓库的人、fork 出来的 PR（fork 默认读不到你的 Secrets，这是 GitHub 的保护）。
+- **能：** 你在本仓库点 Run workflow（或第 3 期那条受控触发器）。所以第 3 期必须给触发器加口令/登录，防止外人替你烧 AI 额度。
+
+若 Key 曾经不小心提交过：去 AI 控制台**立刻作废并换新**，不要以为「再删掉文件」就安全（git 历史里还在）。

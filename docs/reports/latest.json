@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T15:57:44Z",
+  "generatedAt": "2026-08-25T16:28:21Z",
   "focus": "资金流入分析",
   "timeWindow": {
-    "from": "2026-07-30T07:00:00Z",
-    "to": "2026-08-25T15:57:44Z"
+    "from": "2026-08-24T07:28:14Z",
+    "to": "2026-08-25T16:28:21Z"
   },
   "dataCoverage": {
     "news": true,
@@ -46,7 +46,7 @@
         "name": "恒生指数",
         "price": 25511.1,
         "changePct": -0.024415086162721256,
-        "changePct5d": 0.1568410461928016,
+        "changePct5d": 0.2518329037003664,
         "asOf": "2026-08-25T08:08:38Z"
       },
       {
@@ -68,128 +68,331 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7672.48,
-        "changePct": 0.25637653203200994,
-        "changePct5d": -0.2506550613087577,
-        "asOf": "2026-08-25T15:57:41Z"
+        "price": 7675.75,
+        "changePct": 0.299105656286458,
+        "changePct5d": -0.208141779161497,
+        "asOf": "2026-08-25T16:28:20Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26123.822,
-        "changePct": 0.5528541165342515,
-        "changePct5d": -0.6310022665117043,
-        "asOf": "2026-08-25T15:57:42Z"
+        "price": 26146.258,
+        "changePct": 0.6392122242781628,
+        "changePct5d": -0.545662618128584,
+        "asOf": "2026-08-25T16:28:19Z"
       }
     ],
-    "sectors": [],
+    "sectors": [
+      {
+        "symbol": "sh512480",
+        "name": "半导体ETF国联安",
+        "price": 1.008,
+        "changePct": -0.2,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
+      },
+      {
+        "symbol": "sh515050",
+        "name": "通信ETF华夏",
+        "price": 1.006,
+        "changePct": 0.3,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:43Z"
+      },
+      {
+        "symbol": "sh516160",
+        "name": "新能源ETF南方",
+        "price": 2.466,
+        "changePct": -1.6,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:45Z"
+      },
+      {
+        "symbol": "sz159915",
+        "name": "创业板ETF易方达",
+        "price": 3.419,
+        "changePct": -1.1,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:51Z"
+      },
+      {
+        "symbol": "sh510300",
+        "name": "沪深300ETF华泰柏瑞",
+        "price": 4.616,
+        "changePct": -0.24,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:54Z"
+      },
+      {
+        "symbol": "sh510500",
+        "name": "中证500ETF南方",
+        "price": 7.726,
+        "changePct": -0.18,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:40Z"
+      }
+    ],
     "tickers": [
       {
-        "symbol": "sh601398",
-        "name": "工商银行",
-        "price": 7.9,
-        "changePct": 0.13,
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 120.0,
+        "changePct": -0.48,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:31Z"
+        "asOf": "2026-08-25T08:14:51Z"
+      },
+      {
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "price": 846.0,
+        "changePct": -2.78,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:12Z"
+      },
+      {
+        "symbol": "sh600276",
+        "name": "恒瑞医药",
+        "price": 46.49,
+        "changePct": -0.58,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:55Z"
+      },
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "price": 91.36,
+        "changePct": 0.77,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:57Z"
+      },
+      {
+        "symbol": "sh603986",
+        "name": "兆易创新",
+        "price": 395.51,
+        "changePct": 3.63,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:52Z"
+      },
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "price": 376.73,
+        "changePct": -2.88,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:00Z"
+      },
+      {
+        "symbol": "sh688111",
+        "name": "金山办公",
+        "price": 234.75,
+        "changePct": 0.62,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
+      },
+      {
+        "symbol": "sz000858",
+        "name": "五 粮 液",
+        "price": 71.52,
+        "changePct": 0.06,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:24Z"
+      },
+      {
+        "symbol": "sh600519",
+        "name": "贵州茅台",
+        "price": 1304.0,
+        "changePct": -0.05,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:38Z"
+      },
+      {
+        "symbol": "sz002475",
+        "name": "立讯精密",
+        "price": 54.86,
+        "changePct": 2.12,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:42Z"
+      },
+      {
+        "symbol": "sh688012",
+        "name": "中微公司",
+        "price": 354.0,
+        "changePct": -1.02,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:48Z"
+      },
+      {
+        "symbol": "sz300059",
+        "name": "东方财富",
+        "price": 18.93,
+        "changePct": 0.05,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:06Z"
+      },
+      {
+        "symbol": "sh601012",
+        "name": "隆基绿能",
+        "price": 12.17,
+        "changePct": 0.16,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:50Z"
+      },
+      {
+        "symbol": "sz000725",
+        "name": "京东方Ａ",
+        "price": 5.74,
+        "changePct": -0.17,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:42Z"
+      },
+      {
+        "symbol": "sh600036",
+        "name": "招商银行",
+        "price": 39.5,
+        "changePct": -0.2,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:37Z"
+      },
+      {
+        "symbol": "sz300124",
+        "name": "汇川技术",
+        "price": 61.39,
+        "changePct": 5.3,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:24Z"
+      },
+      {
+        "symbol": "sh688008",
+        "name": "澜起科技",
+        "price": 194.42,
+        "changePct": 1.35,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:59Z"
+      },
+      {
+        "symbol": "sz002230",
+        "name": "科大讯飞",
+        "price": 39.35,
+        "changePct": 1.08,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "银行",
+      "sector": "半导体",
       "heat": 1,
-      "heatScore": 0.8,
-      "priceAction": "up",
-      "calibration": "insufficientData",
-      "direction": "up",
-      "narrative": "银行板块资金流入迹象不明显，但工商银行股价微涨，市场情绪整体回暖可能带来间接支撑。缺乏直接资金流入新闻，需进一步观察北向资金动向。",
-      "evidence": [
-        {
-          "claim": "工商银行股价微涨0.13%，显示一定韧性",
-          "sourceTitle": "工商银行行情快照",
-          "url": "https://example.com/quote/sh601398",
-          "publishedAt": "2026-08-25T08:14:31Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "缺乏银行板块资金流入的直接新闻，资金流向不明确",
-          "sourceTitle": "新闻列表",
-          "url": "https://example.com/news",
-          "publishedAt": "2026-08-25T00:00:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.3,
-      "invalidatedIf": "出现银行板块主力资金净流出的明确数据或北向资金大幅减持银行股"
-    },
-    {
-      "sector": "非银金融",
-      "heat": 2,
-      "heatScore": 0.5,
+      "heatScore": 0.9,
       "priceAction": "mixed",
-      "calibration": "insufficientData",
+      "calibration": "divergence",
       "direction": "mixed",
-      "narrative": "非银金融板块缺乏直接新闻，但市场风险偏好回升可能利好券商等非银金融。沪深300微跌，创业板指下跌，整体市场分化，非银金融方向不明。",
+      "narrative": "半导体板块资金关注度最高，但表现分化。半导体设备ETF获超3亿份净申购，科创半导体ETF净流入居前，显示资金逆势布局；但中芯国际、中微公司等个股下跌，兆易创新、澜起科技上涨，板块内部分化明显。资金流入与个股表现不一致，可能反映资金在板块内轮动或提前布局。",
       "evidence": [
         {
-          "claim": "市场风险偏好回升，加密货币和美股资金流入，可能间接提振非银金融",
-          "sourceTitle": "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace",
-          "url": "https://www.cnbc.com/2026/08/25/bitcoin-price-near-80000-cryptocurrency-ether-us-treasuries.html",
-          "publishedAt": "2026-08-25T13:09:31Z",
+          "claim": "半导体设备ETF易方达逆势获超3亿份净申购",
+          "sourceTitle": "半导体板块表现分化，半导体设备ETF易方达（159558）逆势获超3亿份净申购",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUU94NUw5S3lCcEVWSnRWbXF2MDZ2ZjZmUmEyVjBZcWhBZmNzTzVmVXp4eU9wMzhHaVhsSmhoSVRNR3dCd0VYMVgyMVVqclJVdkM1TmRYckhacl9VS3hFYUdtQ1F0aUJwZmtLQ2RETkJFNm1RSWhOT1pXaW9IVi1UdHNnWWNfSHdsR2Y0VzV3?oc=5",
+          "publishedAt": "2026-08-25T12:50:08Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "科创半导体ETF净流入居前",
+          "sourceTitle": "ETF资金榜|银华日利ETF、科创半导体ETF和黄金ETF净流入居前",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5KdjdWNXVBUzg4eW05TTFvT1FWV2loX2UwdC1ZSTlFc0M4RDNtSzFoVTI4OEFHdnhTTWtmMUFwVlVOZXFvV1NiUmIwcUFja2c3cEtLTHV5anpNTDlLVFl2Xy03bEh5Z2g2bFZ0bXNRcw?oc=5",
+          "publishedAt": "2026-08-25T09:06:16Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "沪深300和创业板指下跌，市场情绪谨慎",
-          "sourceTitle": "沪深300行情快照",
-          "url": "https://example.com/quote/sh000300",
-          "publishedAt": "2026-08-25T08:14:14Z",
+          "claim": "中芯国际下跌0.48%，中微公司下跌1.02%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T08:14:51Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.25,
-      "invalidatedIf": "出现非银金融板块资金净流出的明确数据或北向资金大幅减持"
+      "confidence": 0.7,
+      "invalidatedIf": "半导体ETF出现持续净流出，或主要个股放量下跌"
     },
     {
-      "sector": "房地产",
-      "heat": 3,
-      "heatScore": 0.2,
-      "priceAction": "unknown",
-      "calibration": "insufficientData",
-      "direction": "unclear",
-      "narrative": "房地产板块无相关新闻和行情数据，资金流向无法判断。市场整体风险偏好回升可能带来间接影响，但缺乏直接证据。",
-      "evidence": [],
-      "counterEvidence": [
+      "sector": "人工智能",
+      "heat": 2,
+      "heatScore": 0.7,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "人工智能概念股活跃，石头科技涨停，科大讯飞、金山办公等上涨，资金流入迹象明显。新闻提及主力连续押注某板块，结合AI概念表现，资金流入与股价上涨相互印证。",
+      "evidence": [
         {
-          "claim": "无房地产板块相关新闻或行情数据",
-          "sourceTitle": "新闻列表",
-          "url": "https://example.com/news",
-          "publishedAt": "2026-08-25T00:00:00Z",
+          "claim": "石头科技涨停，为人工智能概念热股",
+          "sourceTitle": "8月25日石头科技涨停：小家电，家电，人工智能概念热股_个股掘金",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42U29OTmZoNDJBNmVtVE41eWNuN1JpbG5jTGM5NVItbE9CRXNzM2NYV0FZSnRHQWVNUmZmV09KVU9CbnNCY2pTR1lrdGUwSW8zYnNSR3Z1a0F0YW4yZW9KaXpB?oc=5",
+          "publishedAt": "2026-08-25T08:34:02Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "主力连续押注某个板块，上周31亿、今日再加14亿",
+          "sourceTitle": "上周 31 亿、今日再加 14 亿：主力为何连续押注这个板块",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQMGtxbDhIVHhTY1VnM29IZmdzMy1YQ2pXTzBzS3JCUDQ2Y2IyNk1CRXIwS0VWNExmSnFoVWhXMVBpQ3NTVjF4VkxtU1hUbE1EdUo0b3psd0JmeWtHLVB2R1dudll0b2JfZmJnTnJEd1JDVDB1N2pYSnctb3lVR3VlVm53?oc=5",
+          "publishedAt": "2026-08-25T10:57:32Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.1,
-      "invalidatedIf": "出现房地产板块资金流入或流出的明确数据"
+      "counterEvidence": [],
+      "confidence": 0.6,
+      "invalidatedIf": "AI龙头股出现资金净流出或大幅下跌"
+    },
+    {
+      "sector": "新能源",
+      "heat": 3,
+      "heatScore": 0.4,
+      "priceAction": "down",
+      "calibration": "divergence",
+      "direction": "down",
+      "narrative": "新能源板块表现疲软，新能源ETF下跌1.6%，宁德时代下跌2.88%，资金流出迹象明显。新闻中未提及新能源板块资金流入，反而有色金属等板块净流出，可能拖累新能源。",
+      "evidence": [
+        {
+          "claim": "新能源ETF南方下跌1.6%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T08:14:45Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "宁德时代下跌2.88%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T08:14:00Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "比亚迪上涨0.77%，隆基绿能上涨0.16%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-25T08:14:57Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.5,
+      "invalidatedIf": "新能源ETF资金转为净流入，或龙头股放量上涨"
     }
   ],
-  "crossSectorNotes": "市场整体风险偏好回升，加密货币和美股资金流入明显，但A股主要指数涨跌不一，资金流向分化。银行、非银金融和房地产板块均缺乏直接资金流入新闻，需关注北向资金和主力资金动向。",
+  "crossSectorNotes": "资金流向显示半导体和人工智能板块获得资金青睐，但半导体内部出现分化；新能源板块资金流出明显。北向资金动向未在新闻中明确提及，需关注后续数据。市场整体震荡，上证指数微涨，创业板指下跌，资金可能从新能源流向科技板块。",
   "limitations": [
     "未接入微博/X",
-    "可能使用延迟公开行情",
-    "近期稿件不足，已补充稍早的相关报道"
+    "可能使用延迟公开行情"
   ],
   "stats": {
-    "fetched": 8,
-    "used": 8,
-    "quotes": 9,
+    "fetched": 10,
+    "used": 10,
+    "quotes": 32,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"
   },
-  "errors": [
-    "近期稿件不足，已补充稍早的相关报道"
-  ]
+  "errors": []
 }

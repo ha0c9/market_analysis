@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T13:14:44Z",
-  "focus": "普冉股份",
+  "generatedAt": "2026-08-25T14:46:46Z",
+  "focus": "宇环数控",
   "timeWindow": {
-    "from": "2026-07-06T07:00:00Z",
-    "to": "2026-08-25T13:14:44Z"
+    "from": "2023-10-26T07:00:00Z",
+    "to": "2026-08-25T14:46:46Z"
   },
   "dataCoverage": {
     "news": true,
@@ -68,128 +68,128 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7652.86,
-        "changePct": -0.2802851160296105,
-        "changePct5d": -1.1904387392089544,
-        "asOf": "2026-08-24T20:36:32Z"
+        "price": 7661.23,
+        "changePct": 0.10937266418413749,
+        "changePct5d": -0.39691547950690964,
+        "asOf": "2026-08-25T14:46:45Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 25980.191,
-        "changePct": -0.7649595550594079,
-        "changePct5d": -2.4947380164803357,
-        "asOf": "2026-08-24T21:15:59Z"
+        "price": 26093.146,
+        "changePct": 0.43477953491757315,
+        "changePct5d": -0.7476858668864939,
+        "asOf": "2026-08-25T14:46:44Z"
       }
     ],
     "sectors": [],
     "tickers": [
       {
-        "symbol": "sh688766",
-        "name": "普冉股份",
-        "price": 410.0,
-        "changePct": -0.24,
+        "symbol": "sz002903",
+        "name": "宇环数控",
+        "price": 31.04,
+        "changePct": -5.02,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
+        "asOf": "2026-08-25T08:14:54Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "半导体",
+      "sector": "数控机床",
       "heat": 1,
-      "heatScore": 0.9,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "半导体板块受存储芯片涨价潮及海外资金抄底消息提振，市场情绪偏暖。普冉股份业绩暴增验证行业景气，但大盘指数表现分化，创业板指下跌，显示资金聚焦个股而非全面普涨。",
-      "evidence": [
-        {
-          "claim": "存储芯片成本飙升，英伟达高端服务器明年涨价15%",
-          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
-          "publishedAt": "2026-08-23T00:49:31Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "海外资金抄底半导体",
-          "sourceTitle": "海外资金抄底半导体_新浪新闻 - 手机新浪网",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5scE1uWXpmbGEtSF9JNDNNbC1KZk9ZSUFMRlVmLW83SlZBZG0tODNOYnBIcFliUXJ3RS1NXy1UUzB1TWNVbUhicXp4TUM3dVVrb0dNTVloR1lJS3kxcjcyZ3V5WQ?oc=5",
-          "publishedAt": "2026-07-09T07:00:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "创业板指下跌1%，市场风险偏好不高",
-          "sourceTitle": "创业板指行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:33Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.7,
-      "invalidatedIf": "存储芯片涨价趋势逆转或海外资金流向转为净流出"
-    },
-    {
-      "sector": "存储芯片",
-      "heat": 2,
       "heatScore": 0.8,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "存储芯片行业涨价潮持续，从服务器到消费端全面传导，普冉股份作为NOR Flash和MCU供应商受益明显，业绩暴增验证行业高景气。",
+      "priceAction": "down",
+      "calibration": "pricedIn",
+      "direction": "down",
+      "narrative": "宇环数控股价大幅下跌5.02%，而行业层面有政策利好（如“工业母机+”方案）和行业图谱报告，但股价未反应正面信息，显示市场情绪偏弱，可能已提前消化或担忧基本面。",
       "evidence": [
         {
-          "claim": "存储芯片涨价传导至消费端，1TB固态硬盘价格翻倍",
-          "sourceTitle": "存储芯片涨价潮蔓延至消费端，1TB固态硬盘从500元涨至千元 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBIYXFlRjVRN01RMms5c0xoTlB2RktwZEVraldyS2lFVEowUC1zZWNsTlhFYjMyOGF6LVhXQktPQ0piNjBWemFEWW1PLWhTUE53aXZJNU9FRTQ?oc=5",
-          "publishedAt": "2026-07-06T07:00:00Z",
+          "claim": "宇环数控股价下跌5.02%，反映市场情绪偏空。",
+          "sourceTitle": "宇环数控(002903):变更公司注册资本、修改公司章程和办理变更备案相关事宜",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SeEI2bDB5SjRfUWtuMHd6THFlNEtxSjJFOHJsbXFLRUxiUXBDeFNVckFhSl9pU0hJMm1aMWZoTWcwdzlpYnN2X0ZGTGk5N0wzMkZfY2tB?oc=5",
+          "publishedAt": "2026-08-25T13:37:02Z",
           "weight": "primary"
         },
         {
-          "claim": "苹果iPhone 17系列因存储芯片涨价将全球调价",
-          "sourceTitle": "存储芯片涨价传导：苹果iPhone 17系列将全球调价，涨幅或达千元 - QQ News",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKZ3lmbEVSWDdOMUxiRmlPOUxucWJsLTBXbUtVdEU0MEdDMm9HMDdZbzRZS2VxRkFXMXBobDZ0Y05GRXFESUFTZjduYkJxQVQxMmw4YVdn?oc=5",
-          "publishedAt": "2026-08-17T04:38:00Z",
+          "claim": "行业政策利好存在，但股价未反应。",
+          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
+          "publishedAt": "2024-07-29T07:00:00Z",
           "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [],
-      "confidence": 0.8,
-      "invalidatedIf": "存储芯片价格出现回落或需求不及预期"
-    },
-    {
-      "sector": "集成电路",
-      "heat": 3,
-      "heatScore": 0.6,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "集成电路板块受普冉股份等个股业绩驱动，但整体表现受大盘拖累，资金聚焦龙头。",
-      "evidence": [
-        {
-          "claim": "普冉股份上半年净利同比增长1930%，超出预告",
-          "sourceTitle": "18:40:03【普冉股份上半年净利同比增长1930%超出此前预告 SHM纳入合并报表贡献营收23.46亿元】 - 财联社",
-          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBxS2NzTWxRZlFoc0FiRGZlZXRIMVBHaW1jLUk1TG9hbWo0Y0JOUHd2SXoyczZOSzJZRTJ5OGVWc293SFlkVVB2SQ?oc=5",
-          "publishedAt": "2026-08-18T10:40:03Z",
-          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "沪深300和创业板指下跌，市场整体偏弱",
-          "sourceTitle": "沪深300行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:14Z",
+          "claim": "行业全景图谱显示行业有发展前景，可能支撑长期需求。",
+          "sourceTitle": "预见2024：《2024年中国数控机床行业全景图谱》(附市场供需情况、竞争格局和发展前景等)",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE53V3FXcy1KVUkwM3ZLdTVzLXNDb2FMdGNhMEJjQWJIQ2txYjZROEUzQmRVT0FRZzljN3o1X21tRDlJOGZteGJ5X0s2RUkwUEZERTVRWTRR?oc=5",
+          "publishedAt": "2024-08-26T07:00:00Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.6,
-      "invalidatedIf": "普冉股份业绩增速放缓或行业景气度下降"
+      "invalidatedIf": "若后续出现宇环数控订单或业绩超预期公告，或行业政策进一步加码，则当前偏空判断可能被推翻。"
+    },
+    {
+      "sector": "工业母机",
+      "heat": 2,
+      "heatScore": 0.7,
+      "priceAction": "down",
+      "calibration": "pricedIn",
+      "direction": "down",
+      "narrative": "工业母机板块受政策利好推动，但宇环数控作为相关个股表现疲软，显示政策利好可能已被市场提前消化，或个股基本面存在隐忧。",
+      "evidence": [
+        {
+          "claim": "政策方案印发，行业加速前行。",
+          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
+          "publishedAt": "2024-07-29T07:00:00Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "宇环数控股价下跌，显示市场情绪不佳。",
+          "sourceTitle": "宇环数控(002903):变更公司注册资本、修改公司章程和办理变更备案相关事宜",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SeEI2bDB5SjRfUWtuMHd6THFlNEtxSjJFOHJsbXFLRUxiUXBDeFNVckFhSl9pU0hJMm1aMWZoTWcwdzlpYnN2X0ZGTGk5N0wzMkZfY2tB?oc=5",
+          "publishedAt": "2026-08-25T13:37:02Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "行业报告显示市场供需和发展前景，可能支撑长期需求。",
+          "sourceTitle": "预见2024：《2024年中国数控机床行业全景图谱》(附市场供需情况、竞争格局和发展前景等)",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE53V3FXcy1KVUkwM3ZLdTVzLXNDb2FMdGNhMEJjQWJIQ2txYjZROEUzQmRVT0FRZzljN3o1X21tRDlJOGZteGJ5X0s2RUkwUEZERTVRWTRR?oc=5",
+          "publishedAt": "2024-08-26T07:00:00Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.55,
+      "invalidatedIf": "若工业母机板块出现资金大幅流入或政策超预期，则可能扭转当前偏空判断。"
+    },
+    {
+      "sector": "高端装备",
+      "heat": 3,
+      "heatScore": 0.5,
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "mixed",
+      "narrative": "高端装备板块缺乏直接新闻，但相关行业（数控机床、工业母机）有政策利好，而宇环数控股价下跌，整体板块表现可能分化。",
+      "evidence": [
+        {
+          "claim": "行业政策利好可能间接影响高端装备。",
+          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
+          "publishedAt": "2024-07-29T07:00:00Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [],
+      "confidence": 0.3,
+      "invalidatedIf": "若出现高端装备板块的明确新闻或资金流向数据，则可能更新判断。"
     }
   ],
-  "crossSectorNotes": "存储芯片涨价潮是当前半导体产业链的核心驱动，普冉股份业绩暴增验证行业高景气，但大盘指数分化显示资金更青睐业绩确定性强的个股。海外资金抄底半导体板块，但需警惕短期涨幅过大后的回调风险。",
+  "crossSectorNotes": "北向资金相关新闻显示市场情绪受资金流向扰动，但缺乏实时数据。整体市场指数涨跌不一，创业板指下跌1%，而宇环数控下跌5.02%，显示个股弱势。政策利好未能提振股价，可能已提前反应。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",

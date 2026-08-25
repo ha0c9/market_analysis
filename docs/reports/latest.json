@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T07:46:28Z",
+  "generatedAt": "2026-08-25T08:13:31Z",
   "focus": "存储相关",
   "timeWindow": {
-    "from": "2026-08-24T02:07:39Z",
-    "to": "2026-08-25T07:46:28Z"
+    "from": "2009-05-11T07:00:00Z",
+    "to": "2026-08-25T08:13:31Z"
   },
   "dataCoverage": {
     "news": true,
@@ -13,7 +13,7 @@
     "weibo": false
   },
   "marketSnapshot": {
-    "asOf": "2026-08-25T15:46:02Z",
+    "asOf": "2026-08-25T16:13:02Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
@@ -23,7 +23,7 @@
         "price": 3889.44,
         "changePct": 0.19,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:46:02Z"
+        "asOf": "2026-08-25T16:13:02Z"
       },
       {
         "symbol": "sh000300",
@@ -31,7 +31,7 @@
         "price": 4552.03,
         "changePct": -0.24,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:46:14Z"
+        "asOf": "2026-08-25T16:13:14Z"
       },
       {
         "symbol": "sz399006",
@@ -39,15 +39,15 @@
         "price": 3397.52,
         "changePct": -1.0,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:45:33Z"
+        "asOf": "2026-08-25T16:12:33Z"
       },
       {
         "symbol": "^HSI",
         "name": "HANG SENG INDEX",
-        "price": 25512.7,
-        "changePct": 2.2011174034770375,
-        "changePct5d": 0.16312112915124466,
-        "asOf": "2026-08-25T07:31:26Z"
+        "price": 25489.53,
+        "changePct": 2.1083008889474675,
+        "changePct5d": 0.07215577611587864,
+        "asOf": "2026-08-25T07:58:28Z"
       },
       {
         "symbol": "^GSPC",
@@ -55,7 +55,7 @@
         "price": 7652.86,
         "changePct": 3.249873852870633,
         "changePct5d": -1.1904387392089544,
-        "asOf": "2026-08-24T20:00:00Z"
+        "asOf": "2026-08-24T20:36:32Z"
       },
       {
         "symbol": "^IXIC",
@@ -73,7 +73,7 @@
         "price": 1.008,
         "changePct": -0.2,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:46:03Z"
+        "asOf": "2026-08-25T16:13:03Z"
       },
       {
         "symbol": "sz159995",
@@ -81,7 +81,7 @@
         "price": 1.118,
         "changePct": 0.09,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:46:12Z"
+        "asOf": "2026-08-25T16:13:12Z"
       },
       {
         "symbol": "SOXX",
@@ -99,31 +99,15 @@
         "price": 395.51,
         "changePct": 3.63,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:46:22Z"
+        "asOf": "2026-08-25T16:13:22Z"
       },
       {
-        "symbol": "sh688008",
-        "name": "澜起科技",
-        "price": 194.42,
-        "changePct": 1.35,
+        "symbol": "sz000021",
+        "name": "深科技",
+        "price": 36.82,
+        "changePct": 0.08,
         "changePct5d": null,
-        "asOf": "2026-08-25T15:45:59Z"
-      },
-      {
-        "symbol": "sz300223",
-        "name": "君正股份",
-        "price": 134.1,
-        "changePct": 0.33,
-        "changePct5d": null,
-        "asOf": "2026-08-25T15:45:39Z"
-      },
-      {
-        "symbol": "sh600171",
-        "name": "上海贝岭",
-        "price": 22.44,
-        "changePct": 1.22,
-        "changePct5d": null,
-        "asOf": "2026-08-25T15:46:17Z"
+        "asOf": "2026-08-25T16:13:21Z"
       },
       {
         "symbol": "MU",
@@ -148,73 +132,46 @@
         "changePct": -6.697272481771543,
         "changePct5d": -20.11881482864919,
         "asOf": "2026-08-24T20:00:00Z"
+      },
+      {
+        "symbol": "^SOX",
+        "name": "PHLX Semiconductor",
+        "price": 11423.169,
+        "changePct": -3.348126049168787,
+        "changePct5d": -9.490769971674196,
+        "asOf": "2026-08-24T21:15:59Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "存储芯片",
+      "sector": "半导体存储",
       "heat": 1,
       "heatScore": 0.25,
-      "priceAction": "mixed",
+      "priceAction": "down",
       "calibration": "confirming",
       "direction": "down",
-      "narrative": "存储芯片近期相关报道 23 条。相关标的均涨跌 -0.82%。此段为规则草稿，尚未经大模型综合。",
+      "narrative": "半导体存储近期相关报道 7 条。相关标的均涨跌 -1.30%。此段为规则草稿，尚未经大模型综合。",
       "evidence": [
         {
-          "claim": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 搜狐网",
-          "sourceTitle": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 - 搜狐网",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0hBay1SWWlEYS1kdFVta1N2b1JKNC0xVVNXbVZBU1VoeUlZSmZrT3ZBSVZldXZveVU3b3pxQmQ3YWV2ZlV3dWJKSEY2VDFMUmZueG9kc3ZMTWpFY3pNU0VXZ20xaXBDZS1tUm5nSnhZWVA3b0JtVkNhdF9NYTBDZVpBRWRZS1Jk?oc=5",
-          "publishedAt": "2026-08-25T02:52:29Z",
+          "claim": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 TradingKey",
+          "sourceTitle": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPX29NNEZ0YnltQzd5c25fWkdGUFJPREdXRm14N0NSdGVmMjkxNl8yX29qOHZqSXJySVVqVWRfb1l1ckV0Tkw1V3VJVkpJemVydERiemNXRjNjRmw1U3BzRks0YW9iUlNtMkh0LWs4ZFE2aV9UZjltaWEyeXI1eEZxUDBNal9WMnk4YTVWTGttaTluZGhrM0FGb2FGMnJIcmdSYXpjMXl2b0phdm9WcFliYmRvVVRBalg3X25qeC14T05lYlExSGIwNThHS0lUUQ?oc=5",
+          "publishedAt": "2026-08-24T09:41:00Z",
           "weight": "primary"
         },
         {
-          "claim": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 Jiemian.com",
-          "sourceTitle": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBzbXg3eXFhOGk3ckYyQUxDcWNYVDRNMkUwVXRZTmk4eXM0TmpXVExKVDdDaXVMSllxQXlfb3MyT2xuSVpaWm5YM0RYa0N1ajBBNllyZmh3?oc=5",
-          "publishedAt": "2026-08-25T02:32:33Z",
+          "claim": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 电子工程专辑",
+          "sourceTitle": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 - 电子工程专辑",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tdGcwTGhhTW1jY0ZQYTUweGpra2VoN3N5RDRXQmhId3R4cExaQVRqVVdHU0JRRWI0bDlzVzZEc2NkVTVJMzFIX29SRmc5MU1Ca09Z?oc=5",
+          "publishedAt": "2026-07-30T07:00:00Z",
           "weight": "supporting"
         },
         {
-          "claim": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% 21财经",
-          "sourceTitle": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% - 21财经",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTld6UGxIWWpIUk9SM01hNUQxT0lPZUQ3YXRxMU5kTFZ4T0h5ckZPMXlTYWNlZ2ZtUGx4MldPTXFWbjJId2NVWVozMHJ6V2xBRzl5dHZXc2FCSGw5UndHUUxXUFVHZC00eFZ2S1FiSGdVb1dJNFpETDNkM3pySFZ0WEQyNGxzVVY1d0xicg?oc=5",
-          "publishedAt": "2026-08-25T01:15:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [],
-      "confidence": 0.45,
-      "invalidatedIf": "出现与当前报道方向相反的官方政策或财报，或相关标的大幅反向波动。"
-    },
-    {
-      "sector": "半导体",
-      "heat": 2,
-      "heatScore": 0.25,
-      "priceAction": "flat",
-      "calibration": "confirming",
-      "direction": "unclear",
-      "narrative": "半导体近期相关报道 23 条。相关标的均涨跌 -0.20%。此段为规则草稿，尚未经大模型综合。",
-      "evidence": [
-        {
-          "claim": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 搜狐网",
-          "sourceTitle": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 - 搜狐网",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0hBay1SWWlEYS1kdFVta1N2b1JKNC0xVVNXbVZBU1VoeUlZSmZrT3ZBSVZldXZveVU3b3pxQmQ3YWV2ZlV3dWJKSEY2VDFMUmZueG9kc3ZMTWpFY3pNU0VXZ20xaXBDZS1tUm5nSnhZWVA3b0JtVkNhdF9NYTBDZVpBRWRZS1Jk?oc=5",
-          "publishedAt": "2026-08-25T02:52:29Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 Jiemian.com",
-          "sourceTitle": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBzbXg3eXFhOGk3ckYyQUxDcWNYVDRNMkUwVXRZTmk4eXM0TmpXVExKVDdDaXVMSllxQXlfb3MyT2xuSVpaWm5YM0RYa0N1ajBBNllyZmh3?oc=5",
-          "publishedAt": "2026-08-25T02:32:33Z",
-          "weight": "supporting"
-        },
-        {
-          "claim": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% 21财经",
-          "sourceTitle": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% - 21财经",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTld6UGxIWWpIUk9SM01hNUQxT0lPZUQ3YXRxMU5kTFZ4T0h5ckZPMXlTYWNlZ2ZtUGx4MldPTXFWbjJId2NVWVozMHJ6V2xBRzl5dHZXc2FCSGw5UndHUUxXUFVHZC00eFZ2S1FiSGdVb1dJNFpETDNkM3pySFZ0WEQyNGxzVVY1d0xicg?oc=5",
-          "publishedAt": "2026-08-25T01:15:00Z",
+          "claim": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 华尔街见闻",
+          "sourceTitle": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MNmtfenp6NzhJQXNmME1xdFBwRTg2SXpSVnhEX2pfMUVVZ2I5NTZyQnZ6SUNHdTc1QWJzSDBrN0M1emFlYUZWclQyS2pZa0FWeGZZ?oc=5",
+          "publishedAt": "2026-06-26T07:00:00Z",
           "weight": "supporting"
         }
       ],
@@ -224,32 +181,32 @@
     },
     {
       "sector": "数据中心",
-      "heat": 3,
+      "heat": 2,
       "heatScore": 0.25,
-      "priceAction": "mixed",
+      "priceAction": "down",
       "calibration": "confirming",
       "direction": "down",
-      "narrative": "数据中心近期相关报道 23 条。相关标的均涨跌 -0.82%。此段为规则草稿，尚未经大模型综合。",
+      "narrative": "数据中心近期相关报道 7 条。相关标的均涨跌 -1.30%。此段为规则草稿，尚未经大模型综合。",
       "evidence": [
         {
-          "claim": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 搜狐网",
-          "sourceTitle": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 - 搜狐网",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0hBay1SWWlEYS1kdFVta1N2b1JKNC0xVVNXbVZBU1VoeUlZSmZrT3ZBSVZldXZveVU3b3pxQmQ3YWV2ZlV3dWJKSEY2VDFMUmZueG9kc3ZMTWpFY3pNU0VXZ20xaXBDZS1tUm5nSnhZWVA3b0JtVkNhdF9NYTBDZVpBRWRZS1Jk?oc=5",
-          "publishedAt": "2026-08-25T02:52:29Z",
+          "claim": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 TradingKey",
+          "sourceTitle": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPX29NNEZ0YnltQzd5c25fWkdGUFJPREdXRm14N0NSdGVmMjkxNl8yX29qOHZqSXJySVVqVWRfb1l1ckV0Tkw1V3VJVkpJemVydERiemNXRjNjRmw1U3BzRks0YW9iUlNtMkh0LWs4ZFE2aV9UZjltaWEyeXI1eEZxUDBNal9WMnk4YTVWTGttaTluZGhrM0FGb2FGMnJIcmdSYXpjMXl2b0phdm9WcFliYmRvVVRBalg3X25qeC14T05lYlExSGIwNThHS0lUUQ?oc=5",
+          "publishedAt": "2026-08-24T09:41:00Z",
           "weight": "primary"
         },
         {
-          "claim": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 Jiemian.com",
-          "sourceTitle": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBzbXg3eXFhOGk3ckYyQUxDcWNYVDRNMkUwVXRZTmk4eXM0TmpXVExKVDdDaXVMSllxQXlfb3MyT2xuSVpaWm5YM0RYa0N1ajBBNllyZmh3?oc=5",
-          "publishedAt": "2026-08-25T02:32:33Z",
+          "claim": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 电子工程专辑",
+          "sourceTitle": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 - 电子工程专辑",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tdGcwTGhhTW1jY0ZQYTUweGpra2VoN3N5RDRXQmhId3R4cExaQVRqVVdHU0JRRWI0bDlzVzZEc2NkVTVJMzFIX29SRmc5MU1Ca09Z?oc=5",
+          "publishedAt": "2026-07-30T07:00:00Z",
           "weight": "supporting"
         },
         {
-          "claim": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% 21财经",
-          "sourceTitle": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% - 21财经",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTld6UGxIWWpIUk9SM01hNUQxT0lPZUQ3YXRxMU5kTFZ4T0h5ckZPMXlTYWNlZ2ZtUGx4MldPTXFWbjJId2NVWVozMHJ6V2xBRzl5dHZXc2FCSGw5UndHUUxXUFVHZC00eFZ2S1FiSGdVb1dJNFpETDNkM3pySFZ0WEQyNGxzVVY1d0xicg?oc=5",
-          "publishedAt": "2026-08-25T01:15:00Z",
+          "claim": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 华尔街见闻",
+          "sourceTitle": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MNmtfenp6NzhJQXNmME1xdFBwRTg2SXpSVnhEX2pfMUVVZ2I5NTZyQnZ6SUNHdTc1QWJzSDBrN0M1emFlYUZWclQyS2pZa0FWeGZZ?oc=5",
+          "publishedAt": "2026-06-26T07:00:00Z",
           "weight": "supporting"
         }
       ],
@@ -258,33 +215,33 @@
       "invalidatedIf": "出现与当前报道方向相反的官方政策或财报，或相关标的大幅反向波动。"
     },
     {
-      "sector": "存储设备",
-      "heat": 4,
+      "sector": "计算机设备",
+      "heat": 3,
       "heatScore": 0.25,
-      "priceAction": "mixed",
+      "priceAction": "down",
       "calibration": "confirming",
       "direction": "down",
-      "narrative": "存储设备近期相关报道 23 条。相关标的均涨跌 -0.82%。此段为规则草稿，尚未经大模型综合。",
+      "narrative": "计算机设备近期相关报道 7 条。相关标的均涨跌 -1.30%。此段为规则草稿，尚未经大模型综合。",
       "evidence": [
         {
-          "claim": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 搜狐网",
-          "sourceTitle": "存储芯片龙头君正股份港股上市首日股价开盘一度跌超2%，创始人刘强登台敲锣 - 搜狐网",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0hBay1SWWlEYS1kdFVta1N2b1JKNC0xVVNXbVZBU1VoeUlZSmZrT3ZBSVZldXZveVU3b3pxQmQ3YWV2ZlV3dWJKSEY2VDFMUmZueG9kc3ZMTWpFY3pNU0VXZ20xaXBDZS1tUm5nSnhZWVA3b0JtVkNhdF9NYTBDZVpBRWRZS1Jk?oc=5",
-          "publishedAt": "2026-08-25T02:52:29Z",
+          "claim": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 TradingKey",
+          "sourceTitle": "TradingKey 每日市场简报：英伟达财报成市场焦点，美光、博通拖累存储芯片板块 - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPX29NNEZ0YnltQzd5c25fWkdGUFJPREdXRm14N0NSdGVmMjkxNl8yX29qOHZqSXJySVVqVWRfb1l1ckV0Tkw1V3VJVkpJemVydERiemNXRjNjRmw1U3BzRks0YW9iUlNtMkh0LWs4ZFE2aV9UZjltaWEyeXI1eEZxUDBNal9WMnk4YTVWTGttaTluZGhrM0FGb2FGMnJIcmdSYXpjMXl2b0phdm9WcFliYmRvVVRBalg3X25qeC14T05lYlExSGIwNThHS0lUUQ?oc=5",
+          "publishedAt": "2026-08-24T09:41:00Z",
           "weight": "primary"
         },
         {
-          "claim": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 Jiemian.com",
-          "sourceTitle": "上海明确推进算力芯片攻关，机构看好存储及先进封装景气，芯片板块延续调整 - Jiemian.com",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBzbXg3eXFhOGk3ckYyQUxDcWNYVDRNMkUwVXRZTmk4eXM0TmpXVExKVDdDaXVMSllxQXlfb3MyT2xuSVpaWm5YM0RYa0N1ajBBNllyZmh3?oc=5",
-          "publishedAt": "2026-08-25T02:32:33Z",
+          "claim": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 电子工程专辑",
+          "sourceTitle": "研报 | 2027年存储器市场走势分化，DRAM供给持续紧缺、NAND Flash转趋宽松 - 电子工程专辑",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tdGcwTGhhTW1jY0ZQYTUweGpra2VoN3N5RDRXQmhId3R4cExaQVRqVVdHU0JRRWI0bDlzVzZEc2NkVTVJMzFIX29SRmc5MU1Ca09Z?oc=5",
+          "publishedAt": "2026-07-30T07:00:00Z",
           "weight": "supporting"
         },
         {
-          "claim": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% 21财经",
-          "sourceTitle": "日韩存储芯片股齐跌，SK海力士跌超5%，三星电子跌超3% - 21财经",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTld6UGxIWWpIUk9SM01hNUQxT0lPZUQ3YXRxMU5kTFZ4T0h5ckZPMXlTYWNlZ2ZtUGx4MldPTXFWbjJId2NVWVozMHJ6V2xBRzl5dHZXc2FCSGw5UndHUUxXUFVHZC00eFZ2S1FiSGdVb1dJNFpETDNkM3pySFZ0WEQyNGxzVVY1d0xicg?oc=5",
-          "publishedAt": "2026-08-25T01:15:00Z",
+          "claim": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 华尔街见闻",
+          "sourceTitle": "联想：内存涨价是“新常态”，DRAM和NAND高价将持续至2030年后 - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5MNmtfenp6NzhJQXNmME1xdFBwRTg2SXpSVnhEX2pfMUVVZ2I5NTZyQnZ6SUNHdTc1QWJzSDBrN0M1emFlYUZWclQyS2pZa0FWeGZZ?oc=5",
+          "publishedAt": "2026-06-26T07:00:00Z",
           "weight": "supporting"
         }
       ],
@@ -297,17 +254,19 @@
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
-    "大模型综合失败"
+    "大模型综合失败",
+    "近期稿件不足，已补充稍早的相关报道"
   ],
   "stats": {
-    "fetched": 25,
-    "used": 25,
-    "quotes": 16,
+    "fetched": 8,
+    "used": 8,
+    "quotes": 15,
     "model": "heuristic",
     "estCostUsd": 0,
-    "plannerModel": "deepseek-v4-flash-vision-exp"
+    "plannerModel": "deepseek-v4-flash"
   },
   "errors": [
-    "综合模型失败，保留规则草稿: LLM HTTP 500: {\"error\":{\"message\":\"服务器错误，请稍后重试\",\"type\":\"invalid_request_error\"}}"
+    "近期稿件不足，已补充稍早的相关报道",
+    "综合模型失败，保留规则草稿: Could not parse JSON from model output"
   ]
 }

@@ -1,0 +1,30 @@
+rss:
+  - id: bbc_business
+    name: BBC Business
+    url: https://feeds.bbci.co.uk/news/business/rss.xml
+  - id: cnbc_world
+    name: CNBC
+    url: https://www.cnbc.com/id/100003114/device/rss/rss.html
+  - id: marketwatch
+    name: MarketWatch
+    url: https://feeds.content.dowjones.io/public/rss/mw_topstories
+  - id: chinanews_finance
+    name: 中新网财经
+    url: https://www.chinanews.com.cn/rss/finance.xml
+
+google_news:
+  zh: https://news.google.com/rss/search?q={query}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+  en: https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en
+
+benchmarks:
+  - { symbol: sh000001, name: 上证指数 }
+  - { symbol: sh000300, name: 沪深300 }
+  - { symbol: sz399006, name: 创业板指 }
+  - { symbol: ^HSI, name: 恒生指数 }
+  - { symbol: ^GSPC, name: 标普500 }
+  - { symbol: ^IXIC, name: 纳斯达克 }
+
+sector_quotes:
+  - { symbol: sh512480, name: 半导体ETF }
+  - { symbol: sz159995, name: 芯片ETF }
+  - { symbol: SOXX, name: iShares 半导体 ETF }

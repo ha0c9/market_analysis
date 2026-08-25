@@ -1,0 +1,44 @@
+# Heuristic plans used when the LLM planner is unavailable,
+# and as a seed so the planner stays on-distribution.
+presets:
+  - match: ["存储", "nand", "dram", "hbm", "闪存", "memory"]
+    sectors: ["存储芯片 / NAND", "DRAM / HBM", "半导体设备"]
+    keywords:
+      - 存储
+      - 闪存
+      - NAND
+      - DRAM
+      - HBM
+      - 内存
+      - Micron
+      - 三星
+      - SK海力士
+      - 兆易创新
+      - 江波龙
+    news_queries:
+      - 存储芯片 NAND DRAM HBM
+      - NAND DRAM memory chip shortage price
+    tickers:
+      - sh603986   # 兆易创新
+      - sz300223   # 北京君正
+      - sh688008   # 澜起科技
+      - sz301308   # 江波龙
+      - sh688525   # 佰维存储
+      - sz001309   # 德明利
+      - MU
+      - SOXX
+  - match: ["半导体", "芯片", "chip", "semiconductor"]
+    sectors: ["半导体", "晶圆代工", "设备材料"]
+    keywords: ["半导体", "芯片", "晶圆", "光刻", "NVIDIA", "台积电", "中芯"]
+    news_queries: ["半导体 芯片 晶圆", "semiconductor chip foundry"]
+    tickers: [sh688981, sz002371, NVDA, TSM, SOXX]
+  - match: ["新能源", "锂电", "光伏", "ev", "battery"]
+    sectors: ["锂电池", "光伏", "新能源车"]
+    keywords: ["锂电", "光伏", "新能源", "电池", "储能"]
+    news_queries: ["新能源 锂电 光伏", "EV battery solar"]
+    tickers: [sz300750, sh601012, TSLA]
+default:
+  sectors: ["大盘", "成长风格", "价值风格"]
+  keywords: ["股市", "A股", "美股", "央行", "通胀"]
+  news_queries: ["A股 美股 财经", "stock market federal reserve"]
+  tickers: [sh600519, sz300750, AAPL]

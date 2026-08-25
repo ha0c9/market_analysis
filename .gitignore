@@ -1,3 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+_site/
+docs/reports/20*.json
+.DS_Store
+*.pyc
 .env
 .env.*
 !.env.example

@@ -1,41 +1,43 @@
 # 智能市场舆情分析
 
-按需触发的市场研究助手：在 GitHub Pages 上填写分析侧重点，由 AI 规划取数范围，聚合公开财经信息与**当前行情快照**（可选微博 / X 官方 API），生成带出处、并对照价格校准过的板块热度前瞻。
+按需触发的市场研究助手：填写侧重点 → GitHub Actions 拉公开新闻和行情 → AI（或规则回退）写出带出处的板块前瞻。前端部署在 GitHub Pages。
 
-**没有自有服务器。** 前端用 GitHub Pages；分析跑在 GitHub Actions。
+本系统是研究辅助，不是投资建议。密钥只放在 Actions Secrets，不进网页。
 
-**AI API Key 不放在网站里。** 放到仓库 Settings → Secrets and variables → Actions，访客和 git 都看不到。说明见 [计划文档 §12](docs/feasibility-and-plan.md#12-ai-api-key-放哪里不是网站里)。
+## 怎么用
 
-## 可行性（摘要）
+1. 仓库 Settings → Secrets and variables → Actions 确认已有：
+   - `AI_API_KEY`（SSSAiCode 的 `sk-` 密钥）
+   - `AI_BASE_URL` = `https://node-hk.sssaicode.com/api/v1`（也可不填，代码默认就是这个）
+2. Settings → Pages → Source 选 **GitHub Actions**。
+3. 打开 [Analyze market](https://github.com/ha0c9/market_analysis/actions/workflows/analyze.yml) → **Run workflow**，侧重点例如 `存储相关`。
+4. 跑完后打开 GitHub Pages（`https://ha0c9.github.io/market_analysis/`）查看报告。
 
-| 能力 | 结论 |
-| --- | --- |
-| Pages 前端 + 点按钮出报告 | 可行 |
-| 无 VPS 的后端 | 可行（Actions；可选 Cloudflare 做一键触发） |
-| 公开财经资讯 + **公开行情校准** | 可行，作为第一期主路径。网页报价公开可见，但不是交易所官方免费实时 API |
-| 免费、免登录的微博 / X 全量舆情 | **不可行** |
-| 配置官方 token 后的白名单博主 | 有条件可行（X 按次计费，必须设条数帽） |
+页面上的「在 GitHub 启动分析」会跳到第 3 步那个 Actions 页。真正的一键调度（不离开 Pages）还没做，密钥仍然不能进浏览器。
 
-完整论证、密钥清单、架构与分阶段计划见 **[docs/feasibility-and-plan.md](docs/feasibility-and-plan.md)**。
+## 本地跑
 
-本系统是研究辅助，不是投资建议。
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env   # 填 AI_API_KEY；不填则用规则规划/草稿报告
+python -m src.analyze --focus "存储相关" --lookback-hours 36
+bash scripts/build_site.sh
+python -m http.server 8000 --directory _site
+```
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ## 当前进度
 
 - [x] 第 0 期：需求、可行性、实施计划
-- [ ] 第 1 期：Pages 前端 + 示例报告
-- [ ] 第 2 期：公开源 + 行情校准 + 一个 AI Key 的真实分析管线
-- [ ] 第 3 期：Pages 一键触发
+- [x] 第 1 期：Pages 前端 + 示例报告
+- [x] 第 2 期：公开源 + 行情校准 + AI 管线（无 Key 时规则回退）
+- [ ] 第 3 期：Pages 一键触发（不跳转到 Actions）
 - [ ] 第 4 期：微博 / X 官方 API 插件
 - [ ] 第 5 期：质量与成本打磨
 
-## 你需要先准备的（第 2 期才会用到）
-
-1. 至少一个 AI API Key → **GitHub Actions Secret `AI_API_KEY`**，不是网页配置项
-2. `AI_BASE_URL`：SSSAiCode 选 **OpenAI** 格式，填 `https://node-hk.sssaicode.com/api/v1`（不要用 Anthropic 那条不带 `/v1` 的）
-3. `AI_MODEL_PLANNER` / `AI_MODEL_SYNTHESIZER`：**不必填**（规划用便宜模型、写报告用好一点的模型；空着则共用默认模型）
-4. 行情：默认不用再申请 key
-5. （可选）Finnhub、NewsAPI 等免费新闻 Key
-6. （可选）X Bearer Token + 博主名单；微博开放平台 token + uid 名单
-
-获取方式、行情校准说明、密钥逐步配置见 [docs/feasibility-and-plan.md](docs/feasibility-and-plan.md) 第 4、10、12 节。
+计划全文：[docs/feasibility-and-plan.md](docs/feasibility-and-plan.md)

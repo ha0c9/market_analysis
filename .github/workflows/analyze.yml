@@ -1,0 +1,78 @@
+name: Analyze market
+
+on:
+  workflow_dispatch:
+    inputs:
+      focus:
+        description: 分析侧重点，如 存储相关
+        required: false
+        default: ""
+      lookback_hours:
+        description: 回看小时数
+        required: false
+        default: "36"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: analyze-market
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Run analysis
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL_PLANNER: ${{ secrets.AI_MODEL_PLANNER }}
+          AI_MODEL_SYNTHESIZER: ${{ secrets.AI_MODEL_SYNTHESIZER }}
+        run: |
+          python -m src.analyze \
+            --focus "${{ inputs.focus }}" \
+            --lookback-hours "${{ inputs.lookback_hours }}"
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reports
+          if git diff --staged --quiet; then
+            echo "No report changes"
+          else
+            git commit -m "Update market report"
+            git push
+          fi
+
+      - name: Build site
+        run: bash scripts/build_site.sh
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
+        with:
+          path: _site
+
+      - name: Deploy Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+        continue-on-error: true

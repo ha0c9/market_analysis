@@ -6,6 +6,19 @@ from src.distill import distill_news
 from src.ingest.quotes import normalize_symbol, parse_tencent_body
 from src.models import NewsItem
 from src.planner import heuristic_plan
+from src.settings import ai_base_url
+
+
+class SettingsTests(unittest.TestCase):
+    def test_base_url_adds_v1(self) -> None:
+        import os
+        from unittest.mock import patch
+
+        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaicode.com/api"}):
+            self.assertEqual(ai_base_url(), "https://node-hk.sssaicode.com/api/v1")
+        with patch.dict(os.environ, {"AI_BASE_URL": "https://node-hk.sssaicode.com/api/v1"}):
+            self.assertEqual(ai_base_url(), "https://node-hk.sssaicode.com/api/v1")
+
 
 
 TENCENT = (

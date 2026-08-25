@@ -11,11 +11,13 @@
    - `AI_BASE_URL` = `https://node-hk.sssaicode.com/api/v1`（也可不填，代码默认就是这个）
 2. 打开 **[Analyze market](https://github.com/ha0c9/market_analysis/actions/workflows/analyze.yml)**（请用这个链接；它不会出现在「最近运行」列表里，直到你第一次点过）。
 3. 右上角 **Run workflow** → 侧重点填 `存储相关` → 再点绿色 Run workflow。
-4. 跑完后打开 `https://ha0c9.github.io/market_analysis/` 查看报告。
+4. 跑完后打开 `https://ha0c9.github.io/market_analysis/`。若仍看到 README 那样的说明文，多半是浏览器缓存；合并本仓库根目录的 `index.html` 后应出现深色分析页。
 
 手机上若只看到 Tests / Deploy pages：点 **All workflows** 下拉框，选 **Analyze market**，不要停在 Runners 或运行记录首页。
 
 页面上的「在 GitHub 启动分析」会跳到第 2 步。真正的一键调度（不离开 Pages）还没做，密钥仍然不能进浏览器。
+
+**模型名可以不填。** 你输入「存储相关」后，程序先用内置规则把侧重点映射成关键词（NAND/DRAM/HBM、兆易创新、美光等）和要搜的句子，再去拉 **Google 新闻 RSS**、BBC/CNBC/中新网等公开源，以及腾讯/Yahoo 行情。若 Secrets 里有 `AI_API_KEY`，会自动向中转站 `GET /v1/models` 挑一个便宜模型和一个写报告模型；挑不到或接口 404 时退回规则草稿，页面仍会出报告。
 
 ## 本地跑
 

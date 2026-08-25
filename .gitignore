@@ -3,7 +3,7 @@ __pycache__/
 .venv/
 venv/
 _site/
-docs/reports/20*.json
+reports/20*.json
 .DS_Store
 *.pyc
 .env

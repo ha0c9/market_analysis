@@ -95,9 +95,15 @@ def main() -> None:
     parser.add_argument("--focus", default="", help="分析侧重点，如：存储相关")
     parser.add_argument("--lookback-hours", type=int, default=36)
     args = parser.parse_args()
-    from src.settings import ai_base_url
+    from src.llm import resolve_model
+    from src.settings import ai_base_url, env
 
-    print(f"AI_BASE_URL={ai_base_url()}")
+    print(f"AI_API_KEY={'set' if env('AI_API_KEY') else 'missing'}")
+    print(f"AI_BASE_URL={ai_base_url() or '(empty)'}")
+    print(f"AI_MODEL_PLANNER={env('AI_MODEL_PLANNER') or '(empty)'}")
+    print(f"AI_MODEL_SYNTHESIZER={env('AI_MODEL_SYNTHESIZER') or '(empty)'}")
+    print(f"resolved_planner={resolve_model('planner')}")
+    print(f"resolved_synthesizer={resolve_model('synthesizer')}")
     path = build_report(args.focus.strip(), args.lookback_hours)
     print(f"wrote {path}")
 

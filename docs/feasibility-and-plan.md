@@ -459,7 +459,7 @@ market_analysis/
 1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。**不要提交到仓库，不要写进 Pages。** 放到 GitHub Actions Secrets（逐步说明见 §12）：
    - `AI_API_KEY`
    - `AI_BASE_URL`（选供应商的 **OpenAI / Chat Completions** 地址，见 §12.4）
-   - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（**不必填**，见 §12.5）
+   - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（第一版填 `deepseek-v4-flash`，见 §12.5）
 2. 打开 GitHub Pages（后续 workflow 会用 `docs/` 或 `gh-pages`）。
 3. 行情：**默认不用你再申请 key**。
 
@@ -545,58 +545,39 @@ GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不�
 | Responses | OpenAI 较新的 Agent 接口 | `/v1/responses` | 不要选。我们不做官方内置网页搜索那套 Agent |
 | Anthropic | Claude 原生 Messages | `/v1/messages` | 不要选。请求头和 JSON 形状都不同 |
 
-`AI_BASE_URL` 应填 **OpenAI 格式对应的 Base URL**，一般带 `/v1`，例如：
+`AI_BASE_URL` 应填 **OpenAI 格式对应的 Base URL**，从控制台复制后原样粘贴。程序**不会**自动补 `/v1`。例如：
 
 - OpenAI 官方：`https://api.openai.com/v1`
 - DeepSeek：`https://api.deepseek.com` 或 `https://api.deepseek.com/v1`（以供应商文档为准）
-- 中转/聚合：复制控制台里标注为 OpenAI 兼容的那一条，例如 `https://api.example.com/v1`
+- 中转/聚合：复制控制台里标注为 OpenAI 兼容的那一条
 
-不要把 Anthropic 或 Responses 那条 URL 填进来，否则第 2 期一跑就会协议对不上。  
+不要把 Anthropic 或 Responses 那条 URL 填进来，否则协议对不上。  
 若控制台还让你选「模型」，那是给网页 Playground 用的；仓库 Secrets 里的模型名才用 `AI_MODEL_*`，与这里的协议选择无关。
 
-#### 若供应商是 SSSAiCode（sssaicode.com）
+#### 若供应商是 SSSAiCode / SSSAiAPI
 
-后台三种格式请选 **OpenAI**。GitHub Secrets 这样填：
+后台三种格式请选 **OpenAI**。GitHub Secrets 这样填（名字是 `AI_` 开头，不是 `AL_`）：
 
-| Secret | 填什么 | 不要填 |
+| Secret | 第一版填什么 | 不要填 |
 | --- | --- | --- |
-| `AI_API_KEY` | 你已经填的 SSSAiCode 密钥（`sk-` 开头） | 官方 OpenAI/Anthropic 的 key |
-| `AI_BASE_URL` | `https://node-hk.sssaicode.com/api/v1` | `https://node-hk.sssaicode.com/api`（那是 Anthropic / Claude Code 用的） |
-| `AI_MODEL_PLANNER` | **可空**。若填，用后台模型列表里的便宜档，例如 `claude-haiku-4-5-20251001` 或 `gemini-2.5-flash` / `gpt-5.4-mini` | `gpt-5.3-codex`、Opus 等偏贵或偏编程的模型 |
-| `AI_MODEL_SYNTHESIZER` | **可空**。若填，用中档，例如 `claude-sonnet-5` 或 `gpt-5.4` / `gpt-5.5` | 同上 |
+| `AI_API_KEY` | 中转站密钥（`sk-` 开头） | 官方 OpenAI/Anthropic 的 key |
+| `AI_BASE_URL` | 控制台 OpenAI Base URL **原样粘贴**。当前节点示例：`https://node-hk.sssaiapi.com/api/v1` | Anthropic 那条（通常以 `/api` 结尾、没有 `/v1`） |
+| `AI_MODEL_PLANNER` | `deepseek-v4-flash` | `gpt-5.4-mini` 等程序以前自动挑的模型 |
+| `AI_MODEL_SYNTHESIZER` | `deepseek-v4-flash`（第一版与规划器用同一个） | 同上 |
 
-核对方法：后台 OpenAI 格式的地址应能对上 `{BASE}/chat/completions`。本仓库会请求：
+核对方法：后台 OpenAI 格式的地址应能对上 `{你填的 BASE}/chat/completions`。若控制台复制出来的是整段 `.../chat/completions`，**删掉末尾的 `/chat/completions`**，其余原样保留。
 
-`https://node-hk.sssaicode.com/api/v1/chat/completions`
-
-如果控制台复制出来的是整段 `.../api/v1/chat/completions`，**删掉末尾的 `/chat/completions`**，只保留到 `/v1`。  
-如果复制出来的是 `.../api`（没有 `/v1`），那是 Anthropic 格式，不要用于 `AI_BASE_URL`。
-
-线路备选（香港节点不通再换，仍要带 `/api/v1`）：
-
-- `https://claude2.sssaicode.com/api/v1`
-- 控制台里标成 OpenAI 格式的其它节点，同样补上或保留 `/v1`
-
-模型 ID **必须和后台「模型」页显示的字符串完全一致**（包括日期后缀）。上表只是常见名，以你账号里能勾选的为准。现在仍建议模型两项留空，等第 2 期接上后再补。
+模型 ID **必须和后台「模型」页显示的字符串完全一致**。若列表里不是 `deepseek-v4-flash`，以控制台为准整段复制。
 
 
-### 12.5 `AI_MODEL_PLANNER` 和 `AI_MODEL_SYNTHESIZER` 是干什么的？必须填吗？
+### 12.5 `AI_MODEL_PLANNER` 和 `AI_MODEL_SYNTHESIZER` 怎么填？
 
-**都不是必须的。只配好 `AI_API_KEY`（以及需要时的 `AI_BASE_URL`）就可以。** 现在第 2 期代码还没接上，空着也完全没问题。
+名字是 **`AI_MODEL_PLANNER` / `AI_MODEL_SYNTHESIZER`**（`AI` 是 A + I），不是 `AL_MODEL_*`。值是模型 ID 字符串，不是 URL，也不是 API Key。
 
-它们是给以后「一次分析用两个模型」准备的，用来控成本，不是两套不同的 AI 账号：
-
-| Secret | 干什么 | 不填时 |
+| Secret | 干什么 | 第一版 |
 | --- | --- | --- |
-| `AI_MODEL_PLANNER` | 规划器用的**便宜**模型：把「存储相关」变成关键词、板块、要拉哪些行情代码。输出很短。 | 和分析报告用**同一个**默认模型 |
-| `AI_MODEL_SYNTHESIZER` | 写报告用的**稍好**模型：只看压缩后的新闻+行情小表，生成板块前瞻。质量主要靠它。 | 同上，用默认模型 |
+| `AI_MODEL_PLANNER` | 规划器：把「存储相关」变成关键词、板块、行情代码 | `deepseek-v4-flash` |
+| `AI_MODEL_SYNTHESIZER` | 写报告：只看压缩后的新闻+行情小表 | 同样填 `deepseek-v4-flash` |
 
-值填供应商后台里的**模型 ID 字符串**（如 `deepseek-chat`、`gpt-4.1-mini`、`claude-haiku-4-5`），不是 URL，也不是 API Key。
-
-建议：
-
-1. **现在：两个都别填。** 少一项就少一项配错。
-2. 以后若官方/中转提供明显的「便宜档 + 质量档」，再补：Planner 用最便宜的，Synthesizer 用你愿意为报告付的那档。
-3. 若只有一个模型，两个都填同一个，或继续留空，效果一样。
-4. 不要把 Responses 专用模型 ID 填进来，除非供应商明确说该 ID 也走 Chat Completions。
+不填时：规划器默认 `deepseek-v4-flash`；综合模型复用规划器 Secret，再没有则同样默认 `deepseek-v4-flash`。程序**不会**再 `GET /models` 自动挑 GPT。仍建议在 Secrets 里显式填上，避免和后台实际 ID 不一致。
 

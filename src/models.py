@@ -47,6 +47,7 @@ class AnalysisPlan(BaseModel):
     benchmarks: list[str] = Field(default_factory=list)
     lookbackHours: int = 36
     maxItemsPerSource: int = 20
+    focusKind: Literal["stock", "theme", "tape"] = "theme"
 
 
 class NewsItem(BaseModel):

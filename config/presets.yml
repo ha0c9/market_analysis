@@ -86,3 +86,42 @@ stock_aliases:
   北方华创: sz002371
   隆基: sh601012
   隆基绿能: sh601012
+
+# Session/tape prompts: not a single industry. Match these before treating the
+# focus as a stock name (e.g. 资金流入分析 is not a financials ticker).
+tape_presets:
+  - match: ["资金流入", "资金流出", "资金流向", "主力资金", "主力净流入", "北向流入"]
+    sectors: ["当日资金流入板块", "热门成交个股", "北向与主力偏好"]
+    keywords: ["资金流入", "主力净流入", "北向资金", "板块轮动", "热门股", "成交额"]
+    news_queries:
+      - 今日 A股 资金流入 板块
+      - 主力资金净流入 个股 今日
+      - 北向资金 流入 行业 今日
+    etfs: [sh510300, sh510500, sz159915]
+    tickers: []
+  - match: ["尾盘拉升", "尾盘跳水", "尾盘"]
+    sectors: ["尾盘异动板块", "尾盘拉升个股", "短线情绪"]
+    keywords: ["尾盘拉升", "尾盘跳水", "尾盘", "抢筹", "回封"]
+    news_queries:
+      - 今日 尾盘拉升 个股
+      - A股 尾盘 拉升 板块
+      - 尾盘跳水 个股 今日
+    etfs: [sh510300, sz159915]
+    tickers: []
+  - match: ["涨停", "连板", "龙虎榜", "异动", "爆量"]
+    sectors: ["涨停与连板", "龙虎榜热门股", "异动板块"]
+    keywords: ["涨停", "连板", "龙虎榜", "异动", "封板"]
+    news_queries:
+      - 今日 A股 涨停 个股
+      - 龙虎榜 热门股 今日
+      - 连板 晋级 板块
+    etfs: [sz159915, sh510500]
+    tickers: []
+  - match: ["热门股", "板块轮动", "主线"]
+    sectors: ["当日主线板块", "热门个股", "风格轮动"]
+    keywords: ["热门股", "板块轮动", "主线", "成交额"]
+    news_queries:
+      - 今日 A股 热门股 板块
+      - 板块轮动 主线 今日
+    etfs: [sh510300, sh510500]
+    tickers: []

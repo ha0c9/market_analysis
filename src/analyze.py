@@ -98,7 +98,7 @@ def _refresh_index(directory: Path, keep: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a market narrative analysis job")
-    parser.add_argument("--focus", default="", help="分析侧重点，如：医药相关、恒瑞医药、sh600276")
+    parser.add_argument("--focus", default="", help="分析侧重点，如：资金流入分析、尾盘拉升、医药相关、恒瑞医药")
     parser.add_argument("--lookback-hours", type=int, default=36)
     args = parser.parse_args()
     from src.llm import log, probe_llm, public_url_parts, resolve_model

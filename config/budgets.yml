@@ -1,10 +1,10 @@
-max_items_per_source: 20
-max_news_kept: 60
+max_items_per_source: 24
+max_news_kept: 80
 min_news_kept: 8
-max_tickers: 18
-max_google_queries: 3
+max_tickers: 24
+max_google_queries: 5
 http_timeout_seconds: 12
-planner_max_tokens: 1600
-synthesizer_max_tokens: 4000
+planner_max_tokens: 3200
+synthesizer_max_tokens: 8000
 concurrent_fetches: 8
 report_history: 30

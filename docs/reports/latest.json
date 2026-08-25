@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T08:37:51Z",
-  "focus": "存储和光通信相关",
+  "generatedAt": "2026-08-25T10:06:11Z",
+  "focus": "光通信相关",
   "timeWindow": {
-    "from": "2026-08-17T23:19:00Z",
-    "to": "2026-08-25T08:37:51Z"
+    "from": "2025-12-08T08:00:00Z",
+    "to": "2026-08-25T10:06:11Z"
   },
   "dataCoverage": {
     "news": true,
@@ -13,7 +13,7 @@
     "weibo": false
   },
   "marketSnapshot": {
-    "asOf": "2026-08-25T16:14:02Z",
+    "asOf": "2026-08-25T08:14:02Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
@@ -23,7 +23,7 @@
         "price": 3889.44,
         "changePct": 0.19,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:02Z"
+        "asOf": "2026-08-25T08:14:02Z"
       },
       {
         "symbol": "sh000300",
@@ -31,7 +31,7 @@
         "price": 4552.03,
         "changePct": -0.24,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:14Z"
+        "asOf": "2026-08-25T08:14:14Z"
       },
       {
         "symbol": "sz399006",
@@ -39,7 +39,7 @@
         "price": 3397.52,
         "changePct": -1.0,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:33Z"
+        "asOf": "2026-08-25T08:14:33Z"
       },
       {
         "symbol": "^HSI",
@@ -66,150 +66,68 @@
         "asOf": "2026-08-24T21:15:59Z"
       }
     ],
-    "sectors": [
-      {
-        "symbol": "sh512480",
-        "name": "半导体ETF国联安",
-        "price": 1.008,
-        "changePct": -0.2,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:33Z"
-      },
-      {
-        "symbol": "sz159995",
-        "name": "芯片ETF华夏",
-        "price": 1.118,
-        "changePct": 0.09,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:12Z"
-      },
-      {
-        "symbol": "SOXX",
-        "name": "iShares PHLX SOX Semiconductor ",
-        "price": 506.18,
-        "changePct": -3.952486670082156,
-        "changePct5d": -9.468450941431705,
-        "asOf": "2026-08-24T20:00:00Z"
-      }
-    ],
+    "sectors": [],
     "tickers": [
       {
-        "symbol": "sh603986",
-        "name": "兆易创新",
-        "price": 395.51,
-        "changePct": 3.63,
+        "symbol": "sh600487",
+        "name": "亨通光电",
+        "price": 64.6,
+        "changePct": 6.9,
         "changePct5d": null,
-        "asOf": "2026-08-25T16:14:52Z"
-      },
-      {
-        "symbol": "sh688981",
-        "name": "中芯国际",
-        "price": 120.0,
-        "changePct": -0.48,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:51Z"
-      },
-      {
-        "symbol": "sz002371",
-        "name": "北方华创",
-        "price": 700.4,
-        "changePct": -1.06,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:03Z"
-      },
-      {
-        "symbol": "sh600498",
-        "name": "烽火通信",
-        "price": 40.66,
-        "changePct": 3.94,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:41Z"
-      },
-      {
-        "symbol": "sz300308",
-        "name": "中际旭创",
-        "price": 846.0,
-        "changePct": -2.78,
-        "changePct5d": null,
-        "asOf": "2026-08-25T16:14:12Z"
-      },
-      {
-        "symbol": "MU",
-        "name": "Micron Technology, Inc.",
-        "price": 910.43,
-        "changePct": -1.1422987132852058,
-        "changePct5d": -10.014332327572895,
-        "asOf": "2026-08-24T20:00:01Z"
-      },
-      {
-        "symbol": "WDC",
-        "name": "Western Digital Corporation",
-        "price": 435.38,
-        "changePct": -16.240861869949974,
-        "changePct5d": -18.773904040861822,
-        "asOf": "2026-08-24T20:00:00Z"
-      },
-      {
-        "symbol": "AVGO",
-        "name": "Broadcom Inc.",
-        "price": 358.76,
-        "changePct": -6.0640971931294585,
-        "changePct5d": -8.57986992293267,
-        "asOf": "2026-08-24T20:00:01Z"
-      },
-      {
-        "symbol": "MRVL",
-        "name": "Marvell Technology, Inc.",
-        "price": 229.29,
-        "changePct": 18.0507645574834,
-        "changePct5d": -2.1508165858145523,
-        "asOf": "2026-08-24T20:00:00Z"
+        "asOf": "2026-08-25T08:14:31Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "存储芯片",
+      "sector": "光通信",
       "heat": 1,
       "heatScore": 0.9,
       "priceAction": "down",
       "calibration": "divergence",
-      "direction": "mixed",
-      "narrative": "存储芯片板块近期剧烈波动，尽管有报道称价格飙升但市场出现有价无市现象，同时美股存储芯片股（如闪迪、美光）大幅下跌，而A股兆易创新逆势上涨。价格走势与基本面信号出现背离，可能反映市场对涨价持续性的担忧。",
+      "direction": "down",
+      "narrative": "光通信板块近期遭遇剧烈调整，主要受美国拟禁止进口中国数通设备传闻冲击，以及康宁“玻璃桥”新技术可能重塑产业链的担忧。尽管亨通光电今日大涨6.9%，但板块整体情绪偏弱，通信ETF回调近2%，光模块概念集体雪崩。市场情绪与风险偏好下降，资金流向显示北向资金可能撤离，但个股表现分化，需警惕短期超跌反弹与长期技术变革风险。",
       "evidence": [
         {
-          "claim": "存储芯片价格狂飙但有价无市，买卖双方僵持",
-          "sourceTitle": "存储芯片进入怪圈：价格狂飙却有价无市 买卖双方彻底僵住了 - qq.com",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE54SDFvM3dJYVF6UFV3VGJXMTRPUXZPcjBCRjBMREJIdzAyc013U2dleDRWSUZzWU5rM1dwLW9YTWdYYVI4YlkyV1Z6UzZxenZ1SDRtd0hOVk9rSnYwQU96TzlR?oc=5",
-          "publishedAt": "2026-08-19T08:00:00Z",
+          "claim": "美国拟禁止进口中国数通设备，导致光通信板块A股大跌、美股大涨",
+          "sourceTitle": "美传闻拟禁进口中国数通设备 致光通信板块相关美股大涨、A股大跌(含视频)",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE13SzNWUmVLNk5qNkZVWkNUZ3dqdUNkVGNrNW91Q2VMQ25Hd015TWtLZVNVSHVhY0otQUN0T2ZLekRrZm9OeWRxWHFZenZPS3RlT1V2a2NBbkZOMjZ2?oc=5",
+          "publishedAt": "2026-08-04T07:00:00Z",
           "weight": "primary"
         },
         {
-          "claim": "美股存储芯片板块下挫，闪迪跌超5%",
-          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
-          "publishedAt": "2026-08-24T10:17:05Z",
+          "claim": "光通信板块调整，通信ETF国泰回调近2%，光模块占比超50%",
+          "sourceTitle": "光通信板块调整，通信ETF国泰（515880）回调近2%，光模块占比超50%",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1hdktiLW5YckFka2FhZE1UM1M3M0lOUm45bW4zX0lBZHdtbHJ4bXpjTVNtMWYyX3NzMEdHREs5SU9iU0ZkSkxkejNHUEVwWGNjQXpKOEZ1R2pGc200LWFxRi13?oc=5",
+          "publishedAt": "2026-08-18T10:08:13Z",
           "weight": "primary"
         },
         {
-          "claim": "存储芯片、光通信板块集体暴跌",
-          "sourceTitle": "今夜，AI硬件“全崩”！存储芯片、光通信，集体暴跌 - 新浪财经",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE93Mm9KVWV2WkpoeWMzU3RUdTFRa1B0ajN2RzI3M1lnYzkyc2NEWGxmQW9LV0hKakVpT29vcDU1dkJqMWdwdElZc28xWm14VGdXZV9PRDJGVHZZdndzcGZVeDI5Z1NmaGVoQ0RXVzh0bUVkbXpOWjVySUNvYU4?oc=5",
-          "publishedAt": "2026-08-24T15:53:00Z",
+          "claim": "三则消息引爆，“光模块”一夜变天？光通信集体雪崩",
+          "sourceTitle": "三则消息引爆，“光模块”一夜变天？光通信集体雪崩 - 金融界",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpWHFiQTJZQU1EbW9VR3pua2lEb3lPcHRaTjA2M3ZFV0JfbHNHQWJReXJ5Ulk1SEZGVXdKc0NHSzZna1RTRHJ0YVluUjJXOENpLUYwSW5pS1p5REV6bnliWjZFYV9fNzZmMGdYQklKbVRIdw?oc=5",
+          "publishedAt": "2026-08-24T06:30:13Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "康宁“玻璃桥”技术冲击光通信产业链，上游光器件龙头承压更深",
+          "sourceTitle": "康宁“玻璃桥”技术冲击光通信产业链：光模块集成商相对安全、上游光器件龙头承压更深、玻璃基板环节迎来利好",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xajhMZ0pHWXpnWV9zYU9EbExhdmhUVDFwcHZKeWxnd29WUWZobTRYMkxVWUlXVEdfWUpuTzNZZk5qcWhKblcxNFVsdlk3NlJGa19zZGJha1hJZURocmc3SnVpRDFzc3YzVTJ2eEdjMk16NkVmUkdsSkEwWTdGYmc?oc=5",
+          "publishedAt": "2026-07-05T07:00:00Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "A股存储芯片股兆易创新上涨3.63%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T16:14:52Z",
+          "claim": "科技股迎来修复性反弹，半导体、存储与光通信板块集体走强",
+          "sourceTitle": "隆盛策略科技股迎来修复性反弹，半导体、存储与光通信板块集体走强",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1MTGFMMVNBLUQ5TjBVcHpsVWdXdUV1d0I3V1hqRnNsTWFqSTk4NHlEcC1RRnM2bWVFcFlsdEk4SG9uV1pBX3JBUlhJMGhCbmozNTdvXzhPT2JXUGtBMUtnOUxLZmdkdzRJd0NWYkNB?oc=5",
+          "publishedAt": "2026-07-29T17:38:09Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.6,
-      "invalidatedIf": "若存储芯片价格持续上涨且成交量放大，或美股存储芯片股止跌回升，则当前看空逻辑可能失效。"
+      "confidence": 0.7,
+      "invalidatedIf": "若美国禁令传闻被官方否认，或光通信板块连续两日放量上涨收复失地，则当前看空观点失效。"
     },
     {
       "sector": "光模块",
@@ -217,95 +135,66 @@
       "heatScore": 0.8,
       "priceAction": "down",
       "calibration": "divergence",
-      "direction": "mixed",
-      "narrative": "光模块板块近期承压，美股光通信股（如Lumentum）下跌，A股中际旭创下跌，但烽火通信逆势上涨。市场对AI硬件需求预期仍高，但短期股价回调可能反映获利了结或对高估值的担忧。",
+      "direction": "down",
+      "narrative": "光模块作为光通信核心环节，受美国禁令传闻和康宁新技术冲击最大，板块出现集体雪崩。尽管亨通光电等个股逆势上涨，但整体板块资金流出明显，市场情绪悲观。价格已部分反映利空，但技术变革风险尚未完全定价，需关注后续产业链调整。",
       "evidence": [
         {
-          "claim": "光通信板块下挫，Lumentum跌近5%",
-          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
-          "publishedAt": "2026-08-24T10:17:05Z",
+          "claim": "三则消息引爆，“光模块”一夜变天？光通信集体雪崩",
+          "sourceTitle": "三则消息引爆，“光模块”一夜变天？光通信集体雪崩 - 金融界",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpWHFiQTJZQU1EbW9VR3pua2lEb3lPcHRaTjA2M3ZFV0JfbHNHQWJReXJ5Ulk1SEZGVXdKc0NHSzZna1RTRHJ0YVluUjJXOENpLUYwSW5pS1p5REV6bnliWjZFYV9fNzZmMGdYQklKbVRIdw?oc=5",
+          "publishedAt": "2026-08-24T06:30:13Z",
           "weight": "primary"
         },
         {
-          "claim": "存储芯片、光通信板块集体暴跌",
-          "sourceTitle": "今夜，AI硬件“全崩”！存储芯片、光通信，集体暴跌 - 新浪财经",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE93Mm9KVWV2WkpoeWMzU3RUdTFRa1B0ajN2RzI3M1lnYzkyc2NEWGxmQW9LV0hKakVpT29vcDU1dkJqMWdwdElZc28xWm14VGdXZV9PRDJGVHZZdndzcGZVeDI5Z1NmaGVoQ0RXVzh0bUVkbXpOWjVySUNvYU4?oc=5",
-          "publishedAt": "2026-08-24T15:53:00Z",
-          "weight": "supporting"
+          "claim": "光通信板块调整，通信ETF国泰回调近2%，光模块占比超50%",
+          "sourceTitle": "光通信板块调整，通信ETF国泰（515880）回调近2%，光模块占比超50%",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1hdktiLW5YckFka2FhZE1UM1M3M0lOUm45bW4zX0lBZHdtbHJ4bXpjTVNtMWYyX3NzMEdHREs5SU9iU0ZkSkxkejNHUEVwWGNjQXpKOEZ1R2pGc200LWFxRi13?oc=5",
+          "publishedAt": "2026-08-18T10:08:13Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "美传闻拟禁进口中国数通设备 致光通信板块相关美股大涨、A股大跌",
+          "sourceTitle": "美传闻拟禁进口中国数通设备 致光通信板块相关美股大涨、A股大跌(含视频)",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE13SzNWUmVLNk5qNkZVWkNUZ3dqdUNkVGNrNW91Q2VMQ25Hd015TWtLZVNVSHVhY0otQUN0T2ZLekRrZm9OeWRxWHFZenZPS3RlT1V2a2NBbkZOMjZ2?oc=5",
+          "publishedAt": "2026-08-04T07:00:00Z",
+          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "A股光通信股烽火通信上涨3.94%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T16:14:41Z",
+          "claim": "康宁“玻璃桥”技术冲击光通信产业链：光模块集成商相对安全",
+          "sourceTitle": "康宁“玻璃桥”技术冲击光通信产业链：光模块集成商相对安全、上游光器件龙头承压更深、玻璃基板环节迎来利好",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xajhMZ0pHWXpnWV9zYU9EbExhdmhUVDFwcHZKeWxnd29WUWZobTRYMkxVWUlXVEdfWUpuTzNZZk5qcWhKblcxNFVsdlk3NlJGa19zZGJha1hJZURocmc3SnVpRDFzc3YzVTJ2eEdjMk16NkVmUkdsSkEwWTdGYmc?oc=5",
+          "publishedAt": "2026-07-05T07:00:00Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.55,
-      "invalidatedIf": "若光模块龙头股如中际旭创止跌回升，或出现新的需求利好，则当前看空逻辑可能失效。"
+      "confidence": 0.65,
+      "invalidatedIf": "若光模块龙头股如中际旭创等放量反弹并收复前期跌幅，且美国禁令传闻被证伪，则看空逻辑失效。"
     },
     {
-      "sector": "数据中心",
+      "sector": "通信设备",
       "heat": 3,
-      "heatScore": 0.7,
+      "heatScore": 0.6,
       "priceAction": "mixed",
       "calibration": "insufficientData",
-      "direction": "unclear",
-      "narrative": "数据中心板块缺乏直接新闻，但AI硬件相关板块波动可能影响其表现。美股半导体设备支出预期上调，可能间接利好数据中心建设，但缺乏具体行情数据。",
+      "direction": "mixed",
+      "narrative": "通信设备板块受光通信拖累，但亨通光电今日大涨6.9%，显示个股分化。市场情绪波动，缺乏明确方向。由于缺乏直接新闻证据，板块走势更多受整体市场影响，需进一步观察资金流向。",
       "evidence": [
         {
-          "claim": "高盛大幅上调全球半导体设备支出预期",
-          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
-          "publishedAt": "2026-08-24T10:17:05Z",
+          "claim": "股指延续结构性分化行情",
+          "sourceTitle": "股指延续结构性分化行情 - 同花顺财经",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Ka2tJZW5yYlFoQUZxNVVFeG4tWldjb3NvVW9ydVNLcExaMjJpSm91dGxOS2E3RzR5VVJQc0NZUFdRRDBfbjhnT1N5b2FtRGQ5NFZQVHpTa3Q0eWk5V3Y1WFh3?oc=5",
+          "publishedAt": "2026-08-25T04:42:22Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [],
-      "confidence": 0.3,
-      "invalidatedIf": "若出现数据中心资本开支或需求相关新闻，则当前判断可能失效。"
-    },
-    {
-      "sector": "半导体设备",
-      "heat": 4,
-      "heatScore": 0.6,
-      "priceAction": "down",
-      "calibration": "divergence",
-      "direction": "mixed",
-      "narrative": "半导体设备板块受高盛上调支出预期支撑，但美股SOXX指数大跌，A股北方华创下跌，显示市场情绪偏弱。基本面利好与股价表现背离，可能反映市场对短期估值或地缘风险的担忧。",
-      "evidence": [
-        {
-          "claim": "高盛大幅上调全球半导体设备支出预期",
-          "sourceTitle": "【美股盘前】三大期指齐跌；阿里管理层出手增持；存储芯片、光通信板块下挫，闪迪跌超5%，Lumentum跌近5%；高盛大幅上调全球半导体设备支出预期；美加谈判破裂 - 手机网易网",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9FUlhuVDBxVXU4MHJWck5ETEk5TERoRlJvUE1PQXlIUm51dGNmMnBYSXhiX25qSFFsOGY0dzBLZ0JxcWZ0Q3pwOEs3WG1tSXhHLVI2bkl4VHNpZ0pza3hmb19n?oc=5",
-          "publishedAt": "2026-08-24T10:17:05Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "美股半导体板块集体下跌",
-          "sourceTitle": "美股收盘：三大指数集体下跌，光通信、存储芯片、半导体板块集体爆发 - 京报网",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBXR0NWOWlzUU9uR2lqaW5XM3lSVlVEbldELXc5UFM4X1RDYkRiblAzTkthMWtZbksxWUVDaWJIaFAtZ0lNWnBvVTMwbkNDWFZtVnEtR1ZEQ1p4Y0hfNXJva0N6cjc5R1p5RjdZbFhmT3FuZw?oc=5",
-          "publishedAt": "2026-08-17T23:19:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "A股半导体设备股北方华创下跌1.06%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T16:14:03Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.5,
-      "invalidatedIf": "若半导体设备股止跌回升，或高盛预期被证实，则当前看空逻辑可能失效。"
+      "confidence": 0.4,
+      "invalidatedIf": "若通信设备板块出现明确利好或利空新闻，或亨通光电等龙头股连续大幅波动，则需重新评估。"
     }
   ],
-  "crossSectorNotes": "存储芯片和光通信板块近期同步下跌，但A股部分个股逆势上涨，显示市场分化。高盛上调半导体设备支出预期，但美股半导体板块仍大跌，可能反映市场对短期估值或宏观因素的担忧。整体来看，AI硬件相关板块波动剧烈，需关注后续价格走势与基本面信号的收敛。",
+  "crossSectorNotes": "光通信板块整体承压，但亨通光电逆势大涨6.9%，显示个股分化。美国禁令传闻和康宁新技术是主要风险点，需关注后续政策动向和技术演进。市场情绪波动较大，北向资金流向需密切跟踪。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -314,7 +203,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 18,
+    "quotes": 7,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

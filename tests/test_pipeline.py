@@ -97,6 +97,46 @@ class DistillTests(unittest.TestCase):
         self.assertIn("存储", kept[0].title)
 
 
+class OutlookNormalizeTests(unittest.TestCase):
+    def test_coerces_loose_llm_outlook(self) -> None:
+        from src.synthesize import normalize_sector_outlook
+
+        news = [
+            NewsItem(
+                title="又一“全球首创”疗法获批",
+                source="x",
+                url="https://example.com/a",
+                publishedAt="2025-07-03T07:00:00Z",
+                snippet="创新药",
+            )
+        ]
+        rows = normalize_sector_outlook(
+            [
+                {
+                    "sector": "创新药",
+                    "heat": "high",
+                    "heatScore": 8,
+                    "priceAction": "恒瑞医药下跌0.58%，礼来上涨4.26%。",
+                    "direction": "neutral",
+                    "calibration": "confirming",
+                    "narrative": "板块分化。",
+                    "evidence": ["又一“全球首创”疗法获批 (2025-07-03T07:00:00Z)"],
+                    "counterEvidence": "恒瑞医药股价下跌，能力仍有疑虑。",
+                    "confidence": 0.6,
+                    "invalidatedIf": "政策转向",
+                }
+            ],
+            news,
+        )
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["heat"], 1)
+        self.assertEqual(rows[0]["heatScore"], 0.8)
+        self.assertEqual(rows[0]["priceAction"], "mixed")
+        self.assertEqual(rows[0]["direction"], "unclear")
+        self.assertEqual(rows[0]["evidence"][0]["url"], "https://example.com/a")
+        self.assertEqual(rows[0]["counterEvidence"][0]["claim"][:4], "恒瑞医药")
+
+
 class PlannerTests(unittest.TestCase):
     def test_storage_preset(self) -> None:
         plan = heuristic_plan("存储相关", 36)

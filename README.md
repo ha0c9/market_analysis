@@ -9,11 +9,13 @@
 1. 仓库 Settings → Secrets and variables → Actions 确认已有：
    - `AI_API_KEY`（SSSAiCode 的 `sk-` 密钥）
    - `AI_BASE_URL` = `https://node-hk.sssaicode.com/api/v1`（也可不填，代码默认就是这个）
-2. Settings → Pages → Source 选 **GitHub Actions**。
-3. 打开 [Analyze market](https://github.com/ha0c9/market_analysis/actions/workflows/analyze.yml) → **Run workflow**，侧重点例如 `存储相关`。
-4. 跑完后打开 GitHub Pages（`https://ha0c9.github.io/market_analysis/`）查看报告。
+2. 打开 **[Analyze market](https://github.com/ha0c9/market_analysis/actions/workflows/analyze.yml)**（请用这个链接；它不会出现在「最近运行」列表里，直到你第一次点过）。
+3. 右上角 **Run workflow** → 侧重点填 `存储相关` → 再点绿色 Run workflow。
+4. 跑完后打开 `https://ha0c9.github.io/market_analysis/` 查看报告。
 
-页面上的「在 GitHub 启动分析」会跳到第 3 步那个 Actions 页。真正的一键调度（不离开 Pages）还没做，密钥仍然不能进浏览器。
+手机上若只看到 Tests / Deploy pages：点 **All workflows** 下拉框，选 **Analyze market**，不要停在 Runners 或运行记录首页。
+
+页面上的「在 GitHub 启动分析」会跳到第 2 步。真正的一键调度（不离开 Pages）还没做，密钥仍然不能进浏览器。
 
 ## 本地跑
 

@@ -41,10 +41,11 @@ jobs:
 
       - name: Run analysis
         env:
+          PYTHONUNBUFFERED: "1"
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
-          AI_MODEL_PLANNER: ${{ secrets.AI_MODEL_PLANNER }}
-          AI_MODEL_SYNTHESIZER: ${{ secrets.AI_MODEL_SYNTHESIZER }}
+          AI_BASE_URL: ${{ vars.AI_BASE_URL || secrets.AI_BASE_URL }}
+          AI_MODEL_PLANNER: ${{ vars.AI_MODEL_PLANNER || secrets.AI_MODEL_PLANNER }}
+          AI_MODEL_SYNTHESIZER: ${{ vars.AI_MODEL_SYNTHESIZER || secrets.AI_MODEL_SYNTHESIZER }}
         run: |
           python -m src.analyze \
             --focus "${{ inputs.focus }}" \

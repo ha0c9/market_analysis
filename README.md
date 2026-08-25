@@ -6,11 +6,13 @@
 
 ## 怎么用
 
-1. 仓库 Settings → Secrets and variables → Actions 按控制台原文填写（程序**不会**自动补 `/v1`，也不会去 `/models` 乱挑模型）：
-   - `AI_API_KEY`：中转站的 `sk-` 密钥
-   - `AI_BASE_URL`：OpenAI 兼容 Base URL，整段从控制台复制。你当前用的是 `https://node-hk.sssaiapi.com/api/v1`
-   - `AI_MODEL_PLANNER`：`deepseek-v4-flash`（第一版规划模型；必须和后台模型列表里的字符串完全一致）
-   - `AI_MODEL_SYNTHESIZER`：第一版也填 `deepseek-v4-flash`（写报告；不填则复用规划模型）
+1. 仓库 Settings → Secrets and variables → Actions：
+   - **Secrets**（会被日志掩成 `***`）：只放 `AI_API_KEY`（中转站 `sk-` 密钥）
+   - **Variables**（明文，日志里能看见）：`AI_BASE_URL`、`AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`
+     - `AI_BASE_URL` = `https://node-hk.sssaiapi.com/api/v1`
+     - `AI_MODEL_PLANNER` = 后台模型 ID，例如 `deepseek-v4-flash-vision-exp`
+     - `AI_MODEL_SYNTHESIZER` = 后台模型 ID，例如 `grok-4.6`
+   这三项如果还留在 Secrets 里，日志仍会按密文掩掉同一段字符串。请在 Secrets 里删掉它们，只留 Variables。程序优先读 Variables，没有再回退 Secrets。程序**不会**自动补 `/v1`，也不会去 `/models` 乱挑模型。
 2. 打开 **[Analyze market](https://github.com/ha0c9/market_analysis/actions/workflows/analyze.yml)**（请用这个链接；它不会出现在「最近运行」列表里，直到你第一次点过）。
 3. 右上角 **Run workflow** → 侧重点填 `存储相关` → 再点绿色 Run workflow。
 4. 跑完后打开 `https://ha0c9.github.io/market_analysis/`。若仍看到 README 那样的说明文，多半是浏览器缓存；合并本仓库根目录的 `index.html` 后应出现深色分析页。
@@ -19,7 +21,7 @@
 
 页面上的「在 GitHub 启动分析」会跳到第 2 步。真正的一键调度（不离开 Pages）还没做，密钥仍然不能进浏览器。
 
-Secret 名是 **`AI_MODEL_*`（字母 I）**，不是 `AL_MODEL_*`。值只填模型 ID，不要填 URL 或 Key。若控制台显示的不是 `deepseek-v4-flash`，以控制台为准整段复制。
+Secret 名是 **`AI_MODEL_*`（字母 I）**，不是 `AL_MODEL_*`。值只填模型 ID，不要填 URL 或 Key。建议放在 **Variables** 而不是 Secrets，方便 Actions 日志对照。若控制台显示的不是文档里的示例名，以控制台为准整段复制。
 
 你输入「存储相关」后，规划器用 Secret 里的模型（第一版默认 DeepSeek V4 Flash）生成关键词和代码，再拉 **Google 新闻 RSS**、BBC/CNBC/中新网等公开源，以及腾讯/Yahoo 行情，最后用综合模型写带出处的前瞻。调用失败时仍回退规则草稿，页面会出报告。
 

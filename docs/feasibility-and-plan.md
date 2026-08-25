@@ -456,10 +456,10 @@ market_analysis/
 
 **现在就可以做（第 2 期）：**
 
-1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。**不要提交到仓库，不要写进 Pages。** 放到 GitHub Actions Secrets（逐步说明见 §12）：
-   - `AI_API_KEY`
-   - `AI_BASE_URL`（选供应商的 **OpenAI / Chat Completions** 地址，见 §12.4）
-   - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（第一版填 `deepseek-v4-flash`，见 §12.5）
+1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。**不要提交到仓库，不要写进 Pages。** Key 放 GitHub Actions **Secrets**；Base URL 和模型名放 **Variables**（逐步说明见 §12）：
+   - Secret：`AI_API_KEY`
+   - Variable：`AI_BASE_URL`（选供应商的 **OpenAI / Chat Completions** 地址，见 §12.4）
+   - Variable：`AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（见 §12.5）
 2. 打开 GitHub Pages（后续 workflow 会用 `docs/` 或 `gh-pages`）。
 3. 行情：**默认不用你再申请 key**。
 
@@ -556,14 +556,16 @@ GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不�
 
 #### 若供应商是 SSSAiCode / SSSAiAPI
 
-后台三种格式请选 **OpenAI**。GitHub Secrets 这样填（名字是 `AI_` 开头，不是 `AL_`）：
+后台三种格式请选 **OpenAI**。GitHub 这样填（名字是 `AI_` 开头，不是 `AL_`）：
 
-| Secret | 第一版填什么 | 不要填 |
+| 位置 | Name | 第一版填什么 |
 | --- | --- | --- |
-| `AI_API_KEY` | 中转站密钥（`sk-` 开头） | 官方 OpenAI/Anthropic 的 key |
-| `AI_BASE_URL` | 控制台 OpenAI Base URL **原样粘贴**。当前节点示例：`https://node-hk.sssaiapi.com/api/v1` | Anthropic 那条（通常以 `/api` 结尾、没有 `/v1`） |
-| `AI_MODEL_PLANNER` | `deepseek-v4-flash` | `gpt-5.4-mini` 等程序以前自动挑的模型 |
-| `AI_MODEL_SYNTHESIZER` | `deepseek-v4-flash`（第一版与规划器用同一个） | 同上 |
+| **Secret** | `AI_API_KEY` | 中转站密钥（`sk-` 开头） |
+| **Variable** | `AI_BASE_URL` | `https://node-hk.sssaiapi.com/api/v1`（OpenAI 那条，带 `/v1`） |
+| **Variable** | `AI_MODEL_PLANNER` | 后台模型 ID，例如 `deepseek-v4-flash` |
+| **Variable** | `AI_MODEL_SYNTHESIZER` | 后台模型 ID，例如 `grok-4.6` |
+
+`AI_API_KEY` 必须放 Secrets。Base URL 和模型名不是密钥：放 Variables 后日志不会被掩成 `***`。若同一段值还留在 Secrets 里，GitHub 仍会在整份日志里掩掉它，所以要从 Secrets **删掉**这三项。
 
 核对方法：后台 OpenAI 格式的地址应能对上 `{你填的 BASE}/chat/completions`。若控制台复制出来的是整段 `.../chat/completions`，**删掉末尾的 `/chat/completions`**，其余原样保留。
 
@@ -572,12 +574,12 @@ GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不�
 
 ### 12.5 `AI_MODEL_PLANNER` 和 `AI_MODEL_SYNTHESIZER` 怎么填？
 
-名字是 **`AI_MODEL_PLANNER` / `AI_MODEL_SYNTHESIZER`**（`AI` 是 A + I），不是 `AL_MODEL_*`。值是模型 ID 字符串，不是 URL，也不是 API Key。
+名字是 **`AI_MODEL_PLANNER` / `AI_MODEL_SYNTHESIZER`**（`AI` 是 A + I），不是 `AL_MODEL_*`。建议放在 **Actions Variables**（不是 Secrets），这样 Analyze 日志里能看到实际模型名。值是模型 ID 字符串，不是 URL，也不是 API Key。
 
-| Secret | 干什么 | 第一版 |
+| Variable | 干什么 | 示例 |
 | --- | --- | --- |
-| `AI_MODEL_PLANNER` | 规划器：把「存储相关」变成关键词、板块、行情代码 | `deepseek-v4-flash` |
-| `AI_MODEL_SYNTHESIZER` | 写报告：只看压缩后的新闻+行情小表 | 同样填 `deepseek-v4-flash` |
+| `AI_MODEL_PLANNER` | 规划器：把「存储相关」变成关键词、板块、行情代码 | 后台列表里的 DeepSeek Flash ID |
+| `AI_MODEL_SYNTHESIZER` | 写报告：只看压缩后的新闻+行情小表 | 后台列表里的 Grok ID |
 
-不填时：规划器默认 `deepseek-v4-flash`；综合模型复用规划器 Secret，再没有则同样默认 `deepseek-v4-flash`。程序**不会**再 `GET /models` 自动挑 GPT。仍建议在 Secrets 里显式填上，避免和后台实际 ID 不一致。
+不填时：规划器默认 `deepseek-v4-flash`；综合模型复用规划器，再没有则同样默认 `deepseek-v4-flash`。程序**不会**再 `GET /models` 自动挑 GPT。仍建议显式填上。若这三项还留在 Secrets 里，日志仍会被掩掉。
 

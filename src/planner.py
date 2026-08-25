@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.llm import LLMError, chat, parse_json_object, resolve_model
+from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
 from src.models import AnalysisPlan
 from src.settings import env, load_yaml
 
@@ -50,7 +50,7 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
     )
     try:
         model = resolve_model("planner")
-        print(f"calling planner model={model}")
+        print(f"calling planner {model_debug(model)}", flush=True)
         raw = chat(
             [
                 {"role": "system", "content": "Return JSON only."},
@@ -70,7 +70,9 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         cap = int(load_yaml("budgets.yml").get("max_tickers") or 18)
         merged["tickers"] = merged["tickers"][:cap]
         merged["newsQueries"] = merged["newsQueries"][: int(load_yaml("budgets.yml").get("max_google_queries") or 2)]
+        print(f"planner ok sectors={len(merged.get('sectors') or [])} tickers={len(merged.get('tickers') or [])}", flush=True)
         return AnalysisPlan.model_validate(merged), model, warnings
     except (LLMError, ValueError) as exc:
+        print(f"planner failed: {exc}", flush=True)
         warnings.append(f"规划模型失败，回退规则规划: {exc}")
         return base, "heuristic", warnings

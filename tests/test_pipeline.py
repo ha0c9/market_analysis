@@ -6,7 +6,7 @@ from src.distill import distill_news
 from src.ingest.quotes import normalize_symbol, parse_tencent_body
 from src.models import NewsItem
 from src.planner import heuristic_plan
-from src.llm import resolve_model
+from src.llm import model_debug, public_url_parts, resolve_model
 from src.settings import ai_base_url
 
 
@@ -47,6 +47,17 @@ class ModelResolveTests(unittest.TestCase):
 
         with patch.dict(os.environ, {"AI_MODEL_PLANNER": "deepseek-v4-flash", "AI_MODEL_SYNTHESIZER": ""}):
             self.assertEqual(resolve_model("synthesizer"), "deepseek-v4-flash")
+
+    def test_public_url_parts(self) -> None:
+        self.assertEqual(
+            public_url_parts("https://node-hk.sssaiapi.com/api/v1"),
+            "scheme=https host=node-hk.sssaiapi.com path=/api/v1",
+        )
+
+    def test_model_debug_flags(self) -> None:
+        self.assertIn("flags=deepseek,flash,vision", model_debug("deepseek-v4-flash-vision-exp"))
+        self.assertIn("flags=grok", model_debug("grok-4.6"))
+        self.assertIn("spaced=true", model_debug("Grok 4.6"))
 
 
 

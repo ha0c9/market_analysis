@@ -28,6 +28,23 @@ function chgClass(value) {
   return Number(value) >= 0 ? "chg up" : "chg down";
 }
 
+function formatBeijing(value) {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  const fmt = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  const parts = Object.fromEntries(fmt.formatToParts(date).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} 北京时间`;
+}
+
 function renderQuotes(title, rows) {
   if (!rows || !rows.length) return "";
   return `
@@ -53,23 +70,27 @@ function renderEvidence(items) {
       const link = item.url
         ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${label}</a>`
         : label;
-      return `<li>${link}<div class="hint">${item.claim || ""} ${item.publishedAt || ""}</div></li>`;
+      return `<li>${link}<div class="hint">${item.claim || ""} ${formatBeijing(item.publishedAt)}</div></li>`;
     })
     .join("")}</ul>`;
 }
 
 function renderReport(report) {
+  const windowFrom = formatBeijing(report.timeWindow?.from);
+  const windowTo = formatBeijing(report.timeWindow?.to);
   $("status").hidden = false;
   $("status").innerHTML = `
     <div>侧重点：<strong>${report.focus || "泛市场"}</strong></div>
-    <div>生成时间：${report.generatedAt || "—"}</div>
+    <div>生成时间：${formatBeijing(report.generatedAt)}</div>
+    <div>回看窗口：${windowFrom} — ${windowTo}</div>
     <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 微博/X ${report.dataCoverage?.weibo || report.dataCoverage?.x ? "是" : "否"}</div>
-    <div>模型：${report.stats?.model || "—"}</div>
+    <div>模型：${report.stats?.plannerModel || "—"} → ${report.stats?.model || "—"}</div>
   `;
 
   const snap = report.marketSnapshot || {};
   $("snapshot").hidden = false;
   $("snapshot").innerHTML =
+    `<p class="hint">行情时间：${formatBeijing(snap.asOf)}（可能延迟）</p>` +
     renderQuotes("基准", snap.benchmarks) +
     renderQuotes("板块 / ETF", snap.sectors) +
     renderQuotes("相关标的", snap.tickers);
@@ -117,7 +138,7 @@ async function loadReport() {
     const response = await fetch(`${reportsUrl}?t=${Date.now()}`);
     if (response.ok) {
       renderReport(await response.json());
-      $("hint").textContent = "正在显示 latest.json。若刚在 Actions 跑完，请稍候刷新。";
+      $("hint").textContent = "正在显示 latest.json。若刚在 Actions 跑完，请稍候刷新。页面时间均为北京时间。";
       return;
     }
   } catch (error) {
@@ -125,7 +146,7 @@ async function loadReport() {
   }
   const sample = await fetch(`${sampleUrl}?t=${Date.now()}`);
   renderReport(await sample.json());
-  $("hint").textContent = "尚未生成真实报告，先展示示例。在 GitHub Actions 运行分析后刷新。";
+  $("hint").textContent = "尚未生成真实报告，先展示示例。在 GitHub Actions 运行分析后刷新。页面时间均为北京时间。";
 }
 
 $("start").addEventListener("click", () => {

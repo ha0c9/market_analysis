@@ -231,6 +231,32 @@ class PlannerTests(unittest.TestCase):
         self.assertIn("sh512010", plan.etfs)
         self.assertNotIn("sh603986", plan.tickers)
 
+    def test_tape_focus_is_not_a_stock_or_financials_basket(self) -> None:
+        from src.planner import focus_kind, is_stock_focus, is_tape_focus
+
+        self.assertTrue(is_tape_focus("资金流入分析"))
+        self.assertFalse(is_stock_focus("资金流入分析"))
+        self.assertEqual(focus_kind("资金流入分析"), "tape")
+        self.assertTrue(is_tape_focus("尾盘拉升"))
+        self.assertFalse(is_stock_focus("尾盘拉升"))
+        self.assertEqual(focus_kind("尾盘拉升"), "tape")
+        self.assertTrue(is_stock_focus("恒瑞医药"))
+
+        inflow = heuristic_plan("资金流入分析", 36)
+        self.assertEqual(inflow.focusKind, "tape")
+        self.assertTrue(any("资金流入" in query and "板块" in query for query in inflow.newsQueries))
+        self.assertTrue(any("个股" in query for query in inflow.newsQueries))
+        self.assertNotIn("sh600519", inflow.tickers)
+        self.assertTrue(inflow.etfs)
+        blob = " ".join(inflow.sectors + inflow.keywords).lower()
+        self.assertNotRegex(blob, r"银行|券商|保险")
+
+        late = heuristic_plan("尾盘拉升", 36)
+        self.assertEqual(late.focusKind, "tape")
+        self.assertTrue(any("尾盘" in query for query in late.newsQueries))
+        self.assertTrue(any("个股" in query for query in late.newsQueries))
+        self.assertNotIn("sh600519", late.tickers)
+
 
 if __name__ == "__main__":
     unittest.main()

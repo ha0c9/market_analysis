@@ -378,7 +378,7 @@ def synthesize_report(
             "snippet": item.snippet[:280],
             "score": item.score,
         }
-        for item in news[:50]
+        for item in news[:80]
     ]
     compact_quotes = [row.model_dump() for row in quotes]
     prompt = {
@@ -403,6 +403,9 @@ def synthesize_report(
             "每条前瞻必须提到价格是否已反应；没有行情则 calibration=insufficientData。"
             "evidence 必须来自给定 news 的 title/url/publishedAt，禁止编造链接。"
             "这不是投资建议，不要给买卖点或目标价。"
+            "若 focusKind=tape 或侧重点是资金流入/尾盘拉升/涨停/龙虎榜等盘面现象："
+            "sectorOutlook 按新闻里实际出现的板块和个股来写，不要默认写成银行证券保险；"
+            "点名热门股并对照 quotes 里的价格。"
         ),
     }
     try:

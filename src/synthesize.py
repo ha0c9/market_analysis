@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from statistics import mean
 
-from src.llm import LLMError, chat, parse_json_object, resolve_model
+from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
 from src.models import AnalysisPlan, Evidence, NewsItem, QuoteRow, Report, SectorOutlook
 from src.settings import env, load_yaml
 from src.timeutil import isoformat, now_utc, parse_datetime
@@ -188,7 +188,7 @@ def synthesize_report(
     }
     try:
         model = resolve_model("synthesizer")
-        print(f"calling synthesizer model={model}")
+        print(f"calling synthesizer {model_debug(model)}", flush=True)
         raw = chat(
             [
                 {"role": "system", "content": "You are a financial research assistant. Return JSON only."},
@@ -196,6 +196,7 @@ def synthesize_report(
             ],
             model=model,
             max_tokens=int(load_yaml("budgets.yml").get("synthesizer_max_tokens") or 2200),
+            timeout=180.0,
         )
         data = parse_json_object(raw)
         fallback_dump = fallback.model_dump()
@@ -205,8 +206,10 @@ def synthesize_report(
             fallback_dump["crossSectorNotes"] = data["crossSectorNotes"]
         fallback_dump["stats"]["model"] = model
         report = Report.model_validate(fallback_dump)
+        print(f"synthesizer ok outlook={len(report.sectorOutlook)}", flush=True)
         return report, model
     except (LLMError, ValueError) as exc:
+        print(f"synthesizer failed: {exc}", flush=True)
         fallback.errors.append(f"综合模型失败，保留规则草稿: {exc}")
         fallback.limitations.append("大模型综合失败")
         return fallback, "heuristic"

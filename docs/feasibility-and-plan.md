@@ -534,3 +534,69 @@ GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不�
 - **能：** 你在本仓库点 Run workflow（或第 3 期那条受控触发器）。所以第 3 期必须给触发器加口令/登录，防止外人替你烧 AI 额度。
 
 若 Key 曾经不小心提交过：去 AI 控制台**立刻作废并换新**，不要以为「再删掉文件」就安全（git 历史里还在）。
+
+### 12.4 供应商让你选 Anthropic / OpenAI / Responses 时选哪个？
+
+这三项不是三家公司，而是**同一种 HTTPS 调用的三种 JSON 协议**。本系统按 **OpenAI Chat Completions** 来接，兼容面最广（官方 OpenAI、DeepSeek、多数国内中转都走这条）。
+
+| 控制台里的名字 | 实际协议 | 典型路径 | 本项目 |
+| --- | --- | --- | --- |
+| **OpenAI**（有的写成 Chat Completions / 对话补全） | Chat Completions | `/v1/chat/completions` | **选这个** |
+| Responses | OpenAI 较新的 Agent 接口 | `/v1/responses` | 不要选。我们不做官方内置网页搜索那套 Agent |
+| Anthropic | Claude 原生 Messages | `/v1/messages` | 不要选。请求头和 JSON 形状都不同 |
+
+`AI_BASE_URL` 应填 **OpenAI 格式对应的 Base URL**，一般带 `/v1`，例如：
+
+- OpenAI 官方：`https://api.openai.com/v1`
+- DeepSeek：`https://api.deepseek.com` 或 `https://api.deepseek.com/v1`（以供应商文档为准）
+- 中转/聚合：复制控制台里标注为 OpenAI 兼容的那一条，例如 `https://api.example.com/v1`
+
+不要把 Anthropic 或 Responses 那条 URL 填进来，否则第 2 期一跑就会协议对不上。  
+若控制台还让你选「模型」，那是给网页 Playground 用的；仓库 Secrets 里的模型名才用 `AI_MODEL_*`，与这里的协议选择无关。
+
+#### 若供应商是 SSSAiCode（sssaicode.com）
+
+后台三种格式请选 **OpenAI**。GitHub Secrets 这样填：
+
+| Secret | 填什么 | 不要填 |
+| --- | --- | --- |
+| `AI_API_KEY` | 你已经填的 SSSAiCode 密钥（`sk-` 开头） | 官方 OpenAI/Anthropic 的 key |
+| `AI_BASE_URL` | `https://node-hk.sssaicode.com/api/v1` | `https://node-hk.sssaicode.com/api`（那是 Anthropic / Claude Code 用的） |
+| `AI_MODEL_PLANNER` | **可空**。若填，用后台模型列表里的便宜档，例如 `claude-haiku-4-5-20251001` 或 `gemini-2.5-flash` / `gpt-5.4-mini` | `gpt-5.3-codex`、Opus 等偏贵或偏编程的模型 |
+| `AI_MODEL_SYNTHESIZER` | **可空**。若填，用中档，例如 `claude-sonnet-5` 或 `gpt-5.4` / `gpt-5.5` | 同上 |
+
+核对方法：后台 OpenAI 格式的地址应能对上 `{BASE}/chat/completions`。本仓库会请求：
+
+`https://node-hk.sssaicode.com/api/v1/chat/completions`
+
+如果控制台复制出来的是整段 `.../api/v1/chat/completions`，**删掉末尾的 `/chat/completions`**，只保留到 `/v1`。  
+如果复制出来的是 `.../api`（没有 `/v1`），那是 Anthropic 格式，不要用于 `AI_BASE_URL`。
+
+线路备选（香港节点不通再换，仍要带 `/api/v1`）：
+
+- `https://claude2.sssaicode.com/api/v1`
+- 控制台里标成 OpenAI 格式的其它节点，同样补上或保留 `/v1`
+
+模型 ID **必须和后台「模型」页显示的字符串完全一致**（包括日期后缀）。上表只是常见名，以你账号里能勾选的为准。现在仍建议模型两项留空，等第 2 期接上后再补。
+
+
+### 12.5 `AI_MODEL_PLANNER` 和 `AI_MODEL_SYNTHESIZER` 是干什么的？必须填吗？
+
+**都不是必须的。只配好 `AI_API_KEY`（以及需要时的 `AI_BASE_URL`）就可以。** 现在第 2 期代码还没接上，空着也完全没问题。
+
+它们是给以后「一次分析用两个模型」准备的，用来控成本，不是两套不同的 AI 账号：
+
+| Secret | 干什么 | 不填时 |
+| --- | --- | --- |
+| `AI_MODEL_PLANNER` | 规划器用的**便宜**模型：把「存储相关」变成关键词、板块、要拉哪些行情代码。输出很短。 | 和分析报告用**同一个**默认模型 |
+| `AI_MODEL_SYNTHESIZER` | 写报告用的**稍好**模型：只看压缩后的新闻+行情小表，生成板块前瞻。质量主要靠它。 | 同上，用默认模型 |
+
+值填供应商后台里的**模型 ID 字符串**（如 `deepseek-chat`、`gpt-4.1-mini`、`claude-haiku-4-5`），不是 URL，也不是 API Key。
+
+建议：
+
+1. **现在：两个都别填。** 少一项就少一项配错。
+2. 以后若官方/中转提供明显的「便宜档 + 质量档」，再补：Planner 用最便宜的，Synthesizer 用你愿意为报告付的那档。
+3. 若只有一个模型，两个都填同一个，或继续留空，效果一样。
+4. 不要把 Responses 专用模型 ID 填进来，除非供应商明确说该 ID 也走 Chat Completions。
+

@@ -77,11 +77,6 @@ def _content_from_message(message: dict[str, Any]) -> str:
         content = "".join(parts)
     if isinstance(content, str) and content.strip():
         return content.strip()
-    for key in ("reasoning_content", "refusal"):
-        extra = message.get(key)
-        if isinstance(extra, str) and extra.strip():
-            log(f"llm using message.{key} because content was empty")
-            return extra.strip()
     return ""
 
 
@@ -122,8 +117,26 @@ def probe_llm() -> None:
 
 def chat(messages: list[dict[str, str]], *, model: str, max_tokens: int, timeout: float = 90.0) -> str:
     attempts: list[dict[str, Any]] = [
-        {"model": model, "messages": messages, "temperature": 0.2, "max_tokens": max_tokens},
-        {"model": model, "messages": messages, "max_completion_tokens": max_tokens},
+        {
+            "model": model,
+            "messages": messages,
+            "temperature": 0.2,
+            "max_tokens": max_tokens,
+            "thinking": {"type": "disabled"},
+        },
+        {
+            "model": model,
+            "messages": messages,
+            "max_completion_tokens": max_tokens,
+            "thinking": {"type": "disabled"},
+        },
+        {
+            "model": model,
+            "messages": messages,
+            "max_completion_tokens": max_tokens,
+            "enable_thinking": False,
+        },
+        {"model": model, "messages": messages, "max_completion_tokens": max(max_tokens, 4000)},
     ]
     last_error = "LLM request failed"
     with _client(timeout) as client:
@@ -160,14 +173,20 @@ def chat(messages: list[dict[str, str]], *, model: str, max_tokens: int, timeout
             except (KeyError, IndexError, TypeError) as exc:
                 raise LLMError(f"Unexpected LLM payload: {body!r}"[:400]) from exc
             usage = body.get("usage") or {}
+            reasoning_tokens = (usage.get("completion_tokens_details") or {}).get("reasoning_tokens")
             log(
-                f"llm ok finish={choice.get('finish_reason')} "
+                f"llm ok id={body.get('id')} finish={choice.get('finish_reason')} "
                 f"message_keys={','.join(sorted(str(k) for k in message))} "
-                f"usage={usage}"
+                f"reasoning_tokens={reasoning_tokens} usage={usage}"
             )
             content = _content_from_message(message if isinstance(message, dict) else {})
             if not content:
-                raise LLMError("LLM returned empty content")
+                last_error = (
+                    "LLM returned empty content "
+                    f"(finish={choice.get('finish_reason')} reasoning_tokens={reasoning_tokens})"
+                )
+                log(f"llm empty assistant content, will retry if attempts remain")
+                continue
             return content
     raise LLMError(last_error)
 

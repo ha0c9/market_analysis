@@ -4,7 +4,7 @@ min_news_kept: 8
 max_tickers: 18
 max_google_queries: 2
 http_timeout_seconds: 12
-planner_max_tokens: 700
-synthesizer_max_tokens: 2200
+planner_max_tokens: 1600
+synthesizer_max_tokens: 4000
 concurrent_fetches: 8
 report_history: 30

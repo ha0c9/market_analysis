@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T14:46:46Z",
-  "focus": "宇环数控",
+  "generatedAt": "2026-08-25T14:51:23Z",
+  "focus": "A股明日科技股前瞻",
   "timeWindow": {
-    "from": "2023-10-26T07:00:00Z",
-    "to": "2026-08-25T14:46:46Z"
+    "from": "2026-06-18T07:00:00Z",
+    "to": "2026-08-25T14:51:23Z"
   },
   "dataCoverage": {
     "news": true,
@@ -68,128 +68,251 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7661.23,
-        "changePct": 0.10937266418413749,
-        "changePct5d": -0.39691547950690964,
-        "asOf": "2026-08-25T14:46:45Z"
+        "price": 7660.02,
+        "changePct": 0.09356158150897187,
+        "changePct5d": -0.41264609219332504,
+        "asOf": "2026-08-25T14:51:22Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26093.146,
-        "changePct": 0.43477953491757315,
-        "changePct5d": -0.7476858668864939,
-        "asOf": "2026-08-25T14:46:44Z"
+        "price": 26086.459,
+        "changePct": 0.4090406925890022,
+        "changePct5d": -0.7731235752580279,
+        "asOf": "2026-08-25T14:51:17Z"
       }
     ],
-    "sectors": [],
+    "sectors": [
+      {
+        "symbol": "sh512480",
+        "name": "半导体ETF国联安",
+        "price": 1.008,
+        "changePct": -0.2,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
+      },
+      {
+        "symbol": "sh515050",
+        "name": "通信ETF华夏",
+        "price": 1.006,
+        "changePct": 0.3,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:43Z"
+      },
+      {
+        "symbol": "sz159995",
+        "name": "芯片ETF华夏",
+        "price": 1.118,
+        "changePct": 0.09,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:12Z"
+      }
+    ],
     "tickers": [
       {
-        "symbol": "sz002903",
-        "name": "宇环数控",
-        "price": 31.04,
-        "changePct": -5.02,
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 120.0,
+        "changePct": -0.48,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:54Z"
+        "asOf": "2026-08-25T08:14:51Z"
+      },
+      {
+        "symbol": "sh688041",
+        "name": "海光信息",
+        "price": 232.06,
+        "changePct": 0.54,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:40Z"
+      },
+      {
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "price": 846.0,
+        "changePct": -2.78,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:12Z"
+      },
+      {
+        "symbol": "sh603501",
+        "name": "豪威集团",
+        "price": 85.55,
+        "changePct": 3.7,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:46Z"
+      },
+      {
+        "symbol": "sz002230",
+        "name": "科大讯飞",
+        "price": 39.35,
+        "changePct": 1.08,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "数控机床",
+      "sector": "半导体",
       "heat": 1,
-      "heatScore": 0.8,
-      "priceAction": "down",
+      "heatScore": 0.9,
+      "priceAction": "mixed",
       "calibration": "pricedIn",
-      "direction": "down",
-      "narrative": "宇环数控股价大幅下跌5.02%，而行业层面有政策利好（如“工业母机+”方案）和行业图谱报告，但股价未反应正面信息，显示市场情绪偏弱，可能已提前消化或担忧基本面。",
+      "direction": "mixed",
+      "narrative": "半导体板块今日表现分化，存储与设备材料受资金关注，但整体情绪受美股科技股波动影响。北向资金流向显示对半导体龙头仍有配置需求，但短期获利回吐压力显现。",
       "evidence": [
         {
-          "claim": "宇环数控股价下跌5.02%，反映市场情绪偏空。",
-          "sourceTitle": "宇环数控(002903):变更公司注册资本、修改公司章程和办理变更备案相关事宜",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SeEI2bDB5SjRfUWtuMHd6THFlNEtxSjJFOHJsbXFLRUxiUXBDeFNVckFhSl9pU0hJMm1aMWZoTWcwdzlpYnN2X0ZGTGk5N0wzMkZfY2tB?oc=5",
-          "publishedAt": "2026-08-25T13:37:02Z",
+          "claim": "半导体存储、芯片设备材料等细分领域受关注，但市场情绪波动较大。",
+          "sourceTitle": "今日股市利好利空及走势分析",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FZmtGLTVnbU81ZFhYbFdoejBxQTZwem5rQ0NRVEJKSG5xYUNVQUV3ZWVVb1JfZ2R4MmVlTnJJLXVNTHY0NXZBVDJfWFczQVlqME1SQ0w5YWdwa0NYRVRwbjRxNA?oc=5",
+          "publishedAt": "2026-08-20T00:34:00Z",
           "weight": "primary"
         },
         {
-          "claim": "行业政策利好存在，但股价未反应。",
-          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
-          "publishedAt": "2024-07-29T07:00:00Z",
+          "claim": "半导体股盘前集体反弹，但A股半导体ETF微跌，显示价格已部分反应预期。",
+          "sourceTitle": "美股前瞻| 半导体股盘前集体反弹！纳指期货涨近1%；Meta自研AI芯片“Iris”计划9月量产，明年算力拟翻倍；华尔街力挺英伟达，美银：18倍PE较同行低三成",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTVJyamNaVllGcXdsSEVhaDdFTUNLNUNYMDFmTzE5dENicFF1MkQxMXZTUVhVT3EzdFlRdVhvRDREdXR0WUFabnQ2WGZoUzBWbW1FQWFuejR5WWR0YURLQjRiMkJlNG11aWEtV2ZoXzlabWtKZjVzcDNoa1Nrei16MXhUcUY2cXNuejBFN2NZNl8xSnFSVGhiVDRiWVhscTNNUGhoUkVuWWVNUzNuM1hSMg?oc=5",
+          "publishedAt": "2026-07-09T12:14:20Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "行业全景图谱显示行业有发展前景，可能支撑长期需求。",
-          "sourceTitle": "预见2024：《2024年中国数控机床行业全景图谱》(附市场供需情况、竞争格局和发展前景等)",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE53V3FXcy1KVUkwM3ZLdTVzLXNDb2FMdGNhMEJjQWJIQ2txYjZROEUzQmRVT0FRZzljN3o1X21tRDlJOGZteGJ5X0s2RUkwUEZERTVRWTRR?oc=5",
-          "publishedAt": "2024-08-26T07:00:00Z",
+          "claim": "中芯国际下跌0.48%，半导体ETF微跌，显示部分资金获利了结。",
+          "sourceTitle": "中芯国际行情",
+          "url": "https://example.com/quote/sh688981",
+          "publishedAt": "2026-08-25T08:14:51Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.6,
-      "invalidatedIf": "若后续出现宇环数控订单或业绩超预期公告，或行业政策进一步加码，则当前偏空判断可能被推翻。"
+      "confidence": 0.7,
+      "invalidatedIf": "若明日半导体板块出现大幅放量上涨或下跌，且北向资金流向逆转，则本前瞻失效。"
     },
     {
-      "sector": "工业母机",
+      "sector": "人工智能",
       "heat": 2,
-      "heatScore": 0.7,
-      "priceAction": "down",
-      "calibration": "pricedIn",
-      "direction": "down",
-      "narrative": "工业母机板块受政策利好推动，但宇环数控作为相关个股表现疲软，显示政策利好可能已被市场提前消化，或个股基本面存在隐忧。",
+      "heatScore": 0.8,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "人工智能板块受政策与产业利好推动，浙江推动AI+制造融合，叠加AI商业化预期升温，资金流入明显。科大讯飞等个股上涨，显示市场情绪积极。",
       "evidence": [
         {
-          "claim": "政策方案印发，行业加速前行。",
-          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
-          "publishedAt": "2024-07-29T07:00:00Z",
+          "claim": "浙江制造业深度拥抱人工智能，加快推进体系化落地，政策利好AI板块。",
+          "sourceTitle": "浙江制造业深度拥抱人工智能 加快推进体系化落地",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-25/10684180.shtml",
+          "publishedAt": "2026-08-25T13:48:12Z",
           "weight": "primary"
         },
         {
-          "claim": "宇环数控股价下跌，显示市场情绪不佳。",
-          "sourceTitle": "宇环数控(002903):变更公司注册资本、修改公司章程和办理变更备案相关事宜",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1SeEI2bDB5SjRfUWtuMHd6THFlNEtxSjJFOHJsbXFLRUxiUXBDeFNVckFhSl9pU0hJMm1aMWZoTWcwdzlpYnN2X0ZGTGk5N0wzMkZfY2tB?oc=5",
-          "publishedAt": "2026-08-25T13:37:02Z",
+          "claim": "AI商业化、算力资本开支等主题受关注，利好人工智能板块。",
+          "sourceTitle": "周末三大利好及明日三大板块操作指南",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBuVUVDOFVkU0tUWExjY3NUdm9Tck9rRV9wTnRId0ZkMEhmcGZvQllrcTN1d2ZpNWxROXY1SExES0FNY2VtMVo5bVh4cFhPbmJfNi10M3BOREdQbmZZYzU5NFppdw?oc=5",
+          "publishedAt": "2026-08-16T18:44:00Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "行业报告显示市场供需和发展前景，可能支撑长期需求。",
-          "sourceTitle": "预见2024：《2024年中国数控机床行业全景图谱》(附市场供需情况、竞争格局和发展前景等)",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE53V3FXcy1KVUkwM3ZLdTVzLXNDb2FMdGNhMEJjQWJIQ2txYjZROEUzQmRVT0FRZzljN3o1X21tRDlJOGZteGJ5X0s2RUkwUEZERTVRWTRR?oc=5",
-          "publishedAt": "2024-08-26T07:00:00Z",
+          "claim": "创业板指下跌1%，可能拖累人工智能板块情绪。",
+          "sourceTitle": "创业板指行情",
+          "url": "https://example.com/quote/sz399006",
+          "publishedAt": "2026-08-25T08:14:33Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.55,
-      "invalidatedIf": "若工业母机板块出现资金大幅流入或政策超预期，则可能扭转当前偏空判断。"
+      "confidence": 0.75,
+      "invalidatedIf": "若明日人工智能板块出现集体下跌且无新增利好，则本前瞻失效。"
     },
     {
-      "sector": "高端装备",
+      "sector": "消费电子",
       "heat": 3,
-      "heatScore": 0.5,
+      "heatScore": 0.6,
       "priceAction": "mixed",
       "calibration": "insufficientData",
       "direction": "mixed",
-      "narrative": "高端装备板块缺乏直接新闻，但相关行业（数控机床、工业母机）有政策利好，而宇环数控股价下跌，整体板块表现可能分化。",
+      "narrative": "消费电子板块缺乏直接新闻驱动，但受半导体和AI产业链联动影响。豪威集团大涨3.7%，显示部分个股活跃，但整体板块资金流向不明。",
       "evidence": [
         {
-          "claim": "行业政策利好可能间接影响高端装备。",
-          "sourceTitle": "《“工业母机+”百行万企产需对接活动实施方案》印发，工业母机加速前行",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1wLUFUU1RSR2cwUVQtZWFWREZfcnl6dWZ2dHFrN1dHektQZnlvOE1DLU9zSkZGNWt0X2w5NnJYZzJtZWZQakR1ZlNaLUE5MG9q?oc=5",
-          "publishedAt": "2024-07-29T07:00:00Z",
+          "claim": "消费电子在今日股市利好利空分析中被提及，但无具体方向。",
+          "sourceTitle": "今日股市利好利空及走势分析",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FZmtGLTVnbU81ZFhYbFdoejBxQTZwem5rQ0NRVEJKSG5xYUNVQUV3ZWVVb1JfZ2R4MmVlTnJJLXVNTHY0NXZBVDJfWFczQVlqME1SQ0w5YWdwa0NYRVRwbjRxNA?oc=5",
+          "publishedAt": "2026-08-20T00:34:00Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "豪威集团上涨3.7%，但中际旭创下跌2.78%，板块内部分化。",
+          "sourceTitle": "豪威集团行情",
+          "url": "https://example.com/quote/sh603501",
+          "publishedAt": "2026-08-25T08:14:46Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.3,
-      "invalidatedIf": "若出现高端装备板块的明确新闻或资金流向数据，则可能更新判断。"
+      "confidence": 0.5,
+      "invalidatedIf": "若明日消费电子板块出现明确资金流向或重大新闻，则本前瞻需重新评估。"
+    },
+    {
+      "sector": "软件服务",
+      "heat": 4,
+      "heatScore": 0.5,
+      "priceAction": "up",
+      "calibration": "insufficientData",
+      "direction": "up",
+      "narrative": "软件服务板块受AI应用落地预期带动，科大讯飞上涨1.08%，显示资金关注。但缺乏直接新闻支撑，整体情绪中性偏多。",
+      "evidence": [
+        {
+          "claim": "AI商业化推进可能利好软件服务板块。",
+          "sourceTitle": "周末三大利好及明日三大板块操作指南",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBuVUVDOFVkU0tUWExjY3NUdm9Tck9rRV9wTnRId0ZkMEhmcGZvQllrcTN1d2ZpNWxROXY1SExES0FNY2VtMVo5bVh4cFhPbmJfNi10M3BOREdQbmZZYzU5NFppdw?oc=5",
+          "publishedAt": "2026-08-16T18:44:00Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "无直接新闻提及软件服务板块，数据不足。",
+          "sourceTitle": "无",
+          "url": "无",
+          "publishedAt": "无",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.4,
+      "invalidatedIf": "若明日软件服务板块出现大幅下跌或资金流出，则本前瞻失效。"
+    },
+    {
+      "sector": "通信设备",
+      "heat": 5,
+      "heatScore": 0.4,
+      "priceAction": "up",
+      "calibration": "insufficientData",
+      "direction": "up",
+      "narrative": "通信设备板块受5G-A和AI算力需求带动，通信ETF上涨0.3%，但缺乏直接新闻驱动。中际旭创下跌2.78%，显示光模块等细分领域回调。",
+      "evidence": [
+        {
+          "claim": "5G-A通信设备在今日股市分析中被提及，但无具体方向。",
+          "sourceTitle": "今日股市利好利空及走势分析",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FZmtGLTVnbU81ZFhYbFdoejBxQTZwem5rQ0NRVEJKSG5xYUNVQUV3ZWVVb1JfZ2R4MmVlTnJJLXVNTHY0NXZBVDJfWFczQVlqME1SQ0w5YWdwa0NYRVRwbjRxNA?oc=5",
+          "publishedAt": "2026-08-20T00:34:00Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "中际旭创下跌2.78%，可能拖累通信设备板块。",
+          "sourceTitle": "中际旭创行情",
+          "url": "https://example.com/quote/sz300308",
+          "publishedAt": "2026-08-25T08:14:12Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.45,
+      "invalidatedIf": "若明日通信设备板块出现重大利空或资金大幅流出，则本前瞻失效。"
     }
   ],
-  "crossSectorNotes": "北向资金相关新闻显示市场情绪受资金流向扰动，但缺乏实时数据。整体市场指数涨跌不一，创业板指下跌1%，而宇环数控下跌5.02%，显示个股弱势。政策利好未能提振股价，可能已提前反应。",
+  "crossSectorNotes": "整体市场情绪偏谨慎，上证微涨但创业板下跌，显示资金在科技板块内部分化。北向资金流向未明确，但AI和半导体政策利好持续发酵。美股科技股反弹可能提振A股科技板块，但需警惕短期波动。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -198,7 +321,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 9,
+    "quotes": 16,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

@@ -458,8 +458,8 @@ market_analysis/
 
 1. 一个 AI API Key（OpenAI / Anthropic / DeepSeek / Gemini 任一）。**不要提交到仓库，不要写进 Pages。** 放到 GitHub Actions Secrets（逐步说明见 §12）：
    - `AI_API_KEY`
-   - `AI_BASE_URL`（可选，DeepSeek 填 `https://api.deepseek.com`）
-   - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（可选）
+   - `AI_BASE_URL`（选供应商的 **OpenAI / Chat Completions** 地址，见 §12.4）
+   - `AI_MODEL_PLANNER`、`AI_MODEL_SYNTHESIZER`（**不必填**，见 §12.5）
 2. 打开 GitHub Pages（后续 workflow 会用 `docs/` 或 `gh-pages`）。
 3. 行情：**默认不用你再申请 key**。
 
@@ -514,7 +514,7 @@ GitHub 加密 Secrets          ← 不进 git，不进 Pages，浏览器拿不�
    （Settings → Secrets and variables → Actions）
 2. 点 **New repository secret**。
 3. Name 填 `AI_API_KEY`，Value 贴你的 key，保存。
-4. 需要时同样添加 `AI_BASE_URL`、`AI_MODEL_PLANNER` 等。
+4. 需要时同样添加 `AI_BASE_URL`（OpenAI 格式的地址）、`AI_MODEL_PLANNER` 等。
 5. 只有你（以及被授予 admin 的协作者）能**覆盖或删除** Secret；GitHub **不会再次显示**已保存的明文。
 
 本地开发另建一份 **未提交** 的 `.env`（`.gitignore` 已忽略），不要把 `.env` 推上去。

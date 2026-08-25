@@ -32,8 +32,10 @@
 ## 你需要先准备的（第 2 期才会用到）
 
 1. 至少一个 AI API Key → **GitHub Actions Secret `AI_API_KEY`**，不是网页配置项
-2. 行情：默认不用再申请 key
-3. （可选）Finnhub、NewsAPI 等免费新闻 Key
-4. （可选）X Bearer Token + 博主名单；微博开放平台 token + uid 名单
+2. `AI_BASE_URL`：选供应商的 **OpenAI（Chat Completions）** 地址，不要选 Anthropic / Responses
+3. `AI_MODEL_PLANNER` / `AI_MODEL_SYNTHESIZER`：**不必填**（规划用便宜模型、写报告用好一点的模型；空着则共用默认模型）
+4. 行情：默认不用再申请 key
+5. （可选）Finnhub、NewsAPI 等免费新闻 Key
+6. （可选）X Bearer Token + 博主名单；微博开放平台 token + uid 名单
 
 获取方式、行情校准说明、密钥逐步配置见 [docs/feasibility-and-plan.md](docs/feasibility-and-plan.md) 第 4、10、12 节。

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T10:47:16Z",
-  "focus": "普冉股份",
+  "generatedAt": "2026-08-25T12:29:25Z",
+  "focus": "佰维存储",
   "timeWindow": {
-    "from": "2026-08-18T11:59:36Z",
-    "to": "2026-08-25T10:47:16Z"
+    "from": "2026-03-03T08:00:00Z",
+    "to": "2026-08-25T12:29:25Z"
   },
   "dataCoverage": {
     "news": true,
@@ -45,7 +45,7 @@
         "symbol": "^HSI",
         "name": "恒生指数",
         "price": 25511.1,
-        "changePct": 2.1947079764918165,
+        "changePct": -0.024415086162721256,
         "changePct5d": 0.1568410461928016,
         "asOf": "2026-08-25T08:08:38Z"
       },
@@ -53,15 +53,15 @@
         "symbol": "^N225",
         "name": "日经225",
         "price": 65856.43,
-        "changePct": 1.9273453575737287,
+        "changePct": 0.501067797082011,
         "changePct5d": -2.3781197694538236,
         "asOf": "2026-08-25T06:45:02Z"
       },
       {
         "symbol": "^KS11",
-        "name": "KOSPI",
+        "name": "首尔综合指数",
         "price": 6742.74,
-        "changePct": 0.7790010492301214,
+        "changePct": 0.6835943372743625,
         "changePct5d": -1.8499707024003609,
         "asOf": "2026-08-25T09:05:40Z"
       },
@@ -69,7 +69,7 @@
         "symbol": "^GSPC",
         "name": "标普500",
         "price": 7652.86,
-        "changePct": 3.249873852870633,
+        "changePct": -0.2802851160296105,
         "changePct5d": -1.1904387392089544,
         "asOf": "2026-08-24T20:36:32Z"
       },
@@ -77,119 +77,223 @@
         "symbol": "^IXIC",
         "name": "纳斯达克",
         "price": 25980.191,
-        "changePct": 4.021373472422529,
+        "changePct": -0.7649595550594079,
         "changePct5d": -2.4947380164803357,
         "asOf": "2026-08-24T21:15:59Z"
       }
     ],
-    "sectors": [],
+    "sectors": [
+      {
+        "symbol": "sh512480",
+        "name": "半导体ETF国联安",
+        "price": 1.008,
+        "changePct": -0.2,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:33Z"
+      },
+      {
+        "symbol": "sz159995",
+        "name": "芯片ETF华夏",
+        "price": 1.118,
+        "changePct": 0.09,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:12Z"
+      },
+      {
+        "symbol": "sh512760",
+        "name": "芯片ETF国泰",
+        "price": 1.066,
+        "changePct": 0.0,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:49Z"
+      },
+      {
+        "symbol": "sz159813",
+        "name": "半导体ETF鹏华",
+        "price": 0.717,
+        "changePct": 0.14,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:24Z"
+      },
+      {
+        "symbol": "SOXX",
+        "name": "iShares PHLX SOX Semiconductor ",
+        "price": 506.18,
+        "changePct": -2.6670489603953906,
+        "changePct5d": -9.468450941431705,
+        "asOf": "2026-08-24T20:00:00Z"
+      }
+    ],
     "tickers": [
       {
-        "symbol": "sh688766",
-        "name": "普冉股份",
-        "price": 410.0,
-        "changePct": -0.24,
+        "symbol": "sh688525",
+        "name": "佰维存储",
+        "price": 227.82,
+        "changePct": 0.99,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
+        "asOf": "2026-08-25T08:14:49Z"
+      },
+      {
+        "symbol": "sh603986",
+        "name": "兆易创新",
+        "price": 395.51,
+        "changePct": 3.63,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:52Z"
+      },
+      {
+        "symbol": "sz002049",
+        "name": "紫光国微",
+        "price": 61.46,
+        "changePct": 0.77,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:57Z"
+      },
+      {
+        "symbol": "sh688012",
+        "name": "中微公司",
+        "price": 354.0,
+        "changePct": -1.02,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:48Z"
+      },
+      {
+        "symbol": "sz300223",
+        "name": "君正股份",
+        "price": 134.1,
+        "changePct": 0.33,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:39Z"
+      },
+      {
+        "symbol": "sh688008",
+        "name": "澜起科技",
+        "price": 194.42,
+        "changePct": 1.35,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:59Z"
+      },
+      {
+        "symbol": "sz301308",
+        "name": "江波龙",
+        "price": 369.66,
+        "changePct": 1.3,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:24Z"
+      },
+      {
+        "symbol": "sz001309",
+        "name": "德明利",
+        "price": 397.03,
+        "changePct": -0.83,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:15:00Z"
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology, Inc.",
+        "price": 910.43,
+        "changePct": -5.828629842287658,
+        "changePct5d": -10.014332327572895,
+        "asOf": "2026-08-24T20:00:01Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "半导体",
-      "heat": 1,
-      "heatScore": 0.9,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "半导体板块受存储芯片业绩爆发和AI算力需求推动，市场情绪高涨。普冉股份和兆易创新净利暴增，存储芯片涨价预期强化，但板块内部分化，创业板指下跌，显示资金可能向龙头集中。",
-      "evidence": [
-        {
-          "claim": "存储芯片业绩爆发，兆易创新、普冉股份净利暴涨十倍，AI算力重塑半导体周期",
-          "sourceTitle": "存储芯片业绩爆发，兆易创新、普冉股份净利暴涨十倍，AI 算力重塑半导体周期 - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1wanJGdU1IOTJ4ODYxVks1bVhNVDlCMnpTVDdnRFVwWFlPR3FLU21rZXlDcjBDdFpOZm9Vc2RSQUdUT0R2elNyMkxWR2N5Zy1fbUNGdTh4Ym0xN2h5eGphOWpyNmJZRTNnSHMw?oc=5",
-          "publishedAt": "2026-08-19T02:05:00Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
-          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
-          "publishedAt": "2026-08-23T00:49:31Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "创业板指下跌1.0%，显示半导体等成长板块可能承压",
-          "sourceTitle": "创业板指行情",
-          "url": "https://example.com/quote/sz399006",
-          "publishedAt": "2026-08-25T08:14:33Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.8,
-      "invalidatedIf": "存储芯片涨价预期落空或半导体板块资金大幅流出"
-    },
-    {
       "sector": "存储芯片",
-      "heat": 2,
-      "heatScore": 0.85,
+      "heat": 1,
+      "heatScore": 0.95,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "存储芯片行业景气度高涨，普冉股份和兆易创新业绩暴增，存储芯片涨价趋势明确，英伟达服务器涨价进一步印证需求强劲。市场情绪积极，但需关注价格是否已充分反映。",
+      "narrative": "存储芯片行业处于高景气周期，供不应求导致价格持续上涨，并向下游传导至服务器和消费电子。佰维存储业绩暴增，股价涨停，但后续出现高位分歧。行业涨价趋势明确，但需警惕短期涨幅过大后的回调风险。",
       "evidence": [
         {
-          "claim": "两大存储芯片龙头披露半年报：兆易创新净利暴增1091%，普冉股份飙涨1930%",
-          "sourceTitle": "两大存储芯片龙头披露半年报：兆易创新净利暴增1091%，普冉股份飙涨1930% - 福布斯中国",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EODQ1VmFVS1k2em03WFNZbTh5ZDRrOEpPNDJKTFJOVzhGZkk1UHo0TjlPZ1N3ZktSMlJhelFkQmhBMzBGMDlXaGc3RUlrLU9xUjBJNw?oc=5",
-          "publishedAt": "2026-08-19T06:54:59Z",
+          "claim": "存储芯片供不应求，佰维存储净利预增超900%",
+          "sourceTitle": "存储芯片供不应求，佰维存储净利预增超900%股价20CM涨停 - Jiemian.com",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1NNXYtTjZIMGR5cW1FakVGV0l4RzV5djlvYmk4SDdqR2lNeU5EV1RCX2kyVzEyc29sdXVfRU1mUENYYjUzT1hFMENvcnVKZTUtd3piRG1R?oc=5",
+          "publishedAt": "2026-03-03T08:00:00Z",
           "weight": "primary"
         },
         {
-          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
+          "claim": "存储芯片成本飙升导致英伟达高端服务器涨价15%",
           "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
           "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
           "publishedAt": "2026-08-23T00:49:31Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "存储芯片涨价传导至苹果iPhone 17系列，全球调价",
+          "sourceTitle": "存储芯片涨价传导：苹果iPhone 17系列将全球调价，涨幅或达千元 - QQ News",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKZ3lmbEVSWDdOMUxiRmlPOUxucWJsLTBXbUtVdEU0MEdDMm9HMDdZbzRZS2VxRkFXMXBobDZ0Y05GRXFESUFTZjduYkJxQVQxMmw4YVdn?oc=5",
+          "publishedAt": "2026-08-17T04:38:00Z",
           "weight": "supporting"
+        },
+        {
+          "claim": "佰维存储半年净利润预增超3200%",
+          "sourceTitle": "佰维存储半年净利润预增超3200%，AI存储高景气驱动业绩大增 - 手机网易网",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9mbkkyd0NLSlBwWEhQRmQxUnJsR0tqWlJxSUFQRExHRzkycENyb2x0eUxKZzRUazRWMkdIelhmZm5ENUJIamMtV05ucFNSbU9VRXE1ZmU1QWJYRDZWZW1sVDZn?oc=5",
+          "publishedAt": "2026-07-16T07:00:00Z",
+          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "普冉股份股价逆势下跌，尽管业绩大增，可能已提前反应",
-          "sourceTitle": "上半年净赚8.27亿！600亿存储巨头普冉股份，逆势下跌 - 风闻",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBlV3RCTXRva3RLZ25IMllPTmlxWFNCd2x6RW10LXRVclliYlYxMjY2SlQ4alIxU0JXWDEycFFQcWU2R0M3T1NNODh1WElCdVZfbFVRRF81MnRzWE5qdW95dTV5Q19HYjZiWEE?oc=5",
-          "publishedAt": "2026-08-22T03:13:18Z",
+          "claim": "佰维存储净利暴涨34倍但股价大跌15%，市场对业绩持续性存疑",
+          "sourceTitle": "净利暴涨34倍当日股价却大跌15%，佰维存储虚实拆解 - 财富号",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBzYWJmNG9KZHNoZ2t3Z29BQzdkM05yLTdKbHdTaS1rakhDNi1SSTdQQVoyY0RKdnJNeEdEYjU5dVAteXNDTVFwVTJEOGtRa2tzZHh4RlkxVWZiNmsyQlVPUkI0a0V3OC1zb2pF?oc=5",
+          "publishedAt": "2026-07-16T07:00:00Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.75,
-      "invalidatedIf": "存储芯片价格下跌或主要公司业绩不及预期"
+      "confidence": 0.85,
+      "invalidatedIf": "存储芯片价格出现回落，或主要厂商库存大幅增加，或下游需求不及预期。"
     },
     {
-      "sector": "消费电子",
-      "heat": 3,
-      "heatScore": 0.6,
+      "sector": "半导体设备",
+      "heat": 2,
+      "heatScore": 0.7,
       "priceAction": "mixed",
       "calibration": "insufficientData",
       "direction": "mixed",
-      "narrative": "消费电子板块受存储芯片成本上升影响，可能面临成本压力，但AI算力需求带动高端服务器涨价，间接利好消费电子中的AI相关产品。整体缺乏直接新闻，方向不明。",
+      "narrative": "半导体设备板块受存储芯片扩产带动，但缺乏直接新闻证据。市场情绪整体偏暖，但海外半导体股回调可能带来压力。板块表现分化，需关注后续订单和业绩验证。",
       "evidence": [
         {
-          "claim": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15%",
-          "sourceTitle": "因存储芯片成本飙升，英伟达高端服务器被曝明年将涨价15% - 华尔街见闻",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSY21uMzVjSGJNSFM4NUxObDJXVEJHRl9kUVV5Ml9lY2ZSWXllS3l0ZjA3blVob2VsTl9PbWhaVmJzd2pEc0ZwUG9jYWk3LVNuRFZj?oc=5",
-          "publishedAt": "2026-08-23T00:49:31Z",
+          "claim": "半导体行业整体受关注，但设备板块无直接新闻",
+          "sourceTitle": "金信基金评市场：市场缩量调整，半导体逆势上涨 - 新浪网",
+          "url": "https://news.google.com/rss/articles/CBMipAVBVV95cUxNcEMxWXZybGVFUTZ2T3BjQ0x0eEF0MElEbEdsUXZBN2FPNWUxUkFFZGpvenNCRzF0eXhVczBJWjBOYVFCZV9VVnBUeFMySklLZ2k1RjA3Zy1CcnhXaGQtb0F0X2JSYTVWdkw0YUREeUkyN2huM05qQmpRYkNKYVZaWjQ4ajlNNUV6OW1PMUhTQWlWN01xMGZIb3VFekVIOW56Vjd3WUg4azVfMm1TTTBuLXdxc1JjMTRIOVE5QzhXT3FBOHZOQlRrSzJISHVvRFN1M01jWmZoLXR6Smo0ZU9GaVh5ZHZJb3h5RlQzeWpBLXRQcGwtTGR2VS0tQW5WVUxFaHRxbzJkRFR4Y0FnZjRfcHZUQWh3RURhSGNLMHJfc1YzNmE4eWxQQUx4QWRCOEpDcnV4UzVXS2MybG1hQ1FEM09POVg5ZmRTRmkyTC1UR05ncFlnZ1JrcmdFa1JzR0lJTXItSmk0YlRIejBFWEZ6WF9ma3lOcHBscEdJLTVGRGxaeXV2VUFBQXF3RHpubTQwZE94RXpLTjdaT3pOcU0xMHI1MGRrUm40alQ5RmUyZ3lxenFEMWp6cGxKMWVhYmFKSkI0TXRVTW1OWHN0MXNKTi1WVFNId0dITjBYNm5Rb3U4N09xT1VhR1hyeVVPSWZwb0JrUUd4b2tzXzYtQ2NTMWpCWkV6OFdmSXdDTV9LSVlVNVFZdjNNZElnTGJYQnB0MzViRHhHeEo3c1pmZEwwTW9OLVJiZWdUcGJ6eUtLUEtxeTNEWVZCM0NYYUhmWkhoSk5NTGR0RFFwVDJvNVlFSGJhVGg0ckJUQjRONG43eXBsNzNBbjlsbmVsV2E3RlpOamZheFV6Rzd4NDlqRGhlbXRkLUJDZFAxaENXTjRfYUQ3UmJz?oc=5",
+          "publishedAt": "2026-07-24T07:00:00Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [],
       "confidence": 0.4,
-      "invalidatedIf": "消费电子需求数据恶化或成本压力缓解"
+      "invalidatedIf": "半导体设备板块出现明显下跌，或行业资本开支预期下调。"
+    },
+    {
+      "sector": "消费电子",
+      "heat": 3,
+      "heatScore": 0.5,
+      "priceAction": "mixed",
+      "calibration": "pricedIn",
+      "direction": "mixed",
+      "narrative": "存储芯片涨价已传导至消费电子，苹果iPhone 17系列将调价，可能影响需求。板块整体表现平淡，涨价对终端需求的抑制效应需关注。",
+      "evidence": [
+        {
+          "claim": "存储芯片涨价传导至苹果iPhone 17系列，全球调价",
+          "sourceTitle": "存储芯片涨价传导：苹果iPhone 17系列将全球调价，涨幅或达千元 - QQ News",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKZ3lmbEVSWDdOMUxiRmlPOUxucWJsLTBXbUtVdEU0MEdDMm9HMDdZbzRZS2VxRkFXMXBobDZ0Y05GRXFESUFTZjduYkJxQVQxMmw4YVdn?oc=5",
+          "publishedAt": "2026-08-17T04:38:00Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [],
+      "confidence": 0.5,
+      "invalidatedIf": "消费电子需求明显下滑，或涨价未能传导至终端。"
     }
   ],
-  "crossSectorNotes": "普冉股份业绩暴增但股价逆势下跌，显示市场可能已提前反应利好，需警惕短期回调风险。存储芯片涨价趋势强化，但需关注是否已充分定价。全球市场表现分化，美股大涨但亚洲市场涨跌不一，需关注外部情绪传导。",
+  "crossSectorNotes": "存储芯片涨价潮正从上游传导至下游，半导体设备与消费电子板块受联动影响。海外市场半导体股（如美光、SOXX）近期大幅回调，可能对A股情绪形成压制。北向资金动向及市场整体风险偏好需密切关注。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -198,7 +302,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 9,
+    "quotes": 22,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

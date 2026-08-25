@@ -26,19 +26,63 @@ presets:
       - sh688525   # 佰维存储
       - sz001309   # 德明利
       - MU
+    etfs:
+      - sh512480   # 半导体ETF
+      - sz159995   # 芯片ETF
       - SOXX
   - match: ["半导体", "芯片", "chip", "semiconductor"]
     sectors: ["半导体", "晶圆代工", "设备材料"]
     keywords: ["半导体", "芯片", "晶圆", "光刻", "NVIDIA", "台积电", "中芯"]
     news_queries: ["半导体 芯片 晶圆", "semiconductor chip foundry"]
-    tickers: [sh688981, sz002371, NVDA, TSM, SOXX]
-  - match: ["新能源", "锂电", "光伏", "ev", "battery"]
+    tickers: [sh688981, sz002371, NVDA, TSM]
+    etfs: [sh512480, sz159995, SOXX]
+  - match: ["医药", "创新药", "biotech", "pharma", "医疗", "CXO", "制药"]
+    sectors: ["创新药", "医疗器械", "医药商业 / CXO"]
+    keywords: ["医药", "创新药", "医疗器械", "CXO", "集采", "恒瑞", "迈瑞", "药明康德", "北向资金"]
+    news_queries: ["创新药 医疗器械 集采", "China biotech pharma policy"]
+    tickers:
+      - sh600276   # 恒瑞医药
+      - sz300760   # 迈瑞医疗
+      - sh603259   # 药明康德
+      - sz000661   # 长春高新
+      - sh688271   # 联影医疗
+      - LLY
+    etfs:
+      - sh512010   # 医药ETF
+      - sh512170   # 医疗ETF
+      - sz159992   # 创新药ETF
+      - XBI
+  - match: ["新能源", "锂电", "光伏", "battery"]
     sectors: ["锂电池", "光伏", "新能源车"]
     keywords: ["锂电", "光伏", "新能源", "电池", "储能"]
     news_queries: ["新能源 锂电 光伏", "EV battery solar"]
     tickers: [sz300750, sh601012, TSLA]
+    etfs: [sz159755, sh515790]
 default:
   sectors: ["大盘", "成长风格", "价值风格"]
-  keywords: ["股市", "A股", "美股", "央行", "通胀"]
+  keywords: ["股市", "A股", "美股", "央行", "通胀", "北向资金", "风险偏好"]
   news_queries: ["A股 美股 财经", "stock market federal reserve"]
   tickers: [sh600519, sz300750, AAPL]
+  etfs: []
+
+# Used when the focus is a company name or ticker rather than a theme.
+stock_aliases:
+  恒瑞: sh600276
+  恒瑞医药: sh600276
+  迈瑞: sz300760
+  迈瑞医疗: sz300760
+  药明康德: sh603259
+  药明: sh603259
+  长春高新: sz000661
+  联影医疗: sh688271
+  茅台: sh600519
+  贵州茅台: sh600519
+  宁德: sz300750
+  宁德时代: sz300750
+  兆易创新: sh603986
+  兆易: sh603986
+  中芯国际: sh688981
+  中芯: sh688981
+  北方华创: sz002371
+  隆基: sh601012
+  隆基绿能: sh601012

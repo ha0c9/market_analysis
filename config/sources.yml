@@ -16,6 +16,7 @@ google_news:
   zh: https://news.google.com/rss/search?q={query}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
   en: https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en
 
+# Always fetched as market backdrop. Sector ETFs and names come from the analysis plan.
 benchmarks:
   - { symbol: sh000001, name: 上证指数 }
   - { symbol: sh000300, name: 沪深300 }
@@ -24,7 +25,5 @@ benchmarks:
   - { symbol: ^GSPC, name: 标普500 }
   - { symbol: ^IXIC, name: 纳斯达克 }
 
-sector_quotes:
-  - { symbol: sh512480, name: 半导体ETF }
-  - { symbol: sz159995, name: 芯片ETF }
-  - { symbol: SOXX, name: iShares 半导体 ETF }
+# Planner always appends one Google News query from this template.
+sentiment_query: "{focus} 市场情绪 北向资金 风险偏好"

@@ -43,6 +43,7 @@ class AnalysisPlan(BaseModel):
     keywords: list[str] = Field(default_factory=list)
     newsQueries: list[str] = Field(default_factory=list)
     tickers: list[str] = Field(default_factory=list)
+    etfs: list[str] = Field(default_factory=list)
     benchmarks: list[str] = Field(default_factory=list)
     lookbackHours: int = 36
     maxItemsPerSource: int = 20

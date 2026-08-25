@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-25T05:20:00Z",
-  "focus": "存储相关",
+  "focus": "医药相关",
   "timeWindow": { "from": "2026-08-23T17:20:00Z", "to": "2026-08-25T05:20:00Z" },
   "dataCoverage": {
     "news": true,
@@ -10,67 +10,70 @@
     "weibo": false
   },
   "marketSnapshot": {
-    "asOf": "2026-08-25T05:31:00Z",
+    "asOf": "2026-08-25T05:31:57Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
-      { "symbol": "sh000001", "name": "上证指数", "price": 3889.6, "changePct": 0.2, "changePct5d": null, "asOf": "2026-08-25T05:31:00Z" },
-      { "symbol": "sz399006", "name": "创业板指", "price": 3413.91, "changePct": -0.52, "changePct5d": null, "asOf": "2026-08-25T05:31:00Z" }
+      { "symbol": "sh000001", "name": "上证指数", "price": 3889.6, "changePct": 0.2, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sh000300", "name": "沪深300", "price": 4012.1, "changePct": -0.24, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sz399006", "name": "创业板指", "price": 2413.91, "changePct": -0.52, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" }
     ],
     "sectors": [
-      { "symbol": "SOXX", "name": "iShares 半导体 ETF", "price": 0, "changePct": 1.1, "changePct5d": 3.4, "asOf": "2026-08-25T05:31:00Z" }
+      { "symbol": "sh512010", "name": "医药ETF", "price": 0, "changePct": 0.42, "changePct5d": 1.1, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sz159992", "name": "创新药ETF", "price": 0, "changePct": 0.88, "changePct5d": 2.0, "asOf": "2026-08-25T05:31:57Z" }
     ],
     "tickers": [
-      { "symbol": "sh603986", "name": "兆易创新", "price": 0, "changePct": 2.4, "changePct5d": 6.1, "asOf": "2026-08-25T05:31:00Z" },
-      { "symbol": "MU", "name": "Micron", "price": 0, "changePct": 1.8, "changePct5d": 4.2, "asOf": "2026-08-25T05:31:00Z" }
+      { "symbol": "sh600276", "name": "恒瑞医药", "price": 0, "changePct": 1.24, "changePct5d": 3.1, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sz300760", "name": "迈瑞医疗", "price": 0, "changePct": -0.36, "changePct5d": 0.8, "asOf": "2026-08-25T05:31:57Z" },
+      { "symbol": "sh603259", "name": "药明康德", "price": 0, "changePct": 0.71, "changePct5d": 1.4, "asOf": "2026-08-25T05:31:57Z" }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "存储芯片 / NAND",
+      "sector": "创新药",
       "heat": 1,
-      "heatScore": 0.82,
+      "heatScore": 0.74,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "公开报道集中在供给收缩与合约价上修；相关标的当日多数上涨，叙事与价格同向，但仍需防短期涨幅过大后的回吐。",
+      "narrative": "公开报道集中在创新药获批与对外授权；相关标的多数上涨，叙事与价格同向，但仍需防政策与估值回吐。",
       "evidence": [
         {
-          "claim": "示例：多家媒体提及 NAND 合约价与原厂减产。",
-          "sourceTitle": "示例新闻：存储价格与供给",
+          "claim": "示例：创新药获批与license-out 讨论升温。",
+          "sourceTitle": "示例新闻：创新药政策与订单",
           "url": "https://news.google.com/",
           "publishedAt": "2026-08-24T12:00:00Z",
           "weight": "primary"
         }
       ],
       "counterEvidence": [],
-      "confidence": 0.56,
-      "invalidatedIf": "原厂恢复大幅扩产，或下游手机/服务器需求数据显著走弱。"
+      "confidence": 0.52,
+      "invalidatedIf": "集采加码或对外授权落地低于预期。"
     },
     {
-      "sector": "DRAM / HBM",
+      "sector": "医疗器械",
       "heat": 2,
-      "heatScore": 0.7,
-      "priceAction": "up",
-      "calibration": "pricedIn",
-      "direction": "up",
-      "narrative": "HBM 与高带宽需求仍是报道主线，但代表标的近几日已有累计涨幅，前瞻应视为部分计价。",
+      "heatScore": 0.61,
+      "priceAction": "mixed",
+      "calibration": "divergence",
+      "direction": "mixed",
+      "narrative": "器械与医院资本开支报道仍在，但代表标的涨跌分化，价格尚未与新闻热度完全对齐。",
       "evidence": [
         {
-          "claim": "示例：AI 服务器带动高带宽内存讨论。",
-          "sourceTitle": "示例新闻：HBM 需求",
+          "claim": "示例：设备更新与出口订单被反复提及。",
+          "sourceTitle": "示例新闻：医疗器械需求",
           "url": "https://www.cnbc.com/",
           "publishedAt": "2026-08-24T09:00:00Z",
           "weight": "primary"
         }
       ],
       "counterEvidence": [],
-      "confidence": 0.5,
-      "invalidatedIf": "云厂商资本开支指引下调，或 HBM 供给释放快于预期。"
+      "confidence": 0.48,
+      "invalidatedIf": "医院招标明显放缓，或出口数据走弱。"
     }
   ],
-  "crossSectorNotes": "存储涨价叙事可能向手机、服务器链条传导；若只是板块内轮动，对大盘的映射有限。",
+  "crossSectorNotes": "医药内部创新药与器械节奏不同；北向与风险偏好变化可能放大分化。",
   "limitations": ["未接入微博/X", "这是示例报告，接入真实分析后会被覆盖"],
-  "stats": { "fetched": 40, "used": 18, "quotes": 6, "model": "sample", "estCostUsd": 0 },
+  "stats": { "fetched": 40, "used": 18, "quotes": 9, "plannerModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

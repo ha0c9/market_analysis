@@ -2,9 +2,12 @@ from __future__ import annotations
 
 from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import re
 
 from src.models import NewsItem
+
+BEIJING = ZoneInfo("Asia/Shanghai")
 
 
 def parse_datetime(value: str | None) -> datetime | None:
@@ -33,6 +36,18 @@ def parse_datetime(value: str | None) -> datetime | None:
         except ValueError:
             return None
     return None
+
+
+def parse_beijing_compact(value: str | None) -> datetime | None:
+    """Tencent quote timestamps are local China time, not UTC."""
+    compact = re.sub(r"[^0-9]", "", value or "")
+    if len(compact) < 14:
+        return None
+    try:
+        local = datetime.strptime(compact[:14], "%Y%m%d%H%M%S").replace(tzinfo=BEIJING)
+        return local.astimezone(timezone.utc)
+    except ValueError:
+        return None
 
 
 def isoformat(dt: datetime | None) -> str:

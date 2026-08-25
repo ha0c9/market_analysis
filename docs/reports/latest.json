@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T16:28:21Z",
-  "focus": "资金流入分析",
+  "generatedAt": "2026-08-25T16:30:38Z",
+  "focus": "尾盘拉升",
   "timeWindow": {
-    "from": "2026-08-24T07:28:14Z",
-    "to": "2026-08-25T16:28:21Z"
+    "from": "2026-08-17T10:52:04Z",
+    "to": "2026-08-25T16:30:38Z"
   },
   "dataCoverage": {
     "news": true,
@@ -68,18 +68,18 @@
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7675.75,
-        "changePct": 0.299105656286458,
-        "changePct5d": -0.208141779161497,
-        "asOf": "2026-08-25T16:28:20Z"
+        "price": 7675.93,
+        "changePct": 0.3014577181720268,
+        "changePct5d": -0.20579932715129035,
+        "asOf": "2026-08-25T16:30:37Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26146.258,
-        "changePct": 0.6392122242781628,
-        "changePct5d": -0.545662618128584,
-        "asOf": "2026-08-25T16:28:19Z"
+        "price": 26146.559,
+        "changePct": 0.6403707993553054,
+        "changePct5d": -0.5445185155908527,
+        "asOf": "2026-08-25T16:30:34Z"
       }
     ],
     "sectors": [
@@ -100,20 +100,12 @@
         "asOf": "2026-08-25T08:14:43Z"
       },
       {
-        "symbol": "sh516160",
-        "name": "新能源ETF南方",
-        "price": 2.466,
-        "changePct": -1.6,
+        "symbol": "sz159819",
+        "name": "人工智能ETF易方达",
+        "price": 1.685,
+        "changePct": 0.54,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:45Z"
-      },
-      {
-        "symbol": "sz159915",
-        "name": "创业板ETF易方达",
-        "price": 3.419,
-        "changePct": -1.1,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:51Z"
+        "asOf": "2026-08-25T08:14:30Z"
       },
       {
         "symbol": "sh510300",
@@ -124,12 +116,12 @@
         "asOf": "2026-08-25T08:14:54Z"
       },
       {
-        "symbol": "sh510500",
-        "name": "中证500ETF南方",
-        "price": 7.726,
-        "changePct": -0.18,
+        "symbol": "sz159915",
+        "name": "创业板ETF易方达",
+        "price": 3.419,
+        "changePct": -1.1,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:40Z"
+        "asOf": "2026-08-25T08:14:51Z"
       }
     ],
     "tickers": [
@@ -150,28 +142,28 @@
         "asOf": "2026-08-25T08:14:12Z"
       },
       {
-        "symbol": "sh600276",
-        "name": "恒瑞医药",
-        "price": 46.49,
-        "changePct": -0.58,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:55Z"
-      },
-      {
-        "symbol": "sz002594",
-        "name": "比亚迪",
-        "price": 91.36,
-        "changePct": 0.77,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:57Z"
-      },
-      {
         "symbol": "sh603986",
         "name": "兆易创新",
         "price": 395.51,
         "changePct": 3.63,
         "changePct5d": null,
         "asOf": "2026-08-25T08:14:52Z"
+      },
+      {
+        "symbol": "sz002049",
+        "name": "紫光国微",
+        "price": 61.46,
+        "changePct": 0.77,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:57Z"
+      },
+      {
+        "symbol": "sh600745",
+        "name": "*ST闻泰",
+        "price": 18.92,
+        "changePct": 10.0,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:56Z"
       },
       {
         "symbol": "sz300750",
@@ -182,36 +174,52 @@
         "asOf": "2026-08-25T08:14:00Z"
       },
       {
-        "symbol": "sh688111",
-        "name": "金山办公",
-        "price": 234.75,
-        "changePct": 0.62,
+        "symbol": "sh601127",
+        "name": "赛力斯",
+        "price": 50.73,
+        "changePct": 1.97,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:49Z"
+      },
+      {
+        "symbol": "sz002230",
+        "name": "科大讯飞",
+        "price": 39.35,
+        "changePct": 1.08,
         "changePct5d": null,
         "asOf": "2026-08-25T08:14:33Z"
       },
       {
-        "symbol": "sz000858",
-        "name": "五 粮 液",
-        "price": 71.52,
-        "changePct": 0.06,
+        "symbol": "sh688041",
+        "name": "海光信息",
+        "price": 232.06,
+        "changePct": 0.54,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:24Z"
+        "asOf": "2026-08-25T08:14:40Z"
       },
       {
-        "symbol": "sh600519",
-        "name": "贵州茅台",
-        "price": 1304.0,
-        "changePct": -0.05,
+        "symbol": "sz300502",
+        "name": "新易盛",
+        "price": 400.87,
+        "changePct": -2.7,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:38Z"
+        "asOf": "2026-08-25T08:14:48Z"
       },
       {
-        "symbol": "sz002475",
-        "name": "立讯精密",
-        "price": 54.86,
-        "changePct": 2.12,
+        "symbol": "sh600584",
+        "name": "长电科技",
+        "price": 74.05,
+        "changePct": 0.34,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
+        "asOf": "2026-08-25T08:14:43Z"
+      },
+      {
+        "symbol": "sz002371",
+        "name": "北方华创",
+        "price": 700.4,
+        "changePct": -1.06,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:03Z"
       },
       {
         "symbol": "sh688012",
@@ -222,60 +230,44 @@
         "asOf": "2026-08-25T08:14:48Z"
       },
       {
-        "symbol": "sz300059",
-        "name": "东方财富",
-        "price": 18.93,
-        "changePct": 0.05,
+        "symbol": "sz300661",
+        "name": "圣邦股份",
+        "price": 114.86,
+        "changePct": 3.36,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:06Z"
+        "asOf": "2026-08-25T08:14:27Z"
       },
       {
-        "symbol": "sh601012",
-        "name": "隆基绿能",
-        "price": 12.17,
-        "changePct": 0.16,
+        "symbol": "sh603501",
+        "name": "豪威集团",
+        "price": 85.55,
+        "changePct": 3.7,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:50Z"
+        "asOf": "2026-08-25T08:14:46Z"
       },
       {
-        "symbol": "sz000725",
-        "name": "京东方Ａ",
-        "price": 5.74,
-        "changePct": -0.17,
+        "symbol": "sz300223",
+        "name": "君正股份",
+        "price": 134.1,
+        "changePct": 0.33,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:42Z"
+        "asOf": "2026-08-25T08:14:39Z"
       },
       {
-        "symbol": "sh600036",
-        "name": "招商银行",
-        "price": 39.5,
-        "changePct": -0.2,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:37Z"
-      },
-      {
-        "symbol": "sz300124",
-        "name": "汇川技术",
-        "price": 61.39,
-        "changePct": 5.3,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:24Z"
-      },
-      {
-        "symbol": "sh688008",
-        "name": "澜起科技",
-        "price": 194.42,
-        "changePct": 1.35,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:59Z"
-      },
-      {
-        "symbol": "sz002230",
-        "name": "科大讯飞",
-        "price": 39.35,
-        "changePct": 1.08,
+        "symbol": "sh688111",
+        "name": "金山办公",
+        "price": 234.75,
+        "changePct": 0.62,
         "changePct5d": null,
         "asOf": "2026-08-25T08:14:33Z"
+      },
+      {
+        "symbol": "sz300136",
+        "name": "信维通信",
+        "price": 59.84,
+        "changePct": 1.56,
+        "changePct5d": null,
+        "asOf": "2026-08-25T08:14:54Z"
       }
     ]
   },
@@ -285,36 +277,36 @@
       "heat": 1,
       "heatScore": 0.9,
       "priceAction": "mixed",
-      "calibration": "divergence",
+      "calibration": "confirming",
       "direction": "mixed",
-      "narrative": "半导体板块资金关注度最高，但表现分化。半导体设备ETF获超3亿份净申购，科创半导体ETF净流入居前，显示资金逆势布局；但中芯国际、中微公司等个股下跌，兆易创新、澜起科技上涨，板块内部分化明显。资金流入与个股表现不一致，可能反映资金在板块内轮动或提前布局。",
+      "narrative": "半导体板块尾盘出现明显资金异动，多只个股获主力抢筹，但板块内部分化，部分权重股回调。新闻提及尾盘拉升封板个股，且兆易创新、圣邦股份等涨幅居前，显示资金关注度较高。",
       "evidence": [
         {
-          "claim": "半导体设备ETF易方达逆势获超3亿份净申购",
-          "sourceTitle": "半导体板块表现分化，半导体设备ETF易方达（159558）逆势获超3亿份净申购",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUU94NUw5S3lCcEVWSnRWbXF2MDZ2ZjZmUmEyVjBZcWhBZmNzTzVmVXp4eU9wMzhHaVhsSmhoSVRNR3dCd0VYMVgyMVVqclJVdkM1TmRYckhacl9VS3hFYUdtQ1F0aUJwZmtLQ2RETkJFNm1RSWhOT1pXaW9IVi1UdHNnWWNfSHdsR2Y0VzV3?oc=5",
-          "publishedAt": "2026-08-25T12:50:08Z",
+          "claim": "尾盘拉升'20cm'封板，半导体板块掀涨停潮",
+          "sourceTitle": "301396、688227，尾盘拉升“20cm”封板！A股两大板块，掀涨停潮！ - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlNuWEJmMF9BOTdrZVhZLW56a0k2aW0xdk5vcXhkOFIzaGthX0Z1UjJIVlQ3ZDM3Y3o5amZLREtGS24xVlF4S3pscllndjR3SVVETVo1NlFGZWlTUkczVnktQWR0RDh4SXhQZ1JFS1lGQUJ0UG96WGNtd0JGZXFWSnVSd21lR2RWQ2dIOUNab0R4Nmhx?oc=5",
+          "publishedAt": "2026-08-21T11:56:25Z",
           "weight": "primary"
         },
         {
-          "claim": "科创半导体ETF净流入居前",
-          "sourceTitle": "ETF资金榜|银华日利ETF、科创半导体ETF和黄金ETF净流入居前",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5KdjdWNXVBUzg4eW05TTFvT1FWV2loX2UwdC1ZSTlFc0M4RDNtSzFoVTI4OEFHdnhTTWtmMUFwVlVOZXFvV1NiUmIwcUFja2c3cEtLTHV5anpNTDlLVFl2Xy03bEh5Z2g2bFZ0bXNRcw?oc=5",
-          "publishedAt": "2026-08-25T09:06:16Z",
+          "claim": "尾盘主力净流入这些股，半导体个股获抢筹",
+          "sourceTitle": "主力资金 | 尾盘主力净流入这些股 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZ29sdHBDWkRQZ1h0ZmVWV3JXWlhubFBKVUhIS3JYa3ZHcF9QaklmT1N6dnlOemd2dHdLbnR5MGN2TjFnX0dGakNHNGE5Yjl4SVFLZmlEOGRtcVFyNk9nb0dxaHQzcVRYTTBReFBpOVY5TVVXY0hLM2QzdVBVS3hMSA?oc=5",
+          "publishedAt": "2026-08-21T10:35:00Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "中芯国际下跌0.48%，中微公司下跌1.02%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:51Z",
+          "claim": "尾盘主力大幅出逃5股，部分半导体个股遭抛售",
+          "sourceTitle": "主力资金丨尾盘主力大幅出逃5股 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE92aENhZ3RiQUVsRGgtcHJjNjNBekRKR2dhRFVLQUJWRzBDdEhfNFg1T2ZYM1hDczRSSTAzRFBBZEU1bzl3UU11enl0WnlBZXR4TEI0YVhab2lFa1l4bzdqSlJCZzRQVHNwdk5OdC13bnJKa1NDV01xcA?oc=5",
+          "publishedAt": "2026-08-25T12:02:00Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.7,
-      "invalidatedIf": "半导体ETF出现持续净流出，或主要个股放量下跌"
+      "invalidatedIf": "若后续新闻显示半导体板块尾盘资金持续净流出，或龙头股大幅下跌，则本判断失效。"
     },
     {
       "sector": "人工智能",
@@ -323,76 +315,69 @@
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "人工智能概念股活跃，石头科技涨停，科大讯飞、金山办公等上涨，资金流入迹象明显。新闻提及主力连续押注某板块，结合AI概念表现，资金流入与股价上涨相互印证。",
+      "narrative": "人工智能板块尾盘获主力资金抢筹，相关个股表现活跃，ETF上涨，显示资金流入迹象。",
       "evidence": [
         {
-          "claim": "石头科技涨停，为人工智能概念热股",
-          "sourceTitle": "8月25日石头科技涨停：小家电，家电，人工智能概念热股_个股掘金",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42U29OTmZoNDJBNmVtVE41eWNuN1JpbG5jTGM5NVItbE9CRXNzM2NYV0FZSnRHQWVNUmZmV09KVU9CbnNCY2pTR1lrdGUwSW8zYnNSR3Z1a0F0YW4yZW9KaXpB?oc=5",
-          "publishedAt": "2026-08-25T08:34:02Z",
+          "claim": "7股尾盘获主力大幅抢筹，人工智能个股在列",
+          "sourceTitle": "主力资金 | 7股尾盘获主力大幅抢筹 - 凤凰网财经",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UZnlwMTYxSXA1VXVtYUtfZHF2WEtweFpKQ2hDRGJ2c0VkU1VHVDIzRUpnc3puRlkwTlVfSml0Tk53NHN5MVE0OFJnZWhSeS1n?oc=5",
+          "publishedAt": "2026-08-24T10:38:15Z",
           "weight": "primary"
         },
         {
-          "claim": "主力连续押注某个板块，上周31亿、今日再加14亿",
-          "sourceTitle": "上周 31 亿、今日再加 14 亿：主力为何连续押注这个板块",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQMGtxbDhIVHhTY1VnM29IZmdzMy1YQ2pXTzBzS3JCUDQ2Y2IyNk1CRXIwS0VWNExmSnFoVWhXMVBpQ3NTVjF4VkxtU1hUbE1EdUo0b3psd0JmeWtHLVB2R1dudll0b2JfZmJnTnJEd1JDVDB1N2pYSnctb3lVR3VlVm53?oc=5",
-          "publishedAt": "2026-08-25T10:57:32Z",
+          "claim": "6股尾盘获主力资金大幅抢筹，人工智能相关",
+          "sourceTitle": "主力资金 | 6股尾盘获主力资金大幅抢筹 - 证券时报",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtOW4xYkNlR2E2YW5YakVLUzkwTnBSTU5BQXpKcm56N1lvakk5YmZQdV9JR1YwSEVlRmhwcHhfdWZkMnFqSWZYaGswcG9qUnVuZWF2RnpCbnNPMWQ3?oc=5",
+          "publishedAt": "2026-08-20T10:43:00Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [],
       "confidence": 0.6,
-      "invalidatedIf": "AI龙头股出现资金净流出或大幅下跌"
+      "invalidatedIf": "若人工智能板块尾盘出现资金大幅流出或龙头股跳水，则本判断失效。"
+    },
+    {
+      "sector": "消费电子",
+      "heat": 3,
+      "heatScore": 0.5,
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "mixed",
+      "narrative": "消费电子板块尾盘异动，但新闻中未明确提及具体个股，行情显示部分个股上涨，整体方向不明。",
+      "evidence": [],
+      "counterEvidence": [],
+      "confidence": 0.3,
+      "invalidatedIf": "若后续新闻明确消费电子板块尾盘资金流向，则根据新信息更新。"
     },
     {
       "sector": "新能源",
       "heat": 3,
       "heatScore": 0.4,
       "priceAction": "down",
-      "calibration": "divergence",
+      "calibration": "insufficientData",
       "direction": "down",
-      "narrative": "新能源板块表现疲软，新能源ETF下跌1.6%，宁德时代下跌2.88%，资金流出迹象明显。新闻中未提及新能源板块资金流入，反而有色金属等板块净流出，可能拖累新能源。",
-      "evidence": [
-        {
-          "claim": "新能源ETF南方下跌1.6%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:45Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "宁德时代下跌2.88%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "比亚迪上涨0.77%，隆基绿能上涨0.16%",
-          "sourceTitle": "行情快照",
-          "url": "",
-          "publishedAt": "2026-08-25T08:14:57Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.5,
-      "invalidatedIf": "新能源ETF资金转为净流入，或龙头股放量上涨"
+      "narrative": "新能源板块尾盘表现疲软，宁德时代等权重股下跌，但新闻中未提及相关资金动向。",
+      "evidence": [],
+      "counterEvidence": [],
+      "confidence": 0.3,
+      "invalidatedIf": "若后续新闻显示新能源板块尾盘获资金流入，则本判断失效。"
     }
   ],
-  "crossSectorNotes": "资金流向显示半导体和人工智能板块获得资金青睐，但半导体内部出现分化；新能源板块资金流出明显。北向资金动向未在新闻中明确提及，需关注后续数据。市场整体震荡，上证指数微涨，创业板指下跌，资金可能从新能源流向科技板块。",
+  "crossSectorNotes": "尾盘资金异动集中在半导体和人工智能板块，多只个股获主力抢筹，但市场整体分化，创业板指下跌。新闻中提及的尾盘拉升个股如301396、688227等未在行情列表中，需注意。北向资金动向未在新闻中明确，但整体资金流向显示主力在尾盘活跃。",
   "limitations": [
     "未接入微博/X",
-    "可能使用延迟公开行情"
+    "可能使用延迟公开行情",
+    "近期稿件不足，已补充稍早的相关报道"
   ],
   "stats": {
-    "fetched": 10,
-    "used": 10,
-    "quotes": 32,
+    "fetched": 8,
+    "used": 8,
+    "quotes": 31,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"
   },
-  "errors": []
+  "errors": [
+    "近期稿件不足，已补充稍早的相关报道"
+  ]
 }

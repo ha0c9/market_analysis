@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 from pathlib import Path
 
-from src import REPORTS_DIR
+from src import REPORTS_DIR, ROOT
 from src.distill import distill_news
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
@@ -57,11 +58,17 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     report.marketSnapshot = snapshot_from_rows(quotes, report.marketSnapshot.get("source") or "tencent+yahoo")
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    public_reports = ROOT / "reports"
+    public_reports.mkdir(parents=True, exist_ok=True)
     stamp = now_utc().strftime("%Y%m%dT%H%M%SZ")
+    payload = report.model_dump()
     latest = REPORTS_DIR / "latest.json"
-    archive = REPORTS_DIR / f"{stamp}.json"
-    write_json(latest, report.model_dump())
-    write_json(archive, report.model_dump())
+    write_json(latest, payload)
+    write_json(REPORTS_DIR / f"{stamp}.json", payload)
+    write_json(public_reports / "latest.json", payload)
+    sample = REPORTS_DIR / "sample.json"
+    if sample.exists():
+        shutil.copyfile(sample, public_reports / "sample.json")
     _refresh_index(REPORTS_DIR, keep=int(budgets.get("report_history") or 30))
     return latest
 
@@ -88,6 +95,9 @@ def main() -> None:
     parser.add_argument("--focus", default="", help="分析侧重点，如：存储相关")
     parser.add_argument("--lookback-hours", type=int, default=36)
     args = parser.parse_args()
+    from src.settings import ai_base_url
+
+    print(f"AI_BASE_URL={ai_base_url()}")
     path = build_report(args.focus.strip(), args.lookback_hours)
     print(f"wrote {path}")
 

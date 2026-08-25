@@ -25,7 +25,19 @@ def env(name: str, default: str = "") -> str:
 
 
 def ai_base_url() -> str:
-    return env("AI_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+    """Normalize OpenAI-compatible Chat Completions base URL.
+
+    SSSAiCode Anthropic 格式是 ``.../api``，OpenAI 格式是 ``.../api/v1``。
+    未配模型名时客户端会请求 ``{base}/chat/completions``，少 ``/v1`` 会 404。
+    """
+    url = env("AI_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+    for suffix in ("/chat/completions", "/messages", "/responses"):
+        if url.endswith(suffix):
+            url = url[: -len(suffix)].rstrip("/")
+            break
+    if not url.endswith("/v1"):
+        url = f"{url}/v1"
+    return url
 
 
 def dumps(data: Any) -> str:

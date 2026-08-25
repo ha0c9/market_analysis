@@ -4,9 +4,14 @@ on:
   push:
     branches: [main]
     paths:
-      - "web/**"
-      - "docs/reports/**"
-      - "scripts/build_site.sh"
+      - web/**
+      - docs/reports/**
+      - reports/**
+      - index.html
+      - app.js
+      - styles.css
+      - config.js
+      - scripts/build_site.sh
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 

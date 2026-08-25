@@ -19,7 +19,7 @@
       { "symbol": "sz399006", "name": "创业板指", "price": 2413.91, "changePct": -0.52, "changePct5d": null, "asOf": "2026-08-25T05:31:57Z" },
       { "symbol": "^HSI", "name": "恒生指数", "price": 25511.1, "changePct": -0.02, "changePct5d": null, "asOf": "2026-08-25T08:00:00Z" },
       { "symbol": "^N225", "name": "日经225", "price": 65856.43, "changePct": 0.50, "changePct5d": null, "asOf": "2026-08-25T06:00:00Z" },
-      { "symbol": "^KS11", "name": "首尔综合指数", "price": 6742.74, "changePct": 0.68, "changePct5d": null, "asOf": "2026-08-25T06:32:00Z" },
+      { "symbol": "^KS11", "name": "首尔综合指数", "price": 6742.74, "changePct": 0.683589, "changePct5d": null, "asOf": "2026-08-25T06:32:00Z" },
       { "symbol": "^GSPC", "name": "标普500", "price": 7652.86, "changePct": -0.28, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" },
       { "symbol": "^IXIC", "name": "纳斯达克", "price": 25980.19, "changePct": -0.31, "changePct5d": null, "asOf": "2026-08-25T20:00:00Z" }
     ],

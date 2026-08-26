@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-26T07:16:43Z",
-  "focus": "存储相关",
+  "generatedAt": "2026-08-26T08:18:24Z",
+  "focus": "存储",
   "timeWindow": {
     "from": "2026-08-26T05:19:23Z",
-    "to": "2026-08-26T07:16:43Z"
+    "to": "2026-08-26T08:18:24Z"
   },
   "dataCoverage": {
     "news": true,
@@ -14,7 +14,7 @@
     "weibo": false
   },
   "marketSnapshot": {
-    "asOf": "2026-08-26T07:16:00Z",
+    "asOf": "2026-08-26T08:14:02Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
@@ -27,7 +27,7 @@
         "volume": 489553021.0,
         "turnover": 85722349.0,
         "volumeVsAvg": 0.885,
-        "asOf": "2026-08-26T07:16:00Z",
+        "asOf": "2026-08-26T08:14:02Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -130,7 +130,7 @@
         "volume": 184578169.0,
         "turnover": 48905728.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:00Z",
+        "asOf": "2026-08-26T08:14:14Z",
         "series": [
           {
             "date": "2026-08-26",
@@ -149,12 +149,12 @@
         "volume": 164782656.0,
         "turnover": 44358063.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:15:42Z",
+        "asOf": "2026-08-26T08:14:42Z",
         "series": [
           {
             "date": "2026-08-26",
             "close": 3414.8833,
-            "volume": 2670245936.0,
+            "volume": 2641663315.0,
             "changePct": null
           }
         ]
@@ -162,13 +162,13 @@
       {
         "symbol": "^HSI",
         "name": "恒生指数",
-        "price": 25715.0,
-        "changePct": 0.7992614734257497,
-        "changePct5d": 0.8626361284917561,
+        "price": 25637.42,
+        "changePct": 0.4951585488638832,
+        "changePct5d": 0.5583417014747738,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 1.016,
-        "asOf": "2026-08-26T07:01:40Z",
+        "asOf": "2026-08-26T08:03:20Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -256,9 +256,9 @@
           },
           {
             "date": "2026-08-26",
-            "close": 25715.0,
+            "close": 25637.4199,
             "volume": 0.0,
-            "changePct": 0.799
+            "changePct": 0.495
           }
         ]
       },
@@ -685,7 +685,7 @@
         "volume": 12486053.0,
         "turnover": 126471.0,
         "volumeVsAvg": 0.811,
-        "asOf": "2026-08-26T07:16:40Z",
+        "asOf": "2026-08-26T08:14:55Z",
         "series": [
           {
             "date": "2026-08-05",
@@ -788,7 +788,7 @@
         "volume": 5384407.0,
         "turnover": 60534.0,
         "volumeVsAvg": 0.679,
-        "asOf": "2026-08-26T07:16:15Z",
+        "asOf": "2026-08-26T08:14:33Z",
         "series": [
           {
             "date": "2026-08-05",
@@ -891,7 +891,7 @@
         "volume": 3639577.0,
         "turnover": 39156.0,
         "volumeVsAvg": 0.795,
-        "asOf": "2026-08-26T07:16:40Z",
+        "asOf": "2026-08-26T08:15:00Z",
         "series": [
           {
             "date": "2026-08-05",
@@ -982,109 +982,6 @@
             "close": 1.08,
             "volume": 363957734.0,
             "changePct": 1.313
-          }
-        ]
-      },
-      {
-        "symbol": "sh588200",
-        "name": "科创芯片ETF嘉实",
-        "price": 1.148,
-        "changePct": 1.59,
-        "changePct5d": -9.960782480441498,
-        "volume": 23438692.0,
-        "turnover": 267768.0,
-        "volumeVsAvg": 0.708,
-        "asOf": "2026-08-26T07:16:40Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 1.166,
-            "volume": 5456015348.0,
-            "changePct": 6.096
-          },
-          {
-            "date": "2026-08-06",
-            "close": 1.18,
-            "volume": 4152134067.0,
-            "changePct": 1.201
-          },
-          {
-            "date": "2026-08-07",
-            "close": 1.217,
-            "volume": 3582515992.0,
-            "changePct": 3.136
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.216,
-            "volume": 2741577328.0,
-            "changePct": -0.082
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.196,
-            "volume": 2644530096.0,
-            "changePct": -1.645
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.218,
-            "volume": 2686828368.0,
-            "changePct": 1.839
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.204,
-            "volume": 3329583811.0,
-            "changePct": -1.149
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.212,
-            "volume": 2764802929.0,
-            "changePct": 0.664
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.275,
-            "volume": 3662244905.0,
-            "changePct": 5.198
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.275,
-            "volume": 3128078365.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.177,
-            "volume": 4228774929.0,
-            "changePct": -7.686
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.172,
-            "volume": 2698508155.0,
-            "changePct": -0.425
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.173,
-            "volume": 2258996805.0,
-            "changePct": 0.085
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.134,
-            "volume": 3016150386.0,
-            "changePct": -3.325
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.148,
-            "volume": 2343869201.0,
-            "changePct": 1.235
           }
         ]
       },
@@ -1194,6 +1091,109 @@
     ],
     "tickers": [
       {
+        "symbol": "sh688008",
+        "name": "澜起科技",
+        "price": 201.0,
+        "changePct": 3.38,
+        "changePct5d": 0.49999999999998934,
+        "volume": 30246797.0,
+        "turnover": 597304.0,
+        "volumeVsAvg": 0.762,
+        "asOf": "2026-08-26T08:14:54Z",
+        "series": [
+          {
+            "date": "2026-08-06",
+            "close": 208.36,
+            "volume": 48197830.0,
+            "changePct": -1.717
+          },
+          {
+            "date": "2026-08-07",
+            "close": 215.52,
+            "volume": 52072839.0,
+            "changePct": 3.436
+          },
+          {
+            "date": "2026-08-10",
+            "close": 206.92,
+            "volume": 43876772.0,
+            "changePct": -3.99
+          },
+          {
+            "date": "2026-08-11",
+            "close": 206.7,
+            "volume": 36166553.0,
+            "changePct": -0.106
+          },
+          {
+            "date": "2026-08-12",
+            "close": 215.43,
+            "volume": 44223807.0,
+            "changePct": 4.224
+          },
+          {
+            "date": "2026-08-13",
+            "close": 210.22,
+            "volume": 47777534.0,
+            "changePct": -2.418
+          },
+          {
+            "date": "2026-08-14",
+            "close": 211.91,
+            "volume": 31352510.0,
+            "changePct": 0.804
+          },
+          {
+            "date": "2026-08-17",
+            "close": 224.37,
+            "volume": 51651699.0,
+            "changePct": 5.88
+          },
+          {
+            "date": "2026-08-18",
+            "close": 218.0,
+            "volume": 44392405.0,
+            "changePct": -2.839
+          },
+          {
+            "date": "2026-08-19",
+            "close": 200.0,
+            "volume": 51063762.0,
+            "changePct": -8.257
+          },
+          {
+            "date": "2026-08-20",
+            "close": 199.11,
+            "volume": 26805638.0,
+            "changePct": -0.445
+          },
+          {
+            "date": "2026-08-21",
+            "close": 200.55,
+            "volume": 21159032.0,
+            "changePct": 0.723
+          },
+          {
+            "date": "2026-08-24",
+            "close": 191.83,
+            "volume": 33363961.0,
+            "changePct": -4.348
+          },
+          {
+            "date": "2026-08-25",
+            "close": 194.42,
+            "volume": 23709426.0,
+            "changePct": 1.35
+          },
+          {
+            "date": "2026-08-26",
+            "close": 201.0,
+            "volume": 30246797.0,
+            "changePct": 3.384
+          }
+        ]
+      },
+      {
         "symbol": "sh603986",
         "name": "兆易创新",
         "price": 392.5,
@@ -1202,7 +1202,7 @@
         "volume": 284629.0,
         "turnover": 1115926.0,
         "volumeVsAvg": 0.544,
-        "asOf": "2026-08-26T07:16:39Z",
+        "asOf": "2026-08-26T08:14:44Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -1305,7 +1305,7 @@
         "volume": 98244.0,
         "turnover": 60530.0,
         "volumeVsAvg": 0.452,
-        "asOf": "2026-08-26T07:16:00Z",
+        "asOf": "2026-08-26T08:14:45Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -1400,109 +1400,6 @@
         ]
       },
       {
-        "symbol": "sz300782",
-        "name": "卓胜微",
-        "price": 76.87,
-        "changePct": 1.34,
-        "changePct5d": 0.95876459520019,
-        "volume": 126337.0,
-        "turnover": 97502.0,
-        "volumeVsAvg": 1.009,
-        "asOf": "2026-08-26T07:16:15Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 75.38,
-            "volume": 19172013.0,
-            "changePct": 3.444
-          },
-          {
-            "date": "2026-08-07",
-            "close": 78.02,
-            "volume": 16320615.0,
-            "changePct": 3.502
-          },
-          {
-            "date": "2026-08-10",
-            "close": 76.41,
-            "volume": 12147965.0,
-            "changePct": -2.064
-          },
-          {
-            "date": "2026-08-11",
-            "close": 77.55,
-            "volume": 14986214.0,
-            "changePct": 1.492
-          },
-          {
-            "date": "2026-08-12",
-            "close": 80.12,
-            "volume": 16919892.0,
-            "changePct": 3.314
-          },
-          {
-            "date": "2026-08-13",
-            "close": 78.95,
-            "volume": 16125905.0,
-            "changePct": -1.46
-          },
-          {
-            "date": "2026-08-14",
-            "close": 78.87,
-            "volume": 10080715.0,
-            "changePct": -0.101
-          },
-          {
-            "date": "2026-08-17",
-            "close": 82.49,
-            "volume": 12900163.0,
-            "changePct": 4.59
-          },
-          {
-            "date": "2026-08-18",
-            "close": 81.68,
-            "volume": 10008017.0,
-            "changePct": -0.982
-          },
-          {
-            "date": "2026-08-19",
-            "close": 76.14,
-            "volume": 12219160.0,
-            "changePct": -6.783
-          },
-          {
-            "date": "2026-08-20",
-            "close": 76.7,
-            "volume": 9740328.0,
-            "changePct": 0.735
-          },
-          {
-            "date": "2026-08-21",
-            "close": 77.14,
-            "volume": 7366268.0,
-            "changePct": 0.574
-          },
-          {
-            "date": "2026-08-24",
-            "close": 74.55,
-            "volume": 8992139.0,
-            "changePct": -3.358
-          },
-          {
-            "date": "2026-08-25",
-            "close": 75.85,
-            "volume": 9284361.0,
-            "changePct": 1.744
-          },
-          {
-            "date": "2026-08-26",
-            "close": 76.87,
-            "volume": 12700470.0,
-            "changePct": 1.345
-          }
-        ]
-      },
-      {
         "symbol": "sh688012",
         "name": "中微公司",
         "price": 368.05,
@@ -1511,7 +1408,7 @@
         "volume": 16616157.0,
         "turnover": 602204.0,
         "volumeVsAvg": 0.737,
-        "asOf": "2026-08-26T07:16:39Z",
+        "asOf": "2026-08-26T08:14:32Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -1606,39 +1503,118 @@
         ]
       },
       {
-        "symbol": "sh688008",
-        "name": "澜起科技",
-        "price": 201.0,
-        "changePct": 3.38,
-        "changePct5d": null,
-        "volume": 30246797.0,
-        "turnover": 597304.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:39Z",
-        "series": []
+        "symbol": "sz300223",
+        "name": "君正股份",
+        "price": 132.07,
+        "changePct": -1.51,
+        "changePct5d": -3.7741294541211334,
+        "volume": 173888.0,
+        "turnover": 230041.0,
+        "volumeVsAvg": 0.49,
+        "asOf": "2026-08-26T08:14:48Z",
+        "series": [
+          {
+            "date": "2026-08-06",
+            "close": 137.0,
+            "volume": 41966789.0,
+            "changePct": 0.713
+          },
+          {
+            "date": "2026-08-07",
+            "close": 144.05,
+            "volume": 49196597.0,
+            "changePct": 5.146
+          },
+          {
+            "date": "2026-08-10",
+            "close": 138.48,
+            "volume": 39692469.0,
+            "changePct": -3.867
+          },
+          {
+            "date": "2026-08-11",
+            "close": 137.86,
+            "volume": 30955563.0,
+            "changePct": -0.448
+          },
+          {
+            "date": "2026-08-12",
+            "close": 140.57,
+            "volume": 29407906.0,
+            "changePct": 1.966
+          },
+          {
+            "date": "2026-08-13",
+            "close": 137.48,
+            "volume": 38547181.0,
+            "changePct": -2.198
+          },
+          {
+            "date": "2026-08-14",
+            "close": 143.62,
+            "volume": 34731084.0,
+            "changePct": 4.466
+          },
+          {
+            "date": "2026-08-17",
+            "close": 155.39,
+            "volume": 46353128.0,
+            "changePct": 8.195
+          },
+          {
+            "date": "2026-08-18",
+            "close": 152.75,
+            "volume": 43163530.0,
+            "changePct": -1.699
+          },
+          {
+            "date": "2026-08-19",
+            "close": 137.25,
+            "volume": 43808608.0,
+            "changePct": -10.147
+          },
+          {
+            "date": "2026-08-20",
+            "close": 138.3,
+            "volume": 26116314.0,
+            "changePct": 0.765
+          },
+          {
+            "date": "2026-08-21",
+            "close": 138.48,
+            "volume": 24581699.0,
+            "changePct": 0.13
+          },
+          {
+            "date": "2026-08-24",
+            "close": 133.66,
+            "volume": 27697756.0,
+            "changePct": -3.481
+          },
+          {
+            "date": "2026-08-25",
+            "close": 134.1,
+            "volume": 21069702.0,
+            "changePct": 0.329
+          },
+          {
+            "date": "2026-08-26",
+            "close": 132.07,
+            "volume": 17388797.0,
+            "changePct": -1.514
+          }
+        ]
       },
       {
-        "symbol": "sz300661",
-        "name": "圣邦股份",
-        "price": 113.51,
-        "changePct": -1.18,
+        "symbol": "sh600171",
+        "name": "上海贝岭",
+        "price": 22.62,
+        "changePct": 0.8,
         "changePct5d": null,
-        "volume": 63909.0,
-        "turnover": 72891.0,
+        "volume": 66353.0,
+        "turnover": 14998.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:00Z",
-        "series": []
-      },
-      {
-        "symbol": "sh688396",
-        "name": "华润微",
-        "price": 57.8,
-        "changePct": -1.43,
-        "changePct5d": null,
-        "volume": 16083258.0,
-        "turnover": 93569.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:39Z",
+        "asOf": "2026-08-26T08:14:38Z",
         "series": []
       },
       {
@@ -1650,31 +1626,7 @@
         "volume": 1386737.0,
         "turnover": 231670.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:30Z",
-        "series": []
-      },
-      {
-        "symbol": "sz300223",
-        "name": "君正股份",
-        "price": 132.07,
-        "changePct": -1.51,
-        "changePct5d": null,
-        "volume": 173888.0,
-        "turnover": 230041.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:15:45Z",
-        "series": []
-      },
-      {
-        "symbol": "sz301308",
-        "name": "江波龙",
-        "price": 364.2,
-        "changePct": -1.48,
-        "changePct5d": null,
-        "volume": 72946.0,
-        "turnover": 267326.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:30Z",
+        "asOf": "2026-08-26T08:14:03Z",
         "series": []
       },
       {
@@ -1686,7 +1638,31 @@
         "volume": 14220025.0,
         "turnover": 319707.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:39Z",
+        "asOf": "2026-08-26T08:14:33Z",
+        "series": []
+      },
+      {
+        "symbol": "sz300782",
+        "name": "卓胜微",
+        "price": 76.87,
+        "changePct": 1.34,
+        "changePct5d": null,
+        "volume": 126337.0,
+        "turnover": 97502.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-08-26T08:14:27Z",
+        "series": []
+      },
+      {
+        "symbol": "sz301308",
+        "name": "江波龙",
+        "price": 364.2,
+        "changePct": -1.48,
+        "changePct5d": null,
+        "volume": 72946.0,
+        "turnover": 267326.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-08-26T08:14:00Z",
         "series": []
       },
       {
@@ -1698,7 +1674,7 @@
         "volume": 86405.0,
         "turnover": 340533.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T07:16:30Z",
+        "asOf": "2026-08-26T08:14:24Z",
         "series": []
       },
       {
@@ -2069,14 +2045,14 @@
       "series": [
         {
           "date": "2026-08-26",
-          "score": 21.0,
-          "count": 7,
+          "score": 8.0,
+          "count": 3,
           "officialCount": 1
         }
       ],
       "trend": "unknown",
       "sourceMix": {
-        "major_media": 6,
+        "major_media": 2,
         "official": 22
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
@@ -2093,116 +2069,91 @@
       "sector": "存储芯片",
       "heat": 1,
       "heatScore": 0.9,
-      "priceAction": "down",
-      "calibration": "divergence",
-      "direction": "down",
-      "narrative": "存储芯片板块今日整体回调，但海外存储龙头美光科技隔夜上涨2.48%，韩国KOSPI指数上涨0.97%，显示全球存储产业链仍有支撑。国内存储个股如兆易创新、佰维存储、德明利等均下跌，可能与前期涨幅较大、获利回吐有关。新闻中提及韩国股市因AI热潮出现剧烈崩盘，美国对冲基金因重仓SK海力士亏损67%，显示存储板块波动风险加大。",
+      "priceAction": "mixed",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "存储芯片板块受AI算力需求驱动，涨价周期持续，但个股表现分化。全球内存紧缺预期延续至2027年，上游涨价向下游传导，行业景气度确认。",
       "evidence": [
         {
-          "claim": "韩国股市经历全球AI热潮下最剧烈崩盘，美国对冲基金重仓SK海力士亏损67%",
-          "sourceTitle": "韩国股灾外溢华尔街：“AI股神”重仓SK海力士单月亏损67%，SEC介入调查杠杆交易",
-          "url": "https://wallstreetcn.com/articles/3780319",
-          "publishedAt": "2026-08-26T05:19:23Z",
+          "claim": "亚马逊、苹果、微软、戴尔集体涨价，机构预测全球内存紧缺或持续至2027年",
+          "sourceTitle": "亚马逊、苹果、微软、戴尔集体涨价 机构预测：全球内存紧缺或持续至2027年",
+          "url": "https://www.cls.cn/detail/2464881",
+          "publishedAt": "2026-08-26T08:02:24Z",
           "weight": "primary"
-        },
-        {
-          "claim": "美光科技隔夜上涨2.48%，KOSPI上涨0.97%",
-          "sourceTitle": "quotes",
-          "url": "",
-          "publishedAt": "2026-08-26T07:16:00Z",
-          "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "存储个股如兆易创新、佰维存储、德明利等今日下跌",
-          "sourceTitle": "quotes",
-          "url": "",
-          "publishedAt": "2026-08-26T07:16:00Z",
+          "claim": "韩国股市崩盘外溢，重仓SK海力士的基金单月亏损67%，显示存储芯片投机风险",
+          "sourceTitle": "韩国股灾外溢华尔街：“AI股神”重仓SK海力士单月亏损67%，SEC介入调查杠杆交易",
+          "url": "https://wallstreetcn.com/articles/3780319",
+          "publishedAt": "2026-08-26T05:19:23Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.7,
-      "invalidatedIf": "若存储芯片板块出现放量上涨，或海外存储龙头持续走强带动国内情绪，则判断可能失效。"
+      "confidence": 0.75,
+      "invalidatedIf": "存储芯片价格出现明显回落，或全球内存紧缺预期被证伪"
     },
     {
-      "sector": "半导体设备",
+      "sector": "半导体",
       "heat": 2,
       "heatScore": 0.7,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "半导体设备板块今日表现强势，中微公司上涨3.97%，澜起科技上涨3.38%，显示资金对设备国产化及AI相关芯片需求的关注。尽管存储芯片板块回调，但设备板块受益于扩产周期和国产替代逻辑，走势独立。",
+      "narrative": "半导体板块整体走强，中微公司、澜起科技等个股上涨，但板块ETF近5日跌幅超10%，短期波动较大。",
       "evidence": [
         {
-          "claim": "中微公司上涨3.97%，澜起科技上涨3.38%",
-          "sourceTitle": "quotes",
-          "url": "",
-          "publishedAt": "2026-08-26T07:16:00Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [],
-      "confidence": 0.8,
-      "invalidatedIf": "若半导体设备板块出现放量下跌，或行业政策出现不利变化，则判断可能失效。"
-    },
-    {
-      "sector": "先进封装",
-      "heat": 3,
-      "heatScore": 0.5,
-      "priceAction": "down",
-      "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "先进封装板块今日表现分化，华天科技下跌1.07%，但整体板块缺乏明确新闻驱动。市场对先进封装在AI芯片中的需求仍有预期，但短期缺乏催化剂。",
-      "evidence": [
-        {
-          "claim": "华天科技下跌1.07%",
-          "sourceTitle": "quotes",
-          "url": "",
-          "publishedAt": "2026-08-26T07:16:00Z",
+          "claim": "中微公司上涨3.97%，澜起科技上涨3.38%，半导体ETF国联安上涨0.89%",
+          "sourceTitle": "中微公司、澜起科技、半导体ETF国联安行情数据",
+          "url": "https://example.com/quotes",
+          "publishedAt": "2026-08-26T08:14:32Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.4,
-      "invalidatedIf": "若先进封装板块出现放量上涨或相关龙头公司发布重大利好，则判断可能失效。"
+      "counterEvidence": [
+        {
+          "claim": "半导体ETF近5日跌幅超10%，显示板块近期回调压力",
+          "sourceTitle": "半导体ETF国联安、芯片ETF华夏、芯片ETF国泰行情数据",
+          "url": "https://example.com/quotes",
+          "publishedAt": "2026-08-26T08:14:55Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.6,
+      "invalidatedIf": "半导体板块持续下跌，或ETF跌幅扩大"
     },
     {
-      "sector": "数据中心",
+      "sector": "电子元器件",
       "heat": 3,
       "heatScore": 0.5,
       "priceAction": "mixed",
       "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "数据中心板块今日表现平淡，相关个股如紫光国微微涨0.21%，但缺乏明确新闻驱动。AI算力需求长期利好数据中心，但短期市场关注度不高。",
-      "evidence": [
-        {
-          "claim": "紫光国微上涨0.21%",
-          "sourceTitle": "quotes",
-          "url": "",
-          "publishedAt": "2026-08-26T07:16:00Z",
-          "weight": "supporting"
-        }
-      ],
+      "direction": "unclear",
+      "narrative": "电子元器件板块缺乏直接新闻驱动，个股表现分化，需更多数据确认趋势。",
+      "evidence": [],
       "counterEvidence": [],
       "confidence": 0.3,
-      "invalidatedIf": "若数据中心板块出现放量上涨或相关龙头公司发布重大订单，则判断可能失效。"
+      "invalidatedIf": "出现电子元器件板块重大利好或利空新闻"
     }
   ],
-  "crossSectorNotes": "存储芯片板块回调，但半导体设备表现强势，显示资金在半导体产业链内部轮动。海外存储龙头美光上涨，但韩国股市波动风险可能传导至国内存储板块。",
-  "trendNotes": "上证指数近段成交量低于前段，量能在收缩。北向成交额近两周大体平稳，但交易所已不再披露实时净买入，只能看活跃度与上证对照。新闻情绪方面，可分日的新闻偏少，情绪趋势只能作参考。",
+  "crossSectorNotes": "存储芯片涨价周期确认，但韩国股市崩盘外溢风险需关注；半导体板块短期波动大，但长期景气度仍受AI需求支撑。",
+  "trendNotes": "上证指数近段成交量低于前段，量能在收缩；北向成交额近两周大体平稳，但交易所已不再披露实时净买入，无法确认外资净流入或流出；新闻情绪方面，存储芯片涨价消息升温，但韩国股市崩盘外溢带来风险情绪扰动，整体情绪偏中性。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
-    "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
+    "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证",
+    "部分源失败: 1"
   ],
   "stats": {
-    "fetched": 28,
-    "used": 28,
-    "quotes": 26,
-    "model": "deepseek-v4-flash",
+    "fetched": 24,
+    "used": 24,
+    "quotes": 24,
+    "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,
-    "plannerModel": "deepseek-v4-flash"
+    "plannerModel": "deepseek-v4-flash-vision-exp"
   },
-  "errors": []
+  "errors": [
+    "Google News 7/7 个请求限流（503/429），已降并发并重试"
+  ]
 }

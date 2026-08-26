@@ -7,5 +7,7 @@ http_timeout_seconds: 12
 planner_max_tokens: 3200
 synthesizer_max_tokens: 8000
 concurrent_fetches: 10
+google_news_workers: 2
+news_retries: 3
 report_history: 30
 series_days: 15

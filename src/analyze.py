@@ -24,6 +24,11 @@ def build_report(focus: str, lookback_hours: int) -> Path:
 
     rss_items, rss_errors = fetch_configured_rss(per_source)
     gnews_items, gnews_errors = fetch_google_news(plan.newsQueries, per_source)
+    print(
+        f"news rss={len(rss_items)} gnews={len(gnews_items)} "
+        f"rss_err={len(rss_errors)} gnews_err={len(gnews_errors)}",
+        flush=True,
+    )
     news = distill_news(rss_items + gnews_items, plan.keywords, plan.lookbackHours)
     if news and any(not within_lookback(item, plan.lookbackHours) for item in news):
         warnings.append("近期稿件不足，已补充稍早的相关报道")

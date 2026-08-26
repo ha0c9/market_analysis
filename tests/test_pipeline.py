@@ -277,6 +277,83 @@ class SourceWeightTests(unittest.TestCase):
         self.assertEqual(classify_source("Reuters", "https://www.reuters.com/business")[0], "major_media")
         self.assertEqual(classify_source("个人复盘", "https://www.zhihu.com/p/123")[0], "blog")
         self.assertEqual(classify_source("Google News / 医药", "https://news.google.com/rss")[0], "google_news")
+        self.assertEqual(classify_source("新华网财经", "http://www.xinhuanet.com/fortune/a")[0], "official")
+        self.assertEqual(classify_source("华尔街见闻", "https://wallstreetcn.com/a")[0], "major_media")
+        self.assertEqual(classify_source("财联社标红", "https://www.cls.cn/detail/1")[0], "major_media")
+
+    def test_cls_red_telegraph_outranks_plain_flash(self) -> None:
+        from src.ingest.cls import is_cls_red, parse_cls_roll
+
+        payload = {
+            "errno": 0,
+            "data": {
+                "roll_data": [
+                    {
+                        "id": 1,
+                        "title": "普通快讯 存储芯片",
+                        "brief": "一般行情播报",
+                        "content": "一般行情播报",
+                        "ctime": 1787716800,
+                        "level": "C",
+                        "bold": 0,
+                    },
+                    {
+                        "id": 2,
+                        "title": "存储芯片 工信部标红快讯",
+                        "brief": "【工信部：动力电池退役法规】财联社电，将研究起草相关行政法规。",
+                        "content": "将研究起草相关行政法规。",
+                        "ctime": 1787716900,
+                        "level": "B",
+                        "bold": 0,
+                    },
+                ]
+            },
+        }
+        self.assertTrue(is_cls_red({"level": "A"}))
+        self.assertTrue(is_cls_red({"level": "B"}))
+        self.assertFalse(is_cls_red({"level": "C", "bold": 0}))
+        rows = parse_cls_roll(payload, limit=10)
+        self.assertEqual(len(rows), 2)
+        red = next(item for item in rows if item.highlight)
+        plain = next(item for item in rows if not item.highlight)
+        self.assertEqual(red.source, "财联社标红")
+        self.assertIn("工信部", red.title)
+        self.assertTrue(red.url.endswith("/detail/2"))
+        self.assertGreater(red.sourceWeight, plain.sourceWeight)
+        kept = distill_news(rows, ["存储"], 48)
+        self.assertEqual(kept[0].highlight, True)
+
+    def test_google_skips_english_edition_for_chinese_queries(self) -> None:
+        from src.ingest.news import compact_http_error, google_editions_for_query
+
+        templates = {
+            "zh": "https://news.google.com/rss/search?q={query}&hl=zh-CN&gl=HK&ceid=HK:zh-Hans",
+            "en": "https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en",
+        }
+        self.assertEqual(
+            google_editions_for_query("今日 存储芯片 板块 行情 资金流入", templates),
+            ["zh"],
+        )
+        self.assertEqual(
+            google_editions_for_query("NAND DRAM memory chip shortage", templates),
+            ["en"],
+        )
+        long_503 = (
+            "Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=foo'\n"
+            "For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+        )
+        self.assertEqual(compact_http_error(RuntimeError(long_503)), "503 限流")
+        self.assertEqual(compact_http_error(OSError("[Errno -2] Name or service not known")), "DNS 失败")
+
+    def test_google_zh_fallback_swaps_cn_edition(self) -> None:
+        from src.ingest.news import _google_fallback_urls
+
+        urls = _google_fallback_urls(
+            "https://news.google.com/rss/search?q=foo&hl=zh-CN&gl=HK&ceid=HK:zh-Hans",
+            "zh",
+        )
+        self.assertEqual(urls[0].count("gl=HK"), 1)
+        self.assertTrue(any("gl=US" in url for url in urls))
 
     def test_official_outranks_blog_in_distill(self) -> None:
         items = [

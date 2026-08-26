@@ -51,9 +51,11 @@ def distill_news(items: list[NewsItem], keywords: list[str], lookback_hours: int
         if duplicate:
             continue
         scored = item.model_copy(deep=True)
-        scored.score = _keyword_score(scored, keywords)
+        scored.score = _keyword_score(scored, keywords) * max(float(item.sourceWeight or 1.0), 0.2)
+        if item.sourceClass == "official":
+            scored.score += 2.0
         if item.source.startswith("Google News"):
-            scored.score = max(scored.score, 1.0)
+            scored.score = max(scored.score, 1.0 * max(float(item.sourceWeight or 1.0), 0.2))
         elif keywords and scored.score <= 0:
             continue
         seen_titles.append(normalized)

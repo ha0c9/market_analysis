@@ -72,9 +72,15 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
   border-color: #6d4d1f;
 }
 .ai-summary .card { background: #101821; }
+.pulse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.pulse-lane { background: #101821; border-radius: 10px; padding: 12px; }
+.pulse-lane-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.pulse-lane h3 { margin: 0; font-size: 15px; }
+.spark { display: block; margin: 6px 0 8px; }
 .evidence a { color: #9ec5ff; }
 .errors { color: var(--down); white-space: pre-wrap; }
 @media (max-width: 800px) {
   .top, .controls { display: block; }
   button { width: 100%; margin-top: 8px; }
+  .pulse-grid { grid-template-columns: 1fr; }
 }

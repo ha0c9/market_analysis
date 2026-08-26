@@ -27,6 +27,27 @@ def http_client(timeout: float | None = None) -> httpx.Client:
     )
 
 
+def classify_source(source: str, url: str = "", title: str = "") -> tuple[str, float]:
+    blob = f"{source} {url} {title}".lower()
+    ranks = load_yaml("sources.yml").get("source_ranks") or {}
+    for class_name in ("official", "major_media", "blog", "google_news"):
+        spec = ranks.get(class_name) or {}
+        for token in spec.get("match") or []:
+            if str(token).lower() in blob:
+                try:
+                    return class_name, float(spec.get("weight") or 1.0)
+                except (TypeError, ValueError):
+                    return class_name, 1.0
+    return "other", 1.0
+
+
+def _annotate(item: NewsItem) -> NewsItem:
+    class_name, weight = classify_source(item.source, item.url, item.title)
+    item.sourceClass = class_name
+    item.sourceWeight = weight
+    return item
+
+
 def strip_html(text: str) -> str:
     cleaned = re.sub(r"<[^>]+>", " ", text or "")
     return re.sub(r"\s+", " ", unescape(cleaned)).strip()
@@ -62,12 +83,14 @@ def fetch_rss(url: str, source: str, limit: int) -> list[NewsItem]:
         dt = parse_datetime(str(published))
         summary = strip_html(str(getattr(entry, "summary", "") or getattr(entry, "description", "") or ""))
         items.append(
-            NewsItem(
-                title=strip_html(str(getattr(entry, "title", "") or "")),
-                source=source,
-                url=str(getattr(entry, "link", "") or ""),
-                publishedAt=isoformat(dt),
-                snippet=summary[:400],
+            _annotate(
+                NewsItem(
+                    title=strip_html(str(getattr(entry, "title", "") or "")),
+                    source=source,
+                    url=str(getattr(entry, "link", "") or ""),
+                    publishedAt=isoformat(dt),
+                    snippet=summary[:400],
+                )
             )
         )
     return [item for item in items if item.title]

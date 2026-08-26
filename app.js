@@ -12,6 +12,17 @@ const DIRECTION = {
   unclear: "不明",
 };
 
+const TREND = {
+  expanding: "放量",
+  contracting: "缩量",
+  more_active: "更活跃",
+  less_active: "回落",
+  warming: "升温",
+  cooling: "降温",
+  stable: "平稳",
+  unknown: "不明",
+};
+
 function $(id) {
   return document.getElementById(id);
 }
@@ -85,6 +96,94 @@ function renderQuotes(title, rows) {
     </div>`;
 }
 
+function sparkline(values, color) {
+  const nums = (values || []).map(Number).filter((n) => Number.isFinite(n));
+  if (nums.length < 2) return "";
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
+  const span = max - min || 1;
+  const width = 220;
+  const height = 44;
+  const pad = 3;
+  const points = nums
+    .map((value, index) => {
+      const x = pad + (index / (nums.length - 1)) * (width - pad * 2);
+      const y = height - pad - ((value - min) / span) * (height - pad * 2);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(" ");
+  return `<svg class="spark" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" aria-hidden="true"><polyline fill="none" stroke="${color}" stroke-width="2" points="${points}"/></svg>`;
+}
+
+function formatYi(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "—";
+  return `${Number(value).toFixed(1)} 亿`;
+}
+
+function pulseHasData(pulse) {
+  if (!pulse) return false;
+  return Boolean(
+    pulse.volume?.series?.length || pulse.northbound?.series?.length || pulse.sentiment?.series?.length
+  );
+}
+
+function renderPulseLane(title, trend, note, values, color, extra) {
+  return `
+    <article class="pulse-lane">
+      <div class="pulse-lane-head">
+        <h3>${title}</h3>
+        <span class="tag">${TREND[trend] || trend || "—"}</span>
+      </div>
+      ${sparkline(values, color)}
+      <p class="hint">${note || ""}</p>
+      ${extra || ""}
+    </article>`;
+}
+
+function renderPulse(pulse) {
+  if (!pulseHasData(pulse)) {
+    $("pulse").hidden = true;
+    $("pulse").innerHTML = "";
+    return;
+  }
+  const volume = pulse.volume || {};
+  const north = pulse.northbound || {};
+  const sentiment = pulse.sentiment || {};
+  const volValues = (volume.series || []).map((row) => row.volume).filter((value) => value);
+  const northValues = (north.series || []).map((row) => row.dealAmtYi).filter((value) => value || value === 0);
+  const sentValues = (sentiment.series || []).map((row) => row.score);
+  const mix = sentiment.sourceMix || {};
+  const mixText = ["official", "major_media", "google_news", "blog", "other"]
+    .filter((key) => mix[key])
+    .map((key) => `${{ official: "官方", major_media: "主流媒体", google_news: "新闻聚合", blog: "博客/专栏", other: "其他" }[key]} ${mix[key]}`)
+    .join(" · ");
+  const lastNorth = (north.series || [])[(north.series || []).length - 1] || {};
+  $("pulse").hidden = false;
+  $("pulse").innerHTML = `
+    <p class="section-kicker">情绪与资金时间线</p>
+    <p class="hint">把成交量、北向成交额、新闻热度串成近两周的线，而不是只看最新一个点。北向净买入已不再实时披露时，这里用成交额衡量外资活跃度，不是净流入。</p>
+    <div class="pulse-grid">
+      ${renderPulseLane(
+        volume.name ? `${volume.name} 成交量` : "成交量",
+        volume.trend,
+        volume.note,
+        volValues,
+        "#e2b657"
+      )}
+      ${renderPulseLane(
+        "北向成交额",
+        north.trend,
+        north.note,
+        northValues,
+        "#9ec5ff",
+        lastNorth.date
+          ? `<p class="hint">最近：${lastNorth.date} ${formatYi(lastNorth.dealAmtYi)}${lastNorth.leadStock ? ` · 活跃股 ${lastNorth.leadStock}` : ""}</p>`
+          : ""
+      )}
+      ${renderPulseLane("新闻情绪（加权）", sentiment.trend, sentiment.note, sentValues, "#3dd68c", mixText ? `<p class="hint">信源构成：${mixText}</p>` : "")}
+    </div>`;
+}
+
 function renderEvidence(items) {
   if (!items || !items.length) return "<p class='hint'>无</p>";
   return `<ul class="evidence">${items
@@ -113,7 +212,7 @@ function renderReport(report) {
     <div>侧重点：<strong>${report.focus || "泛市场"}</strong></div>
     <div>生成时间：${formatBeijing(report.generatedAt)}</div>
     <div>回看窗口：${windowFrom} — ${windowTo}</div>
-    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 微博/X ${report.dataCoverage?.weibo || report.dataCoverage?.x ? "是" : "否"}</div>
+    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博/X ${report.dataCoverage?.weibo || report.dataCoverage?.x ? "是" : "否"}</div>
     <div>模型：${report.stats?.plannerModel || "—"} → ${report.stats?.model || "—"}</div>
   `;
 
@@ -126,6 +225,8 @@ function renderReport(report) {
     renderQuotes("基准（大盘）", snap.benchmarks) +
     renderQuotes("板块 / ETF（随侧重点）", snap.sectors) +
     renderQuotes("相关标的（随侧重点）", snap.tickers);
+
+  renderPulse(report.marketPulse);
 
   const label = aiLabel(report);
   $("ai-summary").hidden = false;
@@ -154,6 +255,7 @@ function renderReport(report) {
     .join("");
 
   $("notes").innerHTML = `
+    ${report.trendNotes ? `<p><strong>时间线笔记：</strong>${report.trendNotes}</p>` : ""}
     <p>${report.crossSectorNotes || ""}</p>
     <p class="hint">${(report.limitations || []).join(" · ")}</p>
   `;

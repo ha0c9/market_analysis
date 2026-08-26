@@ -2,15 +2,23 @@ rss:
   - id: bbc_business
     name: BBC Business
     url: https://feeds.bbci.co.uk/news/business/rss.xml
+    class: major_media
   - id: cnbc_world
     name: CNBC
     url: https://www.cnbc.com/id/100003114/device/rss/rss.html
+    class: major_media
   - id: marketwatch
     name: MarketWatch
     url: https://feeds.content.dowjones.io/public/rss/mw_topstories
+    class: major_media
+  - id: reuters_business
+    name: Reuters Business
+    url: https://feeds.reuters.com/reuters/businessNews
+    class: major_media
   - id: chinanews_finance
     name: 中新网财经
     url: https://www.chinanews.com.cn/rss/finance.xml
+    class: major_media
 
 google_news:
   zh: https://news.google.com/rss/search?q={query}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
@@ -27,5 +35,62 @@ benchmarks:
   - { symbol: ^GSPC, name: 标普500 }
   - { symbol: ^IXIC, name: 纳斯达克 }
 
-# Planner always appends one Google News query from this template.
+# Extra Google News queries appended by the planner. {focus} is substituted.
 sentiment_query: "{focus} 市场情绪 北向资金 风险偏好"
+official_query: "{focus} (证监会 OR 交易所公告 OR 央行 OR 新华社)"
+blog_query: "{focus} (专栏 OR 博客 OR 复盘 OR 点评)"
+volume_query: "{focus} 成交量 放量 缩量 量能"
+northbound_query: "{focus} 北向资金 外资 沪股通 深股通"
+
+# Higher weight = more influence when ranking evidence for the synthesizer.
+source_ranks:
+  official:
+    weight: 3.0
+    match:
+      - 证监会
+      - csrc.gov.cn
+      - sse.com.cn
+      - szse.cn
+      - pbc.gov.cn
+      - 统计局
+      - stats.gov.cn
+      - 财政部
+      - mof.gov.cn
+      - 新华社
+      - xinhuanet
+      - 人民网
+      - people.com.cn
+      - 国务院
+      - gov.cn
+  major_media:
+    weight: 2.0
+    match:
+      - 中新网
+      - chinanews
+      - reuters
+      - bbc
+      - cnbc
+      - marketwatch
+      - 财联社
+      - cls.cn
+      - 证券时报
+      - 上海证券报
+      - 第一财经
+      - yicai
+      - 经济观察
+  google_news:
+    weight: 1.3
+    match: ["Google News"]
+  blog:
+    weight: 0.85
+    match:
+      - 博客
+      - 专栏
+      - substack
+      - medium.com
+      - 雪球
+      - xueqiu
+      - 知乎
+      - zhihu.com
+      - 微信公众号
+      - weixin.qq.com

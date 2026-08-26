@@ -32,6 +32,9 @@ rss:
     url: https://rss.sina.com.cn/roll/finance/hot_roll.xml
     class: major_media
 
+# 财联社电报没有 RSS，由 src/ingest/cls.py 拉取公开 roll 接口。
+# level A/B（页面标红/重点）会提高权重，作为 A 股盘面参考。
+
 # GitHub-hosted runners sit outside China; gl=CN often returns 503.
 # HK edition still returns Chinese results and is more reachable.
 google_news:

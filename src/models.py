@@ -63,6 +63,7 @@ class NewsItem(BaseModel):
     score: float = 0.0
     sourceClass: str = "other"
     sourceWeight: float = 1.0
+    highlight: bool = False
 
 
 class Report(BaseModel):

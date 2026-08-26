@@ -259,7 +259,7 @@ def normalize_sector_outlook(
 def _evidence_from_news(items: list[NewsItem], limit: int = 3) -> list[Evidence]:
     rows: list[Evidence] = []
     for index, item in enumerate(items[:limit]):
-        official = item.sourceClass == "official"
+        official = item.sourceClass == "official" or item.highlight
         rows.append(
             Evidence(
                 claim=item.snippet[:180] or item.title,
@@ -288,6 +288,7 @@ def _compact_news(item: NewsItem) -> dict[str, Any]:
         "publishedAt": item.publishedAt,
         "snippet": item.snippet[:280],
         "score": item.score,
+        "highlight": item.highlight,
     }
 
 
@@ -425,7 +426,7 @@ def synthesize_report(
             "direction 只能是 up|down|mixed|unclear，不要写 neutral;"
             "narrative=字符串;"
             "evidence 和 counterEvidence 必须是对象数组，每项含 claim,sourceTitle,url,publishedAt,weight;"
-            "weight 只能是 primary 或 supporting；官方来源优先 primary，专栏/博客多为 supporting。"
+            "weight 只能是 primary 或 supporting；官方来源与财联社标红快讯优先 primary，专栏/博客多为 supporting。"
             "confidence=0到1小数; invalidatedIf=字符串。"
             "另需 crossSectorNotes 字符串，以及 trendNotes 字符串。"
             "trendNotes 必须按时间线概括：量能是放量还是缩量、北向成交额活跃度、新闻情绪升温还是降温；"
@@ -433,7 +434,7 @@ def synthesize_report(
             "北向 netBuyAvailable=false 时，成交额不是净买入，不要写成外资净流入/净流出。"
             "每条前瞻必须提到价格是否已反应，并尽可能对照量能/情绪序列；没有行情则 calibration=insufficientData。"
             "evidence 必须来自给定 news 的 title/url/publishedAt，禁止编造链接。"
-            "官方与主流媒体权重大于博客/专栏；博客只作补充，不能单独支撑高置信结论。"
+            "官方与主流媒体权重大于博客/专栏；财联社 highlight=true 的标红电报是盘面重要参考，优先引用；博客只作补充，不能单独支撑高置信结论。"
             "这不是投资建议，不要给买卖点或目标价。"
             "若 focusKind=tape 或侧重点是资金流入/尾盘拉升/涨停/龙虎榜等盘面现象："
             "sectorOutlook 按新闻里实际出现的板块和个股来写，不要默认写成银行证券保险；"

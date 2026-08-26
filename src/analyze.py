@@ -6,6 +6,7 @@ from pathlib import Path
 
 from src import REPORTS_DIR, ROOT
 from src.distill import distill_news
+from src.ingest.cls import fetch_cls_telegraph
 from src.ingest.flows import fetch_northbound
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
@@ -23,13 +24,14 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     per_source = plan.maxItemsPerSource or int(budgets.get("max_items_per_source") or 20)
 
     rss_items, rss_errors = fetch_configured_rss(per_source)
+    cls_items, cls_errors = fetch_cls_telegraph(per_source)
     gnews_items, gnews_errors = fetch_google_news(plan.newsQueries, per_source)
     print(
-        f"news rss={len(rss_items)} gnews={len(gnews_items)} "
-        f"rss_err={len(rss_errors)} gnews_err={len(gnews_errors)}",
+        f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
+        f"rss_err={len(rss_errors)} cls_err={len(cls_errors)} gnews_err={len(gnews_errors)}",
         flush=True,
     )
-    news = distill_news(rss_items + gnews_items, plan.keywords, plan.lookbackHours)
+    news = distill_news(rss_items + cls_items + gnews_items, plan.keywords, plan.lookbackHours)
     if news and any(not within_lookback(item, plan.lookbackHours) for item in news):
         warnings.append("近期稿件不足，已补充稍早的相关报道")
 
@@ -40,7 +42,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     ]
     quotes, quote_errors = fetch_quotes(quote_symbols)
     northbound, flow_errors = fetch_northbound()
-    fetch_errors = [*rss_errors, *gnews_errors, *quote_errors, *flow_errors]
+    fetch_errors = [*rss_errors, *cls_errors, *gnews_errors, *quote_errors, *flow_errors]
     pulse = build_market_pulse(news, quotes, northbound)
     coverage = {
         "news": bool(news),

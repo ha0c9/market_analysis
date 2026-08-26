@@ -257,6 +257,151 @@ class PlannerTests(unittest.TestCase):
         self.assertTrue(any("个股" in query for query in late.newsQueries))
         self.assertNotIn("sh600519", late.tickers)
 
+    def test_plan_covers_official_volume_and_blog_queries(self) -> None:
+        plan = heuristic_plan("医药相关", 36)
+        blob = " ".join(plan.newsQueries)
+        self.assertIn("证监会", blob)
+        self.assertIn("成交量", blob)
+        self.assertTrue("北向" in blob or "外资" in blob)
+        self.assertTrue("专栏" in blob or "博客" in blob or "复盘" in blob)
+        self.assertLessEqual(len(plan.newsQueries), 7)
+        self.assertGreaterEqual(len(plan.newsQueries), 5)
+
+
+class SourceWeightTests(unittest.TestCase):
+    def test_classify_official_media_and_blog(self) -> None:
+        from src.ingest.news import classify_source
+
+        self.assertEqual(classify_source("新华社", "https://www.xinhuanet.com/fortune")[0], "official")
+        self.assertGreaterEqual(classify_source("新华社", "https://www.xinhuanet.com/fortune")[1], 2.5)
+        self.assertEqual(classify_source("Reuters", "https://www.reuters.com/business")[0], "major_media")
+        self.assertEqual(classify_source("个人复盘", "https://www.zhihu.com/p/123")[0], "blog")
+        self.assertEqual(classify_source("Google News / 医药", "https://news.google.com/rss")[0], "google_news")
+
+    def test_official_outranks_blog_in_distill(self) -> None:
+        items = [
+            NewsItem(
+                title="存储芯片涨价 NAND 合约价上修 专栏",
+                source="某博客",
+                url="https://www.zhihu.com/p/1",
+                snippet="NAND",
+                sourceClass="blog",
+                sourceWeight=0.85,
+            ),
+            NewsItem(
+                title="存储芯片涨价 NAND 合约价上修 新华社",
+                source="新华社",
+                url="https://www.xinhuanet.com/a",
+                snippet="NAND",
+                sourceClass="official",
+                sourceWeight=3.0,
+            ),
+        ]
+        kept = distill_news(items, ["存储", "NAND"], 48)
+        self.assertEqual(kept[0].source, "新华社")
+        self.assertGreater(kept[0].score, kept[1].score)
+
+
+class SeriesTests(unittest.TestCase):
+    def test_parse_tencent_volume_and_turnover(self) -> None:
+        fields = [""] * 40
+        fields[1] = "平安银行"
+        fields[2] = "000001"
+        fields[3] = "12.34"
+        fields[6] = "1234567"
+        fields[30] = "20260825133157"
+        fields[32] = "1.50"
+        fields[37] = "987654321"
+        body = 'v_sz000001="' + "~".join(fields) + '";'
+        rows = parse_tencent_body(body)
+        self.assertEqual(len(rows), 1)
+        self.assertAlmostEqual(rows[0].volume or 0, 1234567)
+        self.assertAlmostEqual(rows[0].turnover or 0, 987654321)
+
+    def test_yahoo_bars_and_volume_vs_average(self) -> None:
+        from src.ingest.quotes import bars_from_yahoo_chart, volume_vs_average
+
+        stamps = [1704067200, 1704153600, 1704240000, 1704326400, 1704412800]
+        closes = [10.0, 10.5, 10.2, 10.8, 11.0]
+        volumes = [100, 110, 90, 120, 200]
+        series = bars_from_yahoo_chart(stamps, closes, volumes, limit=15)
+        self.assertEqual(len(series), 5)
+        self.assertAlmostEqual(series[1]["changePct"] or 0, 5.0, places=2)
+        self.assertAlmostEqual(volume_vs_average(series) or 0, 200 / ((100 + 110 + 90 + 120) / 4), places=3)
+
+    def test_northbound_parser_and_pulse_trends(self) -> None:
+        from src.ingest.flows import parse_northbound_rows
+        from src.models import QuoteRow
+        from src.pulse import build_market_pulse
+
+        payload = {
+            "success": True,
+            "result": {
+                "data": [
+                    {
+                        "TRADE_DATE": "2026-08-25 00:00:00",
+                        "DEAL_AMT": 267421.21,
+                        "NET_DEAL_AMT": None,
+                        "INDEX_CLOSE_PRICE": 3889.44,
+                        "INDEX_CHANGE_RATE": 0.19,
+                        "LEAD_STOCKS_NAME": "中南文化",
+                    },
+                    {
+                        "TRADE_DATE": "2026-08-24 00:00:00",
+                        "DEAL_AMT": 120000.0,
+                        "NET_DEAL_AMT": None,
+                        "INDEX_CLOSE_PRICE": 3882.01,
+                        "INDEX_CHANGE_RATE": -0.59,
+                        "LEAD_STOCKS_NAME": "众合科技",
+                    },
+                    {
+                        "TRADE_DATE": "2026-08-21 00:00:00",
+                        "DEAL_AMT": 110000.0,
+                        "NET_DEAL_AMT": None,
+                        "INDEX_CLOSE_PRICE": 3905.2,
+                        "INDEX_CHANGE_RATE": 0.04,
+                        "LEAD_STOCKS_NAME": "键凯科技",
+                    },
+                ]
+            },
+        }
+        rows = parse_northbound_rows(payload, limit=15)
+        self.assertEqual([row["date"] for row in rows], ["2026-08-21", "2026-08-24", "2026-08-25"])
+        self.assertAlmostEqual(rows[-1]["dealAmtYi"] or 0, 26.74, places=2)
+        self.assertIsNone(rows[-1]["netDealAmt"])
+
+        volumes = [100, 100, 100, 100, 100, 100, 100, 220, 230, 240]
+        series = [
+            {"date": f"2026-08-{day:02d}", "close": 3800 + day, "volume": vol, "changePct": 0.2}
+            for day, vol in zip(range(10, 20), volumes)
+        ]
+        quotes = [
+            QuoteRow(
+                symbol="sh000001",
+                name="上证指数",
+                volume=240,
+                volumeVsAvg=2.3,
+                series=series,
+            )
+        ]
+        news = [
+            NewsItem(
+                title="存储情绪",
+                source="新华社",
+                publishedAt=f"2026-08-{day:02d}T04:00:00Z",
+                snippet="NAND",
+                score=score,
+                sourceClass="official" if day >= 18 else "blog",
+                sourceWeight=3.0 if day >= 18 else 0.85,
+            )
+            for day, score in [(12, 2.0), (13, 2.1), (14, 2.0), (18, 8.0), (19, 9.0)]
+        ]
+        pulse = build_market_pulse(news, quotes, rows)
+        self.assertEqual(pulse["volume"]["trend"], "expanding")
+        self.assertEqual(pulse["sentiment"]["trend"], "warming")
+        self.assertIn("成交额", pulse["northbound"]["note"])
+        self.assertFalse(pulse["northbound"]["netBuyAvailable"])
+
 
 if __name__ == "__main__":
     unittest.main()

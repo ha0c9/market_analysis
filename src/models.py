@@ -19,7 +19,11 @@ class QuoteRow(BaseModel):
     price: float | None = None
     changePct: float | None = None
     changePct5d: float | None = None
+    volume: float | None = None
+    turnover: float | None = None
+    volumeVsAvg: float | None = None
     asOf: str = ""
+    series: list[dict[str, Any]] = Field(default_factory=list)
 
 
 class SectorOutlook(BaseModel):
@@ -57,6 +61,8 @@ class NewsItem(BaseModel):
     publishedAt: str = ""
     snippet: str = ""
     score: float = 0.0
+    sourceClass: str = "other"
+    sourceWeight: float = 1.0
 
 
 class Report(BaseModel):
@@ -65,8 +71,10 @@ class Report(BaseModel):
     timeWindow: dict[str, str]
     dataCoverage: dict[str, bool]
     marketSnapshot: dict[str, Any]
+    marketPulse: dict[str, Any] = Field(default_factory=dict)
     sectorOutlook: list[SectorOutlook]
     crossSectorNotes: str = ""
+    trendNotes: str = ""
     limitations: list[str] = Field(default_factory=list)
     stats: dict[str, Any] = Field(default_factory=dict)
     errors: list[str] = Field(default_factory=list)

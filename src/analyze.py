@@ -6,9 +6,11 @@ from pathlib import Path
 
 from src import REPORTS_DIR, ROOT
 from src.distill import distill_news
+from src.ingest.flows import fetch_northbound
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
 from src.planner import plan_analysis
+from src.pulse import build_market_pulse
 from src.settings import load_yaml, write_json
 from src.synthesize import synthesize_report
 from src.timeutil import isoformat, now_utc, within_lookback
@@ -32,10 +34,13 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         *[normalize_symbol(symbol) for symbol in plan.tickers],
     ]
     quotes, quote_errors = fetch_quotes(quote_symbols)
-    fetch_errors = [*rss_errors, *gnews_errors, *quote_errors]
+    northbound, flow_errors = fetch_northbound()
+    fetch_errors = [*rss_errors, *gnews_errors, *quote_errors, *flow_errors]
+    pulse = build_market_pulse(news, quotes, northbound)
     coverage = {
         "news": bool(news),
         "quotes": bool(quotes),
+        "northbound": bool(northbound),
         "filings": False,
         "x": False,
         "weibo": False,
@@ -47,6 +52,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         quotes=quotes,
         coverage=coverage,
         errors=[*warnings, *fetch_errors],
+        market_pulse=pulse,
     )
     if fetch_errors:
         report.limitations.append(f"部分源失败: {len(fetch_errors)}")
@@ -62,6 +68,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         focus_ids=[*plan.etfs, *plan.tickers],
         etf_ids=plan.etfs,
     )
+    report.marketPulse = pulse
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     public_reports = ROOT / "reports"

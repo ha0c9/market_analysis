@@ -259,16 +259,36 @@ def normalize_sector_outlook(
 def _evidence_from_news(items: list[NewsItem], limit: int = 3) -> list[Evidence]:
     rows: list[Evidence] = []
     for index, item in enumerate(items[:limit]):
+        official = item.sourceClass == "official"
         rows.append(
             Evidence(
                 claim=item.snippet[:180] or item.title,
                 sourceTitle=item.title,
                 url=item.url,
                 publishedAt=item.publishedAt,
-                weight="primary" if index == 0 else "supporting",
+                weight="primary" if official or index == 0 else "supporting",
             )
         )
     return rows
+
+
+def _compact_quote(row: QuoteRow) -> dict[str, Any]:
+    data = row.model_dump()
+    data.pop("series", None)
+    return data
+
+
+def _compact_news(item: NewsItem) -> dict[str, Any]:
+    return {
+        "title": item.title,
+        "source": item.source,
+        "sourceClass": item.sourceClass,
+        "sourceWeight": item.sourceWeight,
+        "url": item.url,
+        "publishedAt": item.publishedAt,
+        "snippet": item.snippet[:280],
+        "score": item.score,
+    }
 
 
 def heuristic_report(
@@ -280,6 +300,7 @@ def heuristic_report(
     coverage: dict[str, bool],
     errors: list[str],
     model: str,
+    market_pulse: dict[str, Any] | None = None,
 ) -> Report:
     now = now_utc()
     outlook: list[SectorOutlook] = []
@@ -322,6 +343,11 @@ def heuristic_report(
         parsed_ok = [dt for dt in parsed if dt]
         if parsed_ok:
             start = min(parsed_ok)
+    pulse = market_pulse or {}
+    trend_notes = str(pulse.get("summary") or "")
+    limitations = ["未接入微博/X", "可能使用延迟公开行情"]
+    if pulse.get("northbound") and not pulse["northbound"].get("netBuyAvailable"):
+        limitations.append("北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证")
     return Report(
         generatedAt=isoformat(now),
         focus=focus,
@@ -334,12 +360,14 @@ def heuristic_report(
             focus_ids=[*plan.etfs, *plan.tickers],
             etf_ids=plan.etfs,
         ),
+        marketPulse=pulse,
         sectorOutlook=outlook,
-        crossSectorNotes="规则模式仅做分组摘要；配置 AI_API_KEY 后由模型对照价格写前瞻。",
-        limitations=["未接入微博/X", "可能使用延迟公开行情"],
+        crossSectorNotes="规则模式仅做分组摘要；配置 AI_API_KEY 后由模型对照价格与时间线写前瞻。",
+        trendNotes=trend_notes,
+        limitations=limitations,
         stats={
             "fetched": len(news),
-            "used": min(len(news), 60),
+            "used": min(len(news), 80),
             "quotes": len(quotes),
             "model": model,
             "estCostUsd": 0,
@@ -356,6 +384,7 @@ def synthesize_report(
     quotes: list[QuoteRow],
     coverage: dict[str, bool],
     errors: list[str],
+    market_pulse: dict[str, Any] | None = None,
 ) -> tuple[Report, str]:
     fallback = heuristic_report(
         focus=focus,
@@ -365,29 +394,28 @@ def synthesize_report(
         coverage=coverage,
         errors=errors,
         model="heuristic",
+        market_pulse=market_pulse,
     )
     if not env("AI_API_KEY"):
         fallback.limitations.append("未调用大模型")
         return fallback, "heuristic"
-    compact_news = [
-        {
-            "title": item.title,
-            "source": item.source,
-            "url": item.url,
-            "publishedAt": item.publishedAt,
-            "snippet": item.snippet[:280],
-            "score": item.score,
-        }
-        for item in news[:80]
-    ]
-    compact_quotes = [row.model_dump() for row in quotes]
+    compact_news = [_compact_news(item) for item in news[:80]]
+    compact_quotes = [_compact_quote(row) for row in quotes]
     prompt = {
         "focus": focus,
         "plan": plan.model_dump(),
         "news": compact_news,
         "quotes": compact_quotes,
+        "marketPulse": market_pulse or {},
+        "sourceWeights": {
+            "official": 3.0,
+            "major_media": 2.0,
+            "google_news": 1.3,
+            "blog": 0.85,
+            "other": 1.0,
+        },
         "instructions": (
-            "根据新闻与行情快照写市场研究摘要。只输出 JSON 对象。"
+            "根据新闻、行情快照与 marketPulse 时间线写市场研究摘要。只输出 JSON 对象。"
             "sectorOutlook 为数组，每项字段类型必须严格如下："
             "sector=字符串;"
             "heat=整数排名1/2/3，不要写 high/medium/low;"
@@ -397,15 +425,19 @@ def synthesize_report(
             "direction 只能是 up|down|mixed|unclear，不要写 neutral;"
             "narrative=字符串;"
             "evidence 和 counterEvidence 必须是对象数组，每项含 claim,sourceTitle,url,publishedAt,weight;"
-            "weight 只能是 primary 或 supporting;"
+            "weight 只能是 primary 或 supporting；官方来源优先 primary，专栏/博客多为 supporting。"
             "confidence=0到1小数; invalidatedIf=字符串。"
-            "另需 crossSectorNotes 字符串。"
-            "每条前瞻必须提到价格是否已反应；没有行情则 calibration=insufficientData。"
+            "另需 crossSectorNotes 字符串，以及 trendNotes 字符串。"
+            "trendNotes 必须按时间线概括：量能是放量还是缩量、北向成交额活跃度、新闻情绪升温还是降温；"
+            "禁止只根据最新一个点下结论。"
+            "北向 netBuyAvailable=false 时，成交额不是净买入，不要写成外资净流入/净流出。"
+            "每条前瞻必须提到价格是否已反应，并尽可能对照量能/情绪序列；没有行情则 calibration=insufficientData。"
             "evidence 必须来自给定 news 的 title/url/publishedAt，禁止编造链接。"
+            "官方与主流媒体权重大于博客/专栏；博客只作补充，不能单独支撑高置信结论。"
             "这不是投资建议，不要给买卖点或目标价。"
             "若 focusKind=tape 或侧重点是资金流入/尾盘拉升/涨停/龙虎榜等盘面现象："
             "sectorOutlook 按新闻里实际出现的板块和个股来写，不要默认写成银行证券保险；"
-            "点名热门股并对照 quotes 里的价格。"
+            "点名热门股并对照 quotes 里的价格与量能。"
         ),
     }
     try:
@@ -430,6 +462,8 @@ def synthesize_report(
                 raise LLMError("模型前瞻字段无法规范化")
         if isinstance(data.get("crossSectorNotes"), str) and data["crossSectorNotes"].strip():
             fallback_dump["crossSectorNotes"] = data["crossSectorNotes"]
+        if isinstance(data.get("trendNotes"), str) and data["trendNotes"].strip():
+            fallback_dump["trendNotes"] = data["trendNotes"]
         fallback_dump["stats"]["model"] = model
         report = Report.model_validate(fallback_dump)
         print(f"synthesizer ok outlook={len(report.sectorOutlook)}", flush=True)

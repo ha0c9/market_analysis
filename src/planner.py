@@ -158,10 +158,35 @@ def focus_kind(focus: str) -> str:
     return "theme"
 
 
-def _sentiment_query(focus: str) -> str:
+def _templated_query(key: str, focus: str, fallback: str = "") -> str:
     sources = load_yaml("sources.yml")
-    template = str(sources.get("sentiment_query") or "{focus} 市场情绪 北向资金 风险偏好")
-    return template.replace("{focus}", focus.strip() or "A股")
+    template = str(sources.get(key) or fallback)
+    if not template:
+        return ""
+    return template.replace("{focus}", (focus or "").strip() or "A股")
+
+
+def _sentiment_query(focus: str) -> str:
+    return _templated_query("sentiment_query", focus, "{focus} 市场情绪 北向资金 风险偏好")
+
+
+def _extra_queries(focus: str) -> list[str]:
+    text = (focus or "").strip() or "A股"
+    rows = [
+        _templated_query("official_query", text, "{focus} (证监会 OR 交易所公告 OR 央行 OR 新华社)"),
+        _templated_query("volume_query", text, "{focus} 成交量 放量 缩量 量能"),
+        _templated_query("northbound_query", text, "{focus} 北向资金 外资 沪股通 深股通"),
+        _sentiment_query(text),
+        _templated_query("blog_query", text, "{focus} (专栏 OR 博客 OR 复盘 OR 点评)"),
+    ]
+    return [item for item in rows if item]
+
+
+def _enrich_queries(queries: list[str], focus: str, cap: int) -> list[str]:
+    """Keep the most specific queries, then force official / volume / flow / blog coverage."""
+    head = list(queries[:3])
+    rest = list(queries[3:])
+    return _dedupe([*head, *_extra_queries(focus), *rest])[:cap]
 
 
 def _dedupe(values: list[str]) -> list[str]:
@@ -205,10 +230,10 @@ def _cap_plan(plan: dict, focus: str) -> dict:
     if kind == "tape":
         tape = _tape_preset(focus) or _generic_tape(focus)
         etfs = _dedupe([*etfs, *[normalize_symbol(item) for item in (tape.get("etfs") or [])]])
-    queries = _dedupe([*(plan.get("newsQueries") or []), _sentiment_query(focus or "A股")])
+    queries = _enrich_queries(list(plan.get("newsQueries") or []), focus or "A股", query_cap)
     plan["tickers"] = [item for item in tickers if item][:cap]
     plan["etfs"] = [item for item in etfs if item][:cap]
-    plan["newsQueries"] = queries[:query_cap]
+    plan["newsQueries"] = queries
     plan["focusKind"] = kind
     return plan
 
@@ -225,11 +250,9 @@ def heuristic_plan(focus: str, lookback_hours: int) -> AnalysisPlan:
         preset = _tape_preset(text) or _generic_tape(text)
         sectors = list(preset.get("sectors") or [text])
         keywords = _dedupe(
-            [*(preset.get("keywords") or [text]), "市场情绪", "北向资金", "风险偏好"]
+            [*(preset.get("keywords") or [text]), "市场情绪", "北向资金", "风险偏好", "成交量", "放量"]
         )
-        news_queries = _dedupe(
-            [*(preset.get("news_queries") or [f"今日 {text} 个股 板块"]), _sentiment_query(text)]
-        )
+        news_queries = _dedupe(list(preset.get("news_queries") or [f"今日 {text} 个股 板块"]))
         tickers = [normalize_symbol(symbol) for symbol in (preset.get("tickers") or [])]
         etfs = [normalize_symbol(symbol) for symbol in (preset.get("etfs") or [])]
         named = _named_preset(text)
@@ -248,13 +271,19 @@ def heuristic_plan(focus: str, lookback_hours: int) -> AnalysisPlan:
         if stock:
             sectors = list(preset.get("sectors") or [f"{text}及相关行业"])
             keywords = _dedupe(
-                [text, *[str(item) for item in (preset.get("keywords") or [])], "市场情绪", "北向资金", "风险偏好"]
+                [
+                    text,
+                    *[str(item) for item in (preset.get("keywords") or [])],
+                    "市场情绪",
+                    "北向资金",
+                    "风险偏好",
+                    "成交量",
+                ]
             )
             news_queries = _dedupe(
                 [
                     f"{text} 业绩 订单 研报",
                     f"{text} {sectors[0]} 行业 政策",
-                    _sentiment_query(text),
                     *[str(item) for item in (preset.get("news_queries") or [])],
                 ]
             )
@@ -263,15 +292,21 @@ def heuristic_plan(focus: str, lookback_hours: int) -> AnalysisPlan:
         else:
             sectors = list(preset.get("sectors") or ["综合"])
             keywords = _dedupe(
-                [*(preset.get("keywords") or [text]), "市场情绪", "北向资金", "风险偏好", "外资"]
+                [
+                    *(preset.get("keywords") or [text]),
+                    "市场情绪",
+                    "北向资金",
+                    "风险偏好",
+                    "外资",
+                    "成交量",
+                ]
             )
-            news_queries = _dedupe(
-                [_sentiment_query(text), *(preset.get("news_queries") or [text])]
-            )
+            news_queries = _dedupe(list(preset.get("news_queries") or [text]))
+    news_queries = _enrich_queries(news_queries, text, query_cap)
     return AnalysisPlan(
         sectors=sectors,
         keywords=keywords,
-        newsQueries=news_queries[:query_cap],
+        newsQueries=news_queries,
         tickers=tickers[:ticker_cap],
         etfs=etfs[:ticker_cap],
         benchmarks=benchmarks,
@@ -297,12 +332,12 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         "你是市场研究规划器。根据用户侧重点，输出 JSON 对象，不要 markdown。"
         "字段: sectors(字符串数组,2-6个),"
         "keywords(中英检索词,8-16个),"
-        "newsQueries(3-5条搜索词，要能搜到当天中文财经新闻),"
+        "newsQueries(5-7条搜索词，要能搜到当天中文财经新闻，覆盖官方/政策、量能、北向或外资、市场情绪，并包含专栏/复盘/博客类公开文章),"
         "tickers(8-18个股票代码, A股用 sh/sz 前缀如 sh600276, 美股用 Yahoo 代码),"
         "etfs(相关 ETF 代码, A股用 sh/sz 前缀)。"
         f"侧重点类型: {kind_label}。"
         "若是单一股票名称或代码: tickers 第一项必须是该股, sectors 写其行业, "
-        "newsQueries 覆盖该公司、所属行业、以及市场情绪/北向资金。"
+        "newsQueries 覆盖该公司、所属行业、官方公告、量能以及市场情绪/北向资金。"
         "若是主题(如医药、存储): tickers 与 etfs 必须属于该主题, 禁止塞入无关行业标的。"
         "若是盘面现象（资金流入、尾盘拉升、涨停、龙虎榜、异动等）: "
         "不要理解成银行/券商/保险等金融股专题，除非用户明确写了金融。"

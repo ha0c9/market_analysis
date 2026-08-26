@@ -5,6 +5,7 @@
   "dataCoverage": {
     "news": true,
     "quotes": true,
+    "northbound": true,
     "filings": false,
     "x": false,
     "weibo": false
@@ -32,6 +33,60 @@
       { "symbol": "sz300760", "name": "迈瑞医疗", "price": 224.18, "changePct": -0.36, "changePct5d": 0.8, "asOf": "2026-08-25T05:31:57Z" },
       { "symbol": "sh603259", "name": "药明康德", "price": 91.40, "changePct": 0.71, "changePct5d": 1.4, "asOf": "2026-08-25T05:31:57Z" }
     ]
+  },
+  "marketPulse": {
+    "asOf": "2026-08-25",
+    "volume": {
+      "symbol": "sh000001",
+      "name": "上证指数",
+      "latestVolumeVsAvg": 1.08,
+      "trend": "stable",
+      "note": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。最新一日成交约为前段均值的 1.08 倍。",
+      "series": [
+        { "date": "2026-08-14", "close": 3665.9, "volume": 42800000000, "changePct": 0.4 },
+        { "date": "2026-08-15", "close": 3688.2, "volume": 45100000000, "changePct": 0.6 },
+        { "date": "2026-08-18", "close": 3721.4, "volume": 50200000000, "changePct": 0.9 },
+        { "date": "2026-08-19", "close": 3740.1, "volume": 47600000000, "changePct": 0.5 },
+        { "date": "2026-08-20", "close": 3766.8, "volume": 46100000000, "changePct": 0.7 },
+        { "date": "2026-08-21", "close": 3905.2, "volume": 48800000000, "changePct": 0.04 },
+        { "date": "2026-08-24", "close": 3882.0, "volume": 51200000000, "changePct": -0.59 },
+        { "date": "2026-08-25", "close": 3889.4, "volume": 49700000000, "changePct": 0.19 }
+      ]
+    },
+    "northbound": {
+      "netBuyAvailable": false,
+      "trend": "stable",
+      "unit": "亿元成交额",
+      "note": "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。",
+      "series": [
+        { "date": "2026-08-14", "dealAmtYi": 248.1, "indexClose": 3665.9, "indexChangePct": 0.4, "leadStock": "示例股A" },
+        { "date": "2026-08-15", "dealAmtYi": 261.4, "indexClose": 3688.2, "indexChangePct": 0.6, "leadStock": "示例股B" },
+        { "date": "2026-08-18", "dealAmtYi": 279.8, "indexClose": 3721.4, "indexChangePct": 0.9, "leadStock": "示例股C" },
+        { "date": "2026-08-19", "dealAmtYi": 255.2, "indexClose": 3740.1, "indexChangePct": 0.5, "leadStock": "示例股D" },
+        { "date": "2026-08-20", "dealAmtYi": 244.6, "indexClose": 3766.8, "indexChangePct": 0.7, "leadStock": "示例股E" },
+        { "date": "2026-08-21", "dealAmtYi": 268.1, "indexClose": 3905.2, "indexChangePct": 0.04, "leadStock": "键凯科技" },
+        { "date": "2026-08-24", "dealAmtYi": 291.0, "indexClose": 3882.0, "indexChangePct": -0.59, "leadStock": "众合科技" },
+        { "date": "2026-08-25", "dealAmtYi": 267.4, "indexClose": 3889.4, "indexChangePct": 0.19, "leadStock": "中南文化" }
+      ]
+    },
+    "sentiment": {
+      "trend": "warming",
+      "note": "按日加权的新闻热度近段高于前段，情绪在升温；已按官方>主流媒体>博客加权。",
+      "sourceMix": { "official": 2, "major_media": 8, "google_news": 12, "blog": 4 },
+      "series": [
+        { "date": "2026-08-20", "score": 6.2, "count": 4, "officialCount": 0 },
+        { "date": "2026-08-21", "score": 7.1, "count": 5, "officialCount": 0 },
+        { "date": "2026-08-22", "score": 8.4, "count": 6, "officialCount": 1 },
+        { "date": "2026-08-24", "score": 11.6, "count": 8, "officialCount": 1 },
+        { "date": "2026-08-25", "score": 13.2, "count": 9, "officialCount": 2 }
+      ]
+    },
+    "notes": [
+      "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。",
+      "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。",
+      "按日加权的新闻热度近段高于前段，情绪在升温；已按官方>主流媒体>博客加权。"
+    ],
+    "summary": "上证成交量近两周平稳；北向成交额（非净买入）活跃度大体持平；医药相关新闻热度近几日升温，官方稿件权重大于专栏。"
   },
   "sectorOutlook": [
     {
@@ -77,8 +132,9 @@
       "invalidatedIf": "医院招标明显放缓，或出口数据走弱。"
     }
   ],
-  "crossSectorNotes": "医药内部创新药与器械节奏不同；北向与风险偏好变化可能放大分化。",
-  "limitations": ["未接入微博/X", "这是示例报告，接入真实分析后会被覆盖"],
+  "crossSectorNotes": "医药内部创新药与器械节奏不同；量能平稳而新闻热度升温时，更要核对价格是否已经把情绪计价。北向看成交额活跃度，不要当成净流入。",
+  "trendNotes": "近两周上证量能大致平稳，北向成交额没有单边放大或萎缩；新闻情绪加权后近几日升温，其中官方与主流媒体权重大于博客/专栏。后续观察量价是否跟上这轮报道热度。",
+  "limitations": ["未接入微博/X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
   "stats": { "fetched": 40, "used": 18, "quotes": 9, "plannerModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

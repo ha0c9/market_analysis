@@ -406,6 +406,31 @@ class SeriesTests(unittest.TestCase):
         self.assertAlmostEqual(series[1]["changePct"] or 0, 5.0, places=2)
         self.assertAlmostEqual(volume_vs_average(series) or 0, 200 / ((100 + 110 + 90 + 120) / 4), places=3)
 
+    def test_yahoo_intraday_volume_outlier_is_dropped(self) -> None:
+        from src.ingest.quotes import bars_from_yahoo_chart, volume_vs_average
+        from src.models import QuoteRow
+        from src.pulse import build_market_pulse
+
+        stamps = [1704067200 + 86400 * i for i in range(8)]
+        closes = [3800.0 + i for i in range(8)]
+        volumes = [500000, 520000, 480000, 510000, 490000, 530000, 470000, 3_858_656_340]
+        series = bars_from_yahoo_chart(stamps, closes, volumes, limit=15)
+        self.assertIsNone(series[-1]["volume"])
+        self.assertEqual(series[-2]["volume"], 470000)
+        ratio = volume_vs_average(series)
+        self.assertIsNotNone(ratio)
+        self.assertLess(ratio or 0, 2.0)
+        self.assertGreater(ratio or 0, 0.5)
+
+        pulse = build_market_pulse(
+            [],
+            [QuoteRow(symbol="sh000001", name="上证指数", volumeVsAvg=7422.022, series=series)],
+            [],
+        )
+        self.assertNotIn("7422", pulse["volume"]["note"])
+        self.assertNotIn("倍", pulse["volume"]["note"])
+        self.assertNotEqual(pulse["volume"]["trend"], "expanding")
+
     def test_northbound_parser_and_pulse_trends(self) -> None:
         from src.ingest.flows import parse_northbound_rows
         from src.models import QuoteRow

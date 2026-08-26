@@ -58,6 +58,9 @@ def _volume_block(quotes: list[QuoteRow]) -> dict[str, Any]:
     volumes = [float(point["volume"]) for point in row.series if point.get("volume")]
     trend = _trend_label(volumes, up="expanding", down="contracting")
     vs_avg = row.volumeVsAvg
+    if vs_avg is not None and (vs_avg > 4.0 or vs_avg < 0.15):
+        vs_avg = None
+    last_bar_has_volume = bool(row.series and row.series[-1].get("volume"))
     if trend == "expanding":
         note = f"{row.name or row.symbol}近段成交量高于前段，量能在放大，不宜只看最新一日。"
     elif trend == "contracting":
@@ -66,7 +69,7 @@ def _volume_block(quotes: list[QuoteRow]) -> dict[str, Any]:
         note = f"{row.name or row.symbol}近两周成交量相对平稳，单日放量/缩量需要放回序列里看。"
     else:
         note = f"{row.name or row.symbol}历史成交量点数不足，趋势待观察。"
-    if vs_avg:
+    if vs_avg is not None and last_bar_has_volume:
         note += f" 最新一日成交约为前段均值的 {vs_avg:.2f} 倍。"
     return {
         "symbol": row.symbol,

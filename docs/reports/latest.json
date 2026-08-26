@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T16:34:04Z",
-  "focus": "明日前瞻",
+  "generatedAt": "2026-08-26T01:23:48Z",
+  "focus": "存储，光通信相关",
   "timeWindow": {
-    "from": "2025-01-22T08:00:00Z",
-    "to": "2026-08-25T16:34:04Z"
+    "from": "2026-08-20T00:34:00Z",
+    "to": "2026-08-26T01:23:48Z"
   },
   "dataCoverage": {
     "news": true,
@@ -13,33 +13,33 @@
     "weibo": false
   },
   "marketSnapshot": {
-    "asOf": "2026-08-25T08:14:02Z",
+    "asOf": "2026-08-26T01:23:02Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
       {
         "symbol": "sh000001",
         "name": "上证指数",
-        "price": 3889.44,
-        "changePct": 0.19,
+        "price": 3889.24,
+        "changePct": -0.01,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:02Z"
+        "asOf": "2026-08-26T01:23:02Z"
       },
       {
         "symbol": "sh000300",
         "name": "沪深300",
-        "price": 4552.03,
-        "changePct": -0.24,
+        "price": 4551.96,
+        "changePct": -0.0,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:14Z"
+        "asOf": "2026-08-26T01:23:03Z"
       },
       {
         "symbol": "sz399006",
         "name": "创业板指",
         "price": 3397.52,
-        "changePct": -1.0,
+        "changePct": 0.0,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:33Z"
+        "asOf": "2026-08-26T01:23:42Z"
       },
       {
         "symbol": "^HSI",
@@ -52,226 +52,312 @@
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 65856.43,
-        "changePct": 0.501067797082011,
-        "changePct5d": -5.333930686829358,
-        "asOf": "2026-08-25T06:45:02Z"
+        "price": 65551.45,
+        "changePct": 0.035649072490429035,
+        "changePct5d": -2.8301999322985716,
+        "asOf": "2026-08-26T01:08:45Z"
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6742.74,
-        "changePct": 0.6835943372743625,
-        "changePct5d": -4.026689579276099,
-        "asOf": "2026-08-25T09:05:40Z"
+        "price": 6746.41,
+        "changePct": 0.7383953219212147,
+        "changePct5d": -1.7965498487072518,
+        "asOf": "2026-08-26T01:03:40Z"
       },
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7676.02,
-        "changePct": 0.3026337491148112,
-        "changePct5d": -0.20463127520040647,
-        "asOf": "2026-08-25T16:34:02Z"
+        "price": 7677.28,
+        "changePct": 0.31909818231377063,
+        "changePct5d": -0.18825315545425436,
+        "asOf": "2026-08-25T21:43:49Z"
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26143.885,
-        "changePct": 0.6300783416931965,
-        "changePct5d": -0.5546891413971022,
-        "asOf": "2026-08-25T16:34:03Z"
+        "price": 26151.299,
+        "changePct": 0.6586154700054303,
+        "changePct5d": -0.5264877567655812,
+        "asOf": "2026-08-25T21:15:59Z"
       }
     ],
     "sectors": [
       {
         "symbol": "sh512480",
         "name": "半导体ETF国联安",
-        "price": 1.008,
+        "price": 1.006,
         "changePct": -0.2,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:33Z"
+        "asOf": "2026-08-26T01:23:43Z"
       },
       {
-        "symbol": "sh512760",
-        "name": "芯片ETF国泰",
-        "price": 1.066,
-        "changePct": 0.0,
+        "symbol": "sz159995",
+        "name": "芯片ETF华夏",
+        "price": 1.123,
+        "changePct": 0.45,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:49Z"
+        "asOf": "2026-08-26T01:23:45Z"
       },
       {
-        "symbol": "sz159819",
-        "name": "人工智能ETF易方达",
-        "price": 1.685,
-        "changePct": 0.54,
+        "symbol": "sh515880",
+        "name": "通信ETF国泰",
+        "price": 0.65,
+        "changePct": 0.31,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:30Z"
+        "asOf": "2026-08-26T01:23:43Z"
       },
       {
-        "symbol": "sh588000",
-        "name": "科创50ETF华夏",
-        "price": 1.693,
-        "changePct": 0.12,
+        "symbol": "sh588200",
+        "name": "科创芯片ETF嘉实",
+        "price": 1.133,
+        "changePct": 0.27,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:41Z"
+        "asOf": "2026-08-26T01:23:43Z"
       },
       {
-        "symbol": "sh510300",
-        "name": "沪深300ETF华泰柏瑞",
-        "price": 4.616,
-        "changePct": -0.24,
-        "changePct5d": null,
-        "asOf": "2026-08-25T08:14:54Z"
+        "symbol": "SOXX",
+        "name": "iShares PHLX SOX Semiconductor ",
+        "price": 514.06,
+        "changePct": 1.556759934853047,
+        "changePct5d": -3.261261335764676,
+        "asOf": "2026-08-25T20:00:00Z"
       }
     ],
     "tickers": [
       {
+        "symbol": "sz002049",
+        "name": "紫光国微",
+        "price": 61.49,
+        "changePct": 0.05,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sh688008",
+        "name": "澜起科技",
+        "price": 197.4,
+        "changePct": 1.53,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "price": 857.0,
+        "changePct": 1.3,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sz300502",
+        "name": "新易盛",
+        "price": 405.0,
+        "changePct": 1.03,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sh600498",
+        "name": "烽火通信",
+        "price": 40.75,
+        "changePct": 0.22,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "price": 74.26,
+        "changePct": 0.2,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sh688012",
+        "name": "中微公司",
+        "price": 353.0,
+        "changePct": -0.28,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:44Z"
+      },
+      {
+        "symbol": "sh603986",
+        "name": "兆易创新",
+        "price": 400.0,
+        "changePct": 1.14,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:44Z"
+      },
+      {
+        "symbol": "sz300661",
+        "name": "圣邦股份",
+        "price": 113.4,
+        "changePct": -1.27,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
         "symbol": "sh688256",
         "name": "寒武纪",
-        "price": 1010.48,
-        "changePct": 4.28,
+        "price": 1002.0,
+        "changePct": -0.84,
         "changePct5d": null,
-        "asOf": "2026-08-25T08:14:31Z"
+        "asOf": "2026-08-26T01:23:44Z"
+      },
+      {
+        "symbol": "sz300223",
+        "name": "君正股份",
+        "price": 134.4,
+        "changePct": 0.22,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sz301308",
+        "name": "江波龙",
+        "price": 369.66,
+        "changePct": 0.0,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sh688525",
+        "name": "佰维存储",
+        "price": 228.88,
+        "changePct": 0.47,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "sz001309",
+        "name": "德明利",
+        "price": 397.06,
+        "changePct": 0.01,
+        "changePct5d": null,
+        "asOf": "2026-08-26T01:23:45Z"
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology, Inc.",
+        "price": 932.97,
+        "changePct": 2.475754039909539,
+        "changePct5d": -0.8280580574891561,
+        "asOf": "2026-08-25T20:00:01Z"
       }
     ]
   },
   "sectorOutlook": [
     {
-      "sector": "AI算力",
+      "sector": "存储芯片",
       "heat": 1,
       "heatScore": 0.9,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "AI算力板块受寒武纪大涨4.28%带动，人工智能ETF上涨0.54%，市场情绪积极。长江存储科创板IPO受理提振存储产业链，进一步强化算力基础设施预期。",
+      "narrative": "存储芯片板块受AI服务器需求及涨价预期推动，今日表现强势。兆易创新、佰维存储等个股上涨，美光科技隔夜大涨2.48%确认行业景气。新闻提及半导体存储为今日利好方向，资金关注度高。",
       "evidence": [
         {
-          "claim": "寒武纪股价上涨4.28%，反映AI算力板块强势",
-          "sourceTitle": "寒武纪行情快照",
-          "url": "https://example.com/quotes/sh688256",
-          "publishedAt": "2026-08-25T08:14:31Z",
+          "claim": "半导体存储为今日股市利好方向之一",
+          "sourceTitle": "今日股市利好利空及走势分析",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FZmtGLTVnbU81ZFhYbFdoejBxQTZwem5rQ0NRVEJKSG5xYUNVQUV3ZWVVb1JfZ2R4MmVlTnJJLXVNTHY0NXZBVDJfWFczQVlqME1SQ0w5YWdwa0NYRVRwbjRxNA?oc=5",
+          "publishedAt": "2026-08-20T00:34:00Z",
           "weight": "primary"
         },
         {
-          "claim": "长江存储控股科创板IPO受理，提振存储全产业链",
-          "sourceTitle": "资本化加速！长江存储控股科创板IPO受理，提振存储全产业链丨大咖星选",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPc2RIcWxEN3YycGtVMlFYNFRGem5xVERsMzVMVkowTkZwdk55blBwNmhxa1dzWW1YaW96NU9URmQzdmVLMVlKRllGY3pqeXVndWNrWVB2ek5IVkJnUjJyMkMzY3o2ekJCRmtpQnI2UlNXcXB3MEVQX3h3WkNuamo2aG13?oc=5",
-          "publishedAt": "2026-08-22T15:12:17Z",
+          "claim": "美光科技股价上涨2.48%，反映存储行业景气",
+          "sourceTitle": "Micron Technology, Inc. quote",
+          "url": "https://finance.yahoo.com/quote/MU",
+          "publishedAt": "2026-08-25T20:00:01Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "创业板指下跌1%，可能拖累成长股情绪",
-          "sourceTitle": "创业板指行情快照",
-          "url": "https://example.com/quotes/sz399006",
-          "publishedAt": "2026-08-25T08:14:33Z",
+          "claim": "纳指及科技股七连跌，可能拖累A股科技板块情绪",
+          "sourceTitle": "纳指及科技股7连跌引A股早盘急跌",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPczlIdUtIaW1wMmxlNlpMdVhBYUJ0d1BzN0VNMEpBelhPT29ueXZjN3dwa2p5SEo0QW1ZakRsVDVwdTJXQ0xrQXpfaWt0TmNJMm1ZNHZiOVdteXVTQzRYS0RWSUxSZXJZbnVoN1JxSzVIb3JVa1VqUFd0SVNvODBZaDFVVzVLdzRvaFE?oc=5",
+          "publishedAt": "2026-08-25T04:26:47Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.8,
-      "invalidatedIf": "寒武纪或人工智能ETF出现显著回调，或存储产业链相关新闻被证伪"
+      "invalidatedIf": "存储芯片板块出现大幅资金流出或主要个股下跌超过3%"
     },
     {
-      "sector": "半导体设备",
+      "sector": "光通信模块",
       "heat": 2,
-      "heatScore": 0.7,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "半导体设备板块受长江存储IPO受理消息提振，但半导体ETF和芯片ETF表现分化（-0.2%和0%），显示资金仍在观望。存储产业链的资本化加速有望带动设备需求。",
-      "evidence": [
-        {
-          "claim": "长江存储控股科创板IPO受理，提振存储全产业链",
-          "sourceTitle": "资本化加速！长江存储控股科创板IPO受理，提振存储全产业链丨大咖星选",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPc2RIcWxEN3YycGtVMlFYNFRGem5xVERsMzVMVkowTkZwdk55blBwNmhxa1dzWW1YaW96NU9URmQzdmVLMVlKRllGY3pqeXVndWNrWVB2ek5IVkJnUjJyMkMzY3o2ekJCRmtpQnI2UlNXcXB3MEVQX3h3WkNuamo2aG13?oc=5",
-          "publishedAt": "2026-08-22T15:12:17Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "半导体ETF国联安下跌0.2%，芯片ETF国泰持平",
-          "sourceTitle": "半导体ETF行情快照",
-          "url": "https://example.com/quotes/sh512480",
-          "publishedAt": "2026-08-25T08:14:33Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "半导体ETF下跌，显示市场对板块短期表现谨慎",
-          "sourceTitle": "半导体ETF国联安行情快照",
-          "url": "https://example.com/quotes/sh512480",
-          "publishedAt": "2026-08-25T08:14:33Z",
-          "weight": "primary"
-        }
-      ],
-      "confidence": 0.6,
-      "invalidatedIf": "半导体ETF或芯片ETF大幅下跌，或长江存储IPO进展受阻"
-    },
-    {
-      "sector": "机器人",
-      "heat": 3,
       "heatScore": 0.8,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "机器人板块热度高涨，天工机器人百米竞速再创纪录，叠加春晚机器人概念股梳理和游资活跃，市场关注度持续提升。但缺乏直接行情数据，需谨慎。",
+      "narrative": "光通信板块全天强势，CPO概念权重高，中际旭创、新易盛等个股上涨。新闻明确提及光通信板块强势，但主力资金撤离中际旭创40亿，需警惕短期回调风险。",
       "evidence": [
         {
-          "claim": "天工机器人百米竞速跑出8.86秒，再创纪录",
-          "sourceTitle": "天工机器人百米竞速跑出8.86秒 再创纪录",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-25/10684177.shtml",
-          "publishedAt": "2026-08-25T13:40:44Z",
+          "claim": "光通信板块全天强势，通信ETF标的指数收涨超1%",
+          "sourceTitle": "光通信板块全天强势，通信ETF华夏(515050)标的指数收涨超1%",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4yTm14ZmJYUWhEX0UzTHo5QmhUY3lxM1ZIdVplOE54RUJ3MF8zVEFpNU9wS3BDT05xWmliTUR0QWdId0l6bGZMRFF0TFZ3OXNlVXk0TTZJMlc1SHg0SzJxTEJ3Z244dUFwRzZTMXpyZk41UQ?oc=5",
+          "publishedAt": "2026-08-20T07:00:00Z",
           "weight": "primary"
         },
         {
-          "claim": "春晚机器人概念股全梳理，引发市场关注",
-          "sourceTitle": "（最正宗、最清晰版）春晚机器人概念股全梳理 - 财富号",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1pYUFZeHgzcTVWeUU0X1V2NEVycWxCLWQ5ckVxZVpfcTVxUVQ0NnNtWUxxU3g4QWViNXdNelp0VXVEdGZtbm5WTlNoYllFMm55WVVOa3hYVk8zTTctN0V0SlRxVXpFWXBMWVdZ?oc=5",
-          "publishedAt": "2026-02-18T08:00:00Z",
+          "claim": "中际旭创股价上涨1.3%",
+          "sourceTitle": "中际旭创 quote",
+          "url": "https://finance.yahoo.com/quote/300308.SZ",
+          "publishedAt": "2026-08-26T01:23:45Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "缺乏机器人板块的直接行情数据，价格反应不明确",
-          "sourceTitle": "无直接行情",
-          "url": "https://example.com",
-          "publishedAt": "2026-08-25T00:00:00Z",
+          "claim": "主力大调仓，40亿资金撤离中际旭创",
+          "sourceTitle": "主力大调仓，40亿资金撤离中际旭创",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pTnY1aGJKcDJlZFA2VzJtUk96c1U0a0JNNlBFOU15SThPZEVsUTE5MWIzTGFMbUNmM2JHX1dJYkQ1dkFjek85cDNpQmh3NVF6Uml1N1F6YlpiMDBNOF9yWUhkdEJCZURUMEdGQ0dJdmhiUXRPM1ZYMA?oc=5",
+          "publishedAt": "2026-08-24T14:02:00Z",
+          "weight": "primary"
+        }
+      ],
+      "confidence": 0.7,
+      "invalidatedIf": "光模块龙头股出现大幅下跌或资金持续净流出"
+    },
+    {
+      "sector": "半导体设备",
+      "heat": 3,
+      "heatScore": 0.6,
+      "priceAction": "mixed",
+      "calibration": "confirming",
+      "direction": "mixed",
+      "narrative": "半导体设备板块受龙头业绩公布影响，中微公司微跌，但新闻提及5000亿半导体设备龙头业绩公布，市场关注度高。板块整体表现分化，需观察后续资金动向。",
+      "evidence": [
+        {
+          "claim": "5000亿半导体设备龙头上半年业绩公布",
+          "sourceTitle": "5000亿半导体设备龙头，上半年业绩公布",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9oSmUxb2FaaFNCUlRqRFozb0RyT0NKMXpOTk1EUll2cmFoeFBxU2U0TjZ4eUljVEpYeHFMVF9HeFV3bDFPcnhHeVMxZGRNN1d3SHdjYVVHTU1qNzJidjRBeVRybw?oc=5",
+          "publishedAt": "2026-08-25T13:55:13Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "中微公司股价下跌0.28%",
+          "sourceTitle": "中微公司 quote",
+          "url": "https://finance.yahoo.com/quote/688012.SS",
+          "publishedAt": "2026-08-26T01:23:44Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "半导体ETF国联安下跌0.2%",
+          "sourceTitle": "半导体ETF国联安 quote",
+          "url": "https://finance.yahoo.com/quote/512480.SS",
+          "publishedAt": "2026-08-26T01:23:43Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.6,
-      "invalidatedIf": "机器人相关个股出现大幅下跌，或天工机器人纪录被证伪"
-    },
-    {
-      "sector": "低空经济",
-      "heat": 2,
-      "heatScore": 0.5,
-      "priceAction": "unknown",
-      "calibration": "insufficientData",
-      "direction": "unclear",
-      "narrative": "低空经济板块在新闻中未出现直接相关报道，缺乏行情数据，无法判断价格反应。",
-      "evidence": [],
-      "counterEvidence": [],
-      "confidence": 0.2,
-      "invalidatedIf": "出现低空经济相关新闻或行情数据"
-    },
-    {
-      "sector": "创新药",
-      "heat": 2,
-      "heatScore": 0.5,
-      "priceAction": "unknown",
-      "calibration": "insufficientData",
-      "direction": "unclear",
-      "narrative": "创新药板块在新闻中未出现直接相关报道，缺乏行情数据，无法判断价格反应。",
-      "evidence": [],
-      "counterEvidence": [],
-      "confidence": 0.2,
-      "invalidatedIf": "出现创新药相关新闻或行情数据"
+      "invalidatedIf": "半导体设备板块出现大幅下跌或龙头业绩不及预期"
     }
   ],
-  "crossSectorNotes": "今日A股整体表现分化，上证指数微涨0.19%，但创业板指下跌1%，显示市场风格偏向大盘价值。AI算力和半导体设备受存储产业链IPO消息提振，但半导体ETF表现平淡。机器人板块热度高但缺乏直接行情验证。低空经济与创新药暂无新闻和行情覆盖，需关注后续动态。北向资金和龙虎榜数据显示资金聚焦亨通光电、盈新发展等个股，但未直接涉及上述板块。",
+  "crossSectorNotes": "存储与光通信板块联动走强，受AI算力需求驱动；但需注意纳指科技股连跌及主力资金调仓带来的短期波动。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
@@ -280,7 +366,7 @@
   "stats": {
     "fetched": 8,
     "used": 8,
-    "quotes": 14,
+    "quotes": 28,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"

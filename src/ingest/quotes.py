@@ -147,7 +147,34 @@ def bars_from_yahoo_chart(timestamps: list, closes: list, volumes: list, limit: 
             }
         )
         prev_close = value
-    return points[-limit:]
+    return drop_volume_outliers(points[-limit:])
+
+
+def drop_volume_outliers(points: list[dict], max_ratio: float = 4.0) -> list[dict]:
+    """Yahoo's in-progress daily bar for A-share indices uses a different volume unit.
+
+    Completed SSE bars are ~5e5; the live bar can be ~1e9–4e9, which produced
+    bogus '7422x average' notes. Drop only extreme high outliers; quiet sessions stay.
+    """
+    prior = [float(row["volume"]) for row in points[:-1] if row.get("volume")]
+    if len(prior) < 3:
+        return points
+    ordered = sorted(prior)
+    median = ordered[len(ordered) // 2]
+    if median <= 0:
+        return points
+    ceiling = median * max_ratio
+    cleaned: list[dict] = []
+    for row in points:
+        item = dict(row)
+        try:
+            volume = float(item["volume"]) if item.get("volume") is not None else None
+        except (TypeError, ValueError):
+            volume = None
+        if volume is not None and volume > ceiling:
+            item["volume"] = None
+        cleaned.append(item)
+    return cleaned
 
 
 def volume_vs_average(points: list[dict]) -> float | None:
@@ -159,7 +186,10 @@ def volume_vs_average(points: list[dict]) -> float | None:
     avg = sum(prior) / len(prior)
     if avg <= 0:
         return None
-    return round(last / avg, 3)
+    ratio = last / avg
+    if ratio > 4.0 or ratio < 0.15:
+        return None
+    return round(ratio, 3)
 
 
 def fetch_yahoo(symbol: str, *, display_symbol: str = "") -> QuoteRow:

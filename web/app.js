@@ -255,7 +255,7 @@ function renderReport(report) {
     .join("");
 
   $("notes").innerHTML = `
-    ${report.trendNotes ? `<p><strong>时间线笔记：</strong>${report.trendNotes}</p>` : ""}
+    ${report.trendNotes ? `<div class="trend-notes"><p class="section-kicker">时间线笔记</p><p>${report.trendNotes}</p></div>` : ""}
     <p>${report.crossSectorNotes || ""}</p>
     <p class="hint">${(report.limitations || []).join(" · ")}</p>
   `;

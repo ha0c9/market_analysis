@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-26T04:27:22Z",
-  "focus": "存储相关",
+  "generatedAt": "2026-08-26T04:46:24Z",
+  "focus": "热点追踪",
   "timeWindow": {
-    "from": "2026-08-26T04:27:22Z",
-    "to": "2026-08-26T04:27:22Z"
+    "from": "2026-08-24T16:50:47Z",
+    "to": "2026-08-26T04:46:24Z"
   },
   "dataCoverage": {
-    "news": false,
+    "news": true,
     "quotes": true,
     "northbound": true,
     "filings": false,
@@ -265,13 +265,13 @@
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 66214.01,
-        "changePct": 0.5429694779944372,
-        "changePct5d": 1.358693637313202,
+        "price": 66397.22,
+        "changePct": 0.8211655491592085,
+        "changePct5d": 1.6391482102738442,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 0.779,
-        "asOf": "2026-08-26T04:09:00Z",
+        "asOf": "2026-08-26T04:31:20Z",
         "series": [
           {
             "date": "2026-08-05",
@@ -359,22 +359,22 @@
           },
           {
             "date": "2026-08-26",
-            "close": 66214.0078,
+            "close": 66397.2188,
             "volume": 0.0,
-            "changePct": 0.543
+            "changePct": 0.821
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6881.47,
-        "changePct": 2.057468637420512,
-        "changePct5d": 6.340434541546802,
-        "volume": 240071.0,
+        "price": 6878.81,
+        "changePct": 2.018018800892052,
+        "changePct5d": 6.299326731334509,
+        "volume": 252274.0,
         "turnover": null,
-        "volumeVsAvg": 0.725,
-        "asOf": "2026-08-26T04:04:00Z",
+        "volumeVsAvg": 0.762,
+        "asOf": "2026-08-26T04:26:20Z",
         "series": [
           {
             "date": "2026-08-05",
@@ -462,9 +462,9 @@
           },
           {
             "date": "2026-08-26",
-            "close": 6881.4702,
-            "volume": 240071.0,
-            "changePct": 2.057
+            "close": 6878.8101,
+            "volume": 252274.0,
+            "changePct": 2.018
           }
         ]
       },
@@ -780,6 +780,109 @@
         ]
       },
       {
+        "symbol": "sh515050",
+        "name": "通信ETF华夏",
+        "price": 1.015,
+        "changePct": 0.89,
+        "changePct5d": -7.811078062382304,
+        "volume": 4774677.0,
+        "turnover": 47945.0,
+        "volumeVsAvg": 0.415,
+        "asOf": "2026-08-26T04:05:57Z",
+        "series": [
+          {
+            "date": "2026-08-05",
+            "close": 1.002,
+            "volume": 1980490282.0,
+            "changePct": 1.623
+          },
+          {
+            "date": "2026-08-06",
+            "close": 1.014,
+            "volume": 1168909227.0,
+            "changePct": 1.198
+          },
+          {
+            "date": "2026-08-07",
+            "close": 1.043,
+            "volume": 1247640801.0,
+            "changePct": 2.86
+          },
+          {
+            "date": "2026-08-10",
+            "close": 1.019,
+            "volume": 1122413083.0,
+            "changePct": -2.301
+          },
+          {
+            "date": "2026-08-11",
+            "close": 1.017,
+            "volume": 758252563.0,
+            "changePct": -0.196
+          },
+          {
+            "date": "2026-08-12",
+            "close": 1.048,
+            "volume": 1223706433.0,
+            "changePct": 3.048
+          },
+          {
+            "date": "2026-08-13",
+            "close": 1.045,
+            "volume": 1207658782.0,
+            "changePct": -0.286
+          },
+          {
+            "date": "2026-08-14",
+            "close": 1.074,
+            "volume": 914467502.0,
+            "changePct": 2.775
+          },
+          {
+            "date": "2026-08-17",
+            "close": 1.117,
+            "volume": 904182805.0,
+            "changePct": 4.004
+          },
+          {
+            "date": "2026-08-18",
+            "close": 1.101,
+            "volume": 1078705239.0,
+            "changePct": -1.432
+          },
+          {
+            "date": "2026-08-19",
+            "close": 1.012,
+            "volume": 1495906761.0,
+            "changePct": -8.084
+          },
+          {
+            "date": "2026-08-20",
+            "close": 1.023,
+            "volume": 910227646.0,
+            "changePct": 1.087
+          },
+          {
+            "date": "2026-08-21",
+            "close": 1.05,
+            "volume": 937807278.0,
+            "changePct": 2.639
+          },
+          {
+            "date": "2026-08-24",
+            "close": 1.003,
+            "volume": 1138463252.0,
+            "changePct": -4.476
+          },
+          {
+            "date": "2026-08-26",
+            "close": 1.015,
+            "volume": 477467734.0,
+            "changePct": 1.196
+          }
+        ]
+      },
+      {
         "symbol": "sz159995",
         "name": "芯片ETF华夏",
         "price": 1.136,
@@ -883,948 +986,210 @@
         ]
       },
       {
-        "symbol": "sh512760",
-        "name": "芯片ETF国泰",
-        "price": 1.086,
-        "changePct": 1.88,
-        "changePct5d": -9.650586867718447,
-        "volume": 2905197.0,
-        "turnover": 31216.0,
-        "volumeVsAvg": 0.635,
-        "asOf": "2026-08-26T04:05:30Z",
+        "symbol": "sh588000",
+        "name": "科创50ETF华夏",
+        "price": 1.731,
+        "changePct": 2.24,
+        "changePct5d": -8.315681350540217,
+        "volume": 23833360.0,
+        "turnover": 407712.0,
+        "volumeVsAvg": 0.599,
+        "asOf": "2026-08-26T04:05:54Z",
         "series": [
           {
             "date": "2026-08-05",
-            "close": 1.112,
-            "volume": 708063828.0,
-            "changePct": 6.31
+            "close": 1.786,
+            "volume": 6453276282.0,
+            "changePct": 4.689
           },
           {
             "date": "2026-08-06",
-            "close": 1.126,
-            "volume": 475232083.0,
-            "changePct": 1.259
+            "close": 1.794,
+            "volume": 4270930732.0,
+            "changePct": 0.448
           },
           {
             "date": "2026-08-07",
-            "close": 1.161,
-            "volume": 454480088.0,
-            "changePct": 3.108
+            "close": 1.84,
+            "volume": 4252894252.0,
+            "changePct": 2.564
           },
           {
             "date": "2026-08-10",
-            "close": 1.155,
-            "volume": 433733500.0,
-            "changePct": -0.517
+            "close": 1.835,
+            "volume": 3436439865.0,
+            "changePct": -0.272
           },
           {
             "date": "2026-08-11",
-            "close": 1.14,
-            "volume": 337651244.0,
-            "changePct": -1.299
+            "close": 1.806,
+            "volume": 3208376750.0,
+            "changePct": -1.58
           },
           {
             "date": "2026-08-12",
-            "close": 1.159,
-            "volume": 369435500.0,
-            "changePct": 1.667
+            "close": 1.833,
+            "volume": 2889907564.0,
+            "changePct": 1.495
           },
           {
             "date": "2026-08-13",
-            "close": 1.14,
-            "volume": 557469720.0,
-            "changePct": -1.639
+            "close": 1.812,
+            "volume": 4028722435.0,
+            "changePct": -1.146
           },
           {
             "date": "2026-08-14",
-            "close": 1.146,
-            "volume": 352744000.0,
-            "changePct": 0.526
+            "close": 1.814,
+            "volume": 3149919090.0,
+            "changePct": 0.11
           },
           {
             "date": "2026-08-17",
-            "close": 1.205,
-            "volume": 570770276.0,
-            "changePct": 5.148
+            "close": 1.888,
+            "volume": 4226933706.0,
+            "changePct": 4.079
           },
           {
             "date": "2026-08-18",
-            "close": 1.202,
-            "volume": 420305600.0,
-            "changePct": -0.249
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.109,
-            "volume": 575317436.0,
-            "changePct": -7.737
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.099,
-            "volume": 472251700.0,
-            "changePct": -0.902
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.104,
-            "volume": 269283100.0,
-            "changePct": 0.455
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.066,
-            "volume": 411677900.0,
-            "changePct": -3.442
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.086,
-            "volume": 290519734.0,
-            "changePct": 1.876
-          }
-        ]
-      },
-      {
-        "symbol": "sz159813",
-        "name": "半导体ETF鹏华",
-        "price": 0.728,
-        "changePct": 1.53,
-        "changePct5d": -9.900995065576545,
-        "volume": 2462658.0,
-        "turnover": 17731.0,
-        "volumeVsAvg": 0.481,
-        "asOf": "2026-08-26T04:05:36Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 0.744,
-            "volume": 868260572.0,
-            "changePct": 6.286
-          },
-          {
-            "date": "2026-08-06",
-            "close": 0.753,
-            "volume": 572947228.0,
-            "changePct": 1.21
-          },
-          {
-            "date": "2026-08-07",
-            "close": 0.776,
-            "volume": 552801110.0,
-            "changePct": 3.054
-          },
-          {
-            "date": "2026-08-10",
-            "close": 0.771,
-            "volume": 509662875.0,
-            "changePct": -0.644
-          },
-          {
-            "date": "2026-08-11",
-            "close": 0.759,
-            "volume": 368565774.0,
-            "changePct": -1.556
-          },
-          {
-            "date": "2026-08-12",
-            "close": 0.773,
-            "volume": 356886377.0,
-            "changePct": 1.845
-          },
-          {
-            "date": "2026-08-13",
-            "close": 0.763,
-            "volume": 639130476.0,
-            "changePct": -1.294
-          },
-          {
-            "date": "2026-08-14",
-            "close": 0.769,
-            "volume": 322736476.0,
-            "changePct": 0.786
-          },
-          {
-            "date": "2026-08-17",
-            "close": 0.808,
-            "volume": 534208663.0,
-            "changePct": 5.072
-          },
-          {
-            "date": "2026-08-18",
-            "close": 0.808,
-            "volume": 476574119.0,
+            "close": 1.888,
+            "volume": 3229718892.0,
             "changePct": 0.0
           },
           {
             "date": "2026-08-19",
-            "close": 0.746,
-            "volume": 768586779.0,
-            "changePct": -7.673
+            "close": 1.761,
+            "volume": 6077857362.0,
+            "changePct": -6.727
           },
           {
             "date": "2026-08-20",
-            "close": 0.737,
-            "volume": 433721073.0,
-            "changePct": -1.206
+            "close": 1.744,
+            "volume": 3706860285.0,
+            "changePct": -0.965
           },
           {
             "date": "2026-08-21",
-            "close": 0.742,
-            "volume": 343124366.0,
-            "changePct": 0.678
+            "close": 1.745,
+            "volume": 2662479916.0,
+            "changePct": 0.057
           },
           {
             "date": "2026-08-24",
-            "close": 0.716,
-            "volume": 425280314.0,
-            "changePct": -3.504
+            "close": 1.691,
+            "volume": 4105077386.0,
+            "changePct": -3.095
           },
           {
             "date": "2026-08-26",
-            "close": 0.728,
-            "volume": 246265800.0,
-            "changePct": 1.676
-          }
-        ]
-      },
-      {
-        "symbol": "sh588200",
-        "name": "科创芯片ETF嘉实",
-        "price": 1.154,
-        "changePct": 2.12,
-        "changePct5d": -9.490190945236188,
-        "volume": 16996673.0,
-        "turnover": 193679.0,
-        "volumeVsAvg": 0.513,
-        "asOf": "2026-08-26T04:05:46Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 1.166,
-            "volume": 5456015348.0,
-            "changePct": 6.096
-          },
-          {
-            "date": "2026-08-06",
-            "close": 1.18,
-            "volume": 4152134067.0,
-            "changePct": 1.201
-          },
-          {
-            "date": "2026-08-07",
-            "close": 1.217,
-            "volume": 3582515992.0,
-            "changePct": 3.136
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.216,
-            "volume": 2741577328.0,
-            "changePct": -0.082
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.196,
-            "volume": 2644530096.0,
-            "changePct": -1.645
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.218,
-            "volume": 2686828368.0,
-            "changePct": 1.839
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.204,
-            "volume": 3329583811.0,
-            "changePct": -1.149
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.212,
-            "volume": 2764802929.0,
-            "changePct": 0.664
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.275,
-            "volume": 3662244905.0,
-            "changePct": 5.198
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.275,
-            "volume": 3128078365.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.177,
-            "volume": 4228774929.0,
-            "changePct": -7.686
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.172,
-            "volume": 2698508155.0,
-            "changePct": -0.425
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.173,
-            "volume": 2258996805.0,
-            "changePct": 0.085
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.134,
-            "volume": 3016150386.0,
-            "changePct": -3.325
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.154,
-            "volume": 1699667301.0,
-            "changePct": 1.764
-          }
-        ]
-      },
-      {
-        "symbol": "SOXX",
-        "name": "iShares PHLX SOX Semiconductor ",
-        "price": 514.06,
-        "changePct": 1.556759934853047,
-        "changePct5d": -3.261261335764676,
-        "volume": 6418100.0,
-        "turnover": null,
-        "volumeVsAvg": 0.89,
-        "asOf": "2026-08-25T20:00:00Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 530.7,
-            "volume": 9649300.0,
-            "changePct": -2.123
-          },
-          {
-            "date": "2026-08-06",
-            "close": 532.52,
-            "volume": 7654700.0,
-            "changePct": 0.343
-          },
-          {
-            "date": "2026-08-07",
-            "close": 543.27,
-            "volume": 5262600.0,
-            "changePct": 2.019
-          },
-          {
-            "date": "2026-08-10",
-            "close": 529.39,
-            "volume": 8763500.0,
-            "changePct": -2.555
-          },
-          {
-            "date": "2026-08-11",
-            "close": 534.2,
-            "volume": 7176100.0,
-            "changePct": 0.909
-          },
-          {
-            "date": "2026-08-12",
-            "close": 546.61,
-            "volume": 7723600.0,
-            "changePct": 2.323
-          },
-          {
-            "date": "2026-08-13",
-            "close": 550.74,
-            "volume": 5940700.0,
-            "changePct": 0.756
-          },
-          {
-            "date": "2026-08-14",
-            "close": 550.42,
-            "volume": 4309800.0,
-            "changePct": -0.058
-          },
-          {
-            "date": "2026-08-17",
-            "close": 559.12,
-            "volume": 5745000.0,
-            "changePct": 1.581
-          },
-          {
-            "date": "2026-08-18",
-            "close": 531.39,
-            "volume": 9993900.0,
-            "changePct": -4.96
-          },
-          {
-            "date": "2026-08-19",
-            "close": 519.67,
-            "volume": 8413800.0,
-            "changePct": -2.206
-          },
-          {
-            "date": "2026-08-20",
-            "close": 522.35,
-            "volume": 6269000.0,
-            "changePct": 0.516
-          },
-          {
-            "date": "2026-08-21",
-            "close": 520.05,
-            "volume": 6255600.0,
-            "changePct": -0.44
-          },
-          {
-            "date": "2026-08-24",
-            "close": 506.18,
-            "volume": 7828600.0,
-            "changePct": -2.667
-          },
-          {
-            "date": "2026-08-25",
-            "close": 514.06,
-            "volume": 6418100.0,
-            "changePct": 1.557
+            "close": 1.731,
+            "volume": 2383335977.0,
+            "changePct": 2.365
           }
         ]
       }
     ],
     "tickers": [
       {
-        "symbol": "sh603986",
-        "name": "兆易创新",
-        "price": 396.0,
-        "changePct": 0.12,
-        "changePct5d": -1.9097846519203765,
-        "volume": 205008.0,
-        "turnover": 802071.0,
-        "volumeVsAvg": 0.392,
-        "asOf": "2026-08-26T04:05:44Z",
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 123.89,
+        "changePct": 3.24,
+        "changePct5d": -3.2184948785131673,
+        "volume": 21969903.0,
+        "turnover": 268164.0,
+        "volumeVsAvg": 0.426,
+        "asOf": "2026-08-26T04:05:42Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 385.0,
-            "volume": 61861191.0,
-            "changePct": -0.114
+            "close": 124.15,
+            "volume": 51888149.0,
+            "changePct": -1.036
           },
           {
             "date": "2026-08-07",
-            "close": 417.05,
-            "volume": 74751809.0,
-            "changePct": 8.325
+            "close": 128.5,
+            "volume": 60190846.0,
+            "changePct": 3.504
           },
           {
             "date": "2026-08-10",
-            "close": 403.03,
-            "volume": 63600641.0,
-            "changePct": -3.362
+            "close": 126.25,
+            "volume": 42765367.0,
+            "changePct": -1.751
           },
           {
             "date": "2026-08-11",
-            "close": 402.29,
-            "volume": 43650230.0,
-            "changePct": -0.184
+            "close": 125.41,
+            "volume": 37175996.0,
+            "changePct": -0.665
           },
           {
             "date": "2026-08-12",
-            "close": 413.17,
-            "volume": 45611649.0,
-            "changePct": 2.705
+            "close": 127.96,
+            "volume": 43837992.0,
+            "changePct": 2.033
           },
           {
             "date": "2026-08-13",
-            "close": 404.5,
-            "volume": 54443925.0,
-            "changePct": -2.098
+            "close": 129.44,
+            "volume": 66629356.0,
+            "changePct": 1.157
           },
           {
             "date": "2026-08-14",
-            "close": 417.48,
-            "volume": 47500735.0,
-            "changePct": 3.209
+            "close": 132.87,
+            "volume": 77449709.0,
+            "changePct": 2.65
           },
           {
             "date": "2026-08-17",
-            "close": 444.0,
-            "volume": 58882572.0,
-            "changePct": 6.352
+            "close": 136.76,
+            "volume": 68011300.0,
+            "changePct": 2.928
           },
           {
             "date": "2026-08-18",
-            "close": 436.74,
-            "volume": 60757277.0,
-            "changePct": -1.635
+            "close": 134.98,
+            "volume": 57424091.0,
+            "changePct": -1.302
           },
           {
             "date": "2026-08-19",
-            "close": 403.71,
-            "volume": 66280613.0,
-            "changePct": -7.563
+            "close": 128.01,
+            "volume": 66595440.0,
+            "changePct": -5.164
           },
           {
             "date": "2026-08-20",
-            "close": 403.5,
-            "volume": 36176408.0,
-            "changePct": -0.052
+            "close": 125.5,
+            "volume": 40127002.0,
+            "changePct": -1.961
           },
           {
             "date": "2026-08-21",
-            "close": 409.06,
-            "volume": 34076661.0,
-            "changePct": 1.378
+            "close": 124.8,
+            "volume": 30566366.0,
+            "changePct": -0.558
           },
           {
             "date": "2026-08-24",
-            "close": 381.66,
-            "volume": 44862737.0,
-            "changePct": -6.698
+            "close": 120.58,
+            "volume": 47671749.0,
+            "changePct": -3.381
           },
           {
             "date": "2026-08-25",
-            "close": 395.51,
-            "volume": 39649525.0,
-            "changePct": 3.629
+            "close": 120.0,
+            "volume": 31064342.0,
+            "changePct": -0.481
           },
           {
             "date": "2026-08-26",
-            "close": 396.0,
-            "volume": 20500810.0,
-            "changePct": 0.124
-          }
-        ]
-      },
-      {
-        "symbol": "sz002049",
-        "name": "紫光国微",
-        "price": 61.87,
-        "changePct": 0.67,
-        "changePct5d": -0.6423663448504646,
-        "volume": 61226.0,
-        "turnover": 37734.0,
-        "volumeVsAvg": 0.279,
-        "asOf": "2026-08-26T04:05:45Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 66.5,
-            "volume": 24074655.0,
-            "changePct": -1.042
-          },
-          {
-            "date": "2026-08-07",
-            "close": 67.22,
-            "volume": 27680498.0,
-            "changePct": 1.083
-          },
-          {
-            "date": "2026-08-10",
-            "close": 68.0,
-            "volume": 24211173.0,
-            "changePct": 1.16
-          },
-          {
-            "date": "2026-08-11",
-            "close": 67.3,
-            "volume": 16910831.0,
-            "changePct": -1.029
-          },
-          {
-            "date": "2026-08-12",
-            "close": 67.28,
-            "volume": 14669162.0,
-            "changePct": -0.03
-          },
-          {
-            "date": "2026-08-13",
-            "close": 66.14,
-            "volume": 22914053.0,
-            "changePct": -1.694
-          },
-          {
-            "date": "2026-08-14",
-            "close": 67.89,
-            "volume": 27283757.0,
-            "changePct": 2.646
-          },
-          {
-            "date": "2026-08-17",
-            "close": 68.3,
-            "volume": 33996760.0,
-            "changePct": 0.604
-          },
-          {
-            "date": "2026-08-18",
-            "close": 66.38,
-            "volume": 29060252.0,
-            "changePct": -2.811
-          },
-          {
-            "date": "2026-08-19",
-            "close": 62.27,
-            "volume": 29756297.0,
-            "changePct": -6.192
-          },
-          {
-            "date": "2026-08-20",
-            "close": 62.81,
-            "volume": 16497968.0,
-            "changePct": 0.867
-          },
-          {
-            "date": "2026-08-21",
-            "close": 62.65,
-            "volume": 12242648.0,
-            "changePct": -0.255
-          },
-          {
-            "date": "2026-08-24",
-            "close": 60.99,
-            "volume": 16888658.0,
-            "changePct": -2.65
-          },
-          {
-            "date": "2026-08-25",
-            "close": 61.46,
-            "volume": 10733126.0,
-            "changePct": 0.771
-          },
-          {
-            "date": "2026-08-26",
-            "close": 61.87,
-            "volume": 6122554.0,
-            "changePct": 0.667
-          }
-        ]
-      },
-      {
-        "symbol": "sh688012",
-        "name": "中微公司",
-        "price": 364.2,
-        "changePct": 2.88,
-        "changePct5d": -2.096770912088375,
-        "volume": 8950575.0,
-        "turnover": 320447.0,
-        "volumeVsAvg": 0.397,
-        "asOf": "2026-08-26T04:05:32Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 361.59,
-            "volume": 29424121.0,
-            "changePct": 1.003
-          },
-          {
-            "date": "2026-08-07",
-            "close": 367.65,
-            "volume": 22696882.0,
-            "changePct": 1.676
-          },
-          {
-            "date": "2026-08-10",
-            "close": 389.99,
-            "volume": 28731752.0,
-            "changePct": 6.076
-          },
-          {
-            "date": "2026-08-11",
-            "close": 363.1,
-            "volume": 30479199.0,
-            "changePct": -6.895
-          },
-          {
-            "date": "2026-08-12",
-            "close": 380.95,
-            "volume": 26125291.0,
-            "changePct": 4.916
-          },
-          {
-            "date": "2026-08-13",
-            "close": 370.42,
-            "volume": 24276028.0,
-            "changePct": -2.764
-          },
-          {
-            "date": "2026-08-14",
-            "close": 374.85,
-            "volume": 14869855.0,
-            "changePct": 1.196
-          },
-          {
-            "date": "2026-08-17",
-            "close": 387.82,
-            "volume": 21910617.0,
-            "changePct": 3.46
-          },
-          {
-            "date": "2026-08-18",
-            "close": 398.33,
-            "volume": 21590545.0,
-            "changePct": 2.71
-          },
-          {
-            "date": "2026-08-19",
-            "close": 372.0,
-            "volume": 25727075.0,
-            "changePct": -6.61
-          },
-          {
-            "date": "2026-08-20",
-            "close": 365.5,
-            "volume": 20625513.0,
-            "changePct": -1.747
-          },
-          {
-            "date": "2026-08-21",
-            "close": 362.5,
-            "volume": 14627381.0,
-            "changePct": -0.821
-          },
-          {
-            "date": "2026-08-24",
-            "close": 357.65,
-            "volume": 20044311.0,
-            "changePct": -1.338
-          },
-          {
-            "date": "2026-08-25",
-            "close": 354.0,
-            "volume": 14300451.0,
-            "changePct": -1.021
-          },
-          {
-            "date": "2026-08-26",
-            "close": 364.2,
-            "volume": 8950575.0,
-            "changePct": 2.881
-          }
-        ]
-      },
-      {
-        "symbol": "sz300661",
-        "name": "圣邦股份",
-        "price": 113.76,
-        "changePct": -0.96,
-        "changePct5d": null,
-        "volume": 43919.0,
-        "turnover": 50211.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:12Z",
-        "series": []
-      },
-      {
-        "symbol": "sh688008",
-        "name": "澜起科技",
-        "price": 199.92,
-        "changePct": 2.83,
-        "changePct5d": null,
-        "volume": 19884362.0,
-        "turnover": 391119.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:54Z",
-        "series": []
-      },
-      {
-        "symbol": "sh600584",
-        "name": "长电科技",
-        "price": 74.5,
-        "changePct": 0.61,
-        "changePct5d": null,
-        "volume": 454856.0,
-        "turnover": 335845.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:54Z",
-        "series": []
-      },
-      {
-        "symbol": "sz300223",
-        "name": "君正股份",
-        "price": 133.09,
-        "changePct": -0.75,
-        "changePct5d": null,
-        "volume": 110621.0,
-        "turnover": 146406.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:48Z",
-        "series": []
-      },
-      {
-        "symbol": "sh688041",
-        "name": "海光信息",
-        "price": 231.93,
-        "changePct": -0.06,
-        "changePct5d": null,
-        "volume": 11951079.0,
-        "turnover": 275614.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:31Z",
-        "series": []
-      },
-      {
-        "symbol": "sz000021",
-        "name": "深科技",
-        "price": 36.59,
-        "changePct": -0.62,
-        "changePct5d": null,
-        "volume": 381096.0,
-        "turnover": 138978.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:33Z",
-        "series": []
-      },
-      {
-        "symbol": "sh688595",
-        "name": "芯海科技",
-        "price": 27.55,
-        "changePct": 0.33,
-        "changePct5d": null,
-        "volume": 998567.0,
-        "turnover": 2730.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:33Z",
-        "series": []
-      },
-      {
-        "symbol": "sz301308",
-        "name": "江波龙",
-        "price": 368.85,
-        "changePct": -0.22,
-        "changePct5d": null,
-        "volume": 42921.0,
-        "turnover": 157685.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:00Z",
-        "series": []
-      },
-      {
-        "symbol": "sh688525",
-        "name": "佰维存储",
-        "price": 226.61,
-        "changePct": -0.53,
-        "changePct5d": null,
-        "volume": 9119321.0,
-        "turnover": 205363.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:33Z",
-        "series": []
-      },
-      {
-        "symbol": "sz001309",
-        "name": "德明利",
-        "price": 397.26,
-        "changePct": 0.06,
-        "changePct5d": null,
-        "volume": 52537.0,
-        "turnover": 207685.0,
-        "volumeVsAvg": null,
-        "asOf": "2026-08-26T04:05:24Z",
-        "series": []
-      },
-      {
-        "symbol": "MU",
-        "name": "Micron Technology, Inc.",
-        "price": 932.97,
-        "changePct": 2.475754039909539,
-        "changePct5d": -0.8280580574891561,
-        "volume": 19076500.0,
-        "turnover": null,
-        "volumeVsAvg": 0.609,
-        "asOf": "2026-08-25T20:00:01Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 893.19,
-            "volume": 34720300.0,
-            "changePct": 0.058
-          },
-          {
-            "date": "2026-08-06",
-            "close": 881.47,
-            "volume": 35784100.0,
-            "changePct": -1.312
-          },
-          {
-            "date": "2026-08-07",
-            "close": 877.57,
-            "volume": 34568500.0,
-            "changePct": -0.442
-          },
-          {
-            "date": "2026-08-10",
-            "close": 861.0,
-            "volume": 27818600.0,
-            "changePct": -1.888
-          },
-          {
-            "date": "2026-08-11",
-            "close": 868.52,
-            "volume": 29438300.0,
-            "changePct": 0.873
-          },
-          {
-            "date": "2026-08-12",
-            "close": 911.29,
-            "volume": 36804900.0,
-            "changePct": 4.924
-          },
-          {
-            "date": "2026-08-13",
-            "close": 949.83,
-            "volume": 36704700.0,
-            "changePct": 4.229
-          },
-          {
-            "date": "2026-08-14",
-            "close": 971.66,
-            "volume": 27881100.0,
-            "changePct": 2.298
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1011.75,
-            "volume": 33430500.0,
-            "changePct": 4.126
-          },
-          {
-            "date": "2026-08-18",
-            "close": 940.76,
-            "volume": 37306000.0,
-            "changePct": -7.017
-          },
-          {
-            "date": "2026-08-19",
-            "close": 937.11,
-            "volume": 26901900.0,
-            "changePct": -0.388
-          },
-          {
-            "date": "2026-08-20",
-            "close": 974.33,
-            "volume": 25212200.0,
-            "changePct": 3.972
-          },
-          {
-            "date": "2026-08-21",
-            "close": 966.78,
-            "volume": 21823400.0,
-            "changePct": -0.775
-          },
-          {
-            "date": "2026-08-24",
-            "close": 910.43,
-            "volume": 30012600.0,
-            "changePct": -5.829
-          },
-          {
-            "date": "2026-08-25",
-            "close": 932.97,
-            "volume": 19076500.0,
-            "changePct": 2.476
+            "close": 123.89,
+            "volume": 21969903.0,
+            "changePct": 3.242
           }
         ]
       }
@@ -2090,9 +1455,25 @@
       "note": "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。"
     },
     "sentiment": {
-      "series": [],
+      "series": [
+        {
+          "date": "2026-08-25",
+          "score": 30.0,
+          "count": 7,
+          "officialCount": 0
+        },
+        {
+          "date": "2026-08-26",
+          "score": 204.3,
+          "count": 38,
+          "officialCount": 0
+        }
+      ],
       "trend": "unknown",
-      "sourceMix": {},
+      "sourceMix": {
+        "major_media": 45,
+        "official": 21
+      },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
     },
     "notes": [
@@ -2104,131 +1485,134 @@
   },
   "sectorOutlook": [
     {
-      "sector": "存储芯片",
+      "sector": "半导体",
       "heat": 1,
       "heatScore": 0.9,
-      "priceAction": "mixed",
+      "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "存储芯片板块受AI需求及涨价预期推动，今日表现活跃，但个股分化。兆易创新微涨，江波龙、佰维存储小幅下跌，而美光科技隔夜大涨2.48%，显示海外存储龙头走强。板块整体量能较前期有所放大，但个股成交活跃度不一，市场关注HBM及DRAM涨价动态。",
+      "narrative": "半导体板块今日表现强势，中芯国际涨3.24%，半导体ETF涨1.59%，芯片ETF涨1.61%。消息面上，OpenAI自研ASIC芯片Jalapeño性能超越英伟达GB300，苹果发布2nm芯片M6，全球半导体技术迭代加速，国内政策支持“人工智能+”应用场景，板块情绪高涨。",
       "evidence": [
         {
-          "claim": "美光科技隔夜上涨2.48%，反映存储芯片需求强劲",
-          "sourceTitle": "Market quote for MU",
-          "url": "https://finance.yahoo.com/quote/MU",
-          "publishedAt": "2026-08-25T20:00:01Z",
+          "claim": "中芯国际股价上涨3.24%，半导体ETF和芯片ETF分别上涨1.59%和1.61%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-26T04:05:00Z",
           "weight": "primary"
         },
         {
-          "claim": "存储芯片板块今日成交活跃，多只个股换手率较高",
-          "sourceTitle": "Market quotes for storage-related stocks",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
+          "claim": "OpenAI自研ASIC芯片Jalapeño性能超越英伟达GB300，推动AI芯片行业格局变化",
+          "sourceTitle": "一石激起千层浪！短短9个月，OpenAI自研ASIC芯片已超越英伟达Blackwell？",
+          "url": "https://wallstreetcn.com/articles/3780301",
+          "publishedAt": "2026-08-26T01:03:05Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "苹果发布首款2nm芯片M6，AI性能大幅提升",
+          "sourceTitle": "库克清空弹夹！2nm，韬定律，最强AI电脑",
+          "url": "https://wallstreetcn.com/articles/3780311",
+          "publishedAt": "2026-08-26T02:21:06Z",
+          "weight": "supporting"
+        },
+        {
+          "claim": "全球泛半导体行业技术迭代加速，国内设备公司完成多批次客户交付",
+          "sourceTitle": "【机构调研】全球泛半导体行业技术迭代加速，这家公司半导体前道设备完成多批次客户交付",
+          "url": "https://www.cls.cn/detail/2464537",
+          "publishedAt": "2026-08-26T04:42:03Z",
           "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "部分存储个股如江波龙、佰维存储今日小幅下跌，显示内部分歧",
-          "sourceTitle": "Market quotes for 江波龙 and 佰维存储",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
+          "claim": "高盛指出科技股连续承压，费城半导体指数远期市盈率压缩，市场定价逻辑重构",
+          "sourceTitle": "从\"AI能做什么\"到\"谁来买单\"：高盛解析科技股连续承压的三重逻辑",
+          "url": "https://wallstreetcn.com/articles/3780299",
+          "publishedAt": "2026-08-26T03:55:34Z",
           "weight": "supporting"
+        }
+      ],
+      "confidence": 0.8,
+      "invalidatedIf": "半导体板块出现大幅回调，或相关利空消息（如技术瓶颈、政策收紧）出现"
+    },
+    {
+      "sector": "人工智能",
+      "heat": 2,
+      "heatScore": 0.8,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "人工智能板块受政策利好和产业进展推动，工信部表示将加快培育“人工智能+”应用场景，OpenAI自研芯片和AI数据中心投资热潮持续，市场情绪积极。但高盛警告科技股估值压力，需关注后续资金流向。",
+      "evidence": [
+        {
+          "claim": "工信部表示将加快培育“人工智能+”等重大应用场景",
+          "sourceTitle": "工信部：“十五五”时期我国将加快培育“人工智能+”等重大应用场景",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-26/10684384.shtml",
+          "publishedAt": "2026-08-26T03:24:14Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "OpenAI自研芯片Jalapeño性能领先，AI芯片行业格局重塑",
+          "sourceTitle": "一石激起千层浪！短短9个月，OpenAI自研ASIC芯片已超越英伟达Blackwell？",
+          "url": "https://wallstreetcn.com/articles/3780301",
+          "publishedAt": "2026-08-26T01:03:05Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "AI数据中心投资热潮推高全球融资成本，可能引发债务风险",
+          "sourceTitle": "AI数据中心回报太高，全世界借款都要变贵",
+          "url": "https://wallstreetcn.com/charts/41959684",
+          "publishedAt": "2026-08-26T03:59:56Z",
+          "weight": "supporting"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "高盛指出科技股连续承压，AI叙事面临定价逻辑重构",
+          "sourceTitle": "从\"AI能做什么\"到\"谁来买单\"：高盛解析科技股连续承压的三重逻辑",
+          "url": "https://wallstreetcn.com/articles/3780299",
+          "publishedAt": "2026-08-26T03:55:34Z",
+          "weight": "primary"
         }
       ],
       "confidence": 0.7,
-      "invalidatedIf": "存储芯片板块出现大幅下跌或涨价预期落空"
+      "invalidatedIf": "人工智能板块出现明显回调，或政策支持力度不及预期"
     },
     {
-      "sector": "半导体设备",
-      "heat": 2,
-      "heatScore": 0.75,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "半导体设备板块今日表现强势，中微公司大涨2.88%，澜起科技涨2.83%，反映市场对国产替代及先进制程设备需求的乐观预期。板块量能较前期有所放大，但整体成交活跃度仍低于近期均值，显示资金关注度提升但尚未全面涌入。",
-      "evidence": [
-        {
-          "claim": "中微公司今日上涨2.88%，澜起科技上涨2.83%",
-          "sourceTitle": "Market quotes for 中微公司 and 澜起科技",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "板块成交活跃度仍低于近期均值，量能未完全释放",
-          "sourceTitle": "Volume vs average for 中微公司",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.65,
-      "invalidatedIf": "半导体设备板块出现回调或量能持续萎缩"
-    },
-    {
-      "sector": "先进封装",
+      "sector": "消费电子",
       "heat": 3,
       "heatScore": 0.6,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "先进封装板块今日表现平稳，长电科技微涨0.61%，受益于AI芯片封装需求增长。板块整体涨幅有限，但市场情绪偏暖，量能变化不大，显示资金仍在观察。",
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "mixed",
+      "narrative": "消费电子板块受苹果发布2nm芯片和AI电脑提振，但缺乏直接行情数据，整体表现不明朗。苹果新品可能带动产业链，但需观察市场反应。",
       "evidence": [
         {
-          "claim": "长电科技今日上涨0.61%",
-          "sourceTitle": "Market quote for 长电科技",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
+          "claim": "苹果发布2nm芯片M6和M5 Ultra，AI性能大幅提升",
+          "sourceTitle": "库克清空弹夹！2nm，韬定律，最强AI电脑",
+          "url": "https://wallstreetcn.com/articles/3780311",
+          "publishedAt": "2026-08-26T02:21:06Z",
           "weight": "primary"
         }
       ],
-      "counterEvidence": [
-        {
-          "claim": "板块涨幅较小，量能未明显放大",
-          "sourceTitle": "Market quotes for 长电科技",
-          "url": "https://finance.sina.com.cn",
-          "publishedAt": "2026-08-26T04:05:00Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.5,
-      "invalidatedIf": "先进封装板块出现大幅下跌或需求预期减弱"
+      "counterEvidence": [],
+      "confidence": 0.4,
+      "invalidatedIf": "消费电子板块出现明显下跌，或苹果新品销售不及预期"
     }
   ],
-  "crossSectorNotes": "存储相关板块整体表现活跃，存储芯片、半导体设备、先进封装均有所上涨，但个股分化明显。海外存储龙头美光科技大涨，对A股存储板块形成提振。市场关注AI需求及涨价预期，但需警惕短期涨幅过大后的回调风险。",
-  "trendNotes": "上证指数近段成交量高于前段，量能在放大，最新一日成交约为前段均值的6000倍，显示市场交投活跃。北向成交额近两周大体平稳，但交易所已不再披露实时净买入，只能看活跃度与上证对照。新闻情绪方面，可分日的新闻偏少，情绪趋势只能作参考，但整体市场情绪偏暖。",
+  "crossSectorNotes": "今日A股三大指数集体上涨，超3500只个股飘红，市场情绪积极。半导体和人工智能板块领涨，消费电子受苹果新品提振但缺乏直接行情数据。北向资金成交额平稳，未显示明显流入或流出。",
+  "trendNotes": "量能方面，上证指数近段成交量高于前段，量能在放大，最新一日成交约为前段均值的6000倍，显示市场活跃度提升。北向成交额近两周大体平稳，交易所已不再披露实时净买入，只能看活跃度与上证对照。新闻情绪方面，8月26日新闻数量较前一日明显增加，情绪得分上升，市场关注度提高。",
   "limitations": [
     "未接入微博/X",
     "可能使用延迟公开行情",
-    "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证",
-    "部分源失败: 15"
+    "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
   ],
   "stats": {
-    "fetched": 0,
-    "used": 0,
-    "quotes": 28,
+    "fetched": 66,
+    "used": 66,
+    "quotes": 13,
     "model": "deepseek-v4-flash",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash"
   },
-  "errors": [
-    "RSS reuters_business: [Errno -2] Name or service not known",
-    "gnews:zh:今日 存储芯片 板块 行情 资金流入: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87+%E6%9D%BF%E5%9D%97+%E8%A1%8C%E6%83%85+%E8%B5%84%E9%87%91%E6%B5%81%E5%85%A5&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:今日 存储芯片 板块 行情 资金流入: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87+%E6%9D%BF%E5%9D%97+%E8%A1%8C%E6%83%85+%E8%B5%84%E9%87%91%E6%B5%81%E5%85%A5&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:今日 存储涨价 HBM 最新消息: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%AD%98%E5%82%A8%E6%B6%A8%E4%BB%B7+HBM+%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:今日 存储涨价 HBM 最新消息: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%AD%98%E5%82%A8%E6%B6%A8%E4%BB%B7+HBM+%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:今日 半导体设备 先进封装 板块 异动: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%8D%8A%E5%AF%BC%E4%BD%93%E8%AE%BE%E5%A4%87+%E5%85%88%E8%BF%9B%E5%B0%81%E8%A3%85+%E6%9D%BF%E5%9D%97+%E5%BC%82%E5%8A%A8&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:今日 半导体设备 先进封装 板块 异动: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E4%BB%8A%E6%97%A5+%E5%8D%8A%E5%AF%BC%E4%BD%93%E8%AE%BE%E5%A4%87+%E5%85%88%E8%BF%9B%E5%B0%81%E8%A3%85+%E6%9D%BF%E5%9D%97+%E5%BC%82%E5%8A%A8&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:存储相关 (证监会 OR 交易所公告 OR 央行 OR 新华社): Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%28%E8%AF%81%E7%9B%91%E4%BC%9A+OR+%E4%BA%A4%E6%98%93%E6%89%80%E5%85%AC%E5%91%8A+OR+%E5%A4%AE%E8%A1%8C+OR+%E6%96%B0%E5%8D%8E%E7%A4%BE%29&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:存储相关 (证监会 OR 交易所公告 OR 央行 OR 新华社): Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%28%E8%AF%81%E7%9B%91%E4%BC%9A+OR+%E4%BA%A4%E6%98%93%E6%89%80%E5%85%AC%E5%91%8A+OR+%E5%A4%AE%E8%A1%8C+OR+%E6%96%B0%E5%8D%8E%E7%A4%BE%29&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:存储相关 成交量 放量 缩量 量能: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E6%88%90%E4%BA%A4%E9%87%8F+%E6%94%BE%E9%87%8F+%E7%BC%A9%E9%87%8F+%E9%87%8F%E8%83%BD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:存储相关 成交量 放量 缩量 量能: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E6%88%90%E4%BA%A4%E9%87%8F+%E6%94%BE%E9%87%8F+%E7%BC%A9%E9%87%8F+%E9%87%8F%E8%83%BD&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:存储相关 北向资金 外资 沪股通 深股通: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E5%A4%96%E8%B5%84+%E6%B2%AA%E8%82%A1%E9%80%9A+%E6%B7%B1%E8%82%A1%E9%80%9A&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:存储相关 北向资金 外资 沪股通 深股通: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E5%A4%96%E8%B5%84+%E6%B2%AA%E8%82%A1%E9%80%9A+%E6%B7%B1%E8%82%A1%E9%80%9A&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:zh:存储相关 市场情绪 北向资金 风险偏好: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E5%B8%82%E5%9C%BA%E6%83%85%E7%BB%AA+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E9%A3%8E%E9%99%A9%E5%81%8F%E5%A5%BD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
-    "gnews:en:存储相关 市场情绪 北向资金 风险偏好: Server error '503 Service Unavailable' for url 'https://news.google.com/rss/search?q=%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3+%E5%B8%82%E5%9C%BA%E6%83%85%E7%BB%AA+%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91+%E9%A3%8E%E9%99%A9%E5%81%8F%E5%A5%BD&hl=en-US&gl=US&ceid=US:en'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
-  ]
+  "errors": []
 }

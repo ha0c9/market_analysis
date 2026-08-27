@@ -5,6 +5,7 @@ import shutil
 from pathlib import Path
 
 from src import REPORTS_DIR, ROOT
+from src.aggregate import aggregate_themes
 from src.distill import distill_news
 from src.ingest.cls import fetch_cls_telegraph
 from src.ingest.flows import fetch_northbound
@@ -28,7 +29,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     cls_items, cls_errors = fetch_cls_telegraph(per_source)
     gnews_items, gnews_errors = fetch_google_news(plan.newsQueries, per_source)
     hot_items, weibo_errors, weibo_ok = fetch_weibo_finance_hot(
-        plan.keywords, plan.lookbackHours
+        plan.keywords, plan.lookbackHours, focus=focus
     )
     print(
         f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
@@ -40,6 +41,12 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     news = distill_news(rss_items + cls_items + gnews_items, plan.keywords, plan.lookbackHours)
     if news and any(not within_lookback(item, plan.lookbackHours) for item in news):
         warnings.append("近期稿件不足，已补充稍早的相关报道")
+    aggregates, agg_model, agg_errors = aggregate_themes(
+        focus=focus,
+        plan=plan,
+        news=news,
+        hot_search=hot_items,
+    )
 
     quote_symbols = [
         *[row["symbol"] for row in sources.get("benchmarks") or []],
@@ -53,6 +60,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         *cls_errors,
         *gnews_errors,
         *weibo_errors,
+        *agg_errors,
         *quote_errors,
         *flow_errors,
     ]
@@ -74,6 +82,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         errors=[*warnings, *fetch_errors],
         market_pulse=pulse,
         hot_search=hot_items,
+        aggregates=aggregates,
     )
     if fetch_errors:
         report.limitations.append(f"部分源失败: {len(fetch_errors)}")
@@ -81,8 +90,10 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         if warning not in report.limitations:
             report.limitations.append(warning)
     report.stats["plannerModel"] = planner_model
+    report.stats["aggregatorModel"] = agg_model
     report.stats["model"] = model
     report.stats["weibo"] = len(hot_items)
+    report.stats["aggregates"] = len(aggregates)
     report.marketSnapshot = snapshot_from_rows(
         quotes,
         report.marketSnapshot.get("source") or "tencent+yahoo",

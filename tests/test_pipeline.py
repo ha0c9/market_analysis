@@ -264,7 +264,7 @@ class PlannerTests(unittest.TestCase):
         self.assertIn("成交量", blob)
         self.assertTrue("北向" in blob or "外资" in blob)
         self.assertTrue("专栏" in blob or "博客" in blob or "复盘" in blob)
-        self.assertLessEqual(len(plan.newsQueries), 7)
+        self.assertLessEqual(len(plan.newsQueries), 8)
         self.assertGreaterEqual(len(plan.newsQueries), 5)
 
 
@@ -574,6 +574,78 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertEqual(storage.match, "focus")
         market = next(item for item in kept if "A股" in item.word)
         self.assertEqual(market.match, "market")
+
+    def test_skips_entertainment_earnings_and_merges_llm_picks(self) -> None:
+        from datetime import datetime, timezone
+
+        from src.ingest.weibo import merge_hot_items, parse_hot_rows
+
+        fetched = "2026-08-27T04:00:00Z"
+        parsed = parse_hot_rows(
+            [
+                {
+                    "word": "宇树科技股价跌破600元",
+                    "category": "财经",
+                    "num": 300000,
+                    "realpos": 34,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "陈星旭虞书欣登上稻草熊财报",
+                    "category": "艺人",
+                    "num": 272000,
+                    "realpos": 48,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "苹果发布会定档",
+                    "category": "数码",
+                    "num": 299000,
+                    "realpos": 32,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "何炅自曝断交",
+                    "category": "艺人",
+                    "num": 400000,
+                    "realpos": 12,
+                    "onboard_time": 1787800000,
+                },
+            ],
+            fetched_at=fetched,
+        )
+        now = datetime(2026, 8, 27, 4, 0, tzinfo=timezone.utc)
+        kept = merge_hot_items(
+            parsed,
+            ["存储"],
+            ["苹果发布会定档", "陈星旭虞书欣登上稻草熊财报"],
+            max_age_hours=24,
+            limit=16,
+            now=now,
+        )
+        words = [item.word for item in kept]
+        self.assertIn("宇树科技股价跌破600元", words)
+        self.assertIn("苹果发布会定档", words)
+        self.assertNotIn("陈星旭虞书欣登上稻草熊财报", words)
+        self.assertNotIn("何炅自曝断交", words)
+        apple = next(item for item in kept if "苹果" in item.word)
+        self.assertEqual(apple.match, "llm")
+
+    def test_heuristic_clusters_group_news_by_sector(self) -> None:
+        from src.aggregate import heuristic_clusters
+        from src.models import HotSearchItem, NewsItem
+        from src.planner import heuristic_plan
+
+        plan = heuristic_plan("医药相关", 36)
+        news = [
+            NewsItem(title="恒瑞医药创新药获批", source="新华社", snippet="创新药"),
+            NewsItem(title="迈瑞医疗出口订单", source="中新网", snippet="器械"),
+        ]
+        hot = [HotSearchItem(word="创新药获批讨论升温", category="财经", match="finance")]
+        clusters = heuristic_clusters("医药相关", plan, news, hot)
+        self.assertTrue(clusters)
+        blob = " ".join(row.name + " " + " ".join(row.newsTitles) for row in clusters)
+        self.assertTrue("恒瑞" in blob or "创新药" in blob or "医药" in blob)
 
     def test_heuristic_keeps_hot_search_out_of_news_limitations(self) -> None:
         from src.models import HotSearchItem

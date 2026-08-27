@@ -330,10 +330,10 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
     }[kind]
     prompt = (
         "你是市场研究规划器。根据用户侧重点，输出 JSON 对象，不要 markdown。"
-        "字段: sectors(字符串数组,2-6个),"
-        "keywords(中英检索词,8-16个),"
-        "newsQueries(5-7条搜索词，要能搜到当天中文财经新闻，覆盖官方/政策、量能、北向或外资、市场情绪，并包含专栏/复盘/博客类公开文章),"
-        "tickers(8-18个股票代码, A股用 sh/sz 前缀如 sh600276, 美股用 Yahoo 代码),"
+        "字段: sectors(字符串数组,3-6个),"
+        "keywords(中英检索词,10-20个),"
+        "newsQueries(6-8条搜索词，要能搜到当天中文财经新闻，覆盖官方/政策、量能、北向或外资、市场情绪，并包含专栏/复盘/博客类公开文章),"
+        "tickers(10-20个股票代码, A股用 sh/sz 前缀如 sh600276, 美股用 Yahoo 代码),"
         "etfs(相关 ETF 代码, A股用 sh/sz 前缀)。"
         f"侧重点类型: {kind_label}。"
         "若是单一股票名称或代码: tickers 第一项必须是该股, sectors 写其行业, "

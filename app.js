@@ -131,6 +131,7 @@ function matchLabel(value) {
   if (value === "finance") return "财经";
   if (value === "market") return "市场词";
   if (value === "focus") return "侧重点";
+  if (value === "llm") return "模型挑选";
   return value || "";
 }
 
@@ -169,9 +170,43 @@ function renderHotSearch(report) {
   section.hidden = false;
   section.innerHTML = `
     <p class="section-kicker">微博财经热搜</p>
-    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。只保留财经分类、市场关键词或与侧重点重合的条目；过旧上榜时间会被丢掉。</p>
+    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。财经分类自动保留；其余由模型从总榜里挑市场相关条目，丢掉过旧上榜时间和娱乐话题。</p>
     ${rows}
   `;
+}
+
+function renderAggregates(report) {
+  const section = $("aggregates");
+  if (!section) return;
+  const rows = report.aggregates || [];
+  if (!rows.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+  section.hidden = false;
+  section.innerHTML = `
+    <p class="section-kicker">模型聚合议题</p>
+    <p class="hint">规划/综合之前先把新闻和热搜归成议题，综合模型按这个骨架写前瞻，而不是只扫标题。</p>
+    <div class="aggregate-grid">
+      ${rows
+        .map((row) => {
+          const news = (row.newsTitles || []).slice(0, 4).join("；") || "—";
+          const hot = (row.hotWords || []).join("、");
+          return `<article class="aggregate-card">
+            <h3>${row.name || "议题"}</h3>
+            <p>${row.summary || ""}</p>
+            <p class="hint">报道：${news}</p>
+            ${hot ? `<p class="hint">热搜：${hot}</p>` : ""}
+          </article>`;
+        })
+        .join("")}
+    </div>`;
+}
+  if (!pulse) return false;
+  return Boolean(
+    pulse.volume?.series?.length || pulse.northbound?.series?.length || pulse.sentiment?.series?.length
+  );
 }
 
 function pulseHasData(pulse) {
@@ -266,7 +301,7 @@ function renderReport(report) {
     <div>侧重点：<strong>${report.focus || "泛市场"}</strong></div>
     <div>生成时间：${formatBeijing(report.generatedAt)}</div>
     <div>回看窗口：${windowFrom} — ${windowTo}</div>
-    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博热搜 ${report.dataCoverage?.weibo ? "是" : "否"} · X ${report.dataCoverage?.x ? "是" : "否"}</div>
+    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博热搜 ${report.dataCoverage?.weibo ? `是（${(report.hotSearch || []).length}）` : "否"} · X ${report.dataCoverage?.x ? "是" : "否"}</div>
     <div>模型：${report.stats?.plannerModel || "—"} → ${report.stats?.model || "—"}</div>
   `;
 
@@ -282,6 +317,7 @@ function renderReport(report) {
 
   renderPulse(report.marketPulse);
   renderHotSearch(report);
+  renderAggregates(report);
 
   const label = aiLabel(report);
   $("ai-summary").hidden = false;

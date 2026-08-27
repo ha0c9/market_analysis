@@ -11,3 +11,6 @@ google_news_workers: 2
 news_retries: 3
 report_history: 30
 series_days: 15
+weibo_hot_max: 16
+# Hot search is a live snapshot; drop topics that boarded earlier than this.
+weibo_max_age_hours: 18

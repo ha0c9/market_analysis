@@ -10,6 +10,7 @@ from src.ingest.cls import fetch_cls_telegraph
 from src.ingest.flows import fetch_northbound
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
+from src.ingest.weibo import fetch_weibo_finance_hot
 from src.planner import plan_analysis
 from src.pulse import build_market_pulse
 from src.settings import load_yaml, write_json
@@ -26,9 +27,14 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     rss_items, rss_errors = fetch_configured_rss(per_source)
     cls_items, cls_errors = fetch_cls_telegraph(per_source)
     gnews_items, gnews_errors = fetch_google_news(plan.newsQueries, per_source)
+    hot_items, weibo_errors, weibo_ok = fetch_weibo_finance_hot(
+        plan.keywords, plan.lookbackHours
+    )
     print(
         f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
-        f"rss_err={len(rss_errors)} cls_err={len(cls_errors)} gnews_err={len(gnews_errors)}",
+        f"weibo={len(hot_items)} ok={int(weibo_ok)} "
+        f"rss_err={len(rss_errors)} cls_err={len(cls_errors)} "
+        f"gnews_err={len(gnews_errors)} weibo_err={len(weibo_errors)}",
         flush=True,
     )
     news = distill_news(rss_items + cls_items + gnews_items, plan.keywords, plan.lookbackHours)
@@ -42,7 +48,14 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     ]
     quotes, quote_errors = fetch_quotes(quote_symbols)
     northbound, flow_errors = fetch_northbound()
-    fetch_errors = [*rss_errors, *cls_errors, *gnews_errors, *quote_errors, *flow_errors]
+    fetch_errors = [
+        *rss_errors,
+        *cls_errors,
+        *gnews_errors,
+        *weibo_errors,
+        *quote_errors,
+        *flow_errors,
+    ]
     pulse = build_market_pulse(news, quotes, northbound)
     coverage = {
         "news": bool(news),
@@ -50,7 +63,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         "northbound": bool(northbound),
         "filings": False,
         "x": False,
-        "weibo": False,
+        "weibo": weibo_ok,
     }
     report, model = synthesize_report(
         focus=focus,
@@ -60,6 +73,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         coverage=coverage,
         errors=[*warnings, *fetch_errors],
         market_pulse=pulse,
+        hot_search=hot_items,
     )
     if fetch_errors:
         report.limitations.append(f"部分源失败: {len(fetch_errors)}")
@@ -68,6 +82,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
             report.limitations.append(warning)
     report.stats["plannerModel"] = planner_model
     report.stats["model"] = model
+    report.stats["weibo"] = len(hot_items)
     report.marketSnapshot = snapshot_from_rows(
         quotes,
         report.marketSnapshot.get("source") or "tencent+yahoo",

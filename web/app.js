@@ -120,11 +120,58 @@ function formatYi(value) {
   return `${Number(value).toFixed(1)} 亿`;
 }
 
-function pulseHasData(pulse) {
-  if (!pulse) return false;
-  return Boolean(
-    pulse.volume?.series?.length || pulse.northbound?.series?.length || pulse.sentiment?.series?.length
-  );
+function formatHeat(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "";
+  const num = Number(value);
+  if (num >= 10000) return `${(num / 10000).toFixed(1)} 万`;
+  return String(Math.round(num));
+}
+
+function matchLabel(value) {
+  if (value === "finance") return "财经";
+  if (value === "market") return "市场词";
+  if (value === "focus") return "侧重点";
+  return value || "";
+}
+
+function renderHotSearch(report) {
+  const section = $("hotsearch");
+  if (!section) return;
+  const items = report.hotSearch || [];
+  const weibo = Boolean(report.dataCoverage?.weibo);
+  if (!weibo && !items.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+  const fetched = items[0]?.fetchedAt || report.generatedAt;
+  const rows = items.length
+    ? `<ol class="hot-list">${items
+        .map((item) => {
+          const word = item.word || "";
+          const link = item.url
+            ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${word}</a>`
+            : word;
+          const meta = [
+            item.rank ? `#${item.rank}` : "",
+            item.category || "",
+            matchLabel(item.match),
+            item.label || "",
+            formatHeat(item.heat),
+            item.onboardAt ? `上榜 ${formatBeijing(item.onboardAt)}` : "上榜时间未知",
+          ]
+            .filter(Boolean)
+            .join(" · ");
+          return `<li><div class="hot-word">${link}</div><div class="hint">${meta}</div></li>`;
+        })
+        .join("")}</ol>`
+    : `<p class="hint">当前热搜无财经/市场相关条目。总榜已拉取，但不把娱乐话题灌进分析。</p>`;
+  section.hidden = false;
+  section.innerHTML = `
+    <p class="section-kicker">微博财经热搜</p>
+    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。只保留财经分类、市场关键词或与侧重点重合的条目；过旧上榜时间会被丢掉。</p>
+    ${rows}
+  `;
 }
 
 function renderPulseLane(title, trend, note, values, color, extra) {
@@ -212,7 +259,7 @@ function renderReport(report) {
     <div>侧重点：<strong>${report.focus || "泛市场"}</strong></div>
     <div>生成时间：${formatBeijing(report.generatedAt)}</div>
     <div>回看窗口：${windowFrom} — ${windowTo}</div>
-    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博/X ${report.dataCoverage?.weibo || report.dataCoverage?.x ? "是" : "否"}</div>
+    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博热搜 ${report.dataCoverage?.weibo ? "是" : "否"} · X ${report.dataCoverage?.x ? "是" : "否"}</div>
     <div>模型：${report.stats?.plannerModel || "—"} → ${report.stats?.model || "—"}</div>
   `;
 
@@ -227,6 +274,7 @@ function renderReport(report) {
     renderQuotes("相关标的（随侧重点）", snap.tickers);
 
   renderPulse(report.marketPulse);
+  renderHotSearch(report);
 
   const label = aiLabel(report);
   $("ai-summary").hidden = false;

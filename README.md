@@ -23,7 +23,7 @@
 
 Secret 名是 **`AI_MODEL_*`（字母 I）**，不是 `AL_MODEL_*`。值只填模型 ID，不要填 URL 或 Key。建议放在 **Variables** 而不是 Secrets，方便 Actions 日志对照。若控制台显示的不是文档里的示例名，以控制台为准整段复制。
 
-你输入「存储相关」后，规划器用 Secret 里的模型（第一版默认 DeepSeek V4 Flash）生成关键词和代码，再拉 **Google 新闻 RSS**、BBC/CNBC/中新网等公开源，以及腾讯/Yahoo 行情，最后用综合模型写带出处的前瞻。调用失败时仍回退规则草稿，页面会出报告。
+你输入「存储相关」后，规划器用 Secret 里的模型（第一版默认 DeepSeek V4 Flash）生成关键词和代码，再拉 **Google 新闻 RSS**、BBC/CNBC/中新网等公开源、财联社电报、微博公开财经热搜快照，以及腾讯/Yahoo 行情，最后用综合模型写带出处的前瞻。调用失败时仍回退规则草稿，页面会出报告。微博热搜以上榜时间衡量时效；娱乐话题会被丢掉。GitHub Actions 海外 IP 若被微博拒绝，报告会标「未接入微博热搜」，不中断任务。
 
 ## 本地跑
 
@@ -47,7 +47,7 @@ python -m unittest discover -s tests -v
 - [x] 第 1 期：Pages 前端 + 示例报告
 - [x] 第 2 期：公开源 + 行情校准 + AI 管线（无 Key 时规则回退）
 - [ ] 第 3 期：Pages 一键触发（不跳转到 Actions）
-- [ ] 第 4 期：微博 / X 官方 API 插件
+- [ ] 第 4 期：微博 / X 官方 API 插件（公开热搜快照已接入；博主时间线仍需 token）
 - [ ] 第 5 期：质量与成本打磨
 
 计划全文：[docs/feasibility-and-plan.md](docs/feasibility-and-plan.md)

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-26T23:26:29Z",
-  "focus": "市场前瞻",
+  "generatedAt": "2026-08-27T03:39:22Z",
+  "focus": "热点追踪",
   "timeWindow": {
-    "from": "2026-08-26T08:32:59Z",
-    "to": "2026-08-26T23:26:29Z"
+    "from": "2026-08-27T01:32:46Z",
+    "to": "2026-08-27T03:39:22Z"
   },
   "dataCoverage": {
     "news": true,
@@ -11,36 +11,24 @@
     "northbound": true,
     "filings": false,
     "x": false,
-    "weibo": false
+    "weibo": true
   },
   "marketSnapshot": {
-    "asOf": "2026-08-26T08:14:02Z",
+    "asOf": "2026-08-27T03:39:00Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
       {
         "symbol": "sh000001",
         "name": "上证指数",
-        "price": 3912.52,
-        "changePct": 0.59,
-        "changePct5d": -2.5275990965649475,
-        "volume": 489553021.0,
-        "turnover": 85722349.0,
-        "volumeVsAvg": 0.877,
-        "asOf": "2026-08-26T08:14:02Z",
+        "price": 3935.99,
+        "changePct": 0.6,
+        "changePct5d": 0.863315192630032,
+        "volume": 332424249.0,
+        "turnover": 64919117.0,
+        "volumeVsAvg": 0.951,
+        "asOf": "2026-08-27T03:39:00Z",
         "series": [
-          {
-            "date": "2026-08-05",
-            "close": 3878.4299,
-            "volume": 592200.0,
-            "changePct": 1.469
-          },
-          {
-            "date": "2026-08-06",
-            "close": 3900.3521,
-            "volume": 588600.0,
-            "changePct": 0.565
-          },
           {
             "date": "2026-08-07",
             "close": 3940.0371,
@@ -118,24 +106,36 @@
             "close": 3889.4451,
             "volume": 464100.0,
             "changePct": 0.192
+          },
+          {
+            "date": "2026-08-26",
+            "close": 3912.5229,
+            "volume": 489600.0,
+            "changePct": 0.593
+          },
+          {
+            "date": "2026-08-27",
+            "close": 3937.4224,
+            "volume": null,
+            "changePct": 0.636
           }
         ]
       },
       {
         "symbol": "sh000300",
         "name": "沪深300",
-        "price": 4590.79,
-        "changePct": 0.85,
+        "price": 4613.71,
+        "changePct": 0.5,
         "changePct5d": null,
-        "volume": 184578169.0,
-        "turnover": 48905728.0,
+        "volume": 125253067.0,
+        "turnover": 36621067.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T08:14:14Z",
+        "asOf": "2026-08-27T03:39:00Z",
         "series": [
           {
-            "date": "2026-08-26",
-            "close": 4590.7935,
-            "volume": 1277947716.0,
+            "date": "2026-08-27",
+            "close": 4615.1489,
+            "volume": 3609098808.0,
             "changePct": null
           }
         ]
@@ -143,18 +143,18 @@
       {
         "symbol": "sz399006",
         "name": "创业板指",
-        "price": 3414.88,
-        "changePct": 0.51,
+        "price": 3466.4,
+        "changePct": 1.51,
         "changePct5d": null,
-        "volume": 164782656.0,
-        "turnover": 44358063.0,
+        "volume": 113272075.0,
+        "turnover": 34133958.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-26T08:14:42Z",
+        "asOf": "2026-08-27T03:38:33Z",
         "series": [
           {
-            "date": "2026-08-26",
-            "close": 3414.8833,
-            "volume": 2641663315.0,
+            "date": "2026-08-27",
+            "close": 3462.4888,
+            "volume": 1909186156.0,
             "changePct": null
           }
         ]
@@ -162,26 +162,14 @@
       {
         "symbol": "^HSI",
         "name": "恒生指数",
-        "price": 25652.97,
-        "changePct": 0.5561124090976755,
-        "changePct5d": 0.1568410461928016,
-        "volume": 2916100000.0,
+        "price": 25530.11,
+        "changePct": -0.47893362740258905,
+        "changePct5d": -0.6552169323541412,
+        "volume": 0.0,
         "turnover": null,
-        "volumeVsAvg": 1.015,
-        "asOf": "2026-08-26T08:08:24Z",
+        "volumeVsAvg": 1.045,
+        "asOf": "2026-08-27T03:24:18Z",
         "series": [
-          {
-            "date": "2026-08-05",
-            "close": 25915.8203,
-            "volume": 2917300000.0,
-            "changePct": 0.243
-          },
-          {
-            "date": "2026-08-06",
-            "close": 25530.2793,
-            "volume": 2855000000.0,
-            "changePct": -1.488
-          },
           {
             "date": "2026-08-07",
             "close": 25668.0293,
@@ -259,32 +247,32 @@
             "close": 25511.0996,
             "volume": 2916100000.0,
             "changePct": -0.024
+          },
+          {
+            "date": "2026-08-26",
+            "close": 25652.9707,
+            "volume": 3001700000.0,
+            "changePct": 0.556
+          },
+          {
+            "date": "2026-08-27",
+            "close": 25530.1094,
+            "volume": 0.0,
+            "changePct": -0.479
           }
         ]
       },
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 66262.16,
-        "changePct": 0.6160830680090879,
-        "changePct5d": -2.3781197694538236,
-        "volume": 131200000.0,
+        "price": 66164.19,
+        "changePct": -0.1478464564756754,
+        "changePct5d": -0.07943840715434192,
+        "volume": 0.0,
         "turnover": null,
-        "volumeVsAvg": 0.771,
-        "asOf": "2026-08-26T06:45:03Z",
+        "volumeVsAvg": 0.794,
+        "asOf": "2026-08-27T02:35:03Z",
         "series": [
-          {
-            "date": "2026-08-04",
-            "close": 63957.5312,
-            "volume": 191800000.0,
-            "changePct": 0.318
-          },
-          {
-            "date": "2026-08-05",
-            "close": 66300.4375,
-            "volume": 202400000.0,
-            "changePct": 3.663
-          },
           {
             "date": "2026-08-06",
             "close": 65683.2578,
@@ -362,32 +350,32 @@
             "close": 65856.4297,
             "volume": 131200000.0,
             "changePct": 0.501
+          },
+          {
+            "date": "2026-08-26",
+            "close": 66262.1562,
+            "volume": 129500000.0,
+            "changePct": 0.616
+          },
+          {
+            "date": "2026-08-27",
+            "close": 66164.1875,
+            "volume": 0.0,
+            "changePct": -0.148
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6808.21,
-        "changePct": 0.9709667486703655,
-        "changePct5d": -1.8499707024003609,
-        "volume": 286800.0,
+        "price": 6941.18,
+        "changePct": 1.953083700788083,
+        "changePct5d": 1.2929450899681116,
+        "volume": 170972.0,
         "turnover": null,
-        "volumeVsAvg": 0.861,
-        "asOf": "2026-08-26T09:05:40Z",
+        "volumeVsAvg": 0.517,
+        "asOf": "2026-08-27T03:19:10Z",
         "series": [
-          {
-            "date": "2026-08-04",
-            "close": 6358.9502,
-            "volume": 313000.0,
-            "changePct": 1.622
-          },
-          {
-            "date": "2026-08-05",
-            "close": 6598.2598,
-            "volume": 338500.0,
-            "changePct": 3.763
-          },
           {
             "date": "2026-08-06",
             "close": 6296.3799,
@@ -465,6 +453,18 @@
             "close": 6742.7402,
             "volume": 286800.0,
             "changePct": 0.684
+          },
+          {
+            "date": "2026-08-26",
+            "close": 6808.21,
+            "volume": 329400.0,
+            "changePct": 0.971
+          },
+          {
+            "date": "2026-08-27",
+            "close": 6941.1802,
+            "volume": 170972.0,
+            "changePct": 1.953
           }
         ]
       },
@@ -677,22 +677,222 @@
     ],
     "sectors": [
       {
-        "symbol": "sh510300",
-        "name": "沪深300ETF华泰柏瑞",
-        "price": 4.652,
-        "changePct": 0.78,
-        "changePct5d": -3.5721745855466502,
-        "volume": 8463209.0,
-        "turnover": 393583.0,
-        "volumeVsAvg": 0.85,
-        "asOf": "2026-08-26T08:14:37Z",
+        "symbol": "sh512480",
+        "name": "半导体ETF国联安",
+        "price": 1.059,
+        "changePct": 4.13,
+        "changePct5d": 1.1483334369522646,
+        "volume": 10163536.0,
+        "turnover": 105711.0,
+        "volumeVsAvg": 0.664,
+        "asOf": "2026-08-27T03:39:01Z",
         "series": [
           {
-            "date": "2026-08-05",
-            "close": 4.714,
-            "volume": 1424565836.0,
+            "date": "2026-08-06",
+            "close": 1.047,
+            "volume": 1918835300.0,
             "changePct": 1.355
           },
+          {
+            "date": "2026-08-07",
+            "close": 1.083,
+            "volume": 1650599172.0,
+            "changePct": 3.438
+          },
+          {
+            "date": "2026-08-10",
+            "close": 1.081,
+            "volume": 1499279468.0,
+            "changePct": -0.185
+          },
+          {
+            "date": "2026-08-11",
+            "close": 1.07,
+            "volume": 1294290714.0,
+            "changePct": -1.018
+          },
+          {
+            "date": "2026-08-12",
+            "close": 1.088,
+            "volume": 1149803987.0,
+            "changePct": 1.682
+          },
+          {
+            "date": "2026-08-13",
+            "close": 1.068,
+            "volume": 1457588568.0,
+            "changePct": -1.838
+          },
+          {
+            "date": "2026-08-14",
+            "close": 1.077,
+            "volume": 1116789309.0,
+            "changePct": 0.843
+          },
+          {
+            "date": "2026-08-17",
+            "close": 1.132,
+            "volume": 1637992254.0,
+            "changePct": 5.107
+          },
+          {
+            "date": "2026-08-18",
+            "close": 1.132,
+            "volume": 1344332159.0,
+            "changePct": 0.0
+          },
+          {
+            "date": "2026-08-19",
+            "close": 1.045,
+            "volume": 2140903007.0,
+            "changePct": -7.686
+          },
+          {
+            "date": "2026-08-20",
+            "close": 1.039,
+            "volume": 1428275541.0,
+            "changePct": -0.574
+          },
+          {
+            "date": "2026-08-21",
+            "close": 1.042,
+            "volume": 1058110178.0,
+            "changePct": 0.289
+          },
+          {
+            "date": "2026-08-24",
+            "close": 1.01,
+            "volume": 1504346600.0,
+            "changePct": -3.071
+          },
+          {
+            "date": "2026-08-25",
+            "close": 1.008,
+            "volume": 1376151683.0,
+            "changePct": -0.198
+          },
+          {
+            "date": "2026-08-27",
+            "close": 1.057,
+            "volume": 975619108.0,
+            "changePct": 4.861
+          }
+        ]
+      },
+      {
+        "symbol": "sh515790",
+        "name": "光伏ETF华泰柏瑞",
+        "price": 0.843,
+        "changePct": -0.94,
+        "changePct5d": -0.47337372435484193,
+        "volume": 1124191.0,
+        "turnover": 9399.0,
+        "volumeVsAvg": 0.479,
+        "asOf": "2026-08-27T03:38:51Z",
+        "series": [
+          {
+            "date": "2026-08-06",
+            "close": 0.845,
+            "volume": 213772705.0,
+            "changePct": -1.17
+          },
+          {
+            "date": "2026-08-07",
+            "close": 0.866,
+            "volume": 355147122.0,
+            "changePct": 2.485
+          },
+          {
+            "date": "2026-08-10",
+            "close": 0.862,
+            "volume": 239437409.0,
+            "changePct": -0.462
+          },
+          {
+            "date": "2026-08-11",
+            "close": 0.868,
+            "volume": 267639410.0,
+            "changePct": 0.696
+          },
+          {
+            "date": "2026-08-12",
+            "close": 0.882,
+            "volume": 250558459.0,
+            "changePct": 1.613
+          },
+          {
+            "date": "2026-08-13",
+            "close": 0.863,
+            "volume": 249036149.0,
+            "changePct": -2.154
+          },
+          {
+            "date": "2026-08-14",
+            "close": 0.865,
+            "volume": 216342593.0,
+            "changePct": 0.232
+          },
+          {
+            "date": "2026-08-17",
+            "close": 0.886,
+            "volume": 238121395.0,
+            "changePct": 2.428
+          },
+          {
+            "date": "2026-08-18",
+            "close": 0.89,
+            "volume": 320565077.0,
+            "changePct": 0.451
+          },
+          {
+            "date": "2026-08-19",
+            "close": 0.845,
+            "volume": 236405009.0,
+            "changePct": -5.056
+          },
+          {
+            "date": "2026-08-20",
+            "close": 0.849,
+            "volume": 162666730.0,
+            "changePct": 0.473
+          },
+          {
+            "date": "2026-08-21",
+            "close": 0.852,
+            "volume": 182325000.0,
+            "changePct": 0.353
+          },
+          {
+            "date": "2026-08-24",
+            "close": 0.842,
+            "volume": 179590600.0,
+            "changePct": -1.174
+          },
+          {
+            "date": "2026-08-25",
+            "close": 0.838,
+            "volume": 157465500.0,
+            "changePct": -0.475
+          },
+          {
+            "date": "2026-08-27",
+            "close": 0.841,
+            "volume": 111920400.0,
+            "changePct": 0.358
+          }
+        ]
+      },
+      {
+        "symbol": "sh510300",
+        "name": "沪深300ETF华泰柏瑞",
+        "price": 4.676,
+        "changePct": 0.52,
+        "changePct5d": 0.47271838686822054,
+        "volume": 2400288.0,
+        "turnover": 111943.0,
+        "volumeVsAvg": 0.27,
+        "asOf": "2026-08-27T03:39:10Z",
+        "series": [
           {
             "date": "2026-08-06",
             "close": 4.709,
@@ -776,546 +976,231 @@
             "close": 4.616,
             "volume": 745256800.0,
             "changePct": -0.238
+          },
+          {
+            "date": "2026-08-27",
+            "close": 4.676,
+            "volume": 223309368.0,
+            "changePct": 1.3
           }
         ]
       },
       {
-        "symbol": "sh510500",
-        "name": "中证500ETF南方",
-        "price": 7.789,
-        "changePct": 0.82,
-        "changePct5d": -5.607826071252342,
-        "volume": 4360646.0,
-        "turnover": 339549.0,
-        "volumeVsAvg": 1.097,
-        "asOf": "2026-08-26T08:14:54Z",
+        "symbol": "sh512760",
+        "name": "芯片ETF国泰",
+        "price": 1.122,
+        "changePct": 3.89,
+        "changePct5d": 1.0820635053379712,
+        "volume": 2383515.0,
+        "turnover": 26334.0,
+        "volumeVsAvg": 0.532,
+        "asOf": "2026-08-27T03:39:01Z",
         "series": [
           {
-            "date": "2026-08-05",
-            "close": 7.815,
-            "volume": 535909695.0,
-            "changePct": 2.815
-          },
-          {
             "date": "2026-08-06",
-            "close": 7.832,
-            "volume": 593953900.0,
-            "changePct": 0.218
+            "close": 1.126,
+            "volume": 475232083.0,
+            "changePct": 1.259
           },
           {
             "date": "2026-08-07",
-            "close": 7.987,
-            "volume": 370068852.0,
-            "changePct": 1.979
+            "close": 1.161,
+            "volume": 454480088.0,
+            "changePct": 3.108
           },
           {
             "date": "2026-08-10",
-            "close": 8.037,
-            "volume": 322227615.0,
-            "changePct": 0.626
+            "close": 1.155,
+            "volume": 433733500.0,
+            "changePct": -0.517
           },
           {
             "date": "2026-08-11",
-            "close": 7.989,
-            "volume": 219026093.0,
-            "changePct": -0.597
+            "close": 1.14,
+            "volume": 337651244.0,
+            "changePct": -1.299
           },
           {
             "date": "2026-08-12",
-            "close": 8.053,
-            "volume": 180872618.0,
-            "changePct": 0.801
+            "close": 1.159,
+            "volume": 369435500.0,
+            "changePct": 1.667
           },
           {
             "date": "2026-08-13",
-            "close": 7.98,
-            "volume": 350887715.0,
-            "changePct": -0.906
+            "close": 1.14,
+            "volume": 557469720.0,
+            "changePct": -1.639
           },
           {
             "date": "2026-08-14",
-            "close": 7.998,
-            "volume": 254678534.0,
-            "changePct": 0.226
+            "close": 1.146,
+            "volume": 352744000.0,
+            "changePct": 0.526
           },
           {
             "date": "2026-08-17",
-            "close": 8.197,
-            "volume": 279138129.0,
-            "changePct": 2.488
+            "close": 1.205,
+            "volume": 570770276.0,
+            "changePct": 5.148
           },
           {
             "date": "2026-08-18",
-            "close": 8.185,
-            "volume": 307256145.0,
-            "changePct": -0.146
+            "close": 1.202,
+            "volume": 420305600.0,
+            "changePct": -0.249
           },
           {
             "date": "2026-08-19",
-            "close": 7.804,
-            "volume": 483053472.0,
-            "changePct": -4.655
+            "close": 1.109,
+            "volume": 575317436.0,
+            "changePct": -7.737
           },
           {
             "date": "2026-08-20",
-            "close": 7.863,
-            "volume": 290214571.0,
-            "changePct": 0.756
+            "close": 1.099,
+            "volume": 472251700.0,
+            "changePct": -0.902
           },
           {
             "date": "2026-08-21",
-            "close": 7.866,
-            "volume": 286568779.0,
-            "changePct": 0.038
+            "close": 1.104,
+            "volume": 269283100.0,
+            "changePct": 0.455
           },
           {
             "date": "2026-08-24",
-            "close": 7.74,
-            "volume": 352454470.0,
-            "changePct": -1.602
+            "close": 1.066,
+            "volume": 411677900.0,
+            "changePct": -3.442
           },
           {
             "date": "2026-08-25",
-            "close": 7.726,
-            "volume": 378296058.0,
-            "changePct": -0.181
-          }
-        ]
-      },
-      {
-        "symbol": "sz159915",
-        "name": "创业板ETF易方达",
-        "price": 3.432,
-        "changePct": 0.38,
-        "changePct5d": -8.16546159514131,
-        "volume": 17688467.0,
-        "turnover": 608187.0,
-        "volumeVsAvg": 1.066,
-        "asOf": "2026-08-26T08:14:18Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 3.56,
-            "volume": 3023601656.0,
-            "changePct": 1.309
-          },
-          {
-            "date": "2026-08-06",
-            "close": 3.54,
-            "volume": 2067122652.0,
-            "changePct": -0.562
-          },
-          {
-            "date": "2026-08-07",
-            "close": 3.586,
-            "volume": 2123497505.0,
-            "changePct": 1.299
-          },
-          {
-            "date": "2026-08-10",
-            "close": 3.559,
-            "volume": 1658070049.0,
-            "changePct": -0.753
-          },
-          {
-            "date": "2026-08-11",
-            "close": 3.565,
-            "volume": 1496881510.0,
-            "changePct": 0.169
-          },
-          {
-            "date": "2026-08-12",
-            "close": 3.621,
-            "volume": 1317047363.0,
-            "changePct": 1.571
-          },
-          {
-            "date": "2026-08-13",
-            "close": 3.604,
-            "volume": 1586800928.0,
-            "changePct": -0.469
-          },
-          {
-            "date": "2026-08-14",
-            "close": 3.645,
-            "volume": 1299592153.0,
-            "changePct": 1.138
-          },
-          {
-            "date": "2026-08-17",
-            "close": 3.756,
-            "volume": 1413046902.0,
-            "changePct": 3.045
-          },
-          {
-            "date": "2026-08-18",
-            "close": 3.723,
-            "volume": 1163437228.0,
-            "changePct": -0.879
-          },
-          {
-            "date": "2026-08-19",
-            "close": 3.498,
-            "volume": 2981886350.0,
-            "changePct": -6.044
-          },
-          {
-            "date": "2026-08-20",
-            "close": 3.512,
-            "volume": 1564060169.0,
-            "changePct": 0.4
-          },
-          {
-            "date": "2026-08-21",
-            "close": 3.56,
-            "volume": 1639161467.0,
-            "changePct": 1.367
-          },
-          {
-            "date": "2026-08-24",
-            "close": 3.457,
-            "volume": 1932539293.0,
-            "changePct": -2.893
-          },
-          {
-            "date": "2026-08-25",
-            "close": 3.419,
-            "volume": 1923149936.0,
-            "changePct": -1.099
-          }
-        ]
-      },
-      {
-        "symbol": "sh588000",
-        "name": "科创50ETF华夏",
-        "price": 1.721,
-        "changePct": 1.65,
-        "changePct5d": -10.32839254608563,
-        "volume": 34348621.0,
-        "turnover": 588865.0,
-        "volumeVsAvg": 0.854,
-        "asOf": "2026-08-26T08:14:54Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 1.786,
-            "volume": 6453276282.0,
-            "changePct": 4.689
-          },
-          {
-            "date": "2026-08-06",
-            "close": 1.794,
-            "volume": 4270930732.0,
-            "changePct": 0.448
-          },
-          {
-            "date": "2026-08-07",
-            "close": 1.84,
-            "volume": 4252894252.0,
-            "changePct": 2.564
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.835,
-            "volume": 3436439865.0,
-            "changePct": -0.272
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.806,
-            "volume": 3208376750.0,
-            "changePct": -1.58
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.833,
-            "volume": 2889907564.0,
-            "changePct": 1.495
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.812,
-            "volume": 4028722435.0,
-            "changePct": -1.146
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.814,
-            "volume": 3149919090.0,
-            "changePct": 0.11
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.888,
-            "volume": 4226933706.0,
-            "changePct": 4.079
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.888,
-            "volume": 3229718892.0,
+            "close": 1.066,
+            "volume": 299372130.0,
             "changePct": 0.0
           },
           {
-            "date": "2026-08-19",
-            "close": 1.761,
-            "volume": 6077857362.0,
-            "changePct": -6.727
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.744,
-            "volume": 3706860285.0,
-            "changePct": -0.965
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.745,
-            "volume": 2662479916.0,
-            "changePct": 0.057
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.691,
-            "volume": 4105077386.0,
-            "changePct": -3.095
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.693,
-            "volume": 3396323602.0,
-            "changePct": 0.118
-          }
-        ]
-      },
-      {
-        "symbol": "sh510050",
-        "name": "上证50ETF华夏",
-        "price": 3.013,
-        "changePct": 1.04,
-        "changePct5d": -2.1332399168578764,
-        "volume": 9003145.0,
-        "turnover": 271024.0,
-        "volumeVsAvg": 0.777,
-        "asOf": "2026-08-26T08:14:57Z",
-        "series": [
-          {
-            "date": "2026-08-05",
-            "close": 3.029,
-            "volume": 850326335.0,
-            "changePct": 1.542
-          },
-          {
-            "date": "2026-08-06",
-            "close": 3.029,
-            "volume": 498073193.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-07",
-            "close": 3.066,
-            "volume": 513471237.0,
-            "changePct": 1.222
-          },
-          {
-            "date": "2026-08-10",
-            "close": 3.075,
-            "volume": 321180800.0,
-            "changePct": 0.294
-          },
-          {
-            "date": "2026-08-11",
-            "close": 3.039,
-            "volume": 377904400.0,
-            "changePct": -1.171
-          },
-          {
-            "date": "2026-08-12",
-            "close": 3.043,
-            "volume": 349874214.0,
-            "changePct": 0.132
-          },
-          {
-            "date": "2026-08-13",
-            "close": 3.037,
-            "volume": 417304523.0,
-            "changePct": -0.197
-          },
-          {
-            "date": "2026-08-14",
-            "close": 3.021,
-            "volume": 369216000.0,
-            "changePct": -0.527
-          },
-          {
-            "date": "2026-08-17",
-            "close": 3.052,
-            "volume": 431570757.0,
-            "changePct": 1.026
-          },
-          {
-            "date": "2026-08-18",
-            "close": 3.047,
-            "volume": 451490187.0,
-            "changePct": -0.164
-          },
-          {
-            "date": "2026-08-19",
-            "close": 2.999,
-            "volume": 597793905.0,
-            "changePct": -1.575
-          },
-          {
-            "date": "2026-08-20",
-            "close": 2.988,
-            "volume": 677712019.0,
-            "changePct": -0.367
-          },
-          {
-            "date": "2026-08-21",
-            "close": 2.993,
-            "volume": 423480400.0,
-            "changePct": 0.167
-          },
-          {
-            "date": "2026-08-24",
-            "close": 2.979,
-            "volume": 694511000.0,
-            "changePct": -0.468
-          },
-          {
-            "date": "2026-08-25",
-            "close": 2.982,
-            "volume": 386939665.0,
-            "changePct": 0.101
+            "date": "2026-08-27",
+            "close": 1.121,
+            "volume": 227975939.0,
+            "changePct": 5.159
           }
         ]
       }
     ],
     "tickers": [
       {
-        "symbol": "sh000001",
-        "name": "上证指数",
-        "price": 3912.52,
-        "changePct": 0.59,
-        "changePct5d": -2.5275990965649475,
-        "volume": 489553021.0,
-        "turnover": 85722349.0,
-        "volumeVsAvg": 0.877,
-        "asOf": "2026-08-26T08:14:02Z",
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 126.43,
+        "changePct": 1.84,
+        "changePct5d": 0.5498027421563689,
+        "volume": 20940255.0,
+        "turnover": 261825.0,
+        "volumeVsAvg": 0.396,
+        "asOf": "2026-08-27T03:39:07Z",
         "series": [
           {
-            "date": "2026-08-05",
-            "close": 3878.4299,
-            "volume": 592200.0,
-            "changePct": 1.469
-          },
-          {
-            "date": "2026-08-06",
-            "close": 3900.3521,
-            "volume": 588600.0,
-            "changePct": 0.565
-          },
-          {
             "date": "2026-08-07",
-            "close": 3940.0371,
-            "volume": 565000.0,
-            "changePct": 1.017
+            "close": 128.5,
+            "volume": 60190846.0,
+            "changePct": 3.504
           },
           {
             "date": "2026-08-10",
-            "close": 3966.594,
-            "volume": 542100.0,
-            "changePct": 0.674
+            "close": 126.25,
+            "volume": 42765367.0,
+            "changePct": -1.751
           },
           {
             "date": "2026-08-11",
-            "close": 3934.093,
-            "volume": 529500.0,
-            "changePct": -0.819
+            "close": 125.41,
+            "volume": 37175996.0,
+            "changePct": -0.665
           },
           {
             "date": "2026-08-12",
-            "close": 3946.675,
-            "volume": 503300.0,
-            "changePct": 0.32
+            "close": 127.96,
+            "volume": 43837992.0,
+            "changePct": 2.033
           },
           {
             "date": "2026-08-13",
-            "close": 3926.9651,
-            "volume": 572800.0,
-            "changePct": -0.499
+            "close": 129.44,
+            "volume": 66629356.0,
+            "changePct": 1.157
           },
           {
             "date": "2026-08-14",
-            "close": 3927.177,
-            "volume": 499500.0,
-            "changePct": 0.005
+            "close": 132.87,
+            "volume": 77449709.0,
+            "changePct": 2.65
           },
           {
             "date": "2026-08-17",
-            "close": 3982.6541,
-            "volume": 489800.0,
-            "changePct": 1.413
+            "close": 136.76,
+            "volume": 68011300.0,
+            "changePct": 2.928
           },
           {
             "date": "2026-08-18",
-            "close": 3990.304,
-            "volume": 511200.0,
-            "changePct": 0.192
+            "close": 134.98,
+            "volume": 57424091.0,
+            "changePct": -1.302
           },
           {
             "date": "2026-08-19",
-            "close": 3894.4221,
-            "volume": 572200.0,
-            "changePct": -2.403
+            "close": 128.01,
+            "volume": 66595440.0,
+            "changePct": -5.164
           },
           {
             "date": "2026-08-20",
-            "close": 3903.7209,
-            "volume": 506600.0,
-            "changePct": 0.239
+            "close": 125.5,
+            "volume": 40127002.0,
+            "changePct": -1.961
           },
           {
             "date": "2026-08-21",
-            "close": 3905.2029,
-            "volume": 446900.0,
-            "changePct": 0.038
+            "close": 124.8,
+            "volume": 30566366.0,
+            "changePct": -0.558
           },
           {
             "date": "2026-08-24",
-            "close": 3882.0081,
-            "volume": 486900.0,
-            "changePct": -0.594
+            "close": 120.58,
+            "volume": 47671749.0,
+            "changePct": -3.381
           },
           {
             "date": "2026-08-25",
-            "close": 3889.4451,
-            "volume": 464100.0,
-            "changePct": 0.192
+            "close": 120.0,
+            "volume": 31064342.0,
+            "changePct": -0.481
+          },
+          {
+            "date": "2026-08-26",
+            "close": 124.15,
+            "volume": 40108093.0,
+            "changePct": 3.458
+          },
+          {
+            "date": "2026-08-27",
+            "close": 126.19,
+            "volume": 20053905.0,
+            "changePct": 1.643
           }
         ]
       }
     ]
   },
   "marketPulse": {
-    "asOf": "2026-08-25",
+    "asOf": "2026-08-27",
     "volume": {
       "symbol": "sh000001",
       "name": "上证指数",
       "series": [
-        {
-          "date": "2026-08-05",
-          "close": 3878.4299,
-          "volume": 592200.0,
-          "changePct": 1.469
-        },
-        {
-          "date": "2026-08-06",
-          "close": 3900.3521,
-          "volume": 588600.0,
-          "changePct": 0.565
-        },
         {
           "date": "2026-08-07",
           "close": 3940.0371,
@@ -1393,11 +1278,23 @@
           "close": 3889.4451,
           "volume": 464100.0,
           "changePct": 0.192
+        },
+        {
+          "date": "2026-08-26",
+          "close": 3912.5229,
+          "volume": 489600.0,
+          "changePct": 0.593
+        },
+        {
+          "date": "2026-08-27",
+          "close": 3937.4224,
+          "volume": null,
+          "changePct": 0.636
         }
       ],
-      "latestVolumeVsAvg": 0.877,
-      "trend": "contracting",
-      "note": "上证指数近段成交量低于前段，量能在收缩。 最新一日成交约为前段均值的 0.88 倍。"
+      "latestVolumeVsAvg": 0.951,
+      "trend": "stable",
+      "note": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。"
     },
     "northbound": {
       "series": [
@@ -1560,147 +1457,212 @@
     "sentiment": {
       "series": [
         {
-          "date": "2026-08-26",
-          "score": 3.9,
-          "count": 3,
-          "officialCount": 0
-        },
-        {
           "date": "2026-08-27",
-          "score": 9.0,
-          "count": 3,
-          "officialCount": 0
+          "score": 16.0,
+          "count": 6,
+          "officialCount": 2
         }
       ],
       "trend": "unknown",
       "sourceMix": {
-        "major_media": 3,
-        "official": 21,
-        "google_news": 3
+        "major_media": 4,
+        "official": 23
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
     },
     "notes": [
-      "上证指数近段成交量低于前段，量能在收缩。 最新一日成交约为前段均值的 0.88 倍。",
+      "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。",
       "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。",
       "可分日的新闻偏少，情绪趋势只能作参考。"
     ],
-    "summary": "上证指数近段成交量低于前段，量能在收缩。 最新一日成交约为前段均值的 0.88 倍。 北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。 可分日的新闻偏少，情绪趋势只能作参考。"
+    "summary": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。 北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。 可分日的新闻偏少，情绪趋势只能作参考。"
   },
+  "hotSearch": [
+    {
+      "rank": 45,
+      "word": "金价大涨终于熬出头",
+      "category": "财经",
+      "heat": 187659,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E9%87%91%E4%BB%B7%E5%A4%A7%E6%B6%A8%E7%BB%88%E4%BA%8E%E7%86%AC%E5%87%BA%E5%A4%B4%23&Refer=top",
+      "onboardAt": "2026-08-26T16:57:18Z",
+      "fetchedAt": "2026-08-27T03:39:18Z",
+      "match": "finance"
+    }
+  ],
   "sectorOutlook": [
     {
-      "sector": "市场前瞻",
+      "sector": "半导体",
       "heat": 1,
-      "heatScore": 0.85,
+      "heatScore": 0.9,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "隔夜英伟达给出2028财年乐观展望，盘后涨超4%，提振全球科技股情绪，纳指期货高开近1%。A股今日有望受此带动，科技成长板块或领涨。上证指数昨日收涨0.59%，量能较前段均值收缩至0.88倍，显示市场观望情绪仍存，但北向成交额平稳，外资活跃度未明显下降。价格已部分反应利好，但量能未配合，需警惕冲高回落风险。",
+      "narrative": "半导体板块今日强势领涨，科创50指数半日涨超3%，半导体ETF（sh512480）涨4.13%，芯片ETF（sh512760）涨3.89%，中芯国际（sh688981）涨1.84%。板块内CPO、HBM、PCB等细分方向涨幅居前，赛微电子20cm涨停，多只PCB概念股涨停。市场成交额放量，显示资金积极涌入。",
       "evidence": [
         {
-          "claim": "英伟达给出2028财年乐观展望，盘后涨超4%，提振全球科技股情绪",
-          "sourceTitle": "周四你需要知道的隔夜全球要闻：英伟达给出2028财年乐观展望，盘后涨超5%；苹果首款折叠屏iPhone定档9月9日；美股小幅收跌",
-          "url": "https://www.cls.cn/detail/2465591",
-          "publishedAt": "2026-08-26T22:20:20Z",
+          "claim": "科创50指数半日涨超3%，算力硬件、农业板块集体走强",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "primary"
         },
         {
-          "claim": "英伟达强劲业绩展望提振纳指期货高开近1%，存储、光通信等板块盘后普涨",
-          "sourceTitle": "英伟达强劲业绩展望提振纳指期货高开近1% 存储、光通信等板块盘后普涨",
-          "url": "https://www.cls.cn/detail/2465592",
-          "publishedAt": "2026-08-26T22:01:59Z",
+          "claim": "CPO、HBM、PCB等板块指数涨幅居前",
+          "sourceTitle": "算力硬件走高 创业板指涨逾1%",
+          "url": "https://www.cls.cn/detail/2465825",
+          "publishedAt": "2026-08-27T02:42:22Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "PCB概念涨势扩大，金安国纪等近十股涨停",
+          "sourceTitle": "PCB概念涨势扩大 金安国纪等近十股涨停",
+          "url": "https://www.cls.cn/detail/2465823",
+          "publishedAt": "2026-08-27T02:38:22Z",
           "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "上证指数近段成交量低于前段，量能在收缩，最新一日成交约为前段均值的0.88倍",
-          "sourceTitle": "marketPulse 量能数据",
-          "url": "",
-          "publishedAt": "2026-08-25",
+          "claim": "半导体ETF成交量较平均偏低（volumeVsAvg=0.664），需关注后续量能持续性",
+          "sourceTitle": "半导体ETF国联安行情快照",
+          "url": "https://example.com/quotes/sh512480",
+          "publishedAt": "2026-08-27T03:39:01Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.85,
+      "invalidatedIf": "半导体板块出现明显回调，或成交额大幅萎缩，或相关个股涨停板打开"
+    },
+    {
+      "sector": "人工智能",
+      "heat": 2,
+      "heatScore": 0.8,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "人工智能相关算力硬件方向今日表现强势，CPO概念震荡拉升，赛微电子20cm涨停，光纤概念走强，法尔胜、杭电股份2连板，长飞光纤涨停。创业板指涨逾1%，市场情绪回暖，资金聚焦AI算力产业链。",
+      "evidence": [
+        {
+          "claim": "CPO概念震荡拉升，赛微电子20cm涨停",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "光纤概念走强，法尔胜、杭电股份2连板，长飞光纤涨停",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "创业板指涨逾1%，CPO、HBM、PCB等板块指数涨幅居前",
+          "sourceTitle": "算力硬件走高 创业板指涨逾1%",
+          "url": "https://www.cls.cn/detail/2465825",
+          "publishedAt": "2026-08-27T02:42:22Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "市场热点快速轮动，AI板块持续性需观察",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.8,
+      "invalidatedIf": "AI算力方向出现明显分化，或CPO、光纤等概念股涨停板打开"
+    },
+    {
+      "sector": "消费电子",
+      "heat": 3,
+      "heatScore": 0.6,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "消费电子板块受半导体和AI硬件带动，PCB概念（消费电子上游）涨势扩大，金安国纪、协和电子、嘉立创等近十股涨停，显示资金对电子产业链的偏好。但板块整体表现不如半导体和AI突出，热度相对较低。",
+      "evidence": [
+        {
+          "claim": "PCB概念涨势扩大，金安国纪等近十股涨停",
+          "sourceTitle": "PCB概念涨势扩大 金安国纪等近十股涨停",
+          "url": "https://www.cls.cn/detail/2465823",
+          "publishedAt": "2026-08-27T02:38:22Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "PCB概念盘中涨势扩大，金安国纪、宝鼎科技、协和电子、宏昌电子、嘉立创涨停",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "消费电子板块整体涨幅不如半导体和AI，热度相对较低",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.7,
-      "invalidatedIf": "若今日A股开盘后量能继续萎缩且科技板块未能领涨，则前瞻失效"
+      "invalidatedIf": "PCB概念股出现大面积回调，或消费电子板块整体走弱"
     },
     {
-      "sector": "宏观策略",
-      "heat": 2,
-      "heatScore": 0.6,
-      "priceAction": "mixed",
-      "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "地缘政治方面，特朗普称对伊朗复谈无时间表，但经济施压与军事选项并存，不确定性仍存。国内政策面暂无新增重大信号，市场对政策预期中性。价格尚未明显反应地缘风险，但缺乏明确政策催化，宏观策略方向不明。",
+      "sector": "新能源",
+      "heat": 4,
+      "heatScore": 0.4,
+      "priceAction": "down",
+      "calibration": "divergence",
+      "direction": "down",
+      "narrative": "新能源板块今日表现偏弱，光伏ETF（sh515790）跌0.94%，与市场整体上涨形成背离。尽管农业板块（部分新能源相关）反复走强，但光伏等核心新能源方向资金流出，显示市场对新能源板块的偏好下降。",
       "evidence": [
         {
-          "claim": "特朗普称对伊朗何时复谈无时间表，经济施压与军事打击均可能有效",
-          "sourceTitle": "特朗普称对伊朗何时复谈无时间表",
-          "url": "https://www.cls.cn/detail/2465602",
-          "publishedAt": "2026-08-26T22:58:26Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "国内政策面暂无新增重大信号，市场对政策预期中性",
-          "sourceTitle": "市场前瞻新闻中无政策面重大消息",
-          "url": "",
-          "publishedAt": "",
+          "claim": "光伏ETF华泰柏瑞跌0.94%，表现弱于大盘",
+          "sourceTitle": "光伏ETF华泰柏瑞行情快照",
+          "url": "https://example.com/quotes/sh515790",
+          "publishedAt": "2026-08-27T03:38:51Z",
           "weight": "supporting"
-        }
-      ],
-      "confidence": 0.4,
-      "invalidatedIf": "若出现重大政策变动或地缘冲突升级，则宏观策略需重新评估"
-    },
-    {
-      "sector": "A股大盘",
-      "heat": 3,
-      "heatScore": 0.5,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "上证指数昨日收涨0.59%，但量能收缩至前段均值的0.88倍，显示上涨动力不足。北向成交额近两周平稳，最新一日为2555.69亿元，外资活跃度未明显提升。价格已反应部分利好，但量能未配合，短期或维持震荡格局。",
-      "evidence": [
-        {
-          "claim": "上证指数昨日收涨0.59%，量能收缩至前段均值的0.88倍",
-          "sourceTitle": "marketPulse 量能数据",
-          "url": "",
-          "publishedAt": "2026-08-25",
-          "weight": "primary"
         },
         {
-          "claim": "北向成交额近两周大体平稳，最新一日为2555.69亿元",
-          "sourceTitle": "marketPulse 北向数据",
-          "url": "",
-          "publishedAt": "2026-08-26",
+          "claim": "农业板块反复走强，新农股份2连板，金健米业9天6板",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "上证指数近5日下跌2.53%，短期趋势偏弱",
-          "sourceTitle": "行情快照 sh000001",
-          "url": "",
-          "publishedAt": "2026-08-26T08:14:02Z",
+          "claim": "农业板块（部分新能源相关）反复走强，显示资金仍有部分关注",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.55,
-      "invalidatedIf": "若今日大盘放量下跌或北向成交额大幅萎缩，则大盘前瞻失效"
+      "confidence": 0.6,
+      "invalidatedIf": "光伏ETF出现明显反弹，或新能源板块资金流入增加"
     }
   ],
-  "crossSectorNotes": "隔夜英伟达业绩展望超预期，全球科技股情绪回暖，A股科技成长板块或受益。但国内量能收缩、北向成交额平稳，市场整体仍偏谨慎。地缘政治不确定性对宏观策略构成扰动，需关注政策面是否有新催化。",
-  "trendNotes": "量能方面，上证指数近段成交量低于前段，最新一日成交约为前段均值的0.88倍，呈收缩趋势。北向成交额近两周大体平稳，最新一日为2555.69亿元，活跃度未明显变化。新闻情绪方面，隔夜英伟达业绩展望提振市场情绪，但国内政策面消息偏少，情绪整体中性偏暖。综合来看，量能收缩与情绪回暖形成背离，需警惕市场冲高回落风险。",
+  "crossSectorNotes": "今日市场热点集中在半导体和AI算力硬件方向，PCB、CPO、光纤等细分板块表现强势，多只个股涨停。农业板块也反复走强，但新能源（光伏）表现偏弱。市场整体成交额放量，沪深两市半日成交额1.35万亿，较上个交易日放量1208亿，显示资金活跃度提升。",
+  "trendNotes": "量能方面：上证指数近两周成交量相对平稳，但今日沪深两市半日成交额1.35万亿，较上一日此时放量近600亿，预计全天成交金额超1.9万亿，显示市场放量明显。北向成交额近两周大体平稳，今日北向成交额暂无数据，但整体活跃度稳定。新闻情绪方面：今日新闻以财联社标红快讯为主，聚焦半导体、AI算力、PCB等板块，市场情绪升温。微博热搜中'金价大涨终于熬出头'（onboardAt: 2026-08-26T16:57:18Z, fetchedAt: 2026-08-27T03:39:18Z）仍在时效内，但属于黄金相关，与当前热点板块关联度较低，不作为主要催化剂。",
   "limitations": [
-    "未接入微博/X",
     "可能使用延迟公开行情",
+    "微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效",
+    "未接入 X",
     "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
   ],
   "stats": {
     "fetched": 27,
     "used": 27,
     "quotes": 13,
+    "weibo": 1,
     "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash-vision-exp"

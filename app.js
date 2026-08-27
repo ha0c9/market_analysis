@@ -203,11 +203,6 @@ function renderAggregates(report) {
         .join("")}
     </div>`;
 }
-  if (!pulse) return false;
-  return Boolean(
-    pulse.volume?.series?.length || pulse.northbound?.series?.length || pulse.sentiment?.series?.length
-  );
-}
 
 function pulseHasData(pulse) {
   if (!pulse) return false;

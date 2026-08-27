@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-27T04:02:26Z",
-  "focus": "普冉股份",
+  "generatedAt": "2026-08-27T04:05:04Z",
+  "focus": "享通光电",
   "timeWindow": {
-    "from": "2026-08-27T00:22:51Z",
-    "to": "2026-08-27T04:02:26Z"
+    "from": "2026-08-27T01:32:46Z",
+    "to": "2026-08-27T04:05:04Z"
   },
   "dataCoverage": {
     "news": true,
@@ -14,7 +14,7 @@
     "weibo": true
   },
   "marketSnapshot": {
-    "asOf": "2026-08-27T04:02:00Z",
+    "asOf": "2026-08-27T04:05:00Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
@@ -27,7 +27,7 @@
         "volume": 332424249.0,
         "turnover": 64919117.0,
         "volumeVsAvg": 0.951,
-        "asOf": "2026-08-27T04:02:00Z",
+        "asOf": "2026-08-27T04:05:00Z",
         "series": [
           {
             "date": "2026-08-07",
@@ -130,7 +130,7 @@
         "volume": 125253067.0,
         "turnover": 36621067.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-27T04:02:00Z",
+        "asOf": "2026-08-27T04:05:00Z",
         "series": [
           {
             "date": "2026-08-27",
@@ -149,7 +149,7 @@
         "volume": 113272075.0,
         "turnover": 34133958.0,
         "volumeVsAvg": null,
-        "asOf": "2026-08-27T04:01:33Z",
+        "asOf": "2026-08-27T04:04:33Z",
         "series": [
           {
             "date": "2026-08-27",
@@ -162,13 +162,13 @@
       {
         "symbol": "^HSI",
         "name": "恒生指数",
-        "price": 25534.91,
-        "changePct": -0.4602223441927511,
-        "changePct5d": -0.6365357522294834,
+        "price": 25527.88,
+        "changePct": -0.48762657772716267,
+        "changePct5d": -0.6638887088074474,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 1.045,
-        "asOf": "2026-08-27T03:47:24Z",
+        "asOf": "2026-08-27T03:50:02Z",
         "series": [
           {
             "date": "2026-08-07",
@@ -256,22 +256,22 @@
           },
           {
             "date": "2026-08-27",
-            "close": 25534.9102,
+            "close": 25527.8809,
             "volume": 0.0,
-            "changePct": -0.46
+            "changePct": -0.488
           }
         ]
       },
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 66369.13,
-        "changePct": 0.16144018856918407,
-        "changePct5d": 0.23006816270749741,
+        "price": 66414.2,
+        "changePct": 0.2294578966406613,
+        "changePct5d": 0.2981329437669711,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 0.794,
-        "asOf": "2026-08-27T03:47:20Z",
+        "asOf": "2026-08-27T03:50:00Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -359,22 +359,22 @@
           },
           {
             "date": "2026-08-27",
-            "close": 66369.1328,
+            "close": 66414.2031,
             "volume": 0.0,
-            "changePct": 0.161
+            "changePct": 0.229
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6938.14,
-        "changePct": 1.908431728868254,
-        "changePct5d": 1.2485816673179384,
-        "volume": 178229.0,
+        "price": 6929.44,
+        "changePct": 1.7806448355450755,
+        "changePct5d": 1.1216193376069272,
+        "volume": 179159.0,
         "turnover": null,
-        "volumeVsAvg": 0.539,
-        "asOf": "2026-08-27T03:42:20Z",
+        "volumeVsAvg": 0.542,
+        "asOf": "2026-08-27T03:45:00Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -462,9 +462,9 @@
           },
           {
             "date": "2026-08-27",
-            "close": 6938.1401,
-            "volume": 178229.0,
-            "changePct": 1.908
+            "close": 6929.4399,
+            "volume": 179159.0,
+            "changePct": 1.781
           }
         ]
       },
@@ -677,208 +677,208 @@
     ],
     "sectors": [
       {
-        "symbol": "sh512480",
-        "name": "半导体ETF国联安",
-        "price": 1.059,
-        "changePct": 4.13,
-        "changePct5d": 1.3397185405816359,
-        "volume": 10163536.0,
-        "turnover": 105711.0,
-        "volumeVsAvg": 0.691,
-        "asOf": "2026-08-27T04:02:01Z",
+        "symbol": "sh515880",
+        "name": "通信ETF国泰",
+        "price": 0.679,
+        "changePct": 4.78,
+        "changePct5d": 4.14110576670359,
+        "volume": 35748794.0,
+        "turnover": 239398.0,
+        "volumeVsAvg": 0.639,
+        "asOf": "2026-08-27T04:04:50Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 1.047,
-            "volume": 1918835300.0,
-            "changePct": 1.355
+            "close": 0.652,
+            "volume": 6925518369.0,
+            "changePct": 1.558
           },
           {
             "date": "2026-08-07",
-            "close": 1.083,
-            "volume": 1650599172.0,
-            "changePct": 3.438
+            "close": 0.66,
+            "volume": 6360941689.0,
+            "changePct": 1.227
           },
           {
             "date": "2026-08-10",
-            "close": 1.081,
-            "volume": 1499279468.0,
-            "changePct": -0.185
+            "close": 0.644,
+            "volume": 6118828983.0,
+            "changePct": -2.424
           },
           {
             "date": "2026-08-11",
-            "close": 1.07,
-            "volume": 1294290714.0,
-            "changePct": -1.018
+            "close": 0.646,
+            "volume": 4300574272.0,
+            "changePct": 0.311
           },
           {
             "date": "2026-08-12",
-            "close": 1.088,
-            "volume": 1149803987.0,
-            "changePct": 1.682
+            "close": 0.665,
+            "volume": 5417326402.0,
+            "changePct": 2.941
           },
           {
             "date": "2026-08-13",
-            "close": 1.068,
-            "volume": 1457588568.0,
-            "changePct": -1.838
+            "close": 0.666,
+            "volume": 5096811794.0,
+            "changePct": 0.15
           },
           {
             "date": "2026-08-14",
-            "close": 1.077,
-            "volume": 1116789309.0,
-            "changePct": 0.843
+            "close": 0.69,
+            "volume": 5177676965.0,
+            "changePct": 3.604
           },
           {
             "date": "2026-08-17",
-            "close": 1.132,
-            "volume": 1637992254.0,
-            "changePct": 5.107
+            "close": 0.719,
+            "volume": 5780300285.0,
+            "changePct": 4.203
           },
           {
             "date": "2026-08-18",
-            "close": 1.132,
-            "volume": 1344332159.0,
-            "changePct": 0.0
+            "close": 0.709,
+            "volume": 5276123301.0,
+            "changePct": -1.391
           },
           {
             "date": "2026-08-19",
-            "close": 1.045,
-            "volume": 2140903007.0,
-            "changePct": -7.686
+            "close": 0.652,
+            "volume": 7685417281.0,
+            "changePct": -8.039
           },
           {
             "date": "2026-08-20",
-            "close": 1.039,
-            "volume": 1428275541.0,
-            "changePct": -0.574
+            "close": 0.664,
+            "volume": 4867683851.0,
+            "changePct": 1.84
           },
           {
             "date": "2026-08-21",
-            "close": 1.042,
-            "volume": 1058110178.0,
-            "changePct": 0.289
+            "close": 0.677,
+            "volume": 4659216185.0,
+            "changePct": 1.958
           },
           {
             "date": "2026-08-24",
-            "close": 1.01,
-            "volume": 1504346600.0,
-            "changePct": -3.071
+            "close": 0.648,
+            "volume": 5931635001.0,
+            "changePct": -4.284
           },
           {
             "date": "2026-08-25",
-            "close": 1.008,
-            "volume": 1376151683.0,
-            "changePct": -0.198
+            "close": 0.648,
+            "volume": 4723974360.0,
+            "changePct": 0.0
           },
           {
             "date": "2026-08-27",
-            "close": 1.059,
-            "volume": 1016353608.0,
-            "changePct": 5.06
+            "close": 0.679,
+            "volume": 3574879406.0,
+            "changePct": 4.784
           }
         ]
       },
       {
-        "symbol": "sh512760",
-        "name": "芯片ETF国泰",
-        "price": 1.122,
-        "changePct": 3.89,
-        "changePct5d": 1.1722282979428345,
-        "volume": 2383515.0,
-        "turnover": 26334.0,
-        "volumeVsAvg": 0.556,
-        "asOf": "2026-08-27T04:02:01Z",
+        "symbol": "sh516010",
+        "name": "游戏ETF国泰",
+        "price": 1.062,
+        "changePct": -0.47,
+        "changePct5d": -0.2816920957417368,
+        "volume": 377435.0,
+        "turnover": 4000.0,
+        "volumeVsAvg": 0.399,
+        "asOf": "2026-08-27T04:04:46Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 1.126,
-            "volume": 475232083.0,
-            "changePct": 1.259
+            "close": 1.123,
+            "volume": 132033717.0,
+            "changePct": -2.517
           },
           {
             "date": "2026-08-07",
-            "close": 1.161,
-            "volume": 454480088.0,
-            "changePct": 3.108
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.155,
-            "volume": 433733500.0,
-            "changePct": -0.517
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.14,
-            "volume": 337651244.0,
-            "changePct": -1.299
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.159,
-            "volume": 369435500.0,
-            "changePct": 1.667
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.14,
-            "volume": 557469720.0,
-            "changePct": -1.639
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.146,
-            "volume": 352744000.0,
-            "changePct": 0.526
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.205,
-            "volume": 570770276.0,
-            "changePct": 5.148
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.202,
-            "volume": 420305600.0,
-            "changePct": -0.249
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.109,
-            "volume": 575317436.0,
-            "changePct": -7.737
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.099,
-            "volume": 472251700.0,
-            "changePct": -0.902
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.104,
-            "volume": 269283100.0,
-            "changePct": 0.455
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.066,
-            "volume": 411677900.0,
-            "changePct": -3.442
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.066,
-            "volume": 299372130.0,
+            "close": 1.123,
+            "volume": 104569000.0,
             "changePct": 0.0
           },
           {
+            "date": "2026-08-10",
+            "close": 1.145,
+            "volume": 98976627.0,
+            "changePct": 1.959
+          },
+          {
+            "date": "2026-08-11",
+            "close": 1.124,
+            "volume": 91320300.0,
+            "changePct": -1.834
+          },
+          {
+            "date": "2026-08-12",
+            "close": 1.132,
+            "volume": 74303100.0,
+            "changePct": 0.712
+          },
+          {
+            "date": "2026-08-13",
+            "close": 1.117,
+            "volume": 101519082.0,
+            "changePct": -1.325
+          },
+          {
+            "date": "2026-08-14",
+            "close": 1.139,
+            "volume": 118783464.0,
+            "changePct": 1.97
+          },
+          {
+            "date": "2026-08-17",
+            "close": 1.116,
+            "volume": 123855461.0,
+            "changePct": -2.019
+          },
+          {
+            "date": "2026-08-18",
+            "close": 1.1,
+            "volume": 120787200.0,
+            "changePct": -1.434
+          },
+          {
+            "date": "2026-08-19",
+            "close": 1.065,
+            "volume": 99801900.0,
+            "changePct": -3.182
+          },
+          {
+            "date": "2026-08-20",
+            "close": 1.072,
+            "volume": 62250100.0,
+            "changePct": 0.657
+          },
+          {
+            "date": "2026-08-21",
+            "close": 1.063,
+            "volume": 60911800.0,
+            "changePct": -0.84
+          },
+          {
+            "date": "2026-08-24",
+            "close": 1.055,
+            "volume": 68841272.0,
+            "changePct": -0.753
+          },
+          {
+            "date": "2026-08-25",
+            "close": 1.071,
+            "volume": 66295200.0,
+            "changePct": 1.517
+          },
+          {
             "date": "2026-08-27",
-            "close": 1.122,
-            "volume": 238351539.0,
-            "changePct": 5.253
+            "close": 1.062,
+            "volume": 37743500.0,
+            "changePct": -0.84
           }
         ]
       },
@@ -891,7 +891,7 @@
         "volume": 4441436.0,
         "turnover": 51371.0,
         "volumeVsAvg": 0.598,
-        "asOf": "2026-08-27T04:02:09Z",
+        "asOf": "2026-08-27T04:04:09Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -984,212 +984,109 @@
             "changePct": 5.098
           }
         ]
-      },
-      {
-        "symbol": "sh588200",
-        "name": "科创芯片ETF嘉实",
-        "price": 1.202,
-        "changePct": 4.7,
-        "changePct5d": 2.1240420718634523,
-        "volume": 19769312.0,
-        "turnover": 233153.0,
-        "volumeVsAvg": 0.638,
-        "asOf": "2026-08-27T04:02:17Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 1.18,
-            "volume": 4152134067.0,
-            "changePct": 1.201
-          },
-          {
-            "date": "2026-08-07",
-            "close": 1.217,
-            "volume": 3582515992.0,
-            "changePct": 3.136
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.216,
-            "volume": 2741577328.0,
-            "changePct": -0.082
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.196,
-            "volume": 2644530096.0,
-            "changePct": -1.645
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.218,
-            "volume": 2686828368.0,
-            "changePct": 1.839
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.204,
-            "volume": 3329583811.0,
-            "changePct": -1.149
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.212,
-            "volume": 2764802929.0,
-            "changePct": 0.664
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.275,
-            "volume": 3662244905.0,
-            "changePct": 5.198
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.275,
-            "volume": 3128078365.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.177,
-            "volume": 4228774929.0,
-            "changePct": -7.686
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.172,
-            "volume": 2698508155.0,
-            "changePct": -0.425
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.173,
-            "volume": 2258996805.0,
-            "changePct": 0.085
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.134,
-            "volume": 3016150386.0,
-            "changePct": -3.325
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.13,
-            "volume": 2511693337.0,
-            "changePct": -0.353
-          },
-          {
-            "date": "2026-08-27",
-            "close": 1.202,
-            "volume": 1976931183.0,
-            "changePct": 6.372
-          }
-        ]
       }
     ],
     "tickers": [
       {
-        "symbol": "sh688766",
-        "name": "普冉股份",
-        "price": 430.15,
-        "changePct": 8.3,
-        "changePct5d": -10.45257577363168,
-        "volume": 8450250.0,
-        "turnover": 351216.0,
-        "volumeVsAvg": 0.557,
-        "asOf": "2026-08-27T04:01:58Z",
+        "symbol": "sh600487",
+        "name": "亨通光电",
+        "price": 70.17,
+        "changePct": 8.24,
+        "changePct5d": 13.140918495690567,
+        "volume": 1967540.0,
+        "turnover": 1355435.0,
+        "volumeVsAvg": 0.857,
+        "asOf": "2026-08-27T04:04:59Z",
         "series": [
           {
             "date": "2026-08-07",
-            "close": 393.63,
-            "volume": 18298378.0,
-            "changePct": 5.024
+            "close": 59.52,
+            "volume": 281966629.0,
+            "changePct": 6.002
           },
           {
             "date": "2026-08-10",
-            "close": 374.5,
-            "volume": 17372113.0,
-            "changePct": -4.86
+            "close": 59.62,
+            "volume": 259599086.0,
+            "changePct": 0.168
           },
           {
             "date": "2026-08-11",
-            "close": 384.5,
-            "volume": 14989125.0,
-            "changePct": 2.67
+            "close": 57.62,
+            "volume": 191626365.0,
+            "changePct": -3.355
           },
           {
             "date": "2026-08-12",
-            "close": 394.6,
-            "volume": 14628427.0,
-            "changePct": 2.627
+            "close": 59.3,
+            "volume": 176170446.0,
+            "changePct": 2.916
           },
           {
             "date": "2026-08-13",
-            "close": 383.4,
-            "volume": 16108097.0,
-            "changePct": -2.838
+            "close": 57.25,
+            "volume": 216352692.0,
+            "changePct": -3.457
           },
           {
             "date": "2026-08-14",
-            "close": 411.0,
-            "volume": 14803906.0,
-            "changePct": 7.199
+            "close": 62.98,
+            "volume": 318281407.0,
+            "changePct": 10.009
           },
           {
             "date": "2026-08-17",
-            "close": 466.0,
-            "volume": 16873940.0,
-            "changePct": 13.382
+            "close": 65.06,
+            "volume": 298765151.0,
+            "changePct": 3.303
           },
           {
             "date": "2026-08-18",
-            "close": 466.81,
-            "volume": 16744370.0,
-            "changePct": 0.174
+            "close": 65.41,
+            "volume": 259648751.0,
+            "changePct": 0.538
           },
           {
             "date": "2026-08-19",
-            "close": 447.2,
-            "volume": 17370411.0,
-            "changePct": -4.201
+            "close": 58.91,
+            "volume": 230701040.0,
+            "changePct": -9.937
           },
           {
             "date": "2026-08-20",
-            "close": 480.36,
-            "volume": 17779089.0,
-            "changePct": 7.415
+            "close": 62.02,
+            "volume": 195134067.0,
+            "changePct": 5.279
           },
           {
             "date": "2026-08-21",
-            "close": 463.65,
-            "volume": 12566234.0,
-            "changePct": -3.479
+            "close": 62.18,
+            "volume": 166256614.0,
+            "changePct": 0.258
           },
           {
             "date": "2026-08-24",
-            "close": 411.0,
-            "volume": 13436999.0,
-            "changePct": -11.356
+            "close": 60.43,
+            "volume": 148191168.0,
+            "changePct": -2.814
           },
           {
             "date": "2026-08-25",
-            "close": 410.0,
-            "volume": 10707043.0,
-            "changePct": -0.243
+            "close": 64.6,
+            "volume": 260143443.0,
+            "changePct": 6.901
           },
           {
             "date": "2026-08-26",
-            "close": 397.18,
-            "volume": 10612866.0,
-            "changePct": -3.127
+            "close": 64.83,
+            "volume": 211074741.0,
+            "changePct": 0.356
           },
           {
             "date": "2026-08-27",
-            "close": 430.15,
-            "volume": 8450250.0,
-            "changePct": 8.301
+            "close": 70.17,
+            "volume": 196753975.0,
+            "changePct": 8.237
           }
         ]
       }
@@ -1458,14 +1355,14 @@
       "series": [
         {
           "date": "2026-08-27",
-          "score": 60.0,
-          "count": 14,
+          "score": 30.0,
+          "count": 10,
           "officialCount": 2
         }
       ],
       "trend": "unknown",
       "sourceMix": {
-        "major_media": 12,
+        "major_media": 8,
         "official": 23
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
@@ -1479,136 +1376,147 @@
   },
   "hotSearch": [
     {
-      "rank": 10,
+      "rank": 26,
       "word": "宇树科技股价跌破600元",
       "category": "财经",
-      "heat": 335533,
+      "heat": 305699,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%23%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%B7%E8%B7%8C%E7%A0%B4600%E5%85%83%23&Refer=top",
       "onboardAt": "2026-08-27T03:51:23Z",
-      "fetchedAt": "2026-08-27T04:02:22Z",
+      "fetchedAt": "2026-08-27T04:05:01Z",
       "match": "finance"
+    },
+    {
+      "rank": 48,
+      "word": "陈星旭虞书欣登上稻草熊财报",
+      "category": "艺人",
+      "heat": 272138,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E9%99%88%E6%98%9F%E6%97%AD%E8%99%9E%E4%B9%A6%E6%AC%A3%E7%99%BB%E4%B8%8A%E7%A8%BB%E8%8D%89%E7%86%8A%E8%B4%A2%E6%8A%A5%23&Refer=top",
+      "onboardAt": "2026-08-27T03:47:23Z",
+      "fetchedAt": "2026-08-27T04:05:01Z",
+      "match": "market"
     }
   ],
   "sectorOutlook": [
     {
-      "sector": "半导体",
+      "sector": "光通信/光纤光缆",
       "heat": 1,
       "heatScore": 0.95,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "半导体板块今日集体大涨，科创50涨超3%，存储芯片、HBM等概念股领涨，板块资金大幅流入，量能显著放大，市场情绪高涨。",
+      "narrative": "光通信板块今日强势领涨，受英伟达业绩指引超预期带动，A股光通信概念股集体走强，光纤概念多股涨停，亨通光电大涨8.24%，长飞光纤涨停，板块热度极高。",
       "evidence": [
         {
-          "claim": "科创50涨3%，存储芯片反弹，半导体板块集体拉升",
+          "claim": "光通信、光模块集体拉升，科创50涨3%",
           "sourceTitle": "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
           "url": "https://wallstreetcn.com/articles/3780403",
           "publishedAt": "2026-08-27T03:02:28Z",
           "weight": "primary"
         },
         {
-          "claim": "A股半导体板块集体大涨，前7个月中国芯片行业利润同比增长18.5倍",
-          "sourceTitle": "27日，A股半导体板块集体大涨",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685060.shtml",
-          "publishedAt": "2026-08-27T02:58:47Z",
+          "claim": "光纤概念走强，法尔胜、杭电股份2连板，长飞光纤涨停",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "primary"
         },
         {
-          "claim": "主力资金净流入电子、半导体等板块，电子板块净流入超198亿元",
-          "sourceTitle": "主力资金监控：生益科技净买入超13亿",
-          "url": "https://www.cls.cn/detail/2465843",
-          "publishedAt": "2026-08-27T02:55:27Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "半导体ETF成交量较均值偏低，量能放大但未达极端水平",
-          "sourceTitle": "半导体ETF国联安行情快照",
-          "url": "https://example.com/quote/sh512480",
-          "publishedAt": "2026-08-27T04:02:01Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.85,
-      "invalidatedIf": "半导体板块出现大幅回调或资金流出，或存储芯片涨价逻辑被证伪"
-    },
-    {
-      "sector": "存储芯片",
-      "heat": 2,
-      "heatScore": 0.8,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "存储芯片概念股集体反弹，受益于半导体板块整体走强及行业利润高增长，但个股普冉股份5日跌幅仍较大，短期反弹持续性需观察。",
-      "evidence": [
-        {
-          "claim": "存储芯片概念股集体大涨",
-          "sourceTitle": "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
-          "url": "https://wallstreetcn.com/articles/3780403",
-          "publishedAt": "2026-08-27T03:02:28Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "前7个月中国芯片行业利润同比增长18.5倍",
-          "sourceTitle": "27日，A股半导体板块集体大涨",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685060.shtml",
-          "publishedAt": "2026-08-27T02:58:47Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "普冉股份5日跌幅达10.45%，短期反弹可能面临抛压",
-          "sourceTitle": "普冉股份行情快照",
-          "url": "https://example.com/quote/sh688766",
-          "publishedAt": "2026-08-27T04:01:58Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.7,
-      "invalidatedIf": "存储芯片板块未能持续走强，或普冉股份反弹乏力"
-    },
-    {
-      "sector": "光通信/CPO",
-      "heat": 3,
-      "heatScore": 0.75,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "光通信、CPO概念股集体走强，受英伟达业绩超预期及算力硬件需求提振，板块资金流入明显，但需警惕短期涨幅过大后的回调风险。",
-      "evidence": [
-        {
-          "claim": "光通信、光模块集体拉升，CPO概念震荡拉升",
-          "sourceTitle": "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
-          "url": "https://wallstreetcn.com/articles/3780403",
-          "publishedAt": "2026-08-27T03:02:28Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "CPO、光通信概念股爆发，半导体大涨",
-          "sourceTitle": "A股午评：超3000只个股飘红，三大指数集体收涨",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685080.shtml",
-          "publishedAt": "2026-08-27T03:36:17Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "港股恒生指数下跌，光通信个股涨幅居前但市场分化",
+          "claim": "港股光通信走强，长飞光纤光缆涨逾8%",
           "sourceTitle": "港股午评：恒生指数跌0.42% 恒生科技指数涨0.19%",
           "url": "https://www.cls.cn/detail/2465920",
           "publishedAt": "2026-08-27T04:00:26Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.75,
-      "invalidatedIf": "光通信板块出现资金流出或英伟达业绩利好被消化"
+      "counterEvidence": [
+        {
+          "claim": "亨通光电成交量较均值略低（0.857），涨幅大但量能未完全放大",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-27T04:04:59Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.85,
+      "invalidatedIf": "光通信板块出现明显回调，或亨通光电成交量大幅萎缩且股价跌破5日均线"
+    },
+    {
+      "sector": "通信设备",
+      "heat": 2,
+      "heatScore": 0.8,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "通信设备板块受光通信带动走强，通信ETF国泰涨4.78%，板块内多股活跃，但整体涨幅略逊于光通信细分。",
+      "evidence": [
+        {
+          "claim": "通信设备板块上涨，通信ETF国泰涨4.78%",
+          "sourceTitle": "A股开盘：超3100只个股飘绿，沪指低开，深指、创业板指高开",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10684985.shtml",
+          "publishedAt": "2026-08-27T01:36:54Z",
+          "weight": "supporting"
+        },
+        {
+          "claim": "通信ETF国泰价格0.679，涨4.78%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-27T04:04:50Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "通信ETF成交量较均值低（0.639），量能未显著放大",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-27T04:04:50Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.7,
+      "invalidatedIf": "通信设备板块指数转跌，或通信ETF成交量持续萎缩"
+    },
+    {
+      "sector": "芯片半导体",
+      "heat": 3,
+      "heatScore": 0.75,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "芯片半导体板块反弹，受英伟达业绩指引及存储芯片反弹带动，科创50涨3%，芯片ETF华夏涨3.89%，港股半导体也集体走强。",
+      "evidence": [
+        {
+          "claim": "存储芯片反弹，芯片半导体集体反弹，科创50涨3%",
+          "sourceTitle": "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
+          "url": "https://wallstreetcn.com/articles/3780403",
+          "publishedAt": "2026-08-27T03:02:28Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "芯片ETF华夏涨3.89%",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-27T04:04:09Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "芯片ETF成交量较均值低（0.598），量能未完全配合",
+          "sourceTitle": "行情快照",
+          "url": "",
+          "publishedAt": "2026-08-27T04:04:09Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.7,
+      "invalidatedIf": "芯片板块出现明显回调，或科创50指数转跌"
     }
   ],
-  "crossSectorNotes": "半导体、存储芯片、光通信等科技板块今日集体走强，市场热点快速轮动，但电网设备、生物制品等板块调整，显示资金从防御性板块流向成长性板块。",
-  "trendNotes": "量能方面，沪深两市半日成交额1.35万亿，较上个交易日放量1208亿，全天预计超1.9万亿，显示市场活跃度显著提升；北向成交额近两周大体平稳，今日无实时净买入数据，但成交活跃度与上证指数同步；新闻情绪方面，半导体板块利好频出，行业利润高增长及英伟达业绩超预期提振市场情绪，但需注意情绪升温后可能出现的短期回调风险。微博热搜中'宇树科技股价跌破600元'（onboardAt: 2026-08-27T03:51:23Z, fetchedAt: 2026-08-27T04:02:22Z）反映部分科技股波动，但非当日核心催化剂。",
+  "crossSectorNotes": "光通信板块今日领涨，与芯片半导体形成联动，主要受英伟达业绩指引超预期催化。通信设备ETF涨幅较大但量能未完全放大，需关注后续持续性。",
+  "trendNotes": "量能方面，上证指数近两周成交量相对平稳，今日半日成交额1.35万亿较上个交易日放量1208亿，市场活跃度提升；北向成交额近两周大体平稳，今日无净买入数据（netBuyAvailable=false），不能视为外资净流入；新闻情绪方面，光通信、芯片半导体相关新闻密集出现，情绪明显升温，但微博热搜中无直接相关财经热点，仅有宇树科技股价跌破600元（onboardAt 2026-08-27T03:51:23Z，fetchedAt 2026-08-27T04:05:01Z）为财经类热搜，但非本日核心催化剂。",
   "limitations": [
     "可能使用延迟公开行情",
     "微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效",
@@ -1616,10 +1524,10 @@
     "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
   ],
   "stats": {
-    "fetched": 35,
-    "used": 35,
-    "quotes": 13,
-    "weibo": 1,
+    "fetched": 31,
+    "used": 31,
+    "quotes": 12,
+    "weibo": 2,
     "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash-vision-exp"

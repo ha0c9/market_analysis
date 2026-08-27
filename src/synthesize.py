@@ -278,6 +278,20 @@ def _compact_quote(row: QuoteRow) -> dict[str, Any]:
     return data
 
 
+def _compact_news(item: NewsItem) -> dict[str, Any]:
+    return {
+        "title": item.title,
+        "source": item.source,
+        "sourceClass": item.sourceClass,
+        "sourceWeight": item.sourceWeight,
+        "url": item.url,
+        "publishedAt": item.publishedAt,
+        "snippet": item.snippet[:280],
+        "score": item.score,
+        "highlight": item.highlight,
+    }
+
+
 def _compact_hot(item: HotSearchItem) -> dict[str, Any]:
     return {
         "rank": item.rank,

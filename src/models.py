@@ -75,12 +75,13 @@ class HotSearchItem(BaseModel):
     url: str = ""
     onboardAt: str = ""
     fetchedAt: str = ""
-    match: Literal["finance", "market", "focus", "llm", "event"] = "finance"
+    match: Literal["finance", "market", "focus", "llm", "event", "viral"] = "finance"
     cluster: str = ""
     clusterHeat: int | None = None
     clusterSize: int = 0
     kind: str = ""
     focusEvent: bool = False
+    attention: float = 0.0
 
 
 class ThemeCluster(BaseModel):

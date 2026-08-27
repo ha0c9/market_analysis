@@ -68,12 +68,21 @@ def heuristic_clusters(
                 name=label,
                 summary=(
                     f"微博上 {item.clusterSize or len(members)} 条热搜指向「{label}」，"
-                    f"累计热度 {item.clusterHeat or item.heat or 0}。"
-                    "重大社会热点需对照历史类似事件对基建、保险、物流的影响，不能只当社会新闻丢掉。"
+                    f"累计热度 {item.clusterHeat or item.heat or 0}，讨论量权重 {item.attention or 0}。"
+                    "大讨论量热点无论原分类是社会、娱乐还是财经，都可能影响风险偏好与相关产业链，必须纳入盘面分析。"
                 ),
                 newsTitles=[],
                 hotWords=members[:8],
-                heat=round(min(1.0, max(0.55, (item.clusterHeat or item.heat or 0) / 2_000_000)), 2),
+                heat=round(
+                    min(
+                        1.0,
+                        max(
+                            item.attention or 0.55,
+                            (item.clusterHeat or item.heat or 0) / 2_000_000,
+                        ),
+                    ),
+                    2,
+                ),
             ),
         )
     if not clusters and (news or hot_search):
@@ -155,6 +164,7 @@ def aggregate_themes(
                 "cluster": item.cluster,
                 "kind": item.kind,
                 "focusEvent": item.focusEvent,
+                "attention": item.attention,
                 "clusterSize": item.clusterSize,
             }
             for item in hot_search[:24]
@@ -163,8 +173,9 @@ def aggregate_themes(
             "把新闻与微博热搜聚成 4 到 8 个市场议题。只输出 JSON 对象，字段 themes 为数组。"
             "每项: name, summary(2-4句，点名时效和分歧), newsTitles(必须来自给定 news 的 title),"
             "hotWords(来自 hotSearch.word，可空), heat(0到1)。"
-            "同一 cluster 的多条热搜必须合成一个议题；focusEvent=true 的社会热点"
-            "（如重大灾害）即使不是财经栏目也要单独成题，并写清可能映射到哪些板块。"
+            "同一 cluster 的多条热搜必须合成一个议题；focusEvent=true 或 match=viral 或 attention 高的热点"
+            "无论原分类是灾害、明星还是社会新闻，都要单独成题，并写清可能映射到哪些板块。"
+            "讨论量权重（attention/heat）更高的议题优先，heat 字段要体现这个权重。"
             "官方与财联社标红优先进入 summary。热搜只作情绪辅证。"
             "不要编造标题。这不是投资建议。"
         ),

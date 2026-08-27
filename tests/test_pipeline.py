@@ -565,8 +565,12 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertIn("金价大涨终于熬出头", words)
         self.assertIn("存储芯片涨价", words)
         self.assertIn("A股成交额放大", words)
-        self.assertNotIn("某明星恋情", words)
+        self.assertIn("某明星恋情", words)
         self.assertNotIn("过期财经话题", words)
+        star = next(item for item in kept if item.word == "某明星恋情")
+        self.assertEqual(star.match, "viral")
+        self.assertTrue(star.focusEvent)
+        self.assertGreaterEqual(star.attention, 0.7)
         gold = next(item for item in kept if "金价" in item.word)
         self.assertEqual(gold.match, "finance")
         self.assertIn("s.weibo.com/weibo", gold.url)
@@ -642,7 +646,7 @@ class WeiboHotSearchTests(unittest.TestCase):
                 {
                     "word": "一个爱挤痘痘的人天塌了",
                     "category": "美妆",
-                    "num": 800000,
+                    "num": 370000,
                     "realpos": 2,
                     "onboard_time": 1787800000,
                 },
@@ -734,6 +738,60 @@ class WeiboHotSearchTests(unittest.TestCase):
         queries = event_news_queries(kept)
         self.assertTrue(queries)
         self.assertIn("西藏吉隆泥石流", queries[0])
+
+    def test_viral_celebrity_hot_search_is_focus_weighted(self) -> None:
+        from datetime import datetime, timezone
+
+        from src.ingest.weibo import event_news_queries, merge_hot_items, parse_hot_rows
+        from src.opportunities import heuristic_opportunities
+
+        fetched = "2026-08-27T16:00:00Z"
+        parsed = parse_hot_rows(
+            [
+                {
+                    "word": "景甜",
+                    "category": "艺人",
+                    "num": 2100000,
+                    "realpos": 2,
+                    "onboard_time": 1787840000,
+                    "label_name": "爆",
+                },
+                {
+                    "word": "景甜工作室回应",
+                    "category": "艺人",
+                    "num": 900000,
+                    "realpos": 6,
+                    "onboard_time": 1787840000,
+                    "label_name": "沸",
+                },
+                {
+                    "word": "一个爱挤痘痘的人天塌了",
+                    "category": "美妆",
+                    "num": 370000,
+                    "realpos": 14,
+                    "onboard_time": 1787840000,
+                    "label_name": "新",
+                },
+            ],
+            fetched_at=fetched,
+        )
+        now = datetime(2026, 8, 27, 16, 0, tzinfo=timezone.utc)
+        kept = merge_hot_items(parsed, [], [], max_age_hours=24, limit=16, now=now)
+        words = [item.word for item in kept]
+        self.assertIn("景甜", words)
+        self.assertIn("景甜工作室回应", words)
+        self.assertNotIn("一个爱挤痘痘的人天塌了", words)
+        jing = [item for item in kept if item.cluster == "景甜"]
+        self.assertGreaterEqual(len(jing), 2)
+        self.assertTrue(all(item.focusEvent for item in jing))
+        self.assertTrue(all(item.kind == "social" for item in jing))
+        self.assertGreaterEqual(max(item.attention for item in jing), 0.9)
+        queries = event_news_queries(kept)
+        self.assertTrue(any("景甜" in query for query in queries))
+        opps = heuristic_opportunities(kept)
+        names = {row.name for row in opps}
+        self.assertTrue({"光线传媒", "芒果超媒", "分众传媒"} & names)
+        self.assertTrue(all(row.hotspot == "景甜" for row in opps if row.name in names))
 
     def test_heuristic_clusters_group_news_by_sector(self) -> None:
         from src.aggregate import heuristic_clusters

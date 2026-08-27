@@ -133,6 +133,7 @@ function matchLabel(value) {
   if (value === "focus") return "侧重点";
   if (value === "llm") return "模型挑选";
   if (value === "event") return "社会热点";
+  if (value === "viral") return "大讨论量";
   return value || "";
 }
 
@@ -141,6 +142,7 @@ function kindLabel(value) {
   if (value === "company") return "公司";
   if (value === "product") return "产品";
   if (value === "market") return "市场";
+  if (value === "social") return "社会/娱乐";
   return "";
 }
 
@@ -155,6 +157,7 @@ function groupHotSearch(items) {
         focusEvent: Boolean(item.focusEvent),
         kind: item.kind || "",
         clusterHeat: item.clusterHeat,
+        attention: item.attention,
         items: [],
       };
       index.set(key, group);
@@ -163,6 +166,7 @@ function groupHotSearch(items) {
     const group = index.get(key);
     group.focusEvent = group.focusEvent || Boolean(item.focusEvent);
     group.clusterHeat = group.clusterHeat || item.clusterHeat;
+    group.attention = Math.max(group.attention || 0, Number(item.attention) || 0);
     group.items.push(item);
   }
   return groups;
@@ -205,6 +209,7 @@ function renderHotSearch(report) {
             kindLabel(group.kind),
             group.items.length > 1 ? `${group.items.length} 条` : "",
             formatHeat(group.clusterHeat),
+            group.attention ? `权重 ${Number(group.attention).toFixed(2)}` : "",
           ].filter(Boolean);
           const badge = group.focusEvent ? `<span class="tag focus">重点关注</span>` : "";
           const title = group.cluster || "热搜";
@@ -218,11 +223,11 @@ function renderHotSearch(report) {
           </article>`;
         })
         .join("")
-    : `<p class="hint">当前热搜无财经/市场相关条目。总榜已拉取，美妆、旅游、综艺和犯罪个案不会写进简报。</p>`;
+    : `<p class="hint">当前热搜无足够讨论量或财经相关条目。总榜已拉取；低热度美妆/旅游等生活琐事不展示，沸/爆和大讨论量热点无论类型都会分析。</p>`;
   section.hidden = false;
   section.innerHTML = `
     <p class="section-kicker">微博财经热搜</p>
-    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。财经分类自动保留；美妆/旅游/生活琐事不展示。同一社会热点（如重大灾害）会聚成一组，讨论量高则标成重点关注。</p>
+    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。财经分类自动保留。阅读量/讨论量很大（沸、爆或热度很高）的条目无论类型都标成重点关注并提高权重；低热度美妆/旅游等生活琐事不展示。同一主题多条热搜会聚成一组。</p>
     ${rows}
   `;
 }

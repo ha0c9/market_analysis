@@ -15,7 +15,7 @@ def _maps() -> list[dict[str, Any]]:
 
 
 def _cluster_blob(item: HotSearchItem) -> str:
-    return f"{item.cluster or ''} {item.word} {item.kind or ''}"
+    return f"{item.cluster or ''} {item.word} {item.kind or ''} {item.category or ''}"
 
 
 def _hotspot_label(items: list[HotSearchItem]) -> str:
@@ -224,6 +224,7 @@ def infer_opportunities(
                 "cluster": item.cluster,
                 "kind": item.kind,
                 "focusEvent": item.focusEvent,
+                "attention": item.attention,
                 "heat": item.heat,
                 "clusterHeat": item.clusterHeat,
                 "clusterSize": item.clusterSize,
@@ -234,13 +235,14 @@ def infer_opportunities(
         "newsTitles": [item.title for item in news[:40]],
         "maps": _maps(),
         "instructions": (
-            "根据微博热点（尤其 focusEvent=true 的社会热点）对照过往类似事件，推演可能被交易的 A 股线索。"
+            "根据微博热点（尤其 focusEvent=true 或 attention 高的大讨论量热点）对照过往类似事件，推演可能被交易的 A 股线索。"
             "只输出 JSON 对象，字段 opportunities 为数组，最多 8 条。"
             "每项: symbol(sh/sz+6位), name, hotspot(必须来自 hotSearch.cluster 或 word), "
             "thesis(点明由哪个热点联想到这只股票、历史类似事件怎么交易过、当前还缺什么验证), "
             "angle 短标签, confidence 0到1。"
             "优先使用 maps 里的标的；可以补充其他 A 股，但必须能说清和热点的因果，禁止美股代码。"
-            "重大灾害优先想基建/水泥/水利/保险，而不是强行套到当前 focus。"
+            "重大灾害优先想基建/水泥/水利/保险；流量明星/影视热搜优先想传媒、广告、代言相关消费。"
+            "不要因为原分类是娱乐就放弃推演。"
             "这不是投资建议，不要写买入/卖出/目标价/点位。"
         ),
     }

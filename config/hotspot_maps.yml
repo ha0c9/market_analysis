@@ -19,3 +19,9 @@ maps:
       - { symbol: sz002475, name: 立讯精密, angle: 消费电子组装 }
       - { symbol: sz300433, name: 蓝思科技, angle: 外观件与盖板 }
       - { symbol: sz002241, name: 歌尔股份, angle: 声学与精密结构 }
+  - id: traffic_media
+    match: [艺人, 明星, 影视, 综艺, 流量, 代言, 景甜]
+    tickers:
+      - { symbol: sz300251, name: 光线传媒, angle: 影视内容与宣发 }
+      - { symbol: sz300413, name: 芒果超媒, angle: 综艺与内容平台 }
+      - { symbol: sz002027, name: 分众传媒, angle: 广告与品牌曝光 }

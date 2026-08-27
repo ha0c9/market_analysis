@@ -5,7 +5,7 @@ from statistics import mean
 from typing import Any
 
 from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
-from src.models import AnalysisPlan, Evidence, HotSearchItem, NewsItem, QuoteRow, Report, SectorOutlook, ThemeCluster
+from src.models import AnalysisPlan, Evidence, HotSearchItem, NewsItem, Opportunity, QuoteRow, Report, SectorOutlook, ThemeCluster
 from src.settings import env, load_yaml
 from src.timeutil import isoformat, now_utc, parse_datetime
 
@@ -303,6 +303,11 @@ def _compact_hot(item: HotSearchItem) -> dict[str, Any]:
         "onboardAt": item.onboardAt,
         "fetchedAt": item.fetchedAt,
         "match": item.match,
+        "cluster": item.cluster,
+        "clusterHeat": item.clusterHeat,
+        "clusterSize": item.clusterSize,
+        "kind": item.kind,
+        "focusEvent": item.focusEvent,
     }
 
 
@@ -310,13 +315,22 @@ def _compact_cluster(item: ThemeCluster) -> dict[str, Any]:
     return item.model_dump()
 
 
+def _compact_opportunity(item: Opportunity) -> dict[str, Any]:
+    return item.model_dump()
+
+
 def _hot_search_note(items: list[HotSearchItem]) -> str:
     if not items:
         return ""
-    names = "、".join(row.word for row in items[:6])
+    names = "、".join(row.cluster or row.word for row in items[:6])
     fetched = items[0].fetchedAt
+    focus = [row.cluster or row.word for row in items if row.focusEvent]
+    extra = ""
+    if focus:
+        extra = f"重点关注社会热点：{'、'.join(dict.fromkeys(focus))}。"
     return (
         f"微博财经热搜快照（拉取 {fetched or '本次任务'}）：{names}。"
+        f"{extra}"
         "以上榜时间衡量时效，不能单独当证据。"
     )
 
@@ -333,6 +347,7 @@ def heuristic_report(
     market_pulse: dict[str, Any] | None = None,
     hot_search: list[HotSearchItem] | None = None,
     aggregates: list[ThemeCluster] | None = None,
+    opportunities: list[Opportunity] | None = None,
 ) -> Report:
     now = now_utc()
     outlook: list[SectorOutlook] = []
@@ -378,6 +393,7 @@ def heuristic_report(
     pulse = market_pulse or {}
     hot = list(hot_search or [])
     clusters = list(aggregates or [])
+    opps = list(opportunities or [])
     trend_notes = str(pulse.get("summary") or "")
     extra = _hot_search_note(hot)
     if extra:
@@ -385,15 +401,23 @@ def heuristic_report(
     if clusters:
         names = "、".join(row.name for row in clusters[:6])
         trend_notes = f"{trend_notes} 议题聚合：{names}。".strip()
+    if opps:
+        bits = "；".join(f"{row.name}←{row.hotspot}" for row in opps[:6] if row.name)
+        if bits:
+            trend_notes = f"{trend_notes} 热点推演关注线索：{bits}。研究推演，不是买卖建议。".strip()
     compact_cap = int(load_yaml("budgets.yml").get("compact_news") or 120)
     limitations = ["可能使用延迟公开行情"]
     if coverage.get("weibo"):
         limitations.append("微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效")
         if not hot:
             limitations.append("当前微博热搜无财经/市场相关条目")
+        if any(item.focusEvent for item in hot):
+            limitations.append("重大社会热点已按讨论量聚类，推演线索需用公告与价格核对，不能单靠热搜")
     else:
         limitations.append("未接入微博热搜")
     limitations.append("未接入 X")
+    if opps:
+        limitations.append("个股推演是研究线索，不是买卖建议，没有目标价")
     if pulse.get("northbound") and not pulse["northbound"].get("netBuyAvailable"):
         limitations.append("北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证")
     return Report(
@@ -411,6 +435,7 @@ def heuristic_report(
         marketPulse=pulse,
         hotSearch=hot,
         aggregates=clusters,
+        opportunities=opps,
         sectorOutlook=outlook,
         crossSectorNotes="规则模式仅做分组摘要；配置 AI_API_KEY 后由模型对照价格与时间线写前瞻。",
         trendNotes=trend_notes,
@@ -421,6 +446,7 @@ def heuristic_report(
             "quotes": len(quotes),
             "weibo": len(hot),
             "aggregates": len(clusters),
+            "opportunities": len(opps),
             "model": model,
             "estCostUsd": 0,
         },
@@ -439,6 +465,7 @@ def synthesize_report(
     market_pulse: dict[str, Any] | None = None,
     hot_search: list[HotSearchItem] | None = None,
     aggregates: list[ThemeCluster] | None = None,
+    opportunities: list[Opportunity] | None = None,
 ) -> tuple[Report, str]:
     fallback = heuristic_report(
         focus=focus,
@@ -451,6 +478,7 @@ def synthesize_report(
         market_pulse=market_pulse,
         hot_search=hot_search,
         aggregates=aggregates,
+        opportunities=opportunities,
     )
     if not env("AI_API_KEY"):
         fallback.limitations.append("未调用大模型")
@@ -466,6 +494,7 @@ def synthesize_report(
         "marketPulse": market_pulse or {},
         "hotSearch": [_compact_hot(item) for item in (hot_search or [])[:24]],
         "aggregates": [_compact_cluster(item) for item in (aggregates or [])],
+        "opportunities": [_compact_opportunity(item) for item in (opportunities or [])],
         "sourceWeights": {
             "official": 3.0,
             "major_media": 2.0,
@@ -490,6 +519,10 @@ def synthesize_report(
             "另需 crossSectorNotes 字符串（交叉与分歧，不要只重复单一板块），以及 trendNotes 字符串。"
             "trendNotes 必须按时间线概括：量能是放量还是缩量、北向成交额活跃度、新闻情绪升温还是降温；"
             "若有 hotSearch，点名仍在时效内、且与议题相关的条目，写 onboardAt/fetchedAt，过旧条目不要当当日催化剂。"
+            "focusEvent=true 的社会热点（如重大灾害）即使不是财经栏目也要单独讨论："
+            "对照过往类似事件市场如何交易基建/保险/物流，以及当前还缺什么验证。"
+            "若有 opportunities，可点名热点→个股的推演关系，但必须写清这是研究线索；"
+            "禁止买入/卖出/目标价/点位。"
             "禁止只根据最新一个点下结论。"
             "北向 netBuyAvailable=false 时，成交额不是净买入，不要写成外资净流入/净流出。"
             "每条前瞻必须提到价格是否已反应，并尽可能对照量能/情绪序列；没有行情则 calibration=insufficientData。"

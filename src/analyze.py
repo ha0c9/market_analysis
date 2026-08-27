@@ -11,7 +11,8 @@ from src.ingest.cls import fetch_cls_telegraph
 from src.ingest.flows import fetch_northbound
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
-from src.ingest.weibo import fetch_weibo_finance_hot
+from src.ingest.weibo import event_news_queries, fetch_weibo_finance_hot
+from src.opportunities import attach_quotes, infer_opportunities
 from src.planner import plan_analysis
 from src.pulse import build_market_pulse
 from src.settings import load_yaml, write_json
@@ -31,11 +32,17 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     hot_items, weibo_errors, weibo_ok = fetch_weibo_finance_hot(
         plan.keywords, plan.lookbackHours, focus=focus
     )
+    event_queries = event_news_queries(hot_items)
+    extra_errors: list[str] = []
+    if event_queries:
+        extra_news, extra_errors = fetch_google_news(event_queries, per_source)
+        gnews_items = [*gnews_items, *extra_news]
+        print(f"event_news queries={event_queries} extra={len(extra_news)}", flush=True)
     print(
         f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
         f"weibo={len(hot_items)} ok={int(weibo_ok)} "
         f"rss_err={len(rss_errors)} cls_err={len(cls_errors)} "
-        f"gnews_err={len(gnews_errors)} weibo_err={len(weibo_errors)}",
+        f"gnews_err={len(gnews_errors) + len(extra_errors)} weibo_err={len(weibo_errors)}",
         flush=True,
     )
     news = distill_news(rss_items + cls_items + gnews_items, plan.keywords, plan.lookbackHours)
@@ -55,13 +62,25 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     ]
     quotes, quote_errors = fetch_quotes(quote_symbols)
     northbound, flow_errors = fetch_northbound()
+    opportunities, opp_model, opp_errors = infer_opportunities(
+        focus=focus,
+        hot_search=hot_items,
+        news=news,
+        aggregates=aggregates,
+        limit=int(budgets.get("opportunities_max") or 8),
+    )
+    opp_quotes, opp_quote_errors = fetch_quotes([row.symbol for row in opportunities])
+    opportunities = attach_quotes(opportunities, opp_quotes)
     fetch_errors = [
         *rss_errors,
         *cls_errors,
         *gnews_errors,
+        *extra_errors,
         *weibo_errors,
         *agg_errors,
         *quote_errors,
+        *opp_quote_errors,
+        *opp_errors,
         *flow_errors,
     ]
     pulse = build_market_pulse(news, quotes, northbound)
@@ -83,6 +102,7 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         market_pulse=pulse,
         hot_search=hot_items,
         aggregates=aggregates,
+        opportunities=opportunities,
     )
     if fetch_errors:
         report.limitations.append(f"部分源失败: {len(fetch_errors)}")
@@ -94,6 +114,8 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     report.stats["model"] = model
     report.stats["weibo"] = len(hot_items)
     report.stats["aggregates"] = len(aggregates)
+    report.stats["opportunities"] = len(opportunities)
+    report.stats["opportunitiesModel"] = opp_model
     report.marketSnapshot = snapshot_from_rows(
         quotes,
         report.marketSnapshot.get("source") or "tencent+yahoo",

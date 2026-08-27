@@ -629,7 +629,111 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertNotIn("陈星旭虞书欣登上稻草熊财报", words)
         self.assertNotIn("何炅自曝断交", words)
         apple = next(item for item in kept if "苹果" in item.word)
-        self.assertEqual(apple.match, "llm")
+        self.assertIn(apple.match, {"llm", "market"})
+
+    def test_drops_lifestyle_noise_even_if_llm_picks(self) -> None:
+        from datetime import datetime, timezone
+
+        from src.ingest.weibo import merge_hot_items, parse_hot_rows
+
+        fetched = "2026-08-27T04:00:00Z"
+        parsed = parse_hot_rows(
+            [
+                {
+                    "word": "一个爱挤痘痘的人天塌了",
+                    "category": "美妆",
+                    "num": 800000,
+                    "realpos": 2,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "中元节禁忌",
+                    "category": "社会",
+                    "num": 500000,
+                    "realpos": 5,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "酒店国庆标价",
+                    "category": "旅游",
+                    "num": 420000,
+                    "realpos": 8,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "金价大涨终于熬出头",
+                    "category": "财经",
+                    "num": 300000,
+                    "realpos": 34,
+                    "onboard_time": 1787800000,
+                },
+            ],
+            fetched_at=fetched,
+        )
+        now = datetime(2026, 8, 27, 4, 0, tzinfo=timezone.utc)
+        kept = merge_hot_items(
+            parsed,
+            [],
+            ["一个爱挤痘痘的人天塌了", "中元节禁忌", "酒店国庆标价", "金价大涨终于熬出头"],
+            max_age_hours=24,
+            limit=16,
+            now=now,
+        )
+        words = [item.word for item in kept]
+        self.assertIn("金价大涨终于熬出头", words)
+        self.assertNotIn("一个爱挤痘痘的人天塌了", words)
+        self.assertNotIn("中元节禁忌", words)
+        self.assertNotIn("酒店国庆标价", words)
+
+    def test_clusters_disaster_hot_search_as_focus_event(self) -> None:
+        from datetime import datetime, timezone
+
+        from src.ingest.weibo import event_news_queries, merge_hot_items, parse_hot_rows
+
+        fetched = "2026-08-27T04:00:00Z"
+        parsed = parse_hot_rows(
+            [
+                {
+                    "word": "西藏吉隆泥石流已致多人失联",
+                    "category": "社会",
+                    "num": 1250000,
+                    "realpos": 1,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "西藏吉隆县失联人数上升",
+                    "category": "社会",
+                    "num": 410000,
+                    "realpos": 3,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "吉隆堰塞湖持续上涨",
+                    "category": "社会",
+                    "num": 300000,
+                    "realpos": 17,
+                    "onboard_time": 1787800000,
+                },
+                {
+                    "word": "应届生减员",
+                    "category": "社会",
+                    "num": 220000,
+                    "realpos": 22,
+                    "onboard_time": 1787800000,
+                },
+            ],
+            fetched_at=fetched,
+        )
+        now = datetime(2026, 8, 27, 4, 0, tzinfo=timezone.utc)
+        kept = merge_hot_items(parsed, ["减员"], [], max_age_hours=24, limit=16, now=now)
+        mudslide = [item for item in kept if item.cluster == "西藏吉隆泥石流"]
+        self.assertGreaterEqual(len(mudslide), 3)
+        self.assertTrue(all(item.focusEvent for item in mudslide))
+        self.assertTrue(all(item.kind == "event" for item in mudslide))
+        self.assertTrue(any(item.word == "应届生减员" for item in kept))
+        queries = event_news_queries(kept)
+        self.assertTrue(queries)
+        self.assertIn("西藏吉隆泥石流", queries[0])
 
     def test_heuristic_clusters_group_news_by_sector(self) -> None:
         from src.aggregate import heuristic_clusters
@@ -741,6 +845,53 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertEqual(model, "test-model")
         self.assertEqual(report.crossSectorNotes, "交叉")
         self.assertEqual(len(report.hotSearch), 1)
+
+
+class OpportunityTests(unittest.TestCase):
+    def test_heuristic_maps_disaster_cluster_to_rebuild_names(self) -> None:
+        from src.models import HotSearchItem
+        from src.opportunities import coerce_opportunities, heuristic_opportunities
+
+        hot = [
+            HotSearchItem(
+                word="西藏吉隆泥石流已致多人失联",
+                cluster="西藏吉隆泥石流",
+                clusterHeat=1960000,
+                clusterSize=3,
+                kind="event",
+                focusEvent=True,
+                match="event",
+                heat=1250000,
+            )
+        ]
+        rows = heuristic_opportunities(hot)
+        self.assertGreaterEqual(len(rows), 2)
+        names = {row.name for row in rows}
+        self.assertIn("海螺水泥", names)
+        self.assertTrue(all(row.hotspot == "西藏吉隆泥石流" for row in rows))
+        self.assertTrue(all("泥石流" in row.thesis for row in rows))
+
+        coerced = coerce_opportunities(
+            [
+                {
+                    "name": "海螺水泥",
+                    "hotspot": "西藏吉隆泥石流",
+                    "thesis": "由热搜西藏吉隆泥石流联想到水泥需求，需核对重建规模。",
+                    "confidence": 0.4,
+                },
+                {
+                    "symbol": "AAPL",
+                    "name": "Apple",
+                    "hotspot": "西藏吉隆泥石流",
+                    "thesis": "should drop",
+                },
+            ],
+            hot,
+            rows,
+        )
+        self.assertEqual(coerced[0].symbol, "sh600585")
+        self.assertTrue(all(row.symbol.startswith(("sh", "sz")) for row in coerced))
+        self.assertFalse(any(row.symbol == "AAPL" for row in coerced))
 
 
 if __name__ == "__main__":

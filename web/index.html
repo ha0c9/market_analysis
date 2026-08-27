@@ -12,7 +12,7 @@
         <p class="kicker">Research desk</p>
         <h1>市场舆情研究助手</h1>
       </div>
-      <p class="disclaimer">研究辅助，不是投资建议。价格可能延迟。微博只取公开热搜快照，不是博主时间线；X 未接入。</p>
+      <p class="disclaimer">研究辅助，不是投资建议。价格可能延迟。微博只取公开热搜快照，不是博主时间线；热点推演的个股线索没有买卖点和目标价；X 未接入。</p>
     </header>
 
     <section class="panel controls">
@@ -28,7 +28,7 @@
       <button id="reload" type="button" class="ghost">刷新报告</button>
     </section>
     <p class="hint" id="hint">
-      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。板块 ETF 与个股随侧重点变化；大盘基准固定。新闻按官方/主流媒体/博客加权，量能与北向按时间线解读。微博热搜由模型从总榜里挑市场相关条目，再聚合议题后综合。
+      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。板块 ETF 与个股随侧重点变化；大盘基准固定。新闻按官方/主流媒体/博客加权，量能与北向按时间线解读。微博热搜过滤美妆/旅游等生活噪声，重大社会热点会聚类后推演个股线索。
     </p>
 
     <section id="status" class="panel status" hidden></section>
@@ -36,6 +36,7 @@
     <section id="pulse" class="panel pulse" hidden></section>
     <section id="hotsearch" class="panel hotsearch" hidden></section>
     <section id="aggregates" class="panel aggregates" hidden></section>
+    <section id="opportunities" class="panel opportunities" hidden></section>
     <section id="ai-summary" class="ai-summary" hidden>
       <header class="ai-summary-head">
         <div>

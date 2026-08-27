@@ -112,6 +112,22 @@
       "match": "focus"
     }
   ],
+  "aggregates": [
+    {
+      "name": "创新药",
+      "summary": "获批与对外授权报道集中，微博也在讨论创新药；价格多数跟上，但仍需防政策回吐。",
+      "newsTitles": ["示例新闻：创新药政策与订单"],
+      "hotWords": ["创新药获批讨论升温", "恒瑞医药相关讨论"],
+      "heat": 0.74
+    },
+    {
+      "name": "医疗器械",
+      "summary": "设备更新与出口仍被提及，代表标的涨跌分化。",
+      "newsTitles": ["示例新闻：医疗器械需求"],
+      "hotWords": [],
+      "heat": 0.61
+    }
+  ],
   "sectorOutlook": [
     {
       "sector": "创新药",
@@ -159,6 +175,6 @@
   "crossSectorNotes": "医药内部创新药与器械节奏不同；量能平稳而新闻热度升温时，更要核对价格是否已经把情绪计价。北向看成交额活跃度，不要当成净流入。",
   "trendNotes": "近两周上证量能大致平稳，北向成交额没有单边放大或萎缩；新闻情绪加权后近几日升温，其中官方与主流媒体权重大于博客/专栏。后续观察量价是否跟上这轮报道热度。",
   "limitations": ["微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效", "未接入 X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
-  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 2, "plannerModel": "sample", "model": "sample", "estCostUsd": 0 },
+  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 2, "aggregates": 2, "plannerModel": "sample", "aggregatorModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

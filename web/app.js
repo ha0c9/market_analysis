@@ -174,6 +174,13 @@ function renderHotSearch(report) {
   `;
 }
 
+function pulseHasData(pulse) {
+  if (!pulse) return false;
+  return Boolean(
+    pulse.volume?.series?.length || pulse.northbound?.series?.length || pulse.sentiment?.series?.length
+  );
+}
+
 function renderPulseLane(title, trend, note, values, color, extra) {
   return `
     <article class="pulse-lane">

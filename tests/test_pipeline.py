@@ -614,6 +614,62 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertNotIn("未接入微博/X", report.limitations)
         self.assertIn("未接入 X", report.limitations)
 
+    def test_synthesize_with_api_key_compacts_news(self) -> None:
+        import os
+        from unittest.mock import patch
+
+        from src.models import HotSearchItem, NewsItem
+        from src.planner import heuristic_plan
+        from src.synthesize import synthesize_report
+
+        plan = heuristic_plan("医药相关", 36)
+        news = [
+            NewsItem(
+                title="创新药获批",
+                source="新华社",
+                url="https://www.xinhuanet.com/a",
+                publishedAt="2026-08-25T04:00:00Z",
+                snippet="获批",
+                sourceClass="official",
+                sourceWeight=3.0,
+            )
+        ]
+        hot = [
+            HotSearchItem(
+                rank=12,
+                word="创新药获批讨论升温",
+                category="财经",
+                fetchedAt="2026-08-25T05:20:00Z",
+                match="finance",
+            )
+        ]
+        coverage = {
+            "news": True,
+            "quotes": False,
+            "northbound": False,
+            "filings": False,
+            "x": False,
+            "weibo": True,
+        }
+        with patch.dict(os.environ, {"AI_API_KEY": "sk-test"}):
+            with patch("src.synthesize.resolve_model", return_value="test-model"):
+                with patch(
+                    "src.synthesize.chat",
+                    return_value='{"crossSectorNotes":"交叉","trendNotes":"时间线"}',
+                ):
+                    report, model = synthesize_report(
+                        focus="医药相关",
+                        plan=plan,
+                        news=news,
+                        quotes=[],
+                        coverage=coverage,
+                        errors=[],
+                        hot_search=hot,
+                    )
+        self.assertEqual(model, "test-model")
+        self.assertEqual(report.crossSectorNotes, "交叉")
+        self.assertEqual(len(report.hotSearch), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

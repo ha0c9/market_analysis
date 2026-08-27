@@ -1,16 +1,19 @@
-max_items_per_source: 24
-max_news_kept: 100
-min_news_kept: 8
+max_items_per_source: 32
+max_news_kept: 140
+min_news_kept: 12
 max_tickers: 24
-max_google_queries: 7
+max_google_queries: 8
 http_timeout_seconds: 12
-planner_max_tokens: 3200
-synthesizer_max_tokens: 8000
+planner_max_tokens: 4000
+synthesizer_max_tokens: 12000
+aggregator_max_tokens: 3500
+weibo_picker_max_tokens: 1800
+compact_news: 120
 concurrent_fetches: 10
 google_news_workers: 2
 news_retries: 3
 report_history: 30
 series_days: 15
-weibo_hot_max: 16
+weibo_hot_max: 24
 # Hot search is a live snapshot; drop topics that boarded earlier than this.
-weibo_max_age_hours: 18
+weibo_max_age_hours: 24

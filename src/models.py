@@ -66,6 +66,18 @@ class NewsItem(BaseModel):
     highlight: bool = False
 
 
+class HotSearchItem(BaseModel):
+    rank: int = 0
+    word: str
+    category: str = ""
+    heat: int | None = None
+    label: str = ""
+    url: str = ""
+    onboardAt: str = ""
+    fetchedAt: str = ""
+    match: Literal["finance", "market", "focus"] = "finance"
+
+
 class Report(BaseModel):
     generatedAt: str
     focus: str = ""
@@ -73,6 +85,7 @@ class Report(BaseModel):
     dataCoverage: dict[str, bool]
     marketSnapshot: dict[str, Any]
     marketPulse: dict[str, Any] = Field(default_factory=dict)
+    hotSearch: list[HotSearchItem] = Field(default_factory=list)
     sectorOutlook: list[SectorOutlook]
     crossSectorNotes: str = ""
     trendNotes: str = ""

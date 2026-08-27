@@ -8,7 +8,7 @@
     "northbound": true,
     "filings": false,
     "x": false,
-    "weibo": false
+    "weibo": true
   },
   "marketSnapshot": {
     "asOf": "2026-08-25T05:31:57Z",
@@ -88,6 +88,30 @@
     ],
     "summary": "上证成交量近两周平稳；北向成交额（非净买入）活跃度大体持平；医药相关新闻热度近几日升温，官方稿件权重大于专栏。"
   },
+  "hotSearch": [
+    {
+      "rank": 12,
+      "word": "创新药获批讨论升温",
+      "category": "财经",
+      "heat": 482000,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%88%9B%E6%96%B0%E8%8D%AF%E8%8E%B7%E6%89%B9%E8%AE%A8%E8%AE%BA%E5%8D%87%E6%B8%A9%23&Refer=top",
+      "onboardAt": "2026-08-25T02:10:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "finance"
+    },
+    {
+      "rank": 28,
+      "word": "恒瑞医药相关讨论",
+      "category": "财经",
+      "heat": 219000,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E6%81%92%E7%91%9E%E5%8C%BB%E8%8D%AF%E7%9B%B8%E5%85%B3%E8%AE%A8%E8%AE%BA%23&Refer=top",
+      "onboardAt": "2026-08-25T03:40:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "focus"
+    }
+  ],
   "sectorOutlook": [
     {
       "sector": "创新药",
@@ -134,7 +158,7 @@
   ],
   "crossSectorNotes": "医药内部创新药与器械节奏不同；量能平稳而新闻热度升温时，更要核对价格是否已经把情绪计价。北向看成交额活跃度，不要当成净流入。",
   "trendNotes": "近两周上证量能大致平稳，北向成交额没有单边放大或萎缩；新闻情绪加权后近几日升温，其中官方与主流媒体权重大于博客/专栏。后续观察量价是否跟上这轮报道热度。",
-  "limitations": ["未接入微博/X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
-  "stats": { "fetched": 40, "used": 18, "quotes": 9, "plannerModel": "sample", "model": "sample", "estCostUsd": 0 },
+  "limitations": ["微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效", "未接入 X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
+  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 2, "plannerModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

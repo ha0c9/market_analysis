@@ -74,6 +74,10 @@ def compact_http_error(exc: BaseException) -> str:
         return "503 限流"
     if "429" in text:
         return "429 限流"
+    if "403" in text:
+        return "403 拒绝"
+    if "418" in text:
+        return "418 拒绝"
     if "Name or service not known" in text or "getaddrinfo" in text:
         return "DNS 失败"
     if "ConnectError" in type(exc).__name__ or "ConnectError" in text:

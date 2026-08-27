@@ -65,7 +65,7 @@
 
 1. **GitHub Pages 只托管静态文件。** 浏览器里不能放 AI Key、X Token、微博 Token。任何密钥进前端，等于公开。
 2. **「爬取」公开网页 ≠ 合法稳定。** 微博、X、雪球、部分中文财经站点有登录墙、WAF 和反爬。本项目默认走 **RSS、官方 API、站点自己提供给网页的公开 JSON（需限速、可降级）**。不实现模拟登录、cookie 池、验证码破解。
-3. **社交数据默认缺席。** 没有 X / 微博凭证时，系统仍应能出报告，并在报告头标注「社交源未接入」。
+3. **社交数据默认缺席博主时间线。** 没有 X / 微博凭证时，系统仍应能出报告。微博**公开热搜快照**可以无 token 拉取，但海外 Actions 可能被拒，失败则标注「未接入微博热搜」。
 4. **Cloudflare 免费 Workers 的 CPU 限额很紧**（约 10ms CPU / 请求量级，I/O 等待不计入）。一次「多源拉取 + 两次 LLM」更适合：付费 Workers / Workflows，或 **GitHub Actions**（本仓库已有，零额外账号）。
 5. **公开仓库 + GitHub Actions**：Workflow secrets 不会进 Pages，但 fork PR 读不到 secrets。密钥只配在本仓库 Settings → Secrets。
 
@@ -174,17 +174,15 @@ Pages 展示最新报告（板块热度、依据、来源链接、时间）
 
 | 项 | 内容 |
 | --- | --- |
-| 要什么 | 微博开放平台账号；已审核的应用；OAuth2 `access_token`（开发者自身授权 token 有效期可很长，仍属账号凭证） |
-| 怎么取 | 1. [open.weibo.com](https://open.weibo.com) 注册开发者并创建应用  
-2. 按平台要求填回调地址、用途（个人研究工具，不要写成政府舆情监控——平台公约明确不接受该类接入）  
-3. 用 OAuth2 拿到 token，放入 Secret `WEIBO_ACCESS_TOKEN`  
-4. 另维护 `config/weibo-kols.yml`（uid 列表） |
-| 能力预期 | 官方个人应用通常能读授权用户可见的时间线、指定用户公开微博、有限搜索。热搜/全网舆情/商业搜索往往要企业资质或商务 API。微博近年还有面向 Agent 的 CLI，同样要微博登录，适合个人本机，不适合放进 GitHub Actions。 |
-| 不做 | 手机号扫码会话、cookie 注入、验证码打码、多账号轮换。 |
+| 公开热搜（已接入） | 网页自己用的 JSON：`https://weibo.com/ajax/statuses/hot_band`（含 `category`、`onboard_time`），失败再试 `https://weibo.com/ajax/side/hotSearch`。浏览器 UA + Referer 即可，**不必登录**。`s.weibo.com/top/summary` 仍是登录墙，不用。没有单独的「财经榜」接口；从总榜按 `category=财经` 以及 A股/股市等市场词、侧重点关键词过滤。 |
+| 时效 | 热搜是**当下快照**。每条尽量带上榜时间 `onboard_time`；超过 `weibo_max_age_hours`（默认 18 小时）的丢掉。拉取失败不沿用上一份报告里的旧榜。GitHub-hosted runner 在海外，可能 403/418，失败则 `dataCoverage.weibo=false`，任务继续。 |
+| 用法 | 当作盘中情绪胶带，不与新闻分数混排；综合模型不得把热搜 URL 当新闻出处。娱乐话题不进报告。 |
+| 博主时间线（仍未做） | 开放平台账号；已审核应用；OAuth2 `WEIBO_ACCESS_TOKEN` + `config/weibo-kols.yml`。官方个人应用通常能读指定用户公开微博；全网搜索/商业热搜往往要企业资质。 |
+| 不做 | 手机号扫码会话、cookie 注入、验证码打码、多账号轮换、第三方热搜聚合站当权威源。 |
 
 社交源未配置时的产品文案：
 
-> 本次未接入微博/X。结论主要来自公开财经资讯、公告与行情快照。若要纳入指定博主前瞻，请按文档配置 token 和 KOL 名单。
+> 微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效。未接入 X。结论主要来自公开财经资讯、公告与行情快照。若要纳入指定博主前瞻，请按文档配置 token 和 KOL 名单。
 
 ### 4.4 市场行情（默认开启，用来校准）
 

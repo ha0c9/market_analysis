@@ -344,6 +344,7 @@ class SourceWeightTests(unittest.TestCase):
         )
         self.assertEqual(compact_http_error(RuntimeError(long_503)), "503 限流")
         self.assertEqual(compact_http_error(OSError("[Errno -2] Name or service not known")), "DNS 失败")
+        self.assertEqual(compact_http_error(RuntimeError("403 Forbidden for url 'https://weibo.com/ajax/statuses/hot_band'")), "403 拒绝")
 
     def test_google_zh_fallback_swaps_cn_edition(self) -> None:
         from src.ingest.news import _google_fallback_urls
@@ -503,6 +504,115 @@ class SeriesTests(unittest.TestCase):
         self.assertEqual(pulse["sentiment"]["trend"], "warming")
         self.assertIn("成交额", pulse["northbound"]["note"])
         self.assertFalse(pulse["northbound"]["netBuyAvailable"])
+
+
+class WeiboHotSearchTests(unittest.TestCase):
+    def test_filters_finance_focus_and_stale(self) -> None:
+        from datetime import datetime, timezone
+
+        from src.ingest.weibo import parse_hot_rows, rows_from_payload, select_finance_hot
+
+        payload = {
+            "ok": 1,
+            "data": {
+                "band_list": [
+                    {
+                        "word": "某明星恋情",
+                        "category": "艺人",
+                        "num": 999999,
+                        "realpos": 1,
+                        "onboard_time": 1787760000,
+                        "label_name": "沸",
+                    },
+                    {
+                        "word": "金价大涨终于熬出头",
+                        "category": "财经",
+                        "num": 541618,
+                        "realpos": 34,
+                        "onboard_time": 1787763438,
+                        "word_scheme": "#金价大涨终于熬出头#",
+                    },
+                    {
+                        "word": "存储芯片涨价",
+                        "category": "数码",
+                        "num": 400000,
+                        "realpos": 10,
+                        "onboard_time": 1787760000,
+                    },
+                    {
+                        "word": "过期财经话题",
+                        "category": "财经",
+                        "num": 100,
+                        "realpos": 50,
+                        "onboard_time": 1700000000,
+                    },
+                    {
+                        "word": "A股成交额放大",
+                        "category": "",
+                        "num": 300000,
+                        "realpos": 20,
+                        "onboard_time": 1787762000,
+                    },
+                ]
+            },
+        }
+        rows, source = rows_from_payload(payload)
+        self.assertEqual(source, "hot_band")
+        parsed = parse_hot_rows(rows, fetched_at="2026-08-27T02:30:00Z")
+        now = datetime(2026, 8, 27, 2, 30, tzinfo=timezone.utc)
+        kept = select_finance_hot(parsed, ["存储"], max_age_hours=18, limit=16, now=now)
+        words = [item.word for item in kept]
+        self.assertIn("金价大涨终于熬出头", words)
+        self.assertIn("存储芯片涨价", words)
+        self.assertIn("A股成交额放大", words)
+        self.assertNotIn("某明星恋情", words)
+        self.assertNotIn("过期财经话题", words)
+        gold = next(item for item in kept if "金价" in item.word)
+        self.assertEqual(gold.match, "finance")
+        self.assertIn("s.weibo.com/weibo", gold.url)
+        storage = next(item for item in kept if "存储" in item.word)
+        self.assertEqual(storage.match, "focus")
+        market = next(item for item in kept if "A股" in item.word)
+        self.assertEqual(market.match, "market")
+
+    def test_heuristic_keeps_hot_search_out_of_news_limitations(self) -> None:
+        from src.models import HotSearchItem
+        from src.planner import heuristic_plan
+        from src.synthesize import heuristic_report
+
+        plan = heuristic_plan("医药相关", 36)
+        hot = [
+            HotSearchItem(
+                rank=12,
+                word="创新药获批讨论升温",
+                category="财经",
+                fetchedAt="2026-08-25T05:20:00Z",
+                onboardAt="2026-08-25T02:10:00Z",
+                match="finance",
+            )
+        ]
+        report = heuristic_report(
+            focus="医药相关",
+            plan=plan,
+            news=[],
+            quotes=[],
+            coverage={
+                "news": False,
+                "quotes": False,
+                "northbound": False,
+                "filings": False,
+                "x": False,
+                "weibo": True,
+            },
+            errors=[],
+            model="heuristic",
+            hot_search=hot,
+        )
+        self.assertEqual(len(report.hotSearch), 1)
+        self.assertIn("创新药", report.trendNotes)
+        self.assertTrue(any("热搜快照" in item for item in report.limitations))
+        self.assertNotIn("未接入微博/X", report.limitations)
+        self.assertIn("未接入 X", report.limitations)
 
 
 if __name__ == "__main__":

@@ -344,7 +344,7 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         "newsQueries 必须带「今日」或当天，分别搜 资金流入/现象对应的板块、热门个股、原因。"
         "tickers 填写新闻里常被点名、且与该现象相符的活跃股，覆盖多个行业，不要默认银行股。"
         "etfs 用能代表当天主线的行业或宽基 ETF。"
-        f"lookbackHours 默认{lookback_hours}。只规划公开新闻和行情，不要微博或 X。"
+        f"lookbackHours 默认{lookback_hours}。只规划公开新闻和行情，不要规划微博博主或 X；热搜由系统单独拉取。"
         f"用户侧重点: {focus or '泛市场扫描'}"
     )
     try:

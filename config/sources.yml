@@ -35,6 +35,11 @@ rss:
 # 财联社电报没有 RSS，由 src/ingest/cls.py 拉取公开 roll 接口。
 # level A/B（页面标红/重点）会提高权重，作为 A 股盘面参考。
 
+# 微博：不登录、不走开放平台。src/ingest/weibo.py 读网页公开 JSON
+# weibo.com/ajax/statuses/hot_band（含 category / onboard_time），
+# 失败再试 weibo.com/ajax/side/hotSearch。只保留财经分类或市场关键词，
+# 以上榜时间衡量时效；GitHub Actions 海外 IP 可能 403，失败则降级。
+
 # GitHub-hosted runners sit outside China; gl=CN often returns 503.
 # HK edition still returns Chinese results and is more reachable.
 google_news:

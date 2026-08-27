@@ -82,6 +82,16 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
 .hot-list li { margin: 8px 0; }
 .hot-word { font-weight: 600; }
 .hot-word a { color: #9ec5ff; }
+.hot-cluster { background: #101821; border-radius: 10px; padding: 12px; margin: 10px 0; }
+.hot-cluster.focus-event { border: 1px solid #6d4d1f; }
+.hot-cluster-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.hot-cluster-head h3 { margin: 0; font-size: 16px; }
+.tag.focus { color: var(--gold); border-color: #6d4d1f; }
+.opportunity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.opportunity-card { background: #101821; border-radius: 10px; padding: 12px; }
+.opportunity-card h3 { margin: 0 0 6px; font-size: 16px; }
+.opportunity-card p { margin: 6px 0 0; }
+.opportunity-quote { display: flex; gap: 10px; align-items: baseline; margin: 4px 0 2px; }
 .aggregate-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .aggregate-card { background: #101821; border-radius: 10px; padding: 12px; }
 .aggregate-card h3 { margin: 0 0 6px; font-size: 15px; }
@@ -94,4 +104,5 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
   button { width: 100%; margin-top: 8px; }
   .pulse-grid { grid-template-columns: 1fr; }
   .aggregate-grid { grid-template-columns: 1fr; }
+  .opportunity-grid { grid-template-columns: 1fr; }
 }

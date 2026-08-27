@@ -55,6 +55,27 @@ def heuristic_clusters(
                 heat=round(min(1.0, (related[0].score / 12.0) if related else 0.25), 2),
             )
         )
+    seen_events: set[str] = set()
+    for item in hot_search:
+        label = item.cluster or item.word
+        if not item.focusEvent or not label or label in seen_events:
+            continue
+        seen_events.add(label)
+        members = [row.word for row in hot_search if (row.cluster or row.word) == label]
+        clusters.insert(
+            0,
+            ThemeCluster(
+                name=label,
+                summary=(
+                    f"微博上 {item.clusterSize or len(members)} 条热搜指向「{label}」，"
+                    f"累计热度 {item.clusterHeat or item.heat or 0}。"
+                    "重大社会热点需对照历史类似事件对基建、保险、物流的影响，不能只当社会新闻丢掉。"
+                ),
+                newsTitles=[],
+                hotWords=members[:8],
+                heat=round(min(1.0, max(0.55, (item.clusterHeat or item.heat or 0) / 2_000_000)), 2),
+            ),
+        )
     if not clusters and (news or hot_search):
         clusters.append(
             ThemeCluster(
@@ -126,13 +147,24 @@ def aggregate_themes(
         },
         "news": _news_titles(news, news_cap),
         "hotSearch": [
-            {"word": item.word, "category": item.category, "heat": item.heat, "match": item.match}
+            {
+                "word": item.word,
+                "category": item.category,
+                "heat": item.heat,
+                "match": item.match,
+                "cluster": item.cluster,
+                "kind": item.kind,
+                "focusEvent": item.focusEvent,
+                "clusterSize": item.clusterSize,
+            }
             for item in hot_search[:24]
         ],
         "instructions": (
             "把新闻与微博热搜聚成 4 到 8 个市场议题。只输出 JSON 对象，字段 themes 为数组。"
             "每项: name, summary(2-4句，点名时效和分歧), newsTitles(必须来自给定 news 的 title),"
             "hotWords(来自 hotSearch.word，可空), heat(0到1)。"
+            "同一 cluster 的多条热搜必须合成一个议题；focusEvent=true 的社会热点"
+            "（如重大灾害）即使不是财经栏目也要单独成题，并写清可能映射到哪些板块。"
             "官方与财联社标红优先进入 summary。热搜只作情绪辅证。"
             "不要编造标题。这不是投资建议。"
         ),

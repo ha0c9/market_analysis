@@ -90,6 +90,54 @@
   },
   "hotSearch": [
     {
+      "rank": 1,
+      "word": "西藏吉隆泥石流已致多人失联",
+      "category": "社会",
+      "heat": 1250000,
+      "label": "爆",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%23&Refer=top",
+      "onboardAt": "2026-08-25T01:20:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "event",
+      "cluster": "西藏吉隆泥石流",
+      "clusterHeat": 1960000,
+      "clusterSize": 3,
+      "kind": "event",
+      "focusEvent": true
+    },
+    {
+      "rank": 3,
+      "word": "西藏吉隆县失联人数上升",
+      "category": "社会",
+      "heat": 410000,
+      "label": "热",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E5%8E%BF%E5%A4%B1%E8%81%94%23&Refer=top",
+      "onboardAt": "2026-08-25T02:05:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "event",
+      "cluster": "西藏吉隆泥石流",
+      "clusterHeat": 1960000,
+      "clusterSize": 3,
+      "kind": "event",
+      "focusEvent": true
+    },
+    {
+      "rank": 17,
+      "word": "吉隆堰塞湖持续上涨",
+      "category": "社会",
+      "heat": 300000,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E5%A0%B0%E5%A1%9E%E6%B9%96%23&Refer=top",
+      "onboardAt": "2026-08-25T03:10:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "event",
+      "cluster": "西藏吉隆泥石流",
+      "clusterHeat": 1960000,
+      "clusterSize": 3,
+      "kind": "event",
+      "focusEvent": true
+    },
+    {
       "rank": 12,
       "word": "创新药获批讨论升温",
       "category": "财经",
@@ -98,7 +146,12 @@
       "url": "https://s.weibo.com/weibo?q=%23%E5%88%9B%E6%96%B0%E8%8D%AF%E8%8E%B7%E6%89%B9%E8%AE%A8%E8%AE%BA%E5%8D%87%E6%B8%A9%23&Refer=top",
       "onboardAt": "2026-08-25T02:10:00Z",
       "fetchedAt": "2026-08-25T05:20:00Z",
-      "match": "finance"
+      "match": "finance",
+      "cluster": "创新药获批讨论升温",
+      "clusterHeat": 482000,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false
     },
     {
       "rank": 28,
@@ -109,10 +162,22 @@
       "url": "https://s.weibo.com/weibo?q=%23%E6%81%92%E7%91%9E%E5%8C%BB%E8%8D%AF%E7%9B%B8%E5%85%B3%E8%AE%A8%E8%AE%BA%23&Refer=top",
       "onboardAt": "2026-08-25T03:40:00Z",
       "fetchedAt": "2026-08-25T05:20:00Z",
-      "match": "focus"
+      "match": "focus",
+      "cluster": "恒瑞医药相关讨论",
+      "clusterHeat": 219000,
+      "clusterSize": 1,
+      "kind": "company",
+      "focusEvent": false
     }
   ],
   "aggregates": [
+    {
+      "name": "西藏吉隆泥石流",
+      "summary": "多条热搜指向同一灾害，讨论量高；需要对照历史灾后重建交易，而不是当成与市场无关的社会新闻丢掉。",
+      "newsTitles": ["示例新闻：西藏吉隆泥石流救援与堰塞湖"],
+      "hotWords": ["西藏吉隆泥石流已致多人失联", "西藏吉隆县失联人数上升", "吉隆堰塞湖持续上涨"],
+      "heat": 0.82
+    },
     {
       "name": "创新药",
       "summary": "获批与对外授权报道集中，微博也在讨论创新药；价格多数跟上，但仍需防政策回吐。",
@@ -126,6 +191,41 @@
       "newsTitles": ["示例新闻：医疗器械需求"],
       "hotWords": [],
       "heat": 0.61
+    }
+  ],
+  "opportunities": [
+    {
+      "symbol": "sh600585",
+      "name": "海螺水泥",
+      "hotspot": "西藏吉隆泥石流",
+      "thesis": "由热搜「西藏吉隆泥石流」联想到海螺水泥。过往西南重大地质灾害后，市场常交易水泥与基建修复预期；当前仍需核对灾情规模、重建预算与公司区域收入，不能把热搜当成订单。",
+      "angle": "灾后重建水泥需求",
+      "price": 24.18,
+      "changePct": 1.12,
+      "asOf": "2026-08-25T05:31:57Z",
+      "confidence": 0.42
+    },
+    {
+      "symbol": "sh601668",
+      "name": "中国建筑",
+      "hotspot": "西藏吉隆泥石流",
+      "thesis": "由同一灾害热点联想到中国建筑。历史类似事件后市场会讨论交通抢通与灾后工程，但是否落到这家公司要看项目公告，不是买卖建议。",
+      "angle": "基建与灾后工程",
+      "price": 5.62,
+      "changePct": 0.36,
+      "asOf": "2026-08-25T05:31:57Z",
+      "confidence": 0.4
+    },
+    {
+      "symbol": "sh600276",
+      "name": "恒瑞医药",
+      "hotspot": "创新药获批讨论升温",
+      "thesis": "由财经热搜「创新药获批讨论升温」联想到恒瑞医药，对应侧重点里的创新药叙事。价格是否已反应需对照快照，这里只作线索。",
+      "angle": "创新药关注",
+      "price": 48.26,
+      "changePct": 1.24,
+      "asOf": "2026-08-25T05:31:57Z",
+      "confidence": 0.45
     }
   ],
   "sectorOutlook": [
@@ -174,7 +274,7 @@
   ],
   "crossSectorNotes": "医药内部创新药与器械节奏不同；量能平稳而新闻热度升温时，更要核对价格是否已经把情绪计价。北向看成交额活跃度，不要当成净流入。",
   "trendNotes": "近两周上证量能大致平稳，北向成交额没有单边放大或萎缩；新闻情绪加权后近几日升温，其中官方与主流媒体权重大于博客/专栏。后续观察量价是否跟上这轮报道热度。",
-  "limitations": ["微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效", "未接入 X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
-  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 2, "aggregates": 2, "plannerModel": "sample", "aggregatorModel": "sample", "model": "sample", "estCostUsd": 0 },
+  "limitations": ["微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效", "重大社会热点已按讨论量聚类，推演线索需用公告与价格核对，不能单靠热搜", "个股推演是研究线索，不是买卖建议，没有目标价", "未接入 X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
+  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 5, "aggregates": 3, "opportunities": 3, "plannerModel": "sample", "aggregatorModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

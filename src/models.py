@@ -75,7 +75,12 @@ class HotSearchItem(BaseModel):
     url: str = ""
     onboardAt: str = ""
     fetchedAt: str = ""
-    match: Literal["finance", "market", "focus", "llm"] = "finance"
+    match: Literal["finance", "market", "focus", "llm", "event"] = "finance"
+    cluster: str = ""
+    clusterHeat: int | None = None
+    clusterSize: int = 0
+    kind: str = ""
+    focusEvent: bool = False
 
 
 class ThemeCluster(BaseModel):
@@ -84,6 +89,18 @@ class ThemeCluster(BaseModel):
     newsTitles: list[str] = Field(default_factory=list)
     hotWords: list[str] = Field(default_factory=list)
     heat: float = 0.0
+
+
+class Opportunity(BaseModel):
+    symbol: str
+    name: str
+    hotspot: str
+    thesis: str = ""
+    angle: str = ""
+    price: float | None = None
+    changePct: float | None = None
+    asOf: str = ""
+    confidence: float = 0.3
 
 
 class Report(BaseModel):
@@ -95,6 +112,7 @@ class Report(BaseModel):
     marketPulse: dict[str, Any] = Field(default_factory=dict)
     hotSearch: list[HotSearchItem] = Field(default_factory=list)
     aggregates: list[ThemeCluster] = Field(default_factory=list)
+    opportunities: list[Opportunity] = Field(default_factory=list)
     sectorOutlook: list[SectorOutlook]
     crossSectorNotes: str = ""
     trendNotes: str = ""

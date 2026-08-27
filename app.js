@@ -132,7 +132,58 @@ function matchLabel(value) {
   if (value === "market") return "市场词";
   if (value === "focus") return "侧重点";
   if (value === "llm") return "模型挑选";
+  if (value === "event") return "社会热点";
   return value || "";
+}
+
+function kindLabel(value) {
+  if (value === "event") return "事件";
+  if (value === "company") return "公司";
+  if (value === "product") return "产品";
+  if (value === "market") return "市场";
+  return "";
+}
+
+function groupHotSearch(items) {
+  const groups = [];
+  const index = new Map();
+  for (const item of items) {
+    const key = item.cluster || item.word || "";
+    if (!index.has(key)) {
+      const group = {
+        cluster: key,
+        focusEvent: Boolean(item.focusEvent),
+        kind: item.kind || "",
+        clusterHeat: item.clusterHeat,
+        items: [],
+      };
+      index.set(key, group);
+      groups.push(group);
+    }
+    const group = index.get(key);
+    group.focusEvent = group.focusEvent || Boolean(item.focusEvent);
+    group.clusterHeat = group.clusterHeat || item.clusterHeat;
+    group.items.push(item);
+  }
+  return groups;
+}
+
+function renderHotItem(item) {
+  const word = item.word || "";
+  const link = item.url
+    ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${word}</a>`
+    : word;
+  const meta = [
+    item.rank ? `#${item.rank}` : "",
+    item.category || "",
+    matchLabel(item.match),
+    item.label || "",
+    formatHeat(item.heat),
+    item.onboardAt ? `上榜 ${formatBeijing(item.onboardAt)}` : "上榜时间未知",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  return `<li><div class="hot-word">${link}</div><div class="hint">${meta}</div></li>`;
 }
 
 function renderHotSearch(report) {
@@ -146,33 +197,65 @@ function renderHotSearch(report) {
     return;
   }
   const fetched = items[0]?.fetchedAt || report.generatedAt;
+  const groups = groupHotSearch(items);
   const rows = items.length
-    ? `<ol class="hot-list">${items
-        .map((item) => {
-          const word = item.word || "";
-          const link = item.url
-            ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${word}</a>`
-            : word;
-          const meta = [
-            item.rank ? `#${item.rank}` : "",
-            item.category || "",
-            matchLabel(item.match),
-            item.label || "",
-            formatHeat(item.heat),
-            item.onboardAt ? `上榜 ${formatBeijing(item.onboardAt)}` : "上榜时间未知",
-          ]
-            .filter(Boolean)
-            .join(" · ");
-          return `<li><div class="hot-word">${link}</div><div class="hint">${meta}</div></li>`;
+    ? groups
+        .map((group) => {
+          const headBits = [
+            kindLabel(group.kind),
+            group.items.length > 1 ? `${group.items.length} 条` : "",
+            formatHeat(group.clusterHeat),
+          ].filter(Boolean);
+          const badge = group.focusEvent ? `<span class="tag focus">重点关注</span>` : "";
+          const title = group.cluster || "热搜";
+          return `<article class="hot-cluster${group.focusEvent ? " focus-event" : ""}">
+            <div class="hot-cluster-head">
+              <h3>${title}</h3>
+              ${badge}
+              ${headBits.length ? `<span class="hint">${headBits.join(" · ")}</span>` : ""}
+            </div>
+            <ol class="hot-list">${group.items.map(renderHotItem).join("")}</ol>
+          </article>`;
         })
-        .join("")}</ol>`
-    : `<p class="hint">当前热搜无财经/市场相关条目。总榜已拉取，但不把娱乐话题灌进分析。</p>`;
+        .join("")
+    : `<p class="hint">当前热搜无财经/市场相关条目。总榜已拉取，美妆、旅游、综艺和犯罪个案不会写进简报。</p>`;
   section.hidden = false;
   section.innerHTML = `
     <p class="section-kicker">微博财经热搜</p>
-    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。财经分类自动保留；其余由模型从总榜里挑市场相关条目，丢掉过旧上榜时间和娱乐话题。</p>
+    <p class="hint">公开榜单快照，不是博主时间线。拉取时间 ${formatBeijing(fetched)}。财经分类自动保留；美妆/旅游/生活琐事不展示。同一社会热点（如重大灾害）会聚成一组，讨论量高则标成重点关注。</p>
     ${rows}
   `;
+}
+
+function renderOpportunities(report) {
+  const section = $("opportunities");
+  if (!section) return;
+  const rows = report.opportunities || [];
+  if (!rows.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+  section.hidden = false;
+  section.innerHTML = `
+    <p class="section-kicker">热点推演关注线索</p>
+    <p class="hint">根据热搜热点与历史类似事件推演到的个股线索，并标注由哪个热点联想到。研究推演，不是买卖建议，没有目标价。</p>
+    <div class="opportunity-grid">
+      ${rows
+        .map((row) => {
+          const title = [row.name, row.symbol].filter(Boolean).join(" ");
+          const move = row.price || row.changePct || row.changePct === 0
+            ? `<div class="opportunity-quote"><span class="price">${formatPrice(row.price)}</span><span class="${chgClass(row.changePct)}">${formatMove(row.price, row.changePct)}</span></div>`
+            : "";
+          return `<article class="opportunity-card">
+            <h3>${title || "线索"}</h3>
+            ${move}
+            <p class="hint">关联热点：${row.hotspot || "—"}${row.angle ? ` · ${row.angle}` : ""}</p>
+            <p>${row.thesis || ""}</p>
+          </article>`;
+        })
+        .join("")}
+    </div>`;
 }
 
 function renderAggregates(report) {
@@ -313,6 +396,7 @@ function renderReport(report) {
   renderPulse(report.marketPulse);
   renderHotSearch(report);
   renderAggregates(report);
+  renderOpportunities(report);
 
   const label = aiLabel(report);
   $("ai-summary").hidden = false;

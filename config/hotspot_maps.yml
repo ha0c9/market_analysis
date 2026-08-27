@@ -1,0 +1,21 @@
+# Heuristic maps from Weibo/social hotspots to listed names.
+# Used as a starting basket for 热点推演关注线索 — not a buy list.
+maps:
+  - id: disaster_rebuild
+    match: [泥石流, 堰塞湖, 山洪, 地震, 洪水, 灾情, 重建, 滑坡, 堰塞]
+    tickers:
+      - { symbol: sh600585, name: 海螺水泥, angle: 灾后重建水泥需求 }
+      - { symbol: sh601668, name: 中国建筑, angle: 基建与灾后工程 }
+      - { symbol: sh601186, name: 中国铁建, angle: 交通抢通与基建 }
+      - { symbol: sh600068, name: 葛洲坝, angle: 水利与边坡治理 }
+  - id: typhoon
+    match: [台风]
+    tickers:
+      - { symbol: sh601318, name: 中国平安, angle: 保险赔付与风险偏好 }
+      - { symbol: sh601601, name: 中国太保, angle: 产险赔付观察 }
+  - id: apple_hardware
+    match: [苹果, 折叠屏, 发布会, iPhone]
+    tickers:
+      - { symbol: sz002475, name: 立讯精密, angle: 消费电子组装 }
+      - { symbol: sz300433, name: 蓝思科技, angle: 外观件与盖板 }
+      - { symbol: sz002241, name: 歌尔股份, angle: 声学与精密结构 }

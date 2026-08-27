@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-27T04:26:01Z",
-  "focus": "资金热点",
+  "generatedAt": "2026-08-27T04:47:35Z",
+  "focus": "热点追踪",
   "timeWindow": {
-    "from": "2026-08-26T03:14:55Z",
-    "to": "2026-08-27T04:26:01Z"
+    "from": "2026-08-26T07:22:10Z",
+    "to": "2026-08-27T04:47:35Z"
   },
   "dataCoverage": {
     "news": true,
@@ -265,13 +265,13 @@
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 66405.63,
-        "changePct": 0.2165244207548822,
-        "changePct5d": 0.285190134818758,
+        "price": 66256.3,
+        "changePct": -0.008838000951705283,
+        "changePct5d": 0.05966434352882022,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 0.794,
-        "asOf": "2026-08-27T04:11:00Z",
+        "asOf": "2026-08-27T04:32:30Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -359,22 +359,22 @@
           },
           {
             "date": "2026-08-27",
-            "close": 66405.6328,
+            "close": 66256.2969,
             "volume": 0.0,
-            "changePct": 0.217
+            "changePct": -0.009
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6922.49,
-        "changePct": 1.6785622023731461,
-        "changePct5d": 1.02020195974315,
-        "volume": 186296.0,
+        "price": 6928.84,
+        "changePct": 1.7718319463503995,
+        "changePct5d": 1.1128620863321004,
+        "volume": 194894.0,
         "turnover": null,
-        "volumeVsAvg": 0.563,
-        "asOf": "2026-08-27T04:05:50Z",
+        "volumeVsAvg": 0.59,
+        "asOf": "2026-08-27T04:27:30Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -462,9 +462,9 @@
           },
           {
             "date": "2026-08-27",
-            "close": 6922.4902,
-            "volume": 186296.0,
-            "changePct": 1.679
+            "close": 6928.8398,
+            "volume": 194894.0,
+            "changePct": 1.772
           }
         ]
       },
@@ -986,208 +986,208 @@
         ]
       },
       {
-        "symbol": "sz159995",
-        "name": "芯片ETF华夏",
-        "price": 1.175,
-        "changePct": 3.89,
-        "changePct5d": 1.0318112503845178,
-        "volume": 4441436.0,
-        "turnover": 51371.0,
-        "volumeVsAvg": 0.598,
-        "asOf": "2026-08-27T04:05:09Z",
+        "symbol": "sh510300",
+        "name": "沪深300ETF华泰柏瑞",
+        "price": 4.676,
+        "changePct": 0.52,
+        "changePct5d": 0.47271838686822054,
+        "volume": 2400288.0,
+        "turnover": 111943.0,
+        "volumeVsAvg": 0.29,
+        "asOf": "2026-08-27T04:05:40Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 1.177,
-            "volume": 907220128.0,
-            "changePct": 1.03
+            "close": 4.709,
+            "volume": 878355996.0,
+            "changePct": -0.106
           },
           {
             "date": "2026-08-07",
-            "close": 1.212,
-            "volume": 817628187.0,
-            "changePct": 2.974
+            "close": 4.751,
+            "volume": 943535585.0,
+            "changePct": 0.892
           },
           {
             "date": "2026-08-10",
-            "close": 1.205,
-            "volume": 687488801.0,
-            "changePct": -0.578
+            "close": 4.759,
+            "volume": 561085163.0,
+            "changePct": 0.168
           },
           {
             "date": "2026-08-11",
-            "close": 1.187,
-            "volume": 631154195.0,
-            "changePct": -1.494
+            "close": 4.728,
+            "volume": 535321917.0,
+            "changePct": -0.651
           },
           {
             "date": "2026-08-12",
-            "close": 1.209,
-            "volume": 565775683.0,
-            "changePct": 1.853
+            "close": 4.748,
+            "volume": 901013743.0,
+            "changePct": 0.423
           },
           {
             "date": "2026-08-13",
-            "close": 1.192,
-            "volume": 685105880.0,
-            "changePct": -1.406
+            "close": 4.729,
+            "volume": 915582741.0,
+            "changePct": -0.4
           },
           {
             "date": "2026-08-14",
-            "close": 1.203,
-            "volume": 517425551.0,
-            "changePct": 0.923
+            "close": 4.726,
+            "volume": 685952984.0,
+            "changePct": -0.063
           },
           {
             "date": "2026-08-17",
-            "close": 1.263,
-            "volume": 900701620.0,
-            "changePct": 4.988
+            "close": 4.801,
+            "volume": 835656114.0,
+            "changePct": 1.587
           },
           {
             "date": "2026-08-18",
-            "close": 1.264,
-            "volume": 673669362.0,
-            "changePct": 0.079
+            "close": 4.787,
+            "volume": 657644405.0,
+            "changePct": -0.292
           },
           {
             "date": "2026-08-19",
-            "close": 1.163,
-            "volume": 1181389145.0,
-            "changePct": -7.991
+            "close": 4.654,
+            "volume": 1532722915.0,
+            "changePct": -2.778
           },
           {
             "date": "2026-08-20",
-            "close": 1.151,
-            "volume": 848877008.0,
-            "changePct": -1.032
+            "close": 4.653,
+            "volume": 748866292.0,
+            "changePct": -0.021
           },
           {
             "date": "2026-08-21",
-            "close": 1.159,
-            "volume": 530927235.0,
-            "changePct": 0.695
+            "close": 4.68,
+            "volume": 727384630.0,
+            "changePct": 0.58
           },
           {
             "date": "2026-08-24",
-            "close": 1.117,
-            "volume": 767574996.0,
-            "changePct": -3.624
+            "close": 4.627,
+            "volume": 922973800.0,
+            "changePct": -1.132
           },
           {
             "date": "2026-08-25",
-            "close": 1.118,
-            "volume": 684028829.0,
-            "changePct": 0.09
+            "close": 4.616,
+            "volume": 745256800.0,
+            "changePct": -0.238
           },
           {
             "date": "2026-08-27",
-            "close": 1.175,
-            "volume": 444143557.0,
-            "changePct": 5.098
+            "close": 4.676,
+            "volume": 240028768.0,
+            "changePct": 1.3
           }
         ]
       },
       {
-        "symbol": "sh516160",
-        "name": "新能源ETF南方",
-        "price": 2.48,
-        "changePct": -0.84,
-        "changePct5d": -1.3524232584252616,
-        "volume": 359349.0,
-        "turnover": 8834.0,
-        "volumeVsAvg": 0.631,
-        "asOf": "2026-08-27T04:05:56Z",
+        "symbol": "sh510500",
+        "name": "中证500ETF南方",
+        "price": 7.93,
+        "changePct": 1.81,
+        "changePct5d": 1.6145557293965052,
+        "volume": 1831137.0,
+        "turnover": 144284.0,
+        "volumeVsAvg": 0.549,
+        "asOf": "2026-08-27T04:05:57Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 2.505,
-            "volume": 72668897.0,
-            "changePct": -1.3
+            "close": 7.832,
+            "volume": 593953900.0,
+            "changePct": 0.218
           },
           {
             "date": "2026-08-07",
-            "close": 2.56,
-            "volume": 61854186.0,
-            "changePct": 2.196
+            "close": 7.987,
+            "volume": 370068852.0,
+            "changePct": 1.979
           },
           {
             "date": "2026-08-10",
-            "close": 2.576,
-            "volume": 104789940.0,
-            "changePct": 0.625
+            "close": 8.037,
+            "volume": 322227615.0,
+            "changePct": 0.626
           },
           {
             "date": "2026-08-11",
-            "close": 2.575,
-            "volume": 62065617.0,
-            "changePct": -0.039
+            "close": 7.989,
+            "volume": 219026093.0,
+            "changePct": -0.597
           },
           {
             "date": "2026-08-12",
-            "close": 2.598,
-            "volume": 46214906.0,
-            "changePct": 0.893
+            "close": 8.053,
+            "volume": 180872618.0,
+            "changePct": 0.801
           },
           {
             "date": "2026-08-13",
-            "close": 2.566,
-            "volume": 52828337.0,
-            "changePct": -1.232
+            "close": 7.98,
+            "volume": 350887715.0,
+            "changePct": -0.906
           },
           {
             "date": "2026-08-14",
-            "close": 2.577,
-            "volume": 44792828.0,
-            "changePct": 0.429
+            "close": 7.998,
+            "volume": 254678534.0,
+            "changePct": 0.226
           },
           {
             "date": "2026-08-17",
-            "close": 2.624,
-            "volume": 48012394.0,
-            "changePct": 1.824
+            "close": 8.197,
+            "volume": 279138129.0,
+            "changePct": 2.488
           },
           {
             "date": "2026-08-18",
-            "close": 2.616,
-            "volume": 56748691.0,
-            "changePct": -0.305
+            "close": 8.185,
+            "volume": 307256145.0,
+            "changePct": -0.146
           },
           {
             "date": "2026-08-19",
-            "close": 2.514,
-            "volume": 60213453.0,
-            "changePct": -3.899
+            "close": 7.804,
+            "volume": 483053472.0,
+            "changePct": -4.655
           },
           {
             "date": "2026-08-20",
-            "close": 2.497,
-            "volume": 43289576.0,
-            "changePct": -0.676
+            "close": 7.863,
+            "volume": 290214571.0,
+            "changePct": 0.756
           },
           {
             "date": "2026-08-21",
-            "close": 2.533,
-            "volume": 53867298.0,
-            "changePct": 1.442
+            "close": 7.866,
+            "volume": 286568779.0,
+            "changePct": 0.038
           },
           {
             "date": "2026-08-24",
-            "close": 2.506,
-            "volume": 46588248.0,
-            "changePct": -1.066
+            "close": 7.74,
+            "volume": 352454470.0,
+            "changePct": -1.602
           },
           {
             "date": "2026-08-25",
-            "close": 2.466,
-            "volume": 43091180.0,
-            "changePct": -1.596
+            "close": 7.726,
+            "volume": 378296058.0,
+            "changePct": -0.181
           },
           {
             "date": "2026-08-27",
-            "close": 2.48,
-            "volume": 35934901.0,
-            "changePct": 0.568
+            "close": 7.93,
+            "volume": 183113715.0,
+            "changePct": 2.64
           }
         ]
       }
@@ -1561,13 +1561,13 @@
       "series": [
         {
           "date": "2026-08-26",
-          "score": 9.3,
-          "count": 2,
+          "score": 10.0,
+          "count": 1,
           "officialCount": 0
         },
         {
           "date": "2026-08-27",
-          "score": 94.4,
+          "score": 96.4,
           "count": 23,
           "officialCount": 2
         }
@@ -1575,8 +1575,7 @@
       "trend": "unknown",
       "sourceMix": {
         "major_media": 22,
-        "official": 31,
-        "google_news": 1
+        "official": 31
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
     },
@@ -1592,341 +1591,359 @@
       "rank": 1,
       "word": "西藏泥石流遇难3人失联558人",
       "category": "突发/灾害",
-      "heat": 10958449,
+      "heat": 9189186,
       "label": "爆",
       "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E6%B3%A5%E7%9F%B3%E6%B5%81%E9%81%87%E9%9A%BE3%E4%BA%BA%E5%A4%B1%E8%81%94558%E4%BA%BA%23&Refer=top",
       "onboardAt": "2026-08-27T02:28:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 3,
       "word": "调派中国救援队增援吉隆泥石流救援",
       "category": "民生新闻",
-      "heat": 1745862,
-      "label": "新",
+      "heat": 1541832,
+      "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E8%B0%83%E6%B4%BE%E4%B8%AD%E5%9B%BD%E6%95%91%E6%8F%B4%E9%98%9F%E5%A2%9E%E6%8F%B4%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E6%95%91%E6%8F%B4%23&Refer=top",
       "onboardAt": "2026-08-27T02:58:25Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
-      "rank": 7,
-      "word": "尼泊尔山洪484名游客失联",
-      "category": "突发/灾害",
-      "heat": 592762,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA484%E5%90%8D%E6%B8%B8%E5%AE%A2%E5%A4%B1%E8%81%94%23&Refer=top",
-      "onboardAt": "2026-08-27T03:05:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "rank": 4,
+      "word": "店内离世老人儿子称深感抱歉",
+      "category": "民生新闻",
+      "heat": 1023439,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%BA%97%E5%86%85%E7%A6%BB%E4%B8%96%E8%80%81%E4%BA%BA%E5%84%BF%E5%AD%90%E7%A7%B0%E6%B7%B1%E6%84%9F%E6%8A%B1%E6%AD%89%23&Refer=top",
+      "onboardAt": "2026-08-27T03:06:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 8,
-      "word": "羞辱式劝退应届生公司已减员2900人",
-      "category": "民生新闻",
-      "heat": 452040,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E7%BE%9E%E8%BE%B1%E5%BC%8F%E5%8A%9D%E9%80%80%E5%BA%94%E5%B1%8A%E7%94%9F%E5%85%AC%E5%8F%B8%E5%B7%B2%E5%87%8F%E5%91%982900%E4%BA%BA%23&Refer=top",
-      "onboardAt": "2026-08-27T03:30:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "word": "尼泊尔山洪484名游客失联",
+      "category": "突发/灾害",
+      "heat": 613138,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA484%E5%90%8D%E6%B8%B8%E5%AE%A2%E5%A4%B1%E8%81%94%23&Refer=top",
+      "onboardAt": "2026-08-27T03:05:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 9,
       "word": "杀害在韩女生嫌犯拟被精神检测",
       "category": "民生新闻",
-      "heat": 441478,
+      "heat": 540219,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%23%E6%9D%80%E5%AE%B3%E5%9C%A8%E9%9F%A9%E5%A5%B3%E7%94%9F%E5%AB%8C%E7%8A%AF%E6%8B%9F%E8%A2%AB%E7%B2%BE%E7%A5%9E%E6%A3%80%E6%B5%8B%23&Refer=top",
       "onboardAt": "2026-08-27T04:19:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 11,
       "word": "中元节传统禁忌",
       "category": "民生新闻",
-      "heat": 415567,
+      "heat": 527424,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%E4%B8%AD%E5%85%83%E8%8A%82%E4%BC%A0%E7%BB%9F%E7%A6%81%E5%BF%8C&Refer=top",
       "onboardAt": "2026-08-27T03:51:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
+      "match": "llm"
+    },
+    {
+      "rank": 13,
+      "word": "中元节晚上不能出门是误会",
+      "category": "民生新闻",
+      "heat": 524983,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%85%83%E8%8A%82%E6%99%9A%E4%B8%8A%E4%B8%8D%E8%83%BD%E5%87%BA%E9%97%A8%E6%98%AF%E8%AF%AF%E4%BC%9A%23&Refer=top",
+      "onboardAt": "2026-08-27T04:21:24Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 14,
+      "word": "杀中国女生后嫌疑人抛尸250公里外",
+      "category": "海外新闻",
+      "heat": 460681,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E6%9D%80%E4%B8%AD%E5%9B%BD%E5%A5%B3%E7%94%9F%E5%90%8E%E5%AB%8C%E7%96%91%E4%BA%BA%E6%8A%9B%E5%B0%B8250%E5%85%AC%E9%87%8C%E5%A4%96%23&Refer=top",
+      "onboardAt": "2026-08-27T03:50:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
+      "match": "llm"
+    },
+    {
+      "rank": 15,
+      "word": "江歌妈妈长文回望十年怀念女儿",
+      "category": "民生新闻",
+      "heat": 457643,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E6%B1%9F%E6%AD%8C%E5%A6%88%E5%A6%88%E9%95%BF%E6%96%87%E5%9B%9E%E6%9C%9B%E5%8D%81%E5%B9%B4%E6%80%80%E5%BF%B5%E5%A5%B3%E5%84%BF%23&Refer=top",
+      "onboardAt": "2026-08-27T04:01:25Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
+      "match": "llm"
+    },
+    {
+      "rank": 17,
       "word": "西藏吉隆泥石流成功救出2人",
       "category": "突发/灾害",
-      "heat": 399440,
+      "heat": 386694,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E6%88%90%E5%8A%9F%E6%95%91%E5%87%BA2%E4%BA%BA%23&Refer=top",
       "onboardAt": "2026-08-27T02:28:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 18,
-      "word": "西藏吉隆口岸方向发现堰塞湖",
-      "category": "突发/灾害",
-      "heat": 386733,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%96%B9%E5%90%91%E5%8F%91%E7%8E%B0%E5%A0%B0%E5%A1%9E%E6%B9%96%23&Refer=top",
-      "onboardAt": "2026-08-27T00:30:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "word": "羞辱式劝退应届生公司已减员2900人",
+      "category": "民生新闻",
+      "heat": 374628,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E7%BE%9E%E8%BE%B1%E5%BC%8F%E5%8A%9D%E9%80%80%E5%BA%94%E5%B1%8A%E7%94%9F%E5%85%AC%E5%8F%B8%E5%B7%B2%E5%87%8F%E5%91%982900%E4%BA%BA%23&Refer=top",
+      "onboardAt": "2026-08-27T03:30:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 19,
+      "word": "直击西藏吉隆泥石流救援一线",
+      "category": "突发/灾害",
+      "heat": 373969,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E7%9B%B4%E5%87%BB%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E6%95%91%E6%8F%B4%E4%B8%80%E7%BA%BF%23&Refer=top",
+      "onboardAt": "2026-08-27T04:41:24Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
+      "match": "llm"
+    },
+    {
+      "rank": 20,
       "word": "罗永浩拒绝首席老撕机示好",
       "category": "互联网,汽车",
-      "heat": 384843,
+      "heat": 371305,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%23%E7%BD%97%E6%B0%B8%E6%B5%A9%E6%8B%92%E7%BB%9D%E9%A6%96%E5%B8%AD%E8%80%81%E6%92%95%E6%9C%BA%E7%A4%BA%E5%A5%BD%23&Refer=top",
       "onboardAt": "2026-08-27T03:51:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 21,
-      "word": "中元节晚上不能出门是误会",
-      "category": "民生新闻",
-      "heat": 380577,
+      "word": "一个爱挤痘痘的人天塌了",
+      "category": "美妆",
+      "heat": 370878,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%85%83%E8%8A%82%E6%99%9A%E4%B8%8A%E4%B8%8D%E8%83%BD%E5%87%BA%E9%97%A8%E6%98%AF%E8%AF%AF%E4%BC%9A%23&Refer=top",
-      "onboardAt": "2026-08-27T04:21:24Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%E4%B8%80%E4%B8%AA%E7%88%B1%E6%8C%A4%E7%97%98%E7%97%98%E7%9A%84%E4%BA%BA%E5%A4%A9%E5%A1%8C%E4%BA%86&Refer=top",
+      "onboardAt": "2026-08-27T04:10:22Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 23,
-      "word": "台风",
-      "category": "突发/灾害",
-      "heat": 378071,
+      "word": "尼泊尔山洪暴发前后卫星图对比",
+      "category": "海外新闻",
+      "heat": 366085,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%E5%8F%B0%E9%A3%8E&Refer=top",
-      "onboardAt": "2026-08-27T03:57:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA%E6%9A%B4%E5%8F%91%E5%89%8D%E5%90%8E%E5%8D%AB%E6%98%9F%E5%9B%BE%E5%AF%B9%E6%AF%94%23&Refer=top",
+      "onboardAt": "2026-08-27T04:21:24Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
-      "rank": 26,
-      "word": "酒店280元房型国庆标价5850元",
-      "category": "民生新闻",
-      "heat": 371306,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E9%85%92%E5%BA%97280%E5%85%83%E6%88%BF%E5%9E%8B%E5%9B%BD%E5%BA%86%E6%A0%87%E4%BB%B75850%E5%85%83%23&Refer=top",
-      "onboardAt": "2026-08-27T04:23:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
-      "match": "llm"
-    },
-    {
-      "rank": 27,
-      "word": "一个爱挤痘痘的人天塌了",
-      "category": "美妆",
-      "heat": 371161,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%E4%B8%80%E4%B8%AA%E7%88%B1%E6%8C%A4%E7%97%98%E7%97%98%E7%9A%84%E4%BA%BA%E5%A4%A9%E5%A1%8C%E4%BA%86&Refer=top",
-      "onboardAt": "2026-08-27T04:10:22Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "rank": 25,
+      "word": "苹果首款折叠屏手机将亮相",
+      "category": "数码",
+      "heat": 363730,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%8B%B9%E6%9E%9C%E9%A6%96%E6%AC%BE%E6%8A%98%E5%8F%A0%E5%B1%8F%E6%89%8B%E6%9C%BA%E5%B0%86%E4%BA%AE%E7%9B%B8%23&Refer=top",
+      "onboardAt": "2026-08-27T01:24:21Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 28,
-      "word": "苹果首款折叠屏手机将亮相",
-      "category": "数码",
-      "heat": 367776,
+      "word": "西藏吉隆口岸方向发现堰塞湖",
+      "category": "突发/灾害",
+      "heat": 357560,
       "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E8%8B%B9%E6%9E%9C%E9%A6%96%E6%AC%BE%E6%8A%98%E5%8F%A0%E5%B1%8F%E6%89%8B%E6%9C%BA%E5%B0%86%E4%BA%AE%E7%9B%B8%23&Refer=top",
-      "onboardAt": "2026-08-27T01:24:21Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%96%B9%E5%90%91%E5%8F%91%E7%8E%B0%E5%A0%B0%E5%A1%9E%E6%B9%96%23&Refer=top",
+      "onboardAt": "2026-08-27T00:30:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
-      "rank": 32,
-      "word": "办事大厅被拍空岗后禁群众带手机进入",
-      "category": "民生新闻",
-      "heat": 360492,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%8A%9E%E4%BA%8B%E5%A4%A7%E5%8E%85%E8%A2%AB%E6%8B%8D%E7%A9%BA%E5%B2%97%E5%90%8E%E7%A6%81%E7%BE%A4%E4%BC%97%E5%B8%A6%E6%89%8B%E6%9C%BA%E8%BF%9B%E5%85%A5%23&Refer=top",
-      "onboardAt": "2026-08-26T23:01:18Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "rank": 33,
+      "word": "台风",
+      "category": "突发/灾害",
+      "heat": 348835,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%E5%8F%B0%E9%A3%8E&Refer=top",
+      "onboardAt": "2026-08-27T03:57:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 34,
-      "word": "罗永浩称扶老人遭索赔事件没什么反转",
+      "word": "嫌疑人称因结婚矛盾杀中国女学生",
       "category": "民生新闻",
-      "heat": 356812,
+      "heat": 348221,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E7%BD%97%E6%B0%B8%E6%B5%A9%E7%A7%B0%E6%89%B6%E8%80%81%E4%BA%BA%E9%81%AD%E7%B4%A2%E8%B5%94%E4%BA%8B%E4%BB%B6%E6%B2%A1%E4%BB%80%E4%B9%88%E5%8F%8D%E8%BD%AC%23&Refer=top",
-      "onboardAt": "2026-08-27T04:17:22Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%E5%AB%8C%E7%96%91%E4%BA%BA%E7%A7%B0%E5%9B%A0%E7%BB%93%E5%A9%9A%E7%9F%9B%E7%9B%BE%E6%9D%80%E4%B8%AD%E5%9B%BD%E5%A5%B3%E5%AD%A6%E7%94%9F&Refer=top",
+      "onboardAt": "2026-08-27T04:39:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 35,
-      "word": "尼泊尔山洪暴发前后卫星图对比",
-      "category": "海外新闻",
-      "heat": 356076,
+      "word": "罗永浩称扶老人遭索赔事件没什么反转",
+      "category": "民生新闻",
+      "heat": 345644,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA%E6%9A%B4%E5%8F%91%E5%89%8D%E5%90%8E%E5%8D%AB%E6%98%9F%E5%9B%BE%E5%AF%B9%E6%AF%94%23&Refer=top",
-      "onboardAt": "2026-08-27T04:21:24Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
-      "match": "llm"
-    },
-    {
-      "rank": 36,
-      "word": "尼泊尔泥石流",
-      "category": "突发/灾害",
-      "heat": 353343,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%E5%B0%BC%E6%B3%8A%E5%B0%94%E6%B3%A5%E7%9F%B3%E6%B5%81&Refer=top",
-      "onboardAt": "2026-08-27T00:23:22Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E7%BD%97%E6%B0%B8%E6%B5%A9%E7%A7%B0%E6%89%B6%E8%80%81%E4%BA%BA%E9%81%AD%E7%B4%A2%E8%B5%94%E4%BA%8B%E4%BB%B6%E6%B2%A1%E4%BB%80%E4%B9%88%E5%8F%8D%E8%BD%AC%23&Refer=top",
+      "onboardAt": "2026-08-27T04:17:22Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 37,
       "word": "苹果发布会定档",
       "category": "数码",
-      "heat": 351774,
+      "heat": 343053,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%E8%8B%B9%E6%9E%9C%E5%8F%91%E5%B8%83%E4%BC%9A%E5%AE%9A%E6%A1%A3&Refer=top",
       "onboardAt": "2026-08-26T23:37:20Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 38,
-      "word": "夫妻退房抱走酒店被子被当场拦下",
-      "category": "民生新闻",
-      "heat": 350674,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%A4%AB%E5%A6%BB%E9%80%80%E6%88%BF%E6%8A%B1%E8%B5%B0%E9%85%92%E5%BA%97%E8%A2%AB%E5%AD%90%E8%A2%AB%E5%BD%93%E5%9C%BA%E6%8B%A6%E4%B8%8B%23&Refer=top",
-      "onboardAt": "2026-08-27T01:07:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
-      "match": "llm"
-    },
-    {
-      "rank": 42,
-      "word": "第一次见给AI画饼的",
-      "category": "互联网",
-      "heat": 343469,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A7%81%E7%BB%99AI%E7%94%BB%E9%A5%BC%E7%9A%84&Refer=top",
-      "onboardAt": "2026-08-27T04:06:22Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
-      "match": "llm"
-    },
-    {
-      "rank": 47,
-      "word": "仍无法联系到吉隆口岸一线救援人员",
+      "word": "尼泊尔泥石流",
       "category": "突发/灾害",
-      "heat": 334387,
+      "heat": 341029,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%E5%B0%BC%E6%B3%8A%E5%B0%94%E6%B3%A5%E7%9F%B3%E6%B5%81&Refer=top",
+      "onboardAt": "2026-08-27T00:23:22Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
+      "match": "llm"
+    },
+    {
+      "rank": 39,
+      "word": "酒店280元房型国庆标价5850元",
+      "category": "民生新闻",
+      "heat": 338855,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E4%BB%8D%E6%97%A0%E6%B3%95%E8%81%94%E7%B3%BB%E5%88%B0%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E4%B8%80%E7%BA%BF%E6%95%91%E6%8F%B4%E4%BA%BA%E5%91%98%23&Refer=top",
-      "onboardAt": "2026-08-27T03:43:23Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E9%85%92%E5%BA%97280%E5%85%83%E6%88%BF%E5%9E%8B%E5%9B%BD%E5%BA%86%E6%A0%87%E4%BB%B75850%E5%85%83%23&Refer=top",
+      "onboardAt": "2026-08-27T04:23:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     },
     {
       "rank": 48,
-      "word": "应届生身份正变成就业枷锁",
-      "category": "民生新闻",
-      "heat": 331396,
+      "word": "仍无法联系到吉隆口岸一线救援人员",
+      "category": "突发/灾害",
+      "heat": 323803,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%BA%94%E5%B1%8A%E7%94%9F%E8%BA%AB%E4%BB%BD%E6%AD%A3%E5%8F%98%E6%88%90%E5%B0%B1%E4%B8%9A%E6%9E%B7%E9%94%81%23&Refer=top",
-      "onboardAt": "2026-08-27T04:01:25Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
-      "match": "llm"
-    },
-    {
-      "rank": 49,
-      "word": "男子卖房让前同事操盘亏掉99.9%",
-      "category": "民生新闻",
-      "heat": 330329,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E7%94%B7%E5%AD%90%E5%8D%96%E6%88%BF%E8%AE%A9%E5%89%8D%E5%90%8C%E4%BA%8B%E6%93%8D%E7%9B%98%E4%BA%8F%E6%8E%8999.9%25%23&Refer=top",
-      "onboardAt": "2026-08-27T04:01:25Z",
-      "fetchedAt": "2026-08-27T04:25:40Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%BB%8D%E6%97%A0%E6%B3%95%E8%81%94%E7%B3%BB%E5%88%B0%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E4%B8%80%E7%BA%BF%E6%95%91%E6%8F%B4%E4%BA%BA%E5%91%98%23&Refer=top",
+      "onboardAt": "2026-08-27T03:43:23Z",
+      "fetchedAt": "2026-08-27T04:47:12Z",
       "match": "llm"
     }
   ],
   "aggregates": [
     {
-      "name": "半导体板块领涨，资金大幅流入",
-      "summary": "8月27日A股半导体板块集体大涨，科创50指数半日涨超3%，主力资金净买入生益科技超13亿元。市场静待英伟达财报，亚太市场半导体领涨，显示资金对半导体产业链的强烈关注。",
+      "name": "半导体板块领涨，市场情绪高涨",
+      "summary": "8月27日，A股半导体板块集体大涨，多只个股涨停，科创50指数半日涨超3%。市场对英伟达财报的期待以及国产半导体材料突破海外垄断的消息提振了板块情绪，资金流入明显。",
       "newsTitles": [
+        "多只半导体个股涨停",
         "8月27日午间涨停分析",
-        "主力资金监控：生益科技净买入超13亿",
         "静待英伟达财报，半导体板块领涨亚太市场、韩股收涨0.97%，油价三连跌，债市走强",
         "27日，A股半导体板块集体大涨",
         "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
-        "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨"
+        "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
+        "主力资金监控：生益科技净买入超13亿",
+        "【大佬持仓跟踪】PCB材料+氟化工，PTFE现有和在建产能超6万吨，参股企业拥有G5级电子级氢氟酸产能，这家公司超纯半导体材料打破海外垄断"
       ],
       "hotWords": [],
       "heat": 0.95
     },
     {
-      "name": "人工智能与算力硬件持续走强",
-      "summary": "算力硬件板块走高，创业板指涨逾1%，AI大模型双雄齐涨。智谱新模型“牛来”跑在10万国产卡上，引发对英伟达护城河的讨论，显示AI算力需求旺盛。",
-      "newsTitles": [
-        "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
-        "算力硬件走高 创业板指涨逾1%",
-        "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
-        "智谱新模型“牛来”跑在10万国产卡上，SemiAnalaysis评价“英伟达护城河再受考验”"
-      ],
-      "hotWords": [
-        "第一次见给AI画饼的"
-      ],
-      "heat": 0.85
-    },
-    {
-      "name": "机器人产业热度高涨，软银大手笔投资",
-      "summary": "软银拟60亿美元控股人形机器人公司1X，押注“物理AI”赛道。第二届世界人形机器人运动会落幕，发布多项重磅成果，机器人板块受关注。",
+      "name": "机器人产业动态：软银大手笔投资，运动会成果发布",
+      "summary": "软银拟60亿美元控股人形机器人公司1X，押注“物理AI”赛道，同时第二届世界人形机器人运动会落幕并发布多项重磅成果，机器人产业热度持续升温。",
       "newsTitles": [
         "软银拟60亿美元控股人形机器人公司1X，押注“物理AI”下一个万亿赛道",
         "第二届世界人形机器人运动会落幕 发布多项重磅成果",
         "华沿机器人：上半财年净亏损5690.40万元"
       ],
       "hotWords": [],
-      "heat": 0.75
+      "heat": 0.7
     },
     {
-      "name": "消费电子与新能源动态",
-      "summary": "苹果首款折叠屏手机将亮相，苹果发布会定档，消费电子板块受关注。2026世界新能源汽车大会将于9月举行，新能源领域持续活跃。",
+      "name": "人工智能大赛收官，国产算力受关注",
+      "summary": "“2026新一代人工智能（深圳）创业创新大赛”总决赛收官，智谱新模型“牛来”跑在10万国产卡上，引发对英伟达护城河的讨论，AI大模型双雄齐涨。",
+      "newsTitles": [
+        "“2026新一代人工智能（深圳）创业创新大赛”总决赛收官",
+        "智谱新模型“牛来”跑在10万国产卡上，SemiAnalaysis评价“英伟达护城河再受考验”",
+        "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨"
+      ],
+      "hotWords": [],
+      "heat": 0.6
+    },
+    {
+      "name": "新能源车大会临近，行业前景受关注",
+      "summary": "2026世界新能源汽车大会将于9月22日至24日在海口举行，中国汽车自主品牌群体性崛起，新能源板块关注度提升。",
       "newsTitles": [
         "2026世界新能源汽车大会将于9月22日至24日在海口举行",
         "中国汽车自主品牌群体性崛起，怎么做到的？"
+      ],
+      "hotWords": [],
+      "heat": 0.5
+    },
+    {
+      "name": "消费电子动态：苹果折叠屏与发布会定档",
+      "summary": "苹果首款折叠屏手机将亮相，苹果发布会定档，消费电子板块受关注，市场对创新产品充满期待。",
+      "newsTitles": [
+        "静待英伟达财报，半导体板块领涨亚太市场、韩股收涨0.97%，油价三连跌，债市走强"
       ],
       "hotWords": [
         "苹果首款折叠屏手机将亮相",
         "苹果发布会定档"
       ],
-      "heat": 0.6
+      "heat": 0.4
     },
     {
-      "name": "市场整体活跃，成交额放量",
-      "summary": "沪深两市成交额突破1万亿，较上一日此时放量近600亿，超3000只个股飘红，三大指数集体收涨。市场情绪回暖，资金活跃度提升。",
+      "name": "市场整体回暖，个股普涨",
+      "summary": "A股午评显示超3000只个股飘红，三大指数集体收涨，市场情绪回暖，但开盘时超3100只个股飘绿，显示分歧仍存。",
       "newsTitles": [
-        "沪深两市成交额突破1万亿 较上一日此时放量近600亿",
         "A股午评：超3000只个股飘红，三大指数集体收涨",
-        "A股开盘：超3100只个股飘绿，沪指低开，深指、创业板指高开"
+        "A股开盘：超3100只个股飘绿，沪指低开，深指、创业板指高开",
+        "财联社8月27日午间新闻精选"
       ],
       "hotWords": [],
-      "heat": 0.7
+      "heat": 0.55
     },
     {
-      "name": "宏观经济数据与政策支持",
-      "summary": "国家统计局数据显示1-7月份规模以上工业企业利润增长17.6%，保持较快增长。多地精准助企纾困，全力推动复工复产，经济基本面稳中向好。",
+      "name": "宏观经济数据：工业企业利润增长",
+      "summary": "国家统计局数据显示，1-7月份全国规模以上工业企业利润增长17.6%，保持较快增长，经济基本面稳健。",
       "newsTitles": [
         "国家统计局：1—7月份规模以上工业企业利润保持较快增长",
-        "国家统计局：1-7月份全国规模以上工业企业利润增长17.6%",
-        "多地精准助企纾困 全力推动复工复产"
+        "国家统计局：1-7月份全国规模以上工业企业利润增长17.6%"
       ],
       "hotWords": [],
-      "heat": 0.5
+      "heat": 0.3
+    },
+    {
+      "name": "资金流向与市场情绪",
+      "summary": "主力资金监控显示生益科技净买入超13亿，北向资金动向受关注，市场情绪在半导体和AI带动下偏暖。",
+      "newsTitles": [
+        "主力资金监控：生益科技净买入超13亿",
+        "8月27日午间涨停分析",
+        "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强"
+      ],
+      "hotWords": [],
+      "heat": 0.65
     }
   ],
   "sectorOutlook": [
@@ -1937,96 +1954,89 @@
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "半导体板块今日领涨，科创50指数半日涨超3%，主力资金大幅流入电子、半导体板块，生益科技获净买入超13亿元。市场静待英伟达财报，亚太市场半导体板块亦领涨，显示资金对半导体产业链的强烈关注。量能方面，沪深两市半日成交额1.35万亿，较上个交易日放量1208亿，显示资金活跃度提升。北向成交额近两周平稳，但今日成交额预计超1.9万亿，显示市场整体放量。微博热搜中无直接相关条目，但苹果发布会定档等消费电子消息间接利好半导体。价格已部分反应，但英伟达财报尚未公布，存在不确定性。",
+      "narrative": "半导体板块今日领涨，科创50半日涨超3%，多只个股涨停，主力资金净流入电子板块超198亿元。英伟达财报预期和国产半导体材料突破海外垄断的消息提振情绪，量能较昨日放量1208亿，北向成交额近两周平稳，但今日活跃度提升。微博热搜无直接相关条目，但市场情绪高涨。价格已反应，且量能配合，短期趋势向上。",
       "evidence": [
         {
-          "claim": "半导体板块集体大涨，科创50指数半日涨超3%",
+          "claim": "半导体板块集体大涨，多只个股涨停",
+          "sourceTitle": "多只半导体个股涨停",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685092.shtml",
+          "publishedAt": "2026-08-27T04:25:08Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "科创50指数半日涨超3%，算力硬件走强",
           "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
           "url": "https://www.cls.cn/detail/2465902",
           "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "primary"
         },
         {
-          "claim": "主力资金净流入电子、半导体板块，生益科技净买入超13亿元",
+          "claim": "主力资金净流入电子板块超198亿元",
           "sourceTitle": "主力资金监控：生益科技净买入超13亿",
           "url": "https://www.cls.cn/detail/2465843",
           "publishedAt": "2026-08-27T02:55:27Z",
           "weight": "primary"
-        },
-        {
-          "claim": "亚太市场半导体板块领涨，市场静待英伟达财报",
-          "sourceTitle": "静待英伟达财报，半导体板块领涨亚太市场、韩股收涨0.97%，油价三连跌，债市走强",
-          "url": "https://wallstreetcn.com/articles/3780328",
-          "publishedAt": "2026-08-26T07:22:10Z",
-          "weight": "supporting"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "半导体板块虽涨，但中芯国际涨幅仅1.84%，量能未显著放大",
-          "sourceTitle": "中芯国际行情快照",
-          "url": "https://www.cls.cn/detail/2465902",
-          "publishedAt": "2026-08-27T04:05:37Z",
+          "claim": "开盘时超3100只个股飘绿，市场分歧仍存",
+          "sourceTitle": "A股开盘：超3100只个股飘绿，沪指低开，深指、创业板指高开",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10684985.shtml",
+          "publishedAt": "2026-08-27T01:36:54Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.85,
-      "invalidatedIf": "英伟达财报不及预期，或半导体板块出现资金大幅流出"
+      "invalidatedIf": "英伟达财报不及预期或半导体板块出现资金大幅流出"
     },
     {
-      "sector": "人工智能与算力硬件",
+      "sector": "人工智能",
       "heat": 2,
-      "heatScore": 0.85,
+      "heatScore": 0.7,
       "priceAction": "up",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "人工智能与算力硬件板块持续走强，创业板指涨逾1%，CPO、光通信、光模块等概念股集体大涨。智谱新模型“牛来”跑在10万国产卡上，引发对AI算力需求的讨论。市场情绪升温，微博热搜中“第一次见给AI画饼的”条目与AI相关，但热度不高。量能方面，沪深两市成交额突破1万亿，较上一日此时放量近600亿，显示资金活跃。北向成交额平稳，但市场整体放量。价格已部分反应，但AI板块估值较高，需警惕回调风险。",
+      "narrative": "人工智能板块受智谱新模型跑在国产芯片上、AI大模型双雄齐涨等消息提振，市场关注度提升。英伟达财报预期是短期催化剂，但价格已部分反应。量能较昨日放量，北向成交额平稳，情绪偏暖。微博热搜无直接相关条目，但科技类话题热度较高。",
       "evidence": [
         {
-          "claim": "算力硬件板块走高，创业板指涨逾1%",
-          "sourceTitle": "算力硬件走高 创业板指涨逾1%",
-          "url": "https://www.cls.cn/detail/2465825",
-          "publishedAt": "2026-08-27T02:42:22Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "智谱新模型“牛来”跑在10万国产卡上，引发对AI算力需求的讨论",
+          "claim": "智谱新模型跑在10万国产卡上，引发对英伟达护城河的讨论",
           "sourceTitle": "智谱新模型“牛来”跑在10万国产卡上，SemiAnalaysis评价“英伟达护城河再受考验”",
           "url": "https://wallstreetcn.com/articles/3780391",
           "publishedAt": "2026-08-27T00:22:51Z",
           "weight": "supporting"
         },
         {
-          "claim": "AI大模型双雄齐涨，光通信、光模块集体拉升",
+          "claim": "AI大模型双雄齐涨",
           "sourceTitle": "科创50涨3%，光通信、光模块集体拉升，存储芯片反弹，恒指盘中进一步下跌，AI大模型双雄齐涨",
           "url": "https://wallstreetcn.com/articles/3780403",
           "publishedAt": "2026-08-27T03:02:28Z",
-          "weight": "supporting"
+          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "AI板块估值较高，需警惕回调风险",
-          "sourceTitle": "消费板块的“无基之弹”2.0：为何社零增速降至0.6%，消费股却开始奖励好业绩、宽容坏业绩？",
-          "url": "https://wallstreetcn.com/member/articles/3780338",
-          "publishedAt": "2026-08-26T22:42:29Z",
+          "claim": "市场对英伟达财报的等待可能限制短期涨幅",
+          "sourceTitle": "静待英伟达财报，半导体板块领涨亚太市场、韩股收涨0.97%，油价三连跌，债市走强",
+          "url": "https://wallstreetcn.com/articles/3780328",
+          "publishedAt": "2026-08-26T07:22:10Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.8,
-      "invalidatedIf": "AI板块出现资金大幅流出，或英伟达财报不及预期"
+      "confidence": 0.7,
+      "invalidatedIf": "英伟达财报不及预期或AI板块出现资金流出"
     },
     {
       "sector": "机器人",
       "heat": 3,
-      "heatScore": 0.75,
+      "heatScore": 0.6,
       "priceAction": "mixed",
       "calibration": "divergence",
       "direction": "mixed",
-      "narrative": "机器人产业热度高涨，软银拟60亿美元控股人形机器人公司1X，押注“物理AI”赛道。第二届世界人形机器人运动会落幕，发布多项重磅成果。但华沿机器人上半财年净亏损5690.40万元，显示行业盈利压力。价格方面，机器人板块表现分化，部分个股上涨，但整体未出现明显资金流入。量能方面，市场整体放量，但机器人板块未出现显著放量。微博热搜中无直接相关条目。价格尚未充分反应，但行业基本面存在不确定性。",
+      "narrative": "机器人板块受软银拟60亿美元控股人形机器人公司1X、世界人形机器人运动会落幕等消息提振，但华沿机器人上半财年净亏损，板块内部分化。价格反应不一，量能未明显放大，北向成交额平稳，情绪中性。微博热搜无直接相关条目，但科技类话题热度较高。",
       "evidence": [
         {
-          "claim": "软银拟60亿美元控股人形机器人公司1X，押注“物理AI”赛道",
+          "claim": "软银拟60亿美元控股人形机器人公司1X",
           "sourceTitle": "软银拟60亿美元控股人形机器人公司1X，押注“物理AI”下一个万亿赛道",
           "url": "https://wallstreetcn.com/articles/3780413",
           "publishedAt": "2026-08-27T03:45:56Z",
@@ -2038,7 +2048,9 @@
           "url": "https://www.chinanews.com.cn/cj/2026/08-27/10684964.shtml",
           "publishedAt": "2026-08-27T01:54:13Z",
           "weight": "supporting"
-        },
+        }
+      ],
+      "counterEvidence": [
         {
           "claim": "华沿机器人上半财年净亏损5690.40万元",
           "sourceTitle": "华沿机器人：上半财年净亏损5690.40万元",
@@ -2047,100 +2059,76 @@
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [
-        {
-          "claim": "机器人板块未出现显著资金流入，价格表现分化",
-          "sourceTitle": "A股午评：超3000只个股飘红，三大指数集体收涨",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685080.shtml",
-          "publishedAt": "2026-08-27T03:36:17Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.6,
-      "invalidatedIf": "机器人板块出现资金大幅流出，或行业盈利持续恶化"
+      "confidence": 0.5,
+      "invalidatedIf": "软银交易失败或机器人板块出现重大利空"
     },
     {
       "sector": "消费电子",
       "heat": 4,
-      "heatScore": 0.6,
+      "heatScore": 0.4,
       "priceAction": "up",
-      "calibration": "pricedIn",
+      "calibration": "insufficientData",
       "direction": "up",
-      "narrative": "消费电子板块受苹果发布会定档消息提振，苹果首款折叠屏手机将亮相，市场关注度提升。微博热搜中“苹果首款折叠屏手机将亮相”和“苹果发布会定档”条目热度较高，显示市场情绪升温。价格方面，消费电子板块今日上涨，但涨幅有限。量能方面，市场整体放量，但消费电子板块未出现显著放量。北向成交额平稳。价格已部分反应，但苹果发布会具体内容尚未公布，存在不确定性。",
+      "narrative": "消费电子板块受苹果首款折叠屏手机将亮相、苹果发布会定档等消息提振，但缺乏直接行情数据。微博热搜有相关条目，但热度一般。价格反应不明，量能未明显变化，北向成交额平稳，情绪中性。",
       "evidence": [
         {
-          "claim": "苹果首款折叠屏手机将亮相，苹果发布会定档",
+          "claim": "苹果首款折叠屏手机将亮相",
           "sourceTitle": "苹果首款折叠屏手机将亮相",
           "url": "https://s.weibo.com/weibo?q=%23%E8%8B%B9%E6%9E%9C%E9%A6%96%E6%AC%BE%E6%8A%98%E5%8F%A0%E5%B1%8F%E6%89%8B%E6%9C%BA%E5%B0%86%E4%BA%AE%E7%9B%B8%23&Refer=top",
           "publishedAt": "2026-08-27T01:24:21Z",
           "weight": "supporting"
         },
         {
-          "claim": "消费电子板块受关注，但涨幅有限",
-          "sourceTitle": "A股午评：超3000只个股飘红，三大指数集体收涨",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685080.shtml",
-          "publishedAt": "2026-08-27T03:36:17Z",
+          "claim": "苹果发布会定档",
+          "sourceTitle": "苹果发布会定档",
+          "url": "https://s.weibo.com/weibo?q=%E8%8B%B9%E6%9E%9C%E5%8F%91%E5%B8%83%E4%BC%9A%E5%AE%9A%E6%A1%A3&Refer=top",
+          "publishedAt": "2026-08-26T23:37:20Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [
-        {
-          "claim": "消费电子板块未出现显著资金流入",
-          "sourceTitle": "主力资金监控：生益科技净买入超13亿",
-          "url": "https://www.cls.cn/detail/2465843",
-          "publishedAt": "2026-08-27T02:55:27Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.55,
-      "invalidatedIf": "苹果发布会内容不及预期，或消费电子板块出现资金流出"
+      "counterEvidence": [],
+      "confidence": 0.3,
+      "invalidatedIf": "苹果发布会不及预期或消费电子板块出现利空"
     },
     {
       "sector": "新能源",
       "heat": 5,
-      "heatScore": 0.5,
+      "heatScore": 0.3,
       "priceAction": "down",
       "calibration": "divergence",
       "direction": "down",
-      "narrative": "新能源板块今日表现疲软，光伏ETF和新能源ETF均下跌，主力资金净流出电新行业、电力设备等板块。2026世界新能源汽车大会将于9月举行，但短期缺乏催化剂。价格方面，新能源板块下跌，显示资金流出。量能方面，市场整体放量，但新能源板块未出现显著放量。北向成交额平稳。价格已反应，但行业基本面存在不确定性。",
+      "narrative": "新能源板块受2026世界新能源汽车大会将于9月举行等消息提振，但光伏ETF今日下跌0.94%，电网设备板块调整，价格反应偏弱。量能未明显放大，北向成交额平稳，情绪中性。微博热搜无直接相关条目，但汽车话题热度一般。",
       "evidence": [
         {
-          "claim": "主力资金净流出电新行业、电力设备等板块",
-          "sourceTitle": "主力资金监控：生益科技净买入超13亿",
-          "url": "https://www.cls.cn/detail/2465843",
-          "publishedAt": "2026-08-27T02:55:27Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "光伏ETF和新能源ETF均下跌",
-          "sourceTitle": "光伏ETF华泰柏瑞行情快照",
-          "url": "https://www.cls.cn/detail/2465843",
-          "publishedAt": "2026-08-27T04:05:51Z",
-          "weight": "supporting"
-        },
-        {
-          "claim": "2026世界新能源汽车大会将于9月举行",
+          "claim": "2026世界新能源汽车大会将于9月22日至24日在海口举行",
           "sourceTitle": "2026世界新能源汽车大会将于9月22日至24日在海口举行",
           "url": "https://www.chinanews.com.cn/cj/2026/08-27/10684960.shtml",
           "publishedAt": "2026-08-27T01:56:31Z",
           "weight": "supporting"
+        },
+        {
+          "claim": "光伏ETF今日下跌0.94%",
+          "sourceTitle": "光伏ETF华泰柏瑞",
+          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10684960.shtml",
+          "publishedAt": "2026-08-27T04:05:51Z",
+          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "新能源板块短期缺乏催化剂，但长期前景仍被看好",
-          "sourceTitle": "中国汽车自主品牌群体性崛起，怎么做到的？",
-          "url": "https://www.chinanews.com.cn/cj/2026/08-27/10685022.shtml",
-          "publishedAt": "2026-08-27T02:22:27Z",
+          "claim": "电网设备板块调整",
+          "sourceTitle": "午评：科创50指数半日涨超3% 算力硬件、农业板块集体走强",
+          "url": "https://www.cls.cn/detail/2465902",
+          "publishedAt": "2026-08-27T03:31:41Z",
           "weight": "supporting"
         }
       ],
-      "confidence": 0.5,
-      "invalidatedIf": "新能源板块出现资金大幅流入，或行业政策出现重大利好"
+      "confidence": 0.4,
+      "invalidatedIf": "新能源大会超预期或光伏板块出现资金流入"
     }
   ],
-  "crossSectorNotes": "半导体与人工智能板块今日领涨，资金大幅流入，但新能源板块表现疲软，资金流出。消费电子板块受苹果发布会消息提振，但涨幅有限。机器人板块热度高涨，但行业盈利压力较大。市场整体放量，但板块分化明显，资金聚焦于科技成长板块，传统板块表现较弱。",
-  "trendNotes": "量能方面，沪深两市成交额突破1万亿，较上一日此时放量近600亿，预计全天成交金额超1.9万亿，显示市场放量。北向成交额近两周平稳，今日成交额预计超1.9万亿，但交易所已不再披露实时净买入，只能看活跃度与上证对照。新闻情绪方面，今日新闻数量明显增多，情绪升温，半导体、人工智能、机器人等板块成为焦点。微博热搜中，苹果发布会定档、苹果首款折叠屏手机将亮相等条目与消费电子相关，但热度不高。整体来看，市场情绪回暖，资金活跃度提升，但板块分化明显。",
+  "crossSectorNotes": "半导体和人工智能板块今日领涨，受英伟达财报预期和国产算力突破提振，资金流入明显，量能放量。机器人板块受软银投资消息提振，但个股分化。消费电子板块受苹果新品消息影响，但缺乏行情数据。新能源板块表现偏弱，光伏ETF下跌，与半导体形成跷跷板效应。市场整体回暖，但开盘时分歧较大，需关注后续持续性。",
+  "trendNotes": "上证指数近两周成交量相对平稳，今日半日成交额1.35万亿，较昨日放量1208亿，量能明显放大。北向成交额近两周大体平稳，今日活跃度提升，但交易所已不再披露实时净买入，无法确认净流入。新闻情绪从昨日偏冷（仅1条新闻）升温至今日偏热（23条新闻），市场情绪高涨。微博热搜中，苹果折叠屏手机和发布会定档条目仍在时效内（onboardAt 2026-08-27T01:24:21Z和2026-08-26T23:37:20Z，fetchedAt 2026-08-27T04:47:12Z），与消费电子板块相关，但热度一般。整体来看，市场情绪偏暖，但需警惕英伟达财报不及预期的风险。",
   "limitations": [
     "可能使用延迟公开行情",
     "微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效",
@@ -2148,11 +2136,11 @@
     "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
   ],
   "stats": {
-    "fetched": 54,
-    "used": 54,
+    "fetched": 53,
+    "used": 53,
     "quotes": 14,
     "weibo": 24,
-    "aggregates": 6,
+    "aggregates": 8,
     "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash-vision-exp",

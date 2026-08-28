@@ -244,7 +244,7 @@ function renderOpportunities(report) {
   section.hidden = false;
   section.innerHTML = `
     <p class="section-kicker">热点推演关注线索</p>
-    <p class="hint">根据热搜、新闻标题与历史类似事件推演到的个股线索，并标注由哪个热点联想到。明星纠纷可能对应谐音梗/情绪炒作，不是代言或订单；研究推演，不是买卖建议，没有目标价。</p>
+    <p class="hint">根据热搜、新闻标题与历史类似事件推演到的个股线索，并标注由哪个热点联想到。长文里的产品细节（如磨指甲）可能被交易成对应消费品，不是代言或订单；研究推演，不是买卖建议，没有目标价。</p>
     <div class="opportunity-grid">
       ${rows
         .map((row) => {

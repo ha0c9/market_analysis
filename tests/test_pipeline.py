@@ -789,7 +789,7 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertGreaterEqual(max(item.attention for item in jing), 0.9)
         queries = event_news_queries(kept)
         self.assertTrue(any("景甜" in query for query in queries))
-        self.assertTrue(any("概念股" in query or "谐音" in query for query in queries))
+        self.assertTrue(any("指甲刀" in query or "磨指甲" in query for query in queries))
         opps = heuristic_opportunities(kept)
         names = {row.name for row in opps}
         self.assertTrue({"光线传媒", "芒果超媒", "分众传媒"} & names)
@@ -955,7 +955,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertTrue(all(row.symbol.startswith(("sh", "sz")) for row in coerced))
         self.assertFalse(any(row.symbol == "AAPL" for row in coerced))
 
-    def test_heuristic_maps_dowry_news_to_zhangxiaoquan_even_without_weibo(self) -> None:
+    def test_heuristic_maps_nail_story_detail_to_zhangxiaoquan(self) -> None:
         from src.models import HotSearchItem, NewsItem, Opportunity
         from src.opportunities import (
             coerce_opportunities,
@@ -964,28 +964,41 @@ class OpportunityTests(unittest.TestCase):
             opportunity_news_queries,
         )
 
-        news = [
+        lawsuit_only = [
             NewsItem(
                 title="孙宇晨起诉景甜追回三千万彩礼",
                 source="新浪娱乐",
                 snippet="律师张起淮确认已向法院提交起诉材料",
             )
         ]
+        self.assertNotIn(
+            "张小泉",
+            {row.name for row in heuristic_opportunities([], news=lawsuit_only, focus="景甜")},
+        )
+
+        news = [
+            NewsItem(
+                title="孙宇晨长文写景甜磨指甲一小时",
+                source="新浪娱乐",
+                snippet="文中称磨完之后想摸哪里摸哪里，还说以后再没有人给你磨指甲了",
+            )
+        ]
         rows = heuristic_opportunities([], news=news, focus="景甜")
         names = {row.name for row in rows}
         self.assertIn("张小泉", names)
-        self.assertIn("潮宏基", names)
+        self.assertNotIn("潮宏基", names)
         zxq = next(row for row in rows if row.name == "张小泉")
         self.assertEqual(zxq.symbol, "sz301055")
         self.assertEqual(zxq.hotspot, "景甜")
-        self.assertIn("谐音", zxq.thesis)
+        self.assertIn("磨指甲", zxq.thesis)
+        self.assertNotIn("谐音", zxq.thesis)
 
         coerced = coerce_opportunities(
             [
                 {
                     "name": "张小泉",
                     "hotspot": "景甜",
-                    "thesis": "谐音梗交易指甲刀，不是代言。",
+                    "thesis": "小作文磨指甲细节被交易成指甲刀，不是代言。",
                     "confidence": 0.32,
                 }
             ],
@@ -1058,14 +1071,14 @@ class OpportunityTests(unittest.TestCase):
                     symbol="sz301055",
                     name="张小泉",
                     hotspot="景甜",
-                    thesis="由热点「景甜」联想到张小泉。谐音梗，不是代言。",
-                    angle="谐音梗·剪断关系/指甲刀",
+                    thesis="由热点「景甜」联想到张小泉。小作文磨指甲细节被交易成指甲刀，不是代言。",
+                    angle="小作文磨指甲细节→指甲刀",
                     confidence=0.32,
                 )
             ],
         )
         self.assertIn("张小泉←景甜", report.trendNotes)
-        self.assertTrue(any("谐音梗" in item for item in report.limitations))
+        self.assertTrue(any("产品细节" in item or "冲高回落" in item for item in report.limitations))
 
 
 if __name__ == "__main__":

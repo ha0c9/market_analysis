@@ -123,7 +123,7 @@ def heuristic_opportunities(
                     f"由热点「{hotspot}」联想到{name}。"
                     + (f"{angle}。" if angle else "")
                     + (f"相关条目：{sample}。" if sample else "")
-                    + "A股常把明星纠纷/分手交易成谐音或产品梗，与代言和订单无关；"
+                    + "长文或热搜里的产品细节（磨指甲、修甲）会被交易成对应消费品，不是代言或订单；"
                     "情绪脉冲开盘后常见冲高回落，需用价格验证，不能当成基本面。"
                 )
             else:
@@ -273,11 +273,11 @@ def opportunity_news_queries(
         add(f"{focus.strip()} 概念股")
     for item in hot_search:
         if item.focusEvent and (item.kind == "social" or item.match == "viral"):
-            add(f"{item.cluster or item.word} 概念股 谐音 股价")
+            add(f"{item.cluster or item.word} 磨指甲 指甲刀 概念股")
             break
     for row in aggregates or []:
         blob = f"{row.name} {row.summary}"
-        if any(token in blob for token in ("艺人", "明星", "彩礼", "起诉", "分手", "小作文")):
+        if any(token in blob for token in ("指甲", "小作文", "景甜", "孙宇晨")):
             add(f"{row.name[:24]} 概念股")
             break
     return queries[:limit]
@@ -345,8 +345,9 @@ def infer_opportunities(
             "angle 短标签, confidence 0到1。"
             "优先使用 maps 里的标的；可以补充其他 A 股，但必须能说清和热点的因果，禁止美股代码。"
             "重大灾害优先想基建/水泥/水利/保险。"
-            "流量明星/影视热搜不要只映射传媒：A股散户常把纠纷、分手、起诉做成谐音梗或产品梗。"
-            "例如「剪掉这段关系」会交易指甲刀/刀剪（张小泉），天价彩礼会交易金饰，而不是只看光线传媒。"
+            "流量明星/影视热搜不要只映射传媒：先读 newsTitles 里的故事细节。"
+            "长文如果写到磨指甲、剪指甲、修甲，A股会交易指甲刀/指甲剪（张小泉），因为公司有该类产品，不是谐音，也不是代言。"
+            "没有指甲/修甲细节就不要强行映射刀剪股。"
             "这类线索必须写明是情绪炒作、与基本面无关、常见冲高回落。"
             "也要读 newsTitles，不要只看热搜词。"
             "不要因为原分类是娱乐就放弃推演。"

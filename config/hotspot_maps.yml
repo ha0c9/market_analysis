@@ -25,17 +25,15 @@ maps:
       - { symbol: sz300251, name: 光线传媒, angle: 影视内容与宣发 }
       - { symbol: sz300413, name: 芒果超媒, angle: 综艺与内容平台 }
       - { symbol: sz002027, name: 分众传媒, angle: 广告与品牌曝光 }
-  # A-share retail often trades celebrity disputes as puns, not as media beta.
-  # 景甜/孙宇晨彩礼纠纷 → 「剪」这段关系 → 指甲刀 → 张小泉，与代言无关。
-  - id: celebrity_breakup_memes
+  # 孙宇晨长文里的磨指甲细节被做成指甲刀梗，张小泉有指甲剪业务；不是谐音，也不是代言。
+  - id: story_nail_detail
     style: meme
-    match: [分手, 彩礼, 起诉, 退婚, 小作文, 代孕, 指甲刀, 刀剪, 剪刀, 剪掉, 剪断]
+    match: [磨指甲, 剪指甲, 指甲刀, 指甲钳, 修甲, 抛指甲]
     require_any: [艺人, 明星, 景甜, 孙宇晨, social]
     tickers:
-      - { symbol: sz301055, name: 张小泉, angle: 谐音梗·剪断关系/指甲刀 }
-      - { symbol: sz002345, name: 潮宏基, angle: 天价彩礼→金饰情绪 }
+      - { symbol: sz301055, name: 张小泉, angle: 小作文磨指甲细节→指甲刀 }
   - id: nail_clipper
     style: meme
-    match: [指甲刀, 刀剪, 张小泉]
+    match: [指甲刀, 指甲钳, 张小泉]
     tickers:
-      - { symbol: sz301055, name: 张小泉, angle: 刀剪/指甲刀概念 }
+      - { symbol: sz301055, name: 张小泉, angle: 指甲刀/指甲剪概念 }

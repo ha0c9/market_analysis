@@ -427,7 +427,7 @@ def event_news_queries(items: list[HotSearchItem], limit: int = 3) -> list[str]:
         if item.kind == "event":
             queries.append(f"{cluster} 上市公司 板块 影响 重建")
         elif item.kind == "social" or item.match == "viral":
-            queries.append(f"{cluster} 概念股 谐音 股价")
+            queries.append(f"{cluster} 磨指甲 指甲刀 概念股")
         else:
             queries.append(f"{cluster} 市场 影响 股价 板块 上市公司")
         if len(queries) >= limit:

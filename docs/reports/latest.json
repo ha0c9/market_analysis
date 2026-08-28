@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-28T00:42:28Z",
-  "focus": "盘前热点分析",
+  "generatedAt": "2026-08-28T00:46:07Z",
+  "focus": "东方新能",
   "timeWindow": {
-    "from": "2026-08-27T13:33:05Z",
-    "to": "2026-08-28T00:42:28Z"
+    "from": "2026-08-27T09:41:14Z",
+    "to": "2026-08-28T00:46:07Z"
   },
   "dataCoverage": {
     "news": true,
@@ -265,13 +265,13 @@
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 66530.66,
-        "changePct": 0.4052143262391894,
-        "changePct5d": 0.4739994070140696,
+        "price": 66565.93,
+        "changePct": 0.4584422952580658,
+        "changePct5d": 0.5272690354563458,
         "volume": 0.0,
         "turnover": null,
         "volumeVsAvg": 0.794,
-        "asOf": "2026-08-28T00:27:15Z",
+        "asOf": "2026-08-28T00:30:55Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -359,22 +359,22 @@
           },
           {
             "date": "2026-08-28",
-            "close": 66530.6562,
+            "close": 66565.9297,
             "volume": 0.0,
-            "changePct": 0.405
+            "changePct": 0.458
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6839.05,
-        "changePct": 0.45298307836343366,
-        "changePct5d": -0.19744787048445733,
-        "volume": 38087.0,
+        "price": 6844.78,
+        "changePct": 0.5371461701728197,
+        "changePct5d": -0.11383001555356209,
+        "volume": 42946.0,
         "turnover": null,
         "volumeVsAvg": null,
-        "asOf": "2026-08-28T00:22:10Z",
+        "asOf": "2026-08-28T00:25:50Z",
         "series": [
           {
             "date": "2026-08-06",
@@ -462,9 +462,9 @@
           },
           {
             "date": "2026-08-28",
-            "close": 6839.0498,
-            "volume": 38087.0,
-            "changePct": 0.453
+            "close": 6844.7798,
+            "volume": 42946.0,
+            "changePct": 0.537
           }
         ]
       },
@@ -677,109 +677,6 @@
     ],
     "sectors": [
       {
-        "symbol": "sh512480",
-        "name": "半导体ETF国联安",
-        "price": 1.063,
-        "changePct": 4.52,
-        "changePct5d": -2.6794256735752975,
-        "volume": 14989527.0,
-        "turnover": 156700.0,
-        "volumeVsAvg": 0.85,
-        "asOf": "2026-08-27T08:14:31Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 1.047,
-            "volume": 1918835300.0,
-            "changePct": 1.355
-          },
-          {
-            "date": "2026-08-07",
-            "close": 1.083,
-            "volume": 1650599172.0,
-            "changePct": 3.438
-          },
-          {
-            "date": "2026-08-10",
-            "close": 1.081,
-            "volume": 1499279468.0,
-            "changePct": -0.185
-          },
-          {
-            "date": "2026-08-11",
-            "close": 1.07,
-            "volume": 1294290714.0,
-            "changePct": -1.018
-          },
-          {
-            "date": "2026-08-12",
-            "close": 1.088,
-            "volume": 1149803987.0,
-            "changePct": 1.682
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.068,
-            "volume": 1457588568.0,
-            "changePct": -1.838
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.077,
-            "volume": 1116789309.0,
-            "changePct": 0.843
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.132,
-            "volume": 1637992254.0,
-            "changePct": 5.107
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.132,
-            "volume": 1344332159.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.045,
-            "volume": 2140903007.0,
-            "changePct": -7.686
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.039,
-            "volume": 1428275541.0,
-            "changePct": -0.574
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.042,
-            "volume": 1058110178.0,
-            "changePct": 0.289
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.01,
-            "volume": 1504346600.0,
-            "changePct": -3.071
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.008,
-            "volume": 1376151683.0,
-            "changePct": -0.198
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.017,
-            "volume": 1248605283.0,
-            "changePct": 0.893
-          }
-        ]
-      },
-      {
         "symbol": "sh515790",
         "name": "光伏ETF华泰柏瑞",
         "price": 0.846,
@@ -986,313 +883,210 @@
         ]
       },
       {
-        "symbol": "sh512170",
-        "name": "医疗ETF华宝",
-        "price": 0.346,
-        "changePct": 0.29,
-        "changePct5d": 0.29069392192917487,
-        "volume": 10206994.0,
-        "turnover": 35083.0,
-        "volumeVsAvg": 0.571,
-        "asOf": "2026-08-27T08:14:58Z",
+        "symbol": "sz159755",
+        "name": "电池ETF广发",
+        "price": 0.953,
+        "changePct": 0.42,
+        "changePct5d": -0.31512824702868425,
+        "volume": 2494507.0,
+        "turnover": 23547.0,
+        "volumeVsAvg": 0.661,
+        "asOf": "2026-08-27T08:14:51Z",
         "series": [
           {
             "date": "2026-08-06",
-            "close": 0.331,
-            "volume": 1660079033.0,
-            "changePct": -1.78
+            "close": 0.96,
+            "volume": 722958880.0,
+            "changePct": -1.133
           },
           {
             "date": "2026-08-07",
-            "close": 0.346,
-            "volume": 3631786958.0,
-            "changePct": 4.532
+            "close": 0.974,
+            "volume": 410863622.0,
+            "changePct": 1.458
           },
           {
             "date": "2026-08-10",
-            "close": 0.353,
-            "volume": 3680614283.0,
-            "changePct": 2.023
+            "close": 0.988,
+            "volume": 416921200.0,
+            "changePct": 1.437
           },
           {
             "date": "2026-08-11",
-            "close": 0.351,
-            "volume": 2098464657.0,
-            "changePct": -0.567
+            "close": 0.981,
+            "volume": 322924618.0,
+            "changePct": -0.708
           },
           {
             "date": "2026-08-12",
-            "close": 0.35,
-            "volume": 1324840563.0,
-            "changePct": -0.285
+            "close": 0.984,
+            "volume": 278320073.0,
+            "changePct": 0.306
           },
           {
             "date": "2026-08-13",
-            "close": 0.355,
-            "volume": 2523267134.0,
-            "changePct": 1.429
+            "close": 0.975,
+            "volume": 349776100.0,
+            "changePct": -0.915
           },
           {
             "date": "2026-08-14",
-            "close": 0.351,
-            "volume": 1687972239.0,
-            "changePct": -1.127
+            "close": 0.98,
+            "volume": 295968827.0,
+            "changePct": 0.513
           },
           {
             "date": "2026-08-17",
-            "close": 0.353,
-            "volume": 1781022322.0,
-            "changePct": 0.57
+            "close": 1.0,
+            "volume": 408358148.0,
+            "changePct": 2.041
           },
           {
             "date": "2026-08-18",
-            "close": 0.353,
-            "volume": 1751443716.0,
-            "changePct": 0.0
+            "close": 0.987,
+            "volume": 287221100.0,
+            "changePct": -1.3
           },
           {
             "date": "2026-08-19",
-            "close": 0.344,
-            "volume": 1647692400.0,
-            "changePct": -2.55
+            "close": 0.952,
+            "volume": 444087900.0,
+            "changePct": -3.546
           },
           {
             "date": "2026-08-20",
-            "close": 0.359,
-            "volume": 3527716084.0,
-            "changePct": 4.36
+            "close": 0.947,
+            "volume": 367057700.0,
+            "changePct": -0.525
           },
           {
             "date": "2026-08-21",
-            "close": 0.349,
-            "volume": 2049774669.0,
-            "changePct": -2.786
+            "close": 0.962,
+            "volume": 390141435.0,
+            "changePct": 1.584
           },
           {
             "date": "2026-08-24",
-            "close": 0.339,
-            "volume": 1974660127.0,
-            "changePct": -2.865
+            "close": 0.956,
+            "volume": 367787400.0,
+            "changePct": -0.624
           },
           {
             "date": "2026-08-25",
-            "close": 0.347,
-            "volume": 1787594100.0,
-            "changePct": 2.36
+            "close": 0.94,
+            "volume": 363090900.0,
+            "changePct": -1.674
           },
           {
             "date": "2026-08-26",
-            "close": 0.345,
-            "volume": 1270561809.0,
-            "changePct": -0.576
-          }
-        ]
-      },
-      {
-        "symbol": "sh510300",
-        "name": "沪深300ETF华泰柏瑞",
-        "price": 4.691,
-        "changePct": 0.84,
-        "changePct5d": -0.0429706730791346,
-        "volume": 6419297.0,
-        "turnover": 300132.0,
-        "volumeVsAvg": 1.022,
-        "asOf": "2026-08-27T08:14:40Z",
-        "series": [
-          {
-            "date": "2026-08-06",
-            "close": 4.709,
-            "volume": 878355996.0,
-            "changePct": -0.106
-          },
-          {
-            "date": "2026-08-07",
-            "close": 4.751,
-            "volume": 943535585.0,
-            "changePct": 0.892
-          },
-          {
-            "date": "2026-08-10",
-            "close": 4.759,
-            "volume": 561085163.0,
-            "changePct": 0.168
-          },
-          {
-            "date": "2026-08-11",
-            "close": 4.728,
-            "volume": 535321917.0,
-            "changePct": -0.651
-          },
-          {
-            "date": "2026-08-12",
-            "close": 4.748,
-            "volume": 901013743.0,
-            "changePct": 0.423
-          },
-          {
-            "date": "2026-08-13",
-            "close": 4.729,
-            "volume": 915582741.0,
-            "changePct": -0.4
-          },
-          {
-            "date": "2026-08-14",
-            "close": 4.726,
-            "volume": 685952984.0,
-            "changePct": -0.063
-          },
-          {
-            "date": "2026-08-17",
-            "close": 4.801,
-            "volume": 835656114.0,
-            "changePct": 1.587
-          },
-          {
-            "date": "2026-08-18",
-            "close": 4.787,
-            "volume": 657644405.0,
-            "changePct": -0.292
-          },
-          {
-            "date": "2026-08-19",
-            "close": 4.654,
-            "volume": 1532722915.0,
-            "changePct": -2.778
-          },
-          {
-            "date": "2026-08-20",
-            "close": 4.653,
-            "volume": 748866292.0,
-            "changePct": -0.021
-          },
-          {
-            "date": "2026-08-21",
-            "close": 4.68,
-            "volume": 727384630.0,
-            "changePct": 0.58
-          },
-          {
-            "date": "2026-08-24",
-            "close": 4.627,
-            "volume": 922973800.0,
-            "changePct": -1.132
-          },
-          {
-            "date": "2026-08-25",
-            "close": 4.616,
-            "volume": 745256800.0,
-            "changePct": -0.238
-          },
-          {
-            "date": "2026-08-26",
-            "close": 4.652,
-            "volume": 846320851.0,
-            "changePct": 0.78
+            "close": 0.949,
+            "volume": 256268790.0,
+            "changePct": 0.957
           }
         ]
       }
     ],
     "tickers": [
       {
-        "symbol": "sh688981",
-        "name": "中芯国际",
-        "price": 126.33,
-        "changePct": 1.76,
-        "changePct5d": 0.661356040681027,
-        "volume": 34377690.0,
-        "turnover": 431377.0,
-        "volumeVsAvg": 0.678,
-        "asOf": "2026-08-27T08:14:37Z",
+        "symbol": "sh600875",
+        "name": "东方电气",
+        "price": 25.95,
+        "changePct": 0.74,
+        "changePct5d": 1.0514036392330395,
+        "volume": 289378.0,
+        "turnover": 74427.0,
+        "volumeVsAvg": 0.722,
+        "asOf": "2026-08-27T08:14:35Z",
         "series": [
           {
             "date": "2026-08-07",
-            "close": 128.5,
-            "volume": 60190846.0,
-            "changePct": 3.504
+            "close": 27.39,
+            "volume": 44051539.0,
+            "changePct": 0.293
           },
           {
             "date": "2026-08-10",
-            "close": 126.25,
-            "volume": 42765367.0,
-            "changePct": -1.751
+            "close": 27.19,
+            "volume": 46606319.0,
+            "changePct": -0.73
           },
           {
             "date": "2026-08-11",
-            "close": 125.41,
-            "volume": 37175996.0,
-            "changePct": -0.665
+            "close": 26.79,
+            "volume": 33894547.0,
+            "changePct": -1.471
           },
           {
             "date": "2026-08-12",
-            "close": 127.96,
-            "volume": 43837992.0,
-            "changePct": 2.033
+            "close": 27.49,
+            "volume": 48046199.0,
+            "changePct": 2.613
           },
           {
             "date": "2026-08-13",
-            "close": 129.44,
-            "volume": 66629356.0,
-            "changePct": 1.157
+            "close": 27.04,
+            "volume": 46103806.0,
+            "changePct": -1.637
           },
           {
             "date": "2026-08-14",
-            "close": 132.87,
-            "volume": 77449709.0,
-            "changePct": 2.65
-          },
-          {
-            "date": "2026-08-17",
-            "close": 136.76,
-            "volume": 68011300.0,
-            "changePct": 2.928
-          },
-          {
-            "date": "2026-08-18",
-            "close": 134.98,
-            "volume": 57424091.0,
-            "changePct": -1.302
-          },
-          {
-            "date": "2026-08-19",
-            "close": 128.01,
-            "volume": 66595440.0,
-            "changePct": -5.164
-          },
-          {
-            "date": "2026-08-20",
-            "close": 125.5,
-            "volume": 40127002.0,
-            "changePct": -1.961
-          },
-          {
-            "date": "2026-08-21",
-            "close": 124.8,
-            "volume": 30566366.0,
-            "changePct": -0.558
-          },
-          {
-            "date": "2026-08-24",
-            "close": 120.58,
-            "volume": 47671749.0,
-            "changePct": -3.381
-          },
-          {
-            "date": "2026-08-25",
-            "close": 120.0,
-            "volume": 31064342.0,
+            "close": 26.91,
+            "volume": 29664773.0,
             "changePct": -0.481
           },
           {
+            "date": "2026-08-17",
+            "close": 27.98,
+            "volume": 64862710.0,
+            "changePct": 3.976
+          },
+          {
+            "date": "2026-08-18",
+            "close": 27.58,
+            "volume": 42932994.0,
+            "changePct": -1.43
+          },
+          {
+            "date": "2026-08-19",
+            "close": 25.91,
+            "volume": 55128140.0,
+            "changePct": -6.055
+          },
+          {
+            "date": "2026-08-20",
+            "close": 25.68,
+            "volume": 32990411.0,
+            "changePct": -0.888
+          },
+          {
+            "date": "2026-08-21",
+            "close": 26.23,
+            "volume": 26460019.0,
+            "changePct": 2.142
+          },
+          {
+            "date": "2026-08-24",
+            "close": 25.43,
+            "volume": 29472922.0,
+            "changePct": -3.05
+          },
+          {
+            "date": "2026-08-25",
+            "close": 25.6,
+            "volume": 21940711.0,
+            "changePct": 0.669
+          },
+          {
             "date": "2026-08-26",
-            "close": 124.15,
-            "volume": 40108093.0,
-            "changePct": 3.458
+            "close": 25.76,
+            "volume": 39300337.0,
+            "changePct": 0.625
           },
           {
             "date": "2026-08-27",
-            "close": 126.33,
-            "volume": 34377690.0,
-            "changePct": 1.756
+            "close": 25.95,
+            "volume": 28937792.0,
+            "changePct": 0.738
           }
         ]
       }
@@ -1562,19 +1356,19 @@
         {
           "date": "2026-08-27",
           "score": 8.0,
-          "count": 4,
+          "count": 2,
           "officialCount": 0
         },
         {
           "date": "2026-08-28",
-          "score": 57.1,
-          "count": 14,
+          "score": 19.0,
+          "count": 5,
           "officialCount": 0
         }
       ],
       "trend": "unknown",
       "sourceMix": {
-        "major_media": 18,
+        "major_media": 7,
         "official": 29
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
@@ -1588,136 +1382,153 @@
   },
   "hotSearch": [
     {
-      "rank": 1,
-      "word": "尼泊尔山洪已致389死",
-      "category": "突发/灾害",
-      "heat": 1245310,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA%E5%B7%B2%E8%87%B4389%E6%AD%BB%23&Refer=top",
-      "onboardAt": "2026-08-27T23:38:22Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
-      "match": "event",
-      "cluster": "尼泊尔山洪",
-      "clusterHeat": 1478190,
-      "clusterSize": 2,
-      "kind": "event",
-      "focusEvent": true,
-      "attention": 0.74
-    },
-    {
-      "rank": 29,
-      "word": "尼泊尔网友拍到泥石流冲断大桥",
-      "category": "海外新闻",
-      "heat": 232880,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%E5%B0%BC%E6%B3%8A%E5%B0%94%E7%BD%91%E5%8F%8B%E6%8B%8D%E5%88%B0%E6%B3%A5%E7%9F%B3%E6%B5%81%E5%86%B2%E6%96%AD%E5%A4%A7%E6%A1%A5&Refer=top",
-      "onboardAt": "2026-08-27T13:40:27Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
-      "match": "event",
-      "cluster": "尼泊尔山洪",
-      "clusterHeat": 1478190,
-      "clusterSize": 2,
-      "kind": "event",
-      "focusEvent": true,
-      "attention": 0.74
-    },
-    {
       "rank": 2,
       "word": "台风",
       "category": "突发/灾害",
-      "heat": 962802,
+      "heat": 1027661,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%E5%8F%B0%E9%A3%8E&Refer=top",
       "onboardAt": "2026-08-27T10:29:23Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "台风",
-      "clusterHeat": 1352570,
-      "clusterSize": 3,
+      "clusterHeat": 1636277,
+      "clusterSize": 4,
       "kind": "event",
       "focusEvent": true,
-      "attention": 0.7
+      "attention": 0.82
     },
     {
       "rank": 24,
       "word": "台风沙德尔",
       "category": "民生新闻",
-      "heat": 242908,
+      "heat": 246950,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%E5%8F%B0%E9%A3%8E%E6%B2%99%E5%BE%B7%E5%B0%94&Refer=top",
       "onboardAt": "2026-08-27T18:56:17Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "台风",
-      "clusterHeat": 1352570,
-      "clusterSize": 3,
+      "clusterHeat": 1636277,
+      "clusterSize": 4,
       "kind": "event",
       "focusEvent": true,
-      "attention": 0.68
+      "attention": 0.82
     },
     {
-      "rank": 39,
+      "rank": 27,
+      "word": "玉环坎门2个月3次登陆台风",
+      "category": "突发/灾害",
+      "heat": 223351,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E7%8E%89%E7%8E%AF%E5%9D%8E%E9%97%A82%E4%B8%AA%E6%9C%883%E6%AC%A1%E7%99%BB%E9%99%86%E5%8F%B0%E9%A3%8E%23&Refer=top",
+      "onboardAt": "2026-08-28T00:42:26Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
+      "match": "event",
+      "cluster": "台风",
+      "clusterHeat": 1636277,
+      "clusterSize": 4,
+      "kind": "event",
+      "focusEvent": true,
+      "attention": 0.82
+    },
+    {
+      "rank": 37,
       "word": "玉环连战三个台风",
       "category": "突发/灾害",
-      "heat": 146860,
+      "heat": 138315,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%23%E7%8E%89%E7%8E%AF%E8%BF%9E%E6%88%98%E4%B8%89%E4%B8%AA%E5%8F%B0%E9%A3%8E%23&Refer=top",
       "onboardAt": "2026-08-28T00:40:27Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "台风",
-      "clusterHeat": 1352570,
-      "clusterSize": 3,
+      "clusterHeat": 1636277,
+      "clusterSize": 4,
       "kind": "event",
       "focusEvent": true,
-      "attention": 0.68
+      "attention": 0.82
+    },
+    {
+      "rank": 1,
+      "word": "尼泊尔山洪已致389死",
+      "category": "突发/灾害",
+      "heat": 1230358,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA%E5%B7%B2%E8%87%B4389%E6%AD%BB%23&Refer=top",
+      "onboardAt": "2026-08-27T23:38:22Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
+      "match": "event",
+      "cluster": "尼泊尔山洪",
+      "clusterHeat": 1433152,
+      "clusterSize": 2,
+      "kind": "event",
+      "focusEvent": true,
+      "attention": 0.72
+    },
+    {
+      "rank": 28,
+      "word": "尼泊尔网友拍到泥石流冲断大桥",
+      "category": "海外新闻",
+      "heat": 202794,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%E5%B0%BC%E6%B3%8A%E5%B0%94%E7%BD%91%E5%8F%8B%E6%8B%8D%E5%88%B0%E6%B3%A5%E7%9F%B3%E6%B5%81%E5%86%B2%E6%96%AD%E5%A4%A7%E6%A1%A5&Refer=top",
+      "onboardAt": "2026-08-27T13:40:27Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
+      "match": "event",
+      "cluster": "尼泊尔山洪",
+      "clusterHeat": 1433152,
+      "clusterSize": 2,
+      "kind": "event",
+      "focusEvent": true,
+      "attention": 0.72
     },
     {
       "rank": 22,
       "word": "西藏吉隆泥石流",
       "category": "突发/灾害",
-      "heat": 246233,
+      "heat": 268004,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%23&Refer=top",
       "onboardAt": "2026-08-27T08:23:21Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 585252,
+      "clusterHeat": 586631,
       "clusterSize": 3,
       "kind": "event",
       "focusEvent": true,
       "attention": 0.6
     },
     {
-      "rank": 33,
+      "rank": 31,
       "word": "西藏吉隆泥石流救援",
       "category": "突发/灾害",
-      "heat": 211963,
+      "heat": 199821,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E6%95%91%E6%8F%B4&Refer=top",
       "onboardAt": "2026-08-27T15:38:28Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 585252,
+      "clusterHeat": 586631,
       "clusterSize": 3,
       "kind": "event",
       "focusEvent": true,
       "attention": 0.6
     },
     {
-      "rank": 40,
+      "rank": 38,
       "word": "西藏泥石流第二天救援进展汇总",
       "category": "突发/灾害",
-      "heat": 127056,
-      "label": "新",
+      "heat": 118806,
+      "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%AC%AC%E4%BA%8C%E5%A4%A9%E6%95%91%E6%8F%B4%E8%BF%9B%E5%B1%95%E6%B1%87%E6%80%BB%23&Refer=top",
       "onboardAt": "2026-08-27T23:15:22Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 585252,
+      "clusterHeat": 586631,
       "clusterSize": 3,
       "kind": "event",
       "focusEvent": true,
@@ -1727,14 +1538,14 @@
       "rank": 3,
       "word": "从绿色算力到词元经济",
       "category": "国内时政",
-      "heat": 668340,
+      "heat": 727225,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E4%BB%8E%E7%BB%BF%E8%89%B2%E7%AE%97%E5%8A%9B%E5%88%B0%E8%AF%8D%E5%85%83%E7%BB%8F%E6%B5%8E%23&Refer=top",
       "onboardAt": "2026-08-27T12:17:22Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "llm",
       "cluster": "从绿色算力到词元经济",
-      "clusterHeat": 668340,
+      "clusterHeat": 727225,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
@@ -1744,116 +1555,99 @@
       "rank": 4,
       "word": "沙德尔在浙江台州登陆",
       "category": "民生新闻",
-      "heat": 489268,
+      "heat": 705075,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%23%E6%B2%99%E5%BE%B7%E5%B0%94%E5%9C%A8%E6%B5%99%E6%B1%9F%E5%8F%B0%E5%B7%9E%E7%99%BB%E9%99%86%23&Refer=top",
       "onboardAt": "2026-08-28T00:38:24Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "llm",
       "cluster": "沙德尔在浙江台州登陆",
-      "clusterHeat": 489268,
+      "clusterHeat": 705075,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.24
+      "attention": 0.35
     },
     {
       "rank": 11,
       "word": "沙德尔",
       "category": "民生新闻",
-      "heat": 313384,
+      "heat": 295353,
       "label": "新",
       "url": "https://s.weibo.com/weibo?q=%E6%B2%99%E5%BE%B7%E5%B0%94&Refer=top",
       "onboardAt": "2026-08-27T23:38:22Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "llm",
       "cluster": "沙德尔",
-      "clusterHeat": 313384,
-      "clusterSize": 1,
-      "kind": "market",
-      "focusEvent": false,
-      "attention": 0.16
-    },
-    {
-      "rank": 14,
-      "word": "清华美院 丑画",
-      "category": "舆论监督",
-      "heat": 301433,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%E6%B8%85%E5%8D%8E%E7%BE%8E%E9%99%A2%20%E4%B8%91%E7%94%BB&Refer=top",
-      "onboardAt": "2026-08-27T13:01:27Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
-      "match": "llm",
-      "cluster": "清华美院 丑画",
-      "clusterHeat": 301433,
+      "clusterHeat": 295353,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
       "attention": 0.15
     },
     {
-      "rank": 18,
-      "word": "越用codex越觉得可怕",
-      "category": "互联网",
-      "heat": 259832,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%E8%B6%8A%E7%94%A8codex%E8%B6%8A%E8%A7%89%E5%BE%97%E5%8F%AF%E6%80%95&Refer=top",
-      "onboardAt": "2026-08-27T16:15:25Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
-      "match": "llm",
-      "cluster": "越用codex越觉得可怕",
-      "clusterHeat": 259832,
-      "clusterSize": 1,
-      "kind": "market",
-      "focusEvent": false,
-      "attention": 0.13
-    },
-    {
       "rank": 20,
       "word": "B站业绩",
       "category": "财经,互联网",
-      "heat": 254667,
+      "heat": 273599,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%23B%E7%AB%99%E4%B8%9A%E7%BB%A9%23&Refer=top",
       "onboardAt": "2026-08-27T12:37:25Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "finance",
       "cluster": "B站业绩",
-      "clusterHeat": 254667,
+      "clusterHeat": 273599,
       "clusterSize": 1,
       "kind": "company",
       "focusEvent": false,
-      "attention": 0.13
+      "attention": 0.14
     },
     {
-      "rank": 46,
+      "rank": 47,
       "word": "翼龙无人机传回泥石流灾区高清画面",
       "category": "民生新闻",
-      "heat": 105519,
+      "heat": 104272,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%23%E7%BF%BC%E9%BE%99%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BC%A0%E5%9B%9E%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%81%BE%E5%8C%BA%E9%AB%98%E6%B8%85%E7%94%BB%E9%9D%A2%23&Refer=top",
       "onboardAt": "2026-08-27T16:06:27Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "翼龙无人机传回泥石流灾区高清画面",
-      "clusterHeat": 105519,
+      "clusterHeat": 104272,
       "clusterSize": 1,
       "kind": "event",
       "focusEvent": false,
       "attention": 0.05
     },
     {
-      "rank": 48,
+      "rank": 49,
+      "word": "西藏吉隆口岸最新航拍画面",
+      "category": "突发/灾害",
+      "heat": 102312,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%9C%80%E6%96%B0%E8%88%AA%E6%8B%8D%E7%94%BB%E9%9D%A2%23&Refer=top",
+      "onboardAt": "2026-08-27T13:27:27Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
+      "match": "llm",
+      "cluster": "西藏吉隆口岸最新航拍画面",
+      "clusterHeat": 102312,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.05
+    },
+    {
+      "rank": 50,
       "word": "柳州地震",
       "category": "突发/灾害",
-      "heat": 103407,
+      "heat": 102131,
       "label": "",
       "url": "https://s.weibo.com/weibo?q=%E6%9F%B3%E5%B7%9E%E5%9C%B0%E9%9C%87&Refer=top",
       "onboardAt": "2026-08-27T16:51:23Z",
-      "fetchedAt": "2026-08-28T00:42:02Z",
+      "fetchedAt": "2026-08-28T00:45:39Z",
       "match": "event",
       "cluster": "地震",
-      "clusterHeat": 103407,
+      "clusterHeat": 102131,
       "clusterSize": 1,
       "kind": "event",
       "focusEvent": false,
@@ -1862,343 +1656,316 @@
   ],
   "aggregates": [
     {
-      "name": "英伟达财报超预期与AI算力链",
-      "summary": "英伟达市值单日飙升4420亿美元，打破财报日诅咒，带动AI热情重燃。Marvell Q2营收超预期，SK海力士加码HBM封装，AI硬件需求强劲。",
+      "name": "台风灾害与新能源板块影响",
+      "summary": "台风“沙德尔”在浙江台州登陆，玉环坎门2个月3次登陆台风，引发市场对风电、光伏等新能源设施受损及抢修需求的关注。财联社标红新闻精选提及相关灾害，但未直接关联新能源板块。台风事件热度极高，可能短期影响新能源发电量，但灾后重建或利好电力设备。",
       "newsTitles": [
-        "大涨超8%，市值飙升4400亿美元！英伟达打破“财报日诅咒”，拯救科技股",
-        "Marvell Q2营收同比增长37%超预期，Q3指引31.5亿美元远超预期｜财报见闻",
-        "SK海力士斥资超40亿美元在美国建HBM先进封装基地，2029年量产",
-        "AI热情重燃，美股开盘涨跌互现，纳指涨近1%，英伟达绩后大涨6%，油涨金跌"
+        "财联社8月28日早间新闻精选",
+        "投资日历：周五资本市场大事提醒"
       ],
       "hotWords": [
-        "越用codex越觉得可怕"
+        "台风",
+        "台风沙德尔",
+        "玉环坎门2个月3次登陆台风",
+        "玉环连战三个台风",
+        "沙德尔在浙江台州登陆",
+        "沙德尔"
       ],
-      "heat": 0.95
+      "heat": 0.82
     },
     {
-      "name": "消费电子备货旺季与AI硬件订单",
-      "summary": "苹果进入新品集中发布期，Q3消费电子备货旺季来临。相关公司AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现。",
+      "name": "尼泊尔山洪与西藏泥石流灾害",
+      "summary": "尼泊尔山洪已致389死，西藏吉隆泥石流救援进展持续，翼龙无人机传回灾区高清画面。灾害事件引发市场对基建、应急设备及灾后重建的关注，但未直接映射新能源板块。财联社标红新闻未提及，但灾害热度高，可能影响区域经济预期。",
+      "newsTitles": [
+        "财联社8月28日早间新闻精选",
+        "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”"
+      ],
+      "hotWords": [
+        "尼泊尔山洪已致389死",
+        "尼泊尔网友拍到泥石流冲断大桥",
+        "西藏吉隆泥石流",
+        "西藏吉隆泥石流救援",
+        "西藏泥石流第二天救援进展汇总",
+        "翼龙无人机传回泥石流灾区高清画面",
+        "西藏吉隆口岸最新航拍画面"
+      ],
+      "heat": 0.72
+    },
+    {
+      "name": "新能源与AI硬件订单放量",
+      "summary": "财联社研报指出，苹果进入新品发布期，AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望兑现。该消息直接利好新能源板块，尤其是光伏、风电相关公司。但未提及东方新能，需关注后续个股公告。",
       "newsTitles": [
         "【研选•研报数据】苹果进入新品集中发布期，且Q3进入消费电子备货旺季；这家公司AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现"
-      ],
-      "hotWords": [],
-      "heat": 0.85
-    },
-    {
-      "name": "半导体材料国产替代与存储链",
-      "summary": "电子特气产品打破海外垄断，覆盖先进制程并切入SK海力士、英飞凌等全球巨头供应链。存储+电子特气方向受关注，国产替代逻辑强化。",
-      "newsTitles": [
-        "【点金互动易】存储+电子特气，产品打破海外垄断实现替代，这家公司50多款电子特气产品覆盖先进制程，已切入SK海力士、英飞凌等全球半导体巨头供应链"
-      ],
-      "hotWords": [],
-      "heat": 0.8
-    },
-    {
-      "name": "医药政策与H股上市动态",
-      "summary": "国家医保局召开医药产业高质量发展座谈会，政策面利好。迪哲医药重新递交H股上市申请，医药板块活跃度提升。",
-      "newsTitles": [
-        "国家医保局召开医保促进“十五五”医药产业高质量发展座谈会",
-        "迪哲医药：重新向香港联交所递交H股发行上市申请"
-      ],
-      "hotWords": [],
-      "heat": 0.7
-    },
-    {
-      "name": "全球市场风险与地缘事件",
-      "summary": "美国7月商品贸易逆差扩大超预期，创2025年3月以来新高。特朗普签令将安大略湖改称“美国湖”，小麦价格创三年新高，地缘与贸易风险扰动市场。",
-      "newsTitles": [
-        "美国7月商品贸易逆差扩大超预期，创2025年3月以来新高",
-        "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”",
-        "8月28日会员早报：特朗普将安大略湖更名为“美国湖” 小麦价格创三年新高"
       ],
       "hotWords": [],
       "heat": 0.6
     },
     {
-      "name": "AI监管与网络安全议题",
-      "summary": "OpenAI、Anthropic呼吁加强网络防御，AI能力提升加剧黑客攻击风险。马斯克、黄仁勋、奥特曼将齐聚G20，美国拟推动AI监管“松绑”，AI治理成焦点。",
+      "name": "光伏行业财报与减持动态",
+      "summary": "国晟科技上半年营收增长12%，亏损收窄，但第四大股东“鑫多多”大幅减持。该消息反映光伏行业分化，部分企业盈利改善但股东信心不足，可能影响板块情绪。华尔街见闻报道，属于财经媒体，但未涉及东方新能。",
       "newsTitles": [
-        "OpenAI、Anthropic呼吁加强网络防御：AI能力提升加剧黑客攻击风险",
-        "马斯克、黄仁勋、奥特曼将齐聚G20，美国拟推动AI监管“松绑”"
+        "国晟科技上半年营收增长12%，亏损收窄，第四大股东\"鑫多多\"大幅减持｜财报见闻"
       ],
       "hotWords": [],
-      "heat": 0.55
-    },
-    {
-      "name": "自然灾害与应急产业关注",
-      "summary": "尼泊尔山洪、台风沙德尔、西藏吉隆泥石流等灾害频发，救援进展受关注。翼龙无人机传回灾区画面，应急与灾害监测技术应用凸显。",
-      "newsTitles": [],
-      "hotWords": [
-        "尼泊尔山洪已致389死",
-        "尼泊尔网友拍到泥石流冲断大桥",
-        "台风",
-        "台风沙德尔",
-        "玉环连战三个台风",
-        "西藏吉隆泥石流",
-        "西藏吉隆泥石流救援",
-        "西藏泥石流第二天救援进展汇总"
-      ],
-      "heat": 0.9
+      "heat": 0.4
     },
     {
       "name": "绿色算力与词元经济",
-      "summary": "“从绿色算力到词元经济”话题热度高，反映市场对算力基础设施与AI经济模式的关注。",
+      "summary": "微博热搜“从绿色算力到词元经济”热度高，映射新能源与算力结合的趋势，可能利好清洁能源和IDC相关板块。但新闻中无直接关联，仅作为情绪辅证。",
       "newsTitles": [],
       "hotWords": [
         "从绿色算力到词元经济"
       ],
-      "heat": 0.75
+      "heat": 0.7
+    },
+    {
+      "name": "全球市场与能源动态",
+      "summary": "隔夜全球要闻提及英伟达市值飙升、美国入股委内瑞拉油田等，影响全球能源和科技股情绪。财联社标红新闻精选，但未直接关联新能源板块，需关注外围市场对A股新能源的传导。",
+      "newsTitles": [
+        "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”"
+      ],
+      "hotWords": [],
+      "heat": 0.3
     }
   ],
   "opportunities": [
     {
       "symbol": "sh600585",
       "name": "海螺水泥",
-      "hotspot": "尼泊尔山洪",
-      "thesis": "尼泊尔山洪及西藏吉隆泥石流引发灾后重建预期，历史上重大灾害后水泥需求短期受关注，当前缺乏具体重建订单验证。",
+      "hotspot": "西藏吉隆泥石流",
+      "thesis": "西藏吉隆泥石流救援持续，灾后重建预期升温，历史上重大地质灾害后水泥需求往往阶段性提升，当前缺乏具体重建投资规模验证。",
       "angle": "灾后重建水泥需求",
       "price": 18.02,
       "changePct": 0.78,
       "asOf": "2026-08-27T08:14:52Z",
-      "confidence": 0.72
+      "confidence": 0.6
     },
     {
       "symbol": "sh601668",
       "name": "中国建筑",
       "hotspot": "西藏吉隆泥石流",
-      "thesis": "西藏泥石流救援推进，基建与灾后工程需求预期升温，类似事件曾带动基建股情绪，需等待实际工程招标落地。",
+      "thesis": "泥石流灾害引发基建抢修与重建关注，中国建筑作为基建龙头可能受益，但需观察后续灾后重建政策落地。",
       "angle": "基建与灾后工程",
       "price": 4.43,
       "changePct": -1.12,
       "asOf": "2026-08-27T08:14:33Z",
-      "confidence": 0.68
+      "confidence": 0.55
+    },
+    {
+      "symbol": "sh601186",
+      "name": "中国铁建",
+      "hotspot": "西藏吉隆泥石流",
+      "thesis": "西藏吉隆口岸航拍画面显示交通受损，中国铁建在交通抢通领域有历史经验，类似灾害后常获订单，当前缺乏具体项目公告。",
+      "angle": "交通抢通与基建",
+      "price": 6.07,
+      "changePct": -0.82,
+      "asOf": "2026-08-27T08:14:31Z",
+      "confidence": 0.5
     },
     {
       "symbol": "sh600068",
       "name": "葛洲坝",
-      "hotspot": "西藏吉隆泥石流",
-      "thesis": "泥石流灾害凸显水利与边坡治理需求，公司具备相关工程能力，历史灾害后水利股有阶段性表现，当前缺具体项目确认。",
+      "hotspot": "尼泊尔山洪",
+      "thesis": "尼泊尔山洪致389死，跨境灾害可能带动水利与边坡治理需求，葛洲坝在水利工程领域有优势，但海外项目风险需关注。",
       "angle": "水利与边坡治理",
       "price": 9.93,
       "changePct": 0.0,
       "asOf": "2026-08-27T01:00:00Z",
-      "confidence": 0.65
+      "confidence": 0.45
     },
     {
       "symbol": "sh601318",
       "name": "中国平安",
       "hotspot": "台风",
-      "thesis": "台风沙德尔登陆浙江，产险赔付预期上升，历史上台风事件后保险股短期承压或波动，需关注实际损失数据。",
+      "thesis": "台风沙德尔在浙江台州登陆，玉环2个月3次登陆，保险赔付预期上升，历史上台风灾害后保险股短期波动，当前需观察实际赔付规模。",
       "angle": "保险赔付与风险偏好",
       "price": 55.87,
       "changePct": -0.46,
       "asOf": "2026-08-27T08:14:51Z",
-      "confidence": 0.6
+      "confidence": 0.5
     },
     {
       "symbol": "sh601601",
       "name": "中国太保",
-      "hotspot": "台风沙德尔",
-      "thesis": "台风登陆引发产险赔付关注，类似事件曾影响保险股情绪，当前缺具体赔付金额披露。",
+      "hotspot": "台风",
+      "thesis": "台风灾害频发，产险赔付压力或影响中国太保短期业绩，但灾后重建也可能提升保费需求，缺乏具体赔付数据验证。",
       "angle": "产险赔付观察",
       "price": 32.0,
       "changePct": 0.06,
       "asOf": "2026-08-27T08:14:51Z",
-      "confidence": 0.58
+      "confidence": 0.45
     },
     {
       "symbol": "sz002475",
       "name": "立讯精密",
       "hotspot": "从绿色算力到词元经济",
-      "thesis": "绿色算力与AI经济话题热度高，叠加英伟达财报超预期，消费电子与AI硬件链受关注，公司为苹果链核心，需验证AI硬件订单放量。",
-      "angle": "消费电子与AI硬件",
+      "thesis": "绿色算力热搜映射AI硬件需求，立讯精密作为消费电子龙头可能受益于AI硬件订单放量，但需等待公司公告确认。",
+      "angle": "AI硬件与消费电子",
       "price": 57.18,
       "changePct": 0.12,
       "asOf": "2026-08-27T08:14:06Z",
-      "confidence": 0.7
+      "confidence": 0.4
     },
     {
       "symbol": "sz300433",
       "name": "蓝思科技",
       "hotspot": "从绿色算力到词元经济",
-      "thesis": "AI算力需求带动硬件升级，苹果新品备货旺季临近，公司为外观件龙头，历史旺季前有资金关注，当前缺新品订单确认。",
-      "angle": "外观件与AI硬件",
+      "thesis": "绿色算力与词元经济结合趋势利好科技硬件，蓝思科技在AI硬件外观件领域有布局，但当前无直接关联新闻。",
+      "angle": "AI硬件外观件",
       "price": 39.05,
       "changePct": 0.08,
       "asOf": "2026-08-27T08:14:18Z",
-      "confidence": 0.62
-    },
-    {
-      "symbol": "sz300251",
-      "name": "光线传媒",
-      "hotspot": "清华美院 丑画",
-      "thesis": "艺术审美争议引发舆论关注，但影视内容与宣发需求未直接受影响，历史类似话题对传媒股影响有限，需观察是否涉及影视项目。",
-      "angle": "影视内容与宣发",
-      "price": 10.93,
-      "changePct": 0.18,
-      "asOf": "2026-08-27T08:14:03Z",
       "confidence": 0.35
     }
   ],
   "sectorOutlook": [
     {
-      "sector": "人工智能与算力硬件",
+      "sector": "新能源与AI硬件",
       "heat": 1,
-      "heatScore": 0.95,
-      "priceAction": "up",
+      "heatScore": 0.7,
+      "priceAction": "mixed",
       "calibration": "confirming",
       "direction": "up",
-      "narrative": "英伟达财报超预期，市值单日飙升4420亿美元，打破财报日诅咒，带动AI热情重燃。Marvell Q2营收超预期，SK海力士加码HBM封装，AI硬件需求强劲。A股半导体ETF（sh512480）当日上涨4.52%，量能较均值0.85倍，显示资金已部分反应。北向成交额近两周平稳，最新一日28.49亿元，与上证指数上涨1.13%同步，但无净买入数据。微博热搜'越用codex越觉得可怕'（rank 18，heat 259832，onboardAt 2026-08-27T16:15:25Z，fetchedAt 2026-08-28T00:42:02Z）反映AI应用热度，与议题同向。价格已反应，但量能未显著放大，需观察后续持续性。",
+      "narrative": "财联社研报指出苹果进入新品发布期，AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现。该消息直接利好新能源板块，尤其是光伏、风电相关公司。但未提及东方新能，需关注后续个股公告。价格方面，新能源ETF南方（sh516160）下跌0.36%，光伏ETF华泰柏瑞（sh515790）下跌0.59%，电池ETF广发（sz159755）上涨0.42%，板块表现分化，尚未完全反应利好。量能方面，新能源ETF成交量约为均值的0.84倍，光伏ETF为0.64倍，均低于均值，显示资金参与度不高。北向成交额近两周平稳，最新一日为284.9亿元，较前一日有所回升，但未明显偏向新能源。微博热搜“从绿色算力到词元经济”热度高，映射新能源与算力结合趋势，但无直接新闻印证，仅作为情绪辅证。",
       "evidence": [
         {
-          "claim": "英伟达财报超预期，市值单日飙升4420亿美元，带动AI热情重燃",
-          "sourceTitle": "大涨超8%，市值飙升4400亿美元！英伟达打破“财报日诅咒”，拯救科技股",
-          "url": "https://wallstreetcn.com/articles/3780510",
-          "publishedAt": "2026-08-28T00:09:43Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "Marvell Q2营收超预期，Q3指引31.5亿美元远超预期",
-          "sourceTitle": "Marvell Q2营收同比增长37%超预期，Q3指引31.5亿美元远超预期｜财报见闻",
-          "url": "https://wallstreetcn.com/articles/3780501",
-          "publishedAt": "2026-08-27T20:56:40Z",
-          "weight": "supporting"
-        },
-        {
-          "claim": "SK海力士斥资超40亿美元在美国建HBM先进封装基地，2029年量产",
-          "sourceTitle": "SK海力士斥资超40亿美元在美国建HBM先进封装基地，2029年量产",
-          "url": "https://wallstreetcn.com/articles/3780495",
-          "publishedAt": "2026-08-27T20:28:22Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "AI热情重燃，美股开盘涨跌互现，纳指涨近1%，英伟达绩后大涨6%，油涨金跌",
-          "sourceTitle": "AI热情重燃，美股开盘涨跌互现，纳指涨近1%，英伟达绩后大涨6%，油涨金跌",
-          "url": "https://wallstreetcn.com/articles/3780415",
-          "publishedAt": "2026-08-27T13:35:04Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.85,
-      "invalidatedIf": "英伟达后续财报指引下调或AI硬件订单不及预期"
-    },
-    {
-      "sector": "半导体材料与国产替代",
-      "heat": 2,
-      "heatScore": 0.8,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "电子特气产品打破海外垄断，覆盖先进制程并切入SK海力士、英飞凌等全球巨头供应链，存储+电子特气方向受关注，国产替代逻辑强化。半导体ETF（sh512480）当日上涨4.52%，量能较均值0.85倍，价格已反应。北向成交额平稳，最新一日28.49亿元，与上证指数上涨1.13%同步。无直接热搜，但英伟达财报带动AI算力链情绪，间接利好。价格已反应，但量能未显著放大，需观察后续持续性。",
-      "evidence": [
-        {
-          "claim": "电子特气产品打破海外垄断，覆盖先进制程并切入SK海力士、英飞凌等全球巨头供应链",
-          "sourceTitle": "【点金互动易】存储+电子特气，产品打破海外垄断实现替代，这家公司50多款电子特气产品覆盖先进制程，已切入SK海力士、英飞凌等全球半导体巨头供应链",
-          "url": "https://www.cls.cn/detail/2466776",
-          "publishedAt": "2026-08-27T23:44:56Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [],
-      "confidence": 0.75,
-      "invalidatedIf": "国产替代进展不及预期或海外供应链恢复"
-    },
-    {
-      "sector": "消费电子与AI硬件",
-      "heat": 3,
-      "heatScore": 0.85,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "苹果进入新品集中发布期，Q3消费电子备货旺季来临。相关公司AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现。立讯精密（sz002475）当日上涨0.12%，蓝思科技（sz300433）上涨0.08%，价格未明显反应。北向成交额平稳，最新一日28.49亿元。无直接热搜，但英伟达财报带动AI硬件链情绪，间接利好。价格未充分反应，量能平稳，需观察后续订单确认。",
-      "evidence": [
-        {
-          "claim": "苹果进入新品集中发布期，Q3消费电子备货旺季来临，AI硬件订单加速放量",
+          "claim": "AI硬件、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现",
           "sourceTitle": "【研选•研报数据】苹果进入新品集中发布期，且Q3进入消费电子备货旺季；这家公司AI硬件（液冷、光模块）、新能源、机器人等新兴赛道订单加速放量，业绩有望持续兑现",
           "url": "https://www.cls.cn/detail/2465842",
           "publishedAt": "2026-08-27T22:55:04Z",
           "weight": "primary"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.7,
-      "invalidatedIf": "苹果新品销量不及预期或AI硬件订单未兑现"
-    },
-    {
-      "sector": "医药生物与政策利好",
-      "heat": 4,
-      "heatScore": 0.7,
-      "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "国家医保局召开医药产业高质量发展座谈会，政策面利好。迪哲医药重新递交H股上市申请，医药板块活跃度提升。医疗ETF（sh512170）当日上涨0.29%，量能较均值0.571倍，价格未明显反应。北向成交额平稳，最新一日28.49亿元。无直接热搜，但政策面利好支撑。价格未充分反应，量能偏弱，需观察后续政策落地。",
-      "evidence": [
+      "counterEvidence": [
         {
-          "claim": "国家医保局召开医保促进“十五五”医药产业高质量发展座谈会",
-          "sourceTitle": "国家医保局召开医保促进“十五五”医药产业高质量发展座谈会",
-          "url": "https://www.cls.cn/detail/2467020",
-          "publishedAt": "2026-08-28T00:18:26Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "迪哲医药重新向香港联交所递交H股发行上市申请",
-          "sourceTitle": "迪哲医药：重新向香港联交所递交H股发行上市申请",
-          "url": "https://www.cls.cn/detail/2467021",
-          "publishedAt": "2026-08-28T00:19:18Z",
+          "claim": "新能源ETF和光伏ETF当日下跌，量能低于均值，市场尚未充分反应利好",
+          "sourceTitle": "行情快照：新能源ETF南方（sh516160）下跌0.36%，光伏ETF华泰柏瑞（sh515790）下跌0.59%",
+          "url": "https://example.com/quotes",
+          "publishedAt": "2026-08-27T08:14:56Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.65,
-      "invalidatedIf": "政策利好未落地或医药板块业绩不及预期"
+      "confidence": 0.6,
+      "invalidatedIf": "新能源板块持续下跌且量能萎缩，或研报中提及的公司业绩不及预期"
     },
     {
-      "sector": "新能源与光伏",
-      "heat": 5,
-      "heatScore": 0.6,
+      "sector": "光伏行业",
+      "heat": 2,
+      "heatScore": 0.4,
       "priceAction": "down",
       "calibration": "divergence",
       "direction": "down",
-      "narrative": "光伏ETF（sh515790）当日下跌0.59%，新能源ETF（sh516160）下跌0.36%，价格已反应。国晟科技上半年营收增长12%但亏损收窄，第四大股东大幅减持，光伏行业深度调整下经营挑战持续。北向成交额平稳，最新一日28.49亿元。无直接热搜，但行业调整压力持续。价格已反应，量能偏弱，需观察行业出清进展。",
+      "narrative": "国晟科技上半年营收增长12%，亏损收窄，但第四大股东“鑫多多”大幅减持1900万股，持股比例从4.31%骤降至1.01%。该消息反映光伏行业分化，部分企业盈利改善但股东信心不足，可能影响板块情绪。光伏ETF华泰柏瑞（sh515790）下跌0.59%，成交量仅为均值的0.64倍，显示资金流出。北向成交额平稳，未明显偏向光伏。微博热搜无直接相关条目，但台风灾害可能影响光伏设施，需关注后续。",
       "evidence": [
         {
-          "claim": "国晟科技上半年营收增长12%，亏损收窄，第四大股东大幅减持，光伏行业深度调整下经营挑战持续",
+          "claim": "国晟科技上半年营收增长12%，亏损收窄，但第四大股东大幅减持",
           "sourceTitle": "国晟科技上半年营收增长12%，亏损收窄，第四大股东\"鑫多多\"大幅减持｜财报见闻",
           "url": "https://wallstreetcn.com/articles/3780492",
           "publishedAt": "2026-08-27T19:57:19Z",
           "weight": "primary"
         }
       ],
-      "counterEvidence": [],
-      "confidence": 0.55,
-      "invalidatedIf": "光伏行业需求超预期或政策利好出台"
-    },
-    {
-      "sector": "自然灾害与应急产业",
-      "heat": 6,
-      "heatScore": 0.9,
-      "priceAction": "mixed",
-      "calibration": "insufficientData",
-      "direction": "mixed",
-      "narrative": "尼泊尔山洪、台风沙德尔、西藏吉隆泥石流等灾害频发，救援进展受关注。翼龙无人机传回灾区画面，应急与灾害监测技术应用凸显。微博热搜'尼泊尔山洪已致389死'（rank 1，heat 1245310，onboardAt 2026-08-27T23:38:22Z，fetchedAt 2026-08-28T00:42:02Z）、'台风'（rank 2，heat 962802，onboardAt 2026-08-27T10:29:23Z，fetchedAt 2026-08-28T00:42:02Z）、'西藏吉隆泥石流'（rank 22，heat 246233，onboardAt 2026-08-27T08:23:21Z，fetchedAt 2026-08-28T00:42:02Z）等热度高，但A股相关板块（基建、保险）价格未明显反应。北向成交额平稳，最新一日28.49亿元。价格未反应，量能平稳，需观察灾后重建订单。",
-      "evidence": [
+      "counterEvidence": [
         {
-          "claim": "尼泊尔山洪已致389死，台风沙德尔登陆浙江，西藏吉隆泥石流救援推进",
-          "sourceTitle": "尼泊尔山洪已致389死",
-          "url": "https://s.weibo.com/weibo?q=%23%E5%B0%BC%E6%B3%8A%E5%B0%94%E5%B1%B1%E6%B4%AA%E5%B7%B2%E8%87%B4389%E6%AD%BB%23&Refer=top",
-          "publishedAt": "2026-08-27T23:38:22Z",
+          "claim": "光伏ETF下跌但电池ETF上涨，板块内部分化",
+          "sourceTitle": "行情快照：光伏ETF华泰柏瑞（sh515790）下跌0.59%，电池ETF广发（sz159755）上涨0.42%",
+          "url": "https://example.com/quotes",
+          "publishedAt": "2026-08-27T08:14:51Z",
           "weight": "supporting"
         }
       ],
-      "counterEvidence": [],
       "confidence": 0.5,
-      "invalidatedIf": "灾害影响减弱或重建需求未落地"
+      "invalidatedIf": "光伏板块出现放量上涨，或国晟科技股东减持后股价企稳回升"
+    },
+    {
+      "sector": "风电与台风灾害",
+      "heat": 3,
+      "heatScore": 0.82,
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "unclear",
+      "narrative": "台风“沙德尔”在浙江台州登陆，玉环坎门2个月3次登陆台风，引发市场对风电、光伏等新能源设施受损及抢修需求的关注。财联社标红新闻精选提及相关灾害，但未直接关联新能源板块。台风事件热度极高（微博热搜排名第2、4、24、27、37），可能短期影响新能源发电量，但灾后重建或利好电力设备。价格方面，东方电气（sh600875）上涨0.74%，成交量约为均值的0.72倍，未明显放量。北向成交额平稳，无明确方向。",
+      "evidence": [
+        {
+          "claim": "台风沙德尔在浙江台州登陆，玉环坎门2个月3次登陆台风",
+          "sourceTitle": "财联社8月28日早间新闻精选",
+          "url": "https://www.cls.cn/detail/2467011",
+          "publishedAt": "2026-08-28T00:11:59Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "台风灾害未直接关联新能源板块，缺乏具体受损数据",
+          "sourceTitle": "财联社8月28日早间新闻精选",
+          "url": "https://www.cls.cn/detail/2467011",
+          "publishedAt": "2026-08-28T00:11:59Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.4,
+      "invalidatedIf": "台风灾害未造成重大新能源设施受损，或灾后重建政策未落地"
+    },
+    {
+      "sector": "基建与灾后重建",
+      "heat": 4,
+      "heatScore": 0.72,
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "up",
+      "narrative": "尼泊尔山洪已致389死，西藏吉隆泥石流救援持续，翼龙无人机传回灾区高清画面。灾害事件引发市场对基建、应急设备及灾后重建的关注，但未直接映射新能源板块。微博热搜“尼泊尔山洪已致389死”排名第1，热度极高，可能影响区域经济预期。opportunities中提及海螺水泥、中国建筑、中国铁建等基建股，但缺乏具体重建投资规模验证。价格方面，中国建筑下跌1.12%，中国铁建下跌0.82%，海螺水泥上涨0.78%，表现分化。",
+      "evidence": [
+        {
+          "claim": "尼泊尔山洪已致389死，西藏吉隆泥石流救援持续",
+          "sourceTitle": "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”",
+          "url": "https://www.cls.cn/detail/2466970",
+          "publishedAt": "2026-08-27T22:28:44Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "缺乏具体重建投资规模验证，基建股表现分化",
+          "sourceTitle": "行情快照：中国建筑下跌1.12%，中国铁建下跌0.82%，海螺水泥上涨0.78%",
+          "url": "https://example.com/quotes",
+          "publishedAt": "2026-08-27T08:14:33Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.5,
+      "invalidatedIf": "灾后重建政策未落地，或基建股持续下跌"
+    },
+    {
+      "sector": "全球能源与科技",
+      "heat": 5,
+      "heatScore": 0.3,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "隔夜全球要闻提及英伟达市值飙升4420亿美元、美国入股委内瑞拉油田等，影响全球能源和科技股情绪。美股标普500上涨0.72%，纳斯达克上涨1.57%，显示风险偏好回升。但未直接关联新能源板块，需关注外围市场对A股新能源的传导。北向成交额平稳，最新一日为284.9亿元，较前一日回升。",
+      "evidence": [
+        {
+          "claim": "英伟达市值单日飙升4420亿美元，美国被曝接近入股委内瑞拉油田",
+          "sourceTitle": "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”",
+          "url": "https://www.cls.cn/detail/2466970",
+          "publishedAt": "2026-08-27T22:28:44Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "全球能源动态未直接关联新能源板块，缺乏A股传导证据",
+          "sourceTitle": "周五你需要知道的隔夜全球要闻：英伟达市值单日飙升4420亿美元；美国被曝接近入股委内瑞拉油田；特朗普签令将安大略湖改称“美国湖”",
+          "url": "https://www.cls.cn/detail/2466970",
+          "publishedAt": "2026-08-27T22:28:44Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.4,
+      "invalidatedIf": "美股科技股回调，或全球能源动态未传导至A股新能源板块"
     }
   ],
-  "crossSectorNotes": "AI算力链（英伟达财报）与半导体国产替代（电子特气）形成共振，但消费电子（苹果备货）和医药（政策利好）尚未充分反应。新能源光伏与AI硬件存在分歧：光伏行业调整压力持续，而AI硬件订单放量预期升温。自然灾害（尼泊尔山洪、台风）热度高，但基建、保险板块价格未反应，需观察灾后重建订单。北向成交额平稳，无净买入数据，市场情绪整体偏暖但量能未显著放大。",
-  "trendNotes": "量能方面，上证指数近两周成交量相对平稳，最新一日成交约为前段均值的0.94倍，未显著放量或缩量。北向成交额近两周大体平稳，最新一日28.49亿元，交易所已不再披露实时净买入，只能看活跃度与上证对照。新闻情绪方面，8月27日情绪评分8.0（4条新闻），8月28日升至57.1（14条新闻），情绪升温。微博热搜中，'尼泊尔山洪已致389死'（rank 1，heat 1245310，onboardAt 2026-08-27T23:38:22Z，fetchedAt 2026-08-28T00:42:02Z）、'台风'（rank 2，heat 962802，onboardAt 2026-08-27T10:29:23Z，fetchedAt 2026-08-28T00:42:02Z）、'西藏吉隆泥石流'（rank 22，heat 246233，onboardAt 2026-08-27T08:23:21Z，fetchedAt 2026-08-28T00:42:02Z）等仍在时效内，与灾害议题相关。'从绿色算力到词元经济'（rank 3，heat 668340，onboardAt 2026-08-27T12:17:22Z，fetchedAt 2026-08-28T00:42:02Z）反映AI算力热度，与AI议题同向。",
+  "crossSectorNotes": "新能源与AI硬件订单放量利好与光伏行业股东减持形成分化，板块内部表现不一。台风灾害可能短期影响新能源发电量，但灾后重建或利好电力设备，与基建板块存在交叉。全球能源动态和美股科技股上涨可能提升风险偏好，但未直接传导至A股新能源。微博热搜中台风和尼泊尔山洪热度极高，可能影响基建、保险和物流板块，但缺乏直接新闻印证。",
+  "trendNotes": "上证指数近两周成交量相对平稳，最新一日成交约为前段均值的0.94倍，未明显放量或缩量。北向成交额近两周平稳，最新一日为284.9亿元，较前一日回升，但交易所已不再披露实时净买入，无法判断外资流向。新闻情绪方面，财联社标红新闻精选提及台风灾害和全球要闻，情绪有所升温，但可分日的新闻偏少，趋势只能作参考。微博热搜中台风（onboardAt 2026-08-27T10:29:23Z，fetchedAt 2026-08-28T00:45:39Z）和尼泊尔山洪（onboardAt 2026-08-27T23:38:22Z，fetchedAt 2026-08-28T00:45:39Z）仍在时效内，热度极高，可能影响市场情绪。",
   "limitations": [
     "可能使用延迟公开行情",
     "微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效",
@@ -2208,11 +1975,11 @@
     "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证"
   ],
   "stats": {
-    "fetched": 47,
-    "used": 47,
-    "quotes": 14,
+    "fetched": 36,
+    "used": 36,
+    "quotes": 12,
     "weibo": 16,
-    "aggregates": 8,
+    "aggregates": 6,
     "opportunities": 8,
     "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,

@@ -76,6 +76,7 @@ class QuoteTests(unittest.TestCase):
     def test_normalize_symbol(self) -> None:
         self.assertEqual(normalize_symbol("603986.SH"), "sh603986")
         self.assertEqual(normalize_symbol("000001.SZ"), "sz000001")
+        self.assertEqual(normalize_symbol("301055"), "sz301055")
         self.assertEqual(normalize_symbol("MU"), "MU")
 
     def test_parse_tencent(self) -> None:
@@ -788,9 +789,11 @@ class WeiboHotSearchTests(unittest.TestCase):
         self.assertGreaterEqual(max(item.attention for item in jing), 0.9)
         queries = event_news_queries(kept)
         self.assertTrue(any("景甜" in query for query in queries))
+        self.assertTrue(any("概念股" in query or "谐音" in query for query in queries))
         opps = heuristic_opportunities(kept)
         names = {row.name for row in opps}
         self.assertTrue({"光线传媒", "芒果超媒", "分众传媒"} & names)
+        self.assertNotIn("张小泉", names)
         self.assertTrue(all(row.hotspot == "景甜" for row in opps if row.name in names))
 
     def test_heuristic_clusters_group_news_by_sector(self) -> None:
@@ -926,6 +929,7 @@ class OpportunityTests(unittest.TestCase):
         self.assertGreaterEqual(len(rows), 2)
         names = {row.name for row in rows}
         self.assertIn("海螺水泥", names)
+        self.assertNotIn("张小泉", names)
         self.assertTrue(all(row.hotspot == "西藏吉隆泥石流" for row in rows))
         self.assertTrue(all("泥石流" in row.thesis for row in rows))
 
@@ -950,6 +954,118 @@ class OpportunityTests(unittest.TestCase):
         self.assertEqual(coerced[0].symbol, "sh600585")
         self.assertTrue(all(row.symbol.startswith(("sh", "sz")) for row in coerced))
         self.assertFalse(any(row.symbol == "AAPL" for row in coerced))
+
+    def test_heuristic_maps_dowry_news_to_zhangxiaoquan_even_without_weibo(self) -> None:
+        from src.models import HotSearchItem, NewsItem, Opportunity
+        from src.opportunities import (
+            coerce_opportunities,
+            heuristic_opportunities,
+            merge_opportunities,
+            opportunity_news_queries,
+        )
+
+        news = [
+            NewsItem(
+                title="孙宇晨起诉景甜追回三千万彩礼",
+                source="新浪娱乐",
+                snippet="律师张起淮确认已向法院提交起诉材料",
+            )
+        ]
+        rows = heuristic_opportunities([], news=news, focus="景甜")
+        names = {row.name for row in rows}
+        self.assertIn("张小泉", names)
+        self.assertIn("潮宏基", names)
+        zxq = next(row for row in rows if row.name == "张小泉")
+        self.assertEqual(zxq.symbol, "sz301055")
+        self.assertEqual(zxq.hotspot, "景甜")
+        self.assertIn("谐音", zxq.thesis)
+
+        coerced = coerce_opportunities(
+            [
+                {
+                    "name": "张小泉",
+                    "hotspot": "景甜",
+                    "thesis": "谐音梗交易指甲刀，不是代言。",
+                    "confidence": 0.32,
+                }
+            ],
+            [
+                HotSearchItem(
+                    word="西藏吉隆泥石流已致多人失联",
+                    cluster="西藏吉隆泥石流",
+                    kind="event",
+                    focusEvent=True,
+                )
+            ],
+            [],
+            focus="景甜",
+        )
+        self.assertEqual(coerced[0].symbol, "sz301055")
+        self.assertEqual(coerced[0].hotspot, "景甜")
+        queries = opportunity_news_queries("景甜", [])
+        self.assertTrue(any("景甜" in query and "概念股" in query for query in queries))
+
+        merged = merge_opportunities(
+            [
+                Opportunity(
+                    symbol="sz300251",
+                    name="光线传媒",
+                    hotspot="景甜",
+                    thesis="流量明星热搜常交易影视宣发。",
+                    angle="影视内容与宣发",
+                    confidence=0.4,
+                )
+            ],
+            rows,
+        )
+        merged_names = [row.name for row in merged]
+        self.assertEqual(merged_names[0], "光线传媒")
+        self.assertIn("张小泉", merged_names)
+
+    def test_heuristic_report_flags_meme_clue(self) -> None:
+        from src.models import HotSearchItem, Opportunity
+        from src.planner import heuristic_plan
+        from src.synthesize import heuristic_report
+
+        plan = heuristic_plan("景甜", 24)
+        report = heuristic_report(
+            focus="景甜",
+            plan=plan,
+            news=[],
+            quotes=[],
+            coverage={
+                "news": True,
+                "quotes": False,
+                "northbound": False,
+                "filings": False,
+                "x": False,
+                "weibo": True,
+            },
+            errors=[],
+            model="heuristic",
+            hot_search=[
+                HotSearchItem(
+                    word="景甜",
+                    cluster="景甜",
+                    kind="social",
+                    focusEvent=True,
+                    match="viral",
+                    heat=2100000,
+                )
+            ],
+            opportunities=[
+                Opportunity(
+                    symbol="sz301055",
+                    name="张小泉",
+                    hotspot="景甜",
+                    thesis="由热点「景甜」联想到张小泉。谐音梗，不是代言。",
+                    angle="谐音梗·剪断关系/指甲刀",
+                    confidence=0.32,
+                )
+            ],
+        )
+        self.assertIn("张小泉←景甜", report.trendNotes)
+        self.assertTrue(any("谐音梗" in item for item in report.limitations))
 
 
 if __name__ == "__main__":

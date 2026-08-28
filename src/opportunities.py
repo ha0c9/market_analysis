@@ -18,6 +18,23 @@ def _cluster_blob(item: HotSearchItem) -> str:
     return f"{item.cluster or ''} {item.word} {item.kind or ''} {item.category or ''}"
 
 
+def _opportunity_corpus(
+    hot_search: list[HotSearchItem],
+    news: list[NewsItem] | None,
+    aggregates: list[ThemeCluster] | None,
+    focus: str,
+) -> str:
+    chunks = [focus or ""]
+    for item in hot_search:
+        chunks.append(_cluster_blob(item))
+        chunks.append(item.kind or "")
+    for item in news or []:
+        chunks.append(f"{item.title} {item.snippet}")
+    for row in aggregates or []:
+        chunks.append(f"{row.name} {row.summary} {' '.join(row.hotWords)}")
+    return " ".join(chunks)
+
+
 def _hotspot_label(items: list[HotSearchItem]) -> str:
     focus = [it for it in items if it.focusEvent]
     pool = focus or items
@@ -27,28 +44,70 @@ def _hotspot_label(items: list[HotSearchItem]) -> str:
     return best.cluster or best.word
 
 
+def _spec_matches(spec: dict[str, Any], corpus: str, hot_search: list[HotSearchItem]) -> bool:
+    tokens = [str(token) for token in (spec.get("match") or []) if str(token).strip()]
+    if not tokens or not any(token in corpus for token in tokens):
+        return False
+    required = [str(token) for token in (spec.get("require_any") or []) if str(token).strip()]
+    if not required:
+        return True
+    kinds = {item.kind for item in hot_search}
+    return any(token in corpus or token in kinds for token in required)
+
+
+def _hotspot_for_spec(
+    spec: dict[str, Any],
+    hits: list[HotSearchItem],
+    aggregates: list[ThemeCluster] | None,
+    focus: str,
+) -> str:
+    if hits:
+        return _hotspot_label(hits)
+    tokens = [str(token) for token in (spec.get("match") or []) if str(token).strip()]
+    extra = [str(token) for token in (spec.get("require_any") or []) if str(token).strip()]
+    for row in aggregates or []:
+        blob = f"{row.name} {row.summary}"
+        if any(token in blob for token in [*tokens, *extra]):
+            return row.name[:40]
+    return (focus or "").strip()[:40]
+
+
 def heuristic_opportunities(
     hot_search: list[HotSearchItem],
     aggregates: list[ThemeCluster] | None = None,
+    news: list[NewsItem] | None = None,
+    focus: str = "",
     limit: int = 8,
 ) -> list[Opportunity]:
-    if not hot_search:
+    corpus = _opportunity_corpus(hot_search, news, aggregates, focus)
+    if not corpus.strip():
         return []
-    rows: list[Opportunity] = []
+    ranked: list[tuple[float, int, Opportunity]] = []
     seen: set[str] = set()
-    for spec in _maps():
+    kinds = {item.kind for item in hot_search}
+    social_context = "social" in kinds or any(
+        token in corpus for token in ("艺人", "明星", "景甜")
+    )
+    for spec_index, spec in enumerate(_maps()):
+        if not _spec_matches(spec, corpus, hot_search):
+            continue
         tokens = [str(token) for token in (spec.get("match") or []) if str(token).strip()]
+        required = [str(token) for token in (spec.get("require_any") or []) if str(token).strip()]
         hits = [
             item
             for item in hot_search
-            if any(token in _cluster_blob(item) for token in tokens)
+            if any(token in _cluster_blob(item) for token in [*tokens, *required])
         ]
-        if not hits:
+        hotspot = _hotspot_for_spec(spec, hits, aggregates, focus)
+        if not hotspot:
             continue
-        hotspot = _hotspot_label(hits)
-        members = sorted({item.word for item in hits if item.cluster == hotspot or hotspot in (item.cluster, item.word)})
-        heat = max((item.clusterHeat or item.heat or 0) for item in hits)
-        confidence = 0.42 if any(item.focusEvent for item in hits) else 0.32
+        meme = str(spec.get("style") or "") == "meme"
+        members = sorted({item.word for item in hits if item.word})
+        heat = max((item.clusterHeat or item.heat or 0) for item in hits) if hits else 400_000
+        confidence = 0.32 if meme else (0.42 if any(item.focusEvent for item in hits) else 0.32)
+        score = float(heat)
+        if meme and social_context:
+            score += 1_500_000
         for ticker in spec.get("tickers") or []:
             if not isinstance(ticker, dict):
                 continue
@@ -59,45 +118,37 @@ def heuristic_opportunities(
             seen.add(symbol)
             angle = str(ticker.get("angle") or "").strip()
             sample = "、".join(list(members)[:4])
-            thesis = (
-                f"由热搜「{hotspot}」联想到{name}。"
-                + (f"{angle}。" if angle else "")
-                + (
-                    f"同类条目包括 {sample}。"
-                    if sample
-                    else ""
+            if meme:
+                thesis = (
+                    f"由热点「{hotspot}」联想到{name}。"
+                    + (f"{angle}。" if angle else "")
+                    + (f"相关条目：{sample}。" if sample else "")
+                    + "A股常把明星纠纷/分手交易成谐音或产品梗，与代言和订单无关；"
+                    "情绪脉冲开盘后常见冲高回落，需用价格验证，不能当成基本面。"
                 )
-                + "过往重大灾害/产业事件后市场常交易相关产业链预期，这里只作对照线索，需用公告与价格验证。"
-            )
-            rows.append(
-                Opportunity(
-                    symbol=symbol,
-                    name=name,
-                    hotspot=hotspot,
-                    thesis=thesis[:400],
-                    angle=angle,
-                    confidence=confidence if heat else 0.28,
+            else:
+                thesis = (
+                    f"由热搜「{hotspot}」联想到{name}。"
+                    + (f"{angle}。" if angle else "")
+                    + (f"同类条目包括 {sample}。" if sample else "")
+                    + "过往类似事件后市场常交易相关产业链预期，这里只作对照线索，需用公告与价格验证。"
                 )
-            )
-            if len(rows) >= limit:
-                return rows
-    if not rows and aggregates:
-        for cluster in aggregates[:2]:
-            name = cluster.name.strip()
-            if not name:
-                continue
-            rows.append(
-                Opportunity(
-                    symbol="",
-                    name="",
-                    hotspot=name,
-                    thesis=f"议题「{name}」尚未映射到具体上市公司，仅作关注线索。",
-                    angle="",
-                    confidence=0.2,
+            ranked.append(
+                (
+                    score,
+                    spec_index,
+                    Opportunity(
+                        symbol=symbol,
+                        name=name,
+                        hotspot=hotspot,
+                        thesis=thesis[:400],
+                        angle=angle,
+                        confidence=confidence,
+                    ),
                 )
             )
-            break
-    return [row for row in rows if row.symbol][:limit]
+    ranked.sort(key=lambda row: (-row[0], row[1]))
+    return [item for _, _, item in ranked][:limit]
 
 
 def _ticker_index() -> dict[str, dict[str, str]]:
@@ -130,11 +181,13 @@ def coerce_opportunities(
     hot_search: list[HotSearchItem],
     fallback: list[Opportunity],
     limit: int = 8,
+    focus: str = "",
 ) -> list[Opportunity]:
     if not isinstance(raw, list):
         return fallback
     known = _ticker_index()
     clusters = [item.cluster or item.word for item in hot_search if item.cluster or item.word]
+    fallback_by_symbol = {row.symbol: row for row in fallback}
     rows: list[Opportunity] = []
     seen: set[str] = set()
     for item in raw:
@@ -151,12 +204,12 @@ def coerce_opportunities(
         if not name:
             name = mapped["name"] if mapped else symbol
         hotspot = str(item.get("hotspot") or item.get("cluster") or "").strip()
-        if hotspot and clusters and hotspot not in clusters and not any(hotspot in c or c in hotspot for c in clusters):
-            hotspot = clusters[0]
+        if not hotspot and symbol in fallback_by_symbol:
+            hotspot = fallback_by_symbol[symbol].hotspot
         if not hotspot:
-            hotspot = (mapped and "") or (clusters[0] if clusters else "")
-            if not hotspot:
-                continue
+            hotspot = (focus or "").strip() or (clusters[0] if clusters else "")
+        if not hotspot:
+            continue
         try:
             confidence = float(item.get("confidence") or 0.3)
         except (TypeError, ValueError):
@@ -181,6 +234,53 @@ def coerce_opportunities(
         if len(rows) >= limit:
             break
     return rows or fallback
+
+
+def merge_opportunities(
+    llm_rows: list[Opportunity],
+    fallback: list[Opportunity],
+    limit: int = 8,
+) -> list[Opportunity]:
+    """Keep model order, then fill gaps from the heuristic basket (e.g. meme names)."""
+    seen: set[str] = set()
+    merged: list[Opportunity] = []
+    for row in [*llm_rows, *fallback]:
+        if not row.symbol or row.symbol in seen:
+            continue
+        seen.add(row.symbol)
+        merged.append(row)
+        if len(merged) >= limit:
+            break
+    return merged
+
+
+def opportunity_news_queries(
+    focus: str,
+    hot_search: list[HotSearchItem],
+    aggregates: list[ThemeCluster] | None = None,
+    limit: int = 3,
+) -> list[str]:
+    queries: list[str] = []
+    seen: set[str] = set()
+
+    def add(query: str) -> None:
+        text = (query or "").strip()
+        if text and text not in seen:
+            seen.add(text)
+            queries.append(text)
+
+    if focus.strip():
+        add(f"{focus.strip()} 概念股")
+    for item in hot_search:
+        if item.focusEvent and (item.kind == "social" or item.match == "viral"):
+            add(f"{item.cluster or item.word} 概念股 谐音 股价")
+            break
+    for row in aggregates or []:
+        blob = f"{row.name} {row.summary}"
+        if any(token in blob for token in ("艺人", "明星", "彩礼", "起诉", "分手", "小作文")):
+            add(f"{row.name[:24]} 概念股")
+            break
+    return queries[:limit]
 
 
 def attach_quotes(rows: list[Opportunity], quotes: list[QuoteRow]) -> list[Opportunity]:
@@ -212,8 +312,11 @@ def infer_opportunities(
     aggregates: list[ThemeCluster] | None = None,
     limit: int = 8,
 ) -> tuple[list[Opportunity], str, list[str]]:
-    fallback = heuristic_opportunities(hot_search, aggregates, limit=limit)
-    if not env("AI_API_KEY") or not hot_search:
+    fallback = heuristic_opportunities(
+        hot_search, aggregates, news=news, focus=focus, limit=limit
+    )
+    has_signal = bool(hot_search or news or (focus or "").strip())
+    if not env("AI_API_KEY") or not has_signal:
         return fallback, "heuristic", []
     budgets = load_yaml("budgets.yml")
     prompt = {
@@ -241,7 +344,11 @@ def infer_opportunities(
             "thesis(点明由哪个热点联想到这只股票、历史类似事件怎么交易过、当前还缺什么验证), "
             "angle 短标签, confidence 0到1。"
             "优先使用 maps 里的标的；可以补充其他 A 股，但必须能说清和热点的因果，禁止美股代码。"
-            "重大灾害优先想基建/水泥/水利/保险；流量明星/影视热搜优先想传媒、广告、代言相关消费。"
+            "重大灾害优先想基建/水泥/水利/保险。"
+            "流量明星/影视热搜不要只映射传媒：A股散户常把纠纷、分手、起诉做成谐音梗或产品梗。"
+            "例如「剪掉这段关系」会交易指甲刀/刀剪（张小泉），天价彩礼会交易金饰，而不是只看光线传媒。"
+            "这类线索必须写明是情绪炒作、与基本面无关、常见冲高回落。"
+            "也要读 newsTitles，不要只看热搜词。"
             "不要因为原分类是娱乐就放弃推演。"
             "这不是投资建议，不要写买入/卖出/目标价/点位。"
         ),
@@ -267,7 +374,9 @@ def infer_opportunities(
             hot_search,
             fallback,
             limit=limit,
+            focus=focus,
         )
+        rows = merge_opportunities(rows, fallback, limit=limit)
         if not rows:
             raise LLMError("个股推演为空")
         print(f"opportunities ok n={len(rows)}", flush=True)

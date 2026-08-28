@@ -12,7 +12,7 @@ from src.ingest.flows import fetch_northbound
 from src.ingest.news import fetch_configured_rss, fetch_google_news
 from src.ingest.quotes import fetch_quotes, normalize_symbol, snapshot_from_rows
 from src.ingest.weibo import event_news_queries, fetch_weibo_finance_hot
-from src.opportunities import attach_quotes, infer_opportunities
+from src.opportunities import attach_quotes, infer_opportunities, opportunity_news_queries
 from src.planner import plan_analysis
 from src.pulse import build_market_pulse
 from src.settings import load_yaml, write_json
@@ -32,12 +32,21 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     hot_items, weibo_errors, weibo_ok = fetch_weibo_finance_hot(
         plan.keywords, plan.lookbackHours, focus=focus
     )
-    event_queries = event_news_queries(hot_items)
+    extra_queries: list[str] = []
+    seen_queries: set[str] = set()
+    for query in [
+        *event_news_queries(hot_items),
+        *opportunity_news_queries(focus, hot_items),
+    ]:
+        text = (query or "").strip()
+        if text and text not in seen_queries:
+            seen_queries.add(text)
+            extra_queries.append(text)
     extra_errors: list[str] = []
-    if event_queries:
-        extra_news, extra_errors = fetch_google_news(event_queries, per_source)
+    if extra_queries:
+        extra_news, extra_errors = fetch_google_news(extra_queries, per_source)
         gnews_items = [*gnews_items, *extra_news]
-        print(f"event_news queries={event_queries} extra={len(extra_news)}", flush=True)
+        print(f"event_news queries={extra_queries} extra={len(extra_news)}", flush=True)
     print(
         f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
         f"weibo={len(hot_items)} ok={int(weibo_ok)} "

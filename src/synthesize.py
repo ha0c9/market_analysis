@@ -419,6 +419,8 @@ def heuristic_report(
     limitations.append("未接入 X")
     if opps:
         limitations.append("个股推演是研究线索，不是买卖建议，没有目标价")
+        if any("谐音" in (row.thesis or "") or "情绪" in (row.angle or "") for row in opps):
+            limitations.append("谐音梗/情绪炒作线索与基本面无关，开盘后常见冲高回落，需用价格验证")
     if pulse.get("northbound") and not pulse["northbound"].get("netBuyAvailable"):
         limitations.append("北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证")
     return Report(
@@ -522,8 +524,11 @@ def synthesize_report(
             "若有 hotSearch，点名仍在时效内、且与议题相关的条目，写 onboardAt/fetchedAt，过旧条目不要当当日催化剂。"
             "focusEvent=true、match=viral 或 attention 高的热搜必须写入分析，不论原分类是娱乐、社会还是财经。"
             "讨论量本身就是市场情绪：流量明星（如景甜）、爆款社会新闻会传导到影视传媒、广告代言、消费和风险偏好；"
+            "明星纠纷、分手、起诉、天价彩礼不要只写成影视传媒偏空：A股散户常做成谐音梗或产品梗"
+            "（例如「剪掉这段关系」→指甲刀→张小泉，彩礼→金饰），与代言/订单无关，开盘后常见冲高回落。"
             "重大灾害对照基建/保险/物流。attention/heat 更高的议题在 sectorOutlook 里提高 heatScore。"
             "若有 opportunities，可点名热点→个股的推演关系，但必须写清这是研究线索；"
+            "谐音梗/情绪炒作必须标明不是基本面。"
             "禁止买入/卖出/目标价/点位。"
             "禁止只根据最新一个点下结论。"
             "北向 netBuyAvailable=false 时，成交额不是净买入，不要写成外资净流入/净流出。"

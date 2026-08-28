@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import time
 from datetime import datetime, timezone
 from typing import Any
@@ -145,6 +146,12 @@ MARKET_TOKENS = (
     "芯片",
 )
 
+# 阅读量/讨论量的代理：微博热度、沸/爆标签。大讨论量不论原分类都纳入盘面。
+VIRAL_HEAT = 800_000
+VIRAL_LABELS = {"沸", "爆"}
+_CJK_HEAD = re.compile(r"^[\u4e00-\u9fff]{2}")
+MATCH_RANK = {"viral": 0, "event": 0, "finance": 1, "focus": 2, "llm": 3, "market": 4}
+
 
 def _unix_iso(value: Any) -> str:
     try:
@@ -211,18 +218,20 @@ def parse_hot_rows(rows: list[dict[str, Any]], *, fetched_at: str) -> list[HotSe
             continue
         seen.add(word)
         scheme = str(row.get("word_scheme") or "").strip()
+        category = str(row.get("category") or "").strip()
+        cluster = cluster_label(word, category)
         items.append(
             HotSearchItem(
                 rank=_rank(row, index),
                 word=word,
-                category=str(row.get("category") or "").strip(),
+                category=category,
                 heat=_heat(row),
                 label=str(row.get("label_name") or row.get("icon_desc") or "").strip(),
                 url=_topic_url(word, scheme),
                 onboardAt=_unix_iso(row.get("onboard_time") or row.get("onboard_ts")),
                 fetchedAt=fetched_at,
-                cluster=cluster_label(word),
-                kind=infer_kind(word, cluster_label(word)),
+                cluster=cluster,
+                kind=infer_kind(word, cluster, category),
             )
         )
     return items
@@ -241,7 +250,7 @@ def is_entertainment(item: HotSearchItem) -> bool:
 
 
 def is_noise(item: HotSearchItem) -> bool:
-    """Lifestyle, crime-gossip, and celebrity chatter that should not appear."""
+    """Low-volume lifestyle, crime-gossip, and celebrity chatter."""
     if is_entertainment(item):
         return True
     blob = f"{item.word} {item.category or ''}"
@@ -254,7 +263,18 @@ def is_noise(item: HotSearchItem) -> bool:
     return False
 
 
-def cluster_label(word: str) -> str:
+def is_viral(item: HotSearchItem) -> bool:
+    """High reading/discussion volume on the live board, regardless of category."""
+    if (item.heat or 0) >= VIRAL_HEAT:
+        return True
+    return (item.label or "") in VIRAL_LABELS
+
+
+def should_keep_item(item: HotSearchItem) -> bool:
+    return is_viral(item) or not is_noise(item)
+
+
+def cluster_label(word: str, category: str = "") -> str:
     text = word or ""
     if any(token in text for token in ("西藏", "吉隆")) and any(
         token in text for token in ("泥石流", "堰塞湖", "堰塞", "失联", "伤亡", "遇难", "搜救", "救援")
@@ -272,10 +292,17 @@ def cluster_label(word: str) -> str:
         return "苹果消费电子"
     if "折叠屏" in text:
         return "折叠屏手机"
+    social = any(token in (category or "") for token in SKIP_CATEGORIES) or any(
+        name in text for name in CELEBRITY_HINTS
+    )
+    if social:
+        match = _CJK_HEAD.match(text)
+        if match:
+            return match.group(0)
     return text
 
 
-def infer_kind(word: str, cluster: str = "") -> str:
+def infer_kind(word: str, cluster: str = "", category: str = "") -> str:
     blob = f"{word} {cluster}"
     if any(token in blob for token in EVENT_TOKENS):
         return "event"
@@ -283,20 +310,47 @@ def infer_kind(word: str, cluster: str = "") -> str:
         return "product"
     if any(token in blob for token in ("财报", "业绩", "IPO", "回购", "并购", "立案", "股价")):
         return "company"
+    if any(token in (category or "") for token in SKIP_CATEGORIES) or any(
+        name in blob for name in CELEBRITY_HINTS
+    ):
+        return "social"
     return "market"
+
+
+def attention_score(
+    *,
+    heat: int,
+    size: int,
+    rank: int,
+    label: str,
+    focus: bool,
+) -> float:
+    score = min(1.0, (heat or 0) / 2_000_000)
+    if label == "爆":
+        score = max(score, 0.9)
+    elif label == "沸":
+        score = max(score, 0.75)
+    if rank and rank <= 3:
+        score = max(score, 0.7)
+    if size >= 3:
+        score = max(score, 0.6)
+    if focus:
+        score = max(score, 0.55)
+    return round(min(1.0, score), 2)
 
 
 def annotate_clusters(items: list[HotSearchItem]) -> list[HotSearchItem]:
     groups: dict[str, list[HotSearchItem]] = {}
     for item in items:
-        label = item.cluster or cluster_label(item.word)
+        label = item.cluster or cluster_label(item.word, item.category)
         groups.setdefault(label, []).append(item)
     annotated: list[HotSearchItem] = []
     for label, group in groups.items():
         heat = sum(it.heat or 0 for it in group)
         size = len(group)
-        kind = infer_kind(" ".join(it.word for it in group), label)
-        focus = kind == "event" and (size >= 3 or heat >= 800_000)
+        kind = infer_kind(" ".join(it.word for it in group), label, group[0].category)
+        viral = heat >= VIRAL_HEAT or any(is_viral(it) for it in group)
+        focus = viral or (kind == "event" and size >= 3)
         for it in group:
             annotated.append(
                 it.model_copy(
@@ -306,14 +360,22 @@ def annotate_clusters(items: list[HotSearchItem]) -> list[HotSearchItem]:
                         "clusterSize": size,
                         "kind": it.kind or kind,
                         "focusEvent": focus,
+                        "attention": attention_score(
+                            heat=heat,
+                            size=size,
+                            rank=it.rank or 0,
+                            label=it.label or "",
+                            focus=focus,
+                        ),
                     }
                 )
             )
     annotated.sort(
         key=lambda row: (
             0 if row.focusEvent else 1,
+            -(row.attention or 0),
             -(row.clusterHeat or 0),
-            {"finance": 0, "event": 1, "focus": 2, "llm": 3, "market": 4}.get(row.match, 9),
+            MATCH_RANK.get(row.match, 9),
             row.rank or 999,
             -(row.heat or 0),
         )
@@ -346,40 +408,45 @@ def trim_clustered(items: list[HotSearchItem], limit: int) -> list[HotSearchItem
     return (focus_items + rest)[:limit]
 
 
-def event_news_queries(items: list[HotSearchItem], limit: int = 2) -> list[str]:
+def event_news_queries(items: list[HotSearchItem], limit: int = 3) -> list[str]:
     seen: set[str] = set()
     queries: list[str] = []
     ranked = sorted(
         items,
-        key=lambda it: (-int(bool(it.focusEvent)), -(it.clusterHeat or 0), it.rank or 999),
+        key=lambda it: (-int(bool(it.focusEvent)), -(it.attention or 0), -(it.clusterHeat or 0), it.rank or 999),
     )
     for item in ranked:
-        if item.kind != "event":
+        if not item.focusEvent:
             continue
         cluster = item.cluster or item.word
         if cluster in seen:
             continue
         seen.add(cluster)
-        queries.append(f"{cluster} 上市公司 板块 影响 重建")
+        if item.kind == "event":
+            queries.append(f"{cluster} 上市公司 板块 影响 重建")
+        else:
+            queries.append(f"{cluster} 市场 影响 股价 板块 上市公司")
         if len(queries) >= limit:
             break
     return queries
 
 
 def classify_hot_item(item: HotSearchItem, keywords: list[str]) -> str:
-    if is_noise(item):
+    if is_noise(item) and not is_viral(item):
         return ""
     category = item.category or ""
-    cluster = item.cluster or cluster_label(item.word)
+    cluster = item.cluster or cluster_label(item.word, category)
     blob = f"{item.word} {category} {cluster}"
     if any(token in category for token in FINANCE_CATEGORIES):
         return "finance"
-    if any(token in blob for token in EVENT_TOKENS) or infer_kind(item.word, cluster) == "event":
+    if any(token in blob for token in EVENT_TOKENS) or infer_kind(item.word, cluster, category) == "event":
         return "event"
     if any(_token_hit(token, blob) for token in keywords):
         return "focus"
     if any(token in blob for token in MARKET_TOKENS):
         return "market"
+    if is_viral(item):
+        return "viral"
     return ""
 
 
@@ -414,7 +481,7 @@ def select_finance_hot(
         kept.append(item)
     kept.sort(
         key=lambda row: (
-            {"finance": 0, "event": 1, "focus": 2, "llm": 3, "market": 4}.get(row.match, 9),
+            MATCH_RANK.get(row.match, 9),
             row.rank or 999,
             -(row.heat or 0),
         )
@@ -430,8 +497,9 @@ def _compact_for_picker(item: HotSearchItem) -> dict[str, Any]:
         "heat": item.heat,
         "label": item.label,
         "onboardAt": item.onboardAt,
-        "cluster": item.cluster or cluster_label(item.word),
-        "kind": item.kind or infer_kind(item.word),
+        "cluster": item.cluster or cluster_label(item.word, item.category),
+        "kind": item.kind or infer_kind(item.word, category=item.category),
+        "viral": is_viral(item),
     }
 
 
@@ -442,7 +510,7 @@ def llm_pick_hot_words(
     keywords: list[str],
     limit: int,
 ) -> tuple[list[str], str]:
-    """Ask the planner model which non-entertainment topics are market-relevant."""
+    """Ask the planner model which high-discussion or market-relevant topics to keep."""
     from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
     from src.settings import env
 
@@ -455,12 +523,13 @@ def llm_pick_hot_words(
         "topics": [_compact_for_picker(item) for item in items],
         "instructions": (
             "从微博热搜候选里选出可能影响 A股/港股/美股、风险偏好、宏观政策、公司股价或行业景气的话题。"
-            "要选：重大灾害/事故（泥石流、台风、地震、爆炸、山洪）即使分类不是财经，"
-            "因为讨论量大会影响基建、保险、物流、旅游；产业/公司/产品/政策/宏观。"
-            "同一事件多条热搜（例如西藏吉隆泥石流的伤亡/堰塞湖/失联）每条都列入 keep，"
+            "要选：讨论量极大的条目（heat 很高、标签沸/爆、或同一主题多条），无论原分类是财经、社会、娱乐还是明星。"
+            "例如流量明星（景甜这类）阅读量和讨论量都很大时，会冲击影视传媒、广告代言、消费情绪和风险偏好，必须列入 keep。"
+            "重大灾害/事故即使分类不是财经也要选；产业/公司/产品/政策/宏观也要选。"
+            "同一事件多条热搜（例如西藏吉隆泥石流的伤亡/堰塞湖/失联，或同一明星的多条）每条都列入 keep，"
             "后续会按主题聚类，不要只留一条。"
-            "不要选：美妆护肤、旅游攻略/酒店门票、综艺明星八卦、犯罪个案、民俗禁忌、"
-            "恋爱相亲、与市场无关的生活琐事。词里带「财报」但主体是艺人的不要。"
+            "不要选：低热度美妆护肤、旅游攻略/酒店门票、民俗禁忌、恋爱相亲、与市场无关的生活琐事。"
+            "词里带「财报」但主体是艺人、且讨论量不高的不要。"
             "科技发布会、AI、汽车价格、就业/减员、公司名+股价、商品价格可以保留。"
             f"最多 {limit} 条。只输出 JSON 对象：keep 为数组，每项 word 必须来自 topics，另给 why 短句。"
         ),
@@ -511,10 +580,10 @@ def merge_hot_items(
     for item in items:
         if not is_fresh(item, max_age_hours=max_age_hours, now=now):
             continue
-        if is_noise(item):
+        if is_noise(item) and not is_viral(item):
             continue
         match = classify_hot_item(item, keywords)
-        if not match and item.word in llm_set:
+        if not match and item.word in llm_set and should_keep_item(item):
             match = "llm"
         if not match:
             continue
@@ -522,7 +591,7 @@ def merge_hot_items(
     ranked = list(selected.values())
     ranked.sort(
         key=lambda row: (
-            {"finance": 0, "event": 1, "focus": 2, "llm": 3, "market": 4}.get(row.match, 9),
+            MATCH_RANK.get(row.match, 9),
             row.rank or 999,
             -(row.heat or 0),
         )
@@ -589,7 +658,7 @@ def fetch_weibo_finance_hot(
                 last_error = f"weibo {source or url}: empty"
                 continue
             fresh = [item for item in parsed if is_fresh(item, max_age_hours=max_age, now=now)]
-            candidates = [item for item in fresh if not is_noise(item)]
+            candidates = [item for item in fresh if should_keep_item(item)]
             llm_words, picker_model = llm_pick_hot_words(
                 candidates,
                 focus=focus,

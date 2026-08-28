@@ -103,7 +103,8 @@
       "clusterHeat": 1960000,
       "clusterSize": 3,
       "kind": "event",
-      "focusEvent": true
+      "focusEvent": true,
+      "attention": 0.9
     },
     {
       "rank": 3,
@@ -119,7 +120,8 @@
       "clusterHeat": 1960000,
       "clusterSize": 3,
       "kind": "event",
-      "focusEvent": true
+      "focusEvent": true,
+      "attention": 0.9
     },
     {
       "rank": 17,
@@ -135,7 +137,42 @@
       "clusterHeat": 1960000,
       "clusterSize": 3,
       "kind": "event",
-      "focusEvent": true
+      "focusEvent": true,
+      "attention": 0.9
+    },
+    {
+      "rank": 2,
+      "word": "景甜",
+      "category": "艺人",
+      "heat": 2100000,
+      "label": "爆",
+      "url": "https://s.weibo.com/weibo?q=%23%E6%99%AF%E7%94%9C%23&Refer=top",
+      "onboardAt": "2026-08-25T04:10:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "viral",
+      "cluster": "景甜",
+      "clusterHeat": 3000000,
+      "clusterSize": 2,
+      "kind": "social",
+      "focusEvent": true,
+      "attention": 0.9
+    },
+    {
+      "rank": 6,
+      "word": "景甜工作室回应",
+      "category": "艺人",
+      "heat": 900000,
+      "label": "沸",
+      "url": "https://s.weibo.com/weibo?q=%23%E6%99%AF%E7%94%9C%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%9B%9E%E5%BA%94%23&Refer=top",
+      "onboardAt": "2026-08-25T04:40:00Z",
+      "fetchedAt": "2026-08-25T05:20:00Z",
+      "match": "viral",
+      "cluster": "景甜",
+      "clusterHeat": 3000000,
+      "clusterSize": 2,
+      "kind": "social",
+      "focusEvent": true,
+      "attention": 0.75
     },
     {
       "rank": 12,
@@ -151,7 +188,8 @@
       "clusterHeat": 482000,
       "clusterSize": 1,
       "kind": "market",
-      "focusEvent": false
+      "focusEvent": false,
+      "attention": 0.24
     },
     {
       "rank": 28,
@@ -167,7 +205,8 @@
       "clusterHeat": 219000,
       "clusterSize": 1,
       "kind": "company",
-      "focusEvent": false
+      "focusEvent": false,
+      "attention": 0.11
     }
   ],
   "aggregates": [
@@ -177,6 +216,13 @@
       "newsTitles": ["示例新闻：西藏吉隆泥石流救援与堰塞湖"],
       "hotWords": ["西藏吉隆泥石流已致多人失联", "西藏吉隆县失联人数上升", "吉隆堰塞湖持续上涨"],
       "heat": 0.82
+    },
+    {
+      "name": "景甜",
+      "summary": "阅读量和讨论量都很大的流量热点；即使原分类是艺人，也会传导到影视传媒、广告代言和消费情绪，需要纳入盘面而不是当娱乐新闻丢掉。",
+      "newsTitles": ["示例新闻：景甜相关讨论升温"],
+      "hotWords": ["景甜", "景甜工作室回应"],
+      "heat": 0.9
     },
     {
       "name": "创新药",
@@ -213,6 +259,17 @@
       "angle": "基建与灾后工程",
       "price": 5.62,
       "changePct": 0.36,
+      "asOf": "2026-08-25T05:31:57Z",
+      "confidence": 0.4
+    },
+    {
+      "symbol": "sz300251",
+      "name": "光线传媒",
+      "hotspot": "景甜",
+      "thesis": "由大讨论量热搜「景甜」联想到光线传媒。流量明星热搜历史上常交易影视内容与宣发预期；是否落到具体项目要看公司公告，不是买卖建议。",
+      "angle": "影视内容与宣发",
+      "price": 9.86,
+      "changePct": 2.08,
       "asOf": "2026-08-25T05:31:57Z",
       "confidence": 0.4
     },

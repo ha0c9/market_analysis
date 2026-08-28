@@ -308,6 +308,7 @@ def _compact_hot(item: HotSearchItem) -> dict[str, Any]:
         "clusterSize": item.clusterSize,
         "kind": item.kind,
         "focusEvent": item.focusEvent,
+        "attention": item.attention,
     }
 
 
@@ -327,7 +328,7 @@ def _hot_search_note(items: list[HotSearchItem]) -> str:
     focus = [row.cluster or row.word for row in items if row.focusEvent]
     extra = ""
     if focus:
-        extra = f"重点关注社会热点：{'、'.join(dict.fromkeys(focus))}。"
+        extra = f"重点关注大讨论量热点：{'、'.join(dict.fromkeys(focus))}。"
     return (
         f"微博财经热搜快照（拉取 {fetched or '本次任务'}）：{names}。"
         f"{extra}"
@@ -412,7 +413,7 @@ def heuristic_report(
         if not hot:
             limitations.append("当前微博热搜无财经/市场相关条目")
         if any(item.focusEvent for item in hot):
-            limitations.append("重大社会热点已按讨论量聚类，推演线索需用公告与价格核对，不能单靠热搜")
+            limitations.append("大讨论量热搜已按热度加权并聚类，推演线索需用公告与价格核对，不能单靠热搜")
     else:
         limitations.append("未接入微博热搜")
     limitations.append("未接入 X")
@@ -519,8 +520,9 @@ def synthesize_report(
             "另需 crossSectorNotes 字符串（交叉与分歧，不要只重复单一板块），以及 trendNotes 字符串。"
             "trendNotes 必须按时间线概括：量能是放量还是缩量、北向成交额活跃度、新闻情绪升温还是降温；"
             "若有 hotSearch，点名仍在时效内、且与议题相关的条目，写 onboardAt/fetchedAt，过旧条目不要当当日催化剂。"
-            "focusEvent=true 的社会热点（如重大灾害）即使不是财经栏目也要单独讨论："
-            "对照过往类似事件市场如何交易基建/保险/物流，以及当前还缺什么验证。"
+            "focusEvent=true、match=viral 或 attention 高的热搜必须写入分析，不论原分类是娱乐、社会还是财经。"
+            "讨论量本身就是市场情绪：流量明星（如景甜）、爆款社会新闻会传导到影视传媒、广告代言、消费和风险偏好；"
+            "重大灾害对照基建/保险/物流。attention/heat 更高的议题在 sectorOutlook 里提高 heatScore。"
             "若有 opportunities，可点名热点→个股的推演关系，但必须写清这是研究线索；"
             "禁止买入/卖出/目标价/点位。"
             "禁止只根据最新一个点下结论。"

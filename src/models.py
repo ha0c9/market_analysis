@@ -104,6 +104,26 @@ class Opportunity(BaseModel):
     confidence: float = 0.3
 
 
+class HeatItem(BaseModel):
+    channel: Literal["tape", "flow", "news", "social", "web"]
+    name: str
+    detail: str = ""
+    heatScore: float = 0.0
+    changePct: float | None = None
+    leadName: str = ""
+    leadSymbol: str = ""
+    leadChangePct: float | None = None
+    url: str = ""
+    asOf: str = ""
+    rank: int = 0
+
+
+class HeatBoard(BaseModel):
+    asOf: str = ""
+    items: list[HeatItem] = Field(default_factory=list)
+    coverage: dict[str, bool] = Field(default_factory=dict)
+
+
 class Report(BaseModel):
     generatedAt: str
     focus: str = ""
@@ -111,6 +131,7 @@ class Report(BaseModel):
     dataCoverage: dict[str, bool]
     marketSnapshot: dict[str, Any]
     marketPulse: dict[str, Any] = Field(default_factory=dict)
+    heat: HeatBoard = Field(default_factory=HeatBoard)
     hotSearch: list[HotSearchItem] = Field(default_factory=list)
     aggregates: list[ThemeCluster] = Field(default_factory=list)
     opportunities: list[Opportunity] = Field(default_factory=list)

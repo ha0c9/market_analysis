@@ -190,6 +190,55 @@ function renderHotItem(item) {
   return `<li><div class="hot-word">${link}</div><div class="hint">${meta}</div></li>`;
 }
 
+function channelLabel(value) {
+  if (value === "tape") return "盘面";
+  if (value === "flow") return "资金";
+  if (value === "news") return "电报";
+  if (value === "social") return "舆情";
+  if (value === "web") return "网络";
+  return value || "";
+}
+
+function renderHeatItem(item) {
+  const name = item.name || "";
+  const link = item.url
+    ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${name}</a>`
+    : name;
+  const move = item.changePct === null || item.changePct === undefined ? "" : pct(item.changePct);
+  const lead = item.leadName
+    ? `领涨 ${item.leadName}${item.leadChangePct === null || item.leadChangePct === undefined ? "" : ` ${pct(item.leadChangePct)}`}`
+    : item.detail || "";
+  const meta = [move, lead].filter(Boolean).join(" · ");
+  return `<div class="heat-item"><div class="heat-name">${link}</div><div class="heat-meta ${chgClass(item.changePct)}">${meta || item.detail || ""}</div></div>`;
+}
+
+function renderHeat(report) {
+  const section = $("heat");
+  if (!section) return;
+  const board = report.heat || {};
+  const items = board.items || [];
+  if (!items.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+  const order = ["tape", "flow", "news", "social", "web"];
+  const lanes = order
+    .map((channel) => {
+      const rows = items.filter((item) => item.channel === channel);
+      if (!rows.length) return "";
+      return `<article class="heat-lane"><h3>${channelLabel(channel)}</h3>${rows.map(renderHeatItem).join("")}</article>`;
+    })
+    .filter(Boolean)
+    .join("");
+  section.hidden = false;
+  section.innerHTML = `
+    <p class="section-kicker">全市场热点</p>
+    <p class="hint">先扫盘面、资金、电报、微博和网络热搜，再分析投资线索。侧重点只加权，不会把其他热点藏起来。拉取 ${formatBeijing(board.asOf || report.generatedAt)}。</p>
+    <div class="heat-grid">${lanes}</div>
+  `;
+}
+
 function renderHotSearch(report) {
   const section = $("hotsearch");
   if (!section) return;
@@ -244,7 +293,7 @@ function renderOpportunities(report) {
   section.hidden = false;
   section.innerHTML = `
     <p class="section-kicker">热点推演关注线索</p>
-    <p class="hint">根据热搜热点与历史类似事件推演到的个股线索，并标注由哪个热点联想到。研究推演，不是买卖建议，没有目标价。</p>
+    <p class="hint">根据盘面领涨、资金、电报、微博和网络热点推演到的个股线索。研究推演，不是买卖建议，没有目标价。</p>
     <div class="opportunity-grid">
       ${rows
         .map((row) => {
@@ -384,7 +433,7 @@ function renderReport(report) {
     <div>侧重点：<strong>${report.focus || "泛市场"}</strong></div>
     <div>生成时间：${formatBeijing(report.generatedAt)}</div>
     <div>回看窗口：${windowFrom} — ${windowTo}</div>
-    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博热搜 ${report.dataCoverage?.weibo ? `是（${(report.hotSearch || []).length}）` : "否"} · X ${report.dataCoverage?.x ? "是" : "否"}</div>
+    <div>覆盖：新闻 ${report.dataCoverage?.news ? "是" : "否"} · 行情 ${report.dataCoverage?.quotes ? "是" : "否"} · 热点层 ${report.dataCoverage?.heat ? "是" : "否"} · 北向时间线 ${report.dataCoverage?.northbound ? "是" : "否"} · 微博热搜 ${report.dataCoverage?.weibo ? `是（${(report.hotSearch || []).length}）` : "否"} · 百度热搜 ${report.dataCoverage?.baidu ? "是" : "否"} · X ${report.dataCoverage?.x ? "是" : "否"}</div>
     <div>模型：${report.stats?.plannerModel || "—"} → ${report.stats?.model || "—"}</div>
   `;
 
@@ -392,12 +441,13 @@ function renderReport(report) {
   $("snapshot").hidden = false;
   $("snapshot").innerHTML =
     `<p class="section-kicker">行情快照</p>` +
-    `<p class="hint">公开行情，不是 AI 生成。大盘基准固定；板块 ETF 与个股随本次侧重点变化。</p>` +
+    `<p class="hint">公开行情，不是 AI 生成。大盘基准固定；板块 ETF 与个股随本次侧重点变化。全市场行业涨跌在下方热点层，不随侧重点过滤。</p>` +
     `<p class="hint">行情时间：${formatBeijing(snap.asOf)}（可能延迟）</p>` +
     renderQuotes("基准（大盘）", snap.benchmarks) +
     renderQuotes("板块 / ETF（随侧重点）", snap.sectors) +
     renderQuotes("相关标的（随侧重点）", snap.tickers);
 
+  renderHeat(report);
   renderPulse(report.marketPulse);
   renderHotSearch(report);
   renderAggregates(report);

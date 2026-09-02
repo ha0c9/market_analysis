@@ -353,6 +353,8 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         "tickers(10-20个股票代码, A股用 sh/sz 前缀如 sh600276, 美股用 Yahoo 代码),"
         "etfs(相关 ETF 代码, A股用 sh/sz 前缀)。"
         f"侧重点类型: {kind_label}。"
+        "无论侧重点是什么，系统都会独立扫描全市场盘面、资金、电报、微博和网络热搜；"
+        "你的 queries 是补充，不要把检索收成只剩侧重点，以免漏掉正在涨停或正在热搜的主线。"
         "若是单一股票名称或代码: tickers 第一项必须是该股, sectors 写其行业, "
         "newsQueries 覆盖该公司、所属行业、官方公告、量能以及市场情绪/北向资金。"
         "若是主题(如医药、存储): tickers 与 etfs 必须属于该主题, 禁止塞入无关行业标的。"
@@ -361,7 +363,8 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         "newsQueries 必须覆盖：昨日涨停与领涨板块、连板/龙头、今日盘前主线与原因；查询要带「昨日」或「今日」。"
         "tickers 填写新闻或行情里被点名的活跃股，覆盖多个行业，不要默认银行股或中芯国际。"
         "etfs 用宽基加上能代表常见主线的行业 ETF（农业、消费、医药、半导体、军工、周期等），让行情自己揭示热点。"
-        "sectorOutlook 的候选板块先看昨日涨跌，再看隔夜外盘。"
+        "系统会另外独立扫描全市场热点（行业涨跌、北向、电报、微博、百度热搜）；你规划的 queries 是补充，不要假设热点只存在于用户侧重点里。"
+        "隔夜外盘只作背景。"
         f"lookbackHours 默认{lookback_hours}。只规划公开新闻和行情，不要规划微博博主或 X；热搜由系统单独拉取。"
         f"用户侧重点: {focus or '泛市场扫描'}"
     )

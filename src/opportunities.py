@@ -4,7 +4,7 @@ from typing import Any
 
 from src.ingest.quotes import normalize_symbol
 from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
-from src.models import HotSearchItem, NewsItem, Opportunity, QuoteRow, ThemeCluster
+from src.models import HeatBoard, HotSearchItem, NewsItem, Opportunity, QuoteRow, ThemeCluster
 from src.settings import env, load_yaml
 
 
@@ -27,13 +27,44 @@ def _hotspot_label(items: list[HotSearchItem]) -> str:
     return best.cluster or best.word
 
 
+def _merge_opportunities(*groups: list[Opportunity], limit: int = 8) -> list[Opportunity]:
+    rows: list[Opportunity] = []
+    seen: set[str] = set()
+    for group in groups:
+        for row in group:
+            key = row.symbol or f"{row.name}:{row.hotspot}"
+            if key in seen:
+                continue
+            seen.add(key)
+            rows.append(row)
+            if len(rows) >= limit:
+                return rows
+    return rows
+
+
+def _heat_labels(heat: HeatBoard | None) -> list[str]:
+    if not heat:
+        return []
+    labels: list[str] = []
+    for item in heat.items:
+        for token in (item.name, item.leadName):
+            text = (token or "").strip()
+            if text and text not in labels:
+                labels.append(text)
+    return labels
+
+
 def heuristic_opportunities(
     hot_search: list[HotSearchItem],
     aggregates: list[ThemeCluster] | None = None,
     limit: int = 8,
+    heat: HeatBoard | None = None,
 ) -> list[Opportunity]:
+    from src.heat import opportunities_from_heat
+
+    tape = opportunities_from_heat(heat, limit=limit) if heat else []
     if not hot_search:
-        return []
+        return tape[:limit]
     rows: list[Opportunity] = []
     seen: set[str] = set()
     for spec in _maps():
@@ -47,7 +78,7 @@ def heuristic_opportunities(
             continue
         hotspot = _hotspot_label(hits)
         members = sorted({item.word for item in hits if item.cluster == hotspot or hotspot in (item.cluster, item.word)})
-        heat = max((item.clusterHeat or item.heat or 0) for item in hits)
+        cluster_heat = max((item.clusterHeat or item.heat or 0) for item in hits)
         confidence = 0.42 if any(item.focusEvent for item in hits) else 0.32
         for ticker in spec.get("tickers") or []:
             if not isinstance(ticker, dict):
@@ -76,17 +107,20 @@ def heuristic_opportunities(
                     hotspot=hotspot,
                     thesis=thesis[:400],
                     angle=angle,
-                    confidence=confidence if heat else 0.28,
+                    confidence=confidence if cluster_heat else 0.28,
                 )
             )
             if len(rows) >= limit:
-                return rows
-    if not rows and aggregates:
+                break
+        if len(rows) >= limit:
+            break
+    mapped = [row for row in rows if row.symbol]
+    if not mapped and not tape and aggregates:
         for cluster in aggregates[:2]:
             name = cluster.name.strip()
             if not name:
                 continue
-            rows.append(
+            mapped.append(
                 Opportunity(
                     symbol="",
                     name="",
@@ -97,7 +131,7 @@ def heuristic_opportunities(
                 )
             )
             break
-    return [row for row in rows if row.symbol][:limit]
+    return _merge_opportunities(tape, mapped, limit=limit)
 
 
 def _ticker_index() -> dict[str, dict[str, str]]:
@@ -130,11 +164,13 @@ def coerce_opportunities(
     hot_search: list[HotSearchItem],
     fallback: list[Opportunity],
     limit: int = 8,
+    heat: HeatBoard | None = None,
 ) -> list[Opportunity]:
     if not isinstance(raw, list):
         return fallback
     known = _ticker_index()
     clusters = [item.cluster or item.word for item in hot_search if item.cluster or item.word]
+    clusters = list(dict.fromkeys([*clusters, *_heat_labels(heat)]))
     rows: list[Opportunity] = []
     seen: set[str] = set()
     for item in raw:
@@ -151,10 +187,8 @@ def coerce_opportunities(
         if not name:
             name = mapped["name"] if mapped else symbol
         hotspot = str(item.get("hotspot") or item.get("cluster") or "").strip()
-        if hotspot and clusters and hotspot not in clusters and not any(hotspot in c or c in hotspot for c in clusters):
-            hotspot = clusters[0]
         if not hotspot:
-            hotspot = (mapped and "") or (clusters[0] if clusters else "")
+            hotspot = clusters[0] if clusters else ""
             if not hotspot:
                 continue
         try:
@@ -210,14 +244,17 @@ def infer_opportunities(
     hot_search: list[HotSearchItem],
     news: list[NewsItem],
     aggregates: list[ThemeCluster] | None = None,
+    heat: HeatBoard | None = None,
     limit: int = 8,
 ) -> tuple[list[Opportunity], str, list[str]]:
-    fallback = heuristic_opportunities(hot_search, aggregates, limit=limit)
-    if not env("AI_API_KEY") or not hot_search:
+    fallback = heuristic_opportunities(hot_search, aggregates, limit=limit, heat=heat)
+    has_signal = bool(hot_search) or bool(heat and heat.items)
+    if not env("AI_API_KEY") or not has_signal:
         return fallback, "heuristic", []
     budgets = load_yaml("budgets.yml")
     prompt = {
         "focus": focus,
+        "heat": (heat.model_dump() if heat else {}),
         "hotSearch": [
             {
                 "word": item.word,
@@ -235,12 +272,15 @@ def infer_opportunities(
         "newsTitles": [item.title for item in news[:40]],
         "maps": _maps(),
         "instructions": (
-            "根据微博热点（尤其 focusEvent=true 或 attention 高的大讨论量热点）对照过往类似事件，推演可能被交易的 A 股线索。"
+            "根据全市场热点层 heat 与微博热点，推演可能被交易的 A 股研究线索。"
+            "heat 按 channel 分盘面 tape、资金 flow、电报 news、舆情 social、网络 web。"
+            "tape 里的领涨行业和 leadName/leadSymbol 必须进入候选，不要因为用户侧重点不是该行业就丢掉。"
+            "web/social 上正在热的词也要判断有没有可交易映射；没有就不要硬凑。"
             "只输出 JSON 对象，字段 opportunities 为数组，最多 8 条。"
-            "每项: symbol(sh/sz+6位), name, hotspot(必须来自 hotSearch.cluster 或 word), "
-            "thesis(点明由哪个热点联想到这只股票、历史类似事件怎么交易过、当前还缺什么验证), "
+            "每项: symbol(sh/sz+6位), name, hotspot(必须来自 heat.name / heat.leadName 或 hotSearch.cluster/word), "
+            "thesis(点明由哪个热点联想到这只股票、盘面还是舆情、当前还缺什么验证), "
             "angle 短标签, confidence 0到1。"
-            "优先使用 maps 里的标的；可以补充其他 A 股，但必须能说清和热点的因果，禁止美股代码。"
+            "优先使用 maps 里的标的和 tape 领涨股；可以补充其他 A 股，但必须能说清和热点的因果，禁止美股代码。"
             "重大灾害优先想基建/水泥/水利/保险；流量明星/影视热搜优先想传媒、广告、代言相关消费。"
             "不要因为原分类是娱乐就放弃推演。"
             "这不是投资建议，不要写买入/卖出/目标价/点位。"
@@ -248,12 +288,12 @@ def infer_opportunities(
     }
     try:
         model = resolve_model("synthesizer")
-        print(f"calling opportunities {model_debug(model)} hot={len(hot_search)}", flush=True)
+        print(f"calling opportunities {model_debug(model)} hot={len(hot_search)} heat={len(heat.items) if heat else 0}", flush=True)
         raw = chat(
             [
                 {
                     "role": "system",
-                    "content": "You map social hotspots to listed-stock research clues. Return JSON only. No buy/sell advice.",
+                    "content": "You map market heat (tape, flows, news, social, web) to listed-stock research clues. Return JSON only. No buy/sell advice.",
                 },
                 {"role": "user", "content": str(prompt)},
             ],
@@ -267,6 +307,7 @@ def infer_opportunities(
             hot_search,
             fallback,
             limit=limit,
+            heat=heat,
         )
         if not rows:
             raise LLMError("个股推演为空")

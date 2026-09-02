@@ -8,7 +8,10 @@
     "northbound": true,
     "filings": false,
     "x": false,
-    "weibo": true
+    "weibo": true,
+    "heat": true,
+    "baidu": true,
+    "tapeHeat": true
   },
   "marketSnapshot": {
     "asOf": "2026-08-25T05:31:57Z",
@@ -87,6 +90,77 @@
       "按日加权的新闻热度近段高于前段，情绪在升温；已按官方>主流媒体>博客加权。"
     ],
     "summary": "上证成交量近两周平稳；北向成交额（非净买入）活跃度大体持平；医药相关新闻热度近几日升温，官方稿件权重大于专栏。"
+  },
+  "heat": {
+    "asOf": "2026-08-25T05:20:00Z",
+    "coverage": { "tape": true, "flow": true, "news": true, "social": true, "web": true },
+    "items": [
+      {
+        "channel": "tape",
+        "name": "农林牧渔",
+        "detail": "领涨 神农种业 +20.03%",
+        "heatScore": 1.0,
+        "changePct": 3.68,
+        "leadName": "神农种业",
+        "leadSymbol": "sz300189",
+        "leadChangePct": 20.03,
+        "url": "",
+        "asOf": "2026-08-25T05:20:00Z",
+        "rank": 1
+      },
+      {
+        "channel": "flow",
+        "name": "中南文化",
+        "detail": "北向成交额 267.4 亿",
+        "heatScore": 0.6,
+        "changePct": 0.19,
+        "leadName": "中南文化",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "",
+        "asOf": "2026-08-25",
+        "rank": 1
+      },
+      {
+        "channel": "news",
+        "name": "神农种业20CM涨停 农牧渔板块掀涨停潮",
+        "detail": "财联社标红",
+        "heatScore": 1.0,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "",
+        "asOf": "2026-08-25T05:10:00Z",
+        "rank": 1
+      },
+      {
+        "channel": "social",
+        "name": "西藏吉隆泥石流",
+        "detail": "微博爆",
+        "heatScore": 0.9,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://s.weibo.com/weibo?q=%23%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%23&Refer=top",
+        "asOf": "2026-08-25T05:20:00Z",
+        "rank": 1
+      },
+      {
+        "channel": "web",
+        "name": "种业涨停潮",
+        "detail": "百度财经热搜",
+        "heatScore": 0.92,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://top.baidu.com/board?tab=finance",
+        "asOf": "2026-08-25T05:20:00Z",
+        "rank": 1
+      }
+    ]
   },
   "hotSearch": [
     {
@@ -211,6 +285,13 @@
   ],
   "aggregates": [
     {
+      "name": "农林牧渔",
+      "summary": "盘面热点层扫描到农林牧渔领涨，神农种业涨停。即使本次侧重点是医药，这条主线也不能丢掉。",
+      "newsTitles": ["神农种业20CM涨停 农牧渔板块掀涨停潮"],
+      "hotWords": ["神农种业", "种业涨停潮"],
+      "heat": 0.95
+    },
+    {
       "name": "西藏吉隆泥石流",
       "summary": "多条热搜指向同一灾害，讨论量高；需要对照历史灾后重建交易，而不是当成与市场无关的社会新闻丢掉。",
       "newsTitles": ["示例新闻：西藏吉隆泥石流救援与堰塞湖"],
@@ -240,6 +321,17 @@
     }
   ],
   "opportunities": [
+    {
+      "symbol": "sz300189",
+      "name": "神农种业",
+      "hotspot": "农林牧渔",
+      "thesis": "盘面热点「农林牧渔」领涨神农种业。这是行情热度线索，不是基本面结论，需用公告与后续价格验证。",
+      "angle": "盘面领涨",
+      "price": 7.55,
+      "changePct": 20.03,
+      "asOf": "2026-08-25T05:31:57Z",
+      "confidence": 0.38
+    },
     {
       "symbol": "sh600585",
       "name": "海螺水泥",
@@ -332,6 +424,6 @@
   "crossSectorNotes": "医药内部创新药与器械节奏不同；量能平稳而新闻热度升温时，更要核对价格是否已经把情绪计价。北向看成交额活跃度，不要当成净流入。",
   "trendNotes": "近两周上证量能大致平稳，北向成交额没有单边放大或萎缩；新闻情绪加权后近几日升温，其中官方与主流媒体权重大于博客/专栏。后续观察量价是否跟上这轮报道热度。",
   "limitations": ["微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效", "重大社会热点已按讨论量聚类，推演线索需用公告与价格核对，不能单靠热搜", "个股推演是研究线索，不是买卖建议，没有目标价", "未接入 X", "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证", "这是示例报告，接入真实分析后会被覆盖"],
-  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 7, "aggregates": 4, "opportunities": 4, "plannerModel": "sample", "aggregatorModel": "sample", "model": "sample", "estCostUsd": 0 },
+  "stats": { "fetched": 40, "used": 18, "quotes": 9, "weibo": 7, "aggregates": 5, "opportunities": 5, "heat": 5, "plannerModel": "sample", "aggregatorModel": "sample", "model": "sample", "estCostUsd": 0 },
   "errors": []
 }

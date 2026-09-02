@@ -1002,5 +1002,140 @@ class OpportunityTests(unittest.TestCase):
         self.assertFalse(any(row.symbol == "AAPL" for row in coerced))
 
 
+class HeatLayerTests(unittest.TestCase):
+    def test_sina_industry_hq_parses_leader_and_lead_stock(self) -> None:
+        from src.ingest.sina_boards import parse_sina_hq_body
+
+        body = (
+            'var hq_str_bk_new_nlmy="new_nlmy,农林牧渔,64,9.627,0.341,3.676,0,0,sz300189,20.032,7.550,1.260,神农种业";'
+            'var hq_str_bk_new_dzqj="new_dzqj,电子元件,80,12.1,-0.2,-1.55,0,0,sz002475,-3.2,32.1,33.1,立讯精密";'
+        )
+        rows = parse_sina_hq_body(body)
+        by_name = {row.name: row for row in rows}
+        agri = by_name["农林牧渔"]
+        self.assertEqual(agri.channel, "tape")
+        self.assertAlmostEqual(agri.changePct or 0, 3.676, places=3)
+        self.assertEqual(agri.leadName, "神农种业")
+        self.assertEqual(agri.leadSymbol, "sz300189")
+        self.assertAlmostEqual(agri.leadChangePct or 0, 20.032, places=3)
+
+    def test_baidu_board_keeps_non_finance_words(self) -> None:
+        from src.ingest.baidu import parse_baidu_board
+
+        payload = {
+            "data": {
+                "cards": [
+                    {
+                        "content": [
+                            {"word": "某明星官宣", "index": 1, "url": "https://www.baidu.com/s?wd=a", "hotTag": "热"},
+                            {"word": "种业涨停潮", "index": 2, "url": "https://www.baidu.com/s?wd=b"},
+                        ]
+                    }
+                ]
+            }
+        }
+        rows = parse_baidu_board(payload, tab="realtime")
+        names = [row.name for row in rows]
+        self.assertIn("某明星官宣", names)
+        self.assertIn("种业涨停潮", names)
+        self.assertTrue(all(row.channel == "web" for row in rows))
+        self.assertGreater(rows[0].heatScore, rows[1].heatScore)
+
+    def test_heat_board_drives_queries_keywords_and_tape_opportunity(self) -> None:
+        from src.heat import assemble_heat, heat_keywords, heat_news_queries, opportunities_from_heat
+        from src.models import HeatItem, HotSearchItem, NewsItem
+
+        boards = [
+            HeatItem(
+                channel="tape",
+                name="农林牧渔",
+                detail="领涨 神农种业 +20.03%",
+                heatScore=1.0,
+                changePct=3.68,
+                leadName="神农种业",
+                leadSymbol="sz300189",
+                leadChangePct=20.03,
+                rank=1,
+            )
+        ]
+        baidu = [HeatItem(channel="web", name="种业涨停潮", heatScore=0.9, rank=1)]
+        weibo = [HotSearchItem(word="西藏吉隆泥石流", cluster="西藏吉隆泥石流", heat=1250000, focusEvent=True)]
+        news = [NewsItem(title="神农种业20CM涨停 农牧渔板块掀涨停潮", source="财联社电报", highlight=True)]
+        board = assemble_heat(boards=boards, baidu=baidu, weibo=weibo, news=news, quotes=[], northbound=[])
+        names = [item.name for item in board.items]
+        self.assertIn("农林牧渔", names)
+        self.assertIn("种业涨停潮", names)
+        self.assertIn("西藏吉隆泥石流", names)
+        self.assertTrue(board.coverage["tape"])
+        self.assertTrue(board.coverage["web"])
+        self.assertTrue(board.coverage["social"])
+        queries = " ".join(heat_news_queries(board))
+        self.assertIn("农林牧渔", queries)
+        self.assertIn("神农种业", queries)
+        keys = heat_keywords(board)
+        self.assertIn("农林牧渔", keys)
+        self.assertIn("神农种业", keys)
+        opps = opportunities_from_heat(board)
+        self.assertEqual(opps[0].symbol, "sz300189")
+        self.assertEqual(opps[0].hotspot, "农林牧渔")
+        self.assertIn("行情热度线索", opps[0].thesis)
+
+    def test_heat_keywords_keep_unrelated_plan_news(self) -> None:
+        items = [
+            NewsItem(
+                title="农林牧渔板块掀涨停潮 神农种业20CM",
+                source="每日经济新闻",
+                snippet="种植链",
+                sourceClass="major_media",
+                sourceWeight=2.0,
+            ),
+            NewsItem(title="无关的体育新闻", source="c", snippet="足球"),
+        ]
+        kept = distill_news(items, ["半导体", "盘前情绪", "农林牧渔", "神农种业"], 48)
+        titles = [item.title for item in kept]
+        self.assertTrue(any("神农种业" in title for title in titles))
+        self.assertFalse(any("体育" in title for title in titles))
+
+    def test_outlook_and_opportunities_follow_tape_heat_not_focus(self) -> None:
+        from src.models import HeatBoard, HeatItem
+        from src.opportunities import heuristic_opportunities
+        from src.planner import heuristic_plan
+        from src.synthesize import heuristic_report
+
+        plan = heuristic_plan("医药相关", 36)
+        heat = HeatBoard(
+            asOf="2026-08-25T05:20:00Z",
+            coverage={"tape": True, "web": True},
+            items=[
+                HeatItem(
+                    channel="tape",
+                    name="农林牧渔",
+                    changePct=3.68,
+                    leadName="神农种业",
+                    leadSymbol="sz300189",
+                    leadChangePct=20.03,
+                    heatScore=1.0,
+                    rank=1,
+                )
+            ],
+        )
+        report = heuristic_report(
+            focus="医药相关",
+            plan=plan,
+            news=[],
+            quotes=[],
+            coverage={"news": False, "quotes": False, "northbound": False, "filings": False, "x": False, "weibo": False, "heat": True},
+            errors=[],
+            model="heuristic",
+            heat=heat,
+        )
+        sectors = [row.sector for row in report.sectorOutlook]
+        self.assertIn("农林牧渔", sectors)
+        self.assertIn("农林牧渔", report.trendNotes)
+        self.assertEqual(report.heat.items[0].leadName, "神农种业")
+        rows = heuristic_opportunities([], heat=heat)
+        self.assertEqual(rows[0].symbol, "sz300189")
+
+
 if __name__ == "__main__":
     unittest.main()

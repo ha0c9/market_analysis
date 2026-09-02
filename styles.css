@@ -78,7 +78,14 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
 .pulse-lane { background: #101821; border-radius: 10px; padding: 12px; }
 .pulse-lane-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
 .pulse-lane h3 { margin: 0; font-size: 15px; }
-.hot-list { margin: 8px 0 0; padding-left: 22px; }
+.heat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.heat-lane { background: #101821; border-radius: 10px; padding: 12px; }
+.heat-lane h3 { margin: 0 0 8px; font-size: 15px; }
+.heat-item { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.heat-item:last-child { border-bottom: 0; }
+.heat-item .heat-name { font-weight: 600; }
+.heat-item .heat-name a { color: #9ec5ff; }
+.heat-item .heat-meta { color: var(--muted); font-size: 12px; text-align: right; white-space: nowrap; }
 .hot-list li { margin: 8px 0; }
 .hot-word { font-weight: 600; }
 .hot-word a { color: #9ec5ff; }
@@ -105,4 +112,5 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
   .pulse-grid { grid-template-columns: 1fr; }
   .aggregate-grid { grid-template-columns: 1fr; }
   .opportunity-grid { grid-template-columns: 1fr; }
+  .heat-grid { grid-template-columns: 1fr; }
 }

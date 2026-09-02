@@ -58,7 +58,7 @@ def distill_news(items: list[NewsItem], keywords: list[str], lookback_hours: int
             scored.score += 2.5
         if item.source.startswith("Google News"):
             scored.score = max(scored.score, 1.0 * max(float(item.sourceWeight or 1.0), 0.2))
-        elif item.highlight:
+        elif item.highlight or item.source.startswith("财联社"):
             scored.score = max(scored.score, 3.0)
         elif keywords and scored.score <= 0:
             continue

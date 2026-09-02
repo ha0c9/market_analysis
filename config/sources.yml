@@ -56,6 +56,26 @@ benchmarks:
   - { symbol: ^GSPC, name: 标普500 }
   - { symbol: ^IXIC, name: 纳斯达克 }
 
+# Quoted on tape/premarket scans so yesterday's leaders (e.g. 农业) show up
+# even when news queries missed them. Not a buy list.
+tape_sectors:
+  - { symbol: sz159275, name: 农牧渔ETF }
+  - { symbol: sz159928, name: 消费ETF }
+  - { symbol: sh512690, name: 酒ETF }
+  - { symbol: sh512010, name: 医药ETF }
+  - { symbol: sz159992, name: 创新药ETF }
+  - { symbol: sh512480, name: 半导体ETF }
+  - { symbol: sh512660, name: 军工ETF }
+  - { symbol: sh515790, name: 光伏ETF }
+  - { symbol: sh516160, name: 新能源ETF }
+  - { symbol: sh512000, name: 券商ETF }
+  - { symbol: sh512800, name: 银行ETF }
+  - { symbol: sh512400, name: 有色ETF }
+  - { symbol: sh515220, name: 煤炭ETF }
+  - { symbol: sh512980, name: 传媒ETF }
+  - { symbol: sh512200, name: 房地产ETF }
+  - { symbol: sh510300, name: 沪深300ETF }
+
 # Extra Google News queries appended by the planner. {focus} is substituted.
 sentiment_query: "{focus} 市场情绪 北向资金 风险偏好"
 official_query: "{focus} (证监会 OR 交易所公告 OR 央行 OR 新华社)"

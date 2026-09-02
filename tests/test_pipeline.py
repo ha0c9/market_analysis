@@ -159,6 +159,22 @@ class DistillTests(unittest.TestCase):
         self.assertGreaterEqual(len(kept), 1)
         self.assertIn("存储", kept[0].title)
 
+    def test_keeps_cls_tape_even_without_keyword_hit(self) -> None:
+        items = [
+            NewsItem(
+                title="神农种业20CM涨停 农牧渔板块掀涨停潮",
+                source="财联社电报",
+                snippet="种植链集体上涨",
+                sourceClass="major_media",
+                sourceWeight=2.0,
+            ),
+            NewsItem(title="无关的体育新闻", source="c", snippet="足球"),
+        ]
+        kept = distill_news(items, ["盘前情绪", "北向资金"], 48)
+        titles = [item.title for item in kept]
+        self.assertTrue(any("神农种业" in title for title in titles))
+        self.assertFalse(any("体育" in title for title in titles))
+
 
 class OutlookNormalizeTests(unittest.TestCase):
     def test_coerces_loose_llm_outlook(self) -> None:
@@ -256,6 +272,40 @@ class PlannerTests(unittest.TestCase):
         self.assertTrue(any("尾盘" in query for query in late.newsQueries))
         self.assertTrue(any("个股" in query for query in late.newsQueries))
         self.assertNotIn("sh600519", late.tickers)
+
+    def test_premarket_mood_is_tape_not_a_stock(self) -> None:
+        from src.models import QuoteRow
+        from src.planner import focus_kind, is_stock_focus, is_tape_focus
+        from src.tape_scan import merge_tape_etfs, mover_news_queries
+
+        self.assertTrue(is_tape_focus("盘前情绪"))
+        self.assertFalse(is_stock_focus("盘前情绪"))
+        self.assertEqual(focus_kind("盘前情绪"), "tape")
+        self.assertEqual(focus_kind("盘前市场"), "tape")
+        self.assertEqual(focus_kind("昨日复盘"), "tape")
+
+        plan = heuristic_plan("盘前情绪", 36)
+        self.assertEqual(plan.focusKind, "tape")
+        blob = " ".join(plan.newsQueries)
+        self.assertIn("涨停", blob)
+        self.assertIn("板块", blob)
+        self.assertTrue("昨日" in blob or "盘前" in blob)
+        self.assertIn("sz159275", plan.etfs)
+        self.assertNotEqual(plan.tickers, ["sh688981"])
+
+        merged = merge_tape_etfs(["sh512480"])
+        self.assertEqual(merged[0], "sz159275")
+        self.assertIn("sh512480", merged)
+
+        queries = mover_news_queries(
+            [
+                QuoteRow(symbol="sz159275", name="农牧渔ETF华宝", changePct=2.41),
+                QuoteRow(symbol="sh512480", name="半导体ETF", changePct=-2.65),
+                QuoteRow(symbol="sh000001", name="上证指数", changePct=-0.16),
+            ]
+        )
+        self.assertTrue(any("涨停" in query and "板块" in query for query in queries))
+        self.assertTrue(any("农牧渔" in query or "农业" in query for query in queries))
 
     def test_plan_covers_official_volume_and_blog_queries(self) -> None:
         plan = heuristic_plan("医药相关", 36)

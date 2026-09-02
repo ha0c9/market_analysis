@@ -17,6 +17,7 @@ from src.planner import plan_analysis
 from src.pulse import build_market_pulse
 from src.settings import load_yaml, write_json
 from src.synthesize import synthesize_report
+from src.tape_scan import merge_tape_etfs, mover_news_queries
 from src.timeutil import isoformat, now_utc, within_lookback
 
 
@@ -25,6 +26,16 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     sources = load_yaml("sources.yml")
     plan, planner_model, warnings = plan_analysis(focus, lookback_hours)
     per_source = plan.maxItemsPerSource or int(budgets.get("max_items_per_source") or 20)
+    if plan.focusKind == "tape":
+        plan = plan.model_copy(update={"etfs": merge_tape_etfs(list(plan.etfs))})
+
+    quote_symbols = [
+        *[row["symbol"] for row in sources.get("benchmarks") or []],
+        *[normalize_symbol(symbol) for symbol in plan.etfs],
+        *[normalize_symbol(symbol) for symbol in plan.tickers],
+    ]
+    quotes, quote_errors = fetch_quotes(quote_symbols)
+    mover_queries = mover_news_queries(quotes) if plan.focusKind == "tape" else []
 
     rss_items, rss_errors = fetch_configured_rss(per_source)
     cls_items, cls_errors = fetch_cls_telegraph(per_source)
@@ -32,12 +43,18 @@ def build_report(focus: str, lookback_hours: int) -> Path:
     hot_items, weibo_errors, weibo_ok = fetch_weibo_finance_hot(
         plan.keywords, plan.lookbackHours, focus=focus
     )
-    event_queries = event_news_queries(hot_items)
+    extra_queries: list[str] = []
+    seen_queries: set[str] = set()
+    for query in [*event_news_queries(hot_items), *mover_queries]:
+        text = (query or "").strip()
+        if text and text not in seen_queries and text not in set(plan.newsQueries):
+            seen_queries.add(text)
+            extra_queries.append(text)
     extra_errors: list[str] = []
-    if event_queries:
-        extra_news, extra_errors = fetch_google_news(event_queries, per_source)
+    if extra_queries:
+        extra_news, extra_errors = fetch_google_news(extra_queries, per_source)
         gnews_items = [*gnews_items, *extra_news]
-        print(f"event_news queries={event_queries} extra={len(extra_news)}", flush=True)
+        print(f"event_news queries={extra_queries} extra={len(extra_news)}", flush=True)
     print(
         f"news rss={len(rss_items)} cls={len(cls_items)} gnews={len(gnews_items)} "
         f"weibo={len(hot_items)} ok={int(weibo_ok)} "
@@ -55,12 +72,6 @@ def build_report(focus: str, lookback_hours: int) -> Path:
         hot_search=hot_items,
     )
 
-    quote_symbols = [
-        *[row["symbol"] for row in sources.get("benchmarks") or []],
-        *[normalize_symbol(symbol) for symbol in plan.etfs],
-        *[normalize_symbol(symbol) for symbol in plan.tickers],
-    ]
-    quotes, quote_errors = fetch_quotes(quote_symbols)
     northbound, flow_errors = fetch_northbound()
     opportunities, opp_model, opp_errors = infer_opportunities(
         focus=focus,
@@ -160,7 +171,7 @@ def _refresh_index(directory: Path, keep: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a market narrative analysis job")
-    parser.add_argument("--focus", default="", help="分析侧重点，如：资金流入分析、尾盘拉升、医药相关、恒瑞医药")
+    parser.add_argument("--focus", default="", help="分析侧重点，如：盘前情绪、资金流入分析、尾盘拉升、医药相关、恒瑞医药")
     parser.add_argument("--lookback-hours", type=int, default=36)
     args = parser.parse_args()
     from src.llm import log, probe_llm, public_url_parts, resolve_model

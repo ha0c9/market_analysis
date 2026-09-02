@@ -5,7 +5,7 @@ from statistics import mean
 from typing import Any
 
 from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
-from src.models import AnalysisPlan, Evidence, HotSearchItem, NewsItem, Opportunity, QuoteRow, Report, SectorOutlook, ThemeCluster
+from src.models import AnalysisPlan, Evidence, HeatBoard, HeatItem, HotSearchItem, NewsItem, Opportunity, QuoteRow, Report, SectorOutlook, ThemeCluster
 from src.settings import env, load_yaml
 from src.timeutil import isoformat, now_utc, parse_datetime
 
@@ -320,6 +320,48 @@ def _compact_opportunity(item: Opportunity) -> dict[str, Any]:
     return item.model_dump()
 
 
+def _compact_heat_item(item: HeatItem) -> dict[str, Any]:
+    return {
+        "channel": item.channel,
+        "name": item.name,
+        "detail": item.detail,
+        "heatScore": item.heatScore,
+        "changePct": item.changePct,
+        "leadName": item.leadName,
+        "leadSymbol": item.leadSymbol,
+        "leadChangePct": item.leadChangePct,
+        "url": item.url,
+        "rank": item.rank,
+    }
+
+
+def _outlook_sectors(plan: AnalysisPlan, heat: HeatBoard | None) -> list[str]:
+    tape = [item.name for item in (heat.items if heat else []) if item.channel == "tape" and item.name]
+    web = [item.name for item in (heat.items if heat else []) if item.channel in {"web", "social"} and item.heatScore >= 0.7]
+    return list(dict.fromkeys([*tape, *web[:3], *(plan.sectors or [])]))[:6] or ["综合"]
+
+
+def _heat_note(heat: HeatBoard | None) -> str:
+    if not heat or not heat.items:
+        return ""
+    tape = [item for item in heat.items if item.channel == "tape"][:4]
+    web = [item for item in heat.items if item.channel in {"web", "social"}][:4]
+    bits: list[str] = []
+    if tape:
+        bits.append(
+            "盘面热点："
+            + "、".join(
+                f"{item.name}"
+                + (f"{item.changePct:+.2f}%" if item.changePct is not None else "")
+                + (f"（{item.leadName}）" if item.leadName else "")
+                for item in tape
+            )
+        )
+    if web:
+        bits.append("网络/舆情：" + "、".join(item.name for item in web))
+    return "全市场热点层（独立于侧重点）：" + "；".join(bits) + "。"
+
+
 def _hot_search_note(items: list[HotSearchItem]) -> str:
     if not items:
         return ""
@@ -349,10 +391,11 @@ def heuristic_report(
     hot_search: list[HotSearchItem] | None = None,
     aggregates: list[ThemeCluster] | None = None,
     opportunities: list[Opportunity] | None = None,
+    heat: HeatBoard | None = None,
 ) -> Report:
     now = now_utc()
     outlook: list[SectorOutlook] = []
-    for index, sector in enumerate(plan.sectors or ["综合"], start=1):
+    for index, sector in enumerate(_outlook_sectors(plan, heat), start=1):
         related_news = [
             item
             for item in news
@@ -397,6 +440,9 @@ def heuristic_report(
     opps = list(opportunities or [])
     trend_notes = str(pulse.get("summary") or "")
     extra = _hot_search_note(hot)
+    heat_note = _heat_note(heat)
+    if heat_note:
+        trend_notes = f"{trend_notes} {heat_note}".strip()
     if extra:
         trend_notes = f"{trend_notes} {extra}".strip()
     if clusters:
@@ -417,6 +463,8 @@ def heuristic_report(
     else:
         limitations.append("未接入微博热搜")
     limitations.append("未接入 X")
+    if heat and heat.items:
+        limitations.append("全市场热点层独立于侧重点扫描；侧重点只加权，不作为过滤器")
     if opps:
         limitations.append("个股推演是研究线索，不是买卖建议，没有目标价")
     if pulse.get("northbound") and not pulse["northbound"].get("netBuyAvailable"):
@@ -434,6 +482,7 @@ def heuristic_report(
             etf_ids=plan.etfs,
         ),
         marketPulse=pulse,
+        heat=heat or HeatBoard(),
         hotSearch=hot,
         aggregates=clusters,
         opportunities=opps,
@@ -448,6 +497,7 @@ def heuristic_report(
             "weibo": len(hot),
             "aggregates": len(clusters),
             "opportunities": len(opps),
+            "heat": len((heat.items if heat else [])),
             "model": model,
             "estCostUsd": 0,
         },
@@ -467,6 +517,7 @@ def synthesize_report(
     hot_search: list[HotSearchItem] | None = None,
     aggregates: list[ThemeCluster] | None = None,
     opportunities: list[Opportunity] | None = None,
+    heat: HeatBoard | None = None,
 ) -> tuple[Report, str]:
     fallback = heuristic_report(
         focus=focus,
@@ -480,6 +531,7 @@ def synthesize_report(
         hot_search=hot_search,
         aggregates=aggregates,
         opportunities=opportunities,
+        heat=heat,
     )
     if not env("AI_API_KEY"):
         fallback.limitations.append("未调用大模型")
@@ -493,6 +545,11 @@ def synthesize_report(
         "news": compact_news,
         "quotes": compact_quotes,
         "marketPulse": market_pulse or {},
+        "heat": {
+            "asOf": (heat.asOf if heat else ""),
+            "coverage": (heat.coverage if heat else {}),
+            "items": [_compact_heat_item(item) for item in (heat.items if heat else [])[:24]],
+        },
         "hotSearch": [_compact_hot(item) for item in (hot_search or [])[:24]],
         "aggregates": [_compact_cluster(item) for item in (aggregates or [])],
         "opportunities": [_compact_opportunity(item) for item in (opportunities or [])],
@@ -504,8 +561,12 @@ def synthesize_report(
             "other": 1.0,
         },
         "instructions": (
-            "根据新闻、行情快照、marketPulse 时间线、微博热搜与 aggregates 议题聚合写市场研究摘要。只输出 JSON 对象。"
-            "sectorOutlook 为数组，写 4 到 6 个板块/议题，优先对应 aggregates 的 name；"
+            "根据全市场热点层 heat、新闻、行情快照、marketPulse、微博热搜与 aggregates 写市场研究摘要。只输出 JSON 对象。"
+            "heat 是骨架：channel=tape 盘面行业涨跌、flow 资金、news 电报、social 微博舆情、web 网络热搜。"
+            "用户侧重点只是加权透镜，不是过滤器。即使侧重点是盘前情绪或某个行业，heat 里正在热的东西必须点名。"
+            "sectorOutlook 为数组，写 4 到 6 个板块/议题，优先对应 heat.tape 的 name 和 aggregates 的 name；"
+            "禁止在 tape 显示农林牧渔/种业等领涨时，默认写成半导体、银行、证券或保险。"
+            "隔夜外盘只作背景。"
             "每项字段类型必须严格如下："
             "sector=字符串;"
             "heat=整数排名从1开始，不要写 high/medium/low;"
@@ -513,29 +574,27 @@ def synthesize_report(
             "priceAction 只能是 up|down|mixed|flat|unknown，不要写句子;"
             "calibration 只能是 confirming|pricedIn|divergence|insufficientData;"
             "direction 只能是 up|down|mixed|unclear，不要写 neutral;"
-            "narrative=字符串，至少写清：最近在讲什么、价格是否已反应、量能/北向时间线如何对照、热搜是否同向；"
+            "narrative=字符串，至少写清：这个热点从哪条通道来（盘面/资金/电报/舆情/网络）、最近在讲什么、价格是否已反应、量能/北向如何对照；"
             "evidence 和 counterEvidence 必须是对象数组，每项含 claim,sourceTitle,url,publishedAt,weight;"
             "weight 只能是 primary 或 supporting；官方来源与财联社标红快讯优先 primary，专栏/博客多为 supporting。"
             "confidence=0到1小数; invalidatedIf=字符串。"
             "另需 crossSectorNotes 字符串（交叉与分歧，不要只重复单一板块），以及 trendNotes 字符串。"
-            "trendNotes 必须按时间线概括：量能是放量还是缩量、北向成交额活跃度、新闻情绪升温还是降温；"
-            "若有 hotSearch，点名仍在时效内、且与议题相关的条目，写 onboardAt/fetchedAt，过旧条目不要当当日催化剂。"
+            "trendNotes 必须先概括 heat 里最热的几条，再写量能、北向成交额、新闻情绪时间线。"
+            "若有 hotSearch，点名仍在时效内的条目，写 onboardAt/fetchedAt，过旧条目不要当当日催化剂。"
             "focusEvent=true、match=viral 或 attention 高的热搜必须写入分析，不论原分类是娱乐、社会还是财经。"
-            "讨论量本身就是市场情绪：流量明星（如景甜）、爆款社会新闻会传导到影视传媒、广告代言、消费和风险偏好；"
+            "web 热搜只要够热就要出现，再判断和投资的关系，不要因为不是财经词就丢弃。"
+            "讨论量本身就是市场情绪：流量明星、爆款社会新闻会传导到影视传媒、广告代言、消费和风险偏好；"
             "重大灾害对照基建/保险/物流。attention/heat 更高的议题在 sectorOutlook 里提高 heatScore。"
             "若有 opportunities，可点名热点→个股的推演关系，但必须写清这是研究线索；"
             "禁止买入/卖出/目标价/点位。"
             "禁止只根据最新一个点下结论。"
             "北向 netBuyAvailable=false 时，成交额不是净买入，不要写成外资净流入/净流出。"
             "每条前瞻必须提到价格是否已反应，并尽可能对照量能/情绪序列；没有行情则 calibration=insufficientData。"
-            "evidence 必须来自给定 news 的 title/url/publishedAt，禁止编造链接；不要把微博热搜 URL 当作新闻出处。"
-            "微博热搜是盘中情绪快照，不是耐久证据；没有新闻印证时最多 supporting，不能单独支撑高置信结论。"
+            "evidence 必须来自给定 news 的 title/url/publishedAt，禁止编造链接；不要把微博或百度热搜 URL 当作新闻出处。"
+            "热搜是盘中情绪快照，不是耐久证据；没有新闻印证时最多 supporting，不能单独支撑高置信结论。"
             "官方与主流媒体权重大于博客/专栏；财联社 highlight=true 的标红电报是盘面重要参考，优先引用；博客只作补充，不能单独支撑高置信结论。"
-            "aggregates 是已经花 token 归过类的议题，综合时以它为骨架，再对照 quotes 校准，不要丢开另起一套无关板块。"
             "这不是投资建议，不要给买卖点或目标价。"
-            "若 focusKind=tape 或侧重点是资金流入/尾盘拉升/涨停/龙虎榜等盘面现象："
-            "sectorOutlook 按新闻与热搜里实际出现的板块和个股来写，不要默认写成银行证券保险；"
-            "点名热门股并对照 quotes 里的价格与量能。"
+            "点名热门股并对照 quotes 里的价格与量能；tape.leadName 出现在 quotes 里时必须引用涨跌。"
         ),
     }
     try:

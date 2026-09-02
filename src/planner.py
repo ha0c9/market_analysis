@@ -28,6 +28,12 @@ _TAPE_PATTERNS = (
     re.compile(r"高开低走"),
     re.compile(r"冲高回落"),
     re.compile(r"反包"),
+    re.compile(r"盘前"),
+    re.compile(r"复盘"),
+    re.compile(r"开盘"),
+    re.compile(r"主线"),
+    re.compile(r"市场情绪"),
+    re.compile(r"短线"),
 )
 
 
@@ -229,7 +235,15 @@ def _cap_plan(plan: dict, focus: str) -> dict:
         etfs = etfs or []
     if kind == "tape":
         tape = _tape_preset(focus) or _generic_tape(focus)
-        etfs = _dedupe([*etfs, *[normalize_symbol(item) for item in (tape.get("etfs") or [])]])
+        etfs = _dedupe(
+            [
+                *[normalize_symbol(item) for item in (tape.get("etfs") or [])],
+                *etfs,
+            ]
+        )
+        from src.tape_scan import merge_tape_etfs
+
+        etfs = merge_tape_etfs(etfs)
     queries = _enrich_queries(list(plan.get("newsQueries") or []), focus or "A股", query_cap)
     plan["tickers"] = [item for item in tickers if item][:cap]
     plan["etfs"] = [item for item in etfs if item][:cap]
@@ -260,6 +274,9 @@ def heuristic_plan(focus: str, lookback_hours: int) -> AnalysisPlan:
             tickers = _dedupe([*tickers, *[normalize_symbol(item) for item in (named.get("tickers") or [])]])
             etfs = _dedupe([*etfs, *[normalize_symbol(item) for item in (named.get("etfs") or [])]])
             sectors = _dedupe([*sectors, *(named.get("sectors") or [])])
+        from src.tape_scan import merge_tape_etfs
+
+        etfs = merge_tape_etfs(etfs)
     else:
         preset = _match_preset(text)
         tickers = [normalize_symbol(symbol) for symbol in (preset.get("tickers") or [])]
@@ -336,14 +353,18 @@ def plan_analysis(focus: str, lookback_hours: int) -> tuple[AnalysisPlan, str, l
         "tickers(10-20个股票代码, A股用 sh/sz 前缀如 sh600276, 美股用 Yahoo 代码),"
         "etfs(相关 ETF 代码, A股用 sh/sz 前缀)。"
         f"侧重点类型: {kind_label}。"
+        "无论侧重点是什么，系统都会独立扫描全市场盘面、资金、电报、微博和网络热搜；"
+        "你的 queries 是补充，不要把检索收成只剩侧重点，以免漏掉正在涨停或正在热搜的主线。"
         "若是单一股票名称或代码: tickers 第一项必须是该股, sectors 写其行业, "
         "newsQueries 覆盖该公司、所属行业、官方公告、量能以及市场情绪/北向资金。"
         "若是主题(如医药、存储): tickers 与 etfs 必须属于该主题, 禁止塞入无关行业标的。"
-        "若是盘面现象（资金流入、尾盘拉升、涨停、龙虎榜、异动等）: "
-        "不要理解成银行/券商/保险等金融股专题，除非用户明确写了金融。"
-        "newsQueries 必须带「今日」或当天，分别搜 资金流入/现象对应的板块、热门个股、原因。"
-        "tickers 填写新闻里常被点名、且与该现象相符的活跃股，覆盖多个行业，不要默认银行股。"
-        "etfs 用能代表当天主线的行业或宽基 ETF。"
+        "若是盘面现象（盘前、复盘、资金流入、尾盘拉升、涨停、龙虎榜、异动、市场情绪等）: "
+        "不要理解成某只股票或半导体/银行等固定行业专题，除非用户明确写了该行业。"
+        "newsQueries 必须覆盖：昨日涨停与领涨板块、连板/龙头、今日盘前主线与原因；查询要带「昨日」或「今日」。"
+        "tickers 填写新闻或行情里被点名的活跃股，覆盖多个行业，不要默认银行股或中芯国际。"
+        "etfs 用宽基加上能代表常见主线的行业 ETF（农业、消费、医药、半导体、军工、周期等），让行情自己揭示热点。"
+        "系统会另外独立扫描全市场热点（行业涨跌、北向、电报、微博、百度热搜）；你规划的 queries 是补充，不要假设热点只存在于用户侧重点里。"
+        "隔夜外盘只作背景。"
         f"lookbackHours 默认{lookback_hours}。只规划公开新闻和行情，不要规划微博博主或 X；热搜由系统单独拉取。"
         f"用户侧重点: {focus or '泛市场扫描'}"
     )

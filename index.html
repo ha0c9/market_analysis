@@ -28,11 +28,12 @@
       <button id="reload" type="button" class="ghost">刷新报告</button>
     </section>
     <p class="hint" id="hint">
-      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。板块 ETF 与个股随侧重点变化；大盘基准固定。新闻按官方/主流媒体/博客加权，量能与北向按时间线解读。微博热搜按讨论量加权：沸/爆和大阅读量条目无论类型都重点关注；低热度美妆/旅游仍过滤。
+      密钥在 GitHub Actions Secrets 中，不会出现在本页。点击后到仓库 Actions 里 Run workflow，把侧重点粘贴进去。每次分析先扫全市场热点（盘面、资金、电报、微博、百度），侧重点只加权，不会把其他热点藏起来。新闻按官方/主流媒体/博客加权。这是研究辅助，不是投资建议。
     </p>
 
     <section id="status" class="panel status" hidden></section>
     <section id="snapshot" class="panel snapshot" hidden></section>
+    <section id="heat" class="panel heat" hidden></section>
     <section id="pulse" class="panel pulse" hidden></section>
     <section id="hotsearch" class="panel hotsearch" hidden></section>
     <section id="aggregates" class="panel aggregates" hidden></section>
@@ -46,7 +47,7 @@
         <span id="ai-badge" class="ai-badge">—</span>
       </header>
       <p class="hint ai-summary-note">
-        以下叙述由规划/聚合/综合模型（或规则草稿）根据公开新闻、加权信源、量能/北向/情绪时间线与微博热搜写成，不是行情接口原文。
+        以下叙述由规划/聚合/综合模型（或规则草稿）根据全市场热点层、公开新闻、加权信源、量能/北向时间线写成，不是行情接口原文。
       </p>
       <div id="outlook"></div>
       <section id="notes" class="panel notes-inside"></section>

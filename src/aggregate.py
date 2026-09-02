@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from src.llm import LLMError, chat, model_debug, parse_json_object, resolve_model
-from src.models import AnalysisPlan, HotSearchItem, NewsItem, ThemeCluster
+from src.models import AnalysisPlan, HeatBoard, HotSearchItem, NewsItem, ThemeCluster
 from src.settings import env, load_yaml
 
 
@@ -23,14 +23,54 @@ def _news_titles(news: list[NewsItem], limit: int) -> list[dict[str, Any]]:
     return rows
 
 
+def _heat_seed_clusters(heat: HeatBoard | None) -> list[ThemeCluster]:
+    if not heat:
+        return []
+    rows: list[ThemeCluster] = []
+    seen: set[str] = set()
+    for item in heat.items:
+        if item.channel not in {"tape", "web", "social"}:
+            continue
+        name = (item.name or "").strip()
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        words = [token for token in (item.leadName, item.detail) if token]
+        if item.channel == "tape":
+            summary = (
+                f"盘面热点「{name}」"
+                + (f"涨跌约 {item.changePct:.2f}%。" if item.changePct is not None else "。")
+                + (f"领涨 {item.leadName}。" if item.leadName else "")
+                + "来自全市场行业扫描，不依赖本次侧重点。"
+            )
+        elif item.channel == "web":
+            summary = f"网络热搜「{name}」。投资相关性待对照新闻与价格，不能单靠热搜下结论。"
+        else:
+            summary = f"舆情热点「{name}」。讨论量本身是情绪，映射到板块前需要公告或价格印证。"
+        rows.append(
+            ThemeCluster(
+                name=name[:40],
+                summary=summary[:400],
+                newsTitles=[],
+                hotWords=words[:6],
+                heat=round(max(0.0, min(1.0, item.heatScore)), 2),
+            )
+        )
+        if len(rows) >= 6:
+            break
+    return rows
+
+
 def heuristic_clusters(
     focus: str,
     plan: AnalysisPlan,
     news: list[NewsItem],
     hot_search: list[HotSearchItem],
+    heat: HeatBoard | None = None,
 ) -> list[ThemeCluster]:
-    clusters: list[ThemeCluster] = []
+    clusters: list[ThemeCluster] = _heat_seed_clusters(heat)
     used: set[int] = set()
+    used_names = {row.name for row in clusters}
     for sector in (plan.sectors or [focus or "综合"])[:6]:
         related = [
             item
@@ -41,6 +81,9 @@ def heuristic_clusters(
             used.add(id(item))
         if not related and not hot_search:
             continue
+        if sector in used_names:
+            continue
+        used_names.add(sector)
         hot_words = [
             row.word
             for row in hot_search
@@ -58,9 +101,10 @@ def heuristic_clusters(
     seen_events: set[str] = set()
     for item in hot_search:
         label = item.cluster or item.word
-        if not item.focusEvent or not label or label in seen_events:
+        if not item.focusEvent or not label or label in seen_events or label in used_names:
             continue
         seen_events.add(label)
+        used_names.add(label)
         members = [row.word for row in hot_search if (row.cluster or row.word) == label]
         clusters.insert(
             0,
@@ -141,8 +185,9 @@ def aggregate_themes(
     plan: AnalysisPlan,
     news: list[NewsItem],
     hot_search: list[HotSearchItem],
+    heat: HeatBoard | None = None,
 ) -> tuple[list[ThemeCluster], str, list[str]]:
-    fallback = heuristic_clusters(focus, plan, news, hot_search)
+    fallback = heuristic_clusters(focus, plan, news, hot_search, heat=heat)
     if not env("AI_API_KEY"):
         return fallback, "heuristic", []
     budgets = load_yaml("budgets.yml")
@@ -154,6 +199,7 @@ def aggregate_themes(
             "keywords": plan.keywords,
             "focusKind": plan.focusKind,
         },
+        "heat": (heat.model_dump() if heat else {}),
         "news": _news_titles(news, news_cap),
         "hotSearch": [
             {
@@ -170,11 +216,13 @@ def aggregate_themes(
             for item in hot_search[:24]
         ],
         "instructions": (
-            "把新闻与微博热搜聚成 4 到 8 个市场议题。只输出 JSON 对象，字段 themes 为数组。"
+            "把全市场热点层 heat、新闻与微博热搜聚成 4 到 8 个市场议题。只输出 JSON 对象，字段 themes 为数组。"
             "每项: name, summary(2-4句，点名时效和分歧), newsTitles(必须来自给定 news 的 title),"
-            "hotWords(来自 hotSearch.word，可空), heat(0到1)。"
+            "hotWords(来自 hotSearch.word 或 heat.name，可空), heat(0到1)。"
+            "heat.channel=tape 的领涨行业必须单独成题，即使与用户侧重点无关。"
             "同一 cluster 的多条热搜必须合成一个议题；focusEvent=true 或 match=viral 或 attention 高的热点"
             "无论原分类是灾害、明星还是社会新闻，都要单独成题，并写清可能映射到哪些板块。"
+            "web 热搜只要够热就要出现，再判断和投资的关系，不要因为不是财经词就丢弃。"
             "讨论量权重（attention/heat）更高的议题优先，heat 字段要体现这个权重。"
             "官方与财联社标红优先进入 summary。热搜只作情绪辅证。"
             "不要编造标题。这不是投资建议。"

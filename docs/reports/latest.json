@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-02T15:26:29Z",
-  "focus": "热点分析",
+  "generatedAt": "2026-09-04T01:09:48Z",
+  "focus": "盘前热点",
   "timeWindow": {
-    "from": "2026-09-02T05:28:14Z",
-    "to": "2026-09-02T15:26:29Z"
+    "from": "2026-09-03T07:23:52Z",
+    "to": "2026-09-04T01:09:48Z"
   },
   "dataCoverage": {
     "news": true,
@@ -17,20 +17,20 @@
     "tapeHeat": true
   },
   "marketSnapshot": {
-    "asOf": "2026-09-02T08:14:02Z",
+    "asOf": "2026-09-03T08:14:01Z",
     "delayed": true,
     "source": "tencent+yahoo",
     "benchmarks": [
       {
         "symbol": "sh000001",
         "name": "上证指数",
-        "price": 3941.39,
-        "changePct": -0.97,
-        "changePct5d": 0.7377153214082277,
-        "volume": 516472775.0,
-        "turnover": 83536776.0,
-        "volumeVsAvg": 1.122,
-        "asOf": "2026-09-02T08:14:02Z",
+        "price": 3942.09,
+        "changePct": 0.02,
+        "changePct5d": 0.73770908142885,
+        "volume": 496990189.0,
+        "turnover": 81988235.0,
+        "volumeVsAvg": 1.002,
+        "asOf": "2026-09-03T08:14:01Z",
         "series": [
           {
             "date": "2026-08-13",
@@ -118,8 +118,8 @@
           },
           {
             "date": "2026-09-02",
-            "close": 3941.3862,
-            "volume": null,
+            "close": 3941.386,
+            "volume": 516500.0,
             "changePct": -0.967
           }
         ]
@@ -127,18 +127,18 @@
       {
         "symbol": "sh000300",
         "name": "沪深300",
-        "price": 4547.96,
-        "changePct": -1.38,
+        "price": 4552.58,
+        "changePct": 0.1,
         "changePct5d": null,
-        "volume": 186991888.0,
-        "turnover": 47468040.0,
+        "volume": 182244060.0,
+        "turnover": 43994068.0,
         "volumeVsAvg": null,
-        "asOf": "2026-09-02T08:14:14Z",
+        "asOf": "2026-09-03T08:14:13Z",
         "series": [
           {
-            "date": "2026-09-02",
-            "close": 4547.9561,
-            "volume": 1519319616.0,
+            "date": "2026-09-03",
+            "close": 4552.5786,
+            "volume": 1044536816.0,
             "changePct": null
           }
         ]
@@ -146,18 +146,18 @@
       {
         "symbol": "sz399006",
         "name": "创业板指",
-        "price": 3312.24,
-        "changePct": -2.39,
+        "price": 3312.54,
+        "changePct": 0.01,
         "changePct5d": null,
-        "volume": 165249225.0,
-        "turnover": 43869975.0,
+        "volume": 161532447.0,
+        "turnover": 43067781.0,
         "volumeVsAvg": null,
-        "asOf": "2026-09-02T08:14:39Z",
+        "asOf": "2026-09-03T08:14:39Z",
         "series": [
           {
-            "date": "2026-09-02",
-            "close": 3312.2432,
-            "volume": 2796173046.0,
+            "date": "2026-09-03",
+            "close": 3312.541,
+            "volume": 2570251153.0,
             "changePct": null
           }
         ]
@@ -165,13 +165,13 @@
       {
         "symbol": "^HSI",
         "name": "恒生指数",
-        "price": 25311.21,
-        "changePct": -0.07311751213796569,
+        "price": 25213.31,
+        "changePct": -0.3867888333819458,
         "changePct5d": -1.3322424509040087,
-        "volume": 0.0,
+        "volume": 2694700000.0,
         "turnover": null,
-        "volumeVsAvg": 0.982,
-        "asOf": "2026-09-02T08:08:26Z",
+        "volumeVsAvg": 0.861,
+        "asOf": "2026-09-03T08:08:42Z",
         "series": [
           {
             "date": "2026-08-13",
@@ -260,7 +260,7 @@
           {
             "date": "2026-09-02",
             "close": 25311.2109,
-            "volume": 0.0,
+            "volume": 2694700000.0,
             "changePct": -0.073
           }
         ]
@@ -268,26 +268,14 @@
       {
         "symbol": "^N225",
         "name": "日经225",
-        "price": 64325.64,
-        "changePct": -2.853875919053883,
-        "changePct5d": 0.5449947168455704,
-        "volume": 158600000.0,
+        "price": 64723.77,
+        "changePct": 0.6189279595689934,
+        "changePct5d": -2.1293889952300638,
+        "volume": 0.0,
         "turnover": null,
-        "volumeVsAvg": 1.031,
-        "asOf": "2026-09-02T06:45:03Z",
+        "volumeVsAvg": 1.137,
+        "asOf": "2026-09-04T00:53:55Z",
         "series": [
-          {
-            "date": "2026-08-12",
-            "close": 67524.0625,
-            "volume": 170600000.0,
-            "changePct": 0.827
-          },
-          {
-            "date": "2026-08-13",
-            "close": 68308.5938,
-            "volume": 169100000.0,
-            "changePct": 1.162
-          },
           {
             "date": "2026-08-14",
             "close": 68713.7969,
@@ -365,32 +353,32 @@
             "close": 66215.3438,
             "volume": 158600000.0,
             "changePct": -0.146
+          },
+          {
+            "date": "2026-09-02",
+            "close": 64325.6406,
+            "volume": 172500000.0,
+            "changePct": -2.854
+          },
+          {
+            "date": "2026-09-04",
+            "close": 64723.7695,
+            "volume": 0.0,
+            "changePct": 0.619
           }
         ]
       },
       {
         "symbol": "^KS11",
         "name": "首尔综合指数",
-        "price": 6562.72,
-        "changePct": -3.994847896221909,
-        "changePct5d": 1.3801446752772062,
-        "volume": 273600.0,
+        "price": 6664.37,
+        "changePct": 1.5488971315025024,
+        "changePct5d": -3.587770848429428,
+        "volume": 69070.0,
         "turnover": null,
-        "volumeVsAvg": 0.819,
-        "asOf": "2026-09-02T09:05:40Z",
+        "volumeVsAvg": 0.211,
+        "asOf": "2026-09-04T00:48:50Z",
         "series": [
-          {
-            "date": "2026-08-11",
-            "close": 6345.5298,
-            "volume": 333500.0,
-            "changePct": 0.728
-          },
-          {
-            "date": "2026-08-12",
-            "close": 6579.04,
-            "volume": 360700.0,
-            "changePct": 3.68
-          },
           {
             "date": "2026-08-13",
             "close": 6813.3398,
@@ -468,26 +456,32 @@
             "close": 6835.7998,
             "volume": 273600.0,
             "changePct": 0.231
+          },
+          {
+            "date": "2026-09-02",
+            "close": 6562.7202,
+            "volume": 324100.0,
+            "changePct": -3.995
+          },
+          {
+            "date": "2026-09-04",
+            "close": 6664.3701,
+            "volume": 69070.0,
+            "changePct": 1.549
           }
         ]
       },
       {
         "symbol": "^GSPC",
         "name": "标普500",
-        "price": 7678.07,
-        "changePct": 0.6106265744916239,
-        "changePct5d": 0.030871827272482832,
-        "volume": 820202171.0,
+        "price": 7747.71,
+        "changePct": 1.0579644341765837,
+        "changePct5d": 0.21626888736914207,
+        "volume": 2695072000.0,
         "turnover": null,
-        "volumeVsAvg": 0.179,
-        "asOf": "2026-09-02T15:25:44Z",
+        "volumeVsAvg": 0.589,
+        "asOf": "2026-09-03T20:49:08Z",
         "series": [
-          {
-            "date": "2026-08-13",
-            "close": 7798.9902,
-            "volume": 4833230000.0,
-            "changePct": 0.652
-          },
           {
             "date": "2026-08-14",
             "close": 7785.7598,
@@ -568,29 +562,29 @@
           },
           {
             "date": "2026-09-02",
-            "close": 7678.0698,
-            "volume": 820202171.0,
-            "changePct": 0.611
+            "close": 7666.6001,
+            "volume": 4738910000.0,
+            "changePct": 0.46
+          },
+          {
+            "date": "2026-09-03",
+            "close": 7747.71,
+            "volume": 2695072000.0,
+            "changePct": 1.058
           }
         ]
       },
       {
         "symbol": "^IXIC",
         "name": "纳斯达克",
-        "price": 26233.256,
-        "changePct": 0.511446925192871,
-        "changePct5d": 0.39439668929523997,
-        "volume": 2768628000.0,
+        "price": 26584.06,
+        "changePct": 1.3968735047244385,
+        "changePct5d": 0.16092225199020316,
+        "volume": 6518648000.0,
         "turnover": null,
-        "volumeVsAvg": 0.364,
-        "asOf": "2026-09-02T15:25:40Z",
+        "volumeVsAvg": 0.863,
+        "asOf": "2026-09-03T21:15:59Z",
         "series": [
-          {
-            "date": "2026-08-13",
-            "close": 26803.0293,
-            "volume": 8380820000.0,
-            "changePct": 0.807
-          },
           {
             "date": "2026-08-14",
             "close": 26729.1602,
@@ -671,546 +665,340 @@
           },
           {
             "date": "2026-09-02",
-            "close": 26233.2559,
-            "volume": 2768628000.0,
-            "changePct": 0.511
+            "close": 26217.8301,
+            "volume": 7442550000.0,
+            "changePct": 0.452
+          },
+          {
+            "date": "2026-09-03",
+            "close": 26584.0605,
+            "volume": 6518648000.0,
+            "changePct": 1.397
           }
         ]
       }
     ],
     "sectors": [
       {
-        "symbol": "sh510300",
-        "name": "沪深300ETF华泰柏瑞",
-        "price": 4.62,
-        "changePct": -1.37,
-        "changePct5d": 0.08664882866031842,
-        "volume": 6364598.0,
-        "turnover": 294149.0,
-        "volumeVsAvg": 0.779,
-        "asOf": "2026-09-02T08:14:59Z",
+        "symbol": "sz159275",
+        "name": "农牧渔ETF华宝",
+        "price": 0.879,
+        "changePct": -1.24,
+        "changePct5d": 4.337632018525661,
+        "volume": 105880.0,
+        "turnover": 933.0,
+        "volumeVsAvg": 1.008,
+        "asOf": "2026-09-03T08:14:39Z",
         "series": [
           {
-            "date": "2026-08-12",
-            "close": 4.748,
-            "volume": 901013743.0,
-            "changePct": 0.423
-          },
-          {
             "date": "2026-08-13",
-            "close": 4.729,
-            "volume": 915582741.0,
-            "changePct": -0.4
+            "close": 0.839,
+            "volume": 9719400.0,
+            "changePct": -0.356
           },
           {
             "date": "2026-08-14",
-            "close": 4.726,
-            "volume": 685952984.0,
-            "changePct": -0.063
+            "close": 0.827,
+            "volume": 11347200.0,
+            "changePct": -1.43
           },
           {
             "date": "2026-08-17",
-            "close": 4.801,
-            "volume": 835656114.0,
-            "changePct": 1.587
+            "close": 0.837,
+            "volume": 8159200.0,
+            "changePct": 1.209
           },
           {
             "date": "2026-08-18",
-            "close": 4.787,
-            "volume": 657644405.0,
-            "changePct": -0.292
+            "close": 0.866,
+            "volume": 14394600.0,
+            "changePct": 3.465
           },
           {
             "date": "2026-08-19",
-            "close": 4.654,
-            "volume": 1532722915.0,
-            "changePct": -2.778
+            "close": 0.847,
+            "volume": 13798400.0,
+            "changePct": -2.194
           },
           {
             "date": "2026-08-20",
-            "close": 4.653,
-            "volume": 748866292.0,
-            "changePct": -0.021
+            "close": 0.859,
+            "volume": 14474400.0,
+            "changePct": 1.417
           },
           {
             "date": "2026-08-21",
-            "close": 4.68,
-            "volume": 727384630.0,
-            "changePct": 0.58
+            "close": 0.841,
+            "volume": 8885800.0,
+            "changePct": -2.095
           },
           {
             "date": "2026-08-24",
-            "close": 4.627,
-            "volume": 922973800.0,
-            "changePct": -1.132
+            "close": 0.838,
+            "volume": 7621202.0,
+            "changePct": -0.357
           },
           {
             "date": "2026-08-25",
-            "close": 4.616,
-            "volume": 745256800.0,
-            "changePct": -0.238
+            "close": 0.857,
+            "volume": 16945900.0,
+            "changePct": 2.267
           },
           {
             "date": "2026-08-26",
-            "close": 4.652,
-            "volume": 846320851.0,
-            "changePct": 0.78
+            "close": 0.853,
+            "volume": 21150200.0,
+            "changePct": -0.467
           },
           {
             "date": "2026-08-27",
-            "close": 4.691,
-            "volume": 641929734.0,
-            "changePct": 0.838
+            "close": 0.872,
+            "volume": 12518500.0,
+            "changePct": 2.227
           },
           {
             "date": "2026-08-28",
-            "close": 4.679,
-            "volume": 604693322.0,
-            "changePct": -0.256
+            "close": 0.885,
+            "volume": 16284300.0,
+            "changePct": 1.491
           },
           {
             "date": "2026-08-31",
-            "close": 4.685,
-            "volume": 673126494.0,
-            "changePct": 0.128
+            "close": 0.883,
+            "volume": 13772000.0,
+            "changePct": -0.226
+          },
+          {
+            "date": "2026-09-01",
+            "close": 0.907,
+            "volume": 17504400.0,
+            "changePct": 2.718
           },
           {
             "date": "2026-09-02",
-            "close": 4.62,
-            "volume": 636459777.0,
-            "changePct": -1.387
+            "close": 0.89,
+            "volume": 13428400.0,
+            "changePct": -1.874
           }
         ]
       },
       {
-        "symbol": "sh510500",
-        "name": "中证500ETF南方",
-        "price": 7.751,
-        "changePct": -1.65,
-        "changePct5d": 0.323583949140005,
-        "volume": 3761652.0,
-        "turnover": 291428.0,
-        "volumeVsAvg": 1.106,
-        "asOf": "2026-09-02T08:14:46Z",
+        "symbol": "sz159928",
+        "name": "消费ETF汇添富",
+        "price": 0.665,
+        "changePct": -0.45,
+        "changePct5d": 0.4511219969007385,
+        "volume": 2724225.0,
+        "turnover": 18178.0,
+        "volumeVsAvg": 0.811,
+        "asOf": "2026-09-03T08:14:48Z",
         "series": [
           {
-            "date": "2026-08-12",
-            "close": 8.053,
-            "volume": 180872618.0,
-            "changePct": 0.801
-          },
-          {
             "date": "2026-08-13",
-            "close": 7.98,
-            "volume": 350887715.0,
-            "changePct": -0.906
+            "close": 0.684,
+            "volume": 483046666.0,
+            "changePct": 0.146
           },
           {
             "date": "2026-08-14",
-            "close": 7.998,
-            "volume": 254678534.0,
-            "changePct": 0.226
+            "close": 0.673,
+            "volume": 493178780.0,
+            "changePct": -1.608
           },
           {
             "date": "2026-08-17",
-            "close": 8.197,
-            "volume": 279138129.0,
-            "changePct": 2.488
+            "close": 0.667,
+            "volume": 683360508.0,
+            "changePct": -0.892
           },
           {
             "date": "2026-08-18",
-            "close": 8.185,
-            "volume": 307256145.0,
-            "changePct": -0.146
+            "close": 0.671,
+            "volume": 480903400.0,
+            "changePct": 0.6
           },
           {
             "date": "2026-08-19",
-            "close": 7.804,
-            "volume": 483053472.0,
-            "changePct": -4.655
+            "close": 0.664,
+            "volume": 429553600.0,
+            "changePct": -1.043
           },
           {
             "date": "2026-08-20",
-            "close": 7.863,
-            "volume": 290214571.0,
-            "changePct": 0.756
+            "close": 0.669,
+            "volume": 363174060.0,
+            "changePct": 0.753
           },
           {
             "date": "2026-08-21",
-            "close": 7.866,
-            "volume": 286568779.0,
-            "changePct": 0.038
+            "close": 0.659,
+            "volume": 396027900.0,
+            "changePct": -1.495
           },
           {
             "date": "2026-08-24",
-            "close": 7.74,
-            "volume": 352454470.0,
-            "changePct": -1.602
+            "close": 0.66,
+            "volume": 474538300.0,
+            "changePct": 0.152
           },
           {
             "date": "2026-08-25",
-            "close": 7.726,
-            "volume": 378296058.0,
-            "changePct": -0.181
+            "close": 0.664,
+            "volume": 344030200.0,
+            "changePct": 0.606
           },
           {
             "date": "2026-08-26",
-            "close": 7.789,
-            "volume": 436064636.0,
-            "changePct": 0.815
+            "close": 0.665,
+            "volume": 313244200.0,
+            "changePct": 0.151
           },
           {
             "date": "2026-08-27",
-            "close": 7.973,
-            "volume": 417021452.0,
-            "changePct": 2.362
-          },
-          {
-            "date": "2026-08-28",
-            "close": 7.923,
-            "volume": 267221620.0,
-            "changePct": -0.627
-          },
-          {
-            "date": "2026-08-31",
-            "close": 7.967,
-            "volume": 477749907.0,
-            "changePct": 0.555
-          },
-          {
-            "date": "2026-09-02",
-            "close": 7.751,
-            "volume": 376165225.0,
-            "changePct": -2.711
-          }
-        ]
-      },
-      {
-        "symbol": "sh512480",
-        "name": "半导体ETF国联安",
-        "price": 1.01,
-        "changePct": -1.94,
-        "changePct5d": 0.1984101407367378,
-        "volume": 10923627.0,
-        "turnover": 110584.0,
-        "volumeVsAvg": 0.795,
-        "asOf": "2026-09-02T08:14:45Z",
-        "series": [
-          {
-            "date": "2026-08-12",
-            "close": 1.088,
-            "volume": 1149803987.0,
-            "changePct": 1.682
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.068,
-            "volume": 1457588568.0,
-            "changePct": -1.838
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.077,
-            "volume": 1116789309.0,
-            "changePct": 0.843
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.132,
-            "volume": 1637992254.0,
-            "changePct": 5.107
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.132,
-            "volume": 1344332159.0,
+            "close": 0.665,
+            "volume": 318529795.0,
             "changePct": 0.0
           },
           {
-            "date": "2026-08-19",
-            "close": 1.045,
-            "volume": 2140903007.0,
-            "changePct": -7.686
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.039,
-            "volume": 1428275541.0,
-            "changePct": -0.574
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.042,
-            "volume": 1058110178.0,
-            "changePct": 0.289
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.01,
-            "volume": 1504346600.0,
-            "changePct": -3.071
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.008,
-            "volume": 1376151683.0,
-            "changePct": -0.198
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.017,
-            "volume": 1248605283.0,
-            "changePct": 0.893
-          },
-          {
-            "date": "2026-08-27",
-            "close": 1.063,
-            "volume": 1498952733.0,
-            "changePct": 4.523
-          },
-          {
             "date": "2026-08-28",
-            "close": 1.039,
-            "volume": 1170989919.0,
-            "changePct": -2.258
+            "close": 0.671,
+            "volume": 279811100.0,
+            "changePct": 0.902
           },
           {
             "date": "2026-08-31",
-            "close": 1.058,
-            "volume": 1095193172.0,
-            "changePct": 1.829
+            "close": 0.666,
+            "volume": 433659842.0,
+            "changePct": -0.745
+          },
+          {
+            "date": "2026-09-01",
+            "close": 0.674,
+            "volume": 457141446.0,
+            "changePct": 1.201
           },
           {
             "date": "2026-09-02",
-            "close": 1.01,
-            "volume": 1092362695.0,
-            "changePct": -4.537
+            "close": 0.668,
+            "volume": 344736700.0,
+            "changePct": -0.89
           }
         ]
       },
       {
-        "symbol": "sh512170",
-        "name": "医疗ETF华宝",
-        "price": 0.338,
-        "changePct": -0.88,
-        "changePct5d": -2.5936608828976637,
-        "volume": 9193468.0,
-        "turnover": 31071.0,
-        "volumeVsAvg": 0.526,
-        "asOf": "2026-09-02T08:14:41Z",
+        "symbol": "sh512690",
+        "name": "酒ETF鹏华",
+        "price": 0.421,
+        "changePct": -0.47,
+        "changePct5d": 0.0,
+        "volume": 5769160.0,
+        "turnover": 24371.0,
+        "volumeVsAvg": 0.822,
+        "asOf": "2026-09-03T08:14:32Z",
         "series": [
           {
-            "date": "2026-08-12",
-            "close": 0.35,
-            "volume": 1324840563.0,
-            "changePct": -0.285
-          },
-          {
             "date": "2026-08-13",
-            "close": 0.355,
-            "volume": 2523267134.0,
-            "changePct": 1.429
+            "close": 0.449,
+            "volume": 1838629225.0,
+            "changePct": 0.673
           },
           {
             "date": "2026-08-14",
-            "close": 0.351,
-            "volume": 1687972239.0,
-            "changePct": -1.127
+            "close": 0.441,
+            "volume": 1302625100.0,
+            "changePct": -1.782
           },
           {
             "date": "2026-08-17",
-            "close": 0.353,
-            "volume": 1781022322.0,
-            "changePct": 0.57
+            "close": 0.43,
+            "volume": 1814031872.0,
+            "changePct": -2.494
           },
           {
             "date": "2026-08-18",
-            "close": 0.353,
-            "volume": 1751443716.0,
-            "changePct": 0.0
+            "close": 0.433,
+            "volume": 997174356.0,
+            "changePct": 0.698
           },
           {
             "date": "2026-08-19",
-            "close": 0.344,
-            "volume": 1647692400.0,
-            "changePct": -2.55
+            "close": 0.425,
+            "volume": 926983823.0,
+            "changePct": -1.848
           },
           {
             "date": "2026-08-20",
-            "close": 0.359,
-            "volume": 3527716084.0,
-            "changePct": 4.36
+            "close": 0.426,
+            "volume": 648287515.0,
+            "changePct": 0.235
           },
           {
             "date": "2026-08-21",
-            "close": 0.349,
-            "volume": 2049774669.0,
-            "changePct": -2.786
+            "close": 0.419,
+            "volume": 778620000.0,
+            "changePct": -1.643
           },
           {
             "date": "2026-08-24",
-            "close": 0.339,
-            "volume": 1974660127.0,
-            "changePct": -2.865
+            "close": 0.421,
+            "volume": 871722953.0,
+            "changePct": 0.477
           },
           {
             "date": "2026-08-25",
-            "close": 0.347,
-            "volume": 1787594100.0,
-            "changePct": 2.36
+            "close": 0.422,
+            "volume": 630879200.0,
+            "changePct": 0.238
           },
           {
             "date": "2026-08-26",
-            "close": 0.345,
-            "volume": 1270561809.0,
-            "changePct": -0.576
+            "close": 0.423,
+            "volume": 678309900.0,
+            "changePct": 0.237
           },
           {
             "date": "2026-08-27",
-            "close": 0.346,
-            "volume": 1020699417.0,
-            "changePct": 0.29
+            "close": 0.421,
+            "volume": 920630879.0,
+            "changePct": -0.473
           },
           {
             "date": "2026-08-28",
-            "close": 0.342,
-            "volume": 934852100.0,
-            "changePct": -1.156
+            "close": 0.423,
+            "volume": 938368501.0,
+            "changePct": 0.475
           },
           {
             "date": "2026-08-31",
-            "close": 0.339,
-            "volume": 1176975538.0,
-            "changePct": -0.877
+            "close": 0.419,
+            "volume": 822323300.0,
+            "changePct": -0.946
+          },
+          {
+            "date": "2026-09-01",
+            "close": 0.429,
+            "volume": 1504751770.0,
+            "changePct": 2.387
           },
           {
             "date": "2026-09-02",
-            "close": 0.338,
-            "volume": 919346792.0,
-            "changePct": -0.295
-          }
-        ]
-      },
-      {
-        "symbol": "sh512660",
-        "name": "军工ETF国泰",
-        "price": 1.142,
-        "changePct": 0.09,
-        "changePct5d": 4.292231060039464,
-        "volume": 5069142.0,
-        "turnover": 57959.0,
-        "volumeVsAvg": 2.157,
-        "asOf": "2026-09-02T08:14:58Z",
-        "series": [
-          {
-            "date": "2026-08-12",
-            "close": 1.156,
-            "volume": 195024601.0,
-            "changePct": 0.697
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.148,
-            "volume": 185223300.0,
-            "changePct": -0.692
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.152,
-            "volume": 176825053.0,
-            "changePct": 0.348
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.172,
-            "volume": 181682154.0,
-            "changePct": 1.736
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.169,
-            "volume": 205243869.0,
-            "changePct": -0.256
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.108,
-            "volume": 457880155.0,
-            "changePct": -5.218
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.097,
-            "volume": 224311047.0,
-            "changePct": -0.993
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.107,
-            "volume": 205129736.0,
-            "changePct": 0.912
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.09,
-            "volume": 179792800.0,
-            "changePct": -1.536
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.095,
-            "volume": 158896411.0,
-            "changePct": 0.459
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.101,
-            "volume": 135607416.0,
-            "changePct": 0.548
-          },
-          {
-            "date": "2026-08-27",
-            "close": 1.121,
-            "volume": 211350685.0,
-            "changePct": 1.817
-          },
-          {
-            "date": "2026-08-28",
-            "close": 1.123,
-            "volume": 366300710.0,
-            "changePct": 0.178
-          },
-          {
-            "date": "2026-08-31",
-            "close": 1.142,
-            "volume": 406310260.0,
-            "changePct": 1.692
-          },
-          {
-            "date": "2026-09-02",
-            "close": 1.142,
-            "volume": 506914176.0,
-            "changePct": 0.0
+            "close": 0.423,
+            "volume": 861777800.0,
+            "changePct": -1.399
           }
         ]
       },
       {
         "symbol": "sh512010",
         "name": "医药ETF易方达",
-        "price": 0.377,
-        "changePct": -0.26,
-        "changePct5d": -1.5665750835301528,
-        "volume": 8368266.0,
-        "turnover": 31563.0,
-        "volumeVsAvg": 0.682,
-        "asOf": "2026-09-02T08:14:41Z",
+        "price": 0.379,
+        "changePct": 0.53,
+        "changePct5d": -1.8229164645567342,
+        "volume": 6621858.0,
+        "turnover": 25013.0,
+        "volumeVsAvg": 0.714,
+        "asOf": "2026-09-03T08:14:51Z",
         "series": [
-          {
-            "date": "2026-08-12",
-            "close": 0.401,
-            "volume": 1395706279.0,
-            "changePct": -0.496
-          },
           {
             "date": "2026-08-13",
             "close": 0.401,
@@ -1290,30 +1078,339 @@
             "changePct": -1.828
           },
           {
+            "date": "2026-09-01",
+            "close": 0.378,
+            "volume": 620225400.0,
+            "changePct": 0.532
+          },
+          {
             "date": "2026-09-02",
             "close": 0.377,
             "volume": 836826596.0,
-            "changePct": 0.266
+            "changePct": -0.265
+          }
+        ]
+      },
+      {
+        "symbol": "sz159992",
+        "name": "创新药ETF银华",
+        "price": 0.851,
+        "changePct": 0.95,
+        "changePct5d": -2.8801816815555825,
+        "volume": 7620353.0,
+        "turnover": 64486.0,
+        "volumeVsAvg": 0.56,
+        "asOf": "2026-09-03T08:14:03Z",
+        "series": [
+          {
+            "date": "2026-08-13",
+            "close": 0.929,
+            "volume": 1658545896.0,
+            "changePct": 1.088
+          },
+          {
+            "date": "2026-08-14",
+            "close": 0.918,
+            "volume": 1515218775.0,
+            "changePct": -1.184
+          },
+          {
+            "date": "2026-08-17",
+            "close": 0.927,
+            "volume": 1111953592.0,
+            "changePct": 0.98
+          },
+          {
+            "date": "2026-08-18",
+            "close": 0.919,
+            "volume": 1092593479.0,
+            "changePct": -0.863
+          },
+          {
+            "date": "2026-08-19",
+            "close": 0.897,
+            "volume": 1281006292.0,
+            "changePct": -2.394
+          },
+          {
+            "date": "2026-08-20",
+            "close": 0.935,
+            "volume": 2214289930.0,
+            "changePct": 4.236
+          },
+          {
+            "date": "2026-08-21",
+            "close": 0.893,
+            "volume": 1801061510.0,
+            "changePct": -4.492
+          },
+          {
+            "date": "2026-08-24",
+            "close": 0.85,
+            "volume": 1684141675.0,
+            "changePct": -4.815
+          },
+          {
+            "date": "2026-08-25",
+            "close": 0.868,
+            "volume": 1212441028.0,
+            "changePct": 2.118
+          },
+          {
+            "date": "2026-08-26",
+            "close": 0.868,
+            "volume": 946109209.0,
+            "changePct": 0.0
+          },
+          {
+            "date": "2026-08-27",
+            "close": 0.875,
+            "volume": 932799300.0,
+            "changePct": 0.806
+          },
+          {
+            "date": "2026-08-28",
+            "close": 0.862,
+            "volume": 715479902.0,
+            "changePct": -1.486
+          },
+          {
+            "date": "2026-08-31",
+            "close": 0.848,
+            "volume": 1121103112.0,
+            "changePct": -1.624
+          },
+          {
+            "date": "2026-09-01",
+            "close": 0.849,
+            "volume": 691267417.0,
+            "changePct": 0.118
+          },
+          {
+            "date": "2026-09-02",
+            "close": 0.843,
+            "volume": 719707208.0,
+            "changePct": -0.707
+          }
+        ]
+      },
+      {
+        "symbol": "sh512480",
+        "name": "半导体ETF国联安",
+        "price": 1.004,
+        "changePct": -0.59,
+        "changePct5d": -0.6882959447506498,
+        "volume": 9868747.0,
+        "turnover": 99267.0,
+        "volumeVsAvg": 0.794,
+        "asOf": "2026-09-03T08:14:48Z",
+        "series": [
+          {
+            "date": "2026-08-13",
+            "close": 1.068,
+            "volume": 1457588568.0,
+            "changePct": -1.838
+          },
+          {
+            "date": "2026-08-14",
+            "close": 1.077,
+            "volume": 1116789309.0,
+            "changePct": 0.843
+          },
+          {
+            "date": "2026-08-17",
+            "close": 1.132,
+            "volume": 1637992254.0,
+            "changePct": 5.107
+          },
+          {
+            "date": "2026-08-18",
+            "close": 1.132,
+            "volume": 1344332159.0,
+            "changePct": 0.0
+          },
+          {
+            "date": "2026-08-19",
+            "close": 1.045,
+            "volume": 2140903007.0,
+            "changePct": -7.686
+          },
+          {
+            "date": "2026-08-20",
+            "close": 1.039,
+            "volume": 1428275541.0,
+            "changePct": -0.574
+          },
+          {
+            "date": "2026-08-21",
+            "close": 1.042,
+            "volume": 1058110178.0,
+            "changePct": 0.289
+          },
+          {
+            "date": "2026-08-24",
+            "close": 1.01,
+            "volume": 1504346600.0,
+            "changePct": -3.071
+          },
+          {
+            "date": "2026-08-25",
+            "close": 1.008,
+            "volume": 1376151683.0,
+            "changePct": -0.198
+          },
+          {
+            "date": "2026-08-26",
+            "close": 1.017,
+            "volume": 1248605283.0,
+            "changePct": 0.893
+          },
+          {
+            "date": "2026-08-27",
+            "close": 1.063,
+            "volume": 1498952733.0,
+            "changePct": 4.523
+          },
+          {
+            "date": "2026-08-28",
+            "close": 1.039,
+            "volume": 1170989919.0,
+            "changePct": -2.258
+          },
+          {
+            "date": "2026-08-31",
+            "close": 1.058,
+            "volume": 1095193172.0,
+            "changePct": 1.829
+          },
+          {
+            "date": "2026-09-01",
+            "close": 1.03,
+            "volume": 1181220047.0,
+            "changePct": -2.647
+          },
+          {
+            "date": "2026-09-02",
+            "close": 1.01,
+            "volume": 1092362695.0,
+            "changePct": -1.942
+          }
+        ]
+      },
+      {
+        "symbol": "sh512660",
+        "name": "军工ETF国泰",
+        "price": 1.14,
+        "changePct": -0.18,
+        "changePct5d": 3.723888319188995,
+        "volume": 2250502.0,
+        "turnover": 25647.0,
+        "volumeVsAvg": 2.164,
+        "asOf": "2026-09-03T08:14:31Z",
+        "series": [
+          {
+            "date": "2026-08-13",
+            "close": 1.148,
+            "volume": 185223300.0,
+            "changePct": -0.692
+          },
+          {
+            "date": "2026-08-14",
+            "close": 1.152,
+            "volume": 176825053.0,
+            "changePct": 0.348
+          },
+          {
+            "date": "2026-08-17",
+            "close": 1.172,
+            "volume": 181682154.0,
+            "changePct": 1.736
+          },
+          {
+            "date": "2026-08-18",
+            "close": 1.169,
+            "volume": 205243869.0,
+            "changePct": -0.256
+          },
+          {
+            "date": "2026-08-19",
+            "close": 1.108,
+            "volume": 457880155.0,
+            "changePct": -5.218
+          },
+          {
+            "date": "2026-08-20",
+            "close": 1.097,
+            "volume": 224311047.0,
+            "changePct": -0.993
+          },
+          {
+            "date": "2026-08-21",
+            "close": 1.107,
+            "volume": 205129736.0,
+            "changePct": 0.912
+          },
+          {
+            "date": "2026-08-24",
+            "close": 1.09,
+            "volume": 179792800.0,
+            "changePct": -1.536
+          },
+          {
+            "date": "2026-08-25",
+            "close": 1.095,
+            "volume": 158896411.0,
+            "changePct": 0.459
+          },
+          {
+            "date": "2026-08-26",
+            "close": 1.101,
+            "volume": 135607416.0,
+            "changePct": 0.548
+          },
+          {
+            "date": "2026-08-27",
+            "close": 1.121,
+            "volume": 211350685.0,
+            "changePct": 1.817
+          },
+          {
+            "date": "2026-08-28",
+            "close": 1.123,
+            "volume": 366300710.0,
+            "changePct": 0.178
+          },
+          {
+            "date": "2026-08-31",
+            "close": 1.142,
+            "volume": 406310260.0,
+            "changePct": 1.692
+          },
+          {
+            "date": "2026-09-01",
+            "close": 1.141,
+            "volume": 184866400.0,
+            "changePct": -0.088
+          },
+          {
+            "date": "2026-09-02",
+            "close": 1.142,
+            "volume": 506914176.0,
+            "changePct": 0.088
           }
         ]
       },
       {
         "symbol": "sh515790",
         "name": "光伏ETF华泰柏瑞",
-        "price": 0.811,
-        "changePct": -1.82,
-        "changePct5d": -3.221958237344136,
-        "volume": 1246437.0,
-        "turnover": 10126.0,
-        "volumeVsAvg": 0.614,
-        "asOf": "2026-09-02T08:15:00Z",
+        "price": 0.81,
+        "changePct": -0.12,
+        "changePct5d": -4.7003549873292805,
+        "volume": 1093945.0,
+        "turnover": 8874.0,
+        "volumeVsAvg": 0.633,
+        "asOf": "2026-09-03T08:14:32Z",
         "series": [
-          {
-            "date": "2026-08-12",
-            "close": 0.882,
-            "volume": 250558459.0,
-            "changePct": 1.613
-          },
           {
             "date": "2026-08-13",
             "close": 0.863,
@@ -1393,126 +1490,161 @@
             "changePct": -1.418
           },
           {
+            "date": "2026-09-01",
+            "close": 0.826,
+            "volume": 168542000.0,
+            "changePct": -0.959
+          },
+          {
             "date": "2026-09-02",
             "close": 0.811,
             "volume": 124643700.0,
-            "changePct": -2.758
+            "changePct": -1.816
           }
         ]
+      },
+      {
+        "symbol": "sh516160",
+        "name": "新能源ETF南方",
+        "price": 2.37,
+        "changePct": 0.25,
+        "changePct5d": null,
+        "volume": 471923.0,
+        "turnover": 11209.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:37Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512000",
+        "name": "券商ETF华宝",
+        "price": 0.526,
+        "changePct": 0.96,
+        "changePct5d": null,
+        "volume": 18144216.0,
+        "turnover": 95663.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:59Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512800",
+        "name": "银行ETF华宝",
+        "price": 0.84,
+        "changePct": -0.47,
+        "changePct5d": null,
+        "volume": 11451454.0,
+        "turnover": 97010.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:51Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512400",
+        "name": "有色金属ETF南方",
+        "price": 1.913,
+        "changePct": 1.43,
+        "changePct5d": null,
+        "volume": 3878066.0,
+        "turnover": 74290.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:31Z",
+        "series": []
+      },
+      {
+        "symbol": "sh515220",
+        "name": "煤炭ETF国泰",
+        "price": 1.3,
+        "changePct": -0.23,
+        "changePct5d": null,
+        "volume": 6277472.0,
+        "turnover": 82332.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:45Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512980",
+        "name": "传媒ETF广发",
+        "price": 0.826,
+        "changePct": -0.48,
+        "changePct5d": null,
+        "volume": 3852435.0,
+        "turnover": 32261.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:15:00Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512200",
+        "name": "房地产ETF南方",
+        "price": 1.216,
+        "changePct": 0.66,
+        "changePct5d": null,
+        "volume": 1375792.0,
+        "turnover": 16758.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:51Z",
+        "series": []
+      },
+      {
+        "symbol": "sh510300",
+        "name": "沪深300ETF华泰柏瑞",
+        "price": 4.621,
+        "changePct": 0.02,
+        "changePct5d": null,
+        "volume": 4981830.0,
+        "turnover": 230598.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:32Z",
+        "series": []
+      },
+      {
+        "symbol": "sh510500",
+        "name": "中证500ETF南方",
+        "price": 7.781,
+        "changePct": 0.39,
+        "changePct5d": null,
+        "volume": 3324163.0,
+        "turnover": 258497.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:49Z",
+        "series": []
+      },
+      {
+        "symbol": "sz159915",
+        "name": "创业板ETF易方达",
+        "price": 3.33,
+        "changePct": -0.15,
+        "changePct5d": null,
+        "volume": 15165127.0,
+        "turnover": 506450.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:42Z",
+        "series": []
+      },
+      {
+        "symbol": "sh512170",
+        "name": "医疗ETF华宝",
+        "price": 0.339,
+        "changePct": 0.3,
+        "changePct5d": null,
+        "volume": 9315410.0,
+        "turnover": 31516.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:51Z",
+        "series": []
       },
       {
         "symbol": "sh512760",
         "name": "芯片ETF国泰",
-        "price": 1.073,
-        "changePct": -1.65,
-        "changePct5d": 0.6566575593452084,
-        "volume": 2154127.0,
-        "turnover": 23140.0,
-        "volumeVsAvg": 0.53,
-        "asOf": "2026-09-02T08:14:50Z",
-        "series": [
-          {
-            "date": "2026-08-12",
-            "close": 1.159,
-            "volume": 369435500.0,
-            "changePct": 1.667
-          },
-          {
-            "date": "2026-08-13",
-            "close": 1.14,
-            "volume": 557469720.0,
-            "changePct": -1.639
-          },
-          {
-            "date": "2026-08-14",
-            "close": 1.146,
-            "volume": 352744000.0,
-            "changePct": 0.526
-          },
-          {
-            "date": "2026-08-17",
-            "close": 1.205,
-            "volume": 570770276.0,
-            "changePct": 5.148
-          },
-          {
-            "date": "2026-08-18",
-            "close": 1.202,
-            "volume": 420305600.0,
-            "changePct": -0.249
-          },
-          {
-            "date": "2026-08-19",
-            "close": 1.109,
-            "volume": 575317436.0,
-            "changePct": -7.737
-          },
-          {
-            "date": "2026-08-20",
-            "close": 1.099,
-            "volume": 472251700.0,
-            "changePct": -0.902
-          },
-          {
-            "date": "2026-08-21",
-            "close": 1.104,
-            "volume": 269283100.0,
-            "changePct": 0.455
-          },
-          {
-            "date": "2026-08-24",
-            "close": 1.066,
-            "volume": 411677900.0,
-            "changePct": -3.442
-          },
-          {
-            "date": "2026-08-25",
-            "close": 1.066,
-            "volume": 299372130.0,
-            "changePct": 0.0
-          },
-          {
-            "date": "2026-08-26",
-            "close": 1.08,
-            "volume": 363957734.0,
-            "changePct": 1.313
-          },
-          {
-            "date": "2026-08-27",
-            "close": 1.124,
-            "volume": 422953074.0,
-            "changePct": 4.074
-          },
-          {
-            "date": "2026-08-28",
-            "close": 1.101,
-            "volume": 315004800.0,
-            "changePct": -2.046
-          },
-          {
-            "date": "2026-08-31",
-            "close": 1.119,
-            "volume": 294958468.0,
-            "changePct": 1.635
-          },
-          {
-            "date": "2026-09-02",
-            "close": 1.073,
-            "volume": 215412676.0,
-            "changePct": -4.111
-          }
-        ]
-      },
-      {
-        "symbol": "sh512100",
-        "name": "中证1000ETF南方",
-        "price": 3.078,
-        "changePct": -1.41,
+        "price": 1.066,
+        "changePct": -0.65,
         "changePct5d": null,
-        "volume": 10678385.0,
-        "turnover": 328114.0,
+        "volume": 2143200.0,
+        "turnover": 22925.0,
         "volumeVsAvg": null,
-        "asOf": "2026-09-02T08:14:35Z",
+        "asOf": "2026-09-03T08:14:41Z",
         "series": []
       }
     ],
@@ -1520,13 +1652,121 @@
       {
         "symbol": "sh600276",
         "name": "恒瑞医药",
-        "price": 45.57,
-        "changePct": -1.43,
+        "price": 45.96,
+        "changePct": 0.86,
         "changePct5d": null,
-        "volume": 548288.0,
-        "turnover": 250938.0,
+        "volume": 502917.0,
+        "turnover": 230036.0,
         "volumeVsAvg": null,
-        "asOf": "2026-09-02T08:14:30Z",
+        "asOf": "2026-09-03T08:14:33Z",
+        "series": []
+      },
+      {
+        "symbol": "sz000858",
+        "name": "五 粮 液",
+        "price": 70.68,
+        "changePct": -0.2,
+        "changePct5d": null,
+        "volume": 180061.0,
+        "turnover": 127383.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:48Z",
+        "series": []
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "price": 123.87,
+        "changePct": 1.08,
+        "changePct5d": null,
+        "volume": 22153826.0,
+        "turnover": 274694.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:15:00Z",
+        "series": []
+      },
+      {
+        "symbol": "sz002594",
+        "name": "比亚迪",
+        "price": 87.31,
+        "changePct": 0.59,
+        "changePct5d": null,
+        "volume": 203734.0,
+        "turnover": 178004.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:15Z",
+        "series": []
+      },
+      {
+        "symbol": "sh600893",
+        "name": "航发动力",
+        "price": 39.16,
+        "changePct": 0.85,
+        "changePct5d": null,
+        "volume": 273401.0,
+        "turnover": 106826.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:32Z",
+        "series": []
+      },
+      {
+        "symbol": "sz000725",
+        "name": "京东方Ａ",
+        "price": 5.71,
+        "changePct": -1.38,
+        "changePct5d": null,
+        "volume": 8813273.0,
+        "turnover": 506008.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:57Z",
+        "series": []
+      },
+      {
+        "symbol": "sh601899",
+        "name": "紫金矿业",
+        "price": 33.31,
+        "changePct": 1.09,
+        "changePct5d": null,
+        "volume": 1695898.0,
+        "turnover": 565682.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:39Z",
+        "series": []
+      },
+      {
+        "symbol": "sz300750",
+        "name": "宁德时代",
+        "price": 349.5,
+        "changePct": 0.35,
+        "changePct5d": null,
+        "volume": 262864.0,
+        "turnover": 923558.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:39Z",
+        "series": []
+      },
+      {
+        "symbol": "sh600030",
+        "name": "中信证券",
+        "price": 27.86,
+        "changePct": 1.42,
+        "changePct5d": null,
+        "volume": 1181153.0,
+        "turnover": 329008.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:53Z",
+        "series": []
+      },
+      {
+        "symbol": "sz002371",
+        "name": "北方华创",
+        "price": 655.84,
+        "changePct": -1.67,
+        "changePct5d": null,
+        "volume": 55641.0,
+        "turnover": 365679.0,
+        "volumeVsAvg": null,
+        "asOf": "2026-09-03T08:14:06Z",
         "series": []
       }
     ]
@@ -1623,27 +1863,17 @@
         },
         {
           "date": "2026-09-02",
-          "close": 3941.3862,
-          "volume": null,
+          "close": 3941.386,
+          "volume": 516500.0,
           "changePct": -0.967
         }
       ],
-      "latestVolumeVsAvg": 1.122,
+      "latestVolumeVsAvg": 1.002,
       "trend": "stable",
-      "note": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。"
+      "note": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。 最新一日成交约为前段均值的 1.00 倍。"
     },
     "northbound": {
       "series": [
-        {
-          "date": "2026-08-13",
-          "dealAmt": 314773.51,
-          "dealAmtYi": 31.48,
-          "netDealAmt": null,
-          "indexClose": 3926.96,
-          "indexChangePct": -0.5,
-          "leadStock": "金螳螂",
-          "leadChangePct": 10.07
-        },
         {
           "date": "2026-08-14",
           "dealAmt": 274469.36,
@@ -1783,525 +2013,593 @@
           "indexChangePct": -0.97,
           "leadStock": "国芳集团",
           "leadChangePct": 10.01
+        },
+        {
+          "date": "2026-09-03",
+          "dealAmt": 242742.51,
+          "dealAmtYi": 24.27,
+          "netDealAmt": null,
+          "indexClose": 3942.09,
+          "indexChangePct": 0.02,
+          "leadStock": "云南旅游",
+          "leadChangePct": 10.1
         }
       ],
       "netBuyAvailable": false,
-      "trend": "stable",
+      "trend": "less_active",
       "unit": "亿元成交额",
-      "note": "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。"
+      "note": "北向成交额近段低于前段，外资交易活跃度回落；不能据此判断净流入方向。"
     },
     "sentiment": {
       "series": [
         {
-          "date": "2026-09-02",
-          "score": 112.0,
-          "count": 38,
+          "date": "2026-09-03",
+          "score": 4.0,
+          "count": 2,
+          "officialCount": 0
+        },
+        {
+          "date": "2026-09-04",
+          "score": 121.0,
+          "count": 40,
           "officialCount": 0
         }
       ],
       "trend": "unknown",
       "sourceMix": {
-        "major_media": 38,
+        "major_media": 42,
         "official": 29
       },
       "note": "可分日的新闻偏少，情绪趋势只能作参考。"
     },
     "notes": [
-      "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。",
-      "北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。",
+      "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。 最新一日成交约为前段均值的 1.00 倍。",
+      "北向成交额近段低于前段，外资交易活跃度回落；不能据此判断净流入方向。",
       "可分日的新闻偏少，情绪趋势只能作参考。"
     ],
-    "summary": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。 北向成交额近两周大体平稳。交易所已不再披露实时净买入，只能看活跃度与上证对照。 可分日的新闻偏少，情绪趋势只能作参考。"
+    "summary": "上证指数近两周成交量相对平稳，单日放量/缩量需要放回序列里看。 最新一日成交约为前段均值的 1.00 倍。 北向成交额近段低于前段，外资交易活跃度回落；不能据此判断净流入方向。 可分日的新闻偏少，情绪趋势只能作参考。"
   },
   "heat": {
-    "asOf": "2026-09-02T15:26:05Z",
+    "asOf": "2026-09-04T01:09:21Z",
     "items": [
       {
         "channel": "tape",
-        "name": "开发区",
-        "detail": "领涨 高新发展 +10.00%",
-        "heatScore": 0.8219871675331767,
-        "changePct": 2.6671168129642,
-        "leadName": "高新发展",
-        "leadSymbol": "sz000628",
-        "leadChangePct": 9.998,
+        "name": "陶瓷行业",
+        "detail": "领涨 开尔新材 +4.50%",
+        "heatScore": 1.0,
+        "changePct": 3.5984761555056,
+        "leadName": "开尔新材",
+        "leadSymbol": "sz300234",
+        "leadChangePct": 4.501,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 1
       },
       {
         "channel": "tape",
-        "name": "飞机制造",
-        "detail": "领涨 航发科技 +2.47%",
-        "heatScore": 0.11366848905360433,
-        "changePct": 0.36882222768626,
-        "leadName": "航发科技",
-        "leadSymbol": "sh600391",
-        "leadChangePct": 2.47,
+        "name": "家具行业",
+        "detail": "领涨 德尔未来 +9.97%",
+        "heatScore": 0.49152341899850266,
+        "changePct": 1.7687353031387,
+        "leadName": "德尔未来",
+        "leadSymbol": "sz002631",
+        "leadChangePct": 9.97,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 2
       },
       {
         "channel": "tape",
-        "name": "玻璃行业",
-        "detail": "领涨 旗滨集团 +2.65%",
-        "heatScore": 0.09115612557779317,
-        "changePct": 0.29577594971809,
-        "leadName": "旗滨集团",
-        "leadSymbol": "sh601636",
-        "leadChangePct": 2.646,
+        "name": "纺织机械",
+        "detail": "领涨 中毅达 +9.96%",
+        "heatScore": 0.38615513640472066,
+        "changePct": 1.3895700506784,
+        "leadName": "中毅达",
+        "leadSymbol": "sh600610",
+        "leadChangePct": 9.965,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 3
       },
       {
         "channel": "tape",
-        "name": "综合行业",
-        "detail": "领涨 大晟文化 +10.08%",
-        "heatScore": 0.019366977167197565,
-        "changePct": 0.062840385421031,
-        "leadName": "大晟文化",
-        "leadSymbol": "sh600892",
-        "leadChangePct": 10.082,
+        "name": "金融行业",
+        "detail": "领涨 长江证券 +3.94%",
+        "heatScore": 0.2948295435773241,
+        "changePct": 1.0609370825016,
+        "leadName": "长江证券",
+        "leadSymbol": "sz000783",
+        "leadChangePct": 3.941,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 4
       },
       {
         "channel": "tape",
-        "name": "农林牧渔",
-        "detail": "领涨 新赛股份 +9.97%",
-        "heatScore": 1.0,
-        "changePct": -3.2447183098592,
-        "leadName": "新赛股份",
-        "leadSymbol": "sh600540",
-        "leadChangePct": 9.967,
+        "name": "交通运输",
+        "detail": "领涨 大众交通 +10.04%",
+        "heatScore": 0.2764033194476623,
+        "changePct": 0.99463075433501,
+        "leadName": "大众交通",
+        "leadSymbol": "sh600611",
+        "leadChangePct": 10.043,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 5
       },
       {
         "channel": "tape",
-        "name": "传媒娱乐",
-        "detail": "领涨 粤 传 媒 +2.40%",
-        "heatScore": 0.837481422067026,
-        "changePct": -2.7173913043478,
-        "leadName": "粤 传 媒",
-        "leadSymbol": "sz002181",
-        "leadChangePct": 2.401,
+        "name": "电器行业",
+        "detail": "领涨 宏发股份 +8.10%",
+        "heatScore": 0.22694657378753028,
+        "changePct": 0.81666183434812,
+        "leadName": "宏发股份",
+        "leadSymbol": "sh600885",
+        "leadChangePct": 8.096,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 6
       },
       {
         "channel": "tape",
-        "name": "煤炭行业",
-        "detail": "领涨 金瑞矿业 +3.37%",
-        "heatScore": 0.7291027718755831,
-        "changePct": -2.3657331136738,
-        "leadName": "金瑞矿业",
-        "leadSymbol": "sh600714",
-        "leadChangePct": 3.365,
+        "name": "船舶制造",
+        "detail": "领涨 ST亚光 +1.97%",
+        "heatScore": 0.1959038747159632,
+        "changePct": 0.70495542193655,
+        "leadName": "ST亚光",
+        "leadSymbol": "sz300123",
+        "leadChangePct": 1.972,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 7
       },
       {
         "channel": "tape",
-        "name": "农药化肥",
-        "detail": "领涨 华昌化工 +10.05%",
-        "heatScore": 0.7268891518879018,
-        "changePct": -2.3585505403687,
-        "leadName": "华昌化工",
-        "leadSymbol": "sz002274",
-        "leadChangePct": 10.046,
+        "name": "次新股",
+        "detail": "领涨 N维琪 +7.30%",
+        "heatScore": 0.19179879480042755,
+        "changePct": 0.69018338974405,
+        "leadName": "N维琪",
+        "leadSymbol": "bj920176",
+        "leadChangePct": 7.303,
         "url": "",
-        "asOf": "2026-09-02T15:25:47Z",
+        "asOf": "2026-09-04T01:09:03Z",
         "rank": 8
       },
       {
+        "channel": "tape",
+        "name": "造纸行业",
+        "detail": "领涨 博汇纸业 +1.06%",
+        "heatScore": 0.4406666531825883,
+        "changePct": -1.585728444004,
+        "leadName": "博汇纸业",
+        "leadSymbol": "sh600966",
+        "leadChangePct": 1.057,
+        "url": "",
+        "asOf": "2026-09-04T01:09:03Z",
+        "rank": 9
+      },
+      {
+        "channel": "tape",
+        "name": "农林牧渔",
+        "detail": "领涨 亚盛集团 +10.00%",
+        "heatScore": 0.423237179308643,
+        "changePct": -1.5230088978656,
+        "leadName": "亚盛集团",
+        "leadSymbol": "sh600108",
+        "leadChangePct": 10.0,
+        "url": "",
+        "asOf": "2026-09-04T01:09:03Z",
+        "rank": 10
+      },
+      {
+        "channel": "tape",
+        "name": "印刷包装",
+        "detail": "领涨 奥瑞金 +1.80%",
+        "heatScore": 0.3907317140465937,
+        "changePct": -1.4060387561965,
+        "leadName": "奥瑞金",
+        "leadSymbol": "sz002701",
+        "leadChangePct": 1.802,
+        "url": "",
+        "asOf": "2026-09-04T01:09:03Z",
+        "rank": 11
+      },
+      {
+        "channel": "tape",
+        "name": "塑料制品",
+        "detail": "领涨 *ST顾地 +3.23%",
+        "heatScore": 0.3494137020779387,
+        "changePct": -1.2573568753344,
+        "leadName": "*ST顾地",
+        "leadSymbol": "sz002694",
+        "leadChangePct": 3.226,
+        "url": "",
+        "asOf": "2026-09-04T01:09:03Z",
+        "rank": 12
+      },
+      {
         "channel": "social",
-        "name": "微信新功能专治各种看不见",
+        "name": "人人影视变正版了",
         "detail": "微博热",
         "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%BE%AE%E4%BF%A1%E6%96%B0%E5%8A%9F%E8%83%BD%E4%B8%93%E6%B2%BB%E5%90%84%E7%A7%8D%E7%9C%8B%E4%B8%8D%E8%A7%81%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
+        "url": "https://s.weibo.com/weibo?q=%23%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86%E5%8F%98%E6%AD%A3%E7%89%88%E4%BA%86%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
         "rank": 1
       },
       {
         "channel": "social",
-        "name": "张雪惊讶97岁李锦记掌门人喝冰可乐",
+        "name": "吉隆口岸淤泥里发现警服",
         "detail": "微博民生新闻",
-        "heatScore": 0.743018289711995,
+        "heatScore": 0.494270256476226,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%BC%A0%E9%9B%AA%E6%83%8A%E8%AE%B697%E5%B2%81%E6%9D%8E%E9%94%A6%E8%AE%B0%E6%8E%8C%E9%97%A8%E4%BA%BA%E5%96%9D%E5%86%B0%E5%8F%AF%E4%B9%90%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
+        "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%B7%A4%E6%B3%A5%E9%87%8C%E5%8F%91%E7%8E%B0%E8%AD%A6%E6%9C%8D%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
         "rank": 2
       },
       {
         "channel": "social",
-        "name": "西藏吉隆泥石流",
-        "detail": "微博突发/灾害",
-        "heatScore": 0.5605680798658598,
-        "changePct": null,
-        "leadName": "",
-        "leadSymbol": "",
-        "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E9%81%87%E9%9A%BE21%E4%BA%BA%E5%A4%B1%E8%81%94541%E4%BA%BA%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 5
-      },
-      {
-        "channel": "social",
-        "name": "开局之年看山西",
+        "name": "中埃两大文明双向奔赴",
         "detail": "微博国内时政",
-        "heatScore": 0.5767584904519168,
+        "heatScore": 0.40054552052970716,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%BC%80%E5%B1%80%E4%B9%8B%E5%B9%B4%E7%9C%8B%E5%B1%B1%E8%A5%BF%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
+        "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9F%83%E4%B8%A4%E5%A4%A7%E6%96%87%E6%98%8E%E5%8F%8C%E5%90%91%E5%A5%94%E8%B5%B4%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
         "rank": 3
       },
       {
         "channel": "social",
-        "name": "富爸爸穷爸爸作者自曝负债12亿美元",
-        "detail": "微博海外新闻",
-        "heatScore": 0.3186637051871814,
+        "name": "GPT6正式发布",
+        "detail": "微博新",
+        "heatScore": 0.33232355558902305,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8%E4%BD%9C%E8%80%85%E8%87%AA%E6%9B%9D%E8%B4%9F%E5%80%BA12%E4%BA%BF%E7%BE%8E%E5%85%83%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 6
+        "url": "https://s.weibo.com/weibo?q=%23GPT6%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 4
       },
       {
         "channel": "social",
-        "name": "一针99万元外国人来中国抗癌",
+        "name": "小米18Fold定价",
+        "detail": "微博新",
+        "heatScore": 0.18614789923348926,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B318Fold%E5%AE%9A%E4%BB%B7%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 9
+      },
+      {
+        "channel": "social",
+        "name": "为救母发现非亲生女子发声",
         "detail": "微博民生新闻",
-        "heatScore": 0.2897623983951559,
+        "heatScore": 0.14291518808221715,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E4%B8%80%E9%92%8899%E4%B8%87%E5%85%83%E5%A4%96%E5%9B%BD%E4%BA%BA%E6%9D%A5%E4%B8%AD%E5%9B%BD%E6%8A%97%E7%99%8C%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 7
+        "url": "https://s.weibo.com/weibo?q=%23%E4%B8%BA%E6%95%91%E6%AF%8D%E5%8F%91%E7%8E%B0%E9%9D%9E%E4%BA%B2%E7%94%9F%E5%A5%B3%E5%AD%90%E5%8F%91%E5%A3%B0%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 12
       },
       {
         "channel": "social",
-        "name": "何超琼17岁就和父亲出去应酬了",
+        "name": "多国从美国运走黄金",
         "detail": "微博新",
-        "heatScore": 0.2693523835765577,
+        "heatScore": 0.14259097150973016,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E4%BD%95%E8%B6%85%E7%90%BC17%E5%B2%81%E5%B0%B1%E5%92%8C%E7%88%B6%E4%BA%B2%E5%87%BA%E5%8E%BB%E5%BA%94%E9%85%AC%E4%BA%86%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 8
-      },
-      {
-        "channel": "social",
-        "name": "没有性生活也有必要打HPV疫苗",
-        "detail": "微博热",
-        "heatScore": 0.19311304809491966,
-        "changePct": null,
-        "leadName": "",
-        "leadSymbol": "",
-        "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%E6%B2%A1%E6%9C%89%E6%80%A7%E7%94%9F%E6%B4%BB%E4%B9%9F%E6%9C%89%E5%BF%85%E8%A6%81%E6%89%93HPV%E7%96%AB%E8%8B%97&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 14
-      },
-      {
-        "channel": "social",
-        "name": "网红白冰败诉",
-        "detail": "微博热",
-        "heatScore": 0.19174291580280847,
-        "changePct": null,
-        "leadName": "",
-        "leadSymbol": "",
-        "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E7%BD%91%E7%BA%A2%E7%99%BD%E5%86%B0%E8%B4%A5%E8%AF%89%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 15
-      },
-      {
-        "channel": "social",
-        "name": "多地小学老师转教初中",
-        "detail": "微博新",
-        "heatScore": 0.1849510583032873,
-        "changePct": null,
-        "leadName": "",
-        "leadSymbol": "",
-        "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%A4%9A%E5%9C%B0%E5%B0%8F%E5%AD%A6%E8%80%81%E5%B8%88%E8%BD%AC%E6%95%99%E5%88%9D%E4%B8%AD%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
+        "url": "https://s.weibo.com/weibo?q=%23%E5%A4%9A%E5%9B%BD%E4%BB%8E%E7%BE%8E%E5%9B%BD%E8%BF%90%E8%B5%B0%E9%BB%84%E9%87%91%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
         "rank": 18
       },
       {
         "channel": "social",
-        "name": "赴韩遭老师杀害女生家属最新发声",
+        "name": "剖宫产死亡产妇生前纳入高危管理",
         "detail": "微博新",
-        "heatScore": 0.1824040067338936,
+        "heatScore": 0.1424706976199366,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E8%B5%B4%E9%9F%A9%E9%81%AD%E8%80%81%E5%B8%88%E6%9D%80%E5%AE%B3%E5%A5%B3%E7%94%9F%E5%AE%B6%E5%B1%9E%E6%9C%80%E6%96%B0%E5%8F%91%E5%A3%B0%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
+        "url": "https://s.weibo.com/weibo?q=%23%E5%89%96%E5%AE%AB%E4%BA%A7%E6%AD%BB%E4%BA%A1%E4%BA%A7%E5%A6%87%E7%94%9F%E5%89%8D%E7%BA%B3%E5%85%A5%E9%AB%98%E5%8D%B1%E7%AE%A1%E7%90%86%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
         "rank": 20
       },
       {
         "channel": "social",
-        "name": "协和医院医生攻克22年数学难题",
-        "detail": "微博新",
-        "heatScore": 0.17952849303929114,
+        "name": "小米手环11",
+        "detail": "微博数码",
+        "heatScore": 0.14225577340817508,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://s.weibo.com/weibo?q=%23%E5%8D%8F%E5%92%8C%E5%8C%BB%E9%99%A2%E5%8C%BB%E7%94%9F%E6%94%BB%E5%85%8B22%E5%B9%B4%E6%95%B0%E5%AD%A6%E9%9A%BE%E9%A2%98%23&Refer=top",
-        "asOf": "2026-09-02T15:25:56Z",
-        "rank": 22
+        "url": "https://s.weibo.com/weibo?q=%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF11&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 24
+      },
+      {
+        "channel": "social",
+        "name": "韩媒称韩国推行全民汉字教育",
+        "detail": "微博新",
+        "heatScore": 0.14221707659145888,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://s.weibo.com/weibo?q=%E9%9F%A9%E5%AA%92%E7%A7%B0%E9%9F%A9%E5%9B%BD%E6%8E%A8%E8%A1%8C%E5%85%A8%E6%B0%91%E6%B1%89%E5%AD%97%E6%95%99%E8%82%B2&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 25
+      },
+      {
+        "channel": "social",
+        "name": "一家三口吃水洗鸡蛋后集体中毒",
+        "detail": "微博民生新闻",
+        "heatScore": 0.12446987975748601,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://s.weibo.com/weibo?q=%23%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E5%90%8E%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 31
+      },
+      {
+        "channel": "social",
+        "name": "医院拒提供抱错女子同期新生儿信息",
+        "detail": "微博新",
+        "heatScore": 0.12225213381568392,
+        "changePct": null,
+        "leadName": "",
+        "leadSymbol": "",
+        "leadChangePct": null,
+        "url": "https://s.weibo.com/weibo?q=%23%E5%8C%BB%E9%99%A2%E6%8B%92%E6%8F%90%E4%BE%9B%E6%8A%B1%E9%94%99%E5%A5%B3%E5%AD%90%E5%90%8C%E6%9C%9F%E6%96%B0%E7%94%9F%E5%84%BF%E4%BF%A1%E6%81%AF%23&Refer=top",
+        "asOf": "2026-09-04T01:09:14Z",
+        "rank": 32
       },
       {
         "channel": "web",
-        "name": "习近平同埃及总统塞西会谈",
+        "name": "习近平主席的“比什凯克时间”",
         "detail": "百度热搜",
         "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%90%8C%E5%9F%83%E5%8F%8A%E6%80%BB%E7%BB%9F%E5%A1%9E%E8%A5%BF%E4%BC%9A%E8%B0%88&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%B8%BB%E5%B8%AD%E7%9A%84%E2%80%9C%E6%AF%94%E4%BB%80%E5%87%AF%E5%85%8B%E6%97%B6%E9%97%B4%E2%80%9D&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 1
       },
       {
         "channel": "web",
-        "name": "多地小学老师转教初中",
+        "name": "“Token贷”火出圈",
         "detail": "百度热搜 · 热标 3",
         "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E5%A4%9A%E5%9C%B0%E5%B0%8F%E5%AD%A6%E8%80%81%E5%B8%88%E8%BD%AC%E6%95%99%E5%88%9D%E4%B8%AD&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E2%80%9CToken%E8%B4%B7%E2%80%9D%E7%81%AB%E5%87%BA%E5%9C%88&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 2
       },
       {
         "channel": "web",
-        "name": "“口袋空调”卖爆了",
-        "detail": "百度热搜 · 热标 3",
+        "name": "OpenAI总裁宣布AGI到来",
+        "detail": "百度热搜 · 热标 1",
         "heatScore": 0.98,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E2%80%9C%E5%8F%A3%E8%A2%8B%E7%A9%BA%E8%B0%83%E2%80%9D%E5%8D%96%E7%88%86%E4%BA%86&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=OpenAI%E6%80%BB%E8%A3%81%E5%AE%A3%E5%B8%83AGI%E5%88%B0%E6%9D%A5&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 3
       },
       {
         "channel": "web",
-        "name": "读懂这个“50.9%”的分量",
+        "name": "新学期建议家长每天抓好这3件小事",
         "detail": "百度热搜",
         "heatScore": 0.96,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E8%AF%BB%E6%87%82%E8%BF%99%E4%B8%AA%E2%80%9C50.9%25%E2%80%9D%E7%9A%84%E5%88%86%E9%87%8F&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E6%96%B0%E5%AD%A6%E6%9C%9F%E5%BB%BA%E8%AE%AE%E5%AE%B6%E9%95%BF%E6%AF%8F%E5%A4%A9%E6%8A%93%E5%A5%BD%E8%BF%993%E4%BB%B6%E5%B0%8F%E4%BA%8B&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 4
       },
       {
         "channel": "web",
-        "name": "告别机顶盒",
-        "detail": "百度热搜 · 热标 3",
+        "name": "一次“时髦”尝试 换来生活不能自理",
+        "detail": "百度热搜 · 热标 1",
         "heatScore": 0.94,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E5%91%8A%E5%88%AB%E6%9C%BA%E9%A1%B6%E7%9B%92&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E4%B8%80%E6%AC%A1%E2%80%9C%E6%97%B6%E9%AB%A6%E2%80%9D%E5%B0%9D%E8%AF%95+%E6%8D%A2%E6%9D%A5%E7%94%9F%E6%B4%BB%E4%B8%8D%E8%83%BD%E8%87%AA%E7%90%86&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 5
       },
       {
         "channel": "web",
-        "name": "曹骏 断层第一",
+        "name": "深夜突发！美国AI大宕机",
         "detail": "百度热搜 · 热标 1",
         "heatScore": 0.92,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E6%9B%B9%E9%AA%8F+%E6%96%AD%E5%B1%82%E7%AC%AC%E4%B8%80&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E6%B7%B1%E5%A4%9C%E7%AA%81%E5%8F%91%EF%BC%81%E7%BE%8E%E5%9B%BDAI%E5%A4%A7%E5%AE%95%E6%9C%BA&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 6
       },
       {
         "channel": "web",
-        "name": "吉隆泥石流灾害发现遗物847件",
-        "detail": "百度热搜 · 热标 1",
+        "name": "美网五连胜！郑钦文晋级女单32强",
+        "detail": "百度热搜 · 热标 3",
         "heatScore": 0.9,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%81%BE%E5%AE%B3%E5%8F%91%E7%8E%B0%E9%81%97%E7%89%A9847%E4%BB%B6&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E7%BE%8E%E7%BD%91%E4%BA%94%E8%BF%9E%E8%83%9C%EF%BC%81%E9%83%91%E9%92%A6%E6%96%87%E6%99%8B%E7%BA%A7%E5%A5%B3%E5%8D%9532%E5%BC%BA&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 7
       },
       {
         "channel": "web",
-        "name": "房价会上涨吗",
-        "detail": "百度热搜 · 热标 3",
+        "name": "OpenAI发布GPT-6 Astra",
+        "detail": "百度热搜 · 热标 1",
         "heatScore": 0.88,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E6%88%BF%E4%BB%B7%E4%BC%9A%E4%B8%8A%E6%B6%A8%E5%90%97&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=OpenAI%E5%8F%91%E5%B8%83GPT-6+Astra&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 8
       },
       {
         "channel": "web",
-        "name": "情况又变 35岁成香饽饽了",
-        "detail": "百度热搜 · 热标 3",
+        "name": "“没有Token的CS学生 应立即退学”",
+        "detail": "百度热搜",
         "heatScore": 0.86,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E6%83%85%E5%86%B5%E5%8F%88%E5%8F%98+35%E5%B2%81%E6%88%90%E9%A6%99%E9%A5%BD%E9%A5%BD%E4%BA%86&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E2%80%9C%E6%B2%A1%E6%9C%89Token%E7%9A%84CS%E5%AD%A6%E7%94%9F+%E5%BA%94%E7%AB%8B%E5%8D%B3%E9%80%80%E5%AD%A6%E2%80%9D&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 9
       },
       {
         "channel": "web",
-        "name": "赵心童vs丹尼尔·威尔斯",
+        "name": "外交部：已向韩方提出严正交涉",
         "detail": "百度热搜",
         "heatScore": 0.84,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E8%B5%B5%E5%BF%83%E7%AB%A5vs%E4%B8%B9%E5%B0%BC%E5%B0%94%C2%B7%E5%A8%81%E5%B0%94%E6%96%AF&sa=fyb_news",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89&sa=fyb_news",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 10
       },
       {
         "channel": "web",
-        "name": "《富爸爸穷爸爸》作者称负债12亿美元",
+        "name": "酒店集团正集体盯上大学生",
         "detail": "百度财经热搜",
-        "heatScore": 0.9666666666666667,
+        "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E3%80%8A%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8%E3%80%8B%E4%BD%9C%E8%80%85%E7%A7%B0%E8%B4%9F%E5%80%BA12%E4%BA%BF%E7%BE%8E%E5%85%83&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E9%85%92%E5%BA%97%E9%9B%86%E5%9B%A2%E6%AD%A3%E9%9B%86%E4%BD%93%E7%9B%AF%E4%B8%8A%E5%A4%A7%E5%AD%A6%E7%94%9F&sa=fyb_finance",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 11
       },
       {
         "channel": "web",
-        "name": "仿生机器人女性偏多",
-        "detail": "百度财经热搜 · 热标 1",
-        "heatScore": 0.9333333333333333,
+        "name": "地球最强大模型GPT-6",
+        "detail": "百度财经热搜",
+        "heatScore": 0.8888888888888888,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A5%B3%E6%80%A7%E5%81%8F%E5%A4%9A&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E5%9C%B0%E7%90%83%E6%9C%80%E5%BC%BA%E5%A4%A7%E6%A8%A1%E5%9E%8BGPT-6&sa=fyb_finance",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 12
       },
       {
         "channel": "web",
-        "name": "张雪惊讶97岁李锦记掌门人喝冰可乐",
-        "detail": "百度财经热搜 · 热标 1",
-        "heatScore": 0.9,
+        "name": "折叠屏三国杀",
+        "detail": "百度财经热搜",
+        "heatScore": 0.8518518518518519,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E5%BC%A0%E9%9B%AA%E6%83%8A%E8%AE%B697%E5%B2%81%E6%9D%8E%E9%94%A6%E8%AE%B0%E6%8E%8C%E9%97%A8%E4%BA%BA%E5%96%9D%E5%86%B0%E5%8F%AF%E4%B9%90&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E6%8A%98%E5%8F%A0%E5%B1%8F%E4%B8%89%E5%9B%BD%E6%9D%80&sa=fyb_finance",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 13
       },
       {
         "channel": "web",
-        "name": "雅迪爱玛都卖不动了吗",
-        "detail": "百度财经热搜 · 热标 3",
-        "heatScore": 0.8666666666666667,
+        "name": "财商祖师爷欠了85亿",
+        "detail": "百度财经热搜",
+        "heatScore": 0.8148148148148149,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E9%9B%85%E8%BF%AA%E7%88%B1%E7%8E%9B%E9%83%BD%E5%8D%96%E4%B8%8D%E5%8A%A8%E4%BA%86%E5%90%97&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
+        "url": "https://m.baidu.com/s?word=%E8%B4%A2%E5%95%86%E7%A5%96%E5%B8%88%E7%88%B7%E6%AC%A0%E4%BA%8685%E4%BA%BF&sa=fyb_finance",
+        "asOf": "2026-09-04T01:09:08Z",
         "rank": 14
       },
       {
-        "channel": "web",
-        "name": "9.9元卖爆 “中国版乐高”能跑多远",
-        "detail": "百度财经热搜",
-        "heatScore": 0.8333333333333334,
+        "channel": "news",
+        "name": "投资日历：周五资本市场大事提醒",
+        "detail": "财联社标红",
+        "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=9.9%E5%85%83%E5%8D%96%E7%88%86+%E2%80%9C%E4%B8%AD%E5%9B%BD%E7%89%88%E4%B9%90%E9%AB%98%E2%80%9D%E8%83%BD%E8%B7%91%E5%A4%9A%E8%BF%9C&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
-        "rank": 15
+        "url": "https://www.cls.cn/detail/2473817",
+        "asOf": "2026-09-04T00:29:46Z",
+        "rank": 0
       },
       {
-        "channel": "web",
-        "name": "胖东来回应“供应商需有社保和双休”",
-        "detail": "百度财经热搜",
-        "heatScore": 0.8,
+        "channel": "news",
+        "name": "财联社9月4日早间新闻精选",
+        "detail": "财联社标红",
+        "heatScore": 1.0,
         "changePct": null,
         "leadName": "",
         "leadSymbol": "",
         "leadChangePct": null,
-        "url": "https://m.baidu.com/s?word=%E8%83%96%E4%B8%9C%E6%9D%A5%E5%9B%9E%E5%BA%94%E2%80%9C%E4%BE%9B%E5%BA%94%E5%95%86%E9%9C%80%E6%9C%89%E7%A4%BE%E4%BF%9D%E5%92%8C%E5%8F%8C%E4%BC%91%E2%80%9D&sa=fyb_finance",
-        "asOf": "2026-09-02T15:25:51Z",
-        "rank": 16
+        "url": "https://www.cls.cn/detail/2473805",
+        "asOf": "2026-09-04T00:05:12Z",
+        "rank": 0
       },
       {
         "channel": "flow",
-        "name": "国芳集团",
-        "detail": "北向成交额 24.48 亿",
+        "name": "云南旅游",
+        "detail": "北向成交额 24.27 亿",
         "heatScore": 0.6,
-        "changePct": 10.01,
-        "leadName": "国芳集团",
+        "changePct": 10.1,
+        "leadName": "云南旅游",
         "leadSymbol": "",
         "leadChangePct": null,
         "url": "",
-        "asOf": "2026-09-02",
+        "asOf": "2026-09-03",
         "rank": 1
       }
     ],
     "coverage": {
       "tape": true,
       "flow": true,
-      "news": false,
+      "news": true,
       "social": true,
       "web": true
     }
@@ -2309,685 +2607,683 @@
   "hotSearch": [
     {
       "rank": 1,
-      "word": "微信新功能专治各种看不见",
+      "word": "人人影视变正版了",
       "category": "互联网",
-      "heat": 1190396,
+      "heat": 1912302,
       "label": "热",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%BE%AE%E4%BF%A1%E6%96%B0%E5%8A%9F%E8%83%BD%E4%B8%93%E6%B2%BB%E5%90%84%E7%A7%8D%E7%9C%8B%E4%B8%8D%E8%A7%81%23&Refer=top",
-      "onboardAt": "2026-09-02T11:55:20Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86%E5%8F%98%E6%AD%A3%E7%89%88%E4%BA%86%23&Refer=top",
+      "onboardAt": "2026-09-03T16:07:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "viral",
-      "cluster": "微信新功能专治各种看不见",
-      "clusterHeat": 1190396,
+      "cluster": "人人影视变正版了",
+      "clusterHeat": 1912302,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": true,
-      "attention": 0.7
+      "attention": 0.96
     },
     {
       "rank": 2,
-      "word": "张雪惊讶97岁李锦记掌门人喝冰可乐",
+      "word": "吉隆口岸淤泥里发现警服",
       "category": "民生新闻",
-      "heat": 884486,
+      "heat": 945194,
       "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%BC%A0%E9%9B%AA%E6%83%8A%E8%AE%B697%E5%B2%81%E6%9D%8E%E9%94%A6%E8%AE%B0%E6%8E%8C%E9%97%A8%E4%BA%BA%E5%96%9D%E5%86%B0%E5%8F%AF%E4%B9%90%23&Refer=top",
-      "onboardAt": "2026-09-02T13:14:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%B7%A4%E6%B3%A5%E9%87%8C%E5%8F%91%E7%8E%B0%E8%AD%A6%E6%9C%8D%23&Refer=top",
+      "onboardAt": "2026-09-03T23:23:18Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "viral",
-      "cluster": "张雪惊讶97岁李锦记掌门人喝冰可乐",
-      "clusterHeat": 884486,
+      "cluster": "吉隆口岸淤泥里发现警服",
+      "clusterHeat": 945194,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": true,
       "attention": 0.7
-    },
-    {
-      "rank": 5,
-      "word": "吉隆泥石流遇难21人失联541人",
-      "category": "突发/灾害",
-      "heat": 386417,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E9%81%87%E9%9A%BE21%E4%BA%BA%E5%A4%B1%E8%81%94541%E4%BA%BA%23&Refer=top",
-      "onboardAt": "2026-09-02T12:26:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "event",
-      "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 667298,
-      "clusterSize": 3,
-      "kind": "event",
-      "focusEvent": true,
-      "attention": 0.6
-    },
-    {
-      "rank": 30,
-      "word": "吉隆泥石流堆积物最高达16米",
-      "category": "突发/灾害",
-      "heat": 149519,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E5%A0%86%E7%A7%AF%E7%89%A9%E6%9C%80%E9%AB%98%E8%BE%BE16%E7%B1%B3%23&Refer=top",
-      "onboardAt": "2026-09-02T15:24:20Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "event",
-      "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 667298,
-      "clusterSize": 3,
-      "kind": "event",
-      "focusEvent": true,
-      "attention": 0.6
-    },
-    {
-      "rank": 47,
-      "word": "吉隆泥石流灾区发现遗物847件",
-      "category": "突发/灾害",
-      "heat": 131362,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%81%BE%E5%8C%BA%E5%8F%91%E7%8E%B0%E9%81%97%E7%89%A9847%E4%BB%B6%23&Refer=top",
-      "onboardAt": "2026-09-02T13:29:22Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "event",
-      "cluster": "西藏吉隆泥石流",
-      "clusterHeat": 667298,
-      "clusterSize": 3,
-      "kind": "event",
-      "focusEvent": true,
-      "attention": 0.6
     },
     {
       "rank": 3,
-      "word": "开局之年看山西",
+      "word": "中埃两大文明双向奔赴",
       "category": "国内时政",
-      "heat": 686571,
+      "heat": 765964,
       "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%BC%80%E5%B1%80%E4%B9%8B%E5%B9%B4%E7%9C%8B%E5%B1%B1%E8%A5%BF%23&Refer=top",
-      "onboardAt": "2026-09-02T12:46:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9F%83%E4%B8%A4%E5%A4%A7%E6%96%87%E6%98%8E%E5%8F%8C%E5%90%91%E5%A5%94%E8%B5%B4%23&Refer=top",
+      "onboardAt": "2026-09-03T12:32:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "开局之年看山西",
-      "clusterHeat": 686571,
+      "cluster": "中埃两大文明双向奔赴",
+      "clusterHeat": 765964,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
       "attention": 0.7
     },
     {
-      "rank": 6,
-      "word": "富爸爸穷爸爸作者自曝负债12亿美元",
-      "category": "海外新闻",
-      "heat": 379336,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8%E4%BD%9C%E8%80%85%E8%87%AA%E6%9B%9D%E8%B4%9F%E5%80%BA12%E4%BA%BF%E7%BE%8E%E5%85%83%23&Refer=top",
-      "onboardAt": "2026-09-02T10:34:20Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "llm",
-      "cluster": "富爸爸穷爸爸作者自曝负债12亿美元",
-      "clusterHeat": 379336,
-      "clusterSize": 1,
-      "kind": "market",
-      "focusEvent": false,
-      "attention": 0.19
-    },
-    {
-      "rank": 7,
-      "word": "一针99万元外国人来中国抗癌",
-      "category": "民生新闻",
-      "heat": 344932,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%80%E9%92%8899%E4%B8%87%E5%85%83%E5%A4%96%E5%9B%BD%E4%BA%BA%E6%9D%A5%E4%B8%AD%E5%9B%BD%E6%8A%97%E7%99%8C%23&Refer=top",
-      "onboardAt": "2026-09-02T13:52:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "llm",
-      "cluster": "一针99万元外国人来中国抗癌",
-      "clusterHeat": 344932,
-      "clusterSize": 1,
-      "kind": "market",
-      "focusEvent": false,
-      "attention": 0.17
-    },
-    {
-      "rank": 8,
-      "word": "何超琼17岁就和父亲出去应酬了",
-      "category": "国内时政",
-      "heat": 320636,
+      "rank": 4,
+      "word": "GPT6正式发布",
+      "category": "数码",
+      "heat": 635503,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E4%BD%95%E8%B6%85%E7%90%BC17%E5%B2%81%E5%B0%B1%E5%92%8C%E7%88%B6%E4%BA%B2%E5%87%BA%E5%8E%BB%E5%BA%94%E9%85%AC%E4%BA%86%23&Refer=top",
-      "onboardAt": "2026-09-02T14:33:23Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23GPT6%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83%23&Refer=top",
+      "onboardAt": "2026-09-03T23:55:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "何超琼17岁就和父亲出去应酬了",
-      "clusterHeat": 320636,
+      "cluster": "GPT6正式发布",
+      "clusterHeat": 635503,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.16
+      "attention": 0.32
     },
     {
-      "rank": 14,
-      "word": "没有性生活也有必要打HPV疫苗",
-      "category": "民生新闻,健康医疗",
-      "heat": 229881,
-      "label": "热",
-      "url": "https://s.weibo.com/weibo?q=%E6%B2%A1%E6%9C%89%E6%80%A7%E7%94%9F%E6%B4%BB%E4%B9%9F%E6%9C%89%E5%BF%85%E8%A6%81%E6%89%93HPV%E7%96%AB%E8%8B%97&Refer=top",
-      "onboardAt": "2026-09-02T10:46:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "rank": 9,
+      "word": "小米18Fold定价",
+      "category": "数码",
+      "heat": 355971,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B318Fold%E5%AE%9A%E4%BB%B7%23&Refer=top",
+      "onboardAt": "2026-09-04T00:01:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "没有性生活也有必要打HPV疫苗",
-      "clusterHeat": 229881,
+      "cluster": "小米18Fold定价",
+      "clusterHeat": 355971,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.11
+      "attention": 0.18
     },
     {
-      "rank": 15,
-      "word": "网红白冰败诉",
-      "category": "网红",
-      "heat": 228250,
-      "label": "热",
-      "url": "https://s.weibo.com/weibo?q=%23%E7%BD%91%E7%BA%A2%E7%99%BD%E5%86%B0%E8%B4%A5%E8%AF%89%23&Refer=top",
-      "onboardAt": "2026-09-02T13:42:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "rank": 12,
+      "word": "为救母发现非亲生女子发声",
+      "category": "民生新闻",
+      "heat": 273297,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%BA%E6%95%91%E6%AF%8D%E5%8F%91%E7%8E%B0%E9%9D%9E%E4%BA%B2%E7%94%9F%E5%A5%B3%E5%AD%90%E5%8F%91%E5%A3%B0%23&Refer=top",
+      "onboardAt": "2026-09-03T23:18:18Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "网红白冰败诉",
-      "clusterHeat": 228250,
+      "cluster": "为救母发现非亲生女子发声",
+      "clusterHeat": 273297,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.11
+      "attention": 0.14
     },
     {
       "rank": 18,
-      "word": "多地小学老师转教初中",
-      "category": "教育",
-      "heat": 220165,
+      "word": "多国从美国运走黄金",
+      "category": "国际时政",
+      "heat": 272677,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%A4%9A%E5%9C%B0%E5%B0%8F%E5%AD%A6%E8%80%81%E5%B8%88%E8%BD%AC%E6%95%99%E5%88%9D%E4%B8%AD%23&Refer=top",
-      "onboardAt": "2026-09-02T14:52:23Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
-      "match": "llm",
-      "cluster": "多地小学老师转教初中",
-      "clusterHeat": 220165,
+      "url": "https://s.weibo.com/weibo?q=%23%E5%A4%9A%E5%9B%BD%E4%BB%8E%E7%BE%8E%E5%9B%BD%E8%BF%90%E8%B5%B0%E9%BB%84%E9%87%91%23&Refer=top",
+      "onboardAt": "2026-09-04T01:03:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "market",
+      "cluster": "多国从美国运走黄金",
+      "clusterHeat": 272677,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.11
+      "attention": 0.14
     },
     {
       "rank": 20,
-      "word": "赴韩遭老师杀害女生家属最新发声",
+      "word": "剖宫产死亡产妇生前纳入高危管理",
       "category": "民生新闻",
-      "heat": 217133,
+      "heat": 272447,
       "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E8%B5%B4%E9%9F%A9%E9%81%AD%E8%80%81%E5%B8%88%E6%9D%80%E5%AE%B3%E5%A5%B3%E7%94%9F%E5%AE%B6%E5%B1%9E%E6%9C%80%E6%96%B0%E5%8F%91%E5%A3%B0%23&Refer=top",
-      "onboardAt": "2026-09-02T15:09:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%89%96%E5%AE%AB%E4%BA%A7%E6%AD%BB%E4%BA%A1%E4%BA%A7%E5%A6%87%E7%94%9F%E5%89%8D%E7%BA%B3%E5%85%A5%E9%AB%98%E5%8D%B1%E7%AE%A1%E7%90%86%23&Refer=top",
+      "onboardAt": "2026-09-04T00:41:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "赴韩遭老师杀害女生家属最新发声",
-      "clusterHeat": 217133,
+      "cluster": "剖宫产死亡产妇生前纳入高危管理",
+      "clusterHeat": 272447,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.11
+      "attention": 0.14
     },
     {
-      "rank": 22,
-      "word": "协和医院医生攻克22年数学难题",
-      "category": "民生新闻",
-      "heat": 213710,
-      "label": "新",
-      "url": "https://s.weibo.com/weibo?q=%23%E5%8D%8F%E5%92%8C%E5%8C%BB%E9%99%A2%E5%8C%BB%E7%94%9F%E6%94%BB%E5%85%8B22%E5%B9%B4%E6%95%B0%E5%AD%A6%E9%9A%BE%E9%A2%98%23&Refer=top",
-      "onboardAt": "2026-09-02T15:20:20Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "rank": 24,
+      "word": "小米手环11",
+      "category": "数码",
+      "heat": 272036,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF11&Refer=top",
+      "onboardAt": "2026-09-03T23:11:17Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "协和医院医生攻克22年数学难题",
-      "clusterHeat": 213710,
+      "cluster": "小米手环11",
+      "clusterHeat": 272036,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.11
+      "attention": 0.14
+    },
+    {
+      "rank": 25,
+      "word": "韩媒称韩国推行全民汉字教育",
+      "category": "民生新闻",
+      "heat": 271962,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%E9%9F%A9%E5%AA%92%E7%A7%B0%E9%9F%A9%E5%9B%BD%E6%8E%A8%E8%A1%8C%E5%85%A8%E6%B0%91%E6%B1%89%E5%AD%97%E6%95%99%E8%82%B2&Refer=top",
+      "onboardAt": "2026-09-04T00:23:21Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "llm",
+      "cluster": "韩媒称韩国推行全民汉字教育",
+      "clusterHeat": 271962,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.14
     },
     {
       "rank": 31,
-      "word": "小潮院长致歉",
-      "category": "网红",
-      "heat": 148890,
+      "word": "一家三口吃水洗鸡蛋后集体中毒",
+      "category": "民生新闻",
+      "heat": 238024,
       "label": "",
-      "url": "https://s.weibo.com/weibo?q=%E5%B0%8F%E6%BD%AE%E9%99%A2%E9%95%BF%E8%87%B4%E6%AD%89&Refer=top",
-      "onboardAt": "2026-09-02T13:52:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E5%90%8E%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%23&Refer=top",
+      "onboardAt": "2026-09-03T16:10:21Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "小潮院长致歉",
-      "clusterHeat": 148890,
+      "cluster": "一家三口吃水洗鸡蛋后集体中毒",
+      "clusterHeat": 238024,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.07
+      "attention": 0.12
     },
     {
-      "rank": 34,
-      "word": "中国人14年浴血奋战换来日本投降",
-      "category": "国内时政",
-      "heat": 147859,
-      "label": "",
-      "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E4%BA%BA14%E5%B9%B4%E6%B5%B4%E8%A1%80%E5%A5%8B%E6%88%98%E6%8D%A2%E6%9D%A5%E6%97%A5%E6%9C%AC%E6%8A%95%E9%99%8D%23&Refer=top",
-      "onboardAt": "2026-09-02T11:19:21Z",
-      "fetchedAt": "2026-09-02T15:25:56Z",
+      "rank": 32,
+      "word": "医院拒提供抱错女子同期新生儿信息",
+      "category": "民生新闻",
+      "heat": 233783,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%8C%BB%E9%99%A2%E6%8B%92%E6%8F%90%E4%BE%9B%E6%8A%B1%E9%94%99%E5%A5%B3%E5%AD%90%E5%90%8C%E6%9C%9F%E6%96%B0%E7%94%9F%E5%84%BF%E4%BF%A1%E6%81%AF%23&Refer=top",
+      "onboardAt": "2026-09-03T23:52:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
       "match": "llm",
-      "cluster": "中国人14年浴血奋战换来日本投降",
-      "clusterHeat": 147859,
+      "cluster": "医院拒提供抱错女子同期新生儿信息",
+      "clusterHeat": 233783,
       "clusterSize": 1,
       "kind": "market",
       "focusEvent": false,
-      "attention": 0.07
+      "attention": 0.12
+    },
+    {
+      "rank": 35,
+      "word": "借5000万还1亿多还要还2100万",
+      "category": "民生新闻",
+      "heat": 210322,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%80%9F5000%E4%B8%87%E8%BF%981%E4%BA%BF%E5%A4%9A%E8%BF%98%E8%A6%81%E8%BF%982100%E4%B8%87%23&Refer=top",
+      "onboardAt": "2026-09-03T23:23:18Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "llm",
+      "cluster": "借5000万还1亿多还要还2100万",
+      "clusterHeat": 210322,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.11
+    },
+    {
+      "rank": 36,
+      "word": "剖宫产身亡3名涉事医生停职7至9个月",
+      "category": "民生新闻",
+      "heat": 204857,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E5%89%96%E5%AE%AB%E4%BA%A7%E8%BA%AB%E4%BA%A13%E5%90%8D%E6%B6%89%E4%BA%8B%E5%8C%BB%E7%94%9F%E5%81%9C%E8%81%8C7%E8%87%B39%E4%B8%AA%E6%9C%88%23&Refer=top",
+      "onboardAt": "2026-09-03T15:35:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "llm",
+      "cluster": "剖宫产身亡3名涉事医生停职7至9个月",
+      "clusterHeat": 204857,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.1
+    },
+    {
+      "rank": 46,
+      "word": "爱沙尼亚国防部长买炮弹被骗辞职",
+      "category": "国际时政",
+      "heat": 163753,
+      "label": "新",
+      "url": "https://s.weibo.com/weibo?q=%E7%88%B1%E6%B2%99%E5%B0%BC%E4%BA%9A%E5%9B%BD%E9%98%B2%E9%83%A8%E9%95%BF%E4%B9%B0%E7%82%AE%E5%BC%B9%E8%A2%AB%E9%AA%97%E8%BE%9E%E8%81%8C&Refer=top",
+      "onboardAt": "2026-09-04T00:36:21Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "llm",
+      "cluster": "爱沙尼亚国防部长买炮弹被骗辞职",
+      "clusterHeat": 163753,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.08
+    },
+    {
+      "rank": 49,
+      "word": "许家印律师欲提120万港元被拒",
+      "category": "财经",
+      "heat": 158049,
+      "label": "",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%AE%B8%E5%AE%B6%E5%8D%B0%E5%BE%8B%E5%B8%88%E6%AC%B2%E6%8F%90120%E4%B8%87%E6%B8%AF%E5%85%83%E8%A2%AB%E6%8B%92%23&Refer=top",
+      "onboardAt": "2026-09-03T16:16:20Z",
+      "fetchedAt": "2026-09-04T01:09:14Z",
+      "match": "finance",
+      "cluster": "许家印律师欲提120万港元被拒",
+      "clusterHeat": 158049,
+      "clusterSize": 1,
+      "kind": "market",
+      "focusEvent": false,
+      "attention": 0.08
     }
   ],
   "aggregates": [
     {
-      "name": "AI主线持续发酵，算力与光模块产业链受关注",
-      "summary": "第五届数贸会前瞻聚焦AI主线，英伟达股价大涨4.19%至226.55美元，总市值达5.46万亿美元，谷歌加快TPU迭代至每年两款以应对AI竞赛，机构称有望拉动光模块、高端PCB等供应链企业迎来发展新机遇。宏达电子单层陶瓷芯片电容等产品成为多家头部光模块厂商合格供应商，中际旭创最新股东榜已无章建平，市场对AI算力产业链关注度持续升温。",
+      "name": "GPT-6发布引爆AI产业链",
+      "summary": "OpenAI正式发布GPT-6 Astra，总裁宣布AGI到来，同时美国AI大宕机引发关注，AI算力、应用及云服务板块热度飙升。",
       "newsTitles": [
-        "第五届数贸会前瞻：智启未来 AI主线贯穿盛会",
-        "财联社9月2日电，英伟达股价涨幅扩大至4.19%，报226.550美元/股，总市值报5.46万亿美元。",
-        "【电报解读】谷歌加快TPU迭代至每年两款以应对AI竞赛！机构称谷歌TPU持续迭代与产能扩张，有望拉动光模块、高端PCB等供应链企业迎来发展新机遇，这家公司依托ADI渠道对接谷歌算力电源",
-        "宏达电子：单层陶瓷芯片电容、陶瓷薄膜电路、异形陶瓷结构件等产品成为多家头部光模块厂商合格供应商",
-        "中际旭创最新股东榜，已无章建平"
+        "Crusoe据悉与简街资本签署近130亿美元AI云协议"
       ],
       "hotWords": [
-        "微信新功能专治各种看不见"
+        "GPT6正式发布",
+        "OpenAI总裁宣布AGI到来",
+        "深夜突发！美国AI大宕机",
+        "OpenAI发布GPT-6 Astra",
+        "地球最强大模型GPT-6"
       ],
-      "heat": 0.95
+      "heat": 0.98
     },
     {
-      "name": "开发区领涨，高新发展涨停带动板块热度",
-      "summary": "开发区板块领涨，高新发展涨停（+10.00%），板块整体涨幅2.67%，热度显著。该板块受AI、算力等科技主线带动，市场情绪高涨，资金关注度集中。",
+      "name": "折叠屏与消费电子新品潮",
+      "summary": "小米18Fold定价及小米手环11发布引发关注，折叠屏市场进入三国杀阶段，消费电子板块有望受益。",
       "newsTitles": [
-        "第五届数贸会前瞻：智启未来 AI主线贯穿盛会"
+        "特斯拉：Cybercab将迎来国内首次公开亮相 不涉及无人驾驶网约车商业运营安排"
       ],
       "hotWords": [
-        "高新发展"
-      ],
-      "heat": 0.9
-    },
-    {
-      "name": "农林牧渔板块领涨，新赛股份涨停",
-      "summary": "农林牧渔板块领涨，新赛股份涨停（+9.97%），但板块整体下跌3.24%，呈现分化态势。市场对农业板块关注度较高，但板块内部个股表现差异明显。",
-      "newsTitles": [
-        "多地精准助企纾困 全力推动复工复产"
-      ],
-      "hotWords": [
-        "新赛股份"
+        "小米18Fold定价",
+        "小米手环11",
+        "折叠屏三国杀"
       ],
       "heat": 0.85
     },
     {
-      "name": "传媒娱乐板块领涨，粤传媒涨2.40%",
-      "summary": "传媒娱乐板块领涨，粤传媒涨2.40%，但板块整体下跌2.72%。首部AI长剧进入卫视黄金档，制作工业化与经典IP商业价值进入验证期，市场对AI+传媒方向关注度提升。",
+      "name": "陶瓷行业领涨，开尔新材强势",
+      "summary": "陶瓷行业领涨，开尔新材涨4.50%，板块热度居首，资金关注度提升。",
       "newsTitles": [
-        "【金牌纪要库】首部AI长剧进入卫视黄金档，制作工业化与经典IP商业价值进入验证期"
+        "昨日行情回顾"
       ],
       "hotWords": [
-        "粤传媒"
+        "陶瓷行业"
       ],
-      "heat": 0.8
+      "heat": 1.0
     },
     {
-      "name": "煤炭行业领涨，金瑞矿业涨3.37%",
-      "summary": "煤炭行业领涨，金瑞矿业涨3.37%，但板块整体下跌2.37%。焦炭、焦煤夜盘跌超2%，OPEC+周日会议可能维持石油产量政策不变，市场对能源板块分歧较大。",
+      "name": "家具行业异动，德尔未来涨停",
+      "summary": "家具行业领涨，德尔未来涨停9.97%，板块轮动迹象明显。",
       "newsTitles": [
-        "焦炭、焦煤夜盘跌超2%",
-        "财联社9月2日电，OPEC+的周日会议据悉可能维持石油产量政策不变，将重点讨论市场形势。",
-        "财联社9月2日电，俄罗斯副总理诺瓦克表示，OPEC+部长们将在周日会议上讨论市场形势及协议履约情况。"
+        "昨日行情回顾"
       ],
       "hotWords": [
-        "金瑞矿业"
+        "家具行业"
       ],
-      "heat": 0.75
+      "heat": 0.49
     },
     {
-      "name": "农药化肥板块领涨，华昌化工涨停",
-      "summary": "农药化肥板块领涨，华昌化工涨停（+10.05%），但板块整体下跌2.36%。市场对化工板块关注度较高，但整体表现偏弱，个股分化明显。",
+      "name": "纺织机械板块走强，中毅达涨停",
+      "summary": "纺织机械板块领涨，中毅达涨停9.96%，市场情绪回暖。",
       "newsTitles": [
-        "多地精准助企纾困 全力推动复工复产"
+        "昨日行情回顾"
       ],
       "hotWords": [
-        "华昌化工"
+        "纺织机械"
       ],
-      "heat": 0.7
+      "heat": 0.39
     },
     {
-      "name": "微信新功能专治各种看不见引发热议，映射互联网与软件板块",
-      "summary": "微信新功能专治各种看不见成为微博热搜第一，热度极高，引发广泛讨论。该热点映射互联网、软件服务等板块，市场关注度较高，可能带动相关科技股情绪。",
+      "name": "金融行业活跃，长江证券领涨",
+      "summary": "金融行业领涨，长江证券涨3.94%，大金融板块或受资金青睐。",
       "newsTitles": [
-        "“SaaS末日”幸存者数量惊人！AI冲击七个月后，大量软件公司正在强势复苏"
+        "两市融资余额减少40.37亿元"
       ],
       "hotWords": [
-        "微信新功能专治各种看不见"
+        "金融行业"
       ],
-      "heat": 0.9
+      "heat": 0.29
     },
     {
-      "name": "西藏吉隆泥石流灾害持续发酵，关注灾后重建与应急板块",
-      "summary": "西藏吉隆泥石流灾害持续发酵，遇难21人失联541人，灾区发现遗物847件，堆积物最高达16米。该事件为重大突发灾害，市场可能关注灾后重建、应急管理、基建等板块。",
+      "name": "交通运输板块拉升，大众交通涨停",
+      "summary": "交通运输板块领涨，大众交通涨停10.04%，物流及出行链受关注。",
       "newsTitles": [
-        "尼泊尔泥石流灾害遇难人数升至1204人"
+        "昨日行情回顾"
       ],
       "hotWords": [
-        "吉隆泥石流遇难21人失联541人",
-        "吉隆泥石流堆积物最高达16米",
-        "吉隆泥石流灾区发现遗物847件"
+        "交通运输"
       ],
-      "heat": 0.85
+      "heat": 0.28
+    },
+    {
+      "name": "电器行业走强，宏发股份大涨",
+      "summary": "电器行业领涨，宏发股份涨8.10%，家电及电气设备板块活跃。",
+      "newsTitles": [
+        "昨日行情回顾"
+      ],
+      "hotWords": [
+        "电器行业"
+      ],
+      "heat": 0.23
     }
   ],
   "opportunities": [
     {
-      "symbol": "sz000628",
-      "name": "高新发展",
-      "hotspot": "开发区",
-      "thesis": "盘面tape领涨板块开发区，高新发展涨停，热度0.82，板块涨幅2.67%，资金关注度高。AI主线持续发酵，算力与光模块产业链受关注，高新发展作为成都高新区开发主体，可能受益于科技园区建设与算力产业布局。当前缺少进一步验证：需关注公司是否有具体AI/算力项目落地或订单公告。",
-      "angle": "开发区+AI算力",
-      "price": 54.79,
-      "changePct": 10.0,
-      "asOf": "2026-09-02T08:14:33Z",
+      "symbol": "sz300234",
+      "name": "开尔新材",
+      "hotspot": "陶瓷行业",
+      "thesis": "盘面tape领涨，陶瓷行业热度居首，开尔新材涨4.50%，板块资金关注度提升，但需验证后续量能持续性。",
+      "angle": "陶瓷行业领涨",
+      "price": 10.68,
+      "changePct": 4.5,
+      "asOf": "2026-09-03T08:14:33Z",
       "confidence": 0.85
     },
     {
-      "symbol": "sh600540",
-      "name": "新赛股份",
-      "hotspot": "农林牧渔",
-      "thesis": "盘面tape领涨农林牧渔，新赛股份涨停，热度1.0，但板块整体下跌3.24%，分化明显。个股涨停可能受新疆棉花/农业政策或公司自身利好驱动，需关注是否有具体公告或政策催化。当前缺少验证：需确认涨停原因是否与公司基本面或行业政策相关。",
-      "angle": "农林牧渔+涨停",
-      "price": 6.73,
+      "symbol": "sz002631",
+      "name": "德尔未来",
+      "hotspot": "家具行业",
+      "thesis": "盘面tape领涨，德尔未来涨停9.97%，家具板块异动，轮动迹象明显，需关注板块内其他个股跟涨情况。",
+      "angle": "家具行业异动",
+      "price": 11.14,
       "changePct": 9.97,
-      "asOf": "2026-09-02T08:14:49Z",
-      "confidence": 0.7
+      "asOf": "2026-09-03T08:14:51Z",
+      "confidence": 0.8
     },
     {
-      "symbol": "sz002274",
-      "name": "华昌化工",
-      "hotspot": "农药化肥",
-      "thesis": "盘面tape领涨农药化肥，华昌化工涨停，热度0.73，但板块整体下跌2.36%。个股涨停可能受化肥价格波动或公司业绩预期驱动，需关注尿素/磷肥等产品价格走势。当前缺少验证：需确认涨停是否与化肥涨价或公司产能扩张相关。",
-      "angle": "农药化肥+涨停",
-      "price": 7.12,
-      "changePct": 10.05,
-      "asOf": "2026-09-02T08:14:33Z",
-      "confidence": 0.65
-    },
-    {
-      "symbol": "sh600892",
-      "name": "大晟文化",
-      "hotspot": "综合行业",
-      "thesis": "盘面tape领涨综合行业，大晟文化涨停，热度0.02，板块涨幅0.06%。个股涨停可能受公司重组或资产注入预期驱动，但板块整体热度低，需关注是否有具体公告。当前缺少验证：需确认涨停原因是否与公司重大事项相关。",
-      "angle": "综合行业+涨停",
-      "price": 5.35,
-      "changePct": 10.08,
-      "asOf": "2026-09-02T08:14:36Z",
-      "confidence": 0.5
-    },
-    {
-      "symbol": "sh600585",
-      "name": "海螺水泥",
-      "hotspot": "西藏吉隆泥石流",
-      "thesis": "微博/百度热搜西藏吉隆泥石流灾害，遇难21人失联541人，灾后重建需求预期强烈。海螺水泥作为水泥龙头，可能受益于灾后重建对水泥的需求。当前缺少验证：需关注灾后重建政策落地及水泥需求实际增量。",
-      "angle": "灾后重建+水泥",
-      "price": 17.45,
-      "changePct": -1.69,
-      "asOf": "2026-09-02T08:14:42Z",
+      "symbol": "sh600610",
+      "name": "中毅达",
+      "hotspot": "纺织机械",
+      "thesis": "盘面tape领涨，中毅达涨停9.96%，纺织机械板块走强，市场情绪回暖，需验证板块持续性。",
+      "angle": "纺织机械走强",
+      "price": 9.49,
+      "changePct": 9.97,
+      "asOf": "2026-09-03T08:14:48Z",
       "confidence": 0.75
     },
     {
-      "symbol": "sh601668",
-      "name": "中国建筑",
-      "hotspot": "西藏吉隆泥石流",
-      "thesis": "西藏吉隆泥石流灾害引发灾后重建预期，中国建筑作为基建龙头，可能参与灾区道路、桥梁等基础设施抢通与重建。当前缺少验证：需关注公司是否发布相关中标或参与灾后重建的公告。",
-      "angle": "灾后重建+基建",
-      "price": 4.32,
-      "changePct": -0.92,
-      "asOf": "2026-09-02T08:14:46Z",
+      "symbol": "sz000783",
+      "name": "长江证券",
+      "hotspot": "金融行业",
+      "thesis": "盘面tape领涨，长江证券涨3.94%，金融行业活跃，大金融板块或受资金青睐，需观察券商板块整体表现。",
+      "angle": "金融行业活跃",
+      "price": 9.23,
+      "changePct": 3.94,
+      "asOf": "2026-09-03T08:14:09Z",
       "confidence": 0.7
     },
     {
-      "symbol": "sz300251",
-      "name": "光线传媒",
-      "hotspot": "传媒娱乐",
-      "thesis": "盘面tape领涨传媒娱乐，粤传媒涨2.40%，板块整体下跌2.72%。首部AI长剧进入卫视黄金档，制作工业化与经典IP商业价值进入验证期，光线传媒作为影视内容龙头，可能受益于AI+传媒方向。当前缺少验证：需关注公司是否有AI相关影视项目或IP商业化进展。",
-      "angle": "传媒+AI内容",
-      "price": 11.23,
-      "changePct": -3.61,
-      "asOf": "2026-09-02T08:14:39Z",
+      "symbol": "sh600611",
+      "name": "大众交通",
+      "hotspot": "交通运输",
+      "thesis": "盘面tape领涨，大众交通涨停10.04%，交通运输板块拉升，物流及出行链受关注，需验证板块联动性。",
+      "angle": "交通运输拉升",
+      "price": 5.15,
+      "changePct": 10.04,
+      "asOf": "2026-09-03T08:14:55Z",
+      "confidence": 0.7
+    },
+    {
+      "symbol": "sh600885",
+      "name": "宏发股份",
+      "hotspot": "电器行业",
+      "thesis": "盘面tape领涨，宏发股份涨8.10%，电器行业走强，家电及电气设备板块活跃，需关注行业景气度。",
+      "angle": "电器行业走强",
+      "price": 35.65,
+      "changePct": 8.1,
+      "asOf": "2026-09-03T08:14:52Z",
+      "confidence": 0.65
+    },
+    {
+      "symbol": "sz002475",
+      "name": "立讯精密",
+      "hotspot": "小米18Fold定价",
+      "thesis": "web/social热点小米18Fold定价及折叠屏三国杀，消费电子新品潮，立讯精密作为消费电子组装龙头有望受益，但需验证订单落地。",
+      "angle": "折叠屏产业链",
+      "price": 56.17,
+      "changePct": -1.59,
+      "asOf": "2026-09-03T08:14:39Z",
       "confidence": 0.6
     },
     {
-      "symbol": "sz002027",
-      "name": "分众传媒",
-      "hotspot": "微信新功能专治各种看不见",
-      "thesis": "微博热搜第一微信新功能专治各种看不见，热度极高，映射互联网与软件板块，可能带动广告营销需求。分众传媒作为广告龙头，可能受益于互联网产品推广带来的广告投放增加。当前缺少验证：需关注微信新功能是否带来实际广告投放增量。",
-      "angle": "互联网+广告",
-      "price": 4.85,
-      "changePct": -2.22,
-      "asOf": "2026-09-02T08:14:36Z",
+      "symbol": "sh600108",
+      "name": "亚盛集团",
+      "hotspot": "农林牧渔",
+      "thesis": "盘面tape领涨，亚盛集团涨停10.00%，农林牧渔板块逆势走强，需关注农业政策或供需变化催化。",
+      "angle": "农林牧渔逆势",
+      "price": 3.96,
+      "changePct": 10.0,
+      "asOf": "2026-09-03T08:14:46Z",
       "confidence": 0.55
     }
   ],
   "sectorOutlook": [
     {
-      "sector": "AI算力与光模块",
+      "sector": "AI算力与云服务",
       "heat": 1,
-      "heatScore": 0.95,
-      "priceAction": "mixed",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "该热点主要来自电报通道（财联社快讯）与盘面联动。第五届数贸会聚焦AI主线，英伟达股价大涨4.19%至226.55美元，总市值达5.46万亿美元；谷歌加快TPU迭代至每年两款，机构称有望拉动光模块、高端PCB等供应链企业。盘面上，开发区板块领涨（高新发展涨停），与AI算力园区建设相关。价格方面，光模块龙头中际旭创近期股东榜变动，但股价未在快照中显示；宏达电子因光模块产品成为头部厂商供应商，但股价未在快照中体现。量能上，上证指数成交量近两周平稳，北向成交额24.48亿元（9月2日），较前日27.33亿元略降，但整体稳定。市场情绪偏积极，AI主线持续发酵，但需注意板块内部分化。",
-      "evidence": [
-        {
-          "claim": "第五届数贸会聚焦AI主线，AI技术应用成为展会核心",
-          "sourceTitle": "第五届数贸会前瞻：智启未来 AI主线贯穿盛会",
-          "url": "https://www.chinanews.com.cn/cj/2026/09-02/10689078.shtml",
-          "publishedAt": "2026-09-02T13:36:17Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "英伟达股价大涨4.19%，总市值达5.46万亿美元，显示AI算力需求强劲",
-          "sourceTitle": "财联社9月2日电，英伟达股价涨幅扩大至4.19%，报226.550美元/股，总市值报5.46万亿美元。",
-          "url": "https://www.cls.cn/detail/2472463",
-          "publishedAt": "2026-09-02T15:15:55Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "谷歌加快TPU迭代，有望拉动光模块、高端PCB等供应链企业",
-          "sourceTitle": "【电报解读】谷歌加快TPU迭代至每年两款以应对AI竞赛！机构称谷歌TPU持续迭代与产能扩张，有望拉动光模块、高端PCB等供应链企业迎来发展新机遇，这家公司依托ADI渠道对接谷歌算力电源",
-          "url": "https://www.cls.cn/detail/2472447",
-          "publishedAt": "2026-09-02T14:25:18Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "宏达电子单层陶瓷芯片电容等产品成为多家头部光模块厂商合格供应商",
-          "sourceTitle": "宏达电子：单层陶瓷芯片电容、陶瓷薄膜电路、异形陶瓷结构件等产品成为多家头部光模块厂商合格供应商",
-          "url": "https://www.cls.cn/detail/2472448",
-          "publishedAt": "2026-09-02T14:19:50Z",
-          "weight": "supporting"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "中际旭创最新股东榜已无章建平，可能反映机构减持或调仓",
-          "sourceTitle": "中际旭创最新股东榜，已无章建平",
-          "url": "https://wallstreetcn.com/articles/3780924",
-          "publishedAt": "2026-09-02T12:26:53Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.85,
-      "invalidatedIf": "AI算力相关公司业绩不及预期，或光模块订单增速放缓"
-    },
-    {
-      "sector": "开发区",
-      "heat": 2,
-      "heatScore": 0.9,
+      "heatScore": 0.98,
       "priceAction": "up",
-      "calibration": "confirming",
-      "direction": "up",
-      "narrative": "该热点来自盘面通道（tape），开发区板块领涨，高新发展涨停（+10.00%），板块整体涨幅2.67%，热度0.82。高新发展作为成都高新区开发主体，可能受益于科技园区建设与算力产业布局，与AI主线形成共振。价格已明显反应，涨停显示资金关注度高。量能上，高新发展成交量17.46万手，换手率较高，量能放大。北向成交额整体平稳，但板块热度集中。",
-      "evidence": [
-        {
-          "claim": "开发区板块领涨，高新发展涨停，板块涨幅2.67%",
-          "sourceTitle": "盘面tape数据：开发区领涨 高新发展 +10.00%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:33Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "高新发展涨停但缺乏具体公告验证，需关注是否有AI/算力项目落地",
-          "sourceTitle": "盘面tape数据：开发区领涨 高新发展 +10.00%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:33Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.85,
-      "invalidatedIf": "高新发展无具体AI/算力项目公告，或板块热度消退"
-    },
-    {
-      "sector": "农林牧渔",
-      "heat": 3,
-      "heatScore": 0.85,
-      "priceAction": "mixed",
-      "calibration": "divergence",
-      "direction": "mixed",
-      "narrative": "该热点来自盘面通道（tape），农林牧渔板块领涨，新赛股份涨停（+9.97%），但板块整体下跌3.24%，呈现明显分化。个股涨停可能受新疆棉花或农业政策驱动，但板块整体走弱，显示资金分歧较大。价格方面，新赛股份涨停已反应利好，但板块下跌说明市场对农业板块整体信心不足。量能上，新赛股份成交量218万手，量能放大，但板块整体量能未见显著提升。",
-      "evidence": [
-        {
-          "claim": "农林牧渔板块领涨，新赛股份涨停，但板块整体下跌3.24%",
-          "sourceTitle": "盘面tape数据：农林牧渔 领涨 新赛股份 +9.97%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:49Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "板块整体下跌3.24%，个股涨停与板块走势背离，需关注涨停原因",
-          "sourceTitle": "盘面tape数据：农林牧渔 领涨 新赛股份 +9.97%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:49Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.7,
-      "invalidatedIf": "新赛股份涨停原因与农业政策无关，或板块持续走弱"
-    },
-    {
-      "sector": "传媒娱乐",
-      "heat": 4,
-      "heatScore": 0.8,
-      "priceAction": "down",
-      "calibration": "divergence",
-      "direction": "mixed",
-      "narrative": "该热点来自盘面通道（tape）与电报通道。传媒娱乐板块领涨，粤传媒涨2.40%，但板块整体下跌2.72%。首部AI长剧进入卫视黄金档，制作工业化与经典IP商业价值进入验证期，市场对AI+传媒方向关注度提升。价格方面，板块整体下跌，但个股粤传媒上涨，显示资金对AI内容方向有选择性关注。量能上，粤传媒成交量164.9万手，量能放大，但板块整体量能未见显著提升。",
-      "evidence": [
-        {
-          "claim": "首部AI长剧进入卫视黄金档，AI内容首次跑通生成审核与主流排播链路",
-          "sourceTitle": "【金牌纪要库】首部AI长剧进入卫视黄金档，制作工业化与经典IP商业价值进入验证期",
-          "url": "https://www.cls.cn/detail/2471971",
-          "publishedAt": "2026-09-02T14:35:31Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "传媒娱乐板块领涨，粤传媒涨2.40%，但板块整体下跌2.72%",
-          "sourceTitle": "盘面tape数据：传媒娱乐 领涨 粤 传 媒 +2.40%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:30Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "板块整体下跌2.72%，个股上涨与板块走势背离，需关注AI内容商业化进展",
-          "sourceTitle": "盘面tape数据：传媒娱乐 领涨 粤 传 媒 +2.40%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:30Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.6,
-      "invalidatedIf": "AI长剧商业化效果不及预期，或板块持续下跌"
-    },
-    {
-      "sector": "煤炭与能源",
-      "heat": 5,
-      "heatScore": 0.75,
-      "priceAction": "down",
       "calibration": "pricedIn",
-      "direction": "down",
-      "narrative": "该热点来自盘面通道（tape）与电报通道。煤炭行业领涨，金瑞矿业涨3.37%，但板块整体下跌2.37%。焦炭、焦煤夜盘跌超2%，OPEC+周日会议可能维持石油产量政策不变，市场对能源板块分歧较大。价格方面，板块整体下跌，但个股金瑞矿业上涨，显示资金对个别煤炭股有选择性关注。量能上，金瑞矿业成交量43.4万手，量能放大，但板块整体量能未见显著提升。",
-      "evidence": [
-        {
-          "claim": "焦炭、焦煤夜盘跌超2%，能源板块承压",
-          "sourceTitle": "焦炭、焦煤夜盘跌超2%",
-          "url": "https://www.cls.cn/detail/2472459",
-          "publishedAt": "2026-09-02T15:01:09Z",
-          "weight": "primary"
-        },
-        {
-          "claim": "OPEC+周日会议可能维持石油产量政策不变，市场对能源板块分歧较大",
-          "sourceTitle": "财联社9月2日电，OPEC+的周日会议据悉可能维持石油产量政策不变，将重点讨论市场形势。",
-          "url": "https://www.cls.cn/detail/2472434",
-          "publishedAt": "2026-09-02T14:04:28Z",
-          "weight": "primary"
-        }
-      ],
-      "counterEvidence": [
-        {
-          "claim": "煤炭行业领涨，金瑞矿业涨3.37%，但板块整体下跌2.37%，个股与板块走势背离",
-          "sourceTitle": "盘面tape数据：煤炭行业 领涨 金瑞矿业 +3.37%",
-          "url": "",
-          "publishedAt": "2026-09-02T08:14:43Z",
-          "weight": "supporting"
-        }
-      ],
-      "confidence": 0.65,
-      "invalidatedIf": "OPEC+会议意外减产，或煤炭需求超预期"
-    },
-    {
-      "sector": "灾后重建与基建",
-      "heat": 6,
-      "heatScore": 0.85,
-      "priceAction": "down",
-      "calibration": "insufficientData",
       "direction": "up",
-      "narrative": "该热点来自微博热搜与百度热搜（social/web通道）。西藏吉隆泥石流灾害持续发酵，遇难21人失联541人，灾区发现遗物847件，堆积物最高达16米。该事件为重大突发灾害，市场可能关注灾后重建、应急管理、基建等板块。价格方面，海螺水泥（-1.69%）和中国建筑（-0.92%）均下跌，显示市场尚未充分反应灾后重建预期。量能上，海螺水泥成交量19.5万手，中国建筑成交量255.8万手，均未见显著放量。北向成交额整体平稳，但灾后重建预期可能带来后续资金关注。",
+      "narrative": "该热点来自网络热搜（GPT6正式发布）与电报（Crusoe与简街资本签署130亿美元AI云协议）。OpenAI发布GPT-6 Astra，总裁宣布AGI到来，叠加美国AI大宕机事件，市场对AI算力、应用及云服务板块关注度极高。隔夜美股Snowflake涨26%、Bloom Energy涨近10%，特斯拉涨5.4%，高贝塔成长股大涨，显示风险偏好回升。A股相关板块（如半导体、通信）昨日表现分化，中芯国际涨1.08%，但北方华创跌1.67%，量能未明显放大，价格部分反应但持续性待验证。北向成交额回落至24.27亿元，外资活跃度下降，需警惕高位分歧。",
       "evidence": [
         {
-          "claim": "西藏吉隆泥石流灾害持续发酵，遇难21人失联541人，灾区发现遗物847件",
-          "sourceTitle": "微博热搜：吉隆泥石流遇难21人失联541人",
-          "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E6%B3%A5%E7%9F%B3%E6%B5%81%E9%81%87%E9%9A%BE21%E4%BA%BA%E5%A4%B1%E8%81%94541%E4%BA%BA%23&Refer=top",
-          "publishedAt": "2026-09-02T12:26:21Z",
+          "claim": "GPT-6正式发布，AI产业链热度飙升",
+          "sourceTitle": "GPT6正式发布",
+          "url": "https://s.weibo.com/weibo?q=%23GPT6%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83%23&Refer=top",
+          "publishedAt": "2026-09-03T23:55:20Z",
           "weight": "supporting"
         },
         {
-          "claim": "尼泊尔泥石流灾害遇难人数升至1204人，区域灾害风险上升",
-          "sourceTitle": "尼泊尔泥石流灾害遇难人数升至1204人",
-          "url": "https://www.cls.cn/detail/2472436",
-          "publishedAt": "2026-09-02T14:08:51Z",
-          "weight": "supporting"
+          "claim": "Crusoe与简街资本签署近130亿美元AI云协议",
+          "sourceTitle": "Crusoe据悉与简街资本签署近130亿美元AI云协议",
+          "url": "https://www.cls.cn/detail/2473795",
+          "publishedAt": "2026-09-03T23:36:58Z",
+          "weight": "primary"
         }
       ],
       "counterEvidence": [
         {
-          "claim": "海螺水泥和中国建筑股价均下跌，市场尚未充分反应灾后重建预期",
-          "sourceTitle": "行情快照：海螺水泥 -1.69%，中国建筑 -0.92%",
+          "claim": "A股半导体板块昨日表现分化，北方华创跌1.67%",
+          "sourceTitle": "北方华创行情",
           "url": "",
-          "publishedAt": "2026-09-02T08:14:42Z",
+          "publishedAt": "2026-09-03T08:14:06Z",
           "weight": "supporting"
         }
       ],
       "confidence": 0.75,
-      "invalidatedIf": "灾后重建政策未落地，或基建板块持续走弱"
+      "invalidatedIf": "AI算力板块量能持续萎缩，且无新增订单或政策催化"
+    },
+    {
+      "sector": "消费电子（折叠屏）",
+      "heat": 2,
+      "heatScore": 0.85,
+      "priceAction": "mixed",
+      "calibration": "insufficientData",
+      "direction": "up",
+      "narrative": "该热点来自网络热搜（小米18Fold定价、小米手环11）与投资日历（小米参展柏林IFA）。小米18Fold定价及折叠屏三国杀引发关注，消费电子新品潮有望带动产业链。但A股消费电子龙头立讯精密昨日跌1.59%，京东方A跌1.38%，价格未反应，量能一般，需验证订单落地。北向成交额回落，外资态度谨慎。",
+      "evidence": [
+        {
+          "claim": "小米18Fold定价及小米手环11发布引发关注",
+          "sourceTitle": "小米18Fold定价",
+          "url": "https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B318Fold%E5%AE%9A%E4%BB%B7%23&Refer=top",
+          "publishedAt": "2026-09-04T00:01:20Z",
+          "weight": "supporting"
+        },
+        {
+          "claim": "小米将于9月4日首次参展柏林IFA，发布小米18 Fold",
+          "sourceTitle": "投资日历：周五资本市场大事提醒",
+          "url": "https://www.cls.cn/detail/2473817",
+          "publishedAt": "2026-09-04T00:29:46Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "立讯精密昨日跌1.59%，京东方A跌1.38%",
+          "sourceTitle": "立讯精密行情",
+          "url": "",
+          "publishedAt": "2026-09-03T08:14:39Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.6,
+      "invalidatedIf": "小米新品发布后销量不及预期，或消费电子板块持续走弱"
+    },
+    {
+      "sector": "陶瓷行业",
+      "heat": 3,
+      "heatScore": 1.0,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "该热点来自盘面tape，陶瓷行业领涨，开尔新材涨4.50%，板块热度居首。昨日行情回顾显示市场缩量，但陶瓷板块逆势走强，资金关注度提升。开尔新材量能放大（volumeVsAvg=1.358），价格已反应，但需验证后续量能持续性。北向成交额回落，外资未明显参与。",
+      "evidence": [
+        {
+          "claim": "陶瓷行业领涨，开尔新材涨4.50%",
+          "sourceTitle": "陶瓷行业",
+          "url": "",
+          "publishedAt": "2026-09-03T08:14:33Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "昨日行情回顾显示市场缩量，但陶瓷板块走强",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "沪深两市成交额缩量323亿，续创阶段新低",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.85,
+      "invalidatedIf": "开尔新材量能萎缩，板块内无跟涨个股"
+    },
+    {
+      "sector": "家具行业",
+      "heat": 4,
+      "heatScore": 0.49,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "该热点来自盘面tape，家具行业领涨，德尔未来涨停9.97%，板块异动明显。昨日行情回顾显示市场缩量，但家具板块轮动迹象明显，德尔未来量能放大（volumeVsAvg=0.968），价格已反应。需关注板块内其他个股跟涨情况。北向成交额回落，外资未明显参与。",
+      "evidence": [
+        {
+          "claim": "家具行业领涨，德尔未来涨停9.97%",
+          "sourceTitle": "家具行业",
+          "url": "",
+          "publishedAt": "2026-09-03T08:14:51Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "昨日行情回顾显示市场缩量，但家具板块异动",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "沪深两市成交额缩量323亿，续创阶段新低",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.8,
+      "invalidatedIf": "德尔未来涨停后量能萎缩，板块内无跟涨个股"
+    },
+    {
+      "sector": "金融行业（券商）",
+      "heat": 5,
+      "heatScore": 0.29,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "该热点来自盘面tape，金融行业领涨，长江证券涨3.94%，大金融板块活跃。昨日行情回顾显示市场缩量，但券商板块逆势走强，中信证券涨1.42%，长江证券量能放大（volumeVsAvg=1.801），价格已反应。两市融资余额减少40.37亿元，杠杆资金谨慎，但券商板块或受资金青睐。北向成交额回落，外资未明显参与。",
+      "evidence": [
+        {
+          "claim": "金融行业领涨，长江证券涨3.94%",
+          "sourceTitle": "金融行业",
+          "url": "",
+          "publishedAt": "2026-09-03T08:14:09Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "两市融资余额减少40.37亿元",
+          "sourceTitle": "两市融资余额减少40.37亿元",
+          "url": "https://www.cls.cn/detail/2473840",
+          "publishedAt": "2026-09-04T00:48:31Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "沪深两市成交额缩量323亿，续创阶段新低",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.7,
+      "invalidatedIf": "券商板块量能萎缩，且无政策利好催化"
+    },
+    {
+      "sector": "交通运输",
+      "heat": 6,
+      "heatScore": 0.28,
+      "priceAction": "up",
+      "calibration": "confirming",
+      "direction": "up",
+      "narrative": "该热点来自盘面tape，交通运输板块领涨，大众交通涨停10.04%，物流及出行链受关注。昨日行情回顾显示市场缩量，但交通运输板块拉升，大众交通量能放大（volumeVsAvg=2.015），价格已反应。需验证板块联动性。北向成交额回落，外资未明显参与。",
+      "evidence": [
+        {
+          "claim": "交通运输板块领涨，大众交通涨停10.04%",
+          "sourceTitle": "交通运输",
+          "url": "",
+          "publishedAt": "2026-09-03T08:14:55Z",
+          "weight": "primary"
+        },
+        {
+          "claim": "昨日行情回顾显示市场缩量，但交通运输板块拉升",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "primary"
+        }
+      ],
+      "counterEvidence": [
+        {
+          "claim": "沪深两市成交额缩量323亿，续创阶段新低",
+          "sourceTitle": "昨日行情回顾",
+          "url": "https://www.cls.cn/detail/2473819",
+          "publishedAt": "2026-09-04T00:29:51Z",
+          "weight": "supporting"
+        }
+      ],
+      "confidence": 0.7,
+      "invalidatedIf": "大众交通涨停后量能萎缩，板块内无跟涨个股"
     }
   ],
-  "crossSectorNotes": "AI算力与光模块是当前市场主线，开发区板块（高新发展涨停）与AI算力形成共振，但传媒娱乐板块（AI内容）与煤炭能源板块（OPEC+会议）呈现分化。农林牧渔板块个股涨停但板块整体下跌，显示资金分歧较大。灾后重建预期（西藏吉隆泥石流）尚未在基建板块价格中反应，需关注后续政策落地。整体市场情绪偏谨慎，上证指数下跌0.97%，创业板指下跌2.39%，但AI主线热度持续，资金聚焦科技成长方向。",
-  "trendNotes": "当前市场最热的是AI算力与光模块（电报通道，英伟达大涨、谷歌TPU迭代），以及开发区板块（盘面通道，高新发展涨停）。微博热搜中，微信新功能专治各种看不见（rank 1，heat 1190396，onboardAt 2026-09-02T11:55:20Z，fetchedAt 2026-09-02T15:25:56Z）和西藏吉隆泥石流（rank 5，heat 386417，onboardAt 2026-09-02T12:26:21Z，fetchedAt 2026-09-02T15:25:56Z）热度较高，前者映射互联网与软件板块，后者关注灾后重建。量能方面，上证指数近两周成交量相对平稳，最新成交量5.16亿手，较前日5.73亿手略降，但整体稳定。北向成交额9月2日为24.48亿元，较前日27.33亿元略降，但整体平稳，交易所已不再披露实时净买入，成交额不是净流入。新闻情绪时间线显示，AI主线持续发酵，但市场整体下跌，情绪偏谨慎，需关注后续政策与业绩验证。",
+  "crossSectorNotes": "盘面热点集中在陶瓷、家具、纺织机械等小盘题材，而AI算力、消费电子等科技板块受隔夜美股带动但A股反应分化。金融板块（券商）逆势走强，但两市缩量至1.76万亿，融资余额减少40.37亿元，显示市场整体风险偏好不高。北向成交额回落至24.27亿元，外资活跃度下降，需警惕高位分歧。",
+  "trendNotes": "heat中最热的为AI算力与云服务（GPT-6发布）、消费电子（小米18Fold）、陶瓷行业（开尔新材领涨）。量能方面，上证指数近两周成交量相对平稳，最新一日成交约为前段均值的1.00倍，昨日沪深两市成交额1.76万亿，较前一日缩量323亿，续创阶段新低。北向成交额近段低于前段，外资交易活跃度回落，不能据此判断净流入方向。新闻情绪时间线显示，昨日行情回顾（财联社标红）与今日早间新闻精选（财联社标红）为重要参考，微博热搜中GPT6正式发布（onboardAt 2026-09-03T23:55:20Z）和小米18Fold定价（onboardAt 2026-09-04T00:01:20Z）仍在时效内，可作为当日催化剂。",
   "limitations": [
     "可能使用延迟公开行情",
     "微博仅为公开热搜快照（非博主时间线），以上榜时间衡量时效",
@@ -2996,21 +3292,24 @@
     "全市场热点层独立于侧重点扫描；侧重点只加权，不作为过滤器",
     "个股推演是研究线索，不是买卖建议，没有目标价",
     "北向净买入已不再实时披露，时间线使用成交额（非净流入）对照上证",
+    "部分源失败: 1",
     "全市场热点层独立扫描盘面、资金、电报、微博与网络热搜；侧重点只加权，不把其他热点藏起来"
   ],
   "stats": {
-    "fetched": 67,
-    "used": 67,
-    "quotes": 41,
+    "fetched": 71,
+    "used": 71,
+    "quotes": 50,
     "weibo": 16,
     "aggregates": 8,
     "opportunities": 8,
-    "heat": 37,
+    "heat": 41,
     "model": "deepseek-v4-flash-vision-exp",
     "estCostUsd": 0,
     "plannerModel": "deepseek-v4-flash-vision-exp",
     "aggregatorModel": "deepseek-v4-flash-vision-exp",
     "opportunitiesModel": "deepseek-v4-flash-vision-exp"
   },
-  "errors": []
+  "errors": [
+    "yahoo bj920176: Client error '404 Not Found' for url 'https://query1.finance.yahoo.com/v8/finance/chart/bj920176?interval=1d&range=1mo'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  ]
 }
